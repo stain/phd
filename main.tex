@@ -116,11 +116,14 @@ Object, RO-Crate},
 \usepackage[headings]{fancyhdr}
 \pagestyle{fancy}
 \fancyhead{}
-\fancyhead[RO,LE]{PhD}
+\fancyhead[RO,LE]{\leftmark}
 \fancyfoot{}
 \fancyfoot[LE,RO]{\thepage}
 \fancyfoot[LO,CE]{Chapter \thechapter}
-\fancyfoot[CO,RE]{Stian Soiland-Reyes}
+%\fancyfoot[CO,RE]{Stian Soiland-Reyes}
+
+\renewcommand{\chaptermark}[1]{%
+\markboth{#1}{}}
 
 % for table resizing
 \usepackage{booktabs}
@@ -153,17 +156,20 @@ Object, RO-Crate},
 \chapter{Workflows}
 \include{chapter06.tex}
 \include{chapter07.tex}
+\chapter{Conclusions}
 \include{chapter08.tex}
-\chapter{Summary}
-\include{chapter09.tex}
+
 \chapter{Contributions}
 \include{chapter10.tex}
 \chapter{Acknowledgements}
 \include{chapter11.tex}
-\chapter{Bibliography}
+
 \include{references.tex}
 
-
+\chapter{Summary}
+\include{summary.tex}
+\chapter{Sammenvatting}
+\include{summary-nl.tex}
 
 
 
