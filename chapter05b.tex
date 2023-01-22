@@ -12,7 +12,7 @@ Definition of language $\mathcal{L}_{rocrate}$:
     \mathcal{L}_{rocrate}   & = & \big\{ Property(p), Class(c),
                             Value(x), \mathbb{R}, \mathbb{S} \big\} \\
     \mathbb{D}              & = & \mathbb{IRI} \\
-    \mathbb{IRI}            & \equiv & { \text{IRIs as defined in RFC3987 [42]} } \\
+    \mathbb{IRI}            & \equiv & { \text{IRIs as defined in RFC3987 \cite{Dürst 2005} \[\href{https://doi.org/10.17487/rfc3987}{Dürst 2005}\]} } \\
     \mathbb{R}              & \equiv & { \text{real or integer numbers} } \\
     \mathbb{S}              & \equiv & { \text{literal strings} }
 \end{eqnarray*}
@@ -119,7 +119,7 @@ A formalized RO-Crate in $\mathcal{L}_{rocrate}$ can be mapped to different seri
 Assume a simplified\footnote{
  This simplification and mapping does not cover the extensive list of literal datatypes built into RDF 1.1, only strings and decimal real numbers. Likewise, $LanguageTag$ is deliberately not utillised below.
 } language $\mathcal{L}_{RDF}$
-based on the RDF abstract syntax \cite{rdfworkinggroup_2014}:
+based on the RDF abstract syntax \cite{RDF 1.1 2014}:
 
 \small
 \begin{eqnarray*}
