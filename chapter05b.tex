@@ -12,7 +12,7 @@ Definition of language $\mathcal{L}_{rocrate}$:
     \mathcal{L}_{rocrate}   & = & \big\{ Property(p), Class(c),
                             Value(x), \mathbb{R}, \mathbb{S} \big\} \\
     \mathbb{D}              & = & \mathbb{IRI} \\
-    \mathbb{IRI}            & \equiv & { \text{IRIs as defined in RFC3987 \cite{Dürst 2005} \[\href{https://doi.org/10.17487/rfc3987}{Dürst 2005}\]} } \\
+    \mathbb{IRI}            & \equiv & { \text{IRIs as defined in RFC3987 {[}\href{https://doi.org/10.17487/rfc3987}{Dürst 2005}{]}} } \\
     \mathbb{R}              & \equiv & { \text{real or integer numbers} } \\
     \mathbb{S}              & \equiv & { \text{literal strings} }
 \end{eqnarray*}
@@ -177,7 +177,7 @@ An important RO-Crate principle is that of being \textbf{self-described}. Theref
 \begin{eqnarray*}
 about(s,o)      & \Rightarrow & Relation(s, \texttt{<http://schema.org/about>}, o)   \\
 conformsTo(s,o) & \Rightarrow & Relation(s, \texttt{<http://purl.org/dc/terms/conformsTo>}, o)   \\
-MetadataFile(m) & \Rightarrow & CreativeWork(m) \land about(m,R) ∧ ROCrate(R) \land    \\
+MetadataFile(m) & \Rightarrow & CreativeWork(m) \land about(m,R) \land ROCrate(R) \land    \\
                 &             & conformsTo(m, \texttt{<https://w3id.org/ro/crate/1.1>})
 \end{eqnarray*}
 \normalsize
