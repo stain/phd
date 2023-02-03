@@ -32,7 +32,7 @@ In brief, the structure of a FAIR Digital Object (FDO) is to, given a \emph{pers
 Recently, FDOs have been recognised by the European Open Science Cloud (\href{https://eosc.eu/}{EOSC}) as a suggested part of its Interoperability Framework \cite{corchoEOSCInteroperabilityFramework2021b}, in particular for deploying active and interoperable FAIR resources that are \emph{machine actionable}. Development of the FDO concept continued within Research Data Alliance (\href{https://www.rd-alliance.org/}{RDA}) groups and EOSC projects like \href{https://www.go-fair.org/}{GO-FAIR}, concluding with a set of guidelines for implementing FDO \cite{boninoFAIRDigitalObject}. The \href{https://fairdo.org/}{FAIR Digital Objects Forum} has since taken over the maturing of FDO through focused working groups which have currently drafted several more detailed specification documents (\vref*{sec:next-step-fdo}).
 
 \hypertarget{fdo-approaches}{%
-\subsubsubsection{FDO approaches}\label{fdo-approaches}}
+\subsubsection{FDO approaches}\label{fdo-approaches}}
 
 FDO is an evolving concept. A set of FDO Demonstrators \cite{wittenburgFAIRDigitalObject2022b} highlight how current adapters are approaching implementations of FDO from different angles:
 
@@ -50,7 +50,7 @@ From this it becomes apparent that there is a potentially large overlap between 
 
 
 \hypertarget{sec:next-step-fdo}{%
-\subsubsubsection{Next steps for FDO}\label{sec:next-step-fdo}}
+\subsubsection{Next steps for FDO}\label{sec:next-step-fdo}}
 
 The FAIR Digital Object Forum \cite{FAIRDigitalObjects} working groups have prepared detailed requirement documents \cite{fdo-Specs} setting out the path for realising FDOs, named \emph{FDO Recommendations}. As of 2023-02-02, most of these documents are open for public review, while some are still in draft stages in Google Docs for internal review. As these documents clarify the future aims and focus of FAIR Digital Objects \cite{fdo-Roadmap}, we provide their brief summaries below:
 
@@ -86,7 +86,7 @@ It is worth pointing out at that, except for the DOIP endorsement, all of these 
 In order to describe \emph{Linked Data} as it is used today, we'll start with an (opinionated) description of the evolution of its foundation, the \emph{Semantic Web}.
 
 \hypertarget{sec:semweb}{%
-\subsubsubsection{A brief history of the Semantic Web}\label{sec:semweb}}
+\subsubsection{A brief history of the Semantic Web}\label{sec:semweb}}
 
 The \textbf{Semantic Web} was developed as a vision by Tim Berners-Lee \cite{berners-leeWeavingWebOriginal1999}, at a time the Web had been widely established for information exchange, as a global set of hypermedia documents that eare cross-related using universal links in the form of URLs. The foundations of the Web (e.g.~URLs, HTTP, SSL/TLS, HTML, CSS, ECMAScript/JavaScript, media types) were standardised by \href{https://www.w3.org/standards/}{W3C}, \href{https://www.ecma-international.org/}{Ecma}, \href{https://www.ietf.org/standards/}{IETF} and later \href{https://whatwg.org/}{WHATWG}. The goal of Semantic Web was to further develop the machine-readable aspects of the Web, in particular adding \emph{meaning} (or semantics) to not just the link relations, but also to the \emph{resources} that the URLs identified, and for machines thus being able to meaningfully navigate across such resources, e.g.~to answer a particular query.
 
@@ -109,7 +109,7 @@ The move towards \emph{open science} data sharing practices from the late 2000s 
 With these trends, an emerging problem was that adopters of the Semantic Web primarily utillised it as a set of graph technologies, with little consideration to existing Web resources. This meant that links stayed mainly within a single information system, with little URI reuse even with large term overlaps \cite{kamdarSystematicAnalysisTerm2017a}. Just like \emph{link rot} affect regular Web pages and their citations from scholarly communication \cite{kleinScholarlyContextNot2014a}, for a majority of described RDF resources in the \href{https://lod-cloud.net/}{Linked Open Data} (LOD) Cloud's gathering of more than thousand datasets, unfortunately they do not actually link to (still) downloadable (\emph{dereferenceable}) Linked Data \cite{polleresMoreDecentralizedVision2020a}. Another challenge facing potential adopters is the plethora of choices, not just to navigate, understand and select to reuse the many possible vocabularies and ontologies \cite{carrieroLandscapeOntologyReuse2020a}, but also technological choices on RDF serialisation (at least \href{https://www.w3.org/TR/rdf11-primer/\#section-graph-syntax}{7 formats}), type system (RDFS \cite{w3-rdf-schema}, OWL \cite{w3-owl2-overview}, OBO \cite{tirmiziMappingOBOOWL2011a}, SKOS \cite{w3-skos-primer}), hash vs slash, HTTP status codes and PID redirection strategies \cite{sauermannCoolURIsSemantic2011}.
 
 \hypertarget{sec:ld-web}{%
-\subsubsubsection{Linked Data: Rebuilding the Web of Data}\label{sec:ld-web}}
+\subsubsection{Linked Data: Rebuilding the Web of Data}\label{sec:ld-web}}
 
 The \textbf{Linked Data} concept \cite{bizerLinkedDataStory2009a} was kickstarted as a set of best practices \cite{LinkedDataDesign} to bring the Web aspect back into focus. Crucially to Linked Data is the \emph{reuse of existing URIs}, rather than making new identifiers. This means a loosening of the semantic restrictions previously applied, and an emphasis on building navigable data resources, rather than elaborate graph representations.
 
@@ -169,23 +169,15 @@ We have chosen to investigate using this framework as it covers the higher level
 \caption{Considering FDO and Web according to the quality levels of the Interoperability Framework for Fast Data \cite{delgadoInteroperabilityFrameworkDistributed2016a}.
 \label{tbl:fdo-web-interoperability-framework}}\tabularnewline
 \toprule
-\begin{minipage}[b]{\linewidth}\raggedright
-\emph{Quality}
-\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
-FDO w/ DOIP
-\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
-Web w/ Linked Data
-\end{minipage} \\
+\emph{Quality} & 
+FDO w/ DOIP & 
+Web w/ Linked Data \\
 \midrule
 \endfirsthead
 \toprule
-\begin{minipage}[b]{\linewidth}\raggedright
-\emph{Quality}
-\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
-FDO w/ DOIP
-\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
-Web w/ Linked Data
-\end{minipage} \\
+\emph{Quality} & 
+FDO w/ DOIP & 
+Web w/ Linked Data \\
 \midrule
 \endhead
 \textbf{Symbiotic}: \emph{to what extent multiple applications can agree to interact, align, collaborate or cooperate} & The purpose of FDO is to enable federated machine actionable digital objects for scholarly purposes, in practice this also requires agreement of or compatibility between FDO types. FDO encourages research communities to develop common type registries to be shared across instances. In current DOIP practice, each service have their own types, attributes and operations. The wider symbiosis is consistent use of PIDs. & The Web is loosely coupled and encourages collaboration and linking by URL. In practice, REST APIs \cite{pubs/dissertation} end up being mandated centrally by dominant (often commercial) providers \cite{fieldingReflectionsRESTArchitectural2017a}, which clients are required to use as-is with special code per service. Use of Linked Data enables common tooling and semantic mapping across differences. \\
@@ -209,7 +201,7 @@ In terms of connectivity and the deployment of applications, the Web has a pleth
 It's also a question as to whether a highly constrained protocol revolving around persistent identifiers is in fact necessary. For example, DOIs are mostly resolved on the web \cite{DOIResolutionDocumentation} using HTTP redirects with the common \texttt{https://doi.org/} prefix, hiding their Handle nature as an implementation detail \cite{DOIHandbookResolution}.
 
 \hypertarget{mapping-of-metamodel-concepts}{%
-\subsubsubsection{Mapping of Metamodel concepts}\label{mapping-of-metamodel-concepts}}
+\subsubsection{Mapping of Metamodel concepts}\label{mapping-of-metamodel-concepts}}
 
 The Interoperability Framework for Fast Data also provides a brief \emph{metamodel} which we use in Table \vref{tbl:metamodel-concepts} to map and examplify corresponding concepts in FDO's DOIP realization and the Web using HTTP semantics \cite{rfc9110}.
 
@@ -220,23 +212,15 @@ The Interoperability Framework for Fast Data also provides a brief \emph{metamod
 \caption{Mapping the Metamodel concepts from the Interoperability Framework for Fast Data \cite{delgadoInteroperabilityFrameworkDistributed2016a} to equivalent concepts for FDO and Web.
 \label{tbl:metamodel-concepts}}\tabularnewline
 \toprule
-\begin{minipage}[b]{\linewidth}\centering
-Metamodel concept
-\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
-FDO/DOIP concept
-\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
-Web/HTTP concept
-\end{minipage} \\
+Metamodel concept & 
+FDO/DOIP concept &
+Web/HTTP concept \\
 \midrule
 \endfirsthead
 \toprule
-\begin{minipage}[b]{\linewidth}\centering
-Metamodel concept
-\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
-FDO/DOIP concept
-\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
-Web/HTTP concept
-\end{minipage} \\
+Metamodel concept & 
+FDO/DOIP concept & 
+Web/HTTP concept \\
 \midrule
 \endhead
 Resource & FDO/DO & Resource \\
@@ -271,31 +255,19 @@ The FAIR Digital Object guidelines \cite{boninoFAIRDigitalObject} sets out recom
 \caption{Checking FDO guidelines \cite{boninoFAIRDigitalObject,fdo-RequirementSpec} against its current implementations as DOIP \cite{foundationDigitalObjectInterface} and Linked Data Platform (LDP) \cite{FDOFramework}, with suggestions for required additions.
 \label{tbl:fdo-checks}}\tabularnewline
 \toprule
-\begin{minipage}[b]{\linewidth}\centering
-\textbf{FDO Guideline}
-\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
-DOIP 2.0
-\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
-FDO suggestions
-\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
-Linked Data Platform
-\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
-LDP suggestion
-\end{minipage} \\
+\textbf{FDO Guideline} & 
+DOIP 2.0 & 
+FDO suggestions & 
+Linked Data Platform & 
+LDP suggestion \\
 \midrule
 \endfirsthead
 \toprule
-\begin{minipage}[b]{\linewidth}\centering
-\textbf{FDO Guideline}
-\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
-DOIP 2.0
-\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
-FDO suggestions
-\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
-Linked Data Platform
-\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
-LDP suggestion
-\end{minipage} \\
+\textbf{FDO Guideline} & 
+DOIP 2.0 & 
+FDO suggestions & 
+Linked Data Platform & 
+LDP suggestion \\
 \midrule
 \endhead
 G1: \emph{invest for many decades} & Handle system stable for 20 years, DOIP 2.0 since 2017. & Ensure FDO types will not be protocol-bound as DOIP might be updated/replaced & HTTP stable for 30 years, Semantic Web for 20 years. \texttt{http://} URIs replaced by \texttt{https://}. & Keep flexibility of RDF serialisation formats which may change more frequently \\
@@ -368,23 +340,15 @@ For this purpose, we here utillise the Comparison Framework for Middleware Infra
 \caption{Comparing FAIR Digital Object (with the DOIP 2.0 protocol \cite{13TcbsZF6}) and Web technologies (using Linked Data) as middleware infrastructures \cite{hRzcHhPD}
 \label{tbl:fdo-web-middleware}}\tabularnewline
 \toprule
-\begin{minipage}[b]{\linewidth}\raggedright
-\emph{Quality}
-\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
-FDO w/ DOIP
-\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
-Web w/ Linked Data
-\end{minipage} \\
+\emph{Quality} & 
+FDO w/ DOIP & 
+Web w/ Linked Data \\
 \midrule
 \endfirsthead
 \toprule
-\begin{minipage}[b]{\linewidth}\raggedright
-\emph{Quality}
-\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
-FDO w/ DOIP
-\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
-Web w/ Linked Data
-\end{minipage} \\
+\emph{Quality} & 
+FDO w/ DOIP & 
+Web w/ Linked Data \\
 \midrule
 \endhead
 \textbf{Openness}: \emph{framework enable extension of applications} & FDOs can be cross-linked using PIDs, pointing to multiple FDO endpoints. Custom DOIP operations can be exposed, although it is unclear if these can be outside the FDO server. PID minting requires Handle.net prefix subscription, or use of services like \href{https://datacite.org/}{Datacite}, \href{https://eudat.eu/services/userdoc/b2handle}{B2Handle}. & The Web is inherently open and made by cross-linked URLs. Participation requires DNS domain purchase (many free alternatives also exists). PID minting can be free using PURL/ARK services, or can use DOI/Handle with HTTP redirects. \\
@@ -444,35 +408,21 @@ Here we evaluate to what extent the FDO guidelines and its implementation with D
 \caption{Assessing RDA's FAIR Data Maturity Model \cite{1GrKTFaK2,UzQhqk0M} (first 2 columns) against the FDO guidelines \cite{RwvirqWg}, FDO implemented with the protocol DOIPv2 \cite{13TcbsZF6}, Linked Data Platform (LDP) \cite{7szz7dwO} and examples from Linked Data practices in general. (--- indicates \emph{Unspecified}, may be possible with additional conventions)
 \label{tbl:fair-data-maturity-model}}\tabularnewline
 \toprule
-\begin{minipage}[b]{\linewidth}\raggedright
-FAIR ID
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-Indicator
-\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
-FDO guidelines
-\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
-FDO/DOIP
-\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
-FDO/LDP
-\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
-Linked Data examples
-\end{minipage} \\
+FAIR ID &
+Indicator &
+FDO guidelines &
+FDO/DOIP &
+FDO/LDP &
+Linked Data examples \\
 \midrule
 \endfirsthead
 \toprule
-\begin{minipage}[b]{\linewidth}\raggedright
-FAIR ID
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-Indicator
-\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
-FDO guidelines
-\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
-FDO/DOIP
-\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
-FDO/LDP
-\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
-Linked Data examples
-\end{minipage} \\
+FAIR ID &
+Indicator &
+FDO guidelines &
+FDO/DOIP &
+FDO/LDP &
+Linked Data examples \\
 \midrule
 \endhead
 RDA-F1-01M & Metadata is identified by a persistent identifier & FDOF4 & Optional \emph{Metadata FDO} w/separate PID & Content-negotiation to URL, not required to be PID & Metadata typically don't have own PID \\
@@ -558,15 +508,10 @@ The EOSC Interoperability Framework \cite[][section 3.6]{corchoEOSCInteroperabil
   >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.3056}}
   >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.3056}}@{}}
 \toprule
-\begin{minipage}[b]{\linewidth}\raggedright
-Layer
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-Recommendation
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-FDO
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-Linked Data
-\end{minipage} \\
+Layer &
+Recommendation &
+FDO &
+Linked Data \\
 \midrule
 \endhead
 Technical & Open Specification & FDO specifications are semi-open, process gradually more transparent & Open and transparent standard processes through W3C \& IETF \\
