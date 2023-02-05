@@ -21,9 +21,7 @@ bioinformatics, digital humanities and regulatory sciences. By applying
 of making research outputs FAIR while also enhancing research
 reproducibility.
 
-
-\hypertarget{introduction}{%
-\subsection{Introduction}\label{introduction}}
+\subsection{Introduction}\label{introduction}
 
 The move towards Open Science has increased the need and demand for the
 publication of artefacts of the research process
@@ -54,7 +52,7 @@ practices for reproducible research software
 of containers). While these platforms are useful, experience has shown
 that it is important to put greater emphasis on the interconnection of
 the multiple artefacts that make up the research process
-{\cite{ch5-71}.
+\cite{ch5-71}.
 
 The notion of \textbf{Research Objects}
 \cite{ch5-12}
@@ -85,15 +83,9 @@ making multiple types of research artefacts FAIR. Specifically, the
 contributions of this paper are as follows:
 
 \begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
-\tightlist
-\item
-  An introduction to RO-Crate, its purpose and context;
-\item
-  A guide to the RO-Crate community and tooling;
-\item
-  Examples of RO-Crate usage, demonstrating its value as connective
-  tissue for different artefacts from different communities.
+  \item[1.] An introduction to RO-Crate, its purpose and context;
+  \item[2.] A guide to the RO-Crate community and tooling;
+  \item[3.] Examples of RO-Crate usage, demonstrating its value as connective tissue for different artefacts from different communities.
 \end{enumerate}
 
 The rest of this paper is organised as follows. We first describe
@@ -105,8 +97,7 @@ diverse set of domains. Finally, we present related work and conclude
 with some remarks including RO-Crate highlights and future work. The
 appendix adds a formal definition of RO-Crate using First-Order logic.
 
-\hypertarget{rocrate}{%
-\subsection{RO-Crate}\label{rocrate}}
+\subsection{RO-Crate}\label{rocrate}
 
 RO-Crate aims to provide an approach to packaging research artefacts
 with their metadata that can be easily adopted. To illustrate this, let
@@ -136,45 +127,31 @@ automatically access and reason about an object, are crucial and lead to
 the need for explicit metadata about the contents of the folder,
 describing each and linking them together.
 
-Examples of metadata descriptions across a
-\href{https://rdamsc.bath.ac.uk/scheme-index}{wide range of domains}
-abound within the literature, both in research data management
-\cite{Amorim 2016}
-\cite{ch5-46}
-\cite{ch5-75} and within
-\href{https://www.loc.gov/librarians/standards}{library and information
-systems} \cite{Mai Chan 1995}
-\cite{ch5-127}. However, many
-of these approaches require knowledge of metadata schemas, particular
-annotation systems, or the use of complex software stacks. Indeed,
-particularly within research, these requirements have led to a lack of
-adoption and growing frustration with current tooling and specifications
-\cite{ch5-94}
-\cite{ch5-119}
-\cite{ch5-102}.
+Examples of metadata descriptions across a wide range of
+domains\footnote{\url{https://rdamsc.bath.ac.uk/scheme-index}} abound within the
+literature, both in research data management
+\cite{Amorim 2016,ch5-46,ch5-75}
+and within library and information
+systems\footnote{\url{https://www.loc.gov/librarians/standards}} \cite{Mai Chan 1995,ch5-127}. However, many of these approaches require
+knowledge of metadata schemas, particular annotation systems, or the
+use of complex software stacks. Indeed, particularly within research,
+these requirements have led to a lack of adoption and growing
+frustration with current tooling and specifications
+\cite{ch5-94,ch5-119,ch5-102}.
 
 RO-Crate seeks to address this complexity by:
 
 \begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
-\tightlist
-\item
-  being conceptually simple and easy to understand for developers;
-\item
-  providing strong, easy tooling for integration into community
-  projects;
-\item
-  providing a strong and opinionated guide regarding current best
-  practices;
-\item
-  adopting de-facto standards that are widely used on the Web.
+  \item[1.] being conceptually simple and easy to understand for developers;
+  \item[2.] providing strong, easy tooling for integration into community projects;
+  \item[3.] providing a strong and opinionated guide regarding current best practices;
+  \item[4.] adopting de-facto standards that are widely used on the Web.
 \end{enumerate}
 
 In the following sections we demonstrate how the RO-Crate specification
 and ecosystem achieve these goals.
 
-\hypertarget{methodology}{%
-\subsubsection{Development Methodology}\label{methodology}}
+\subsubsection{Development Methodology}\label{methodology}
 
 It is a good question as to what base level we assume for `conceptually
 simple'. We take simplicity to apply at two levels: for the
@@ -191,19 +168,15 @@ was \textbf{developer friendliness}.
 We assumed a developer familiar with making Web applications with JSON
 data (who would then learn how to make \emph{RO-Crate JSON-LD}), which
 informed core design choices for our JSON-level documentation approach
-and RO-Crate serialization (section on
-\protect\hyperlink{implementation}{implementation}). Our group of early
+and RO-Crate serialization (section \vref{sec:implementation}). Our group of early
 adopters, growing as the community evolved, drove the RO-Crate
 requirements and provided feedback through our multiple communication
-channels including bi-monthly meetings, which we describe in section on
-\protect\hyperlink{community}{community} along with the established
-norms.
+channels including bi-monthly meetings, which we describe in section \vref}sec:community} along with the established norms.
 
 Addressing the simplicity of understanding and engaging with RO-Crate by
 data practitioners is through the platforms, for example with
-interactive tools (section \protect\hyperlink{tooling}{RO-Crate
-tooling}) like
-\href{https://arkisto-platform.github.io/describo/}{Describo} \cite{ch5-78} and
+interactive tools (section \vref{sec:tooling}) like
+Describo\footnote{\url{https://arkisto-platform.github.io/describo/}} \cite{ch5-78} and
 Jupyter notebooks
 \cite{ch5-70}, and by
 close discussions with domain scientists on how to appropriately capture
@@ -211,16 +184,15 @@ what they determine to be relevant metadata. This ultimately requires a
 new type of awareness and learning material separate from developer
 specifications, focusing on the simplicity of extensibility to serve the
 user needs, along with user-driven development of new RO-Crate Profiles
-specific for their needs (section on \protect\hyperlink{inuse}{in use}).
+specific for their needs (section \vref{sec:inuse}).
 
-\hypertarget{conceptual}{%
-\subsubsection{Conceptual Definition}\label{conceptual}}
+\subsubsection{Conceptual Definition}\label{conceptual}
 
 A key premise of RO-Crate is the existence of a wide variety of
 resources on the Web that can help describe research. As such, RO-Crate
 relies on the Linked Data principles
 \cite{ch5-63}.
-\protect\hyperlink{fig:conceptual}{Figure 1} shows the main conceptual
+Figure \vref{fig:conceptual} shows the main conceptual
 elements involved in an RO-Crate: The RO-Crate Metadata File (top)
 describes the Research Object using structured metadata including
 external references, coupled with the contained artefacts (bottom)
@@ -231,39 +203,35 @@ The conceptual notion of a \emph{Research Object}
 is thus realised with the RO-Crate model and serialised using Linked
 Data constructs within the RO-Crate metadata file.
 
-\{\{\textless{} figure src=``ro-crate-overview.svg''
-link=``ro-crate-overview.svg'' id=``fig:conceptual'' width=``100\%''
-title=``Conceptual RO-Crate Overview'' caption=``A \emph{Persistent
-Identifier} (PID)
-\cite{ch5-86} points to
-a \emph{Research Object} (RO), which may be archived using different
-packaging approaches like BagIt
-\cite{ch5-74}, OCFL
-\href{https://ocfl.io/1.0/spec/}{{[}96{]}}, git or ZIP. The RO is
-described within a \emph{RO-Crate Metadata File}, providing identifiers
-for \emph{authors} using ORCID, \emph{organisations} using Research
-Organization Registry (ROR)
-\cite{ch5-79} and licences such as
-Creative Commons using SPDX identifiers. The \emph{RO-Crate content} is
-further described with additional metadata following a Linked Data
-approach. Data can be embedded files and directories, as well as links
-to external Web resources, PIDs and nested RO-Crates.'' \textgreater\}\}
+\begin{figure}%[t!]
+  \includegraphics{content/images/ro-crate-overview.pdf}
+  \caption{Conceptual overview of RO-Crate. A \emph{Persistent
+  Identifier} (PID) \cite{ch5-86} points to a
+  \emph{Research Object} (RO), which may be archived using different
+  packaging approaches like BagIt \cite{ch5-74}, OCFL \cite
+  {ch5-96}, git or ZIP. The RO is described within a \emph{RO-Crate
+  Metadata File}, providing identifiers for \emph{authors} using ORCID,
+  \emph{organisations} using Research Organization Registry (ROR) \cite
+  {ch5-79} and licences such as Creative Commons using SPDX
+  identifiers. The \emph{RO-Crate content} is further described with
+  additional metadata following a Linked Data approach. Data can be
+  embedded files and directories, as well as links to external Web
+  resources, PIDs and nested RO-Crates.}
+  \label{fig:conceptual}
+\end{figure}
 
-\hypertarget{linkeddata}{%
-\paragraph{Linked Data as a foundation}\label{linkeddata}}
+\subsubsubsection{Linked Data as a foundation}\label{linkeddata}
 
-The \textbf{Linked Data} principles
-\cite{Bizer 2011} (use of
-IRIs\footnote{To execute the wrapped tool, a containerized workflow
-  engine would need \emph{nested containers} which are not generally
-  recommended for security reasons. It is possible to work around this
-  limitation using \href{https://sylabs.io/singularity/}{Singularity} or
-  \href{https://docs.bioexcel.eu/cwl-best-practice-guide/devpractice/containers/conda.html}{Conda}.}
-to identify resources (i.e.~artefacts), resolvable via HTTP, enriched
-with metadata and linked to each other) are core to RO-Crate; therefore
-IRIs are used to identify an RO-Crate, its constituent parts and
-metadata descriptions, and the properties and classes used in the
-metadata.
+The \textbf{Linked Data} principles \cite{Bizer 2011}
+(use of IRIs\footnote{\textbf{IRI}s \cite{rfc3987} are a generalisation
+ of \textit{URI}s
+(which include well-known http/https URLs), permitting international
+Unicode characters without percent encoding, commonly used on the
+browser address bar and in HTML5.} to identify resources (i.e. artefacts), resolvable via
+HTTP, enriched with metadata and linked to each other) are core to
+RO-Crate; therefore IRIs are used to identify an RO-Crate, its
+constituent parts and metadata descriptions, and the properties and
+classes used in the metadata.
 
 RO-Crates are \emph{self-described} and follow the Linked Data
 principles to describe all of their resources in both human and machine
@@ -274,33 +242,26 @@ two resources are defined with links.
 The foundation of Linked Data and shared vocabularies also means that
 multiple RO-Crates and other Linked Data resources can be indexed,
 combined, queried, validated or transformed using existing Semantic Web
-technologies such as
-\href{https://www.w3.org/TR/sparql11-overview}{SPARQL},
-\href{https://www.w3.org/TR/shacl/}{SHACL} and well established
-\emph{knowledge graph} triple stores like
-\href{https://jena.apache.org/}{Apache Jena} and
-\href{https://www.ontotext.com/products/graphdb/}{OntoText GraphDB}.
+technologies such as SPARQL,\footnote{\url{https://www.w3.org/TR/sparql11-overview}}
+SHACL\footnote{\url{https://www.w3.org/TR/shacl/}} and well established \textit{knowledge
+graph} triple stores like Apache Jena\footnote{\url{https://jena.apache.org/}} and
+OntoText GraphDB.\footnote{\url{https://www.ontotext.com/products/graphdb/}}
 
-The possibilities of consuming\footnote{Some consideration is needed in
-  processing of RO-Crates as knowledge graphs, e.g.~establishing
-  absolute IRIs for files inside a ZIP archive, detailed
-  \href{https://www.researchobject.org/ro-crate/1.1/appendix/relative-uris.html}{in
-  the RO-Crate specification}} RO-Crate metadata with such powerful
-tools gives another strong reason for using Linked Data as a foundation.
-This use of mature Web\footnote{Note that an RO-Crate is not required to
-  be published on the Web, see section on
-  \protect\hyperlink{selfdescribed}{self-described}.} technologies also
-means its developers and consumers are not restricted to the Research
-Object aspects that have already been specified by the RO-Crate
-community, but can extend and integrate RO-Crate in multiple
-standardised ways.
+The possibilities of consuming\footnote{Some consideration is needed in processing of RO-Crates as
+knowledge graphs, e.g. establishing absolute IRIs for files inside a
+ZIP archive, detailed in the RO-Crate specification: \url
+{https://www.researchobject.org/ro-crate/1.1/appendix/relative-uris.html}.} RO-Crate metadata with such
+powerful tools gives another strong reason for using Linked Data as a
+foundation. This use of mature Web\footnote{Note that an RO-Crate is not required to be published on the
+Web, see Section~\ref{sec:selfdescribed}.} technologies also means its
+developers and consumers are not restricted to the Research Object
+aspects that have already been specified by the RO-Crate community, but
+can extend and integrate RO-Crate in multiple standardised ways.
 
-\hypertarget{selfdescribed}{%
-\paragraph{RO-Crate is a self-described container}\label{selfdescribed}}
 
-An
-\href{https://www.researchobject.org/ro-crate/1.1/structure.html\#ro-crate-metadata-file-ro-crate-metadatajson}{RO-Crate
-is defined} as a self-described \textbf{Root Data Entity} that describes
+\subsubsubsection{RO-Crate is a self-described container}\label{selfdescribed}
+
+An RO-Crate is defined\footnote{\url{https://www.researchobject.org/ro-crate/1.1/structure.html\#ro-crate-metadata-file-ro-crate-metadatajson}} as a self-described \textbf{Root Data Entity} that describes
 and contains \emph{data entities}, which are further described by
 referencing \emph{contextual entities}. A \textbf{data entity} is either
 a \emph{file} (i.e.~a byte sequence stored on disk somewhere) or a
@@ -315,51 +276,40 @@ software and text.
 
 The Root Data Entity is a directory, the \emph{RO-Crate Root},
 identified by the presence of the \textbf{RO-Crate Metadata File}
-\texttt{ro-crate-metadata.json} (top of
-\protect\hyperlink{fig:conceptual}{Figure 1}. This file fdescribes the
+\texttt{ro-crate-metadata.json} (top of Figure \vref{fig:conceptual}). This file describes the
 RO-Crate using Linked Data, its content and related metadata using
-Linked Data in JSON-LD format
-\href{https://www.w3.org/TR/2014/REC-json-ld-20140116/}{{[}112{]}}. This
+Linked Data in JSON-LD format \cite{ch5-112}. This
 is a W3C standard RDF serialisation that has become popular; it is easy
 to read by humans while also offering some advantages for data exchange
 on the Internet. JSON-LD, a subset of the widely supported and
-well-known JSON format, has tooling available for many
-\href{https://json-ld.org/\#developers}{programming languages}.
+well-known JSON format, has tooling available for many programming languages.\footnote{\url{https://json-ld.org/\#developers}}
 
-The minimal
-\href{https://www.researchobject.org/ro-crate/1.1/root-data-entity.html\#direct-properties-of-the-root-data-entity}{requirements
-for the root data entity metadata} are \texttt{name},
-\texttt{description} and \texttt{datePublished}, as well as a contextual
-entity identifying its \texttt{license} --- additional metadata are
-commonly added to entities depending on the purpose of the particular
-RO-Crate.
+The minimal requirements for the root data entity
+metadata\footnote{\url{https://www.researchobject.org/ro-crate/1.1/root-data-entity.html\#direct-properties-of-the-root-data-entity}}
+are \texttt{name}, \texttt{description} and \texttt{datePublished}, as well as a contextual
+entity identifying its \texttt{license} -- additional metadata are commonly
+added to entities depending on the purpose of the particular RO-Crate.
 
 RO-Crates can be stored, transferred or published in multiple ways,
 e.g.~BagIt \cite{ch5-74}, Oxford
-Common File Layout \href{https://ocfl.io/1.0/spec/}{{[}96{]}} (OCFL),
+Common File Layout \cite{ch5-96} (OCFL),
 downloadable ZIP archives in Zenodo or through dedicated online
 repositories, as well as published directly on the Web, e.g.~using
-\href{https://pages.github.com/}{GitHub Pages}. Combined with Linked
-Data identifiers, this caters for a diverse set of storage and access
+GitHub Pages.\footnote{\url{https://pages.github.com/}} Combined with Linked Data identifiers, this caters for a diverse set of storage and access
 requirements across different scientific domains, from metagenomics
 workflows producing hundreds of gigabytes of genome data to cultural
 heritage records with access restrictions for personally identifiable
-data. Specific \emph{RO-Crate profiles} (section on
-\protect\hyperlink{profiles}{extensibility}) may constrain serialization
+data. Specific \emph{RO-Crate profiles} (Section~\ref{sec:profiles}) may constrain serialization
 and publication expectations, and require additional contextual types
 and properties.
 
-\hypertarget{contextualentities}{%
-\paragraph{Data Entities are described using Contextual
-Entities}\label{contextualentities}}
+\subsubsubsection{Data Entities are described using Contextual
+Entities}\label{contextualentities}
 
-RO-Crate distinguishes between
-\href{https://www.researchobject.org/ro-crate/1.1/contextual-entities.html\#contextual-vs-data-entities}{data
-and contextual entities} in a similar way to HTTP terminology's early
+RO-Crate distinguishes between data and contextual
+entities\footnote{\url{https://www.researchobject.org/ro-crate/1.1/contextual-entities.html\#contextual-vs-data-entities}} in a similar way to HTTP terminology's early
 attempt to separate \emph{information} (data) and \emph{non-information}
-(contextual) resources
-\href{https://www.w3.org/2001/tag/doc/httpRange-14/2007-08-31/HttpRange-14.html}{{[}120{]}}.
-Data entities are usually files and directories located by relative IRI
+(contextual) resources \cite{ch5-120}. Data entities are usually files and directories located by relative IRI
 references within the RO-Crate Root, but they can also be Web resources
 or restricted data identified with absolute IRIs, including
 \emph{Persistent Identifiers} (PIDs)
@@ -376,8 +326,7 @@ to refer to their academic work.
 A particular IRI may appear as a contextual entity in one RO-Crate and
 as a data entity in another; the distinction lies in the fact that data
 entities can be considered to be \emph{contained} or captured by that
-RO-Crate (\emph{RO Content} in \protect\hyperlink{fig:conceptual}{Figure
-1}, while contextual entities mainly \emph{explain} an RO-Crate or its
+RO-Crate (\textit{RO Content} in Fig.~\ref{fig:conceptual}), while contextual entities mainly \emph{explain} an RO-Crate or its
 content (although this distinction is not a formal requirement).
 
 In RO-Crate, a referenced contextual entity (e.g.~a person identified by
@@ -385,39 +334,41 @@ ORCID) should always be described within the RO-Crate Metadata File with
 at least a \emph{type} and \emph{name}, even where their PID might
 resolve to further Linked Data. This is so that clients are not required
 to follow every link for presentation purposes, for instance HTML
-rendering. Similarly any imported
-\href{https://www.researchobject.org/ro-crate/1.1/appendix/jsonld.html\#extending-ro-crate}{extension
-terms} would themselves also have a human-readable description in the
+rendering. Similarly any imported extension
+terms\footnote{\url{https://www.researchobject.org/ro-crate/1.1/appendix/jsonld.html\#extending-ro-crate}} would themselves also have a human-readable description in the
 case where their PID does not directly resolve to human-readable
 documentation.
 
-\protect\hyperlink{fig:uml}{Figure 2} shows a simplified UML class
+Figure \vref{fig:uml} shows a simplified UML class
 diagram of RO-Crate, highlighting the different types of data entities
 and contextual entities that can be aggregated and related. While an
 RO-Crate would usually contain one or more data entities
 (\texttt{hasPart}), it may also be a pure aggregation of contextual
 entities (\texttt{mentions}).
 
-\{\{\textless{} figure src=``ro-crate-uml.svg''
-link=``ro-crate-uml.svg'' id=``fig:uml'' width=``100\%''
-title=``Simplified UML class diagram of RO-Crate'' caption=``The
-\emph{RO-Crate Metadata File} conforms to a version of the
-specification; and contains a JSON-LD graph
-\href{https://www.w3.org/TR/2014/REC-json-ld-20140116/}{{[}112{]}} that
-describes the entities that make up the RO-Crate. The \emph{RO-Crate
-Root Data Entity} represent the Research Object as a dataset. The
-RO-Crate aggregates \emph{data entities} (\texttt{hasPart}) which are
-further described using \emph{contextual entities} (which may include
-aggregated and non-aggregated data entities). Multiple types and
-relations from Schema.org allow annotations to be more specific,
-including figures, nested datasets, computational workflows, people,
-organisations, instruments and places. Contextual entities not otherwise
-cross-referenced from other entities' properties (\emph{describes}) can
-be grouped under the root entity (\texttt{mentions}).'' \textgreater\}\}
+\begin{figure}%[t!]
+  \includegraphics[width=0.9\textwidth]{content/images/ro-crate-uml.pdf}
+  \caption{Simplified UML class diagram of RO-Crate. The \emph
+  {RO-Crate Metadata File} conforms to a version of the specification;
+  and contains a JSON-LD graph \cite{ch5-112} that describes the
+  entities that make up the RO-Crate. The \emph{RO-Crate Root Data
+  Entity} represent the Research Object as a dataset. The RO-Crate
+  aggregates \emph{data entities} (\texttt{hasPart}) which are further
+  described using \emph{contextual entities} (which may include
+  aggregated and non-aggregated data entities). Multiple types and
+  relations from Schema.org allow annotations to be more specific,
+  including figures, nested datasets, computational workflows, people,
+  organisations, instruments and places. Contextual entities not
+  otherwise cross-referenced from other entities' properties (\emph
+  {describes}) can be grouped under the root entity (\texttt{mentions}).}
+  \label{fig:uml}
+\end{figure}
 
-\hypertarget{recommendedpractices}{%
-\paragraph{Guide through Recommended
-Practices}\label{recommendedpractices}}
+%%% SYNCED 
+
+
+\subsubsubsection{Guide through Recommended
+Practices}\label{recommendedpractices}
 
 RO-Crate as a specification aims to build a set of recommended practices
 on how to practically apply existing standards in a common way to
@@ -443,8 +394,7 @@ the steep learning curve otherwise associated with Semantic Web
 adaptation, like development of ontologies, identifiers, namespaces, and
 RDF serialization choices.
 
-\hypertarget{simplicity}{%
-\paragraph{Ensuring Simplicity}\label{simplicity}}
+\subsubsection{Ensuring Simplicity}\label{simplicity}
 
 One aim of RO-Crate is to be conceptually simple. This simplicity has
 been repeatedly checked and confirmed through an informal community
@@ -481,8 +431,7 @@ containment of files residing within the RO-Crate Root directory on a
 given storage system, as the RO-Crate data entities may include any data
 resource globally identifiable using IRIs.
 
-\hypertarget{profiles}{%
-\paragraph{Extensibility and RO-Crate profiles}\label{profiles}}
+\subsubsection{Extensibility and RO-Crate profiles}\label{profiles}
 
 The RO-Crate specification provides a core set of conventions to
 describe research outputs using types and properties applicable across
@@ -533,9 +482,8 @@ Section on \protect\hyperlink{inuse}{in use} examines the observed
 specializations of RO-Crate use in several domains and their emerging
 profiles.
 
-\hypertarget{implementation}{%
 \subsubsection{Technical implementation of the RO-Crate
-model}\label{implementation}}
+model}\label{implementation}
 
 The RO-Crate conceptual model has been realised using JSON-LD and
 Schema.org in a prescriptive form as discussed in section on
@@ -559,8 +507,7 @@ without specialised expertise or large RDF software frameworks. A large
 part of the RO-Crate specification is therefore dedicated to describing
 the acceptable subset of JSON structures.
 
-\hypertarget{jsonld}{%
-\paragraph{RO-Crate JSON-LD}\label{jsonld}}
+\subsubsubsection{RO-Crate JSON-LD}\label{jsonld}
 
 RO-Crate
 \href{https://www.researchobject.org/ro-crate/1.1/appendix/jsonld.html}{mandates}
