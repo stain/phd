@@ -4,7 +4,9 @@
 %
 \documentclass[
   british,
+  a4paper
 ]{book}
+\usepackage[DIV=10,BCOR=2mm,headinclude=false,footinclude=false]{typearea}
 
 \usepackage{amsmath,amssymb}
 \usepackage{lmodern}
@@ -17,6 +19,18 @@
   \usepackage{unicode-math}
   \defaultfontfeatures{Scale=MatchLowercase}
   \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+  \setmainfont[Ligatures=TeX]{TeX Gyre Pagella} 
+  \def\@@ptsize{11pt}
+  \setlength{\parskip}{2ex plus 0.5ex minus 0.2ex}
+\setlength{\parindent}{0pt}
+\linespread{1.5}
+
+
+\RequirePackage[palatino]{quotchap}
+\renewcommand*{\chapterheadstartvskip}{\vspace*{-1.2\baselineskip}}
+\renewcommand*{\chapterheadendvskip}{\vspace{1.5\baselineskip}}
+\definecolor{chaptergrey}{rgb}{0.8600, 0.0150, 0.4100}
+
 \fi
 % Use upquote if available, for straight quotes in verbatim environments
 \IfFileExists{upquote.sty}{\usepackage{upquote}}{}
@@ -131,6 +145,8 @@ Object, RO-Crate},
 %\usepackage{tmultirow}
 
 \usepackage{varioref}
+% Rotating pages
+\usepackage{pdflscape}
 
 %% END packages etc.
 
