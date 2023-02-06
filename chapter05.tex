@@ -204,7 +204,7 @@ is thus realised with the RO-Crate model and serialised using Linked
 Data constructs within the RO-Crate metadata file.
 
 \begin{figure}%[t!]
-  \includegraphics{content/images/ro-crate-overview.pdf}
+  \includegraphics{figures/ch05/ro-crate-overview.pdf}
   \caption{Conceptual overview of RO-Crate. A \emph{Persistent
   Identifier} (PID) \cite{ch5-86} points to a
   \emph{Research Object} (RO), which may be archived using different
@@ -347,7 +347,7 @@ RO-Crate would usually contain one or more data entities
 entities (\texttt{mentions}).
 
 \begin{figure}%[t!]
-  \includegraphics[width=0.9\textwidth]{content/images/ro-crate-uml.pdf}
+  \includegraphics[width=0.9\textwidth]{figures/ch05/ro-crate-uml.pdf}
   \caption{Simplified UML class diagram of RO-Crate. The \emph
   {RO-Crate Metadata File} conforms to a version of the specification;
   and contains a JSON-LD graph \cite{ch5-112} that describes the
@@ -363,8 +363,6 @@ entities (\texttt{mentions}).
   {describes}) can be grouped under the root entity (\texttt{mentions}).}
   \label{ch5:fig:uml}
 \end{figure}
-
-%%% SYNCED 
 
 
 \subsubsubsection{Guide through Recommended
@@ -1184,8 +1182,7 @@ check for its \texttt{spec\_version}.
 
 We can then consider how a BCO and its referenced artefacts can be
 packaged and transferred following FAIR principles.
-\href{https://biocompute-objects.github.io/bco-ro-crate/}{\textbf{BCO
-RO-Crate}} \cite{ch5-109},
+\textbf{BCO RO-Crate}\footnote{\url{https://biocompute-objects.github.io/bco-ro-crate/}} \cite{ch5-109},
 part of the BioCompute Object user guides, defines a set of best
 practices for wrapping a BCO with a workflow, together with its exemplar
 outputs in an RO-Crate, which then provides typing and additional
@@ -1223,7 +1220,7 @@ purpose (BCO), interoperable workflow definition (CWL) and tool
 distribution (Docker).
 
 \begin{figure}%[t]
-  \includegraphics{content/images/ro-crate-bco-sep-of-concerns.pdf}
+  \includegraphics{figures/ch05/ro-crate-bco-sep-of-concerns.pdf}
   \caption{Separation of Concerns in BCO RO-Crate. BioCompute
   Object (IEEE2791) is a JSON file that structurally explains the purpose
   and implementation of a computational workflow, for instance
@@ -1430,7 +1427,7 @@ will be designed and implemented using standards and commonly-used
 approaches to make it interoperable and reusable by others.
 
 \begin{figure}%[t!]
-  \includegraphics{content/images/data-commons-ro-crate-figure-5.pdf}
+  \includegraphics{figures/ch05/data-commons-ro-crate-figure-5.pdf}
   \caption{One aspect of Harvard Data Commons. Automatic
   encapsulation and deposit of artefacts from data management tools used
   during active research at the Harvard Dataverse repository.}
