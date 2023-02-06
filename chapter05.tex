@@ -171,7 +171,7 @@ informed core design choices for our JSON-level documentation approach
 and RO-Crate serialization (section \vref{ch5:implementation}). Our group of early
 adopters, growing as the community evolved, drove the RO-Crate
 requirements and provided feedback through our multiple communication
-channels including bi-monthly meetings, which we describe in section \vref}sec:community} along with the established norms.
+channels including bi-monthly meetings, which we describe in section \vref{ch5:community} along with the established norms.
 
 Addressing the simplicity of understanding and engaging with RO-Crate by
 data practitioners is through the platforms, for example with
@@ -484,9 +484,9 @@ profiles.
 model}\label{ch5:implementation}
 
 The RO-Crate conceptual model has been realised using JSON-LD and
-Schema.org in a prescriptive form as discussed in Section~\ref{sec:conceptual}. These technical
+Schema.org in a prescriptive form as discussed in Section~\vref{ch5:conceptual}. These technical
 choices were made to cater for simplicity from a developer perspective
-(as introduced in Section~\ref{sec:methodology}).
+(as introduced in Section~\vref{ch5:methodology}).
 
 JSON-LD\footnote{\url{https://json-ld.org/}} \cite{ch5-112}
 provides a way to express Linked Data as a JSON structure, where a
@@ -1249,24 +1249,24 @@ distribution (Docker).
 Heritage}\label{ch5:culturalheritage}}
 
 The Pacific And Regional Archive for Digital Sources in Endangered
-Cultures (\href{https://www.paradisec.org.au/}{PARADISEC})
-\cite{ch5-114} maintains a
-repository of more than 500,000 files documenting endangered languages
-across more than 16,000 items, collected and digitised over many years
-by researchers interviewing and recording native speakers across the
-region.
+Cultures (PARADISEC\footnote{\url{https://www.paradisec.org.au/}}) \cite{ch5-114}
+maintains a repository of more than 500,000 files documenting
+endangered languages across more than 16,000 items, collected and
+digitised over many years by researchers interviewing and recording
+native speakers across the region.
 
-The \href{https://mod.paradisec.org.au/}{Modern PARADISEC demonstrator}
-has been
-\href{https://arkisto-platform.github.io/case-studies/paradisec/}{proposed}
+The Modern PARADISEC demonstrator\footnote{\url{https://mod.paradisec.org.au/}} has
+been
+proposed\footnote{\url{https://arkisto-platform.github.io/case-studies/paradisec/}}
 as an update to the 18 year old infrastructure, to also help long-term
 preservation of these artefacts in their digital form. The demonstrator
 uses RO-Crate to describe the overall structure and to capture the
 metadata of each item. The existing PARADISEC data collection has been
 ported and captured as RO-Crates. A Web portal then exposes the
 repository and its entries by indexing the RO-Crate metadata files,
-presenting a domain-specific view of the items --- the RO-Crate is
+presenting a domain-specific view of the items -- the RO-Crate is
 ``hidden'' and does not change the user interface.
+
 
 The PARADISEC use case takes advantage of several RO-Crate features and
 principles. Firstly, the transcribed metadata are now independent of the
@@ -1276,7 +1276,8 @@ PARADISEC-specific terms.
 
 In this approach, RO-Crate is the holder of itemised metadata, stored in
 regular files that are organised using
-\href{https://ocfl.io/1.0/spec/}{Oxford Common File Layout} (OCFL)
+Oxford Common File
+Layout\footnote{\url{https://ocfl.io/1.0/spec/}} (OCFL)
 \cite{ch5-96}, which ensures file integrity
 and versioning on a regular shared file system. This lightweight
 infrastructure also gives flexibility for future developments and
@@ -1288,14 +1289,13 @@ storing the generic RO-Crate HTML preview
 \cite{ch5-95}. Such
 human-readable rendering of RO-Crates can be hosted as static files by
 any Web server, in line with the approach taken by the Endings
-Project.\footnote{The \href{https://endings.uvic.ca/}{Endings Project}
+Project.\footnote{The Endings Project \url{https://endings.uvic.ca/} 
   is a five-year project funded by the Social Sciences and Humanities
   Research Council (SSHRC) that is creating tools, principles, policies
   and recommendations for digital scholarship practitioners to create
   accessible, stable, long-lasting resources in the humanities.}
 
-\hypertarget{dmp}{%
-\subsubsection{Machine-actionable Data Management Plans}\label{ch5:dmp}}
+\subsubsection{Machine-actionable Data Management Plans}\label{ch5:dmp}
 
 Machine-actionable Data Management Plans (maDMPs) have been proposed as
 an improvement to automate FAIR data management tasks in research
@@ -1325,8 +1325,6 @@ a maDMP can be converted to a RO-Crate, or vice versa. In
 functionality caters for two use cases:
 
 \begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
-\tightlist
 \item
   Start a skeleton data management plan based on an existing RO-Crate
   dataset, e.g.~an RO-Crate from WorkflowHub.
@@ -1342,9 +1340,8 @@ What is significant to note in this approach is the importance of
 achievable, and how RO-Crate can fit into earlier stages of the research
 life cycle.
 
-\hypertarget{institutionalrepos}{%
-\subsubsection{Institutional data repositories -- Harvard Data
-Commons}\label{ch5:institutionalrepos}}
+\subsubsection{Institutional data repositories -- Harvard Data Commons}
+\label{ch5:institutionalrepos}}
 
 The concept of a \textbf{Data Commons} for research collaboration was
 originally defined as \emph{``cyber-infrastructure that co-locates data,
@@ -1361,17 +1358,17 @@ disseminating and preserving regular, but also large or sensitive
 datasets, and other research assets. Multiple initiatives were
 undertaken to create Data Commons on national, research, and
 institutional levels. For example, the Australian Research Data Commons
-(\href{https://ardc.edu.au}{ARDC})
+(ARDC)\footnote{\url{https://ardc.edu.au/}} 
 \cite{Barker 2019} is a national
 initiative that enables local researchers and industries to access
 computing infrastructure, training, and curated datasets for
-data-intensive research. NCI's \href{https://gdc.cancer.gov/}{Genomic
-Data Commons} (GDC)
+data-intensive research. NCI's Genomic
+Data Commons\footnote{\url{https://gdc.cancer.gov/}} (GDC)
 \cite{ch5-65} provides
 the cancer research community with access to a vast volume of genomic
 and clinical data. Initiatives such as
-\href{https://www.rd-alliance.org/groups/global-open-research-commons-ig}{Research
-Data Alliance (RDA) Global Open Research Commons} propose standards for
+Research Data Alliance (RDA) Global Open Research Commons\footnote{\url{https://www.rd-alliance.org/groups/global-open-research-commons-ig}}
+propose standards for
 the implementation of Data Commons to prevent them becoming ``data
 silos'' and thus, enable interoperability from one Data Commons to
 another.
@@ -1381,8 +1378,9 @@ another.
 challenges of data access and cross-disciplinary research within a
 research institution. It brings together multiple institutional schools,
 libraries, computing centres and the
-\href{https://dataverse.harvard.edu/}{Harvard Dataverse} data
-repository. \href{https://dataverse.org/}{Dataverse}
+Harvard
+Dataverse\footnote{\url{https://dataverse.harvard.edu/}} data repository.
+Dataverse\footnote{\url{https://dataverse.org/}}
 \cite{Crosas 2011} is a free
 and open-source software platform to archive, share and cite research
 data. The Harvard Dataverse repository is the largest of 70 Dataverse
@@ -1392,8 +1390,6 @@ collaboration and data discoverability and management within the
 university, Harvard Data Commons has the following primary objectives:
 
 \begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
-\tightlist
 \item
   the integration of Harvard Research Computing with Harvard Dataverse
   by leveraging Globus endpoints
@@ -1407,7 +1403,7 @@ university, Harvard Data Commons has the following primary objectives:
   repository to enable reproducibility and reuse, and
 \item
   interation of repositories supported by Harvard, which include
-  \href{https://dash.harvard.edu/}{DASH}, the open access institutional
+  DASH\footnote{\url{https://dash.harvard.edu/}}, the open access institutional
   repository, the Digital Repository Services (DRS) for preserving
   digital asset collections, and the Harvard Dataverse.
 \end{enumerate}
@@ -1415,14 +1411,13 @@ university, Harvard Data Commons has the following primary objectives:
 Particularly relevant to this article is the second objective of the
 Harvard Data Commons, which aims to support the deposit of research
 artefacts to Harvard Dataverse with sufficient information in the
-metadata to allow their future reuse (\protect\hyperlink{fig:hdc}{Figure
-4}). To support the incorporation of data, code, and other artefacts
+metadata to allow their future reuse (Figure \vref{fig:hdc}). To support the incorporation of data, code, and other artefacts
 from various institutional infrastructures, Harvard Data Commons is
 currently working on RO-Crate adaptation. The RO-Crate metadata provides
 the necessary structure to make all research artefacts FAIR. The
 Dataverse software already has
-\href{https://guides.dataverse.org/en/latest/user/appendix.html}{extensive
-support for metadata}, including the Data Documentation Initiative
+extensive
+support\footnote{\url{https://guides.dataverse.org/en/latest/user/appendix.html}} for metadata, including the Data Documentation Initiative
 (DDI), Dublin Core, DataCite, and Schema.org. Incorporating RO-Crate,
 which has the flexibility to describe a wide range of research
 resources, will facilitate their seamless transition from one
@@ -1434,15 +1429,15 @@ applied to other universities or research organisations. The Commons
 will be designed and implemented using standards and commonly-used
 approaches to make it interoperable and reusable by others.
 
-\{\{\textless{} figure src=``data-commons-ro-crate-figure-5.svg''
-link=``data-commons-ro-crate-figure-5.svg'' width=``100\%''
-id=``fig:hdc'' title=``One aspect of Harvard Data Commons''
-caption=``Automatic encapsulation and deposit of artefacts from data
-management tools used during active research at the Harvard Dataverse
-repository.'' \textgreater\}\}
+\begin{figure}%[t!]
+  \includegraphics{content/images/data-commons-ro-crate-figure-5.pdf}
+  \caption{One aspect of Harvard Data Commons. Automatic
+  encapsulation and deposit of artefacts from data management tools used
+  during active research at the Harvard Dataverse repository.}
+  \label{fig:hdc}
+\end{figure}
 
-\hypertarget{relatedwork}{%
-\subsection{Related Work}\label{ch5:relatedwork}}
+\subsection{Related Work}\label{ch5:relatedwork}
 
 With the increasing digitisation of research processes, there has been a
 significant call for the wider adoption of interoperable sharing of data
@@ -1466,16 +1461,15 @@ centralised repositories; 2) packaging approaches similar to RO-Crate;
 and 3) bundling the computational workflow around a scientific
 experiment.
 
-\hypertarget{bundling-and-packaging-digital-research-artefacts}{%
 \subsubsection{Bundling and Packaging Digital Research
-Artefacts}\label{ch5:bundling-and-packaging-digital-research-artefacts}}
+Artefacts}\label{ch5:bundling-and-packaging-digital-research-artefacts}
 
 Early work making the case for publishing compound scholarly
 communication units
 \cite{ch5-117}
 led to the development of the
-\href{http://www.openarchives.org/ore/1.0/primer}{Object Re-Use and
-Exchange model} (OAI-ORE), providing a structured \textbf{resource map}
+Object Re-Use and Exchange
+model\footnote{\url{http://www.openarchives.org/ore/1.0/primer}} (OAI-ORE), providing a structured \textbf{resource map}
 of the digital artefacts that together support a scholarly output.
 
 The challenge of describing computational workflows was one of the main
@@ -1545,16 +1539,15 @@ RO Bundle was also used for storing detailed workflow run provenance
 (TavernaPROV
 \cite{ch5-110}).
 
-RO-Bundle evolved to \href{https://w3id.org/ro/bagit}{Research Object
-BagIt archives}, a variant of RO Bundle as a BagIt archive
+RO-Bundle evolved to Research Object
+BagIt archives\footnote{\url{https://w3id.org/ro/bagit}}, a variant of RO Bundle as a BagIt archive
 \cite{ch5-74}, used by Big Data Bags
 \cite{Chard 2016},
 CWLProv \cite{ch5-68} and
 WholeTale \cite{ch5-76}
 \cite{Chard 2019}.
 
-\hypertarget{fair-digital-objects}{%
-\subsubsection{FAIR Digital Objects}\label{ch5:fair-digital-objects}}
+\subsubsection{FAIR Digital Objects}\label{ch5:fair-digital-objects}
 
 FAIR Digital Objects (FDO)
 \cite{De Smedt 2020} have been
@@ -1570,16 +1563,14 @@ Digital Object typed as a Collection aggregates other DOs by reference.
 
 The Digital Object Interface Protocol \cite{DONA 2018}
 can be considered an ``abstract protocol'' of requirements, DOs could be
-implemented in multiple ways. One suggested implementation is the
-\href{https://fairdigitalobjectframework.org/}{FAIR Digital Object
-Framework}, based on HTTP and the Linked Data Principles. While there is
+implemented in multiple ways. One suggested implementation is the 
+FAIR Digital Object
+Framework,\footnote{\url{https://fairdigitalobjectframework.org/}} based on HTTP and the Linked Data Principles. While there is
 agreement on using PIDs based on DOIs, consensus on how to represent
 common metadata, core types and collections as FDOs has not yet been
 reached. We argue that RO-Crate can play an important role for FDOs:
 
 \begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
-\tightlist
 \item
   By providing a predictable and extensible serialisation of structured
   metadata.
@@ -1606,8 +1597,7 @@ through a range of Web-based scenarios. A \emph{FAIR profile of
 RO-Crate} (e.g.~enforcing PID usage) will fit well within a FAIR Digital
 Object ecosystem.
 
-\hypertarget{packaging-workflows}{%
-\subsubsection{Packaging Workflows}\label{ch5:packaging-workflows}}
+\subsubsection{Packaging Workflows}\label{ch5:packaging-workflows}
 
 The use of computational workflows, typically combining a chain of tools
 in an analytical pipeline, has gained prominence in particular in the
@@ -1644,8 +1634,8 @@ double-columns with twenty four additional references, supported by the
 availability of data on an FTP server (60 GB)
 \cite{EMBL-EBI 2019}
 and of open source code in GitHub
-\href{https://github.com/Finn-Lab/MGS-gut}{Finn-Lab/MGS-gut}
-\cite{EMBL-EBI 2020}, including the
+Finn-Lab/MGS-gut\footnote{\url{https://github.com/Finn-Lab/MGS-gut}}
+\cite{finn-lab-mgsgut}, including the
 pipeline as shell scripts and associated analysis scripts in R and
 Python.
 
@@ -1690,25 +1680,23 @@ BioContainers
 \cite{da Veiga Leprevost 2017}, and
 support by Linux distributions (e.g.~Debian Med
 \cite{ch5-89}). As of
-November 2021, more than 9,000 software packages are available
-\href{https://anaconda.org/bioconda/}{in BioConda alone}, and 10,000
-containers \href{https://biocontainers.pro/\#/registry}{in
-BioContainers}.
+November 2021, more than 9,000 software packages are available in
+BioConda alone,\footnote{\url{https://anaconda.org/bioconda/}} and 10,000 containers
+in BioContainers.\footnote{\url{https://biocontainers.pro/\#/registry}}
 
 Docker and Conda have been integrated into workflow systems such as
 Snakemake
 \cite{ch5-73}, Galaxy
 \cite{Afgan 2018} and Nextflow
-\cite{Di Tommaso 2017}, meaning a downloaded
-workflow definition can now be executed on a ``blank'' machine (except
-for the workflow engine) with the underlying analytical tools installed
-on demand. Even with using containers there is a reproducibility
-challenge, for instance
-\href{https://www.docker.com/blog/docker-hub-image-retention-policy-delayed-and-subscription-updates/}{Docker
-Hub's retention policy will expire container images after six months},
+\cite{Di Tommaso 2017}, meaning
+a downloaded workflow definition can now be executed on a ``blank''
+machine (except for the workflow engine) with the underlying analytical
+tools installed on demand. Even with using containers there is a
+reproducibility challenge, for instance Docker Hub's retention policy
+will expire container images after six
+months,\footnote{\url{https://www.docker.com/blog/docker-hub-image-retention-policy-delayed-and-subscription-updates/}}
 or a lack of recording versions of transitive dependencies of Conda
-packages could cause incompatibilities if the packages are subsequently
-updated.
+packages could cause incompatibilities if the packages are subsequently updated.
 
 These container and package systems only capture small amounts of
 metadata\footnote{Docker and Conda can use \emph{build recipes}, a set
@@ -1771,12 +1759,10 @@ new and improved profiles and tools are being continuously added to the
 RO-Crate landscape, making it easier for adopters to find examples and
 support for their own use case.
 
-\hypertarget{strictness-vs-flexibility}{%
 \subsubsection{Strictness vs
-flexibility}\label{ch5:strictness-vs-flexibility}}
+flexibility}\label{ch5:strictness-vs-flexibility}
 
-There is always a tradeoff between flexibility and strictness
-{[}{[}116{]}(https://www.persistent-identifier.nl/urn:nbn:nl:ui:18-14511{]}
+There is always a tradeoff between flexibility and strictness \cite{ch5-116}
 when deciding on semantics of metadata models. Strict requirements make
 it easier for users and code to consume and populate a model, by
 reducing choices and having mandated ``slots'' to fill in. But such
@@ -1788,16 +1774,14 @@ provides a common metadata framework that encourages extensions.
 However, just like the RO-Crate specification can be thought of as a
 \emph{core profile} of Schema.org in JSON-LD, we cannot stress the
 importance of also establishing domain-specific RO-Crate profiles and
-conventions, as explored in sections
-\protect\hyperlink{profiles}{extensibility} and
-\protect\hyperlink{inuse}{profiles in use}. Specialization comes
+conventions, as explored in Sections~\cref{sec:profiles} and \vref
+{sec:inuse}. Specialization comes
 hand-in-hand with the principle of \emph{graceful degradation}; RO-Crate
 applications and users are free to choose the semantic detail level they
 participate at, as long as they follow the common syntactic
 requirements.
 
-\hypertarget{futurework}{%
-\subsection{Future Work}\label{ch5:futurework}}
+\subsection{Future Work}\label{ch5:futurework}
 
 The direction of future RO-Crate work is determined by the community
 around it as a collaborative effort. We currently plan on further
@@ -1824,32 +1808,29 @@ We operate in an open community where future and potential users of
 RO-Crate are actively welcomed to participate and contribute feedback
 and requirements. In addition, we are targeting a wider audience through
 extensive
-\href{https://www.researchobject.org/ro-crate/outreach.html}{outreach
-activities} and by initiating new connections. Recent contacts include
+outreach
+activities\footnote{\url{https://www.researchobject.org/ro-crate/outreach.html}} and by initiating new connections. Recent contacts include
 American Geophysical Union (AGU) on Data Citation Reliquary
 \cite{Agarwal 2021}, National
 Institute of Standards and Technology (NIST) on material science, and
-\href{https://inveniosoftware.org/products/rdm/}{InvenioRDM} used by the
+InvenioRDM\footnote{\url{https://inveniosoftware.org/products/rdm/}} used by the
 Zenodo data repository. New Horizon Europe projects adapting RO-Crate
-include \href{https://by-covid.org/}{BY-COVID}, which aims to improve
-FAIR access to data on COVID-19 and other infectious diseases.
+include BY-COVID,\footnote{\url{https://by-covid.org/}} which aims to improve FAIR
+access to data on COVID-19 and other infectious diseases.
 
 The main addition in the upcoming 1.2 release of the RO-Crate
 specifications will be the formalization of
-\href{https://www.researchobject.org/ro-crate/1.2-DRAFT/profiles}{profiles}
+profiles\footnote{\url{https://www.researchobject.org/ro-crate/1.2-DRAFT/profiles}}
 for different categories of crates. Additional entity types have been
-requested by users, e.g.~workflow runs, business workflows, containers
+requested by users, e.g. workflow runs, business workflows, containers
 and software packages, tabular data structures; these are not always
-matched well with existing Schema.org types but may benefit from other
-vocabularies or even separate metadata files, e.g.~from
-\href{https://frictionlessdata.io/}{Frictionless Data}. We will be
-further aligning and collaborating with related research artefact
-description efforts like \href{https://codemeta.github.io/}{CodeMeta}
-for software metadata,
-\href{https://science-on-schema.org/}{Science-on-Schema.org}
-\cite{ch5-66} for datasets,
-\href{https://fairdo.org/}{FAIR Digital Objects}
-\cite{De Smedt 2020} and
-activities in \href{https://www.eosc.eu/task-force-faq}{EOSC task
-forces} including the EOSC Interoperability Framework
-\cite{ch5-75}.
+matched well with existing Schema.org types, but may benefit from other
+vocabularies or even separate metadata files, e.g. from Frictionless
+Data.\footnote{\url{https://frictionlessdata.io/}} We will be further aligning
+and collaborating with related research artefact description efforts
+like CodeMeta\footnote{\url{https://codemeta.github.io/}} for software metadata,
+Science-on-Schema.org\footnote{\url{https://science-on-schema.org/}}
+\cite{ch5-66} for datasets, FAIR Digital
+Objects\footnote{\url{https://fairdo.org/}} \cite{De Smedt 2020} and
+activities in EOSC task forces\footnote{\url{https://www.eosc.eu/task-force-faq}}
+including the EOSC Interoperability Framework \cite{ch5-75}.
