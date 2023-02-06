@@ -1,6 +1,6 @@
 
-#@default_files = ('main.tex');
-@default_files = ('thesis.tex');
+@default_files = ('main.tex');
+#@default_files = ('thesis.tex');
 
 
 $aux_dir='./build/';
