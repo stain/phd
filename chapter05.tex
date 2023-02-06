@@ -192,7 +192,7 @@ A key premise of RO-Crate is the existence of a wide variety of
 resources on the Web that can help describe research. As such, RO-Crate
 relies on the Linked Data principles
 \cite{ch5-63}.
-Figure \vref{fig:conceptual} shows the main conceptual
+Figure \vref{ch5:fig:conceptual} shows the main conceptual
 elements involved in an RO-Crate: The RO-Crate Metadata File (top)
 describes the Research Object using structured metadata including
 external references, coupled with the contained artefacts (bottom)
@@ -202,6 +202,7 @@ The conceptual notion of a \emph{Research Object}
 \cite{ch5-12}
 is thus realised with the RO-Crate model and serialised using Linked
 Data constructs within the RO-Crate metadata file.
+
 
 \begin{figure}%[t!]
   \includegraphics{figures/ch05/ro-crate-overview.pdf}
@@ -220,7 +221,7 @@ Data constructs within the RO-Crate metadata file.
   \label{ch5:fig:conceptual}
 \end{figure}
 
-\subsubsubsection{Linked Data as a foundation}\label{ch5:linkeddata}
+\paragraph{Linked Data as a foundation}\label{ch5:linkeddata}
 
 The \textbf{Linked Data} principles \cite{Bizer 2011}
 (use of IRIs\footnote{\textbf{IRI}s \cite{rfc3987} are a generalisation
@@ -259,7 +260,7 @@ aspects that have already been specified by the RO-Crate community, but
 can extend and integrate RO-Crate in multiple standardised ways.
 
 
-\subsubsubsection{RO-Crate is a self-described container}\label{ch5:selfdescribed}
+\paragraph{RO-Crate is a self-described container}\label{ch5:selfdescribed}
 
 An RO-Crate is defined\footnote{\url{https://www.researchobject.org/ro-crate/1.1/structure.html\#ro-crate-metadata-file-ro-crate-metadatajson}} as a self-described \textbf{Root Data Entity} that describes
 and contains \emph{data entities}, which are further described by
@@ -276,7 +277,7 @@ software and text.
 
 The Root Data Entity is a directory, the \emph{RO-Crate Root},
 identified by the presence of the \textbf{RO-Crate Metadata File}
-\texttt{ro-crate-metadata.json} (top of Figure \vref{fig:conceptual}). This file describes the
+\texttt{ro-crate-metadata.json} (top of Figure \vref{ch5:fig:conceptual}). This file describes the
 RO-Crate using Linked Data, its content and related metadata using
 Linked Data in JSON-LD format \cite{ch5-112}. This
 is a W3C standard RDF serialisation that has become popular; it is easy
@@ -303,7 +304,7 @@ data. Specific \emph{RO-Crate profiles} (Section~\vref{ch5:profiles}) may constr
 and publication expectations, and require additional contextual types
 and properties.
 
-\subsubsubsection{Data Entities are described using Contextual
+\paragraph{Data Entities are described using Contextual
 Entities}\label{ch5:contextualentities}
 
 RO-Crate distinguishes between data and contextual
@@ -326,7 +327,7 @@ to refer to their academic work.
 A particular IRI may appear as a contextual entity in one RO-Crate and
 as a data entity in another; the distinction lies in the fact that data
 entities can be considered to be \emph{contained} or captured by that
-RO-Crate (\textit{RO Content} in Fig.~\ref{fig:conceptual}), while contextual entities mainly \emph{explain} an RO-Crate or its
+RO-Crate (\textit{RO Content} in Fig.~\ref{ch5:fig:conceptual}), while contextual entities mainly \emph{explain} an RO-Crate or its
 content (although this distinction is not a formal requirement).
 
 In RO-Crate, a referenced contextual entity (e.g.~a person identified by
@@ -339,33 +340,33 @@ terms\footnote{\url{https://www.researchobject.org/ro-crate/1.1/appendix/jsonld.
 case where their PID does not directly resolve to human-readable
 documentation.
 
-Figure \vref{fig:uml} shows a simplified UML class
+Figure \vref{ch5:fig:uml} shows a simplified UML class
 diagram of RO-Crate, highlighting the different types of data entities
 and contextual entities that can be aggregated and related. While an
 RO-Crate would usually contain one or more data entities
 (\texttt{hasPart}), it may also be a pure aggregation of contextual
 entities (\texttt{mentions}).
 
-\begin{figure}%[t!]
+\begin{figure}
   \includegraphics[width=0.9\textwidth]{figures/ch05/ro-crate-uml.pdf}
-  \caption{Simplified UML class diagram of RO-Crate. The \emph
-  {RO-Crate Metadata File} conforms to a version of the specification;
-  and contains a JSON-LD graph \cite{ch5-112} that describes the
-  entities that make up the RO-Crate. The \emph{RO-Crate Root Data
-  Entity} represent the Research Object as a dataset. The RO-Crate
-  aggregates \emph{data entities} (\texttt{hasPart}) which are further
-  described using \emph{contextual entities} (which may include
-  aggregated and non-aggregated data entities). Multiple types and
-  relations from Schema.org allow annotations to be more specific,
-  including figures, nested datasets, computational workflows, people,
-  organisations, instruments and places. Contextual entities not
-  otherwise cross-referenced from other entities' properties (\emph
-  {describes}) can be grouped under the root entity (\texttt{mentions}).}
-  \label{ch5:fig:uml}
+  \caption{Simplified UML class diagram of RO-Crate. The 
+\emph{RO-Crate Metadata File} conforms to a version of the specification;
+and contains a JSON-LD graph \cite{ch5-112} that describes the
+entities that make up the RO-Crate. The \emph{RO-Crate Root Data
+Entity} represent the Research Object as a dataset. The RO-Crate
+aggregates \emph{data entities} (\texttt{hasPart}) which are further
+described using \emph{contextual entities} (which may include
+aggregated and non-aggregated data entities). Multiple types and
+relations from Schema.org allow annotations to be more specific,
+including figures, nested datasets, computational workflows, people,
+organisations, instruments and places. Contextual entities not
+otherwise cross-referenced from other entities' properties 
+(\emph{describes}) can be grouped under the root entity (\texttt{mentions}).}
+\label{ch5:fig:uml}
 \end{figure}
 
 
-\subsubsubsection{Guide through Recommended
+\paragraph{Guide through Recommended
 Practices}\label{ch5:recommendedpractices}
 
 RO-Crate as a specification aims to build a set of recommended practices
@@ -500,7 +501,7 @@ without specialised expertise or large RDF software frameworks. A large
 part of the RO-Crate specification is therefore dedicated to describing
 the acceptable subset of JSON structures.
 
-\subsubsubsection{RO-Crate JSON-LD}\label{ch5:jsonld}
+\paragraph{RO-Crate JSON-LD}\label{ch5:jsonld}
 
 RO-Crate
 mandates\footnote{\url{https://www.researchobject.org/ro-crate/1.1/appendix/jsonld.html}}
@@ -606,7 +607,7 @@ of these. If processed as JSON-LD, this forms an RDF graph by matching
 the \texttt{@id} IRIs and applying the \texttt{@context} mapping to
 Schema.org terms. \normalsize
 
-\subsubsubsection{Flattened JSON-LD}\label{ch5:flattened-json-ld}}
+\paragraph{Flattened JSON-LD}\label{ch5:flattened-json-ld}
 
 When JSON-LD 1.0 \cite{ch5-112}
 was
@@ -642,7 +643,7 @@ forces RO-Crate generators to consciously
 consider
 existing IRIs and identifiers.\footnote{\url{https://www.researchobject.org/ro-crate/1.1/appendix/jsonld.html\#describing-entities-in-json-ld}}
 
-\subsubsubsection{JSON-LD context}\label{ch5:json-ld-context}
+\paragraph{JSON-LD context}\label{ch5:json-ld-context}
 
 In JSON-LD, the \texttt{@context} is a reference to another JSON-LD
 document that provides mapping from JSON keys to Linked Data term IRIs,
@@ -760,7 +761,7 @@ widely deployed.
 This notion of catering to ``developer user experience'' is an example
 of the set of norms that have developed and now define the community.
 
-\subsubsubsection{Norms}\label{ch5:norms}
+\paragraph{Norms}\label{ch5:norms}
 
 The RO-Crate community is driven by informal conventions and notions
 that are prevalent but not neccessarily written down. Here, we distil
@@ -805,7 +806,7 @@ FAIR best practices and current developments such as data citations,
 PIDs, open repositories and recommendations for sharing research outputs
 and software.
 
-\subsubsubsection{Open Platforms}\label{ch5:open-platforms}
+\paragraph{Open Platforms}\label{ch5:open-platforms}
 
 The critical infrastructure that enables the community around RO-Crate
 is the use of open development platforms. This underpins the importance
@@ -1011,7 +1012,7 @@ Nextflow nf-core
 We here describe three different RO-Crate profiles developed for use
 with WorkflowHub.
 
-\subsubsubsection{Profile for describing workflows}
+\paragraph{Profile for describing workflows}
 \label{ch5:profile-for-describing-workflows}
 
 Being cross-domain, WorkflowHub has to cater for many different workflow
@@ -1099,7 +1100,7 @@ data, RO-Crates of \emph{exemplar workflow runs} serve as useful
 workflow documentation, as well as being an exchange mechanism that
 preserves FAIR metadata in a diverse workflow execution environment.
 
-\subsubsubsection{Profile for testing
+\paragraph{Profile for testing
 workflows}\label{ch5:profile-for-testing-workflows}
 
 The value of computational workflows, however, is potentially undermined
@@ -1194,7 +1195,7 @@ workflow and its run at an abstraction level suitable for a domain
 scientist, while the more open-ended RO-Crate describes the surroundings
 of the workflow, classifying and relating its resources and providing
 provenance of their existence beyond the BCO. This emerging
-\emph{separation of concerns} is shown in Figure \ref{fig:sep_concerns},
+\emph{separation of concerns} is shown in Figure \ref{ch5:fig:sep_concerns},
 and highlights how
 RO-Crate is used side-by-side of existing standards and tooling, even
 where there are apparent partial overlaps.
@@ -1237,7 +1238,7 @@ distribution (Docker).
   a BagIt whose checksum ensures completeness, combined with Big Data Bag
   \cite{Chart 2016} features to ``complete'' the
   bag with large external files such as the workflow outputs.}
-  \label{fig:sep_concerns}
+  \label{ch5:fig:sep_concerns}
 \end{figure}
 
 
@@ -1408,7 +1409,7 @@ university, Harvard Data Commons has the following primary objectives:
 Particularly relevant to this article is the second objective of the
 Harvard Data Commons, which aims to support the deposit of research
 artefacts to Harvard Dataverse with sufficient information in the
-metadata to allow their future reuse (Figure \vref{fig:hdc}). To support the incorporation of data, code, and other artefacts
+metadata to allow their future reuse (Figure \vref{ch5:fig:hdc}). To support the incorporation of data, code, and other artefacts
 from various institutional infrastructures, Harvard Data Commons is
 currently working on RO-Crate adaptation. The RO-Crate metadata provides
 the necessary structure to make all research artefacts FAIR. The
@@ -1431,7 +1432,7 @@ approaches to make it interoperable and reusable by others.
   \caption{One aspect of Harvard Data Commons. Automatic
   encapsulation and deposit of artefacts from data management tools used
   during active research at the Harvard Dataverse repository.}
-  \label{fig:hdc}
+  \label{ch5:fig:hdc}
 \end{figure}
 
 \subsection{Related Work}\label{ch5:relatedwork}
