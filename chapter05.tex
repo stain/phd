@@ -275,6 +275,7 @@ entity} as a byte sequence makes it possible to store a variety of
 research artefacts including not only data but also, for instance,
 software and text.
 
+
 The Root Data Entity is a directory, the \emph{RO-Crate Root},
 identified by the presence of the \textbf{RO-Crate Metadata File}
 \texttt{ro-crate-metadata.json} (top of Figure \vref{ch5:fig:conceptual}). This file describes the
@@ -348,8 +349,8 @@ RO-Crate would usually contain one or more data entities
 entities (\texttt{mentions}).
 
 \begin{figure}
-  \includegraphics[width=0.9\textwidth]{figures/ch05/ro-crate-uml.pdf}
-  \caption{Simplified UML class diagram of RO-Crate. The 
+\includegraphics[width=0.9\textwidth]{figures/ch05/ro-crate-uml.pdf}
+\caption{Simplified UML class diagram of RO-Crate. The 
 \emph{RO-Crate Metadata File} conforms to a version of the specification;
 and contains a JSON-LD graph \cite{ch5-112} that describes the
 entities that make up the RO-Crate. The \emph{RO-Crate Root Data
@@ -364,7 +365,6 @@ otherwise cross-referenced from other entities' properties
 (\emph{describes}) can be grouped under the root entity (\texttt{mentions}).}
 \label{ch5:fig:uml}
 \end{figure}
-
 
 \paragraph{Guide through Recommended
 Practices}\label{ch5:recommendedpractices}
@@ -414,7 +414,7 @@ vocabulary, and (ii) provide a community-wide PID namespace under
 maintained in GitHub.\footnote{\url{https://github.com/ResearchObject/ro-terms}}
 
 To further verify this idea of simplicity, we have formalised the
-RO-Crate definition (see \textit{Appendix~\vref{ch5:formaldefinition}}). An
+RO-Crate definition (see \textit{Appendix~\vref{formaldefinition}}). An
 important result of this exercise is that the underlying data structure
 of RO-Crate, although conceptually a graph, is represented as a
 depth-limited tree. This formalisation also emphasises the
@@ -569,7 +569,7 @@ containing data entities described using contextual entities.
   \caption{%\qq{}\protect\footnotemark[31]
   Simplified\protect\footnote{
     Recommended properties for types shown in
-    Listing \ref{lis1} also include
+    Listing \ref{ch5:lis1} also include
     \texttt{affiliation}, \texttt{citation}, \texttt{contactPoint},
     \texttt{description},
     \texttt{encodingFormat}, \texttt{funder}, \texttt{geo}, \texttt{identifier},
@@ -683,8 +683,7 @@ property. Notably this is exploited by the \textit{ro-crate-html-js}
 \cite{ch5-95} tool to provide reliable HTML rendering for
 otherwise unknown properties and types.
 
-
-\subsubsection{RO-Crate Community}\label{ch5:community}}
+\subsubsection{RO-Crate Community}\label{ch5:community}
 
 The RO-Crate conceptual model, implementation and best practices are
 developed by a growing community of researchers, developers and
@@ -1339,7 +1338,7 @@ achievable, and how RO-Crate can fit into earlier stages of the research
 life cycle.
 
 \subsubsection{Institutional data repositories -- Harvard Data Commons}
-\label{ch5:institutionalrepos}}
+\label{ch5:institutionalrepos}
 
 The concept of a \textbf{Data Commons} for research collaboration was
 originally defined as \emph{``cyber-infrastructure that co-locates data,
@@ -1772,7 +1771,7 @@ provides a common metadata framework that encourages extensions.
 However, just like the RO-Crate specification can be thought of as a
 \emph{core profile} of Schema.org in JSON-LD, we cannot stress the
 importance of also establishing domain-specific RO-Crate profiles and
-conventions, as explored in Sections~\cref{sec:profiles} and \vref
+conventions, as explored in Sections~\vref{sec:profiles} and \vref
 {sec:inuse}. Specialization comes
 hand-in-hand with the principle of \emph{graceful degradation}; RO-Crate
 applications and users are free to choose the semantic detail level they
