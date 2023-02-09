@@ -2,36 +2,26 @@
 \PassOptionsToPackage{unicode}{hyperref}
 \PassOptionsToPackage{hyphens}{url}
 %
-\documentclass[
-  british,
-  a4paper
-]{book}
+\documentclass[british,a4paper]{book}
 \usepackage[DIV=10,BCOR=2mm,headinclude=false,footinclude=false]{typearea}
 
 \usepackage{amsmath,amssymb}
-\usepackage{lmodern}
-\usepackage{ifxetex,ifluatex}
-\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
-  \usepackage[T1]{fontenc}
-  \usepackage[utf8]{inputenc}
-  \usepackage{textcomp} % provide euro and other symbols
-\else % if luatex or xetex
-  \usepackage{unicode-math}
-  \defaultfontfeatures{Scale=MatchLowercase}
-  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
-  \setmainfont[Ligatures=TeX]{TeX Gyre Pagella} 
-  \def\@@ptsize{11pt}
-  \setlength{\parskip}{2ex plus 0.5ex minus 0.2ex}
-\setlength{\parindent}{0pt}
-\linespread{1.2}
+%\usepackage{lmodern}
 
-
+\usepackage{unicode-math}
+\defaultfontfeatures{Scale=MatchLowercase}
+\defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
 \RequirePackage[palatino]{quotchap}
-\renewcommand*{\chapterheadstartvskip}{\vspace*{-1.2\baselineskip}}
-\renewcommand*{\chapterheadendvskip}{\vspace{1.5\baselineskip}}
+\setmainfont[Ligatures=TeX]{TeX Gyre Pagella} 
+\def\@@ptsize{11pt}
+\linespread{1.2}
+%\setlength{\parskip}{2ex plus 0.5ex minus 0.2ex}
+%\setlength{\parindent}{0pt}
+
+%\renewcommand*{\chapterheadstartvskip}{\vspace*{-1.2\baselineskip}}
+%\renewcommand*{\chapterheadendvskip}{\vspace{1.5\baselineskip}}
 \definecolor{chaptergrey}{rgb}{0.8600, 0.0150, 0.4100}
 
-\fi
 % Use upquote if available, for straight quotes in verbatim environments
 \IfFileExists{upquote.sty}{\usepackage{upquote}}{}
 \IfFileExists{microtype.sty}{% use microtype if available
@@ -39,29 +29,28 @@
   \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
 }{}
 \makeatletter
-\@ifundefined{KOMAClassName}{% if non-KOMA class
   \IfFileExists{parskip.sty}{%
     \usepackage{parskip}
   }{% else
     \setlength{\parindent}{0pt}
-    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
-}{% if KOMA class
-  \KOMAoptions{parskip=half}}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}
+}
 \makeatother
 \usepackage{xcolor}
 \IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
 \IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
 \hypersetup{
-  pdftitle={Chapter 11: Acknowledgements},
+  pdftitle={Stian's PhD thesis},
   pdfauthor={Stian Soiland-Reyes},
   pdflang={en-GB},
+  pdfkeywords={RO-Crate},
   pdfkeywords={Reproducibility, FAIR, FAIR Digital Object, RO-Crate},
   hidelinks,
   pdfcreator={LuaLaTeX}}
 
 \urlstyle{same} % disable monospaced font for URLs
+
 \usepackage{color}
-\usepackage{fancyvrb}
 
 \usepackage{longtable,booktabs,array}
 \usepackage{calc} % for calculating minipage widths
@@ -74,10 +63,11 @@
 \IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
 \makesavenoteenv{longtable}
 \setlength{\emergencystretch}{3em} % prevent overfull lines
-\providecommand{\tightlist}{%
+
+\providecommand{\tightlist}{% Left-over from pandoc, we want long lists!
 %  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}
 }
-%\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+
 \ifxetex
   % Load polyglossia as late as possible: uses bidi with RTL langages (e.g. Hebrew, Arabic)
   \usepackage{polyglossia}
@@ -113,7 +103,7 @@
 
 % for code
 \usepackage{listing}
-
+%% .. and figures
 \usepackage{graphicx}
 \usepackage[font=small,labelfont=bf]{caption}
 %% END packages etc.
@@ -178,8 +168,5 @@
 \include{summary}
 \chapter{Sammenvatting}
 \include{summary-nl}
-
-
-
 
 \end{document}
