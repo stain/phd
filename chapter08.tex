@@ -98,7 +98,7 @@ recognition, named entity recognition and language translation.
 
 Workflow technologies from the ELIXIR Research Infrastructure \cite{ch8-19},
 including Galaxy \cite{ch8-20}, Common Workflow Language \cite{ch8-21}, Research
-Object Crates (RO-Crates) \cite{ch8-22,ch8-23} and WorkflowHub \cite{ch8-24}, and
+Object Crates (RO-Crates) \cite{OCarragain 2019,ch8-23} and WorkflowHub \cite{ch8-24}, and
 selected tools are integrated in a cloud-based workflow platform for
 natural history specimens -- the `Specimen Data Refinery' \cite{ch8-1} that
 will become one of the main services to be offered by the planned DiSSCo
@@ -345,14 +345,22 @@ workflows) with other data -- often to be found from third-party sources
 -- derived from analysis and use of the specimen.
 
 openDS \cite{ch8-47} is the developing specification for open Digital
-Specimens and other related object types, defining: i) the logical
-structure and content of Digital Specimen (DS), Basic Image Object (BIO)
-and other object types, and the operations permitted on them; ii) the
-handling rules and behaviors governing digital specimen object
-operations in general; and iii) serialization and packaging as
-JavaScript Object Notation (JSON) for lightweight data interchange
-between systems, sub-systems and components of systems (for which, read
-`workflow components' \cite{ch8-48}. openDS is essential to future FAIR
+Specimens and other related object types, defining: 
+
+\begin{itemize}
+  \item The logical
+  structure and content of Digital Specimen (DS), Basic Image Object (BIO)
+  and other object types, and the operations permitted on them
+  \item The
+  handling rules and behaviors governing digital specimen object
+  operations in general
+  \item Serialization and packaging as
+  JavaScript Object Notation (JSON) for lightweight data interchange
+  between systems, sub-systems and components of systems (for which, read
+  `workflow components' \cite{ch8-48}. 
+\end{itemize}
+
+openDS is essential to future FAIR
 digitization of natural history collections and to Digital Specimens as
 self-standing digital objects on the Internet, amenable to computer
 processing. It contributes to the new transformative generation of FAIR
@@ -362,9 +370,8 @@ that is planned for the Distributed System of Scientific Collections
 
 Henceforth we refer to these as openDS FDOs.
 
-\hypertarget{fair-packaging-of-researchworkflow-objects-with-ro-crate}{%
 \paragraph{FAIR packaging of research/workflow objects with
-RO-Crate}\label{fair-packaging-of-researchworkflow-objects-with-ro-crate}}
+RO-Crate}\label{fair-packaging-of-researchworkflow-objects-with-ro-crate}
 
 The useful outcomes of research are not just traditional publications
 nor data products but everything that goes into and supports an
@@ -376,7 +383,7 @@ to describing and associating all of this content together in a
 machine-readable form so that it can be easily preserved, shared and
 exchanged. Workflow objects are a specific subclass of research objects.
 
-RO-Crate \cite{ch8-22,ch8-23} has been established as a community standard to
+RO-Crate \cite{OCarragain 2019,ch8-23} has been established as a community standard to
 practically achieve FAIR packaging of research objects with their
 structured metadata. Based on well-established Web standards, RO-Crate
 uses JSON-LD \cite{ch8-50} with \href{https://schema.org/}{Schema.org}
@@ -394,12 +401,10 @@ create and obtain the information they need to function.
 
 Henceforth, we refer to RO-Crate FDOs.
 
-\hypertarget{problem-description}{%
-\subsection{Problem Description}\label{problem-description}}
+\subsection{Problem Description}\label{problem-description}
 
-\hypertarget{automating-digitization-and-capturing-the-process}{%
 \subsubsection{Automating digitization and capturing the
-process}\label{automating-digitization-and-capturing-the-process}}
+process}\label{automating-digitization-and-capturing-the-process}
 
 
 In the lengthy history of collectors and museums curating artefacts and
@@ -578,9 +583,9 @@ according to specific need: image segmentation, barcode reading, optical
 character recognition, text contextualisation/entity recognition,
 geocoding, taxonomic linkage, people linkage, specimen condition
 checking, automated identification, and data export/conversion. Broadly
-speaking there are two main kinds of workflow: i) specimen workflows,
+speaking there are two main kinds of workflow: (i) specimen workflows,
 where the specimen itself is analysed for morphological traits, colour
-analysis, condition checking and automated identification; and ii) text
+analysis, condition checking and automated identification; and (ii) text
 and label workflows, where handwritten, typed or printed text from the
 image is read, named entities are classified, then linked to identifiers
 or enhanced through post processing.
