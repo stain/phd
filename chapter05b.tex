@@ -64,7 +64,7 @@ The $Root(r)$ is a type of $Dataset(r)$, and must as metadata have at least the 
 
 The concept of an $Entity(e)$ is introduced as being either a $DataEntity(e)$, a $ContextualEntity(e)$, or both\footnote{
     \url{https://www.researchobject.org/ro-crate/1.1/contextual-entities.html\#contextual-vs-data-entities}
-}. Any $Entity(e)$ must be typed with at least one $Class(c)$, and every $ContextualEntity(e)$ must also have a $name(e,n)$; this corresponds to expectations for any \emph{referenced contextual entity} (section \ref{sec:contextualentities}). 
+}. Any $Entity(e)$ must be typed with at least one $Class(c)$, and every $ContextualEntity(e)$ must also have a $name(e,n)$; this corresponds to expectations for any \emph{referenced contextual entity} (section \vref{ch5:contextualentities}). 
 
 For simplicity in this formalization (and to assist production rules below) $R$ is a constant representing a single RO-Crate, typically written to independent RO-Crate Metadata files. $R$ is used by $Mentions(R, e)$ to indicate that $e$ is an Entity described by the RO-Crate and therefore its metadata (a set of $Relation$ and $Attribute$ predicates) form part of the RO-Crate serialization. $Relation(s, p, o)$ and $Attribute(s, p, x)$ are defined as a \emph{subject—predicate—object} triple pattern from an $Entity(s)$ using a $Property(p)$ to either another $Entity(o)$ or a $Value(x)$ value.
 
@@ -108,7 +108,7 @@ The below is an example RO-Crate represented using the above formalisation, assu
 \end{eqnarray*}
 \normalsize
 
-Notable from this triple-like formalization is that a RO-Crate $R$ is fully represented as a tree at depth 2 helped by the use of $\mathbb{IRI}$  nodes. For instance the aggregation from the root entity $hasPart(\texttt{…interviews/>})$ is at same level as the data entity’s property $license(\texttt{…CC-BY-NC-4.0>})$ and that contextual entity’s attribute $ name(\text{…Non Commercial 4.0”})$. As shown in section \ref{sec:jsonld}, the RO-Crate Metadata File serialization is an equivalent shallow tree, although at depth 3 to cater for the JSON-LD preamble of \texttt{"@context"} and \texttt{"@graph"}.
+Notable from this triple-like formalization is that a RO-Crate $R$ is fully represented as a tree at depth 2 helped by the use of $\mathbb{IRI}$  nodes. For instance the aggregation from the root entity $hasPart(\texttt{…interviews/>})$ is at same level as the data entity’s property $license(\texttt{…CC-BY-NC-4.0>})$ and that contextual entity’s attribute $ name(\text{…Non Commercial 4.0”})$. As shown in section \vref{ch5:jsonld}, the RO-Crate Metadata File serialization is an equivalent shallow tree, although at depth 3 to cater for the JSON-LD preamble of \texttt{"@context"} and \texttt{"@graph"}.
 
 In reality many additional attributes and contextual types from Schema.org types like \url{http://schema.org/affiliation} and \url{http://schema.org/Organization} would be used to further describe the RO-Crate and its entities, but as these are optional (\textit{SHOULD} requirements) they do not form part of this formalization.
 
