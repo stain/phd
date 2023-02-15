@@ -27,7 +27,7 @@ systems} (\textbf{WfMS}) together with \emph{software packaging and
 containers} \cite{ch6-4} have been proposed as key ingredients for making
 research software usage \emph{FAIR} and reproducible \cite{ch6-5,ch6-6,Lamprecht 2019}.
 Recently it is also argued that computational workflows should also be
-treated as FAIR Digital Objects \cite{ch6-8} in their own right, with
+treated as FAIR Digital Objects \cite{De Smedt 2020} in their own right, with
 identifier, metadata \cite{ch6-2} and interoperability requirements \cite{ch6-9}.
 
 \href{https://bioexcel.eu/}{BioExcel}, a European Centre of Excellence
@@ -183,7 +183,7 @@ This simulation process involves a non-negligible number of steps, using
 a variety of biomolecular tools. The BioBB library was used to assemble
 this workflow, interconnecting building blocks using Python functions
 (Jupyter Notebook, Command Line Interface), auto-generated bindings
-(Galaxy \cite{ch6-18}, CWL \cite{ch6-19}, PyCOMPSs \cite{ch6-20}) or manually generated
+(Galaxy \cite{Afgan 2018}, CWL \cite{Crusoe 2022}, PyCOMPSs \cite{ch6-20}) or manually generated
 bindings (KNIME \cite{ch6-21}). Corresponding workflows for the different
 WfMS can be found in
 \href{https://workflowhub.eu/collections/3}{WorkflowHub} \cite{ch6-22,ch6-23,ch6-24,ch6-25,ch6-26}
@@ -269,7 +269,7 @@ The \href{https://toolshed.g2.bx.psu.edu/}{Galaxy toolshed} \cite{ch6-32} is
 likewise populated with different sets of tool wrappers that are largely
 made to be interoperable within a category.
 
-The \emph{Common Workflow Language} (\textbf{CWL}) \cite{ch6-19} has a strong
+The \emph{Common Workflow Language} (\textbf{CWL}) \cite{Crusoe 2022} has a strong
 emphasis on interoperable command line tool descriptions, with
 \href{https://www.commonwl.org/user_guide/07-containers/}{support for
 containers} and Conda packaging, as well as
@@ -351,7 +351,7 @@ workflows effectively are instantiations of the same canonical workflow.
 One challenge found is how to publish such canonical workflows in
 registries like the \href{https://workflowhub.eu/}{WorkflowHub}. The hub
 supports the registration of Digital Objects in the form of RO-Crate
-\cite{ch6-34}, with the option of abstract CWL for describing the canonical
+\cite{Soiland-Reyes 2022}, with the option of abstract CWL for describing the canonical
 workflow template, along with direct references to the workflow's GitHub
 repository.
 

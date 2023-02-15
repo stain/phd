@@ -53,7 +53,7 @@ A key limiting factor in organising and using information from physical
 specimens curated in natural history collections is making that
 information computable (`machine-actionable') and extendable. More than
 85\% of available information currently resides on labels attached to
-specimens or in physical ledgers \cite{ch8-1}. Label data are commonly
+specimens or in physical ledgers \cite{Walton 2020}. Label data are commonly
 transcribed manually with high cost and low throughput, rendering such a
 task constraining for many institutions at current funding levels.
 However, the advent of rapid, high-quality digital imaging has meant
@@ -97,14 +97,14 @@ of computer vision, optical character recognition, handwriting
 recognition, named entity recognition and language translation.
 
 Workflow technologies from the ELIXIR Research Infrastructure \cite{ch8-19},
-including Galaxy \cite{ch8-20}, Common Workflow Language \cite{ch8-21}, Research
-Object Crates (RO-Crates) \cite{OCarragain 2019,ch8-23} and WorkflowHub \cite{ch8-24}, and
+including Galaxy \cite{Afgan 2018}, Common Workflow Language \cite{Crusoe 2022}, Research
+Object Crates (RO-Crates) \cite{OCarragain 2019,ch8-23} and WorkflowHub \cite{Goble 2021}, and
 selected tools are integrated in a cloud-based workflow platform for
-natural history specimens -- the `Specimen Data Refinery' \cite{ch8-1} that
+natural history specimens -- the `Specimen Data Refinery' \cite{Walton 2020} that
 will become one of the main services to be offered by the planned DiSSCo
-research infrastructure \cite{ch8-25}. The tools themselves, implemented with
+research infrastructure \cite{ch8-5}. The tools themselves, implemented with
 findable, accessible, interoperable, and reusable (FAIR) characteristics
-\cite{ch8-26} are packaged into canonical workflow component libraries
+\cite{Wilkinson 2016} are packaged into canonical workflow component libraries
 \cite{ch8-27}, rendering them reusable, and interoperable with one another.
 FAIR Digital Objects are adopted as the common input/output pattern,
 fully compatible with digital objects at the core of DiSSCo data
@@ -119,7 +119,7 @@ the data resulting from workflow execution.
 FAIR Digital Objects (FDO) are created by packaging outputs of workflows
 and workflow components as digital objects with metadata, a persistent
 identifier, and a specific type definition against which operations can
-be executed \cite{ch8-29}. The Refinery uses two kinds of FDOs:
+be executed \cite{De Smedt 2020}. The Refinery uses two kinds of FDOs:
 
 \begin{itemize}
 \item
@@ -145,7 +145,7 @@ SDR, in this early report following SDR prototyping and
 conceptualization, we focus on what we found to be essential in the use
 of FDOs and CWFR canonical step libraries, and on the compliance of
 canonical workflow (component) inputs and outputs with the requirements
-of the FDO Framework \cite{ch8-31}.
+of the FDO Framework \cite{bonino2019}.
 
 \hypertarget{related-work}{%
 \subsection{Related Work}\label{related-work}}
@@ -161,7 +161,7 @@ In pursuit of higher throughput at lower cost, yet with higher accuracy
 and richer metadata, further automation will increasingly rely on
 techniques of object detection and segmentation, optical character
 recognition (OCR) and semantic processing of labels, and automated
-taxonomic identification and visual feature analysis \cite{ch8-1,ch8-18}.
+taxonomic identification and visual feature analysis \cite{Walton 2020,ch8-18}.
 
 Although there is a great deal of variety among images of different
 kinds of collection objects that are digitized (see figure 1) there are
@@ -261,14 +261,14 @@ systems based on their ``plugged-in'' availability of data type
 specialist codes, the catered-for skills level of the workflow
 developers, and its documentation, community support and perceived
 sustainability. For the Specimen Data Refinery, the Galaxy workflow
-system \cite{ch8-20} in conjunction with Common Workflow Language (CWL)
-\cite{ch8-21} has been chosen. CWL is a workflow specification standard
+system \cite{Afgan 2018} in conjunction with Common Workflow Language (CWL)
+\cite{Crusoe 2022} has been chosen. CWL is a workflow specification standard
 geared towards supporting interoperable and scalable production
 pipelines, abstracting away from the internal data structures of some of
 the language-specific workflow systems.
 
 Originally designed for computational biology and with many available
-tool components, Galaxy \cite{ch8-20} supports multiple domains. Workflows
+tool components, Galaxy \cite{Afgan 2018} supports multiple domains. Workflows
 can be built by manually experimenting with data manipulations in a
 `data playground' and subsequently converting histories of those to
 workflows, or by a more traditional drag-and-drop composition approach.
@@ -311,7 +311,7 @@ burden of compiling FAIR compliant data throughout the research
 lifecycle \cite{ch8-27}.
 
 A digital object exhibiting FAIR characteristics is a FAIR Digital
-Object \cite{ch8-29} and is defined formally as ``a unit composed of data
+Object \cite{De Smedt 2020} and is defined formally as ``a unit composed of data
 and/or metadata regulated by structures or schemas, and with an assigned
 globally unique and persistent identifier (PID), which is findable,
 accessible, interoperable and reusable both by humans and computers for
@@ -366,7 +366,7 @@ self-standing digital objects on the Internet, amenable to computer
 processing. It contributes to the new transformative generation of FAIR
 infrastructure and applications based on Digital Object Architecture
 that is planned for the Distributed System of Scientific Collections
-(DiSSCo) \cite{ch8-6,ch8-25,ch8-30} European research infrastructure.
+(DiSSCo) \cite{ch8-6,ch8-5,ch8-30} European research infrastructure.
 
 Henceforth we refer to these as openDS FDOs.
 
@@ -378,23 +378,23 @@ nor data products but everything that goes into and supports an
 investigative work or production pipelining activity. This includes
 input and intermediate data, parameter settings, final outputs, software
 programs and workflows, and configuration information sufficient to make
-the work reproducible. Research objects \cite{ch8-49} are a general approach
+the work reproducible. Research objects \cite{Bechhofer 2013} are a general approach
 to describing and associating all of this content together in a
 machine-readable form so that it can be easily preserved, shared and
 exchanged. Workflow objects are a specific subclass of research objects.
 
-RO-Crate \cite{OCarragain 2019,ch8-23} has been established as a community standard to
+RO-Crate\footnote{Chapter \vref{ch5:packaging-research-artefacts-with-ro-crate}} \cite{OCarragain 2019,Soiland-Reyes 2022} has been established as a community standard to
 practically achieve FAIR packaging of research objects with their
 structured metadata. Based on well-established Web standards, RO-Crate
 uses JSON-LD \cite{ch8-50} with \href{https://schema.org/}{Schema.org}
 \cite{ch8-51} for its common metadata representation. It is extensible with
 domain-specific vocabularies in a growing range of specializing RO-Crate
 profiles, e.g., for domains such as earth sciences \cite{ch8-52}, biosciences
-\cite{ch8-53}; for object types such as data or workflow \cite{ch8-54}; or for
+\cite{Goble 2021}; for object types such as data or workflow \cite{Bacall 2021}; or for
 workflow runs). RO-Crate has been proposed for the implementation of
 FAIR Digital Objects on the World Wide Web as a common representation of
-the FDO Metadata objects foreseen by the FDO Framework \cite{ch8-53,ch8-31}.
-Combined with FAIR Signposting \cite{ch8-55} for resolving persistent
+the FDO Metadata objects foreseen by the FDO Framework \cite{Goble 2021,bonino2019}.
+Combined with FAIR Signposting \cite{Van de Sompel 2022} for resolving persistent
 identifiers (PID) to FDOs on the World Wide Web, these RO-Crates are
 findable, accessible, interoperable, and reusable by machines to both
 create and obtain the information they need to function.
@@ -490,7 +490,7 @@ given above. The performance of the SDR will be evaluated against these
 specimen types, eventually using several thousand different specimen and
 label images. This is in anticipation of SDR becoming part of the
 pivotal technology to achieve high rates of mass FAIR digitization
-expected through the planned DiSSCo research infrastructure \cite{ch8-6,ch8-25,ch8-30}.
+expected through the planned DiSSCo research infrastructure \cite{ch8-6,ch8-5,ch8-30}.
 
 \hypertarget{fdo-types}{%
 \subsubsection{FDO types}\label{fdo-types}}
@@ -704,10 +704,10 @@ associated provenance capture:
   that are captured proprietarily within the adopted Galaxy environment
   and transformed to a common pattern (as another kind of canonical
   state) of provenance for later scrutiny and reproducibility of the
-  work. These kinds of Research Objects \cite{ch8-49} are an established
+  work. These kinds of Research Objects \cite{Bechhofer 2013} are an established
   mechanism whereby computational methods become first-class citizens
   alongside data, to be easily shared, discussed, reused and repurposed
-  \cite{ch8-61}.
+  \cite{ch8-57}.
 \end{itemize}
 
 Both kinds of FDO are essential. They complement one another to support
@@ -735,7 +735,7 @@ protocols of the World Wide Web.
 
 RO-Crates are native to the World Wide Web, based on established web
 protocols, machine-readable metadata using Linked Data Platform methods
-\cite{ch8-66}, JSON-LD and Schema.org \cite{ch8-49}, and community-accepted
+\cite{ch8-66}, JSON-LD and Schema.org \cite{Bechhofer 2013}, and community-accepted
 packaging mechanisms such as BagIt. This makes RO-Crates straightforward
 to incorporate into pre-existing platforms such as Galaxy and data
 repositories such as Zenodo and DataVerse.
@@ -768,7 +768,7 @@ roles for data (openDS) and self-documented method (RO-Crate) so their
 different forms is not an issue. In future there may be a need to map
 and convert between the approaches (e.g., for reconstructing past
 processing), which would be assisted by the common FDO conceptual model
-\cite{ch8-31}.
+\cite{bonino2019}.
 
 \hypertarget{key-domain-challenges-ahead}{%
 \subsubsection{Key domain challenges
@@ -830,7 +830,7 @@ historical backlog of unidentified specimens. The Meise Botanic Garden
 11\% not yet identified to species level. Furthermore, it is calculated
 that half of the World's estimated 70,000 plant species yet to be
 described have already been collected and are waiting in collections
-still to be `discovered' \cite{ch8-21}. The same is likely to be true for
+still to be `discovered' \cite{Crusoe 2022}. The same is likely to be true for
 other groups of organisms, especially insects. Unnamed specimens tend to
 have lowest priority for digitization and their data are rarely shared.
 Machine learning as canonical steps in SDR workflows presents a
