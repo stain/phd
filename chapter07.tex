@@ -5,7 +5,7 @@ workflows}
 
 \emph{Specimen Data Refinery} (SDR) is a developing platform for
 automating transcription of specimens from natural history collections
-{[}\href{https://doi.org/10.1162/dint_a_00134}{Hardisty 2022}{]} (section \vref{the-specimen-data-refinery}). SDR is
+\cite{Hardisty 2022} (section \vref{the-specimen-data-refinery}). SDR is
 based on computational workflows and digital twins using FAIR Digital
 Objects.
 
@@ -16,78 +16,76 @@ improvements for incremental building of digital objects in
 computational workflows.
 
 \hypertarget{sdr-workflows}{%
-\subsubsection{SDR workflows}\label{sdr-workflows}}
+\subsubsection{SDR workflows}\label{ch7:sdr-workflows}}
 
-\href{https://sdr.nhm.ac.uk/}{SDR} is realised as the workflow system
-Galaxy {[}\href{https://doi.org/10.1093/nar/gky379}{Afgan 2018}{]} with
-\href{https://github.com/DiSSCo/SDR}{SDR tools} installed. An Open
+SDR\footnote\url{https://sdr.nhm.ac.uk/} is realised as the workflow system
+Galaxy \cite{Afgan 2018} with
+SDR tools\footnote\url{https://github.com/DiSSCo/SDR} installed. An Open
 Research challenge is that some tools have machine learning models with
 a commercial licence. This complicates publishing to
-\href{https://toolshed.g2.bx.psu.edu/}{Galaxy toolshed}, however we
-created \href{https://www.ansible.com/}{Ansible} scripts to install
+Galaxy toolshed\footnote\url{https://toolshed.g2.bx.psu.edu/}, however we
+created Ansible\footnote{\url{https://www.ansible.com/}} scripts to install
 equivalent Galaxy servers, including tools and dependencies, accounts
 and workflows. SDR workflows are
-\href{https://workflowhub.eu/projects/72}{published in WorkflowHub} as
+published\footnote\url{https://workflowhub.eu/projects/72} in WorkflowHub as
 FDOs.
 
-We implemented the use case \emph{De novo digitization} in Galaxy
-{[}\href{https://doi.org/10.48546/workflowhub.workflow.373.1}{Brack
-2022}{]}. Shown in \protect\hyperlink{fig:workflow}{Figure 1} the
-workflow steps exchange openDS JSON
-{[}\href{https://doi.org/10.3897/biss.3.37033}{Hardisty 2019}{]}, for
+We implemented the use case \emph{De novo digitization} in Galaxy \cite{Brack 2022}.
+Shown in Figure \vref{ch7:figure1} the
+workflow steps exchange openDS JSON \cite{Hardisty 2019}, for
 incremental completion of a digital specimen. Initial stages build a
 template openDS from a CSV with metadata and image references --
 subsequent analysis completes the rest of the JSON with \emph{regions}
 of interest, \emph{text} digitised from handwriting, and recognized
 \emph{named entities}.
 
-\{\{\textless{} figure src=``figure1.png'' link=``figure1.png''
-id=``fig:workflow'' width=``100\%'' title=``FDO propagation in
-workflow'' caption=``Draft Galaxy workflow \emph{De Novo digitization}
-{[}\href{https://doi.org/10.48546/workflowhub.workflow.373.1}{Brack
-2022}{]} shows propagation of partial Open Digital Specimen FDOs between
-individual canonical workflow building blocks. First steps process a CSV
-file to create the initial openDS, where referenced images are analysed
-to detect text lines which are OCRed and then recognized as named
-entities. Bands indicate flow of collections of openDS, processed
-concurrently by each step. The final step bundles the collection of
-openDS FDOs as JSON files in a ZIP archive'' \textgreater\}\}
+\begin{figure}%[t]
+    \includegraphics[width=\textwidth]{figures/ch07/figure1.png}
+	\caption[FDO propagation in workflow]{\textbf{FDO propagation in workflow}. 
+    Draft Galaxy workflow \cite{Brack 2022} 
+    shows propagation of partial Open Digital Specimen FDOs between
+    individual canonical workflow building blocks. First steps process a CSV
+    file to create the initial openDS, where referenced images are analysed
+    to detect text lines which are OCRed and then recognized as named
+    entities. Bands indicate flow of collections of openDS, processed
+    concurrently by each step. The final step bundles the collection of
+    openDS FDOs as JSON files in a ZIP archive.}
+    \label{ch7:figure1}
+  \end{figure}
 
 Galaxy can visualise outputs of each step
-(\protect\hyperlink{fig:visualisaton}{Figure 2}), important to make the
+(Figure \vref{ch7:figure2}), important to make the
 FDOs understandable by domain experts and to verify accuracy of SDR.
 
-\{\{\textless{} figure src=``figure2.jpg'' link=``figure2.jpg''
-id=``fig:visualisation'' width=``100\%'' title=``Visualising openDS FDO
-within Galaxy'' caption=``Showing detected regions of interest
-(specimen, labels and scale bar) for a pinned insect.'' \textgreater\}\}
+\begin{figure}%[t]
+    \includegraphics[width=\textwidth]{figures/ch07/figure2.jpg}
+	\caption[Visualising openDS FDO within Galaxy]{\textbf{Visualising openDS FDO within Galaxy}.
+    Showing detected regions of interest
+    (specimen, labels and scale bar) for a pinned insect.}
+    \label{ch7:figure2}
+\end{figure}
 
 We are adding workflows for partial stages, e.g.~detection of regions
-{[}\href{https://doi.org/10.48546/workflowhub.workflow.374.1}{Livermore
-2022a}{]} and hand-written text recognition
-{[}\href{https://doi.org/10.48546/workflowhub.workflow.375.1}{Livermore
-2022b}{]}, which we'll combine with scalability testing and wider
+\cite{Livermore 2022a} and hand-written text recognition
+\cite{Livermore 2022b}, which we'll combine with scalability testing and wider
 testing by project users. Additional workflows will enhance existing
 FDOs and use new tools such as barcode detection of museums' internal
 identifiers.
 
 We are now ready to publish digital specimens as FAIR Digital Objects,
-with registration into
-\href{https://www.dissco.eu/dissco/technical-infrastructure/}{DiSSCO
-repositories}, PID assignment and workflow provenance. However, even at
+with registration into DiSSCO repositories\footnote\url{https://www.dissco.eu/dissco/technical-infrastructure/}, PID assignment and workflow provenance. However, even at
 this early stage we have identified several challenges that need to be
 addressed.
 
-\hypertarget{fdo-lessons}{%
-\subsubsection{FDO lessons}\label{fdo-lessons}}
+\subsubsection{FDO lessons}\label{ch7:fdo-lessons}
 
 We highlight the \emph{De novo} use case because this workflow is
 exchanging \emph{partial} FDOs -- openDS objects which are not fully
 completed and not yet assigned persistent identifiers.
-\href{https://github.com/DiSSCo/openDS}{openDS schemas} are still in
+openDS schemas\footnote\url{https://github.com/DiSSCo/openDS} are still in
 development, therefore SDR uses a
-more\href{https://github.com/DiSSCo/SDR/blob/main/galaxy-workflow/config/opends-schema.json}{flexible
-JSON schema} where only the initial metadata (populated from CSV) are
+more flexible
+JSON schema\footnote\url{https://github.com/DiSSCo/SDR/blob/main/galaxy-workflow/config/opends-schema.json} where only the initial metadata (populated from CSV) are
 required. Each step validates the partial FDO before passing it to the
 underlying command line tool.
 
@@ -114,17 +112,15 @@ coupled with local file-paths wiring in the workflow. A similar
 challenge occurs if accessing image data using DOIP, which unlike HTTP,
 has no caching mechanisms.
 
-\hypertarget{ro-crate-lessons}{%
-\subsubsection{RO-Crate lessons}\label{ro-crate-lessons}}
+\subsubsection{RO-Crate lessons}\label{ch7:ro-crate-lessons}
 
 Galaxy is developing support for importing and
-exporting\href{https://www.researchobject.org/workflow-run-crate/}{Workflow
-Run Crates}, a profile of RO-Crate
-\href{https://doi.org/10.3233/DS-210053}{Soiland-Reyes 2022} to
+exporting Workflow
+Run Crates\footnote\url{https://www.researchobject.org/workflow-run-crate/}, a profile of RO-Crate \cite{Soiland-Reyes 2022} to
 captures execution history of a workflow, including its definition and
-intermediate data {[}De Geest 2022{]}. SDR is adopting this support to
+intermediate data \cite{De Geest 2022}. SDR is adopting this support to
 combine openDS FDOs with workflow provenance, as envisioned by
-{[}\href{https://doi.org/10.3897/rio.6.e57602}{Walton 2020}{]}.
+\cite{Walton 2020}.
 
 Our prototype \emph{de novo} workflow returns results as a ZIP file of
 openDS objects. End-users should also get copies of the referenced
@@ -133,8 +129,7 @@ metadata. We are investigating ways to embed the preliminary Galaxy
 workflow history before the final step, so that this result can be an
 enriched RO-Crate.
 
-\hypertarget{conclusions-1}{%
-\subsubsection{Conclusions}\label{conclusions-1}}
+\subsubsection{Conclusions}\label{ch7:conclusions}
 
 SDR is an example of machine-assisted construction of FDOs, which
 highlight the needs for intermediate digital objects that are not yet
@@ -153,11 +148,9 @@ made between open digital specimens that are in ``draft'' state and
 those that can be pushed to DiSSCo registries.
 
 We are experimenting with changing the SDR components into Canonical
-Workflow Building Blocks
-{[}\href{https://doi.org/10.1162/dint_a_00135}{Soiland-Reyes 2022a}{]}
+Workflow Building Blocks \cite{Soiland-Reyes 2022a}
 (\vref{making-canonical-workflow-building-blocks-interoperable-across-workflow-languages}) 
-using the Common Workflow Language
-{[}\href{https://doi.org/10.1145/3486897}{Crusoe 2022}{]}. This gives
+using the Common Workflow Language \cite{Crusoe 2022}. This gives
 flexibility to scalably execute SDR workflows on different compute
 backends such as HPC or local cluster, without the additional setup of
 Galaxy servers.

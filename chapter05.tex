@@ -206,7 +206,7 @@ Data constructs within the RO-Crate metadata file.
 
 \begin{figure}%[t!]
   \includegraphics[width=\textwidth]{figures/ch05/ro-crate-overview.pdf}
-  \caption{\textbf{Conceptual overview of RO-Crate}. A \emph{Persistent
+	\caption[Conceptual overview of RO-Crate]{\textbf{Conceptual overview of RO-Crate}. A \emph{Persistent
   Identifier} (PID) \cite{McMurry 2017} points to a
   \emph{Research Object} (RO), which may be archived using different
   packaging approaches like BagIt \cite{ch5-74}, OCFL \cite
@@ -350,7 +350,7 @@ entities (\texttt{mentions}).
 
 \begin{figure}
 \includegraphics[width=\textwidth]{figures/ch05/ro-crate-uml.pdf}
-\caption{\textbf{Simplified UML class diagram of RO-Crate}. The 
+	\caption[Conceptual overview of RO-Crate]{\textbf{Simplified UML class diagram of RO-Crate}. The 
 \emph{RO-Crate Metadata File} conforms to a version of the specification;
 and contains a JSON-LD graph \cite{ch5-112} that describes the
 entities that make up the RO-Crate. The \emph{RO-Crate Root Data
@@ -566,7 +566,7 @@ containing data entities described using contextual entities.
     ]
   }    
   \end{verbatim}    
-  \caption{%\qq{}\protect\footnotemark[31]
+	\caption[Simplified RO-Crate metadata file]{%\qq{}\protect\footnotemark[31]
   Simplified\protect\footnote{
     Recommended properties for types shown in
     Listing \ref{ch5:lis1} also include
@@ -847,7 +847,7 @@ conduct, and as of October 2021 has more than 50 members (see \vref{ro-crate-com
 \subsection{RO-Crate Tooling}\label{ch5:tooling}
 
 The work of the community has led to the development of a number of
-tools for creating and using RO-Crates. Table~\ref{tab1} shows the current set
+tools for creating and using RO-Crates. Table \vref{ch5:tab1} shows the current set
 of implementations. Reviewing this list, one can see support for
 commonly used programming languages, including Python, JavaScript, and
 Ruby. Additionally, the tools can be integrated into commonly used
@@ -932,7 +932,7 @@ Modern PARADISEC \cite{ch5-51} &
 Repository managers & Platform & Beta & Cultural Heritage portal based
 on OCFL and RO-Crate \\
 ONI express
-\cite{ch5-115} &
+\cite{Arkisto 2022} &
 Repository managers & Platform & Beta & Platform for publishing data and
 documents stored in an OCFL repository via a Web interface \\
 ocfl-tools \cite{ch5-52} &
@@ -959,11 +959,12 @@ RO-Crates-and-Excel
 & Java (CLI) & Alpha & Describe column/data details of spreadsheets as
 RO-Crate using DataCube vocabulary \\
 \bottomrule
-\caption{Applications and libraries implementing RO-Crate, targeting
+\caption[Applications and libraries implementing RO-Crate]{Applications and libraries implementing RO-Crate, targeting
   different types of users across multiple programming languages. Status
   is indicative as assessed by this work (Alpha \textless{} Beta
   \textless{} Release Candidate (RC) \textless{} Release).
 }
+\label{ch5:tab1}
 \end{longtable}
 
 \normalsize
@@ -1055,7 +1056,7 @@ recommends which workflow resources and descriptions are required. This
 co-development across project boundaries exemplifies the drive for
 simplicity and for establishing best practices.
 
-\subsubsection{Profile for recording workflow runs}
+\paragraph{Profile for recording workflow runs}
 \label{ch5:profile-for-recording-workflow-runs}
 
 RO-Crates in WorkflowHub have so far been focused on workflows that are
@@ -1225,7 +1226,7 @@ distribution (Docker).
 
 \begin{figure}%[t]
   \includegraphics[width=\textwidth]{figures/ch05/ro-crate-bco-sep-of-concerns.pdf}
-  \caption{\textbf{Separation of Concerns in BCO RO-Crate}. BioCompute
+	\caption[Separation of Concerns in BCO RO-Crate]{\textbf{Separation of Concerns in BCO RO-Crate}. BioCompute
   Object (IEEE2791) is a JSON file that structurally explains the purpose
   and implementation of a computational workflow, for instance
   implemented in Common Workflow Language (CWL), that installs the
@@ -1432,7 +1433,7 @@ approaches to make it interoperable and reusable by others.
 
 \begin{figure}%[t!]
   \includegraphics[width=1.1\textwidth]{figures/ch05/data-commons-ro-crate-figure-5.pdf}
-  \caption{\textbf{One aspect of Harvard Data Commons}. Automatic
+	\caption[Harvard Data Commons]{\textbf{One aspect of Harvard Data Commons}. Automatic
   encapsulation and deposit of artefacts from data management tools used
   during active research at the Harvard Dataverse repository.}
   \label{ch5:fig:hdc}
