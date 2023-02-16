@@ -1,6 +1,7 @@
 \section{Creating lightweight FAIR Digital Objects with RO-Crate}
 
-RO-Crate \cite{Soiland-Reyes 2022} (section \ref{packaging-research-artefacts-with-ro-crate}) is a lightweight method to package research outputs along with
+RO-Crate \cite{Soiland-Reyes 2022} (section \ref{ch5:packaging-research-artefacts-with-ro-crate}) 
+is a lightweight method to package research outputs along with
 their metadata, based on Linked Data principles
 \cite{Bizer 2009} and
 W3C standards. RO-Crate provides a flexible mechanism for researchers
@@ -147,19 +148,19 @@ WorkflowHub repository follows several FDO principles:
 
 \begin{figure}
   \centering
-      \includegraphics[width=0.3\textwidth]{figures/ch04/signposting.pdf}
+      \includegraphics[width=\textwidth]{figures/ch04/signposting.pdf}
       \caption[FAIR Signposting]{~\textbf{FAIR Signposting}.
-  FAIR Signposting on a workflow PID \cite{Bayyarri 2022} 
+  FAIR Signposting on a workflow PID \cite{Bayarri 2022} 
   discovered from HTTP \texttt{Link:} headers using the
-  Signposting tool\footnote{\url{https://pypi.org/project/signposting/}} shows
+  Signposting tool\protect\footnote{\url{https://pypi.org/project/signposting/}} shows
   machine-actionable navigation to content-negotiate for the metadata
   FDOs, as well as download bit sequence (FDOF3) as an RO-Crate zip.
-  JSON-LD\footnote{\url{https://workflowhub.eu/workflows/255.jsonld}} from
+  JSON-LD\protect\footnote{\url{https://workflowhub.eu/workflows/255.jsonld}} from
   workflowhub.eu follows the BioSchemas
   ComputationalWorkflow
-  profile \footnote{\url{https://bioschemas.org/profiles/ComputationalWorkflow/1.0-RELEASE}} 
+  profile \protect\footnote{\url{https://bioschemas.org/profiles/ComputationalWorkflow/1.0-RELEASE}} 
   to give workflow details not included in DataCite's general 
-  JSON-LD\footnote{\url{https://data.crosscite.org/application/ld+json/10.48546/workflowhub.workflow.255.1}}.
+  JSON-LD from \url{https://data.crosscite.org/application/ld+json/10.48546/workflowhub.workflow.255.1}.
 }
 \label{fig:signposting}
 \end{figure} 

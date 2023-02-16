@@ -328,7 +328,8 @@ to refer to their academic work.
 A particular IRI may appear as a contextual entity in one RO-Crate and
 as a data entity in another; the distinction lies in the fact that data
 entities can be considered to be \emph{contained} or captured by that
-RO-Crate (\textit{RO Content} in Fig.~\ref{ch5:fig:conceptual}), while contextual entities mainly \emph{explain} an RO-Crate or its
+RO-Crate (\textit{RO Content} in Figure \vref{ch5:fig:conceptual}), 
+while contextual entities mainly \emph{explain} an RO-Crate or its
 content (although this distinction is not a formal requirement).
 
 In RO-Crate, a referenced contextual entity (e.g.~a person identified by
@@ -350,7 +351,7 @@ entities (\texttt{mentions}).
 
 \begin{figure}
 \includegraphics[width=\textwidth]{figures/ch05/ro-crate-uml.pdf}
-	\caption[Conceptual overview of RO-Crate]{\textbf{Simplified UML class diagram of RO-Crate}. The 
+	\caption[Simplified UML class diagram of RO-Crate]{\textbf{Simplified UML class diagram of RO-Crate}. The 
 \emph{RO-Crate Metadata File} conforms to a version of the specification;
 and contains a JSON-LD graph \cite{ch5-112} that describes the
 entities that make up the RO-Crate. The \emph{RO-Crate Root Data
@@ -569,7 +570,7 @@ containing data entities described using contextual entities.
 	\caption[Simplified RO-Crate metadata file]{%\qq{}\protect\footnotemark[31]
   Simplified\protect\footnote{
     Recommended properties for types shown in
-    Listing \ref{ch5:lis1} also include
+    listing also include
     \texttt{affiliation}, \texttt{citation}, \texttt{contactPoint},
     \texttt{description},
     \texttt{encodingFormat}, \texttt{funder}, \texttt{geo}, \texttt{identifier},
@@ -593,7 +594,8 @@ containing data entities described using contextual entities.
   contextual entity. While \texttt{Person} entities ideally are identified with
   ORCID PIDs as for Josiah, \texttt{\#alice} is here in contrast an RO-Crate
   local identifier, highlighting the pragmatic ``just enough'' Linked
-  Data approach.}\label{ch5:lis1}
+  Data approach.}
+  \label{ch5:lis1}
 \end{listing}
   
 
@@ -636,7 +638,7 @@ by RO-Crate, means that applications can choose to process and edit each
 entity as pure JSON by a simple lookup based on \texttt{@id}. At the
 same time, lifting all entities to the same level reflects the Research
 Object principles
-\cite{ch5-12}
+\cite{Bechhofer 2013}
 in that describing the context and provenance is just as important as
 describing the data, and the requirement of \texttt{@id} of every entity
 forces RO-Crate generators to consciously
@@ -1199,7 +1201,7 @@ workflow and its run at an abstraction level suitable for a domain
 scientist, while the more open-ended RO-Crate describes the surroundings
 of the workflow, classifying and relating its resources and providing
 provenance of their existence beyond the BCO. This emerging
-\emph{separation of concerns} is shown in Figure \ref{ch5:fig:sep_concerns},
+\emph{separation of concerns} is shown in Figure \vref{ch5:fig:sep_concerns},
 and highlights how
 RO-Crate is used side-by-side of existing standards and tooling, even
 where there are apparent partial overlaps.
@@ -1456,11 +1458,10 @@ computational research.
 Here we focus on approaches for bundling research artefacts along with
 their metadata. This notion of publishing compound objects for scholarly
 communication has a long history behind it
-\cite{Claerbout 1992}
-\cite{ch5-117},
-but recent approaches have followed three main strands: 1) publishing to
-centralised repositories; 2) packaging approaches similar to RO-Crate;
-and 3) bundling the computational workflow around a scientific
+\cite{Claerbout 1992,ch5-117},
+but recent approaches have followed three main strands: (i) publishing to
+centralised repositories; (ii) packaging approaches similar to RO-Crate;
+and (iii) bundling the computational workflow around a scientific
 experiment.
 
 \subsubsection{Bundling and Packaging Digital Research
@@ -1546,8 +1547,7 @@ BagIt archives\footnote{\url{https://w3id.org/ro/bagit}}, a variant of RO Bundle
 \cite{ch5-74}, used by Big Data Bags
 \cite{Chard 2016},
 CWLProv \cite{ch5-68} and
-WholeTale \cite{ch5-76}
-\cite{Chard 2019}.
+WholeTale \cite{ch5-76,Chard 2019}.
 
 \subsubsection{FAIR Digital Objects}\label{ch5:fair-digital-objects}
 
