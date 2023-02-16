@@ -102,7 +102,7 @@ Since the publication of the library, several
 building block modules} (Chemistry, Machine Learning, AMBER MD, Virtual
 Screening, etc.) have been added, and the set of operations for the
 existing BioBB families have been expanded. While we previously provided
-curated adapters (Figure 1) for running BioBB in workflow systems using
+curated adapters (Figure \vref{ch6:figure1}) for running BioBB in workflow systems using
 Common Workflow Language (CWL) and PyCOMPSs, along with Galaxy Toolshed
 bindings, we have now started auto-generating these bindings, along with
 command line wrappers and REST web service APIs, using annotations
@@ -115,10 +115,13 @@ testing purposes), default values and \emph{dependencies}. This ensures
 human-readable documentation, FAIR metadata and programmatic
 accessibility can be generated consistently and comparably.
 
-\{\{\textless{} figure src=``figure1.jpg'' link=``figure1.jpg''
-id=``fig:codesnip'' width=``100\%'' title=``Code snippets for the BioBB
-WfMS bindings'' caption=``CWL, PyCOMPSs, Galaxy and KNIME''
-\textgreater\}\}
+\begin{figure}%[t]
+  \includegraphics[width=\textwidth]{figures/ch06/figure1.jpg}
+	\caption[Code snippets for the BioBB
+  WfMS bindings]{\textbf{Code snippets for the BioBB
+  WfMS bindings}: CWL, PyCOMPSs, Galaxy and KNIME.}
+  \label{ch6:figure1}
+\end{figure}
 
 The library is showcased through a collection of
 \href{http://mmb.irbbarcelona.org/biobb/workflows}{demonstration
@@ -162,9 +165,8 @@ aspect of CWBB propagates information and resources that are essential
 for reproducibility, reuse and understanding by anyone discovering the
 workflow.
 
-\hypertarget{interoperability-across-different-workflow-languages}{%
 \subsubsection{Interoperability across different workflow
-languages}\label{interoperability-across-different-workflow-languages}}
+languages}\label{interoperability-across-different-workflow-languages}
 
 The concept of Canonical Workflow Building Blocks is here showcased with
 the BioBB library, by using a transversal workflow present in many
@@ -187,7 +189,7 @@ this workflow, interconnecting building blocks using Python functions
 bindings (KNIME \cite{ch6-21}). Corresponding workflows for the different
 WfMS can be found in
 \href{https://workflowhub.eu/collections/3}{WorkflowHub} \cite{ch6-22,ch6-23,ch6-24,ch6-25,ch6-26}
-and graphical extracts can be seen in Figure 2.
+and graphical extracts can be seen in Figure \vref{ch6:figure2}.
 
 This example demonstrates how the same canonical building blocks can be
 used in different WfMS. Wrappers and tools executed behind the workflows
@@ -215,12 +217,15 @@ error-prone task. Bindings for workflow languages with a
 CWL) can on the other hand be generated in a more straightforward
 fashion.
 
-\{\{\textless{} figure src=``figure2.png'' link=``figure2.png''
-id=``fig:proteinmd'' width=``100\%'' title=``Protein MD Setup
-transversal workflow'' caption=``Assembled in with 5 different workflow
-managers using BioBB canonical building blocks. From top-left: Galaxy
-\cite{ch6-22}, KNIME \cite{ch6-23}, CWL \cite{ch6-24}, Jupyter Notebook \cite{ch6-25},
-PyCOMPSs \cite{ch6-26}.'' \textgreater\}\}
+\begin{figure}%[t]
+  \includegraphics[width=\textwidth]{figures/ch06/figure2.png}
+	\caption[Protein MD Setup transversal workflow]{\textbf{Protein MD Setup
+  transversal workflow}. Assembled in with 5 different workflow
+  managers using BioBB canonical building blocks. From top-left: Galaxy
+  \cite{ch6-22}, KNIME \cite{ch6-23}, CWL \cite{ch6-24}, Jupyter Notebook \cite{ch6-25},
+  PyCOMPSs \cite{ch6-26}.}
+  \label{ch6:figure2}
+\end{figure}
 
 The transversal \href{https://workflowhub.eu/collections/3}{protein MD
 setup workflow} was chosen as a real example that is readily
@@ -233,8 +238,7 @@ using the auto-generated bindings and uploaded to the
 \href{https://workflowhub.eu/projects/11\#workflows}{WorkflowHub
 repository}.
 
-\hypertarget{discussion-1}{%
-\subsection{Discussion}\label{discussion-1}}
+\subsection{Discussion}\label{discussion-1}
 
 Early work on libraries of workflows fragments include Web Service-based
 approaches where tools are wrapped and exposed using common,

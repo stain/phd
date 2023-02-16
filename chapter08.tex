@@ -46,8 +46,7 @@ requirements, focusing on what is essential in the creation of canonical
 workflow component libraries and its conformance with the requirements
 of an emerging FDO Core Specification being developed by the FDO Forum.
 
-\hypertarget{introduction-2}{%
-\subsection{Introduction}\label{introduction-2}}
+\subsection{Introduction}\label{introduction-2}
 
 A key limiting factor in organising and using information from physical
 specimens curated in natural history collections is making that
@@ -147,13 +146,9 @@ of FDOs and CWFR canonical step libraries, and on the compliance of
 canonical workflow (component) inputs and outputs with the requirements
 of the FDO Framework \cite{bonino2019}.
 
-\hypertarget{related-work}{%
-\subsection{Related Work}\label{related-work}}
+\subsection{Related Work}\label{related-work}
 
-\hypertarget{workflows-for-processing-specimen-images-and-extracting-data}{%
-\subsubsection{Workflows for processing specimen images and
-extracting
-data}\label{workflows-for-processing-specimen-images-and-extracting-data}}
+\subsubsection{Workflows for processing specimen images and extracting data}\label{workflows-for-processing-specimen-images-and-extracting-data}
 
 While natural history collections are heterogeneous in size and shape,
 often they are mass digitized using standardised workflows \cite{ch8-9,ch8-10,ch8-11,ch8-12,ch8-13}.
@@ -164,33 +159,26 @@ recognition (OCR) and semantic processing of labels, and automated
 taxonomic identification and visual feature analysis \cite{Walton 2020,ch8-18}.
 
 Although there is a great deal of variety among images of different
-kinds of collection objects that are digitized (see figure 1) there are
+kinds of collection objects that are digitized (see Figure \vref{ch8:figure1}) there are
 visual similarities between them. Most images contain labels, scale bars
 and often, colour charts as well as the specimen itself. This makes them
 amenable to improved approaches to object detection \cite{ch8-32} and
 segmentation into `regions of interest' \cite{ch8-33} as precursive steps for
 multiple kinds of workflows.
 
-
-
 \begin{figure}%[t]
-  \includegraphics[width=\textwidth]{figures/ch05/ro-crate-bco-sep-of-concerns.pdf}
-	\caption[..]{\textbf{Foo}. xx.}
-  \label{ch5:fig:sep_concerns}
+  \includegraphics[width=\textwidth]{figures/ch08/figure1.png}
+	\caption[A range of specimen images]{\textbf{A range of specimen images}. From the Natural History Museum, London, demonstrating the
+  diversity of collection objects, which include handwritten, typed, and
+  printed labels. (a) Microscope slide
+  (\href{https://data.nhm.ac.uk/object/c65d9a3c-d8f6-4fac-a418-05c3b697cece}{NHMUK010671647}),
+  (b) Herbarium specimen
+  (\href{https://data.nhm.ac.uk/object/be595f07-73c5-4764-a96c-8b377e3d1507}{BM000546829}),
+  (c) pinned insect
+  (\href{https://data.nhm.ac.uk/object/745febc7-8222-498a-9969-5f6b12f85ef3}{NHMUK013383979}).}
+  \label{ch8:figure1}
 \end{figure}
 
-
-\{\{\textless{} figure src=``figure1.png'' link=``figure1.png''
-id=``fig:specimens'' width=``100\%'' title=" A range of specimen images"
-caption=``From the Natural History Museum, London, demonstrating the
-diversity of collection objects, which include handwritten, typed, and
-printed labels. (a) Microscope slide
-(\href{https://data.nhm.ac.uk/object/c65d9a3c-d8f6-4fac-a418-05c3b697cece}{NHMUK010671647}),
-(b) Herbarium specimen
-(\href{https://data.nhm.ac.uk/object/be595f07-73c5-4764-a96c-8b377e3d1507}{BM000546829}),
-(c) pinned insect
-(\href{https://data.nhm.ac.uk/object/745febc7-8222-498a-9969-5f6b12f85ef3}{NHMUK013383979})''
-\textgreater\}\}
 
 Segmentation, specifically, can be employed as an early step in a
 workflow to send just the relevant region(s) of interest from an image
@@ -238,10 +226,9 @@ organism arising from preparation and preservation processes can lead to
 the loss of important identification clues that might be present on a
 living example.
 
-\hypertarget{workflow-management-systems-and-canonical-workflows-for-research}{%
 \subsubsection{Workflow management systems and canonical workflows
 for
-research}\label{workflow-management-systems-and-canonical-workflows-for-research}}
+research}\label{workflow-management-systems-and-canonical-workflows-for-research}
 
 A workflow chains together atomised and executable components with the
 relationships between them to clearly define a control flow and a data
@@ -310,8 +297,7 @@ This feature is also supported by Galaxy and CWL, allowing (for example)
 manual geocoding and verification during the digitization process of the
 locations where specimens were collected.
 
-\hypertarget{fair-digital-objects-1}{%
-\subsubsection{FAIR Digital Objects}\label{fair-digital-objects-1}}
+\subsubsection{FAIR Digital Objects}\label{fair-digital-objects-1}
 
 Galaxy/CWL environments offer the possibility to integrate generic
 digital object methods \cite{ch8-44,ch8-45,ch8-46} for the interactions between
@@ -341,9 +327,7 @@ immediately available and amenable for further use, as well as being
 comparable to the role of the classical archival storage box when
 necessary.
 
-\hypertarget{computable-digital-specimens-as-a-kind-of-fair-digital-object}{%
-\paragraph{Computable Digital Specimens as a kind of FAIR Digital
-Object}\label{computable-digital-specimens-as-a-kind-of-fair-digital-object}}
+\paragraph{Computable Digital Specimens as a kind of FAIR Digital Object}\label{computable-digital-specimens-as-a-kind-of-fair-digital-object}
 
 Digital Specimens (DS) are a specific class of FDO that group, manage
 and allow processing of fragments of information relating to physical
@@ -379,8 +363,7 @@ that is planned for the Distributed System of Scientific Collections
 
 Henceforth we refer to these as \textbf{openDS FDOs}.
 
-\paragraph{FAIR packaging of research/workflow objects with
-RO-Crate}\label{fair-packaging-of-researchworkflow-objects-with-ro-crate}
+\paragraph{FAIR packaging of research/workflow objects with RO-Crate}\label{fair-packaging-of-researchworkflow-objects-with-ro-crate}
 
 The useful outcomes of research are not just traditional publications
 nor data products but everything that goes into and supports an
@@ -411,8 +394,7 @@ Henceforth, we refer to \textbf{RO-Crate FDOs}.
 
 \subsection{Problem Description}\label{problem-description}
 
-\subsubsection{Automating digitization and capturing the
-process}\label{automating-digitization-and-capturing-the-process}
+\subsubsection{Automating digitization and capturing the process}\label{automating-digitization-and-capturing-the-process}
 
 
 In the lengthy history of collectors and museums curating artefacts and
@@ -454,16 +436,13 @@ community evolving towards a new research culture that is becoming
 increasingly dependent on working digitally and collaboratively
 \cite{ch8-57,ch8-58}.
 
-\hypertarget{users-user-stories-and-specimen-categories}{%
-\subsubsection{Users, user stories and specimen
-categories}\label{users-user-stories-and-specimen-categories}}
+\subsubsection{Users, user stories and specimen categories}\label{users-user-stories-and-specimen-categories}
 
 Initially, two kinds of users must be supported: digitizer technicians
 and collections managers/curators. Five high-level user stories describe
 and broadly encompass the functionality these users need:
 
 \begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
 \item
   As a digitizer, I want to construct a workflow from a set of
   predefined components, so I can use that workflow to digitize
@@ -487,11 +466,9 @@ and broadly encompass the functionality these users need:
 
 To prove the SDR concept, three categories of preserved specimen types
 have been selected to be supported initially: herbarium sheets,
-microscope slides and pinned insects (see figure 1).
+microscope slides and pinned insects (see Figure \vref{ch8:figure1}).
 
-\hypertarget{the-fdo-and-cwfr-approach-in-the-specimen-data-refinery}{%
-\subsection{The FDO and CWFR approach in the Specimen Data
-Refinery}\label{the-fdo-and-cwfr-approach-in-the-specimen-data-refinery}}
+\subsection{The FDO and CWFR approach in the Specimen Data Refinery}\label{the-fdo-and-cwfr-approach-in-the-specimen-data-refinery}
 
 Workflows will be designed to support the user categories and stories
 given above. The performance of the SDR will be evaluated against these
@@ -500,10 +477,9 @@ label images. This is in anticipation of SDR becoming part of the
 pivotal technology to achieve high rates of mass FAIR digitization
 expected through the planned DiSSCo research infrastructure \cite{ch8-6,ch8-5,ch8-30}.
 
-\hypertarget{fdo-types}{%
-\subsubsection{FDO types}\label{fdo-types}}
+\subsubsection{FDO types}\label{fdo-types}
 
-In the Specimen Data Refinery (see figure 2) the role of openDS FDOs is
+In the Specimen Data Refinery (see Figure \vref{ch8:figure2}) the role of openDS FDOs is
 planned as the basis for the primary workflow inputs and outputs, and
 for data transfer and interactions between components within SDR
 workflows. A single openDS FDO submitted to the beginning of the
@@ -514,25 +490,18 @@ of data communication between canonical workflow components, in that
 each step is immediately creating an FDO with associated FAIR compliant
 documentation.
 
-
-
 \begin{figure}%[t]
-  \includegraphics[width=\textwidth]{figures/ch05/ro-crate-bco-sep-of-concerns.pdf}
-	\caption[..]{\textbf{Foo}. xx.}
-  \label{ch5:fig:sep_concerns}
+  \includegraphics[width=\textwidth]{figures/ch/figure2.png}
+	\caption[CWFR approach]{\textbf{CWFR approach}. Adopted for the SDR as a Galaxy 
+  workflow management system
+  implementation with `\emph{de novo} digitization' and `enrichment' entry points.}
+  \label{ch8:figure2}
 \end{figure}
 
-
-\{\{\textless{} figure src=``figure2.png'' link=``figure2.png''
-id=``fig:approach'' width=``100\%'' title=``CWFR approach''
-caption=``Adopted for the SDR as a Galaxy workflow management system
-implementation with `\emph{de novo} digitization' and `enrichment' entry
-points.'' \textgreater\}\}
 
 RO-Crate FDOs capture two aspects of a workflow:
 
 \begin{enumerate}
-\def\labelenumi{\alph{enumi})}
 \item
   A \textbf{Workflow-RO-Crate} contains the workflow definition, the
   computational tools and configuration, graphical image of the
@@ -557,14 +526,13 @@ Galaxy workflow history data into a Workflow-Run-RO-Crate FDO.
 
 All FDO types are serialized as JSON.
 
-\hypertarget{canonical-components}{%
-\subsubsection{Canonical components}\label{canonical-components}}
+\subsubsection{Canonical components}\label{canonical-components}
 
 Each workflow component from a canonical library (to be built,
-illustrated as tools \#1 - \#4 in figure 2) describes what attributes it
+illustrated as tools \#1 - \#4 in figure \ref{ch8:figure2}) describes what attributes it
 requires from the openDS FDO to be able to function, and the attributes
 it will in turn populate or enrich. The interface between the component
-and the openDS FDO is formed by the wrapper (orange in figure 2) around
+and the openDS FDO is formed by the wrapper (orange in figure \ref{ch8:figure2}) around
 the (optionally) containerized command-line tool (blue/green in figure
 2). Canonical components can be used individually, or in series. The
 openDS FDO data flows between components will always be of the same
@@ -576,10 +544,10 @@ attributes required for a tool to work are pre-populated. This keeps the
 SDR flexible and customisable for different digitization pipelines.
 
 Two entry points are provided for users of the SDR. One is named as the
-`\emph{de novo} digitization' entry point (figure 2) fulfilling the
+`\emph{de novo} digitization' entry point (figure \ref{ch8:figure2}) fulfilling the
 needs of user story (2) where specimens are being newly digitized for
 the first time. The second entry point, named as the `enrichment' entry
-point (figure 2) fulfils the needs of user story (3) where an existing
+point (figure \ref{ch8:figure2}) fulfils the needs of user story (3) where an existing
 openDS FDO (or reference to it) can be provided to the SDR as part of
 the input data.
 
@@ -587,13 +555,9 @@ In parallel to manipulating openDS FDOs, the Refinery gathers the
 minimum inputs and workflow components required to produce deterministic
 output and produces a Workflow-Run-RO-Crate FDO.
 
-\hypertarget{experiments-and-analysis}{%
-\subsection{Experiments and
-analysis}\label{experiments-and-analysis}}
+\subsection{Experiments and analysis}\label{experiments-and-analysis}
 
-\hypertarget{experimental-workflows}{%
-\subsubsection{Experimental
-workflows}\label{experimental-workflows}}
+\subsubsection{Experimental workflows}\label{experimental-workflows}
 
 The workflows of the SDR compose different functional components
 according to specific need: image segmentation, barcode reading, optical
@@ -626,13 +590,9 @@ There are records with unlinked or ambiguous collector names that could
 be linked/disambiguated; and records where unknown specimens still need
 identifying.
 
-\hypertarget{experimental-data-and-evaluation}{%
-\subsubsection{Experimental data and
-evaluation}\label{experimental-data-and-evaluation}}
+\subsubsection{Experimental data and evaluation}\label{experimental-data-and-evaluation}
 
-\hypertarget{evaluation-images-datasets}{%
-\paragraph{Evaluation images
-datasets}\label{evaluation-images-datasets}}
+\paragraph{Evaluation images datasets}\label{evaluation-images-datasets}
 
 The Refinery will be evaluated using sets of images, each composed of at
 least 1,000 unique specimens for each of the three categories of
@@ -652,9 +612,7 @@ Refinery models for use in tools (e.g., segmentation, named entity
 recognition, object/feature detection). All the datasets will be made
 publicly available with documentation.
 
-\hypertarget{component-functional-tests}{%
-\paragraph{Component functional
-tests}\label{component-functional-tests}}
+\paragraph{Component functional tests}\label{component-functional-tests}
 
 Galaxy has a built-in functional test framework. Tools intended to
 become components of an SDR canonical library (actually, a Galaxy
@@ -665,8 +623,7 @@ tool, include validating a tool's own openDS FDO outputs by comparison
 against the expected output file. It will be necessary to register
 openDS FDOs as Galaxy custom data types.
 
-\hypertarget{results}{%
-\subsection{Results}\label{results}}
+\subsection{Results}\label{results}
 
 openDS FDOs are the core data object at the heart of the SDR, playing
 not only the workflow input/output role but acting also as a common data
@@ -694,12 +651,9 @@ production, DOIs will be minted by the DiSSCo service; for the
 proof-of-concept Handles with prefix \texttt{20.5000.1025/} will be
 used.
 
-\hypertarget{discussion-2}{%
-\subsection{Discussion}\label{discussion-2}}
+\subsection{Discussion}\label{discussion-2}
 
-\hypertarget{what-is-being-achieved}{%
-\subsubsection{What is being
-achieved?}\label{what-is-being-achieved}}
+\subsubsection{What is being achieved?}\label{what-is-being-achieved}
 
 The design of the Specimen Data Refinery uses two kinds of FAIR Digital
 Object -- openDS FDOs and RO-Crate FDOs. Each plays a role to ensure
@@ -738,9 +692,7 @@ Infrastructures (ELIXIR, DiSSCo) with different implementation
 frameworks. Yet, they interoperate effectively due to their clear roles,
 common conceptual model and separation of concerns.
 
-\hypertarget{different-fdo-implementations-working-together}{%
-\subsubsection{Different FDO implementations working
-together}\label{different-fdo-implementations-working-together}}
+\subsubsection{Different FDO implementations working together}\label{different-fdo-implementations-working-together}
 
 openDS FDOs have their heritage in distributed digital object services
 \cite{ch8-46} and are implemented through Digital Object Architecture (DOA)
@@ -787,9 +739,7 @@ and convert between the approaches (e.g., for reconstructing past
 processing), which would be assisted by the common FDO conceptual model
 \cite{bonino2019}.
 
-\hypertarget{key-domain-challenges-ahead}{%
-\subsubsection{Key domain challenges
-ahead}\label{key-domain-challenges-ahead}}
+\subsubsection{Key domain challenges ahead}\label{key-domain-challenges-ahead}
 
 For a digitized specimen to conform to FAIR principles, its data must be
 linked to a vocabulary of terms, but choosing a single vocabulary is
@@ -830,9 +780,7 @@ further requirements to make the SDR useful for the widest range of
 users, and from there, develop a rich, configurable tool to allow simple
 uptake and provide utility for resource-poor collections.
 
-\hypertarget{conclusion-and-future-work}{%
-\subsection{Conclusion and Future
-Work}\label{conclusion-and-future-work}}
+\subsection{Conclusion and Future Work}\label{conclusion-and-future-work}
 
 The Specimen Data Refinery is likely to garner widespread interest
 across the Natural History community. Whilst the promise of a scalable,
