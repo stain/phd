@@ -1,6 +1,6 @@
 \section{Updating Linked Data practices for FAIR Digital Object
 principles}
-\label{updating-linked-data-practices-for-fair-digital-object-principles}
+\label{ch2:updating-linked-data-practices-for-fair-digital-object-principles}
 
 Realization of FAIR Digital Objects has a great potential if combined with the mature technology stack of Linked Data and knowledge graphs.
 
@@ -8,15 +8,14 @@ Here I will briefly discuss how FDO principles can be achieved using existing st
 
 I will also reflect on how the Linked Data community can adapt to better welcome approaches like FDO.
 
-\hypertarget{background}{%
-\subsubsection{Background}\label{background}}
+\subsubsection{Background}
+\label{ch2:background}
 
-The \emph{FAIR principles}
-{[}\href{https://doi.org/10.1038/sdata.2016.18}{Wilkinson 2016}{]} are
+The \emph{FAIR principles} \cite{Wilkinson 2016} are
 fundamental for data discovery, sharing, consumption and reuse; however
 their broad interpretation and many ways to implement can lead to
 inconsistencies and incompatibility
-{[}\href{https://doi.org/10.1162/dint_r_00024}{Jacobsen 2020}{]}.
+\cite{Jacobsen 2020}.
 
 The European Open Science Cloud (\href{https://www.eosc.eu/}{EOSC}) has
 been instrumental in maturing and encouraging FAIR practices across a
@@ -24,13 +23,13 @@ wide range of research areas. Linked Data in the form of
 \href{https://www.w3.org/TR/rdf11-primer/}{RDF} (Resource Description
 Framework) is the common way to implement machine-readability in FAIR,
 however the principles do not prescribe RDF or any particular technology
-{[}\href{https://doi.org/10.3233/ISU-170824}{Mons 2017}{]}.
+\cite{Mons 2017}.
 
-\hypertarget{fair-digital-object}{%
-\paragraph{FAIR Digital Object}\label{fair-digital-object}}
+\paragraph{FAIR Digital Object}
+\label{ch2:fair-digital-object}
 
 \textbf{FAIR Digital Object} (FDO)
-{[}\href{https://doi.org/10.1007/978-3-030-23584-0_1}{Schultes 2019}{]}
+\cite{Schultes 2019}
 has been proposed to improve researcher's access to digital objects
 through formalising their metadata, types, identifiers and exposing
 their computational operations, making them actionable FAIR objects
@@ -38,7 +37,7 @@ rather than passive data sources.
 
 FDO is a set of principles \cite{bonino2019}, implementable in multiple ways. Current realisations mostly
 use \emph{Digital Object Interface Protocol} (DOIPv2)
-{[}\href{https://hdl.handle.net/0.DOIP/DOIPV2.0}{DONA 2018}{]}, with the
+\cite{DONA 2018}, with the
 main implementation
 \href{https://www.cordra.org/documentation/api/doip.html}{CORDRA}. We
 can consider DOIPv2 as a simplified combination of object-oriented
@@ -46,7 +45,7 @@ can consider DOIPv2 as a simplified combination of object-oriented
 
 More recently, the \href{https://fairdo.org/}{FDO Forum} has prepared
 detailed
-\href{https://drive.google.com/drive/u/0/folders/1-SbZk7enOqjy2Rf57PMB-CQW7qMOUXgO}{recommendations},
+\href{https://drive.google.com/drive/u/0/folders/1-SbZk7enOqjy2Rf57PMB-CQW7qMOUXgO}{recommendations}\footnote{See section \vref{ch3:next-step-fdo}},
 currently open for comments, including a
 \href{https://docs.google.com/document/d/10ESWe-m0ex7fIW0ZYOYeVg6gAcIaBKyO3W-Vg8tXzdw/edit\#}{DOIP
 endorsement} and updated
@@ -54,8 +53,8 @@ endorsement} and updated
 requirements}. These point out \textbf{Linked Data} as another possible
 technology stack, which is the focus of this work.
 
-\hypertarget{linked-data}{%
-\paragraph{Linked Data}\label{linked-data}}
+\paragraph{Linked Data}
+\label{ch2:linked-data}
 
 \href{https://www.w3.org/standards/semanticweb/data}{Linked Data
 standards} (LD), based on the Web architecture, are commonplace in
@@ -77,9 +76,9 @@ structures}. Approaches that merge the LD and REST worlds include
 \href{https://www.hydra-cg.com/}{Hydra} and
 \href{https://www.w3.org/TR/webpayments-http-messages/}{Web Payments}.
 
-\hypertarget{meeting-fdo-principles-using-linked-data-standards}{%
+
 \subsubsection{Meeting FDO principles using Linked Data
-standards}\label{meeting-fdo-principles-using-linked-data-standards}}
+standards}\label{ch2:meeting-fdo-principles-using-linked-data-standards}
 
 Considering the potential of FDOs when combined with the mature
 technology stack of LD, here we briefly discuss how FDO principles can
@@ -150,8 +149,7 @@ alternative for implementing FAIR Digital Objects \cite{bonino2021}, which
 proposes a novel approach of content-negotiation with custom media
 types.
 
-\hypertarget{discussion}{%
-\subsubsection{Discussion}\label{discussion}}
+\subsubsection{Discussion}\label{ch2>discussion}
 
 The Linked Data stack provides a set of specifications, tools and
 guidelines in order to help the FDO principles become a reality. This
