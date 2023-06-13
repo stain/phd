@@ -16,7 +16,7 @@ Concretely, the contribution of this paper is a systematic comparison between FD
 
 In the following, we discuss the related work with respect to FAIR Digital Objects and Linked Data. We do so by looking through the lens of development of these technologies over time, including future directions.
 
-The concept of \textbf{FAIR Digital Objects} \cite{schultesFAIRPrinciplesDigital2019a} has been introduced as way to expose research data as active objects that conform to the FAIR principles \cite{wilkinsonFAIRGuidingPrinciples2016e}. This builds on the \emph{Digital Object} (DO) concept \cite{kahnFrameworkDistributedDigital2006b}, first introduced by \textcite{kahnFrameworkDistributedDigital1995a} as a system of \emph{repositories} containing \emph{digital objects} identified by \emph{handles} and described by \emph{metadata} which may have references to other handles. DO was the inspiration for the \textcite{x1255FrameworkDiscovery} framework which introduced an abstract \emph{Digital Entity Interface Protocol} for managing such objects programmatically, first realised by the Digital Object Interface Protocol (DOIP) \cite{DigitalObjectInterface}.
+The concept of \textbf{FAIR Digital Objects} \cite{schultesFAIRPrinciplesDigital2019a} has been introduced as way to expose research data as active objects that conform to the FAIR principles \cite{wilkinsonFAIRGuidingPrinciples2016e}. This builds on the \emph{Digital Object} (DO) concept \cite{kahnFrameworkDistributedDigital2006b}, first introduced in 1995 \cite{kahnFrameworkDistributedDigital1995a} as a system of \emph{repositories} containing \emph{digital objects} identified by \emph{handles} and described by \emph{metadata} which may have references to other handles. DO was the inspiration for the ITU X.1255 framework \cite{x1255FrameworkDiscovery} which introduced an abstract \emph{Digital Entity Interface Protocol} for managing such objects programmatically, first realised by the Digital Object Interface Protocol (DOIP) \cite{DigitalObjectInterface}.
 
 In brief, the structure of a FAIR Digital Object (FDO) is to, given a \emph{persistent identifier} (PID) such as a DOI, resolve to a \emph{PID Record} that gives the object a \emph{type} along with a mechanism to retrieve its \emph{bit sequences}, \emph{metadata} and references to further programmatic \emph{operations}. The type of an FDO (itself an FDO) defines attributes to semantically describe and relate such FDOs to other concepts (typically other FDOs referenced by PIDs). The premise of systematically building an ecosystem of such digital objects is to give researchers a way to organise complex digital entities, associated with identifiers, metadata, and supporting automated processing \cite{wittenburgDigitalObjectsDrivers2019a}.
 
@@ -29,7 +29,7 @@ FDO is an evolving concept. A set of FDO Demonstrators \cite{wittenburgFAIRDigit
 \begin{itemize}
 \tightlist
 \item
-  Building on the Digital Object concept, using the simplified \textcite{foundationDigitalObjectInterface} specification, which detail how to exchange JSON objects through a text-based protocol\footnote{For a brief introduction to DOIP 2.0, see \textcite{DOIPExamplesCordraa}} (usually TCP/IP over TLS). The main DOIP operations are retrieving, creating and updating digital objects. These are mostly realised using the reference implementation \href{https://cordra.org/}{Cordra}. FDO types are registered in the local Cordra instance, where they are specified using JSON Schema \cite{Draftbhuttonjsonschema} and PIDs are assigned using the Handle system. Several type registries have been established.
+  Building on the Digital Object concept, using the simplified DOIP v2.0 \cite{foundationDigitalObjectInterface} specification, which detail how to exchange JSON objects through a text-based protocol\footnote{For a brief introduction to DOIP 2.0, see \cite{DOIPExamplesCordraa}} (usually TCP/IP over TLS). The main DOIP operations are retrieving, creating and updating digital objects. These are mostly realised using the reference implementation \href{https://cordra.org/}{Cordra}. FDO types are registered in the local Cordra instance, where they are specified using JSON Schema \cite{Draftbhuttonjsonschema} and PIDs are assigned using the Handle system. Several type registries have been established.
 \item
   Following the traditional Linked Data approach, but using the DOIP protocol, e.g.~using JSON-LD and schema.org within DOIP (NIST for material science).
 \item
@@ -204,7 +204,7 @@ From this mapping we can identify the conceptual similarities between DOIP and H
 \begin{table}[h!]
   \centering
   \caption{Mapping the Metamodel concepts from the Interoperability Framework for Fast Data \cite{delgadoInteroperabilityFrameworkDistributed2016a} to equivalent concepts for FDO and Web.
-  \label{tbl:metamodel-concepts}}\tabularnewline
+  \label{ch3:metamodel-concepts}}\tabularnewline
    \begin{tabular}{ m{5em}  m{15em} m{15em} } 
    \hline
   Metamodel concept & 
@@ -241,7 +241,7 @@ The FAIR Digital Object guidelines \cite{boninoFAIRDigitalObject} sets out recom
     >{\raggedleft\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.25}}
     >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2}}@{}}
     \caption[Checking FDO guidelines against its implementations]{Checking FDO guidelines \cite{boninoFAIRDigitalObject,fdo-RequirementSpec} against its current implementations as DOIP \cite{foundationDigitalObjectInterface} and Linked Data Platform (LDP) \cite{FDOFramework}, with suggestions for required additions.
-  \label{tbl:fdo-checks}}\tabularnewline
+  \label{ch3:fdo-checks}}\tabularnewline
   \toprule
   \textbf{FDO Guideline} & 
   DOIP 2.0 & 
@@ -269,14 +269,14 @@ G2: \emph{trustworthiness}
   & JSON-LD used by half of all websites \cite{UsageStatisticsJSONLD}, however previous bad experiences with Semantic Web may deter adopters
   & Ensure simplicity for end developers, rather than semantic overengineering. Example-driven documentation. \\
 G3: \emph{follows FAIR principles}
-  & See Table \vref{tbl:fair-data-maturity-model}
+  & See Table \vref{ch3:fair-data-maturity-model}
   & Ensure all FAIR principles are covered, build complete examples.
-  & Touched briefly, see Table \vref{tbl:fair-data-maturity-model}
+  & Touched briefly, see Table \vref{ch3:fair-data-maturity-model}
   & Add explicit expression to show each FAIR pcinciple fulfilled. \\
 G4: \emph{machine actionability}
-  & CRUD and extension operations dynamically listed (see Table \vref{tbl:fdo-web-middleware})
+  & CRUD and extension operations dynamically listed (see Table \vref{ch3:fdo-web-middleware})
   & Specify which operations should work for a given type, to reduce need for dynamic lookup. Specify input/output expectations formally (e.g.~JSON Schema).
-  & HTTP CRUD operations, Open API (see Table \vref{tbl:fdo-web-middleware})
+  & HTTP CRUD operations, Open API (see Table \vref{ch3:fdo-web-middleware})
   & Document operations so client can make subsequent HTTP calls. \\
 G5: \emph{abstraction principle}
   & Handle PIDs as abstraction base. DOIP operations can use any transport protocol.
@@ -410,7 +410,7 @@ For this purpose, we here utillise the Comparison Framework for Middleware Infra
     >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.4179}}
     >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.4179}}@{}}
     \caption[Comparing FAIR Digital Object and Web technologies as middleware infrastructures]{Comparing FAIR Digital Object (with the DOIP 2.0 protocol \cite{foundationDigitalObjectInterface}) and Web technologies (using Linked Data) as middleware infrastructures \cite{zarrasComparisonFrameworkMiddleware2004a}
-  \label{tbl:fdo-web-middleware}}\tabularnewline
+  \label{ch3:fdo-web-middleware}}\tabularnewline
   \toprule
   \emph{Quality} & 
   FDO w/ DOIP & 
@@ -464,7 +464,7 @@ For this purpose, we here utillise the Comparison Framework for Middleware Infra
     & HTTP/1.1 semantics can seemlessly upgrade to HTTP/2 and HTTP/3. \texttt{http} vs \texttt{https} URIs exposes encryption detail\footnote{The \texttt{http} protocol (port 80) can in theory also upgrade \cite{rfc2817} to TLS encryption, as commonly used by \href{https://www.rfc-editor.org/rfc/rfc8010.html\#section-8.2}{Internet Printing Protocol} for \texttt{ipp} URIs, but on the Web, best practice is explicit \texttt{https} (port 443) URLs to ensure following links stay secure.}. Implementation details may leak into URIs (e.g.~\texttt{search.aspx}), countered by deliberate design of URI patterns \cite{berners-lee-cool-uris}) and PIDs via Persistent URLs (PURL). \\
   \textbf{Inheritance}: \emph{Deriving specialised interface from another type}
     & DOIP types nested with parents, implying shared FDO structures (unclear if operations are inherited). FDO establishes need for multiple Data Type Registries (e.g.~managed by a community for a particular domain). Semantics of type system currently undefined for FDO and DOIP, syntactic types can also piggyback of FDO type's schema (e.g.~\href{(https://www.cordra.org/documentation/design/schemas.html\#schema-references)}{CORDRA \texttt{\$ref}} use of \href{https://json-schema.org/draft/2020-12/json-schema-core.html\#references}{JSON Schema references} \cite{Draftbhuttonjsonschema})
-    & Syntactically Media Type with multiple suffixes \cite{Draftietfmediamansuffixes00MediaTypes} (mainly used with \texttt{+json}), declaration of subtypes as profiles (RFC6906) \citetitle{rfc6906}. In metadata, semantic type systems (RDFS \cite{w3-rdf-schema}), OWL2 \cite{w3-owl2-overview}, SKOS \cite{w3-skos-primer}). OpenAPI 3 \cite{OpenAPISpecificationV3} \href{https://spec.openapis.org/oas/v3.1.0\#composition-and-inheritance-polymorphism}{inheritance and Polymorphism}. XML \texttt{xsd:schemaLocation} or \texttt{xsd:type} \cite{w3-xmlschema11}, JSON \texttt{\$schema} \cite{Draftbhuttonjsonschema}), JSON-LD \texttt{@context} \cite{w3-json-ld}. Large number of domain-specific and general ontologies define semantic types, but finding and selecting remains a challenge. \\
+    & Syntactically Media Type with multiple suffixes \cite{Draftietfmediamansuffixes00MediaTypes} (mainly used with \texttt{+json}), declaration of subtypes as profiles (RFC6906) \cite{rfc6906}. In metadata, semantic type systems (RDFS \cite{w3-rdf-schema}), OWL2 \cite{w3-owl2-overview}, SKOS \cite{w3-skos-primer}). OpenAPI 3 \cite{OpenAPISpecificationV3} \href{https://spec.openapis.org/oas/v3.1.0\#composition-and-inheritance-polymorphism}{inheritance and Polymorphism}. XML \texttt{xsd:schemaLocation} or \texttt{xsd:type} \cite{w3-xmlschema11}, JSON \texttt{\$schema} \cite{Draftbhuttonjsonschema}), JSON-LD \texttt{@context} \cite{w3-json-ld}. Large number of domain-specific and general ontologies define semantic types, but finding and selecting remains a challenge. \\
   \textbf{Signal interfaces}: \emph{asynchronous handling of messages}
     & DOIP 2.0 is synchronous, in FDO async operations undefined. Could be handled as custom jobs/futures FDOs
     & HTTP/2 \href{https://datatracker.ietf.org/doc/html/rfc7540\#section-5}{multiplexed streams} \cite{rfc7540}, Web Sockets \cite{WebSocketsStandard}, Linked Data Notifications \cite{w3-ldn}, AtomPub \cite{rfc5023}, SWORD \cite{SWORDSpecification}, Micropub \cite{w3-micropub}, more typically ad-hoc jobs/futures REST resources \\
@@ -513,7 +513,7 @@ Here we evaluate to what extent the FDO guidelines and its implementation with D
     >{\centering\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.2}}
     >{\centering\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.2}}@{}}
     \caption[Assessing RDA's FAIR Data Maturity Model against the FDO guidelines]{Assessing RDA's FAIR Data Maturity Model \cite{groupFAIRDataMaturity2020,bahimFAIRDataMaturity2020a} (first 2 columns) against the FDO guidelines \cite{boninoFAIRDigitalObject}, FDO implemented with the protocol DOIPv2 \cite{foundationDigitalObjectInterface}, Linked Data Platform (LDP) \cite{FDOFramework} and examples from Linked Data practices in general. (--- indicates \emph{Unspecified}, may be possible with additional conventions)
-  \label{tbl:fair-data-maturity-model}}\tabularnewline
+  \label{ch3:fair-data-maturity-model}}\tabularnewline
   \toprule
   FAIR ID &
   Indicator &
@@ -820,8 +820,8 @@ In Table \vref{ch3:eosc} we review the EOSC Interoperability Framework (EOSC IF)
     >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.30}}
     >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.30}}
     >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.30}}@{}}
-  \caption[Assessing EOSC Interoperability Framework, against FDO \& Linked Data]{Assessing EOSC Interoperability Framework \autocite[section 3.6]{corchoEOSCInteroperabilityFramework2021b} against the FDO guidelines \autocite{boninoFAIRDigitalObject} and Linked Data practices.}
-  \label{tbl:eosc}\tabularnewline
+  \caption[Assessing EOSC Interoperability Framework, against FDO \& Linked Data]{Assessing EOSC Interoperability Framework \cite[section 3.6]{corchoEOSCInteroperabilityFramework2021b} against the FDO guidelines \cite{boninoFAIRDigitalObject} and Linked Data practices.}
+  \label{ch3:eosc}\tabularnewline
   \toprule
   Layer &
   Recommendation &
@@ -863,7 +863,7 @@ In Table \vref{ch3:eosc} we review the EOSC Interoperability Framework (EOSC IF)
     & Recommended 
     & Largely self-governed repositories, if well-established may have clear governance. \\
   Semantic       & Minimal metadata model for federated discovery 
-    & Kernel metadata \autocite{fdo-KernelAttributes} based on RDA recommendations \autocite{weigelRDARecommendationPID2018}.
+    & Kernel metadata \cite{fdo-KernelAttributes} based on RDA recommendations \cite{weigelRDARecommendationPID2018}.
     & DCAT, schema.org, Dublin Core \\
   Semantic       & Crosswalks from minimal metadata model 
     & FDO Typing recommends referencing existing type definitions, but not as separate crosswalks 
