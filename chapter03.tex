@@ -6,7 +6,7 @@ We compare the FDO approach with established Linked Data practices and the exist
 
 \subsection{Introduction}\label{ch3:introduction}
 
-The FAIR principles \cite{Wilkinson 2016} encourage sharing of scientific data with machine-readable metadata and the use of interoperable formats, and are being adapted by a wide range of research infrastructures. They have been widely recognised by the research community and policy makers as a goal to strive for. In particular, the European Open Science Cloud (\href{https://www.eosc.eu/}{EOSC}) has promoted adaptation of FAIR data sharing of data resources across electronic research infrastructures \cite{Mons 2017}. The EOSC Interoperability Framework \cite{ch5-75} puts particular emphasis on how interoperability can be achieved technically, semantically, organisationally, and legally -- laying out a vision of how data, publication, software and services can work together to form an ecosystem of rich digital objects.
+The FAIR principles \cite{Wilkinson 2016} encourage sharing of scientific data with machine-readable metadata and the use of interoperable formats, and are being adapted by a wide range of research infrastructures. They have been widely recognised by the research community and policy makers as a goal to strive for. In particular, the European Open Science Cloud (\href{https://www.eosc.eu/}{EOSC}) has promoted adaptation of FAIR data sharing of data resources across electronic research infrastructures \cite{Mons 2017}. The EOSC Interoperability Framework \cite{eosc-interop-framework} puts particular emphasis on how interoperability can be achieved technically, semantically, organisationally, and legally -- laying out a vision of how data, publication, software and services can work together to form an ecosystem of rich digital objects.
 
 Specifically, the EOSC Interoperability framework highlights the emerging FAIR Digital Object (FDO) concept \cite{schultesFAIRPrinciplesDigital2019a} as a possible foundation for building a semantically interoperable ecosystem to fully realise the FAIR principles beyond individual repositories and infrastructures. The FDO approach has great potential, as it proposes strong requirements for identifiers, types, access and formalises interactive operations on objects.
 
@@ -26,7 +26,7 @@ The concept of \textbf{FAIR Digital Objects} \cite{schultesFAIRPrinciplesDigital
 
 In brief, the structure of a FAIR Digital Object (FDO) is to, given a \emph{persistent identifier} (PID) such as a DOI, resolve to a \emph{PID Record} that gives the object a \emph{type} along with a mechanism to retrieve its \emph{bit sequences}, \emph{metadata} and references to further programmatic \emph{operations}. The type of an FDO (itself an FDO) defines attributes to semantically describe and relate such FDOs to other concepts (typically other FDOs referenced by PIDs). The premise of systematically building an ecosystem of such digital objects is to give researchers a way to organise complex digital entities, associated with identifiers, metadata, and supporting automated processing \cite{wittenburgDigitalObjectsDrivers2019a}.
 
-Recently, FDOs have been recognised by the European Open Science Cloud (\href{https://eosc.eu/}{EOSC}) as a suggested part of its Interoperability Framework \cite{ch5-75}, in particular for deploying active and interoperable FAIR resources that are \emph{machine actionable}. Development of the FDO concept continued within Research Data Alliance (\href{https://www.rd-alliance.org/}{RDA}) groups and EOSC projects like \href{https://www.go-fair.org/}{GO-FAIR}, concluding with a set of guidelines for implementing FDO \cite{bonino2019}. The \href{https://fairdo.org/}{FAIR Digital Objects Forum} has since taken over the maturing of FDO through focused working groups which have currently drafted several more detailed specification documents (see \emph{Next steps for FDO} \vpageref{ch3:next-step-fdo}).
+Recently, FDOs have been recognised by the European Open Science Cloud (\href{https://eosc.eu/}{EOSC}) as a suggested part of its Interoperability Framework \cite{eosc-interop-framework}, in particular for deploying active and interoperable FAIR resources that are \emph{machine actionable}. Development of the FDO concept continued within Research Data Alliance (\href{https://www.rd-alliance.org/}{RDA}) groups and EOSC projects like \href{https://www.go-fair.org/}{GO-FAIR}, concluding with a set of guidelines for implementing FDO \cite{bonino2019}. The \href{https://fairdo.org/}{FAIR Digital Objects Forum} has since taken over the maturing of FDO through focused working groups which have currently drafted several more detailed specification documents (see \emph{Next steps for FDO} \vpageref{ch3:next-step-fdo}).
 
 \subsubsection{FDO approaches}\label{fdo-approaches}
 
@@ -107,7 +107,7 @@ With these trends, an emerging problem was that adopters of the Semantic Web pri
 
 The \textbf{Linked Data} concept \cite{Bizer 2009} was kickstarted as a set of best practices \cite{LinkedDataDesign} to bring the Web aspect back into focus. Crucially to Linked Data is the \emph{reuse of existing URIs}, rather than making new identifiers. This means a loosening of the semantic restrictions previously applied, and an emphasis on building navigable data resources, rather than elaborate graph representations.
 
-Vocabularies like \href{https://schema.org/}{schema.org} evolved not long after, intended for lightweight semantic markup of existing Web pages, primarily to improve search engines' understanding of types and embedded data. In addition to several such embedded \emph{microformats} \cite{OpenGraphProtocol,w3-rdfa-primer,HTMLStandard} or we find JSON-LD \cite{ch8-50} as a Web-focused RDF serialisation that aims for improved programmatic generation and consumption, including from Web applications. JSON-LD is as of 2023-05-18 used\footnote{Presumably this large uptake of JSON-LD is mainly for the purpose of Search Engine Optimisation (SEO), with typically small amounts of metadata which may not constitute Linked Data as introduced above, however this deployment nevertheless constitute machine-actionable structured data.} by 45\% of the top 10 million websites \cite{UsageStatisticsJSONLD}.
+Vocabularies like \href{https://schema.org/}{schema.org} evolved not long after, intended for lightweight semantic markup of existing Web pages, primarily to improve search engines' understanding of types and embedded data. In addition to several such embedded \emph{microformats} \cite{OpenGraphProtocol,w3-rdfa-primer,HTMLStandard} or we find JSON-LD \cite{w3-json-ld} as a Web-focused RDF serialisation that aims for improved programmatic generation and consumption, including from Web applications. JSON-LD is as of 2023-05-18 used\footnote{Presumably this large uptake of JSON-LD is mainly for the purpose of Search Engine Optimisation (SEO), with typically small amounts of metadata which may not constitute Linked Data as introduced above, however this deployment nevertheless constitute machine-actionable structured data.} by 45\% of the top 10 million websites \cite{UsageStatisticsJSONLD}.
 
 Recently there has been a renewed emphasis to improve the \emph{Developer Experience} \cite{DesigningLinkedData2018} for consumption of Linked Data, for instance RDF Shapes -- expressed in SHACL \cite{w3-shacl} or ShEx \cite{ShapeExpressionsShEx} -- can be used to validate RDF Data \cite{gayoValidatingRDFData2017a,thorntonUsingShapeExpressions2019a} before consuming it programmatically, or reshaping data to fit other models. While a varied set of tools for Linked Data consumptions have been identified, most of them still require developers to gain significant knowledge of the underlying Semantic Web technologies, which hampers adaption by non-LD experts \cite{klimekSurveyToolsLinked2019a}, which then tend to prefer non-semantic two-dimensional formats such as CSV files.
 
@@ -134,7 +134,7 @@ To better understand the relationship between the FDO framework and other exisit
 \item
   Cross-checks against RDA's FAIR Data Maturity Model \cite{bahimFAIRDataMaturity2020a} to find how the FAIR principles are achieved in FDO, in particular considering access, sharing and openness.
 \item
-  EOSC Interoperability Framework \cite{ch5-75} which gives recommendations for technical, semantic, organisational and legal interoperability, particularly from a metadata perspective.
+  EOSC Interoperability Framework \cite{eosc-interop-framework} which gives recommendations for technical, semantic, organisational and legal interoperability, particularly from a metadata perspective.
 \end{enumerate}
 
 The reason for this wide-ranged comparison is to exercise the different dimensions that together form FAIR Digital Objects: Data, Metadata, Service, Access, Operations, Computation.
@@ -237,7 +237,7 @@ From this mapping we can identify the conceptual similarities between DOIP and H
 
 \subsubsection{Assessing FDO implementations}\label{ch3:doip-fdo-compare}
 
-The FAIR Digital Object guidelines \cite{bonino2019} sets out recommendations for FDO implementations. In Table \vref{ch3:fdo-checks} we evaluate the two current implementations, using DOIPv2 \cite{DONA 2018} and using Linked Data Platform \cite{ch5-112}, as proposed by \cite{bonino2021}.
+The FAIR Digital Object guidelines \cite{bonino2019} sets out recommendations for FDO implementations. In Table \vref{ch3:fdo-checks} we evaluate the two current implementations, using DOIPv2 \cite{DONA 2018} and using Linked Data Platform \cite{w3-ldp}, as proposed by \cite{bonino2021}.
 
 \begin{landscape}
   \begin{small}
@@ -393,7 +393,7 @@ From our evaluation, we can observe:
   \item
     Linked Data have a strong emphasis on semantics (FDOF8), and metadata schemas developed by community agreements (FDOF10). FDO types need to be made reusable across servers.
   \item
-    While FDO recommends nested metadata FDOs (FDOF8, FDOF9), in practice this is not found (or linked with custom keys), particularly due to lack of namespaces and the favouring of local types rather than type/property re-use. Linked Data frequently have multiple representations, but often not sufficiently linked, perhaps \texttt{prov:specializationOf} \cite{ch5-81}
+    While FDO recommends nested metadata FDOs (FDOF8, FDOF9), in practice this is not found (or linked with custom keys), particularly due to lack of namespaces and the favouring of local types rather than type/property re-use. Linked Data frequently have multiple representations, but often not sufficiently linked, perhaps \texttt{prov:specializationOf} \cite{w3-prov-o}
   \item
     FDO collections are not yet defined for DOIP, while Linked Data seemingly have too many alternatives, LDP has specific native support for containers.
   \item
@@ -471,7 +471,7 @@ For this purpose, we here utillise the Comparison Framework for Middleware Infra
     & HTTP/1.1 semantics can seemlessly upgrade to HTTP/2 and HTTP/3. \texttt{http} vs \texttt{https} URIs exposes encryption detail\footnote{The \texttt{http} protocol (port 80) can in theory also upgrade \cite{rfc2817} to TLS encryption, as commonly used by \href{https://www.rfc-editor.org/rfc/rfc8010.html\#section-8.2}{Internet Printing Protocol} for \texttt{ipp} URIs, but on the Web, best practice is explicit \texttt{https} (port 443) URLs to ensure following links stay secure.}. Implementation details may leak into URIs (e.g.~\texttt{search.aspx}), countered by deliberate design of URI patterns \cite{berners-lee-cool-uris}) and PIDs via Persistent URLs (PURL). \\
   \textbf{Inheritance}: \emph{Deriving specialised interface from another type}
     & DOIP types nested with parents, implying shared FDO structures (unclear if operations are inherited). FDO establishes need for multiple Data Type Registries (e.g.~managed by a community for a particular domain). Semantics of type system currently undefined for FDO and DOIP, syntactic types can also piggyback of FDO type's schema (e.g.~\href{(https://www.cordra.org/documentation/design/schemas.html\#schema-references)}{CORDRA \texttt{\$ref}} use of \href{https://json-schema.org/draft/2020-12/json-schema-core.html\#references}{JSON Schema references} \cite{Draftbhuttonjsonschema})
-    & Syntactically Media Type with multiple suffixes \cite{Draftietfmediamansuffixes00MediaTypes} (mainly used with \texttt{+json}), declaration of subtypes as profiles (RFC6906) \cite{rfc6906}. In metadata, semantic type systems (RDFS \cite{w3-rdf-schema}), OWL2 \cite{w3-owl2-overview}, SKOS \cite{w3-skos-primer}). OpenAPI 3 \cite{OpenAPISpecificationV3} \href{https://spec.openapis.org/oas/v3.1.0\#composition-and-inheritance-polymorphism}{inheritance and Polymorphism}. XML \texttt{xsd:schemaLocation} or \texttt{xsd:type} \cite{w3-xmlschema11}, JSON \texttt{\$schema} \cite{Draftbhuttonjsonschema}), JSON-LD \texttt{@context} \cite{ch8-50}. Large number of domain-specific and general ontologies define semantic types, but finding and selecting remains a challenge. \\
+    & Syntactically Media Type with multiple suffixes \cite{Draftietfmediamansuffixes00MediaTypes} (mainly used with \texttt{+json}), declaration of subtypes as profiles (RFC6906) \cite{rfc6906}. In metadata, semantic type systems (RDFS \cite{w3-rdf-schema}), OWL2 \cite{w3-owl2-overview}, SKOS \cite{w3-skos-primer}). OpenAPI 3 \cite{OpenAPISpecificationV3} \href{https://spec.openapis.org/oas/v3.1.0\#composition-and-inheritance-polymorphism}{inheritance and Polymorphism}. XML \texttt{xsd:schemaLocation} or \texttt{xsd:type} \cite{w3-xmlschema11}, JSON \texttt{\$schema} \cite{Draftbhuttonjsonschema}), JSON-LD \texttt{@context} \cite{w3-json-ld}. Large number of domain-specific and general ontologies define semantic types, but finding and selecting remains a challenge. \\
   \textbf{Signal interfaces}: \emph{asynchronous handling of messages}
     & DOIP 2.0 is synchronous, in FDO async operations undefined. Could be handled as custom jobs/futures FDOs
     & HTTP/2 \href{https://datatracker.ietf.org/doc/html/rfc7540\#section-5}{multiplexed streams} \cite{rfc7540}, Web Sockets \cite{WebSocketsStandard}, Linked Data Notifications \cite{w3-ldn}, AtomPub \cite{rfc5023}, SWORD \cite{SWORDSpecification}, Micropub \cite{w3-micropub}, more typically ad-hoc jobs/futures REST resources \\
@@ -633,10 +633,10 @@ RDA-A1.1-01M
   & G1 G8 G9
   & Partially realised: Handle system is open\footnote{
         The \texttt{Handle.net} system was previously covered by software patent \href{https://patents.google.com/patent/US6135646A/en}{US6135646A} which \href{https://circleid.com/posts/20161025_selling_dona_snake_oil_at_the_itu\#11461}{expired} in 2013.} 
-    protocol \cite{ch8-64}. One server implementation \cite{HandleNetRegistry}, free\footnote{
+    protocol \cite{rfc3652}. One server implementation \cite{HandleNetRegistry}, free\footnote{
         The \href{http://www.handle.net/HNRj/HNR-9-License.pdf}{Handle.net public license} is not OSI-approved \cite{LicensesStandardsOpen}  as an open source license -- it includes usage restrictions and requires Service Agreements. It is not a DOIP requirement to host a local Handle instance, e.g.~EOSC provides the \href{https://sp.eudat.eu/catalog/resources/fc6b2d30-09cd-4c25-b71a-7bc6de77910c}{B2HANDLE} service for acquiring Handle prefixes.}. 
     One DOIPv2 implementation (\href{https://www.cordra.org/}{CORDRA}): free under BSD-like license (not recognised as Open Source).    
-  & LDP is open W3C recommendation \cite{ch5-112}. \href{https://www.w3.org/wiki/LDP_Implementations}{Multiple LDP implementations}.    
+  & LDP is open W3C recommendation \cite{w3-ldp}. \href{https://www.w3.org/wiki/LDP_Implementations}{Multiple LDP implementations}.    
   & DNS, HTTP, TLS, RDF standards are open, free and universal, large number of Open Source clients and \href{https://en.wikipedia.org/wiki/Comparison_of_web_server_software}{servers}. \\
 RDA-A1.1-01D
   & Data is accessible through a free access protocol
@@ -727,7 +727,7 @@ RDA-I3-04M
   & (FDOR3)
   & Qualification by attribute keys defined per FDO type
   & \href{https://www.w3.org/TR/ldp/\#dfn-linked-data-platform-indirect-container}{LDP Indirect Container}
-  & Qualifications by property, n-ary indirection (schema.org Role \cite{hollandIntroducingRole2014}, \texttt{prov:specializationOf} \cite{ch5-81}, OAI-ORE Proxy \cite{ORESpecificationAbstract}) \\
+  & Qualifications by property, n-ary indirection (schema.org Role \cite{hollandIntroducingRole2014}, \texttt{prov:specializationOf} \cite{w3-prov-o}, OAI-ORE Proxy \cite{ORESpecificationAbstract}) \\
 RDA-R1-01M
   & Plurality of accurate and relevant attributes are provided to allow reuse
   & FDOF4
@@ -762,13 +762,13 @@ RDA-R1.2-02M
   & FDOR9 FDOR8
   & ---
   & ---
-  & W3C PROV-O \cite{ch5-81}, PAV \cite{ciccaresePAVOntologyProvenance2013e}, Dublin Core Terms \cite{DCMIMetadataTerms} \\
+  & W3C PROV-O \cite{w3-prov-o}, PAV \cite{ciccaresePAVOntologyProvenance2013e}, Dublin Core Terms \cite{DCMIMetadataTerms} \\
 RDA-R1.3-01M
   & Metadata complies with a community standard
   & FDOR10 FROR8
   & (Emerging, e.g.~DiSSCo Digital Specimen \cite{Hardisty 2022})
   & ---
-  & Common, e.g.~DCAT 2 \cite{DCAT2 2020}, BioSchemas \cite{ch5-58} \\
+  & Common, e.g.~DCAT 2 \cite{DCAT2 2020}, BioSchemas \cite{bioschema-salad} \\
 RDA-R1.3-01D
   & Data complies with a community standard
   & (FDOR3)
@@ -817,7 +817,7 @@ From this evaluation we observe:
 
 \subsection{EOSC Interoperability Framework}\label{eosc-interoperability-framework}
 
-The European Open Science Cloud (EOSC) is a large EU initiative to promote Open Science by implementing a joint research infrastructure by federating existing and new services and focusing on interoperability, accessability, best practices as well as technical infrastructure \cite{10.2777/940154}. The EOSC Interoperability Framework \cite{ch5-75} details the principles for creating a common way to achieve interoperability between all digital aspects of research activities in EOSC, including data, protocols and software. The recommendations are realized through 4 layers, Technical (e.g. protocols), Semantic (e.g. metadata models), Organisational (e.g. recommendations) and Legal (e.g. agreements), with a particular aim to address the FAIR interoperability principles and building on the concept of FAIR Digital Objects. 
+The European Open Science Cloud (EOSC) is a large EU initiative to promote Open Science by implementing a joint research infrastructure by federating existing and new services and focusing on interoperability, accessability, best practices as well as technical infrastructure \cite{10.2777/940154}. The EOSC Interoperability Framework \cite{eosc-interop-framework} details the principles for creating a common way to achieve interoperability between all digital aspects of research activities in EOSC, including data, protocols and software. The recommendations are realized through 4 layers, Technical (e.g. protocols), Semantic (e.g. metadata models), Organisational (e.g. recommendations) and Legal (e.g. agreements), with a particular aim to address the FAIR interoperability principles and building on the concept of FAIR Digital Objects. 
 
 In Table \vref{ch3:eosc} we review the EOSC Interoperability Framework (EOSC IF) recommendations, and evaluate to what extent they are addressed by the principles of FDO and Linked Data or their common implementations.
 
@@ -827,7 +827,7 @@ In Table \vref{ch3:eosc} we review the EOSC Interoperability Framework (EOSC IF)
     >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.30}}
     >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.30}}
     >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.30}}@{}}
-  \caption[Assessing EOSC Interoperability Framework, against FDO \& Linked Data]{Assessing EOSC Interoperability Framework \cite[section 3.6]{ch5-75} against the FDO guidelines \cite{bonino2019} and Linked Data practices.}
+  \caption[Assessing EOSC Interoperability Framework, against FDO \& Linked Data]{Assessing EOSC Interoperability Framework \cite[section 3.6]{eosc-interop-framework} against the FDO guidelines \cite{bonino2019} and Linked Data practices.}
   \label{ch3:eosc}\tabularnewline
   \toprule
   Layer &
@@ -892,7 +892,7 @@ In Table \vref{ch3:eosc} we review the EOSC Interoperability Framework (EOSC IF)
     & Common (see \href{https://rdmkit.elixir-europe.org/metadata_management}{RDMKit}) \\
   Organisational  & Usage recommendations of metadata 
     & Recommended by community 
-    & RO-Crate, ch5-58 \\
+    & RO-Crate, bioschema-salad \\
   Organisational  & Management of permanent organization names/functions 
     & Handle owner, but unclear contact. Contact info in DOIP service provider 
     & ROR. DCAT contacts. \\

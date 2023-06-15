@@ -130,7 +130,7 @@ describing each and linking them together.
 Examples of metadata descriptions across a wide range of
 domains\footnote{\url{https://rdamsc.bath.ac.uk/scheme-index}} abound within the
 literature, both in research data management
-\cite{Amorim 2016,ch5-46,ch5-75}
+\cite{Amorim 2016,ch5-46,eosc-interop-framework}
 and within library and information
 systems\footnote{\url{https://www.loc.gov/librarians/standards}} \cite{Mai Chan 1995,ch5-127}. However, many of these approaches require
 knowledge of metadata schemas, particular annotation systems, or the
@@ -280,7 +280,7 @@ The Root Data Entity is a directory, the \emph{RO-Crate Root},
 identified by the presence of the \textbf{RO-Crate Metadata File}
 \texttt{ro-crate-metadata.json} (top of Figure \vref{ch5:fig:conceptual}). This file describes the
 RO-Crate using Linked Data, its content and related metadata using
-Linked Data in JSON-LD format \cite{ch5-112}. This
+Linked Data in JSON-LD format \cite{w3-ldp}. This
 is a W3C standard RDF serialisation that has become popular; it is easy
 to read by humans while also offering some advantages for data exchange
 on the Internet. JSON-LD, a subset of the widely supported and
@@ -353,7 +353,7 @@ entities (\texttt{mentions}).
 \includegraphics[width=\textwidth]{figures/ch05/ro-crate-uml.pdf}
 	\caption[Simplified UML class diagram of RO-Crate]{\textbf{Simplified UML class diagram of RO-Crate}. The 
 \emph{RO-Crate Metadata File} conforms to a version of the specification;
-and contains a JSON-LD graph \cite{ch5-112} that describes the
+and contains a JSON-LD graph \cite{w3-ldp} that describes the
 entities that make up the RO-Crate. The \emph{RO-Crate Root Data
 Entity} represent the Research Object as a dataset. The RO-Crate
 aggregates \emph{data entities} (\texttt{hasPart}) which are further
@@ -380,7 +380,7 @@ specification\footnote{\url{https://w3id.org/ro/crate/1.1}} \cite{ch5-106}
 can be seen as an opinionated and example-driven guide to writing
 \href{https://schema.org/}{Schema.org}
 \cite{ch5-62} metadata as
-JSON-LD \cite{ch5-112} (see
+JSON-LD \cite{w3-ldp} (see
 section \vref{ch5:implementation}), which
 leaves it open for implementers to include additional metadata using
 other Schema.org types and properties, or even additional Linked Data
@@ -488,7 +488,7 @@ Schema.org in a prescriptive form as discussed in Section~\vref{ch5:conceptual}.
 choices were made to cater for simplicity from a developer perspective
 (as introduced in Section~\vref{ch5:methodology}).
 
-JSON-LD\footnote{\url{https://json-ld.org/}} \cite{ch5-112}
+JSON-LD\footnote{\url{https://json-ld.org/}} \cite{w3-ldp}
 provides a way to express Linked Data as a JSON structure, where a
 \emph{context} provides mapping to RDF properties and classes. While
 JSON-LD cannot map arbitrary JSON structures to RDF, we found that it
@@ -611,7 +611,7 @@ Schema.org terms. \normalsize
 
 \paragraph{Flattened JSON-LD}\label{ch5:flattened-json-ld}
 
-When JSON-LD 1.0 \cite{ch5-112}
+When JSON-LD 1.0 \cite{w3-ldp}
 was
 proposed, one of the motivations was to seamlessly apply an RDF nature
 on top of regular JSON as frequently used by Web APIs. JSON objects in
@@ -666,7 +666,7 @@ Schema.org context means RO-Crate is also able to map in additional
 vocabularies where needed, namely the \emph{Portland Common Data Model}
 (PCDM) \cite{Cossu 2018}
 for
-repositories and Bioschemas \cite{ch5-58}
+repositories and Bioschemas \cite{bioschema-salad}
 for
 describing computational workflows. RO-Crate profiles may
 extend\footnote{\url{https://www.researchobject.org/ro-crate/1.1/appendix/jsonld.html\#extending-ro-crate}}
@@ -749,7 +749,7 @@ FAIRplus,\footnote{\url{https://fairplus-project.eu/}}
 CS3MESH4EOSC\footnote{\url{https://cs3mesh4eosc.eu/}} and
 BY-COVID.\footnote{\url{https://by-covid.eu/}} RO-Crate has also established
 collaborations with Bioschemas \cite{bioschemas_2017}, GA4GH
-\cite{ch5-58}, OpenAIRE \cite{ch5-100}
+\cite{bioschema-salad}, OpenAIRE \cite{ch5-100}
 and multiple H2020 projects.
 
 A key set of stakeholders are developers: the RO-Crate community has
@@ -1046,7 +1046,7 @@ RO-Crate acts therefore as an interoperability layer between registries,
 repositories and users in WorkflowHub. The iterative development between
 WorkflowHub developers and the RO-Crate community heavily informed the
 creation of the Bioschemas
-\cite{ch5-58} profile for Computational
+\cite{bioschema-salad} profile for Computational
 Workflows \footnote{\url{https://bioschemas.org/profiles/ComputationalWorkflow/1.0-RELEASE/}}, which again informed the
 RO-Crate
 1.1 specification on workflows \footnote{\url{https://www.researchobject.org/ro-crate/1.1/workflows.html}} and led to the RO-Crate Python library
@@ -1073,7 +1073,7 @@ capturing workflow provenance in a Research Object in CWLProv
 \cite{ch5-68} and
 TavernaPROV \cite{ch5-110}.
 In both cases, we used the PROV Ontology
-\cite{ch5-81},
+\cite{w3-prov-o},
 including details of every task execution with all the intermediate
 data, which required significant workflow engine integration.\footnote{CWLProv
   and TavernaProv predate RO-Crate, but use RO-Bundle
@@ -1515,7 +1515,7 @@ based on existing ontologies (FOAF, Dublin Core Terms, OAI-ORE and
 AO/OAC precursors to the W3C Web Annotation Model
 \cite{Ciccarese 2017})
 and adds specializations for workflow models and executions using W3C
-PROV-O \cite{ch5-81}.
+PROV-O \cite{w3-prov-o}.
 The Research Object statements are saved in a \emph{manifest} (the
 OAI-ORE \emph{resource map}), with additional annotation resources
 containing user-provided details such as title and description.
@@ -1834,4 +1834,4 @@ Science-on-Schema.org\footnote{\url{https://science-on-schema.org/}}
 \cite{ch5-66} for datasets, FAIR Digital
 Objects\footnote{\url{https://fairdo.org/}} \cite{De Smedt 2020} and
 activities in EOSC task forces\footnote{\url{https://www.eosc.eu/task-force-faq}}
-including the EOSC Interoperability Framework \cite{ch5-75}.
+including the EOSC Interoperability Framework \cite{eosc-interop-framework}.
