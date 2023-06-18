@@ -176,7 +176,7 @@ Web w/ Linked Data \\
   & The Web is loosely coupled and encourages collaboration and linking by URL. In practice, REST APIs \cite{fieldingArchitecturalStylesDesign2000a} end up being mandated centrally by dominant (often commercial) providers \cite{fieldingReflectionsRESTArchitectural2017a}, and the clients are required to use each API as-is with special code per service. Use of Linked Data enables common tooling and semantic mapping across differences. \\
 \textbf{Pragmatic}: \emph{using interaction contracts so processes can be choreographed in workflows}
   & FDO types and operations enable detailed choreography (Canonical Workflows \cite{cwfr}). \texttt{0.TYPE/DOIPOperation} has lightweight definition of operation, \texttt{0.DOIP/Request} or \texttt{0.DOIP/Response} may give FDO Type or any other kind of ``specifics'' (incl.~human readable docs). Semantics/purpose of operations not formalised (similar operations can be grouped with \texttt{0.DOIP/OperationReference}).
-  & ``Follow your nose'' crawler navigation, which may lead to frequent dead ends. Operational composition, typically within a single API provider, documented by OpenAPI 3 \cite{OpenAPISpecificationV3}, schema.org Actions \cite{SchemaOrgActions}, WSDL/SOAP \cite{w3-wsdl20-primer}, but frequently just as human-readable developer documentation/examples. \\
+  & ``Follow your nose'' crawler navigation, which may lead to frequent dead ends. Operational composition, typically within a single API provider, documented by OpenAPI 3 \cite{OpenAPISpecificationV3}, schema.org Actions \cite{SchemaOrgActions}, WSDL/SOAP \cite{w3-wsdl20-primer}, but frequently just as human-readable developer documentation with examples. \\
 \textbf{Semantic}: \emph{ensuring consistent understanding of messages, interoperability of rules, knowledge and ontologies}
   & FDO semantic enable navigation and typing. Every FDO has a type. Types maintained in FDO Type registries, which may add additional semantics, e.g.~the ePIC \href{https://hdl.handle.net/21.11104/c1a0ec5ad347427f25d6}{PID-InfoType for Model}. No single type semantic, Type FDOs can link to existing vocabularies \& ontologies. JSON-LD used within some FDO objects (e.g.~DISSCO Digital Specimen, NIST Material Science schema) \cite{wittenburgFAIRDigitalObject2022b}
   & Lightweight HTTP semantics for authenticity/navigation. Semantic Type not commonly expressed on PID/header level, may be declared within Linked Data metadata. Semantic of type implied by Linked Data formats (e.g.~OWL2, RDFS), although choice of type system may not be explicit. \\
@@ -184,11 +184,11 @@ Web w/ Linked Data \\
   & DOIP serialise FDOs as JSON, metadata commonly use JSON, typed with JSON Schema. Multiple byte stream attachments of any media type.
   & Textual HTTP headers (including any signposting), single byte stream of any media type, e.g.~Linked Data formats (JSON-LD, Turtle, RDF/XML) or embedded in document (HTML with RDFa, JSON-LD or Microdata). XML was previously the main syntax used by APIs, JSON is now dominant. \\
 \textbf{Connective}: \emph{transferring messages to another application, e.g.~wrapping in other protocols}
-  & DOIP \cite{DONA 2018} is transport-independent, commonly TLS TCP/IP port 9000), \href{https://www.cordra.org/documentation/api/doip-api-for-http-clients.html}{DOIP over HTTP}
-  & HTTP/1.1 (TCP/IP port 80), HTTP/1.1+TLS (TCP/IP 443), HTTP/2 (as HTTP/1* but binary), HTTP/3 (like HTTP/2+TLS but UDP) \\
+  & DOIP \cite{DONA 2018} is transport-independent, commonly TLS TCP/IP port 9000, DOIP over HTTP \cite{DOIPAPIHTTPa}
+  & HTTP/1.1 TCP/IP port 80 \cite{rfc2616}; HTTP/1.1+TLS, TCP/IP 443 \cite{rfc2818}; HTTP/2, as HTTP/1* but binary \cite{rfc7540}; HTTP/3, like HTTP/2+TLS but UDP \cite{rfc9114} \\
 \textbf{Environmental}: \emph{how applications are deployed and affected by its environment, portability}
-  & Main DOIP implementation is \href{https://www.cordra.org/}{Cordra}, which can be single-instance or \href{https://www.cordra.org/documentation/configuration/distributed-deployment.html}{distributed}. Cordra \href{https://www.cordra.org/documentation/configuration/storage-backends.html}{storage backends} include file system, S3, MongoDB (itself scalable). Unique DOIP protocol can be hard to add to existing Web application frameworks, although proxy services have been developed (e.g.~B2SHARE adapter).
-  & HTTP services widely deployed in a myriad of ways, ranging from single instance servers, horizontally \& vertically scaled application servers, to (for static content) multi-cloud Content-Delivery Networks (CDN). Current scalable cloud technologies for Web hosting may not support HTTP features previously seen as important for Semantic Web, e.g.~content negotiation and semantic HTTP status codes. \\
+  & Main DOIP implementation is \href{https://www.cordra.org/}{\emph{Cordra}}, which can be single-instance or \href{https://www.cordra.org/documentation/configuration/distributed-deployment.html}{distributed}. Cordra \href{https://www.cordra.org/documentation/configuration/storage-backends.html}{storage backends} include file system, S3, MongoDB (itself scalable). Unique DOIP protocol can be hard to add to existing Web application frameworks, although proxy services have been developed (e.g.~B2SHARE adapter).
+  & HTTP services widely deployed in a myriad of ways, ranging from single instance servers, horizontally \& vertically scaled application servers, to multi-cloud Content-Delivery Networks (CDN). Current scalable cloud technologies for Web hosting may not support HTTP features previously seen as important for Semantic Web, e.g.~content negotiation and semantic HTTP status codes. \\
 \bottomrule
 \end{longtable}
 
@@ -272,7 +272,7 @@ In Table \vref{ch3:fdo-checks} we evaluate completeness of the guidelines in two
 G1: \emph{invest for many decades}
   & Handle system stable for 20 years, DOIP 2.0 since 2017.
   & Ensure FDO types will not be protocol-bound as DOIP might be updated/replaced
-  & HTTP stable for 30 years, Semantic Web for 20 years. \texttt{http://} URIs replaced by \texttt{https://}.
+  & HTTP stable for 30 years, Semantic Web for 20 years. \texttt{http://} URIs mostly replaced by \texttt{https://}.
   & Keep flexibility of RDF serialisation formats which may change more frequently \\
 G2: \emph{trustworthiness}
   & DOI/Handle trusted by all major academic publishers and data repositories. DOIP relatively unknown, in effect only one implementation.
@@ -283,7 +283,7 @@ G3: \emph{follows FAIR principles}
   & See Table \vref{ch3:fair-data-maturity-model}
   & Ensure all FAIR principles are covered, build complete examples.
   & Touched briefly, see Table \vref{ch3:fair-data-maturity-model}
-  & Add explicit expression to show each FAIR pcinciple fulfilled. \\
+  & Add explicit expression to show each FAIR principle fulfilled. \\
 G4: \emph{machine actionability}
   & CRUD and extension operations dynamically listed (see Table \vref{ch3:fdo-web-middleware})
   & Specify which operations should work for a given type, to reduce need for dynamic lookup. Specify input/output expectations formally (e.g.~JSON Schema).
@@ -301,7 +301,7 @@ G6: \emph{stable binding between entities}
   & \\
 G7: \emph{encapsulation}
   & Operations discovered at runtime (\texttt{0.DOIP/Op.ListOperations}).
-  & Allow method discovery by type FDOs in advance (see PR-TypingFDOs-2.0-20220608).
+  & Allow method discovery by type FDOs in advance, see \cite{fdo-TypingFDOs}.
   & HTTP methods discovered at runtime (\texttt{OPTIONS}), indempotent methods attempted directly. Unsupported methods reported using LDP constraints to human-readable text.
   & Declare supported methods in advance, e.g.~OpenAPI \cite{OpenAPISpecificationV3} \\
 G8: \emph{technology independence}
@@ -312,18 +312,18 @@ G8: \emph{technology independence}
 G9: \emph{standard compliance}
   & Handle \cite{rfc3650}, DOIP \cite{DONA 2018}. FDO requirements not standardised yet.
   & Formalise standard process of FDO requirements \cite{fdo-DocProcessStd}
-  & HTTP, LDP. FDOF not yet standardised
-  & Formalise FDOF from FDOF-SEM working group \\
+  & HTTP, LDP. However FDOF is not yet standardised.
+  & Formalise FDOF from FDOF-SEM working group. \\
 FDOF1: \emph{PID as basis}
   & Extensive use of Handle system.
-  & Clarify how local testing handles can be used during development, how ``temporary'' FDOs should evolve \cite{fdo-PIDProfileAttributes}. Register \texttt{0.DOIP/*} and \texttt{0.FDO/*} as PIDs.
+  & Clarify how local testing handles can be used during development, how ``temporary'' FDOs should evolve \cite{fdo-PIDProfileAttributes}. Register \texttt{0.DOIP/*} and \texttt{0.FDO/*} as actual PIDs.
   & HTTP URLs as basis for identifiers, but they are frequently not persistent.
-  & Add strong guidance for PID services like w3id and persistence policies. \\
+  & Add strong guidance for PID services like w3id and persistence policies \cite{McMurry 2017}. \\
 FDOF2: \emph{PID record w/ type}
   & Unspecified how to resolve from Handle to DOIP Service (!), in practice \texttt{10320/loc}, \texttt{0.TYPE/DOIPService}, \texttt{URL}, \texttt{URL\_REPLICA}
   & Document requirements for PID Record
   & w3id/purl PIDs redirect without giving any metadata. Datacite DOIs content-negotiate to give registered metadata.
-  & Add FAIR Signposting at PID provider for minimal PID record \\
+  & Add FAIR Signposting \cite{vandesompelFAIRSignpostingProfile2022} at PID provider for minimal PID record \\
 FDOF3: \emph{PID resolvable to bytestream \& metadata}
   & Byte stream resolvable (\texttt{0.DOIP/Retrieve}), \texttt{includeElementData} option can retrieve bytestream or full object structure. No method/attribute defined for separate metadata, only directly in PID Record. Unclear meaning of multiple items and bytestream chunks.
   & Clarify expectations for multiple items. Recommend chunks to not be used.
@@ -581,7 +581,7 @@ RDA-F4-01M
   & Metadata is offered in such a way that it can be harvested and indexed
   & FDOF10
   & No, registries not required (except Data Type Registries). Handle registry only searchable by PID.
-  & Not specified
+  & ---
   & Not specified, several registries/catalogues for vocabularies/types (e.g. \cite{NCBOBioPortal}). Indexing by search engines if exposing HTML w/schema.org. \\
 RDA-A1-01M
   & Metadata contains information to enable the user to get access to the data
@@ -629,7 +629,8 @@ RDA-A1-05D
   & Data can be accessed automatically (i.e.~by a computer program)
   & G4 FDOF3 FDOF6
   & Required, but few client libraries
-  & & Ubiquitous, hundreds of HTTP libraries \\
+  & HTTP \texttt{GET}, content-negotiation for \texttt{fdof/object}
+  & Ubiquitous, hundreds of HTTP libraries \\
 RDA-A1.1-01M
   & Metadata is accessible through a free access protocol    
   & G1 G8 G9
@@ -757,8 +758,9 @@ RDA-R1.1-03M
 RDA-R1.2-01M
   & Metadata includes provenance information according to community-specific standards
   & FDOR9 FDOR10
-  & Unspecified (some Cordra types add getProvenance methods). PID Kernel attributes? Unspecified W3C PROV-O, PAV
-  & & \\
+  & Unspecified (some Cordra types add \texttt{getProvenance} methods). PID Kernel attributes? 
+  & ----
+  & Unspecified W3C PROV-O, PAV \\
 RDA-R1.2-02M
   & Metadata includes provenance information according to a cross-community language
   & FDOR9 FDOR8
@@ -923,7 +925,7 @@ In Table \vref{ch3:eosc} we review the EOSC Interoperability Framework (EOSC IF)
     & Versioning with PAV/PROV/DCAT \\
   Legal          & Policy/guidance for patent/trade secrets violation 
     & Undefined 
-    & Undefined, legal owner may be specified \\
+    & Undefined, legal owner may be specified. \href{https://www.w3.org/TR/2018/REC-odrl-vocab-20180215/}{ODRL} can express policies \\
   Legal          & GDPR compliance for personal data 
     & Undefined 
     & Undefined \\
