@@ -48,9 +48,9 @@ detailed
 \href{https://drive.google.com/drive/u/0/folders/1-SbZk7enOqjy2Rf57PMB-CQW7qMOUXgO}{recommendations}\footnote{See section \vref{ch3:next-step-fdo}},
 currently open for comments, including a
 \href{https://docs.google.com/document/d/10ESWe-m0ex7fIW0ZYOYeVg6gAcIaBKyO3W-Vg8tXzdw/edit\#}{DOIP
-endorsement} and updated
+endorsement} \cite{fdo-DOIPEndorsement} and updated
 \href{https://docs.google.com/document/d/1-4_yGRrIcgdMIwaFvHyUt6lxDdfzGpqLUCEihE0vJ-g/edit\#heading=h.gjdgxs}{FDO
-requirements}. These point out \textbf{Linked Data} as another possible
+requirements} \cite{fdo-RequirementSpec}. These point out \textbf{Linked Data} as another possible
 technology stack, which is the focus of this work.
 
 \paragraph{Linked Data}
@@ -66,8 +66,7 @@ million sites for indexing by search engines --
 \href{https://w3techs.com/technologies/details/da-jsonld}{43\% of all
 websites} use \href{https://json-ld.org/}{JSON-LD}.
 
-Although LD practices align to FAIR
-{[}\href{https://doi.org/10.1007/978-3-319-98192-5_60}{Hasnain 2018}{]},
+Although LD practices align to FAIR \cite{Hasnain 2018},
 they do not fully encompass active aspects of FDOs. The HTTP protocol is
 used heavily for applications (e.g.~mobile apps and cloud services),
 with REST APIs of customised \href{https://json-schema.org/}{JSON
@@ -94,8 +93,7 @@ established -- arbitrary LD resources cannot be assumed to follow FDO
 principles. This is equivalent to how existing use of DOIP is not
 FDO-compliant without additional constraints.
 
-Namely, persistent identifiers (PIDs)
-{[}\href{https://doi.org/10.1371/journal.pbio.2001414}{McMurry 2017}{]}
+Namely, persistent identifiers (PIDs) \cite{McMurry 2017}
 (FDOF1) are common in LD world (e.g.~using \url{http://purl.org/} or
 \url{https://w3id.org/}), however they don't always have a declared type
 (FDOF2), or the PID may not even appear in the metadata. URL-based PIDs
@@ -108,8 +106,8 @@ While CRUD operations (FDOF6) are supported by native HTTP operations
 (GET/PUT/POST/DELETE) as in \href{https://www.w3.org/TR/ldp/}{LDP},
 there is little consistency on how to define operation interfaces in LD
 (FDOF5). Existing REST approaches like
-\href{https://swagger.io/specification/}{OpenAPI} and
-\href{https://doi.org/10.17487/RFC6570}{URI templates} are mature and
+\href{https://swagger.io/specification/}{OpenAPI} \cite{OpenAPISpecificationV3} and
+URI templates \cite{rfc6570} are mature and
 good candidates, and should be related to defined types to support
 machine-actionable composition (FDOF7). HTTP error code \emph{410 Gone}
 is used in tombstone pages for removed resources (FDOF12), although more
@@ -118,7 +116,7 @@ frequent is \emph{404 Not Found}.
 Metadata is resolved to HTTP documents with their own URIs, but these
 frequently don't have their own PID (FDOF8).
 \href{https://w3c.github.io/rdf-star/}{RDF-Star} and nanopublications
-{[}\href{https://doi.org/10.7717/peerj-cs.387}{Kuhn 2021}{]} give ways
+\cite{Kuhn 2021} give ways
 to identify and trace provenance of individual assertions.
 
 Different metadata levels (FDOF9) are frequently developed for LD
@@ -140,9 +138,7 @@ heterogeneously across the Web, but consistent machine-actionable FDOs
 will need specific choices of core standards and vocabularies. Another
 challenge is when multiple PIDs refer to ``almost the same'' concept in
 different collections -- significant effort have created manual and
-automated semantic mappings
-{[}\href{https://doi.org/10.1016/j.websem.2013.05.001}{Baker 2013},
-\href{https://doi.org/10.1007/s12553-022-00639-w}{de Mello 2022}{]}).
+automated semantic mappings \cite{Baker 2013,de Mello 2022}.
 
 Currently the FDO Forum has suggested the use of LDP as a possible
 alternative for implementing FAIR Digital Objects \cite{bonino2021}, which
@@ -161,15 +157,14 @@ poses a potential threat for adoption and interoperability. Yet, the
 challenges for agreeing on usage profiles apply equally to DOIP as LD
 approaches.
 
-We have worked with different scientific communities to define RO-Crate
-{[}\href{https://doi.org/10.3233/DS-210053}{Soiland-Reyes 2022}{]}, a
+We have worked with different scientific communities to define 
+RO-Crate \cite{Soiland-Reyes 2022}, a
 lightweight method to package research outputs along with their
 metadata. While RO-Crate's use of schema.org shows just one possible
 metadata model, it's powerful enough to be able to express FDOs, and
 familiar to web developers.
 
-We have also used FAIR Signposting
-{[}\href{https://signposting.org/FAIR/}{Van de Sompel 2022}{]} with HTTP
+We have also used FAIR Signposting \cite{Van de Sompel 2022} with HTTP
 \texttt{Link:} headers as a way to support navigation to the individual
 core properties of an FDO (PID, type, metadata, licence, bytestream)
 that does not require heuristics of content-negotiation and is agnostic
