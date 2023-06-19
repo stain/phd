@@ -1,5 +1,5 @@
 \section{Formalizing RO-Crate in First Order Logic}
-\label{formaldefinition}
+\label{ch5:formaldefinition}
 
 Below is a formalization of the concept of RO-Crate as a set of relations using First Order Logic:
 
@@ -33,7 +33,7 @@ The definitions \vpageref[below]{minimalcrate} use $\mathcal{L}_{rocrate}$ for a
 
 \small
 \begin{eqnarray*}
-\label{minimalcrate}
+\label{ch5:minimalcrate}
 ROCrate(R)                                  & \models & Root(R) \land Mentions(R, R) \land hasPart(R, d) \land \\
                                             & & Mentions(R, d) \land DataEntity(d) \land \\
                                             & & Mentions(R, c) \land ContextualEntity(c) \\
