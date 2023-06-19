@@ -17,16 +17,16 @@ computational workflows.
 
 \subsection{SDR workflows}\label{ch7:sdr-workflows}
 
-SDR\footnote\url{https://sdr.nhm.ac.uk/} is realised as the workflow system
+\footurl{https://sdr.nhm.ac.uk/}{SDR} is realised as the workflow system
 Galaxy \cite{Afgan 2018} with
-SDR tools\footnote\url{https://github.com/DiSSCo/SDR} installed. An Open
+\footurl{https://github.com/DiSSCo/SDR}{SDR tools} installed. An Open
 Research challenge is that some tools have machine learning models with
 a commercial licence. This complicates publishing to
-Galaxy toolshed\footnote\url{https://toolshed.g2.bx.psu.edu/}, however we
-created Ansible\footnote{\url{https://www.ansible.com/}} scripts to install
+\footurl{https://toolshed.g2.bx.psu.edu/}{Galaxy toolshed}, however we
+created \footurl{https://www.ansible.com/}{Ansible} scripts to install
 equivalent Galaxy servers, including tools and dependencies, accounts
 and workflows. SDR workflows are
-published\footnote\url{https://workflowhub.eu/projects/72} in WorkflowHub as
+\footurl{https://workflowhub.eu/projects/72}{published in WorkflowHub} as
 FDOs.
 
 We implemented the use case \emph{De novo digitization} in Galaxy \cite{Brack 2022}.
@@ -72,7 +72,7 @@ FDOs and use new tools such as barcode detection of museums' internal
 identifiers.
 
 We are now ready to publish digital specimens as FAIR Digital Objects,
-with registration into DiSSCO repositories\footnote\url{https://www.dissco.eu/dissco/technical-infrastructure/}, PID assignment and workflow provenance. However, even at
+with registration into \footurl{https://www.dissco.eu/dissco/technical-infrastructure/}{DiSSCO repositories}, PID assignment and workflow provenance. However, even at
 this early stage we have identified several challenges that need to be
 addressed.
 
@@ -81,10 +81,10 @@ addressed.
 We highlight the \emph{De novo} use case because this workflow is
 exchanging \emph{partial} FDOs -- openDS objects which are not fully
 completed and not yet assigned persistent identifiers.
-openDS schemas\footnote\url{https://github.com/DiSSCo/openDS} are still in
+\footurl{https://github.com/DiSSCo/openDS}{openDS schemas} are still in
 development, therefore SDR uses a
 more flexible
-JSON schema\footnote\url{https://github.com/DiSSCo/SDR/blob/main/galaxy-workflow/config/opends-schema.json} where only the initial metadata (populated from CSV) are
+\footurl{https://github.com/DiSSCo/SDR/blob/main/galaxy-workflow/config/opends-schema.json}{JSON schema} where only the initial metadata (populated from CSV) are
 required. Each step validates the partial FDO before passing it to the
 underlying command line tool.
 
@@ -114,8 +114,8 @@ has no caching mechanisms.
 \subsection{RO-Crate lessons}\label{ch7:ro-crate-lessons}
 
 Galaxy is developing support for importing and
-exporting Workflow
-Run Crates\footnote\url{https://www.researchobject.org/workflow-run-crate/}, a profile of RO-Crate \cite{Soiland-Reyes 2022} to
+exporting \footurl{https://www.researchobject.org/workflow-run-crate/}{Workflow
+Run Crates}, a profile of RO-Crate \cite{Soiland-Reyes 2022} to
 captures execution history of a workflow, including its definition and
 intermediate data \cite{De Geest 2022}. SDR is adopting this support to
 combine openDS FDOs with workflow provenance, as envisioned by
