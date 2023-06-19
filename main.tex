@@ -92,6 +92,11 @@
 \renewcommand{\chaptermark}[1]{%
 \markboth{#1}{}}
 
+% hyperlink but footnote with url
+\newcommand{\footurl}[2]{
+  {\href{#1}{#2}}\footnote{\url{#1}}
+}
+
 % for table resizing
 \usepackage{booktabs}
 \usepackage{multirow}

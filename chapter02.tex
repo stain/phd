@@ -8,7 +8,7 @@ Here I will briefly discuss how FDO principles can be achieved using existing st
 
 I will also reflect on how the Linked Data community can adapt to better welcome approaches like FDO.
 
-\subsubsection{Background}
+\subsection{Background}
 \label{ch2:background}
 
 The \emph{FAIR principles} \cite{Wilkinson 2016} are
@@ -17,10 +17,10 @@ their broad interpretation and many ways to implement can lead to
 inconsistencies and incompatibility
 \cite{Jacobsen 2020}.
 
-The European Open Science Cloud (\href{https://www.eosc.eu/}{EOSC}) has
+The European Open Science Cloud (\footurl{https://www.eosc.eu/}{EOSC}) has
 been instrumental in maturing and encouraging FAIR practices across a
 wide range of research areas. Linked Data in the form of
-\href{https://www.w3.org/TR/rdf11-primer/}{RDF} (Resource Description
+\footurl{https://www.w3.org/TR/rdf11-primer/}{RDF} (Resource Description
 Framework) is the common way to implement machine-readability in FAIR,
 however the principles do not prescribe RDF or any particular technology
 \cite{Mons 2017}.
@@ -39,44 +39,41 @@ FDO is a set of principles \cite{bonino2019}, implementable in multiple ways. Cu
 use \emph{Digital Object Interface Protocol} (DOIPv2)
 \cite{DONA 2018}, with the
 main implementation
-\href{https://www.cordra.org/documentation/api/doip.html}{CORDRA}. We
+\footurl{https://www.cordra.org/documentation/api/doip.html}{Cordra}. We
 can consider DOIPv2 as a simplified combination of object-oriented
 (CORBA, SOAP) and document-based (HTTP, FTP) approaches.
 
-More recently, the \href{https://fairdo.org/}{FDO Forum} has prepared
-detailed
-\href{https://drive.google.com/drive/u/0/folders/1-SbZk7enOqjy2Rf57PMB-CQW7qMOUXgO}{recommendations}\footnote{See section \vref{ch3:next-step-fdo}},
+More recently, the \footurl{https://fairdo.org/}{FDO Forum} has prepared 
+detailed recommendations\footnote{See section \vref{ch3:next-step-fdo}} \cite{fdo-Specs},
 currently open for comments, including a
-\href{https://docs.google.com/document/d/10ESWe-m0ex7fIW0ZYOYeVg6gAcIaBKyO3W-Vg8tXzdw/edit\#}{DOIP
-endorsement} \cite{fdo-DOIPEndorsement} and updated
-\href{https://docs.google.com/document/d/1-4_yGRrIcgdMIwaFvHyUt6lxDdfzGpqLUCEihE0vJ-g/edit\#heading=h.gjdgxs}{FDO
-requirements} \cite{fdo-RequirementSpec}. These point out \textbf{Linked Data} as another possible
+DOIP endorsement \cite{fdo-DOIPEndorsement} and updated
+FDO requirements \cite{fdo-RequirementSpec}. These point out \textbf{Linked Data} as another possible
 technology stack, which is the focus of this work.
 
 \paragraph{Linked Data}
 \label{ch2:linked-data}
 
-\href{https://www.w3.org/standards/semanticweb/data}{Linked Data
+\footurl{https://www.w3.org/standards/semanticweb/data}{Linked Data
 standards} (LD), based on the Web architecture, are commonplace in
 sciences like bioinformatics, chemistry and medical informatics -- in
 particular to publish Open Data as machine-readable resources. LD has
 become ubiquitous on the general Web, the
-\href{https://schema.org/}{schema.org} vocabulary is used by over 10
+\footurl{https://schema.org/}{schema.org} vocabulary is used by over 10
 million sites for indexing by search engines --
-\href{https://w3techs.com/technologies/details/da-jsonld}{43\% of all
-websites} use \href{https://json-ld.org/}{JSON-LD}.
+\footurl{https://w3techs.com/technologies/details/da-jsonld}{43\% of all
+websites} use \footurl{https://json-ld.org/}{JSON-LD}.
 
 Although LD practices align to FAIR \cite{Hasnain 2018},
 they do not fully encompass active aspects of FDOs. The HTTP protocol is
 used heavily for applications (e.g.~mobile apps and cloud services),
-with REST APIs of customised \href{https://json-schema.org/}{JSON
+with REST APIs of customised \footurl{https://json-schema.org/}{JSON
 structures}. Approaches that merge the LD and REST worlds include
-\href{https://www.w3.org/TR/ldp/}{Linked Data Platform} (LDP),
-\href{https://www.hydra-cg.com/}{Hydra} and
-\href{https://www.w3.org/TR/webpayments-http-messages/}{Web Payments}.
+\footurl{https://www.w3.org/TR/ldp/}{Linked Data Platform} (LDP),
+\footurl{https://www.hydra-cg.com/}{Hydra} and
+\footurl{https://www.w3.org/TR/webpayments-http-messages/}{Web Payments}.
 
 
-\subsubsection{Meeting FDO principles using Linked Data
+\subsection{Meeting FDO principles using Linked Data
 standards}\label{ch2:meeting-fdo-principles-using-linked-data-standards}
 
 Considering the potential of FDOs when combined with the mature
@@ -103,10 +100,10 @@ are defined semantic artefacts with PIDs (FDOF4), and attributes can be
 reused across vocabularies.
 
 While CRUD operations (FDOF6) are supported by native HTTP operations
-(GET/PUT/POST/DELETE) as in \href{https://www.w3.org/TR/ldp/}{LDP},
+(GET/PUT/POST/DELETE) as in \footurl{https://www.w3.org/TR/ldp/}{LDP},
 there is little consistency on how to define operation interfaces in LD
 (FDOF5). Existing REST approaches like
-\href{https://swagger.io/specification/}{OpenAPI} \cite{OpenAPISpecificationV3} and
+\footurl{https://swagger.io/specification/}{OpenAPI} \cite{OpenAPISpecificationV3} and
 URI templates \cite{rfc6570} are mature and
 good candidates, and should be related to defined types to support
 machine-actionable composition (FDOF7). HTTP error code \emph{410 Gone}
@@ -115,25 +112,25 @@ frequent is \emph{404 Not Found}.
 
 Metadata is resolved to HTTP documents with their own URIs, but these
 frequently don't have their own PID (FDOF8).
-\href{https://w3c.github.io/rdf-star/}{RDF-Star} and nanopublications
+\footurl{https://w3c.github.io/rdf-star/}{RDF-Star} and nanopublications
 \cite{Kuhn 2021} give ways
 to identify and trace provenance of individual assertions.
 
 Different metadata levels (FDOF9) are frequently developed for LD
 vocabularies across different communities (FDOF10), such as
-\href{http://hl7.org/fhir/}{FHIR} for health data,
-\href{https://bioschemas.org/}{Bioschemas} for bioinformatics and
+\footurl{http://hl7.org/fhir/}{FHIR} for health data,
+\footurl{https://bioschemas.org/}{Bioschemas} for bioinformatics and
 \textgreater1000 more specific
-\href{https://bioportal.bioontology.org/ontologies}{bioontologies}.
+\footurl{https://bioportal.bioontology.org/ontologies}{bioontologies}.
 Increased declaration and navigation of \emph{profiles} is therefore
 essential for machine-actionability and consistent consumption across
 FAIR endpoints.
 
 Several standards exist for rich collections (FDOF11),
-e.g.~\href{https://www.openarchives.org/ore/}{OAI-ORE},
-\href{https://www.w3.org/TR/vocab-dcat-3/}{DCAT},
-\href{https://www.researchobject.org/ro-crate/}{RO-Crate},
-\href{https://www.w3.org/TR/ldp/}{LDP}. These are used and extended
+e.g.~\footurl{https://www.openarchives.org/ore/}{OAI-ORE},
+\footurl{https://www.w3.org/TR/vocab-dcat-3/}{DCAT},
+\footurl{https://www.researchobject.org/ro-crate/}{RO-Crate},
+\footurl{https://www.w3.org/TR/ldp/}{LDP}. These are used and extended
 heterogeneously across the Web, but consistent machine-actionable FDOs
 will need specific choices of core standards and vocabularies. Another
 challenge is when multiple PIDs refer to ``almost the same'' concept in
@@ -145,7 +142,7 @@ alternative for implementing FAIR Digital Objects \cite{bonino2021}, which
 proposes a novel approach of content-negotiation with custom media
 types.
 
-\subsubsection{Discussion}\label{ch2:discussion}
+\subsection{Discussion}\label{ch2:discussion}
 
 The Linked Data stack provides a set of specifications, tools and
 guidelines in order to help the FDO principles become a reality. This

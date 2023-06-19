@@ -6,7 +6,7 @@ We compare the FDO approach with established Linked Data practices and the exist
 
 \subsection{Introduction}\label{ch3:introduction}
 
-The FAIR principles \cite{Wilkinson 2016} encourage sharing of scientific data with machine-readable metadata and the use of interoperable formats, and are being adapted by a wide range of research infrastructures. They have been recognised by the research community and policy makers as a goal to strive for \cite{h2020fair2016}. In particular, the European Open Science Cloud (\href{https://www.eosc.eu/}{EOSC}) has promoted adaptation of FAIR data sharing of data resources across electronic research infrastructures \cite{Mons 2017}. The EOSC Interoperability Framework \cite{eosc-interop-framework} puts particular emphasis on how interoperability can be achieved technically, semantically, organisationally, and legally -- laying out a vision of how data, publication, software and services can work together to form an ecosystem of rich digital objects.
+The FAIR principles \cite{Wilkinson 2016} encourage sharing of scientific data with machine-readable metadata and the use of interoperable formats, and are being adapted by a wide range of research infrastructures. They have been recognised by the research community and policy makers as a goal to strive for \cite{h2020fair2016}. In particular, the European Open Science Cloud (\footurl{https://www.eosc.eu/}{EOSC}) has promoted adaptation of FAIR data sharing of data resources across electronic research infrastructures \cite{Mons 2017}. The EOSC Interoperability Framework \cite{eosc-interop-framework} puts particular emphasis on how interoperability can be achieved technically, semantically, organisationally, and legally -- laying out a vision of how data, publication, software and services can work together to form an ecosystem of rich digital objects.
 
 Specifically, the EOSC Interoperability framework highlights the emerging FAIR Digital Object (FDO) concept \cite{schultesFAIRPrinciplesDigital2019a} as a possible foundation for building a semantically interoperable ecosystem to fully realise the FAIR principles beyond individual repositories and infrastructures. The FDO approach has great potential, as it proposes strong requirements for identifiers, types, access and formalises interactive operations on objects.
 
@@ -26,7 +26,7 @@ The concept of \textbf{FAIR Digital Objects} \cite{schultesFAIRPrinciplesDigital
 
 In brief, the structure of a FAIR Digital Object (FDO) is to, given a \emph{persistent identifier} (PID) such as a DOI, resolve to a \emph{PID Record} that gives the object a \emph{type} along with a mechanism to retrieve its \emph{bit sequences}, \emph{metadata} and references to further programmatic \emph{operations}. The type of an FDO (itself an FDO) defines attributes to semantically describe and relate such FDOs to other concepts (typically other FDOs referenced by PIDs). The premise of systematically building an ecosystem of such digital objects is to give researchers a way to organise complex digital entities, associated with identifiers, metadata, and supporting automated processing \cite{wittenburgDigitalObjectsDrivers2019a}.
 
-Recently, FDOs have been recognised by the European Open Science Cloud (\href{https://eosc.eu/}{EOSC}) as a suggested part of its Interoperability Framework \cite{eosc-interop-framework}, in particular for deploying active and interoperable FAIR resources that are \emph{machine actionable}. Development of the FDO concept continued within Research Data Alliance (\href{https://www.rd-alliance.org/}{RDA}) groups and EOSC projects like \href{https://www.go-fair.org/}{GO-FAIR}, concluding with a set of guidelines for implementing FDO \cite{bonino2019}. The \href{https://fairdo.org/}{FAIR Digital Objects Forum} has since taken over the maturing of FDO through focused working groups which have currently drafted several more detailed specification documents (see \emph{Next steps for FDO} \vpageref{ch3:next-step-fdo}).
+Recently, FDOs have been recognised by the European Open Science Cloud (\footurl{https://eosc.eu/}{EOSC}) as a suggested part of its Interoperability Framework \cite{eosc-interop-framework}, in particular for deploying active and interoperable FAIR resources that are \emph{machine actionable}. Development of the FDO concept continued within Research Data Alliance (\footurl{https://www.rd-alliance.org/}{RDA}) groups and EOSC projects like \footurl{https://www.go-fair.org/}{GO-FAIR}, concluding with a set of guidelines for implementing FDO \cite{bonino2019}. The \footurl{https://fairdo.org/}{FAIR Digital Objects Forum} has since taken over the maturing of FDO through focused working groups which have currently drafted several more detailed specification documents (see \emph{Next steps for FDO} \vpageref{ch3:next-step-fdo}).
 
 \subsubsection{FDO approaches}\label{ch3:fdo-approaches}
 
@@ -71,7 +71,7 @@ The \textbf{Machine actionability} \cite{fdo-MachineActionDef} sets out to defin
 
 \textbf{Typing FAIR Digital Objects} \cite{fdo-TypingFDOs} defines what \emph{type} means for FDOs, primarily to enable machine actionability and to define an FDO's purpose. This document lays out requirements for how \emph{FDO Types} should themselves be specified as FDOs, and how an \emph{FDO Type Framework} allows organising and locating types. Operations applicable to an FDO is not predefined for a type, however operations naturally will require certain FDO types to work. How to define such FDO operations is not specified.
 
-\textbf{Implementation of Attributes, Types, Profiles and Registries} \cite{fdo-ImplAttributesTypesProfiles} details how to establish FDO registries for types and FDO profiles, with their association with PID systems. This document suggest policies and governance structures, together with guidelines for implementations, but without mandating any explicit technology choices. Differences in use of attributes are examplified using FDO PIDs for scientific instruments, and the proto-FDO approach of \href{https://de.dariah.eu/}{DARIAH-DE} \cite{schwardmannTwoExamplesHow2022}.
+\textbf{Implementation of Attributes, Types, Profiles and Registries} \cite{fdo-ImplAttributesTypesProfiles} details how to establish FDO registries for types and FDO profiles, with their association with PID systems. This document suggest policies and governance structures, together with guidelines for implementations, but without mandating any explicit technology choices. Differences in use of attributes are examplified using FDO PIDs for scientific instruments, and the proto-FDO approach of \footurl{https://de.dariah.eu/}{DARIAH-DE} \cite{schwardmannTwoExamplesHow2022}.
 
 %See bibliography \vref*{ch3:fdo-bibliography} for the citation per document above.
 It is worth pointing out that, except for the DOIP endorsement, all of these documents are conceptual, in the sense that they permit any technical implementation of FDO, if used according to the recommendations. 
@@ -84,7 +84,7 @@ In order to describe \emph{Linked Data} as it is used today, we'll start with an
 
 \subsubsection*{A brief history of the Semantic Web}\label{ch3:semweb}
 
-The \textbf{Semantic Web} was developed as a vision by Tim Berners-Lee \cite{berners-leeWeavingWebOriginal1999}, at a time that the Web had already become widely established for information exchange, being a global set of hypermedia documents which are cross-related using universal links in the form of URLs. The foundations of the Web (e.g.~URLs, HTTP, SSL/TLS, HTML, CSS, ECMAScript/JavaScript, media types) were standardised by \href{https://www.w3.org/standards/}{W3C}, \href{https://www.ecma-international.org/}{Ecma}, \href{https://www.ietf.org/standards/}{IETF} and later \href{https://whatwg.org/}{WHATWG}. The goal of Semantic Web was to further develop the machine-readable aspects of the Web, in particular adding \emph{meaning} (or semantics) to not just the link relations, but also to the \emph{resources} that the URLs identified, and for machines thus being able to meaningfully navigate across such resources, e.g.~to answer a particular query.
+The \textbf{Semantic Web} was developed as a vision by Tim Berners-Lee \cite{berners-leeWeavingWebOriginal1999}, at a time that the Web had already become widely established for information exchange, being a global set of hypermedia documents which are cross-related using universal links in the form of URLs. The foundations of the Web (e.g.~URLs, HTTP, SSL/TLS, HTML, CSS, ECMAScript/JavaScript, media types) were standardised by \footurl{https://www.w3.org/standards/}{W3C}, \footurl{https://www.ecma-international.org/}{Ecma}, \footurl{https://www.ietf.org/standards/}{IETF} and later \footurl{https://whatwg.org/}{WHATWG}. The goal of Semantic Web was to further develop the machine-readable aspects of the Web, in particular adding \emph{meaning} (or semantics) to not just the link relations, but also to the \emph{resources} that the URLs identified, and for machines thus being able to meaningfully navigate across such resources, e.g.~to answer a particular query.
 
 Through W3C, the Semantic Web was realised with the Resource Description Framework (RDF) \cite{w3-rdf11-primer} that used \emph{triples} of subject-predicate-object statements, with its initial serialisation format \cite{w3-rdf-syntax99} being RDF/XML (XML was at the time seen as a natural data-focused evolution from the document-centric SGML and HTML).
 
@@ -92,24 +92,24 @@ While triple-based knowledge representations were not new \cite{stanczykProcessM
 
 The early days of the Semantic Web saw fairly lightweight approaches with the establishment of vocabularies such as FOAF (to describe people and their affiliations) and Dublin Core (for bigbliographic data). Vocabularies themselves were formalised using RDFS or simply as human-readable HTML web pages defining each term. The main approach of this \emph{Web of Data} was that a URI identified a \emph{resource} (e.g.~an author) with a HTML \emph{representation} for human readers, along with a RDF representation for machine-readable data of the same resource. By using \emph{content negotiation} in HTTP\footnote{\url{https://developer.mozilla.org/en-US/docs/Web/HTTP/Content_negotiation}}, the same identifier could be used in both views, avoiding \texttt{index.html} vs \texttt{index.rdf} exposure in the URLs. The concept of \emph{namespaces} gave a way to give a group of RDF resources with the same URI base from a Semantic Web-aware service a common \emph{prefix}, avoiding repeated long URLs.
 
-The mid-2000s saw large academic interest and growth of the Semantic Web, with the development of more formal representation system for ontologies, such as OWL \cite{w3-owl2-overview}, allowing complex class hierarchies and logic inference rules following \emph{open world} paradigm. (e.g.~a \emph{ex:Parent} is equivalent to a subclass of \emph{foaf:Person} which must \emph{ex:hasChild} at least one \emph{foaf:Person}, then if we know \emph{:Alice a ex:Parent} we can infer \emph{:Alice ex:hasChild {[}a foaf:Person{]}} even if we don't know who that child is). More human-readable syntaxes for RDF such as Turtle evolved at this time, and conferences such as \href{https://iswc2022.semanticweb.org/}{ISWC} \cite{horrocksSemanticWebISWC2002} gained traction, with a large interest in knowledge representation and logic systems based on Semantic Web technologies evolving at the same time.
+The mid-2000s saw large academic interest and growth of the Semantic Web, with the development of more formal representation system for ontologies, such as OWL \cite{w3-owl2-overview}, allowing complex class hierarchies and logic inference rules following \emph{open world} paradigm. (e.g.~a \emph{ex:Parent} is equivalent to a subclass of \emph{foaf:Person} which must \emph{ex:hasChild} at least one \emph{foaf:Person}, then if we know \emph{:Alice a ex:Parent} we can infer \emph{:Alice ex:hasChild {[}a foaf:Person{]}} even if we don't know who that child is). More human-readable syntaxes for RDF such as Turtle evolved at this time, and conferences such as \footurl{https://iswc2022.semanticweb.org/}{ISWC} \cite{horrocksSemanticWebISWC2002} gained traction, with a large interest in knowledge representation and logic systems based on Semantic Web technologies evolving at the same time.
 
-Established Semantic Web services and standards include: SPARQL \cite{w3-sparql11-overview} (pattern-based triple queries), \href{https://www.w3.org/TR/rdf11-concepts/\#section-dataset}{named graphs} \cite{w3-rdf11-concepts} (triples expanded to \emph{quads} to indicate statement source or represent conflicting views), triple/quad stores (graph databases such as OpenLink Virtuoso, GraphDB, 4Store), mature RDF libraries (including Redland RDF, Apache Jena, Eclipse RDF4J, RDFLib, RDF.rb, rdflib.js), and graph visualisation.
+Established Semantic Web services and standards include: SPARQL \cite{w3-sparql11-overview} (pattern-based triple queries), \footurl{https://www.w3.org/TR/rdf11-concepts/\#section-dataset}{named graphs} \cite{w3-rdf11-concepts} (triples expanded to \emph{quads} to indicate statement source or represent conflicting views), triple/quad stores (graph databases such as OpenLink Virtuoso, GraphDB, 4Store), mature RDF libraries (including Redland RDF, Apache Jena, Eclipse RDF4J, RDFLib, RDF.rb, rdflib.js), and graph visualisation.
 
 RDF is one way to implement \emph{knowledge graphs}, a system of named edges and nodes\footnote{In RDF, each triple represent an edge that is named using its property URI, and the nodes are subject/object as URIs, blank nodes or (for objects) typed literal values \cite{w3-rdf11-primer}.} \cite{nurdiati2008}, which when used to represent a sufficiently detailed model of the world, can then be queried and processed to answer detailed research questions
 The creation of RDF-based knowledge graphs grew particularly in fields like bioinformatics, e.g.~for describing genomes and proteins \cite{gobleStateNationData2008c,williamsOpenPHACTSSemantic2012c}. In theory, the use of RDF by the life sciences would enable interoperability between the many data repositories and support combined views of the many aspects of bio-entities -- however in practice most institutions ended up making their own ontologies and identifiers, for what to the untrained eye would mean roughly the same. One can argue that the toll of adding the semantic logic system of rich ontologies meant that small, but fundamental, differences in opinion (e.g.~\emph{should a gene identifier signify just the particular DNA sequence letters, or those letters as they appear in a particular position on a human chromosome?}) lead to large differences in representational granularity, and thus needed different identifiers.
 
 Facing these challenges, thanks to the use of universal identifiers in the form of URIs, \emph{mappings} could retrospectively be developed not just between resources, but also across vocabularies. Such mappings can be expressed themselves using lightweight and flexible RDF vocabularies such as SKOS \cite{w3-skos-primer} (e.g.~\texttt{dct:title\ skos:closeMatch\ schema:name} to indicate near equivalence of two properties). Exemplifying the need for such cross-references, automated ontology mappings have identified large potential overlaps, like 372 definitions of \texttt{Person}) \cite{huHowMatchableAre2011a}.
 
-The move towards \emph{Open Science} data sharing practices did from the late 2000s encourage knowledge providers to distribute collections of RDF descriptions as downloadable \emph{datasets} \footnote{\emph{Datasets} that distribute RDF graphs should not be confused with \href{https://www.w3.org/TR/rdf11-concepts/\#section-dataset}{\emph{RDF Datasets}} used for partitioning \emph{named graphs}.}, so that their clients can avoid thousands of HTTP requests for individual resources. This enabled local processing, mapping and data integration across datasets (e.g.~Open PHACTS \cite{grothAPIcentricLinkedData2014b}), rather than relying on the providers' RDF and SPARQL endpoints (which could become overloaded when handling many concurrent, complex queries).
+The move towards \emph{Open Science} data sharing practices did from the late 2000s encourage knowledge providers to distribute collections of RDF descriptions as downloadable \emph{datasets} \footnote{\emph{Datasets} that distribute RDF graphs should not be confused with \footurl{https://www.w3.org/TR/rdf11-concepts/\#section-dataset}{\emph{RDF Datasets}} used for partitioning \emph{named graphs}.}, so that their clients can avoid thousands of HTTP requests for individual resources. This enabled local processing, mapping and data integration across datasets (e.g.~Open PHACTS \cite{grothAPIcentricLinkedData2014b}), rather than relying on the providers' RDF and SPARQL endpoints (which could become overloaded when handling many concurrent, complex queries).
 
-With these trends, an emerging problem was that adopters of the Semantic Web primarily utillised it as a set of graph technologies, with little consideration to existing Web resources. This meant that links stayed mainly within a single information system, with little URI reuse even with large term overlaps \cite{kamdarSystematicAnalysisTerm2017a}. Just like \emph{link rot} affect regular Web pages and their citations from scholarly communication \cite{kleinScholarlyContextNot2014a}, for a majority of described RDF resources in the \href{https://lod-cloud.net/}{Linked Open Data} (LOD) Cloud's gathering of more than thousand datasets, unfortunately do not actually link to (still) downloadable (\emph{dereferenceable}) Linked Data \cite{polleresMoreDecentralizedVision2020a}. Another challenge facing potential adopters is the plethora of choices, not just to navigate, understand and select to reuse the many possible vocabularies and ontologies \cite{carrieroLandscapeOntologyReuse2020a}, but also technological choices on RDF serialisation (at least \href{https://www.w3.org/TR/rdf11-primer/\#section-graph-syntax}{7 formats}), type system (RDFS \cite{w3-rdf-schema}, OWL \cite{w3-owl2-overview}, OBO \cite{tirmiziMappingOBOOWL2011a}, SKOS \cite{w3-skos-primer}), and deployment challenges \cite{sauermannCoolURIsSemantic2011} (e.g. hash vs slash in namespaces, HTTP status codes and PID redirection strategies).
+With these trends, an emerging problem was that adopters of the Semantic Web primarily utillised it as a set of graph technologies, with little consideration to existing Web resources. This meant that links stayed mainly within a single information system, with little URI reuse even with large term overlaps \cite{kamdarSystematicAnalysisTerm2017a}. Just like \emph{link rot} affect regular Web pages and their citations from scholarly communication \cite{kleinScholarlyContextNot2014a}, for a majority of described RDF resources in the \footurl{https://lod-cloud.net/}{Linked Open Data} (LOD) Cloud's gathering of more than thousand datasets, unfortunately do not actually link to (still) downloadable (\emph{dereferenceable}) Linked Data \cite{polleresMoreDecentralizedVision2020a}. Another challenge facing potential adopters is the plethora of choices, not just to navigate, understand and select to reuse the many possible vocabularies and ontologies \cite{carrieroLandscapeOntologyReuse2020a}, but also technological choices on RDF serialisation (at least \footurl{https://www.w3.org/TR/rdf11-primer/\#section-graph-syntax}{7 formats}), type system (RDFS \cite{w3-rdf-schema}, OWL \cite{w3-owl2-overview}, OBO \cite{tirmiziMappingOBOOWL2011a}, SKOS \cite{w3-skos-primer}), and deployment challenges \cite{sauermannCoolURIsSemantic2011} (e.g. hash vs slash in namespaces, HTTP status codes and PID redirection strategies).
 
 \subsubsection{Linked Data: Rebuilding the Web of Data}\label{ch3:ld-web}
 
 The \textbf{Linked Data} (LD) concept \cite{Bizer 2009} was kickstarted as a set of best practices \cite{LinkedDataDesign} to bring the Web aspect of the Semantic Web back into focus. Crucial to Linked Data is the \emph{reuse of existing URIs}, rather than making new identifiers. This means a loosening of the semantic restrictions previously applied, and an emphasis on building navigable data resources, rather than elaborate graph representations.
 
-Vocabularies like \href{https://schema.org/}{schema.org} evolved not long after, intended for lightweight semantic markup of existing Web pages, primarily to improve search engines' understanding of types and embedded data. In addition to several such embedded \emph{microformats} \cite{OpenGraphProtocol,w3-rdfa-primer,HTMLStandard}, we find JSON-LD \cite{w3-json-ld} as a Web-focused RDF serialisation that aims for improved programmatic generation and consumption, including from Web applications. JSON-LD is as of 2023-05-18 used\footnote{Presumably this large uptake of JSON-LD is mainly for the purpose of Search Engine Optimisation (SEO), with typically small amounts of metadata which may not constitute Linked Data as introduced above, however this deployment nevertheless constitute machine-actionable structured data.} by 45\% of the top 10 million websites \cite{UsageStatisticsJSONLD}.
+Vocabularies like \footurl{https://schema.org/}{schema.org} evolved not long after, intended for lightweight semantic markup of existing Web pages, primarily to improve search engines' understanding of types and embedded data. In addition to several such embedded \emph{microformats} \cite{OpenGraphProtocol,w3-rdfa-primer,HTMLStandard}, we find JSON-LD \cite{w3-json-ld} as a Web-focused RDF serialisation that aims for improved programmatic generation and consumption, including from Web applications. JSON-LD is as of 2023-05-18 used\footnote{Presumably this large uptake of JSON-LD is mainly for the purpose of Search Engine Optimisation (SEO), with typically small amounts of metadata which may not constitute Linked Data as introduced above, however this deployment nevertheless constitute machine-actionable structured data.} by 45\% of the top 10 million websites \cite{UsageStatisticsJSONLD}.
 
 Recently there has been a renewed emphasis to improve the \emph{Developer Experience} \cite{DesigningLinkedData2018} for consumption of Linked Data, for instance RDF Shapes -- expressed in SHACL \cite{w3-shacl} or ShEx \cite{ShapeExpressionsShEx} -- can be used to validate RDF Data \cite{gayoValidatingRDFData2017a,thorntonUsingShapeExpressions2019a} before consuming it programmatically, or reshaping data to fit other models. While a varied set of tools for Linked Data consumptions have been identified, most of them still require developers to gain significant knowledge of the underlying Semantic Web technologies, which hampers adaption by non-LD experts \cite{klimekSurveyToolsLinked2019a}, which then tend to prefer non-semantic two-dimensional formats such as CSV files.
 
@@ -179,7 +179,7 @@ Web w/ Linked Data \\
   & FDO types and operations enable detailed choreography (Canonical Workflows \cite{cwfr}). \texttt{0.TYPE/DOIPOperation} has lightweight definition of operation, \texttt{0.DOIP/Request} or \texttt{0.DOIP/Response} may give FDO Type or any other kind of ``specifics'' (incl.~human readable docs). Semantics/purpose of operations not formalised (similar operations can be grouped with \texttt{0.DOIP/OperationReference}).
   & ``Follow your nose'' crawler navigation, which may lead to frequent dead ends. Operational composition, typically within a single API provider, documented by OpenAPI 3 \cite{OpenAPISpecificationV3}, schema.org Actions \cite{SchemaOrgActions}, WSDL/SOAP \cite{w3-wsdl20-primer}, but frequently just as human-readable developer documentation with examples. \\
 \textbf{Semantic}: \emph{ensuring consistent understanding of messages, interoperability of rules, knowledge and ontologies}
-  & FDO semantic enable navigation and typing. Every FDO has a type. Types maintained in FDO Type registries, which may add additional semantics, e.g.~the ePIC \href{https://hdl.handle.net/21.11104/c1a0ec5ad347427f25d6}{PID-InfoType for Model}. No single type semantic, Type FDOs can link to existing vocabularies \& ontologies. JSON-LD used within some FDO objects (e.g.~DISSCO Digital Specimen, NIST Material Science schema) \cite{wittenburgFAIRDigitalObject2022b}
+  & FDO semantic enable navigation and typing. Every FDO has a type. Types maintained in FDO Type registries, which may add additional semantics, e.g.~the ePIC \footurl{https://hdl.handle.net/21.11104/c1a0ec5ad347427f25d6}{PID-InfoType for Model}. No single type semantic, Type FDOs can link to existing vocabularies \& ontologies. JSON-LD used within some FDO objects (e.g.~DISSCO Digital Specimen, NIST Material Science schema) \cite{wittenburgFAIRDigitalObject2022b}
   & Lightweight HTTP semantics for authenticity/navigation. Semantic Type not commonly expressed on PID/header level, may be declared within Linked Data metadata. Semantic of type implied by Linked Data formats (e.g.~OWL2, RDFS), although choice of type system may not be explicit. \\
 \textbf{Syntactic}: \emph{serialising messages for digital exchange, structure representation}
   & DOIP serialise FDOs as JSON, metadata commonly use JSON, typed with JSON Schema. Multiple byte stream attachments of any media type.
@@ -188,7 +188,7 @@ Web w/ Linked Data \\
   & DOIP \cite{DONA 2018} is transport-independent, commonly TLS TCP/IP port 9000, DOIP over HTTP \cite{DOIPAPIHTTPa}
   & HTTP/1.1 TCP/IP port 80 \cite{rfc2616}; HTTP/1.1+TLS, TCP/IP 443 \cite{rfc2818}; HTTP/2, as HTTP/1* but binary \cite{rfc7540}; HTTP/3, like HTTP/2+TLS but UDP \cite{rfc9114} \\
 \textbf{Environmental}: \emph{how applications are deployed and affected by its environment, portability}
-  & Main DOIP implementation is \href{https://www.cordra.org/}{\emph{Cordra}}, which can be single-instance or \href{https://www.cordra.org/documentation/configuration/distributed-deployment.html}{distributed}. Cordra \href{https://www.cordra.org/documentation/configuration/storage-backends.html}{storage backends} include file system, S3, MongoDB (itself scalable). Unique DOIP protocol can be hard to add to existing Web application frameworks, although proxy services have been developed (e.g.~B2SHARE adapter).
+  & Main DOIP implementation is \footurl{https://www.cordra.org/}{\emph{Cordra}}, which can be single-instance or \footurl{https://www.cordra.org/documentation/configuration/distributed-deployment.html}{distributed}. Cordra \footurl{https://www.cordra.org/documentation/configuration/storage-backends.html}{storage backends} include file system, S3, MongoDB (itself scalable). Unique DOIP protocol can be hard to add to existing Web application frameworks, although proxy services have been developed (e.g.~B2SHARE adapter).
   & HTTP services widely deployed in a myriad of ways, ranging from single instance servers, horizontally \& vertically scaled application servers, to multi-cloud Content-Delivery Networks (CDN). Current scalable cloud technologies for Web hosting may not support HTTP features previously seen as important for Semantic Web, e.g.~content negotiation and semantic HTTP status codes. \\
 \bottomrule
 \end{longtable}
@@ -363,13 +363,13 @@ FDOF9: \emph{Different metadata levels}
 FDOF10: \emph{Metadata schemas by community}
   & Metadata schemas are in practice managed on single CORDA server as local types, using JSON Schema.
   & Require types to be FDOs with registered PIDs, implement shared types.
-  & Plethora of existing RDF vocabularies/ontologies managed by larger communities, e.g.~\href{https://obofoundry.org/}{OBO Foundry} \cite{smithOBOFoundryCoordinated2007a}
+  & Plethora of existing RDF vocabularies/ontologies managed by larger communities, e.g.~\footurl{https://obofoundry.org/}{OBO Foundry} \cite{smithOBOFoundryCoordinated2007a}
   & Rather document better how individual ad-hoc schemas can be started for prototypes. \\
 FDOF11: \emph{FDO collections w/ semantic relations}
   & Collection type undefined by DOIP. Informal use of \texttt{HAS\_PARTS} Handle attribute (e.g. \cite{DataInformationView}).
   &
   & LDP Containers required by specification, also user-created (eg. \texttt{BasicContainer}).
-  & Clarify relation to other collections like DCAT 3 \cite{w3-vocab-dcat-3}, \href{https://schema.org/Dataset}{Schema.org Dataset}, OAI-ORE \cite{ORESpecificationAbstract} \\
+  & Clarify relation to other collections like DCAT 3 \cite{w3-vocab-dcat-3}, \footurl{https://schema.org/Dataset}{Schema.org Dataset}, OAI-ORE \cite{ORESpecificationAbstract} \\
 FDOF12: \emph{Deleted FDO preserve PID w/ tombstone}
   & Tombstone for deleted resource undefined by DOIP. \texttt{0.DOIP/Status.104} status code does not distinguish ``Not Found'' or ``Gone''
   & Formalise tombstone requirements with new FDO type
@@ -434,7 +434,7 @@ For this purpose, we here utillise the Comparison Framework for Middleware Infra
   \midrule
   \endhead
   \textbf{Openness}: \emph{framework enable extension of applications}
-    & FDOs can be cross-linked using PIDs, pointing to multiple FDO endpoints. Custom DOIP operations can be exposed, although it is unclear if these can be outside the FDO server. PID minting requires Handle.net prefix subscription, or use of services like \href{https://datacite.org/}{Datacite}, \href{https://eudat.eu/services/userdoc/b2handle}{B2Handle}.
+    & FDOs can be cross-linked using PIDs, pointing to multiple FDO endpoints. Custom DOIP operations can be exposed, although it is unclear if these can be outside the FDO server. PID minting requires Handle.net prefix subscription, or use of services like \footurl{https://datacite.org/}{Datacite}, \footurl{https://eudat.eu/services/userdoc/b2handle}{B2Handle}.
     & The Web is inherently open and made by cross-linked URLs. Participation requires DNS domain purchase (many free alternatives also exists). PID minting can be free using PURL/ARK services, or can use DOI/Handle with HTTP redirects. \\
   \textbf{Scalability}: \emph{application should be effective at many different scales}
     & No defined methods for caching or mirroring, although this could be handled by backend, depending on exposed FDO operations (e.g.~Cordra can scale to multiple backend nodes)
@@ -456,34 +456,34 @@ For this purpose, we here utillise the Comparison Framework for Middleware Infra
     & HTTP operations are classified as being stateless/idempotent or not (e.g.~\texttt{PUT} changes state, but can be repeated on failure), although these constraints are occassionally violated by Web applications. Cache control, \texttt{ETag} (e.g. checksum) and modification date in HTTP headers allows detection of concurrent changes on a single resource. \\
   \textbf{Failure transparency}: \emph{service provisioning resilient to failures}
     & DOIP status codes, e.g.~\texttt{0.DOIP/Status.104}, additional codes can be added as custom attributes
-    & HTTP \href{https://datatracker.ietf.org/doc/html/rfc7231\#section-6.5}{status codes} e.g.~\texttt{404\ Not\ Found}, specific meaning of standard codes can be \href{https://swagger.io/docs/specification/describing-responses/}{documented in Open API}. Custom codes uncommon. \\
+    & HTTP \footurl{https://datatracker.ietf.org/doc/html/rfc7231\#section-6.5}{status codes} e.g.~\texttt{404\ Not\ Found}, specific meaning of standard codes can be \footurl{https://swagger.io/docs/specification/describing-responses/}{documented in Open API}. Custom codes uncommon. \\
   \textbf{Migration transparency}: \emph{allow relocating elements without interfering application}
     & Update of PID record URLs, indirection through \texttt{0.TYPE/DOIPServiceInfo} (not always used consistently). No redirection from DOIP service.
     & HTTP \texttt{30x} status codes provide temporary or permanent redirections, commonly used for PURLs but also by endpoints. \\
   \textbf{Persistence transparency}: \emph{conceal deactivation/reactivation of elements from their users}
-    & FDO requires use of PIDs for object persistence, including a tombstone response for deleted objects. There is no guarantee that an FDO is immutable or will even stay the same type (note: Cordra extends DOIP with \href{https://www.cordra.org/documentation/design/object-versioning.html}{version tracking}).
+    & FDO requires use of PIDs for object persistence, including a tombstone response for deleted objects. There is no guarantee that an FDO is immutable or will even stay the same type (note: Cordra extends DOIP with \footurl{https://www.cordra.org/documentation/design/object-versioning.html}{version tracking}).
     & URLs are not required to persist, although encouraged \cite{berners-lee-cool-uris}. Persistence requires convention to use PIDs/PURLs and HTTP \texttt{410\ Gone}. An URL may change its content, change in type may sometimes force new URLs if exposing extensions like \texttt{.json}. Memento \cite{rfc7089} expose versioned snapshots. WebDAV \texttt{VERSION-CONTROL} method \cite{rfc3253} (used by SVN). \\
   \textbf{Transaction transparency}: \emph{coordinate execution of atomic/isolated transactions}
     & No transaction capabilities declared by FDO or DOIP. Internal synchronisation possible in backend for Extended operations.
-    & Limited transaction capabilities (e.g.~\texttt{If-Unmodified-Since}) on same resource. WebDAV \href{https://datatracker.ietf.org/doc/html/rfc4918\#section-6}{locking mechanisms} \cite{rfc4918} with \texttt{LOCK} and \texttt{UNLOCK} methods. \\
+    & Limited transaction capabilities (e.g.~\texttt{If-Unmodified-Since}) on same resource. WebDAV \footurl{https://datatracker.ietf.org/doc/html/rfc4918\#section-6}{locking mechanisms} \cite{rfc4918} with \texttt{LOCK} and \texttt{UNLOCK} methods. \\
   \textbf{Modularity}: \emph{application as collection of connected/distributed elements}
     & FDOs are inheritedly modular using global PID spaces and their cross-references. In practice, FDOs of a given type are exposed through a single server shared within a particular community/institution.
     & The Web is inheritently modular in that distributed objects are cross-referenced within a global URI space. In practice, an API's set of resources will be exposed through a single HTTP service, but modularity enables fine-grained scalability in backend. \\
   \textbf{Encapsulation}: \emph{separate interface from implementation. Specify interface as contract, multiple implementations possible}
-    & Indirection by PID gives separation. FDO principles are protocol independent, although it may be unclear which protocol to use for which FDO (although \texttt{0.DOIP/Transport} can be specified after already contacting DOIP). Cordra supports \href{https://www.cordra.org/documentation/api/doip.html}{native DOIP}, \href{https://www.cordra.org/documentation/api/doip-api-for-http-clients.html}{DOIP over HTTP} and \href{https://www.cordra.org/documentation/api/rest-api.html}{Cordra REST API})
-    & HTTP/1.1 semantics can seemlessly upgrade to HTTP/2 and HTTP/3. \texttt{http} vs \texttt{https} URIs exposes encryption detail\footnote{The \texttt{http} protocol (port 80) can in theory also upgrade \cite{rfc2817} to TLS encryption, as commonly used by \href{https://www.rfc-editor.org/rfc/rfc8010.html\#section-8.2}{Internet Printing Protocol} for \texttt{ipp} URIs, but on the Web, best practice is explicit \texttt{https} (port 443) URLs to ensure following links stay secure.}. Implementation details may leak into URIs (e.g.~\texttt{search.aspx}), countered by deliberate design of URI patterns \cite{berners-lee-cool-uris}) and PIDs via Persistent URLs (PURL). \\
+    & Indirection by PID gives separation. FDO principles are protocol independent, although it may be unclear which protocol to use for which FDO (although \texttt{0.DOIP/Transport} can be specified after already contacting DOIP). Cordra supports \footurl{https://www.cordra.org/documentation/api/doip.html}{native DOIP}, \footurl{https://www.cordra.org/documentation/api/doip-api-for-http-clients.html}{DOIP over HTTP} and \footurl{https://www.cordra.org/documentation/api/rest-api.html}{Cordra REST API})
+    & HTTP/1.1 semantics can seemlessly upgrade to HTTP/2 and HTTP/3. \texttt{http} vs \texttt{https} URIs exposes encryption detail\footnote{The \texttt{http} protocol (port 80) can in theory also upgrade \cite{rfc2817} to TLS encryption, as commonly used by \footurl{https://www.rfc-editor.org/rfc/rfc8010.html\#section-8.2}{Internet Printing Protocol} for \texttt{ipp} URIs, but on the Web, best practice is explicit \texttt{https} (port 443) URLs to ensure following links stay secure.}. Implementation details may leak into URIs (e.g.~\texttt{search.aspx}), countered by deliberate design of URI patterns \cite{berners-lee-cool-uris}) and PIDs via Persistent URLs (PURL). \\
   \textbf{Inheritance}: \emph{Deriving specialised interface from another type}
-    & DOIP types nested with parents, implying shared FDO structures (unclear if operations are inherited). FDO establishes need for multiple Data Type Registries (e.g.~managed by a community for a particular domain). Semantics of type system currently undefined for FDO and DOIP, syntactic types can also piggyback of FDO type's schema (e.g.~\href{(https://www.cordra.org/documentation/design/schemas.html\#schema-references)}{Cordra \texttt{\$ref}} use of \href{https://json-schema.org/draft/2020-12/json-schema-core.html\#references}{JSON Schema references} \cite{Draftbhuttonjsonschema})
-    & Syntactically Media Type with multiple suffixes \cite{Draftietfmediamansuffixes00MediaTypes} (mainly used with \texttt{+json}), declaration of subtypes as profiles (RFC6906) \cite{rfc6906}. In metadata, semantic type systems (RDFS \cite{w3-rdf-schema}), OWL2 \cite{w3-owl2-overview}, SKOS \cite{w3-skos-primer}). OpenAPI 3 \cite{OpenAPISpecificationV3} \href{https://spec.openapis.org/oas/v3.1.0\#composition-and-inheritance-polymorphism}{inheritance and Polymorphism}. XML \texttt{xsd:schemaLocation} or \texttt{xsd:type} \cite{w3-xmlschema11}, JSON \texttt{\$schema} \cite{Draftbhuttonjsonschema}), JSON-LD \texttt{@context} \cite{w3-json-ld}. Large number of domain-specific and general ontologies define semantic types, but finding and selecting remains a challenge. \\
+    & DOIP types nested with parents, implying shared FDO structures (unclear if operations are inherited). FDO establishes need for multiple Data Type Registries (e.g.~managed by a community for a particular domain). Semantics of type system currently undefined for FDO and DOIP, syntactic types can also piggyback of FDO type's schema (e.g.~\footurl{(https://www.cordra.org/documentation/design/schemas.html\#schema-references)}{Cordra \texttt{\$ref}} use of \footurl{https://json-schema.org/draft/2020-12/json-schema-core.html\#references}{JSON Schema references} \cite{Draftbhuttonjsonschema})
+    & Syntactically Media Type with multiple suffixes \cite{Draftietfmediamansuffixes00MediaTypes} (mainly used with \texttt{+json}), declaration of subtypes as profiles (RFC6906) \cite{rfc6906}. In metadata, semantic type systems (RDFS \cite{w3-rdf-schema}), OWL2 \cite{w3-owl2-overview}, SKOS \cite{w3-skos-primer}). OpenAPI 3 \cite{OpenAPISpecificationV3} \footurl{https://spec.openapis.org/oas/v3.1.0\#composition-and-inheritance-polymorphism}{inheritance and Polymorphism}. XML \texttt{xsd:schemaLocation} or \texttt{xsd:type} \cite{w3-xmlschema11}, JSON \texttt{\$schema} \cite{Draftbhuttonjsonschema}), JSON-LD \texttt{@context} \cite{w3-json-ld}. Large number of domain-specific and general ontologies define semantic types, but finding and selecting remains a challenge. \\
   \textbf{Signal interfaces}: \emph{asynchronous handling of messages}
     & DOIP 2.0 is synchronous, in FDO async operations undefined. Could be handled as custom jobs/futures FDOs
-    & HTTP/2 \href{https://datatracker.ietf.org/doc/html/rfc7540\#section-5}{multiplexed streams} \cite{rfc7540}, Web Sockets \cite{WebSocketsStandard}, Linked Data Notifications \cite{w3-ldn}, AtomPub \cite{rfc5023}, SWORD \cite{SWORDSpecification}, Micropub \cite{w3-micropub}, more typically ad-hoc jobs/futures REST resources \\
+    & HTTP/2 \footurl{https://datatracker.ietf.org/doc/html/rfc7540\#section-5}{multiplexed streams} \cite{rfc7540}, Web Sockets \cite{WebSocketsStandard}, Linked Data Notifications \cite{w3-ldn}, AtomPub \cite{rfc5023}, SWORD \cite{SWORDSpecification}, Micropub \cite{w3-micropub}, more typically ad-hoc jobs/futures REST resources \\
   \textbf{Operation interfaces}: \emph{defining operations possible on an instance, interface of request/response messages}
     & CRUD predefined in DOIP, custom operations through \texttt{0.DOIP/Op.ListOperations} (can be FDOs of type \texttt{0.TYPE/DOIPOperation}, more typically local identifiers like \texttt{"getProvenance"})
-    & CRUD predefined in \href{https://datatracker.ietf.org/doc/html/rfc7231\#section-4.3}{HTTP methods} \cite{rfc7231}, (\href{https://www.iana.org/assignments/http-methods/http-methods.xhtml}{extended by registration}), URI Templates \cite{rfc6570}, \href{https://spec.openapis.org/oas/v3.1.0.html\#operation-object}{OpenAPI operations} \cite{OpenAPISpecificationV3}, HATEOAS\footnote{HATEOAS: Hypermedia as the Engine of Application State \cite{fieldingArchitecturalStylesDesign2000a}, an important element of the REST architectural style.} incl.~Hydra \cite{HydraW3CCommunity}, schema.org Actions \cite{SchemaOrgActions}, JSON HAL \cite{Draftkellyjsonhal08} \& Link headers (RFC8288) \cite{rfc8288} \\
+    & CRUD predefined in \footurl{https://datatracker.ietf.org/doc/html/rfc7231\#section-4.3}{HTTP methods} \cite{rfc7231}, (\footurl{https://www.iana.org/assignments/http-methods/http-methods.xhtml}{extended by registration}), URI Templates \cite{rfc6570}, \footurl{https://spec.openapis.org/oas/v3.1.0.html\#operation-object}{OpenAPI operations} \cite{OpenAPISpecificationV3}, HATEOAS\footnote{HATEOAS: Hypermedia as the Engine of Application State \cite{fieldingArchitecturalStylesDesign2000a}, an important element of the REST architectural style.} incl.~Hydra \cite{HydraW3CCommunity}, schema.org Actions \cite{SchemaOrgActions}, JSON HAL \cite{Draftkellyjsonhal08} \& Link headers (RFC8288) \cite{rfc8288} \\
   \textbf{Stream interfaces}: \emph{operations that can handle continuous information streams}
     & Undefined in FDO. DOIP can support multiple byte stream elements (need custom FDO type to determine stream semantics)
-    & HTTP 1.1 \cite{rfc7230} \href{https://datatracker.ietf.org/doc/html/rfc7230\#section-4.1}{chunked transfer}, HLS (RFC8216) \cite{rfc8216}, MPEG-DASH \cite{iso23009} \\
+    & HTTP 1.1 \cite{rfc7230} \footurl{https://datatracker.ietf.org/doc/html/rfc7230\#section-4.1}{chunked transfer}, HLS (RFC8216) \cite{rfc8216}, MPEG-DASH \cite{iso23009} \\
   \bottomrule
   \end{longtable}
   \end{small}
@@ -503,7 +503,7 @@ Based on the analysis in Table \vref{ch3:fdo-web-middleware}, we make the follow
   \item
     Programmatically the Web is rather unstructured as middleware, as there are many implementation choices. Usually it is undeclared what to expect for a given URI/service, and programmers follow documented examples for a particular service rather than automated programmatic exploration across providers. This mean one can consider the Web as an ecosystem of smaller middlewares with commonalities.
   \item
-    Many providers of FAIR Linked Data also provide programmatic REST API endpoints, e.g.~\href{https://www.uniprot.org/help/programmatic_access}{UNIPROT}, \href{https://chembl.gitbook.io/chembl-interface-documentation/web-services}{ChEMBL}, but keeping the FAIR aspects such as retrieving metadata in such a scenario may require combining different services using multiple formats and identifier conventions.
+    Many providers of FAIR Linked Data also provide programmatic REST API endpoints, e.g.~\footurl{https://www.uniprot.org/help/programmatic_access}{UNIPROT}, \footurl{https://chembl.gitbook.io/chembl-interface-documentation/web-services}{ChEMBL}, but keeping the FAIR aspects such as retrieving metadata in such a scenario may require combining different services using multiple formats and identifier conventions.
 \end{itemize}
 
 
@@ -636,12 +636,12 @@ RDA-A1.1-01M
   & Metadata is accessible through a free access protocol    
   & G1 G8 G9
   & Partially realised: Handle system is open\footnote{
-        The \texttt{Handle.net} system was previously covered by software patent \href{https://patents.google.com/patent/US6135646A/en}{US6135646A} which \href{https://circleid.com/posts/20161025_selling_dona_snake_oil_at_the_itu\#11461}{expired} in 2013.} 
+        The \texttt{Handle.net} system was previously covered by software patent \footurl{https://patents.google.com/patent/US6135646A/en}{US6135646A} which \footurl{https://circleid.com/posts/20161025_selling_dona_snake_oil_at_the_itu\#11461}{expired} in 2013.} 
     protocol \cite{rfc3652}. One server implementation \cite{HandleNetRegistry}, free\footnote{
-        The \href{http://www.handle.net/HNRj/HNR-9-License.pdf}{Handle.net public license} is not OSI-approved \cite{LicensesStandardsOpen}  as an open source license -- it includes usage restrictions and requires Service Agreements. It is not a DOIP requirement to host a local Handle instance, e.g.~EOSC provides the \href{https://sp.eudat.eu/catalog/resources/fc6b2d30-09cd-4c25-b71a-7bc6de77910c}{B2HANDLE} service for acquiring Handle prefixes.}. 
-    One DOIPv2 implementation (\href{https://www.cordra.org/}{Cordra}): free under BSD-like license (not recognised as Open Source).    
-  & LDP is open W3C recommendation \cite{w3-ldp}. \href{https://www.w3.org/wiki/LDP_Implementations}{Multiple LDP implementations}.    
-  & DNS, HTTP, TLS, RDF standards are open, free and universal, large number of Open Source clients and \href{https://en.wikipedia.org/wiki/Comparison_of_web_server_software}{servers}. \\
+        The \footurl{http://www.handle.net/HNRj/HNR-9-License.pdf}{Handle.net public license} is not OSI-approved \cite{LicensesStandardsOpen}  as an open source license -- it includes usage restrictions and requires Service Agreements. It is not a DOIP requirement to host a local Handle instance, e.g.~EOSC provides the \footurl{https://sp.eudat.eu/catalog/resources/fc6b2d30-09cd-4c25-b71a-7bc6de77910c}{B2HANDLE} service for acquiring Handle prefixes.}. 
+    One DOIPv2 implementation (\footurl{https://www.cordra.org/}{Cordra}): free under BSD-like license (not recognised as Open Source).    
+  & LDP is open W3C recommendation \cite{w3-ldp}. \footurl{https://www.w3.org/wiki/LDP_Implementations}{Multiple LDP implementations}.    
+  & DNS, HTTP, TLS, RDF standards are open, free and universal, large number of Open Source clients and \footurl{https://en.wikipedia.org/wiki/Comparison_of_web_server_software}{servers}. \\
 RDA-A1.1-01D
   & Data is accessible through a free access protocol
   & G9
@@ -682,7 +682,7 @@ RDA-I1-02D
   & Data uses machine-understandable knowledge representation
   & G4 G7 FDOR2
   & No requirements on binary data formats
-  & Only indirectly, \href{https://www.w3.org/TR/ldp/\#dfn-linked-data-platform-basic-container}{LDP Basic Container} reference only information resources
+  & Only indirectly, \footurl{https://www.w3.org/TR/ldp/\#dfn-linked-data-platform-basic-container}{LDP Basic Container} reference only information resources
   & Common, specially for scientific data formats \\
 RDA-I2-01M
   & Metadata uses FAIR-compliant vocabularies
@@ -724,13 +724,13 @@ RDA-I3-03M
   & Metadata includes qualified references to other metadata
   & (FDOR3)
   & Qualification by attribute keys defined per FDO Type
-  & \href{https://www.w3.org/TR/ldp/\#dfn-linked-data-platform-direct-container}{LDP Direct Container}
-  & Qualifications by property, PROV bundles \cite{w3-prov-links}, \href{https://schema.org/Role}{schema.org/Role} \\
+  & \footurl{https://www.w3.org/TR/ldp/\#dfn-linked-data-platform-direct-container}{LDP Direct Container}
+  & Qualifications by property, PROV bundles \cite{w3-prov-links}, \footurl{https://schema.org/Role}{schema.org/Role} \\
 RDA-I3-04M
   & Metadata include qualified references to other data
   & (FDOR3)
   & Qualification by attribute keys defined per FDO type
-  & \href{https://www.w3.org/TR/ldp/\#dfn-linked-data-platform-indirect-container}{LDP Indirect Container}
+  & \footurl{https://www.w3.org/TR/ldp/\#dfn-linked-data-platform-indirect-container}{LDP Indirect Container}
   & Qualifications by property, n-ary indirection (schema.org Role \cite{hollandIntroducingRole2014}, \texttt{prov:specializationOf} \cite{w3-prov-o}, OAI-ORE Proxy \cite{ORESpecificationAbstract}) \\
 RDA-R1-01M
   & Plurality of accurate and relevant attributes are provided to allow reuse
@@ -743,19 +743,19 @@ RDA-R1.1-01M
   & ---
   & \texttt{licenseConditions} URL/PID in kernel metadata \cite{fdo-KernelAttributes}
   & ---
-  & Dublin Core Terms \texttt{dct:license} frequently recommended, frequently not required, e.g.~\href{https://www.w3.org/TR/vocab-dcat-2/\#Property:distribution_license}{by DCAT 2} \cite{DCAT2 2020} \\
+  & Dublin Core Terms \texttt{dct:license} frequently recommended, frequently not required, e.g.~\footurl{https://www.w3.org/TR/vocab-dcat-2/\#Property:distribution_license}{by DCAT 2} \cite{DCAT2 2020} \\
 RDA-R1.1-02M
   & Metadata refers to a standard reuse licence
   & ---
   & ---
   & ---
-  & \href{https://spdx.org/licenses/}{SPDX} and \href{https://creativecommons.org/}{Creative Commons} URIs common, identifiers often inconsistent \\
+  & \footurl{https://spdx.org/licenses/}{SPDX} and \footurl{https://creativecommons.org/}{Creative Commons} URIs common, identifiers often inconsistent \\
 RDA-R1.1-03M
   & Metadata refers to a machine-understandable reuse licence
   & ---
   & ---
   & ---
-  & \href{https://spdx.dev/resources/use/\#documents}{SPDX documents} uncommon \\
+  & \footurl{https://spdx.dev/resources/use/\#documents}{SPDX documents} uncommon \\
 RDA-R1.2-01M
   & Metadata includes provenance information according to community-specific standards
   & FDOR9 FDOR10
@@ -779,7 +779,7 @@ RDA-R1.3-01D
   & (FDOR3)
   & ---
   & ---
-  & Common, HTTP use registered IANA \href{https://www.iana.org/assignments/media-types/media-types.xhtml}{media types}, additional scientific file formats frequently not standardised or identified \\
+  & Common, HTTP use registered IANA \footurl{https://www.iana.org/assignments/media-types/media-types.xhtml}{media types}, additional scientific file formats frequently not standardised or identified \\
 RDA-R1.3-02M
   & Metadata is expressed in compliance with a machine-understandable community standard
   & FDOF4 FDOF10
@@ -791,7 +791,7 @@ RDA-R1.3-02D
   & (FDOR2)
   & No, FDO is typed but data can be any bytestream
   & ---
-  & Occassionally, (e.g.~\href{https://github.com/The-Sequence-Ontology/Specifications/blob/master/gff3.md}{GFF3}, \href{https://fits.gsfc.nasa.gov/fits_standard.html}{FITS}, \href{https://www.loc.gov/preservation/digital/formats/fdd/fdd000280.shtml}{ESRI}) \\
+  & Occassionally, (e.g.~\footurl{https://github.com/The-Sequence-Ontology/Specifications/blob/master/gff3.md}{GFF3}, \footurl{https://fits.gsfc.nasa.gov/fits_standard.html}{FITS}, \footurl{https://www.loc.gov/preservation/digital/formats/fdd/fdd000280.shtml}{ESRI}) \\
 \bottomrule
 \end{longtable}
 \end{small}
@@ -808,7 +808,7 @@ From this evaluation we observe:
 \item
   Indicators on standard protocols (RDA-A1-04M, RDA-A1-04D, RDA-A1.1-01M, RDA-A1.1-01D) favour LDP's mature standards (HTTP, URI) -- the DOIPv2 specification \cite{DONA 2018} has currently only a couple of implementations and is expressed informally. The underlying Handle system for PIDs is arguably mature and commonly used by researchers (this article alone references about 80 DOIs), however DOIs are more commonly accessed as HTTP redirects through resolvers like \url{https://doi.org/} and \url{http://hdl.handle.net/} rather than the Handle protocol.
 \item
-  RDA-A1-02M and RDA-A1-02D highlights access by manual intervention, which is common for http/https URIs, but also using above PID resolvers for DOIP implementation \href{https://www.cordra.org/}{Cordra} (e.g.~\url{https://hdl.handle.net/21.14100/90ec1c7b-6f5e-4e12-9137-0cedd16d1bce}), yet neither LDP, FDO nor DOIP specifications recommends human-readable representations to be provided
+  RDA-A1-02M and RDA-A1-02D highlights access by manual intervention, which is common for http/https URIs, but also using above PID resolvers for DOIP implementation \footurl{https://www.cordra.org/}{Cordra} (e.g.~\url{https://hdl.handle.net/21.14100/90ec1c7b-6f5e-4e12-9137-0cedd16d1bce}), yet neither LDP, FDO nor DOIP specifications recommends human-readable representations to be provided
 \item
   Neither DOIP nor LDP require license to be expressed (RDA-R1.1-01M, RDA-R1.1-02M, RDA-R1.1-03M), yet this is crucial for re-use and machine actionability of FAIR data and metadata to be legal
 \item
@@ -857,7 +857,7 @@ In Table \vref{ch3:eosctable} we review the EOSC Interoperability Framework (EOS
     & Content-negotiation, \texttt{rel=alternate} relations \\
   Technical      & Coarse-grained/fine-grained search tools 
     & Freetext \texttt{0.DOIP/Op.Search} on local DOIP, no federation 
-    & Coarse-grained e.g.~\href{https://datasetsearch.research.google.com/}{Google Dataset Search}, fine-grained (e.g.~federated SPARQL) require detailed vocabulary/metadata insight \\
+    & Coarse-grained e.g.~\footurl{https://datasetsearch.research.google.com/}{Google Dataset Search}, fine-grained (e.g.~federated SPARQL) require detailed vocabulary/metadata insight \\
   Technical      & Clear PID policy 
     & Strong FDO requirements, tends towards Handle system. 
     & Not required, different communities set policies \\
@@ -896,7 +896,7 @@ In Table \vref{ch3:eosctable} we review the EOSC Interoperability Framework (EOS
     & None -- but common for metadata (e.g.~JSON-LD) \\
   Organisational  & Usage recommendations of vocabularies 
     & Recommended by community 
-    & Common (see \href{https://rdmkit.elixir-europe.org/metadata_management}{RDMKit}) \\
+    & Common (see \footurl{https://rdmkit.elixir-europe.org/metadata_management}{RDMKit}) \\
   Organisational  & Usage recommendations of metadata 
     & Recommended by community 
     & RO-Crate, bioschema-salad \\
@@ -905,7 +905,7 @@ In Table \vref{ch3:eosctable} we review the EOSC Interoperability Framework (EOS
     & ROR. DCAT contacts. \\
   Legal          & Standardised human and machine-readable licenses 
     & None 
-    & \href{https://spdx.org/licenses/}{SPDX}, but not that frequently used \\
+    & \footurl{https://spdx.org/licenses/}{SPDX}, but not that frequently used \\
   Legal          & Permissive licenses for metadata (CC0, CC-BY-4.0) 
     & Undefined 
     & Both CC0, CC-BY-4.0 common, e.g.~in DCAT \\
@@ -926,7 +926,7 @@ In Table \vref{ch3:eosctable} we review the EOSC Interoperability Framework (EOS
     & Versioning with PAV/PROV/DCAT \\
   Legal          & Policy/guidance for patent/trade secrets violation 
     & Undefined 
-    & Undefined, legal owner may be specified. \href{https://www.w3.org/TR/2018/REC-odrl-vocab-20180215/}{ODRL} can express policies \\
+    & Undefined, legal owner may be specified. \footurl{https://www.w3.org/TR/2018/REC-odrl-vocab-20180215/}{ODRL} can express policies \\
   Legal          & GDPR compliance for personal data 
     & Undefined 
     & Undefined \\
