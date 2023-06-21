@@ -568,19 +568,7 @@ containing data entities described using contextual entities.
   }    
   \end{verbatim}    
 	\caption[Simplified RO-Crate metadata file]{%\qq{}\protect\footnotemark[31]
-  Simplified\protect\footnote{
-    Recommended properties for types shown in
-    listing also include
-    \texttt{affiliation}, \texttt{citation}, \texttt{contactPoint},
-    \texttt{description},
-    \texttt{encodingFormat}, \texttt{funder}, \texttt{geo}, \texttt{identifier},
-    \texttt{keywords},
-    \texttt{publisher}; these properties and corresponding contextual
-    entities are
-    excluded here for brevity. See complete example
-    \url
-    {https://www.researchobject.org/2021-packaging-research-artefacts-with-ro-crate/listing1/}.}
-  RO-Crate metadata file showing the
+  Simplified\footnotemark RO-Crate metadata file showing the
   flattened compacted JSON-LD \texttt{@graph} array containing the data entities
   and contextual entities, cross-referenced using \texttt{@id}. The
   \texttt{ro-crate-metadata.json} entity self-declares conformance with the
@@ -598,6 +586,20 @@ containing data entities described using contextual entities.
   \label{ch5:lis1}
 \end{listing}
   
+\footnotetext{
+    Recommended properties for types shown in
+    listing also include
+    \texttt{affiliation}, \texttt{citation}, \texttt{contactPoint},
+    \texttt{description},
+    \texttt{encodingFormat}, \texttt{funder}, \texttt{geo}, \texttt{identifier},
+    \texttt{keywords},
+    \texttt{publisher}; these properties and corresponding contextual
+    entities are
+    excluded here for brevity. See complete example
+    \url
+    {https://www.researchobject.org/2021-packaging-research-artefacts-with-ro-crate/listing1/}.
+}
+ 
 
 In this flattened profile of JSON-LD, each \texttt{\{entity\}} are
 directly under \texttt{@graph} and represents the RDF triples with a

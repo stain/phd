@@ -296,8 +296,8 @@ cannot easily be run from a container themselves\footnote{To execute the
   wrapped tool, a containerized workflow engine would need \emph{nested
   containers} which are not generally recommended for security reasons.
   It is possible to work around this limitation using
-  \footurl{https://sylabs.io/singularity/}{Singularity} or
-  \footurl{https://docs.bioexcel.eu/cwl-best-practice-guide/devpractice/containers/conda.html}{Conda}.}.
+  \emph{Singularity} (\url{https://sylabs.io/singularity/}) or
+  \emph{Conda} (\url{https://docs.bioexcel.eu/cwl-best-practice-guide/devpractice/containers/conda.html}).}.
 
 Within the CWL community it was originally envisioned that a wider set
 of workflow systems would adopt CWL for tool description/execution, with
@@ -323,12 +323,12 @@ building block however becomes harder to access from a non-CWL WfMS,
 because of lack of control over configuration/execution options for the
 now nested CWL tools. In practice\footnote{It is worth mentioning that
   it would also be possible to generate WfMS-specific bindings from CWL
-  descriptions (e.g.~as demonstrated with
-  \footurl{https://github.com/common-workflow-lab/cwl2script}{cwl2script}
-  for Bash,
-  \footurl{https://github.com/common-workflow-lab/gxargparse}{gxargparse}
-  for Galaxy,
-  \footurl{https://github.com/common-workflow-lab/cwl2wdl}{cwl2wdl} for
+  descriptions (e.g.~as demonstrated with cwl2script 
+  (\url{https://github.com/common-workflow-lab/cwl2script})
+  for Bash, gxargparse
+  (\url{https://github.com/common-workflow-lab/gxargparse})
+  for Galaxy, cwl2wdl
+  (\url{https://github.com/common-workflow-lab/cwl2wdl}) for
   WDL), although this necessitates constraining the tool and workflow
   definitions to a limited mappable subset of CWL.}, executing a nested
 CWL workflow from a native WfMS language would require the engine to
