@@ -145,24 +145,32 @@ WorkflowHub repository follows several FDO principles:
   defined in metadata of the main workflow.
 \end{enumerate}
 
+%% Prepare for 4 evil footnotes
 \begin{figure}
   \centering
-      \includegraphics[width=\textwidth]{figures/ch04/signposting.pdf}
-      \caption[FAIR Signposting]{~\textbf{FAIR Signposting}.
+  \includegraphics[width=\textwidth]{figures/ch04/signposting.pdf}
+  \caption[FAIR Signposting]{~\textbf{FAIR Signposting}.
   FAIR Signposting on a workflow PID \cite{Bayarri 2022} 
   discovered from HTTP \texttt{Link:} headers using the
-  Signposting tool\protect\footnote{\url{https://pypi.org/project/signposting/}} shows
+  Signposting tool\footnotemark{} shows
   machine-actionable navigation to content-negotiate for the metadata
   FDOs, as well as download bit sequence (FDOF3) as an RO-Crate zip.
-  JSON-LD\protect\footnote{\url{https://workflowhub.eu/workflows/255.jsonld}} from
+  JSON-LD\footnotemark{} from
   workflowhub.eu follows the BioSchemas
   ComputationalWorkflow
-  profile \protect\footnote{\url{https://bioschemas.org/profiles/ComputationalWorkflow/1.0-RELEASE}} 
+  profile\footnotemark{}
   to give workflow details not included in DataCite's general 
-  JSON-LD from \url{https://data.crosscite.org/application/ld+json/10.48546/workflowhub.workflow.255.1}.
-}
-\label{fig:signposting}
+  JSON-LD\footnotemark.
+  }
+  \label{fig:signposting}
 \end{figure} 
+% Evil goes here
+\addtocounter{footnote}{-4}
+\addtocounter{footnote}{1}\footnotetext{\url{https://pypi.org/project/signposting/}}
+\addtocounter{footnote}{1}\footnotetext{\url{https://workflowhub.eu/workflows/255.jsonld}}
+\addtocounter{footnote}{1}\footnotetext{\url{https://bioschemas.org/profiles/ComputationalWorkflow/1.0-RELEASE}}
+\addtocounter{footnote}{1}\footnotetext{\url{https://data.crosscite.org/application/ld+json/10.48546/workflowhub.workflow.255.1}}
+%%
 
 Further work on RO-Crate profiles include to formalise links to the API
 operations and repositories (FDOF5,FDOF7), to include PIDs of
