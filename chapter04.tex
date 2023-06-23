@@ -45,10 +45,10 @@ RO-Crate is not required to be typed beyond \texttt{Dataset}\footnote{To
   execute the wrapped tool, a containerized workflow engine would need
   \emph{nested containers} which are not generally recommended for
   security reasons. It is possible to work around this limitation using
-  \href{https://sylabs.io/singularity/}{Singularity} or
-  \href{https://docs.bioexcel.eu/cwl-best-practice-guide/devpractice/containers/conda.html}{Conda}.}
+  \footurl{https://sylabs.io/singularity/}{Singularity} or
+  \footurl{https://docs.bioexcel.eu/cwl-best-practice-guide/devpractice/containers/conda.html}{Conda}.}
 In practice, RO-Crates declare conformance to particular
-\href{https://www.researchobject.org/ro-crate/profiles.html}{profiles},
+\footurl{https://www.researchobject.org/ro-crate/profiles.html}{profiles},
 allowing processing based on the specific needs and assumptions of a
 community or usage scenario. This, effectively, makes RO-Crates typed
 and thus machine-actionable. RO-Crate profiles serve as metadata
@@ -61,10 +61,10 @@ research data \cite{Miksa 2020}. This mapping allows RO-Crates to be generated o
 and vice versa. The ELIXIR Software Management Plans
 \cite{Alves 2021} is
 planning to move their questionnaire to a machine-actionable format with
-RO-Crate. ELIXIR \href{https://biohackathon-europe.org/}{Biohackathon}
+RO-Crate. ELIXIR \footurl{https://biohackathon-europe.org/}{Biohackathon}
 2022 will
-\href{https://github.com/elixir-europe/biohackathon-projects-2022/tree/main/10}{explore}
-integration of RO-Crate and the \href{https://ds-wizard.org/}{Data
+\footurl{https://github.com/elixir-europe/biohackathon-projects-2022/tree/main/10}{explore}
+integration of RO-Crate and the \footurl{https://ds-wizard.org/}{Data
 Stewardship Wizard} 
 \cite{Pergl 2019} with Galaxy, which can automate FDO creation that also follows
 data management plans.
@@ -78,10 +78,10 @@ use of RO-Crates makes it easier to programmatically question-answer
 information related to the protocols, for instance activities, resources
 and equipment used to create data.
 
-Another example is \href{https://workflowhub.eu/}{WorkflowHub}
+Another example is \footurl{https://workflowhub.eu/}{WorkflowHub}
 \cite{Goble 2021} which
 defines the
-\href{https://w3id.org/workflowhub/workflow-ro-crate/1.0}{Workflow
+\footurl{https://w3id.org/workflowhub/workflow-ro-crate/1.0}{Workflow
 RO-Crate} profile
 \cite{Bacall 2022}, imposing additional constraints such as the presence of a main
 workflow and a license. It also specifies which entity types and
@@ -90,15 +90,14 @@ a set of operations (e.g., get the main workflow and its language) that
 are valid on all complying crates. The workflow system Galaxy
 \cite{Galaxy 2022} retrieves
 such Workflow Crates using
-\href{https://about.workflowhub.eu/developer/trs/}{GA4GH TRS API}.
+\footurl{https://about.workflowhub.eu/developer/trs/}{GA4GH TRS API}.
 
 The workflow profile has been further extended (with OOP-like
 inheritance) in
-Workflow
-Testing\footnote\url{https://crs4.github.io/life\_monitor/workflow\_testing\_ro\_crate} 
+\footurl{https://crs4.github.io/life_monitor/workflow_testing_ro_crate}{Workflow Testing}
 RO-Crate, adding formal workflow testing components: this adds
 operations such as getting remote test instances and test definitions,
-used by the LifeMonitor\footnote\url{https://www.lifemonitor.eu/} service to
+used by the \footurl{https://www.lifemonitor.eu/}{LifeMonitor} service to
 keep track of the health status of multiple published workflows.
 
 While RO-Crates use Web technologies, they are also
@@ -124,20 +123,20 @@ WorkflowHub repository follows several FDO principles:
   a single RO-Crate ZIP, indicating the main workflow. {[}FDF11{]}
 \item
   PID resolution can content-negotiate to Datacite's PID metadata
-  {[}FDOF2{]} or use \href{https://signposting.org/FAIR/}{FAIR
+  {[}FDOF2{]} or use \footurl{https://signposting.org/FAIR/}{FAIR
   Signposting} to find an RO-Crate containing the workflow {[}FDOF3{]}
   and richer JSON-LD metadata resources {[}FDOF5,FDOF8{]}, see
   \protect\hyperlink{fig:signposting}{Figure 1}
 \item
   Metadata uses schema.org {[}FDOF7{]} following the community-developed
   Bioschemas
-  \href{https://bioschemas.org/profiles/ComputationalWorkflow/1.0-RELEASE}{ComputationalWorkflow}
+  \footurl{https://bioschemas.org/profiles/ComputationalWorkflow/1.0-RELEASE}{ComputationalWorkflow}
   profile {[}FDOF10{]}.
 \item
   Workflows are discovered using
-  the\href{https://about.workflowhub.eu/developer/trs/}{GA4GH TRS API}
+  the\footurl{https://about.workflowhub.eu/developer/trs/}{GA4GH TRS API}
   {[}FDOF5,FDOF6,FDOF11{]} and created/modified using
-  \href{https://workflowhub.eu/api}{CRUD operations} {[}FDOF6{]}
+  \footurl{https://workflowhub.eu/api}{CRUD operations} {[}FDOF6{]}
 \item
   The RO-Crate profile, effectively the FDO Type {[}FDOF7{]}, is
   declared as \url{https://w3id.org/workflowhub/workflow-ro-crate/1.0};
@@ -146,24 +145,32 @@ WorkflowHub repository follows several FDO principles:
   defined in metadata of the main workflow.
 \end{enumerate}
 
+%% Prepare for 4 evil footnotes
 \begin{figure}
   \centering
-      \includegraphics[width=\textwidth]{figures/ch04/signposting.pdf}
-      \caption[FAIR Signposting]{~\textbf{FAIR Signposting}.
+  \includegraphics[width=\textwidth]{figures/ch04/signposting.pdf}
+  \caption[FAIR Signposting]{~\textbf{FAIR Signposting}.
   FAIR Signposting on a workflow PID \cite{Bayarri 2022} 
   discovered from HTTP \texttt{Link:} headers using the
-  Signposting tool\protect\footnote{\url{https://pypi.org/project/signposting/}} shows
+  Signposting tool\footnotemark{} shows
   machine-actionable navigation to content-negotiate for the metadata
   FDOs, as well as download bit sequence (FDOF3) as an RO-Crate zip.
-  JSON-LD\protect\footnote{\url{https://workflowhub.eu/workflows/255.jsonld}} from
+  JSON-LD\footnotemark{} from
   workflowhub.eu follows the BioSchemas
   ComputationalWorkflow
-  profile \protect\footnote{\url{https://bioschemas.org/profiles/ComputationalWorkflow/1.0-RELEASE}} 
+  profile\footnotemark{}
   to give workflow details not included in DataCite's general 
-  JSON-LD from \url{https://data.crosscite.org/application/ld+json/10.48546/workflowhub.workflow.255.1}.
-}
-\label{fig:signposting}
+  JSON-LD\footnotemark.
+  }
+  \label{fig:signposting}
 \end{figure} 
+% Evil goes here
+\addtocounter{footnote}{-4}
+\addtocounter{footnote}{1}\footnotetext{\url{https://pypi.org/project/signposting/}}
+\addtocounter{footnote}{1}\footnotetext{\url{https://workflowhub.eu/workflows/255.jsonld}}
+\addtocounter{footnote}{1}\footnotetext{\url{https://bioschemas.org/profiles/ComputationalWorkflow/1.0-RELEASE}}
+\addtocounter{footnote}{1}\footnotetext{\url{https://data.crosscite.org/application/ld+json/10.48546/workflowhub.workflow.255.1}}
+%%
 
 Further work on RO-Crate profiles include to formalise links to the API
 operations and repositories (FDOF5,FDOF7), to include PIDs of

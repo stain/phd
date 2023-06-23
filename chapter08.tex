@@ -97,7 +97,7 @@ recognition, named entity recognition and language translation.
 
 Workflow technologies from the ELIXIR Research Infrastructure \cite{ch8-19},
 including Galaxy \cite{Afgan 2018}, Common Workflow Language \cite{Crusoe 2022}, Research
-Object Crates (RO-Crates) \cite{OCarragain 2019,ch8-23} and WorkflowHub \cite{Goble 2021}, and
+Object Crates (RO-Crates) \cite{OCarragain 2019,Soiland-Reyes 2022} and WorkflowHub \cite{Goble 2021}, and
 selected tools are integrated in a cloud-based workflow platform for
 natural history specimens -- the `Specimen Data Refinery' \cite{Walton 2020} that
 will become one of the main services to be offered by the planned DiSSCo
@@ -126,7 +126,7 @@ be executed \cite{De Smedt 2020}. The Refinery uses two kinds of FDOs:
   for the scientific input/output data that can be consumed/produced by
   workflows and other applications.
 \item
-  \textbf{workflow objects, implemented as RO-Crates} \cite{ch8-23}, from
+  \textbf{workflow objects, implemented as RO-Crates} \cite{Soiland-Reyes 2022}, from
   ELIXIR gather and archive the diverse set of workflow process data --
   the digital and real-world resources, configurations and actions (the
   provenance) contributing to a unit of digitization or other work
@@ -166,19 +166,23 @@ amenable to improved approaches to object detection \cite{ch8-32} and
 segmentation into `regions of interest' \cite{ch8-33} as precursive steps for
 multiple kinds of workflows.
 
+%% Evil footnotes again
 \begin{figure}%[t]
   \includegraphics[width=\textwidth]{figures/ch08/figure1.png}
 	\caption[A range of specimen images]{\textbf{A range of specimen images}. From the Natural History Museum, London, demonstrating the
   diversity of collection objects, which include handwritten, typed, and
-  printed labels. (a) Microscope slide
-  (\href{https://data.nhm.ac.uk/object/c65d9a3c-d8f6-4fac-a418-05c3b697cece}{NHMUK010671647}),
-  (b) Herbarium specimen
-  (\href{https://data.nhm.ac.uk/object/be595f07-73c5-4764-a96c-8b377e3d1507}{BM000546829}),
-  (c) pinned insect
-  (\href{https://data.nhm.ac.uk/object/745febc7-8222-498a-9969-5f6b12f85ef3}{NHMUK013383979}).}
+  printed labels. (a) Microscope slide (NHMUK010671647)\footnotemark{},
+  (b) Herbarium specimen (BM000546829)\footnotemark{},
+  (c) pinned insect (NHMUK013383979)\footnotemark{}.}
   \label{ch8:figure1}
 \end{figure}
 
+% Evil goes her
+\addtocounter{footnote}{-3}
+\addtocounter{footnote}{1}\footnotetext{\url{https://data.nhm.ac.uk/object/c65d9a3c-d8f6-4fac-a418-05c3b697cece}}
+\addtocounter{footnote}{1}\footnotetext{\url{https://data.nhm.ac.uk/object/be595f07-73c5-4764-a96c-8b377e3d1507}}
+\addtocounter{footnote}{1}\footnotetext{\url{https://data.nhm.ac.uk/object/745febc7-8222-498a-9969-5f6b12f85ef3}}
+%%
 
 Segmentation, specifically, can be employed as an early step in a
 workflow to send just the relevant region(s) of interest from an image
@@ -214,9 +218,9 @@ achieved impressive levels of accuracy
 \cite{ch8-36,ch8-37,ch8-38,ch8-39,ch8-40,ch8-41} with techniques
 translated to an increasing range of enthusiastically received consumer
 applications for plant and animal identification using mobile phones
-(e.g., \href{https://www.plantsnap.com/}{Plantsnap},
-\href{https://www.picturethisai.com/}{PictureThis},
-\href{https://www.inaturalist.org/pages/seek_app}{iNaturalist SEEK}).
+(e.g., \footurl{https://www.plantsnap.com/}{Plantsnap},
+\footurl{https://www.picturethisai.com/}{PictureThis},
+\footurl{https://www.inaturalist.org/pages/seek_app}{iNaturalist SEEK}).
 Automated identification of \emph{preserved specimens}, however,
 presents different challenges. Although identification might be made
 more accurately because a specimen is presented in a standard manner,
@@ -381,7 +385,7 @@ structured metadata. Based on well-established Web standards, RO-Crate
 uses JSON-LD \cite{w3-json-ld} with \cite{schema.org} for its common metadata representation. It is extensible with
 domain-specific vocabularies in a growing range of specializing RO-Crate
 profiles, e.g., for domains such as earth sciences \cite{ch8-52}, biosciences
-\cite{Goble 2021}; for object types such as data or workflow \cite{Bacall 2021}; or for
+\cite{Goble 2021}; for object types such as data or workflow \cite{Bacall 2022}; or for
 workflow runs). RO-Crate has been proposed for the implementation of
 FAIR Digital Objects on the World Wide Web as a common representation of
 the FDO Metadata objects foreseen by the FDO Framework \cite{Goble 2021,bonino2019}.

@@ -15,18 +15,18 @@ specimens (openDS) and RO-Crate data packaging. We suggest FDO
 improvements for incremental building of digital objects in
 computational workflows.
 
-\subsubsection{SDR workflows}\label{ch7:sdr-workflows}
+\subsection{SDR workflows}\label{ch7:sdr-workflows}
 
-SDR\footnote\url{https://sdr.nhm.ac.uk/} is realised as the workflow system
+\footurl{https://sdr.nhm.ac.uk/}{SDR} is realised as the workflow system
 Galaxy \cite{Afgan 2018} with
-SDR tools\footnote\url{https://github.com/DiSSCo/SDR} installed. An Open
+\footurl{https://github.com/DiSSCo/SDR}{SDR tools} installed. An Open
 Research challenge is that some tools have machine learning models with
 a commercial licence. This complicates publishing to
-Galaxy toolshed\footnote\url{https://toolshed.g2.bx.psu.edu/}, however we
-created Ansible\footnote{\url{https://www.ansible.com/}} scripts to install
+\footurl{https://toolshed.g2.bx.psu.edu/}{Galaxy toolshed}, however we
+created \footurl{https://www.ansible.com/}{Ansible} scripts to install
 equivalent Galaxy servers, including tools and dependencies, accounts
 and workflows. SDR workflows are
-published\footnote\url{https://workflowhub.eu/projects/72} in WorkflowHub as
+\footurl{https://workflowhub.eu/projects/72}{published in WorkflowHub} as
 FDOs.
 
 We implemented the use case \emph{De novo digitization} in Galaxy \cite{Brack 2022}.
@@ -72,19 +72,19 @@ FDOs and use new tools such as barcode detection of museums' internal
 identifiers.
 
 We are now ready to publish digital specimens as FAIR Digital Objects,
-with registration into DiSSCO repositories\footnote\url{https://www.dissco.eu/dissco/technical-infrastructure/}, PID assignment and workflow provenance. However, even at
+with registration into \footurl{https://www.dissco.eu/dissco/technical-infrastructure/}{DiSSCO repositories}, PID assignment and workflow provenance. However, even at
 this early stage we have identified several challenges that need to be
 addressed.
 
-\subsubsection{FDO lessons}\label{ch7:fdo-lessons}
+\subsection{FDO lessons}\label{ch7:fdo-lessons}
 
 We highlight the \emph{De novo} use case because this workflow is
 exchanging \emph{partial} FDOs -- openDS objects which are not fully
 completed and not yet assigned persistent identifiers.
-openDS schemas\footnote\url{https://github.com/DiSSCo/openDS} are still in
+\footurl{https://github.com/DiSSCo/openDS}{openDS schemas} are still in
 development, therefore SDR uses a
 more flexible
-JSON schema\footnote\url{https://github.com/DiSSCo/SDR/blob/main/galaxy-workflow/config/opends-schema.json} where only the initial metadata (populated from CSV) are
+\footurl{https://github.com/DiSSCo/SDR/blob/main/galaxy-workflow/config/opends-schema.json}{JSON schema} where only the initial metadata (populated from CSV) are
 required. Each step validates the partial FDO before passing it to the
 underlying command line tool.
 
@@ -93,7 +93,7 @@ in any order. For instance, \emph{named entity recognition} requires
 digitised text in the FDO. We can consider these intermediate steps as
 \emph{sub-profiles} of an FDO Type. Unlike hierarchical subclasses,
 these FDO profiles are more like
-\href{https://en.wikipedia.org/wiki/Duck_typing}{ducktyping}. For
+\footurl{https://en.wikipedia.org/wiki/Duck_typing}{ducktyping}. For
 instance a \emph{text detection} step may only require the
 \texttt{regions} key, but semantically there is no requirement for say
 \texttt{OpenDSWithText} to be a subclass of \texttt{OpenDSWithRegion},
@@ -111,11 +111,11 @@ coupled with local file-paths wiring in the workflow. A similar
 challenge occurs if accessing image data using DOIP, which unlike HTTP,
 has no caching mechanisms.
 
-\subsubsection{RO-Crate lessons}\label{ch7:ro-crate-lessons}
+\subsection{RO-Crate lessons}\label{ch7:ro-crate-lessons}
 
 Galaxy is developing support for importing and
-exporting Workflow
-Run Crates\footnote\url{https://www.researchobject.org/workflow-run-crate/}, a profile of RO-Crate \cite{Soiland-Reyes 2022} to
+exporting \footurl{https://www.researchobject.org/workflow-run-crate/}{Workflow
+Run Crates}, a profile of RO-Crate \cite{Soiland-Reyes 2022} to
 captures execution history of a workflow, including its definition and
 intermediate data \cite{De Geest 2022}. SDR is adopting this support to
 combine openDS FDOs with workflow provenance, as envisioned by
@@ -128,7 +128,7 @@ metadata. We are investigating ways to embed the preliminary Galaxy
 workflow history before the final step, so that this result can be an
 enriched RO-Crate.
 
-\subsubsection{Conclusions}\label{ch7:conclusions}
+\subsection{Conclusions}\label{ch7:conclusions}
 
 SDR is an example of machine-assisted construction of FDOs, which
 highlight the needs for intermediate digital objects that are not yet

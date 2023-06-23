@@ -11,7 +11,7 @@ Definition of language $\mathcal{L}_{rocrate}$:
     \mathcal{L}_{rocrate}   & = & \big\{ Property(p), Class(c),
                             Value(x), \mathbb{R}, \mathbb{S} \big\} \\
     \mathbb{D}              & = & \mathbb{IRI} \\
-    \mathbb{IRI}            & \equiv & { \text{IRIs as defined in RFC3987 {[}\href{https://doi.org/10.17487/rfc3987}{Dürst 2005}{]}} } \\
+    \mathbb{IRI}            & \equiv & { \text{IRIs as defined in RFC3987 \cite{Duerst 2005} } } \\
     \mathbb{R}              & \equiv & { \text{real or integer numbers} } \\
     \mathbb{S}              & \equiv & { \text{literal strings} }
 \end{eqnarray*}
@@ -26,7 +26,7 @@ From this formalised language $\mathcal{L}_{rocrate}$ we can interpret an RO-Cra
 
 \subsection{Minimal RO-Crate}
 
-The definitions \vpageref[below]{minimalcrate} use $\mathcal{L}_{rocrate}$ for a minimal\footnote{
+The definitions \vpageref[below]{ch5:minimalcrate} use $\mathcal{L}_{rocrate}$ for a minimal\footnote{
     The full list of types, relations and attribute properties from the RO-Crate specification are not included. Examples shown include $datePublished$, $CreativeWork$ and $name$.
 } RO-Crate:
 
@@ -188,7 +188,8 @@ In the conceptual model, the \emph{RO-Crate Metadata File} can be seen as the to
 \subsection{Forward-chained Production Rules for JSON-LD}
 
 Combining the above predicates and Schema.org mapping with rudimentary JSON templates, these forward-chaining production rules can output JSON-LD according to the RO-Crate 1.1 specification\footnote{
-    \textbf{Limitations:} Contextual entities not related from the RO-Crate (e.g. using inverse relations to a data entity) would not be covered by the single direction $Mentions(R, s)$ production rule; see \href{https://github.com/ResearchObject/ro-crate/issues/122}{GitHub issue ResearchObject/ro-crate\#122}. The $datePublished(e, d)$ rule do not include syntax checks for the ISO 8601 datetime format. Compared with RO-Crate examples, this generated JSON-LD does not use a $@context$ as the IRIs are produced unshortened, a post-step could do JSON-LD Flattening with a versioned RO-Crate context. The \texttt{@type} expansion is included for clarity, even though this is also implied by the $type(e, t)$ expansion to $Relation(e, \texttt{xsd:type})$.
+    \textbf{Limitations:} Contextual entities not related from the RO-Crate (e.g. using inverse relations to a data entity) would not be covered by the single direction $Mentions(R, s)$ production rule; see GitHub issue ResearchObject/ro-crate\#122 (\url{https://github.com/ResearchObject/ro-crate/issues/122}).\\
+    The $datePublished(e, d)$ rule do not include syntax checks for the ISO 8601 datetime format. Compared with RO-Crate examples, this generated JSON-LD does not use a $@context$ as the IRIs are produced unshortened, a post-step could do JSON-LD Flattening with a versioned RO-Crate context. The \texttt{@type} expansion is included for clarity, even though this is also implied by the $type(e, t)$ expansion to $Relation(e, \texttt{xsd:type})$.
 }:
 
 \small
@@ -221,4 +222,4 @@ R   & \Rightarrow &  MetadataFile(\texttt{<ro-crate-metadata.json>}) \\
 \end{eqnarray*}
 \normalsize
 
-This exposes the first order logic domain of discourse of IRIs, with rational numbers and strings as their corresponding JSON-LD representation. These production rules first grow the graph of $R$ by adding a transitive rule – anything described in $R$ which is related to $o$, means that $o$ is also mentioned by the $ROCrate(R)$. For simplicity this rule is one-way; in theory the graph can also contain free-standing contextual entities that have outgoing relations to data- and contextual entities, but these are proposed to be bound to the root data entity with Schema.org relation \href{http://schema.org/mentions}.
+This exposes the first order logic domain of discourse of IRIs, with rational numbers and strings as their corresponding JSON-LD representation. These production rules first grow the graph of $R$ by adding a transitive rule – anything described in $R$ which is related to $o$, means that $o$ is also mentioned by the $ROCrate(R)$. For simplicity this rule is one-way; in theory the graph can also contain free-standing contextual entities that have outgoing relations to data- and contextual entities, but these are proposed to be bound to the root data entity with Schema.org relation \footurl{http://schema.org/mentions}{mentions}.

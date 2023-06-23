@@ -92,6 +92,11 @@
 \renewcommand{\chaptermark}[1]{%
 \markboth{#1}{}}
 
+% hyperlink but footnote with url
+\newcommand{\footurl}[2]{
+  \href{#1}{#2}\protect\footnote{\url{#1}}
+}
+
 % for table resizing
 \usepackage{booktabs}
 \usepackage{multirow}
@@ -115,6 +120,10 @@
 \title{PhD}
 \author{Stian Soiland-Reyes}
 \date{2023-06-18}
+
+
+\setcounter{tocdepth}{3}
+\setcounter{secnumdepth}{3}
 
 \begin{document}
 
@@ -145,16 +154,16 @@
 \chapter{Introduction}
 \include{chapter01}
 \chapter{FAIR Digital Objects and Linked Data}
-\include{chapter02}
 \include{chapter03}
+\include{chapter02}
 \chapter{RO-Crate}
-\include{chapter04}
 \include{chapter05}
+\include{chapter04}
 \include{chapter05b}
 \chapter{Workflows}
 \include{chapter06}
-\include{chapter07}
 \include{chapter08}
+\include{chapter07}
 
 \chapter{Conclusions}
 \include{chapter09}

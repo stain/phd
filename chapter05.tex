@@ -130,7 +130,7 @@ describing each and linking them together.
 Examples of metadata descriptions across a wide range of
 domains\footnote{\url{https://rdamsc.bath.ac.uk/scheme-index}} abound within the
 literature, both in research data management
-\cite{Amorim 2016,ch5-46,eosc-interop-framework}
+\cite{Amorim 2016,Farnel 2014,eosc-interop-framework}
 and within library and information
 systems\footnote{\url{https://www.loc.gov/librarians/standards}} \cite{Mai Chan 1995,ch5-127}. However, many of these approaches require
 knowledge of metadata schemas, particular annotation systems, or the
@@ -212,8 +212,8 @@ Data constructs within the RO-Crate metadata file.
   packaging approaches like BagIt \cite{ch5-74}, OCFL \cite
   {ch5-96}, git or ZIP. The RO is described within a \emph{RO-Crate
   Metadata File}, providing identifiers for \emph{authors} using ORCID,
-  \emph{organisations} using Research Organization Registry (ROR) \cite
-  {ch5-79} and licences such as Creative Commons using SPDX
+  \emph{organisations} using Research Organization Registry (ROR) 
+  \cite{ch5-79} and licences such as Creative Commons using SPDX
   identifiers. The \emph{RO-Crate content} is further described with
   additional metadata following a Linked Data approach. Data can be
   embedded files and directories, as well as links to external Web
@@ -224,7 +224,7 @@ Data constructs within the RO-Crate metadata file.
 \paragraph{Linked Data as a foundation}\label{ch5:linkeddata}
 
 The \textbf{Linked Data} principles \cite{Bizer 2011}
-(use of IRIs\footnote{\textbf{IRI}s \cite{rfc3987} are a generalisation
+(use of IRIs\footnote{\textbf{IRI}s \cite{Duerst 2005} are a generalisation
  of \textit{URI}s
 (which include well-known http/https URLs), permitting international
 Unicode characters without percent encoding, commonly used on the
@@ -378,7 +378,7 @@ each of the underlying technologies in detail.
 As such, the RO-Crate 1.1
 specification\footnote{\url{https://w3id.org/ro/crate/1.1}} \cite{ch5-106}
 can be seen as an opinionated and example-driven guide to writing
-\href{https://schema.org/}{Schema.org}
+\footurl{https://schema.org/}{Schema.org}
 \cite{ch5-62} metadata as
 JSON-LD \cite{w3-ldp} (see
 section \vref{ch5:implementation}), which
@@ -568,19 +568,7 @@ containing data entities described using contextual entities.
   }    
   \end{verbatim}    
 	\caption[Simplified RO-Crate metadata file]{%\qq{}\protect\footnotemark[31]
-  Simplified\protect\footnote{
-    Recommended properties for types shown in
-    listing also include
-    \texttt{affiliation}, \texttt{citation}, \texttt{contactPoint},
-    \texttt{description},
-    \texttt{encodingFormat}, \texttt{funder}, \texttt{geo}, \texttt{identifier},
-    \texttt{keywords},
-    \texttt{publisher}; these properties and corresponding contextual
-    entities are
-    excluded here for brevity. See complete example
-    \url
-    {https://www.researchobject.org/2021-packaging-research-artefacts-with-ro-crate/listing1/}.}
-  RO-Crate metadata file showing the
+  Simplified\footnotemark RO-Crate metadata file showing the
   flattened compacted JSON-LD \texttt{@graph} array containing the data entities
   and contextual entities, cross-referenced using \texttt{@id}. The
   \texttt{ro-crate-metadata.json} entity self-declares conformance with the
@@ -598,6 +586,20 @@ containing data entities described using contextual entities.
   \label{ch5:lis1}
 \end{listing}
   
+\footnotetext{
+    Recommended properties for types shown in
+    listing also include
+    \texttt{affiliation}, \texttt{citation}, \texttt{contactPoint},
+    \texttt{description},
+    \texttt{encodingFormat}, \texttt{funder}, \texttt{geo}, \texttt{identifier},
+    \texttt{keywords},
+    \texttt{publisher}; these properties and corresponding contextual
+    entities are
+    excluded here for brevity. See complete example
+    \url
+    {https://www.researchobject.org/2021-packaging-research-artefacts-with-ro-crate/listing1/}.
+}
+ 
 
 In this flattened profile of JSON-LD, each \texttt{\{entity\}} are
 directly under \texttt{@graph} and represents the RDF triples with a
@@ -748,8 +750,8 @@ EOSC-Life,\footnote{\url{https://www.eosc-life.eu/}}
 FAIRplus,\footnote{\url{https://fairplus-project.eu/}}
 CS3MESH4EOSC\footnote{\url{https://cs3mesh4eosc.eu/}} and
 BY-COVID.\footnote{\url{https://by-covid.eu/}} RO-Crate has also established
-collaborations with Bioschemas \cite{bioschemas_2017}, GA4GH
-\cite{bioschema-salad}, OpenAIRE \cite{ch5-100}
+collaborations with Bioschemas \cite{bioschema-salad}, GA4GH
+\cite{ch5-99}, OpenAIRE \cite{ch5-100}
 and multiple H2020 projects.
 
 A key set of stakeholders are developers: the RO-Crate community has
@@ -914,7 +916,7 @@ ro-crate-ruby
 \cite{Bacall 2022b} &
 Developers & Ruby & Beta & Ruby library for reading/writing RO-Crate,
 with workflow support \\
-ro-crate-py \cite{Droesbeke 2022}) &
+ro-crate-py \cite{ro-crate-py}) &
 Developers & Python & Alpha & Object-oriented Python library for
 reading/writing RO-Crate and use by Jupyter Notebook \\
 WorkflowHub \cite{ch5-124} & Workflow
@@ -1002,7 +1004,7 @@ registry of computational workflows, supported by European Open Science
 Cloud projects, e.g. EOSC-Life,\footnote{\url{https://www.eosc-life.eu/}} and
 research infrastructures including the pan-European bioinformatics
 network ELIXIR\footnote{\url{https://elixir-europe.org/}}
-\cite{ch5-34}. As part
+\cite{Crosswell 2012}. As part
 of promoting workflows as reusable tools, WorkflowHub includes
 documentation and high-level rendering of the workflow structure
 independent of its native workflow definition format. The rationale is
@@ -1050,7 +1052,7 @@ creation of the Bioschemas
 Workflows \footnote{\url{https://bioschemas.org/profiles/ComputationalWorkflow/1.0-RELEASE/}}, which again informed the
 RO-Crate
 1.1 specification on workflows \footnote{\url{https://www.researchobject.org/ro-crate/1.1/workflows.html}} and led to the RO-Crate Python library
-\cite{Droesbeke 2022} and
+\cite{ro-crate-py} and
 WorkflowHub's
 \textbf{Workflow
 RO-Crate profile}\footnote{\url{https://w3id.org/workflowhub/workflow-ro-crate/1.0}}, which, in a similar fashion to RO-Crate itself,
@@ -1106,8 +1108,7 @@ data, RO-Crates of \emph{exemplar workflow runs} serve as useful
 workflow documentation, as well as being an exchange mechanism that
 preserves FAIR metadata in a diverse workflow execution environment.
 
-\paragraph{Profile for testing
-workflows}\label{ch5:profile-for-testing-workflows}
+\paragraph{Profile for testing workflows}\label{ch5:profile-for-testing-workflows}
 
 The value of computational workflows, however, is potentially undermined
 by the ``collapse'' over time of the software and services they depend
@@ -1321,7 +1322,7 @@ A mapping has been produced between Research Object Crates and
 Machine-actionable Data Management Plans
 \cite{Miksa 2020}, implemented by
 the RO-Crate RDA maDMP Mapper
-\cite{ch5-7}. A similar
+\cite{Arfaoui 2020}. A similar
 mapping has been implemented by \emph{RO-Crate\_2\_ma-DMP}
 \cite{Brenner 2020}. In both cases,
 a maDMP can be converted to a RO-Crate, or vice versa. In
@@ -1614,7 +1615,7 @@ same time, workflows raise additional FAIR challenges, since they can be
 considered important research artefacts themselves. This viewpoint poses
 the problem of capturing and explaining the computational methods of a
 pipeline in sufficient machine-readable detail
-\cite{ch5-80}.
+\cite{Lamprecht 2019}.
 
 Even when researchers follow current best practices for workflow
 reproducibility
@@ -1636,7 +1637,7 @@ availability of data on an FTP server (60 GB)
 \cite{EMBL-EBI 2019}
 and of open source code in GitHub
 Finn-Lab/MGS-gut\footnote{\url{https://github.com/Finn-Lab/MGS-gut}}
-\cite{finn-lab-mgsgut}, including the
+\cite{EMBL-EBI 2020}, including the
 pipeline as shell scripts and associated analysis scripts in R and
 Python.
 
@@ -1674,7 +1675,7 @@ requirements for software installations.
 In recent years the situation has been greatly improved by software
 packaging and container technologies like Docker and Conda, these
 technologies have been increasingly adopted in life sciences
-\cite{Möller 2017} thanks to
+\cite{ch6-4} thanks to
 collaborative efforts such as BioConda
 \cite{Gruning 2018a} and
 BioContainers
@@ -1725,7 +1726,7 @@ workflow provenance. Additional metadata can be added manually, e.g.~for
 sensitive clinical data that cannot be publicly exposed\footnote{FAIR
   principle A2: \emph{Metadata are accessible, even when the data are no
   longer available.}
-  \cite{ch5-123}}, or to cite
+  \cite{Wilkinson 2016}}, or to cite
 software that lack persistent identifiers. This inline \emph{FAIRifying}
 allows researchers to achieve ``just enough FAIR'' to explain their
 computational experiments.
