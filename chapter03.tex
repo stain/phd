@@ -57,7 +57,7 @@ The \textbf{FDO Requirement Specifications} \cite{fdo-RequirementSpec} is an upd
 
 The \textbf{Machine actionability} \cite{fdo-MachineActionDef} sets out to define what is meant by \emph{machine actionability} for FDOs. \emph{Machine readable} is defined as elements of bit-sequences defined by structural specification, \emph{machine interpretable} elements that can be identified and related with semantic artefacts, while \emph{machine actionable} are elements with a type with operations in a symbolic grammar. The document largely describes requirements for resolving an FDO to metadata, and how types should be related to possible operations.
 
-\textbf{Configuration Types} \cite{fdo-ConfigurationTypes} classifies different granularities for organising FDOs in terms of PIDs, PID Records, Metadata and bit sequences, e.g.~as a single FDO or several daisy-chained FDOs. Different patterns used by current DOIP deployments are considered, as well as FAIR Signposting \cite{Van de Sompel 2022}.
+\textbf{Configuration Types} \cite{fdo-ConfigurationTypes} classifies different granularities for organising FDOs in terms of PIDs, PID Records, Metadata and bit sequences, e.g.~as a single FDO or several daisy-chained FDOs. Different patterns used by current DOIP deployments are considered, as well as FAIR Signposting \cite{vandesompel2015,Van de Sompel 2022}.
 
 \textbf{PID Profiles \& Attributes} \cite{fdo-PIDProfileAttributes} specifies that PIDs must be formally associated with a \emph{PID Profile}, a separate FDO that defines attributes required and recommended by FDOs following said profile. This forms the \emph{kernel attributes}, building on recommendations from RDA's \emph{PID Information Types} working group \cite{weigelRDARecommendationPID2018}. This document makes a clear distinction between a minimal set of attributes needed for PID resolution and FDO navigation, which needs to be part of the \emph{PID Record} \cite{islam_2023}, compared with a richer set of more specific attributes as part of the \emph{metadata} for an FDO, possibly represented as a separate FDO.
 
@@ -161,13 +161,13 @@ We have chosen to investigate using this framework as it covers the higher level
 \caption[Considering FDO and Web according to Interoperability Framework for Fast Data]{Considering FDO and Web according to the quality levels of the Interoperability Framework for Fast Data \cite{delgadoInteroperabilityFrameworkDistributed2016a}.
 \label{ch3:fdo-web-interoperability-framework}}\tabularnewline
 \toprule
-\emph{Quality} & 
+Quality & 
 FDO w/ DOIP & 
 Web w/ Linked Data \\
 \midrule
 \endfirsthead
 \toprule
-\emph{Quality} & 
+Quality &
 FDO w/ DOIP & 
 Web w/ Linked Data \\
 \midrule
@@ -209,7 +209,7 @@ It is also a question as to whether a highly constrained protocol revolving arou
 
 The Interoperability Framework for Fast Data also provides a brief \emph{metamodel} which we use in Table \vref{ch3:metamodel-concepts} to map and examplify corresponding concepts in FDO's DOIP realization and the Web using HTTP semantics \cite{rfc9110}.
 
-From this mapping we can identify the conceptual similarities between DOIP and HTTP, often with common terminology. Notable are that neither DOIP or HTTP have strong support for transactions (explored further \vpageref{ch3:middleware}), as well that HTTP has poor direct support for processes, as the Web is primarily stateless by design.
+From this mapping\footnote{An equivalent SKOS mapping \autocite{w3-skos-primer} is provided as part of the \href{https://w3id.org/ro/doi/10.5281/zenodo.8075229}{RO-Crate for this article} \autocite{soilandreyes2023}.} we can identify the conceptual similarities between DOIP and HTTP, often with common terminology. Notable are that neither DOIP or HTTP have strong support for transactions (explored further \vpageref{ch3:middleware}), as well that HTTP has poor direct support for processes, as the Web is primarily stateless by design.
 
 \begin{table}[h!]
   \centering
@@ -422,13 +422,13 @@ For this purpose, we here utillise the Comparison Framework for Middleware Infra
     \caption[Comparing FAIR Digital Object and Web technologies as middleware infrastructures]{Comparing FAIR Digital Object (with the DOIP 2.0 protocol \cite{DONA 2018}) and Web technologies (using Linked Data) as middleware infrastructures \cite{zarrasComparisonFrameworkMiddleware2004a}
   \label{ch3:fdo-web-middleware}}\tabularnewline
   \toprule
-  \emph{Quality} & 
+  Quality & 
   FDO w/ DOIP & 
   Web w/ Linked Data \\
   \midrule
   \endfirsthead
   \toprule
-  \emph{Quality} & 
+  Quality & 
   FDO w/ DOIP & 
   Web w/ Linked Data \\
   \midrule
@@ -814,7 +814,7 @@ From this evaluation we observe:
 \item
   Machine-understandable types, provenance and data/metadata standards (RDA-R1.1-03M RDA-R1.3-02M, RDA-R1.3-02M, RDA-R1.3-02D) are important for machine actionability, but are currently unspecified for FDOs. \cite{fdo-ImplAttributesTypesProfiles} explores possible machine-readable FDO types, however the type systems themselves have not yet been formalised. Linked Data on the other side have too many semantic and syntactic type systems, making it difficult to write consistent clients.
 \item
-  Indicators for FAIR data are weak for either approach, as too much reliance is put on metadata. For instance in Linked Data, given a URL of a CSV file, what is its persistant identifier or license information? FAIR Signposting \cite{Van de Sompel 2022} can improve findability of metadata using HTTP Link relations, which enable an FDO-like overlay for any HTTP resource. In DOIP, responses for bytestreams can include the data identifier: if that is a PID (not enforced by DOIP), its metadata is accessible.
+  Indicators for FAIR data are weak for either approach, as too much reliance is put on metadata. For instance in Linked Data, given a URL of a CSV file, what is its persistant identifier or license information? Signposting \cite{vandesompel2015} can improve findability of metadata using HTTP Link relations, which enable an FDO-like overlay for any HTTP resource. In DOIP, responses for bytestreams can include the data identifier: if that is a PID (not enforced by DOIP), its metadata is accessible.
 \item
   Resolving FDOs via Handle PIDs to the corresponding DOIP server is currently undefined by FDO and DOIP specifications. \texttt{0.TYPE/DOIPServiceInfo} lookup is only possible once DOIP server is known.
 \end{itemize}
