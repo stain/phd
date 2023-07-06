@@ -9,6 +9,8 @@
 %\usepackage{lmodern}
 
 \usepackage{unicode-math}
+%\usepackage{fontspec}
+
 \defaultfontfeatures{Scale=MatchLowercase}
 \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
 \RequirePackage[palatino]{quotchap}
@@ -17,6 +19,8 @@
 \linespread{1.2}
 %\setlength{\parskip}{2ex plus 0.5ex minus 0.2ex}
 %\setlength{\parindent}{0pt}
+
+%\setmonofont{Bokfjesv3.2-Regular.otf}
 
 %\renewcommand*{\chapterheadstartvskip}{\vspace*{-1.2\baselineskip}}
 %\renewcommand*{\chapterheadendvskip}{\vspace{1.5\baselineskip}}
@@ -127,6 +131,7 @@
 
 \begin{document}
 
+
 \frontmatter
 \maketitle
 
@@ -151,30 +156,37 @@
 \fancyhead[RE]{Chapter \thechapter}
 
 
-\chapter{Introduction}\label{chapter:introduction}
+\chapter{Introduction}
+\label{chapter:introduction}
 \include{chapter01}
 
-\chapter{FAIR Digital Objects and Linked Data}l\label{chapter:fdo}
+\chapter{FAIR Digital Objects and Linked Data}
+\label{chapter:fdo}
 \include{chapter03}
 \include{chapter02}
 
-\chapter{RO-Crate}\label{chapter:ro-crate}
+\chapter{RO-Crate}
+\label{chapter:ro-crate}
 \include{chapter05}
 \include{chapter04}
 \include{chapter05b}
 
-\chapter{Computational Workflows}\label{chapter:workflows}
+\chapter{Computational Workflows}
+\label{chapter:workflows}
 \include{chapter06}
 \include{chapter08}
 \include{chapter07}
 
-\chapter{Conclusions}\label{chapter:conclusions}
+\chapter{Conclusions}
+\label{chapter:conclusions}
 \include{chapter09}
 
-\chapter{Contributions}\label{chapter:contributions}
+\chapter{Contributions}
+\label{chapter:contributions}
 \include{chapter10}
 
-\chapter{Acknowledgements}\label{chapter:acknowledgements}
+\chapter{Acknowledgements}
+\label{chapter:acknowledgements}
 \include{chapter11}
 
 \backmatter
