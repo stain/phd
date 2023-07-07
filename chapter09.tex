@@ -3,36 +3,38 @@ considerations)
 
 \section{Main Findings}
 
-\subsection{FAIR Digital Objects can benefit from Linked Data practices}
+\subsection{Making a predictable ecosystem of FAIR digital objects}
 
-The main advantage of scholarly researchers publishing \emph{FAIR data} is to enable machine actionability \cite{Wilkinson 2016}, which again will accelerate further research. 
-In practice, this is largely approached either by depositions in general and institutional repositories for Open Data such as Figshare and Zenodo \cite{Dillen 2019}, or to specialized domain-specific repositories such as GBIF in biodiversity \cite{ch8-7}. 
+The main advantage of scholarly researchers publishing \emph{FAIR data} is to enable machine actionability \cite{Wilkinson 2016}, which again will accelerate further research, such as through computational workflows. 
+In practice, data publishing is largely approached either by depositions in general and institutional repositories for Open Data such as Figshare and Zenodo \cite{Dillen 2019}, or to specialized domain-specific repositories such as GBIF in biodiversity \cite{ch8-7}. 
 
 European research infrastructures supporting Open Science practices are coalescing their services to form the Europen Open Science Cloud (EOSC) \cite{10.2777/940154}, which are embracing FAIR principles \cite{Mons 2017} and building a common framework for interoperability \cite{eosc-interop-framework}. 
 
-While existing practices for implementing FAIR has relied on the Linked Data stack, that is just one possible technology to achieve the benefits of interoperable machine actionability \cite{Mons 2017}. 
+While existing practices for implementing FAIR have relied on the Linked Data stack, that is just one possible technology to achieve the benefits of interoperable machine actionability \cite{Mons 2017}. 
 
-Chapter \vref{chapter:fdo} explored the concept of \emph{FAIR Digital Objects} (FDO) \cite{Schultes 2019} as a potential distributed object system for FAIR data, comparing its proposed principles and current practices with the established Linked Data approach. 
+Chapter \ref{chapter:fdo} explored the concept of \emph{FAIR Digital Objects} (FDO) \cite{Schultes 2019} as a potential distributed object system for FAIR data, comparing its proposed principles and current practices with the established Linked Data approach. 
 As detailed in section \vref{ch3:fdo}, FDO defines a handful of constraints and guides for a predictable way to organise complex machine actionable digital entities. 
+
 Conceptually FDO can clearly be useful for realizing FAIR principles with more active digital objects that can form a consistent ecosystem, but this opens many questions on actual FDO implementations with regards to protocols and standards.
 
 \subsubsection{Linked Data need more constraints and consistency to be FAIR}
 
 Examined in section \vref{ch3:ld}, the principles of \emph{Linked Data} emerged from the Semantic Web as a more data-centric view with a focus on navigation and cross-site interoperability, rather than elaborate logical inferencing systems.  
 Yet the bewildering landscape of technology choices for using RDF in data platforms means that the developers suffer and still face a steep learning curve. 
-For clients consuming Linked Data, the situation is still baffling in that relatively small differences in identifiers, vocabularies and usage patterns across deployment result in incompatibilities that may require platform-specific workarounds and mappings \cite{?}. 
+For clients consuming Linked Data, the situation is still baffling in that relatively small differences in identifiers, vocabularies and usage patterns across deployment result in incompatibilities that may require platform-specific workarounds and mappings \cite{?1}. 
 
 The ecosystem of FAIR tooling is not currently mature enough to support Linked Data consumption in a user-friendly and efficient way \cite{Thompson 2020}, although recent metrics and tools for assessing \emph{FAIRness} \cite{Wilkinson 2018} can assist both data providers and consumers. 
-Evaluations by EOSC has since found that FAIRness metrics can vary widely across the different assessment tools for the same data resource \cite{Wilkinson 2023}, showing that further definitions of conventions and practices are needed for consistent Linked Data publishing and consumption. 
+Evaluations by EOSC has since found that FAIRness metrics can vary widely across the different assessment tools for the same data resource \cite{Wilkinson 2022a}, showing that further definitions of conventions and practices are needed for consistent Linked Data publishing and consumption. 
 
 Making the FAIR principles achieve practical benefits for researchers and platform developers thus requires more specific constraints and broader consistency.
 
-\subsubsection{FDOs can be a distributed object system on the Web}
+\subsubsection{FDOs as a distributed object system on the Web}
 
 The framework-based comparisons in section \vref{ch3:results} considered the implementation details of both FDO and Linked Data, and evaluated to what extent either can be considered a global distributed object system. 
 The findings from this research show that FDO recommendations can benefit FAIR thinking to build machine actionable ecosystems and provide stronger promises of consistency and predictability across data platforms. 
-These comparisons highlighted that the Web on the othe rhand has a strong, flexible and mature technology stack, which would be a solid basis for implementing FDO. 
-However, if this is to use Linked Data technologies, these must be made more predictable and consistent in order to help realize such an ecosystem.
+
+These comparisons highlighted that the Web on the other hand has a flexible, scalable and mature technology stack, which would form a solid basis for implementing FDO. 
+However, if such implementation is to use Linked Data technologies, these must be constrained sufficiently in order to practically realize such an ecosystem within the FDO guidelines and without degrading the developer experience.
 
 
 \subsection{?1}
