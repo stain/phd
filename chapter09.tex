@@ -37,37 +37,17 @@ These comparisons highlighted that the Web on the other hand has a flexible, sca
 However, if such implementation is to use Linked Data technologies, these must be constrained sufficiently in order to practically realize such an ecosystem within the FDO guidelines and without degrading the developer experience.
 
 
-\subsection{FDO principles can be implemented using Linked Data and Signposting}
+\subsection{FDOs can be implemented on the Web using Signposting}
 
-Revisited in section \vref{ch2:meeting-fdo-principles-using-linked-data-standards},
+Section \vref{ch2:meeting-fdo-principles-using-linked-data-standards} explores how the FDO principles can be achieved for Linked Data as further constraints on existing standards. As this chapter \vref{chapter:fdo} has highlighted throughout, there are many technical details remaining to be specified for FDO to be consistently implemented according to its own principles.
 
+If such conventions need to be evolved and specified no matter the protocol basis for FDO, this chapter argues, then it would be intuitive to build FDO on the mature Web stack, unless there was an compelling argument for alternative protocol stacks having other advantages. For instance, a de-centralized, resiliant architecture and long term preservation was the motivation for IPFS as a \emph{Decentralized Web} \cite{Trautwein 2022}.
 
-The Linked Data stack provides a set of specifications, tools and
-guidelines in order to help the FDO principles become a reality. This
-mature approach can accelerate uptake of FDO by scholars and existing
-research infrastructures such as the European Open Science Cloud (EOSC).
+Section \ref{ch2:discussion} also found that the basis of Web-based FDOs can be built using only Signposting \cite{vandesompel2015,Van de Sompel 2022}, adding a couple of non-intrusive HTTP headers 
+that are agnostic to metadata standards and serializations. The Signposting approach has also been highlighted both by EOSC \cite{10.5281/zenodo.7463421} and as a possible FDO configuration type \cite{fdo-ConfigurationTypes}. The FAIR-IMPACT project has also launched an open call for building support for Signposting \cite{soilandreyes2023b} in data repositories and platforms.
 
-However, the amount of standards and existing metadata vocabularies
-poses a potential threat for adoption and interoperability. Yet, the
-challenges for agreeing on usage profiles apply equally to DOIP as LD
-approaches.
+\section{RO-Crate}
 
-We have worked with different scientific communities to define 
-RO-Crate \cite{Soiland-Reyes 2022}, a
-lightweight method to package research outputs along with their
-metadata. While RO-Crate's use of schema.org shows just one possible
-metadata model, it's powerful enough to be able to express FDOs, and
-familiar to web developers.
-
-We have also used FAIR Signposting \cite{Van de Sompel 2022} with HTTP
-\texttt{Link:} headers as a way to support navigation to the individual
-core properties of an FDO (PID, type, metadata, licence, bytestream)
-that does not require heuristics of content-negotiation and is agnostic
-to particular metadata vocabularies and serialisations.
-
-We believe that by adopting Linked Data principles, we can accelerate
-FDO today -- and even start building practical ways to assist scientists
-in efficiently answering topical questions based on knowledge graphs.
 
 
 \subsection{RO-Crate is a developer-friendly approach to FAIR data packaging}
