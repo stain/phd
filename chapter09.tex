@@ -12,7 +12,7 @@ European research infrastructures supporting Open Science practices are coalesci
 
 While existing practices for implementing FAIR have relied on the Linked Data stack, that is just one possible technology to achieve the benefits of interoperable machine actionability \cite{Mons 2017}. 
 
-Chapter \ref{chapter:fdo} explored the concept of \emph{FAIR Digital Objects} (FDO) \cite{Schultes 2019} as a potential distributed object system for FAIR data, comparing its proposed principles and current practices with the established Linked Data approach. 
+Chapter \ref{chapter:fdo} explored the emerging concept of \emph{FAIR Digital Objects} (FDO) \cite{Schultes 2019} as a potential distributed object system for FAIR data, comparing its proposed principles and current practices with the established Linked Data approach. 
 As detailed in section \vref{ch3:fdo}, FDO defines a handful of constraints and guides for a predictable way to organise complex machine actionable digital entities. 
 
 Conceptually FDO can clearly be useful for realizing FAIR principles with more active digital objects that can form a consistent ecosystem, but this opens many questions on actual FDO implementations with regards to protocols and standards.
@@ -46,11 +46,39 @@ If such conventions need to be evolved and specified no matter the protocol basi
 Section \ref{ch2:discussion} also found that the basis of Web-based FDOs can be built using only Signposting \cite{vandesompel2015,Van de Sompel 2022}, adding a couple of non-intrusive HTTP headers that are agnostic to metadata standards and serializations. 
 The Signposting approach has also been highlighted both by EOSC \cite{10.5281/zenodo.7463421} and as a possible FDO configuration type \cite{fdo-ConfigurationTypes}. The FAIR-IMPACT project has also launched an open call for building support for Signposting \cite{soilandreyes2023b} in data repositories and platforms.
 
-\section{RO-Crate}
 
-\subsection{RO-Crate is a developer-friendly approach to FAIR data packaging}
+
+\subsection{RO-Crate as a developer-friendly approach}
+
+As pointed out in section \vref{ch3:ld-web}, while Linked Data is a powerful and flexible approach to publishing structured data on the Web, the developer experience of using Semantic Web technology still needs simplifications, like reducing number of choices for vocabularies and serialization formats. 
+
+Chapter \vref{chapter:ro-crate} introduced \emph{RO-Crate} as a practical implementation of the FAIR principles for the purpose of packaging data alongside structured metadata. The approach builds on best practices for Linked Data, however RO-Crate specifications are primarily example-driven with simple JSON structures, and primarily use a single, general purpose vocabulary. This way of ``Linked Data by stealth'' means that developers don't need to be concerned about RDF implementation details, although they can at their option take advantage of RDF knowledge graph technologies like SPARQL. Extension points are well defined, and although this do require some RDF knowledge like defining namespaces, reasonable examples and vocabulary repositories are provided by RO-Crate --  developers do not for instance need to learn about OWL reasoning or to deploy a web service serving multiple RDF serialisations for every described entity.
+
 
 \subsection{Just enough Linked Data}
+
+An important lesson from this work then is to use ``just enough'' Linked Data for the desired level of interoperability and knowledge representation. While previous efforts to `FAIRify' largely have been concerned about representing the data values using an RDF data model, this can lead to significant effort needed. 
+
+
+\subsection{Need for profiles}
+
+
+\subsection{FDO and RO-Crate}
+
+
+
+\section{Workflow}
+
+\subsection{Workflows as FAIR digital objects}
+
+
+\subsection{Provenance of workflow runs}
+
+
+\subsection{Using and building FDOs from workflows}
+
+
+\subsection{Web service vs command line tools}
 
 
 \textbf{TODO}: Summarize/discuss 
