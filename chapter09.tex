@@ -83,10 +83,13 @@ This has multiple purposes:
     \item Archive ``true at time of writing'' descriptions for longevity. An RO-Crate is self-contained and this reduces service dependencies (at the risk of outdated information).
 \end{itemize}
 
-Several of these reasons are also organizational in nature, reflecting back on the EOSC Interoperability Framework (section \vref{ch3:eosc-interoperability-framework}) -- rather than requiring for instance the 
+Several of these reasons are also organizational in nature, reflecting back on the EOSC Interoperability Framework (section \vref{ch3:eosc-interoperability-framework}) -- rather than requiring for instance the Research Organization Registry (\footurl{https://ror.org/}{ROR}) to add Linked Data representations of organizations, one can be made ad-hoc by the RO-Crate's author, and contained by the crate as a contextual entity. 
+
+In this way we see a breaking of the chicken-and-egg problem, for instance orcid.org recently added schema.org content negotiation, but \emph{after} RO-Crate started describing people using ORCID identifiers\footnote{My earlier contribution to ORCID had in fact already established content-negotiation to RDF, but with the classical FOAF vocabulary. The registry is currently returning person description with different semantic models depending on which serialization is requested}. However when reflecting on the propositions of FAIR Digital Objects as covered in \ref{chapter:fdo}, we can see a problem if every reference from an FDO must go to another pre-existing FDO (or at least a registered PID), in that there must then be a a linear order of creation within an FDO ecosystem, if it could not utilise the estabished human-readable Web as its bootstrapping ground. This could mean large cross-organizational delays with a stronger need for collaboration, or alternatively, starting with a small metamodel that can gradually evolve to add more navigation when and if registries appear with FDO interfaces.
 
 
 \subsubsection{Need for profiles}
+
 
 
 
