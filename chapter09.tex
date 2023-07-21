@@ -52,33 +52,61 @@ The Signposting approach has also been highlighted both by EOSC \cite{10.5281/ze
 
 As pointed out in section \vref{ch3:ld-web}, while Linked Data is a powerful and flexible approach to publishing structured data on the Web, the developer experience of using Semantic Web technology still needs simplifications, like reducing number of choices for vocabularies and serialization formats. 
 
-Chapter \vref{chapter:ro-crate} introduced \emph{RO-Crate} as a practical implementation of the FAIR principles for the purpose of packaging data alongside structured metadata. The approach builds on best practices for Linked Data, however RO-Crate specifications are primarily example-driven with simple JSON structures, and primarily use a single, general purpose vocabulary. This way of ``Linked Data by stealth'' means that developers don't need to be concerned about RDF implementation details, although they can at their option take advantage of RDF knowledge graph technologies like SPARQL. Extension points are well defined, and although this do require some RDF knowledge like defining namespaces, reasonable examples and vocabulary repositories are provided by RO-Crate --  developers do not for instance need to learn about OWL reasoning or to deploy a web service serving multiple RDF serialisations for every described entity.
+Chapter \vref{chapter:ro-crate} introduced \emph{RO-Crate} as a practical implementation of the FAIR principles for the purpose of packaging data alongside structured metadata. The approach builds on best practices for Linked Data, however RO-Crate specifications are primarily example-driven with simple JSON structures, and primarily use a single, general purpose vocabulary. 
+
+This way of ``Linked Data by stealth'' means that developers don't need to be concerned about RDF implementation details, although they can at their option take advantage of RDF knowledge graph technologies like SPARQL (section \vref{ch5:linkeddata}). Extension points are well defined, and although this do require some RDF knowledge like defining namespaces, reasonable examples and vocabulary repositories are provided by RO-Crate --  developers do not for instance need to learn about OWL reasoning or to deploy a web service serving multiple RDF serialisations for every described entity.
 
 
-\subsection{Just enough Linked Data}
+\subsubsection{Just enough Linked Data}
 
-An important lesson from this work then is to use ``just enough'' Linked Data for the desired level of interoperability and knowledge representation. While previous efforts to `FAIRify' largely have been concerned about representing the data values using an RDF data model, this can lead to significant effort needed. 
+An important lesson from this work then is to use ``just enough'' Linked Data for the desired level of interoperability and knowledge representation. While previous efforts to `FAIRify' largely have been concerned about representing the data values using an RDF data model, this can lead to significant effort needed in developing ontologies and vocabularies. 
 
+RO-Crate is using schema.org \cite{schema.org} as its base vocabulary, and tries to follow its philosophy of adding a lightweight semantic structure by associating many free text attributes to the same node, rather than making elaborate interconnected semantic objects. For instance, while a \texttt{Person}'s \texttt{affiliation} ideally goes to a \texttt{Organization} with it's own URL and other attributes, in some cases, a free text string is all information available, and this can be used cirectly as the \texttt{affiliation}. 
 
-\subsection{Need for profiles}
+With retrospect we can say that this reduction in semantic rigidity compared to use in OWL ontologies is a move back to the simplicity of early RDF as an open-ended model (see section \vref{ch3:semweb}), where a property can be used to point to almost anything, and RDF authors are free to use almost any term.
 
+Another aspect that is not highlighted well in ontologies is where to stop formalization of an object. In schema.org, many properties like \texttt{licence} are defined as having a type of \footurl{http://schema.org/URL}{\texttt{URL}}, hinting that the node is not expected to be explained with further properties, but that the attribute's primary purpose is navigation or identification. 
 
-\subsection{FDO and RO-Crate}
-
-
-
-\section{Workflow}
-
-\subsection{Workflows as FAIR digital objects}
+This would be a key aspect of Linked Data, which traditionally have had the undefined structure of ``follow your nose'' navigation -- a client may attempt to request any node identifier (if it's a URL), and if, with content-negotiation, it returns some RDF, then that could be integrated into the knowlege graph, hopefully adding more description of that node, although possibly using other vocabularies. However, ontologies have not commonly indicated navigation waypoints as done in Schema.org.
 
 
-\subsection{Provenance of workflow runs}
+\subsubsection{Embedding contextual information reduces need for navigation}
+
+A big difference from Linked Data practices in our RO-Crate approach is making a self-described container. Rather than assume that information will always be available from the referenced URIs, and requiring clients to crawl their way through the many identifiers to see which ones contain more information, the RO-Crate contains a minimal description of each referenced contextual entity (section \vref{ch5:contextualentities}). 
+
+This has multiple purposes:
+
+\begin{itemize}
+    \item Simplify user interfaces, e.g. a display name and type before the user chooses to click the link
+    \item Vocabulary adaptation, for instance describing with schema.org in the crate, what is expressed in FOAF vocabulary at the URL.
+    \item Unify descriptions of semantic artefacts and web pages. Making ``ad-hoc'' semantic artefacts within the crate.
+    \item Archive ``true at time of writing'' descriptions for longevity. An RO-Crate is self-contained and this reduces service dependencies (at the risk of outdated information).
+\end{itemize}
+
+Several of these reasons are also organizational in nature, reflecting back on the EOSC Interoperability Framework (section \vref{ch3:eosc-interoperability-framework}) -- rather than requiring for instance the 
 
 
-\subsection{Using and building FDOs from workflows}
+\subsubsection{Need for profiles}
 
 
-\subsection{Web service vs command line tools}
+
+
+\subsubsection{FDO and RO-Crate}
+
+
+
+\subsection{Workflow}
+
+\subsubsection{Workflows as FAIR digital objects}
+
+
+\subsubsection{Provenance of workflow runs}
+
+
+\subsubsection{Using and building FDOs from workflows}
+
+
+\subsubsection{Web service vs command line tools}
 
 
 \textbf{TODO}: Summarize/discuss 
