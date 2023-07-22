@@ -114,7 +114,7 @@ The discussion of strictness vs flexibility in section \vref{ch5:strictness-vs-f
 
 Section \vref{ch5:profiles} detailed how semi-formalized profiles can be gradually formed to at first \emph{duck-type} a class of RO-Crates that have similar properties. Later work on formalizing this as \footurl{https://www.researchobject.org/ro-crate/1.2-DRAFT/profiles}{Profile Crate} to capture the profile itself have since manuscript publication also evolved to use the W3C Profiles Vocabulary \cite{dx-prof} to explicitly linked to vocabularies, mappings and importantly constraints expressed as RDF Shapes \cite{fdo-collections}. This turns RO-Crate profiles into machine-actionable type definitions, as existing RDF tooling can do for instance validation. Figure \vref{ch9:fig:profilecrate} shows how the usage of \emph{roles} within the profile crate indicates the purpose of the constituent parts. Roles are here particularly important as many of these Semantic Web resources are expressed in the same file format (e.g. `\texttt{text/turtle}') and may be used for different purposes (e.g. SKOS \cite{w3-skos-primer} can be both mapping and a vocabulary).
 
-\begin{figure}%[b]
+\begin{figure}[htb]
     \includegraphics[width=\textwidth]{figures/ch09/profile-crate.pdf}
       \caption[Example of Profile Crate]{\textbf{Example of Profile Crate for Workflow Run Crate}. 
       An RO-Crate \emph{WFRun Crate} declares conformance with a given RO-Crate profile. Resolving the profile URI retrieves the \emph{Profile Crate}, which parts include an \emph{RDF Shape}, an \emph{SKOS mapping} and a \emph{DefinedTermSet}. 
@@ -126,11 +126,11 @@ Section \vref{ch5:profiles} detailed how semi-formalized profiles can be gradual
 
 \subsection{User applications are needed to make FAIR research objects}
 
-RO-Crate and its best practices can be considered a type of \emph{middleware} used by application developers to capture and transmit metadata and relate data files that together form some tangible unit (a \emph{Research Object}). It is therefore important to also consider the role of user applications in 
+RO-Crate and its best practices can be considered a type of \emph{middleware} used by application developers to capture and transmit metadata and relate data files that together form some tangible unit (a \emph{Research Object}). It is therefore important to also consider the role of user applications in order to increase adoptation of FAIR research objects by scholars.
 
-Futher work by the RO-Crate community has created more user-fronting tools such as \footurl{https://github.com/oeg-upm/ya2ro}{ya2ro}, which given metadata and identifier in a \footurl{https://yaml.org/}{YAML} file\footnote{YAML is a file format with the same data model as JSON, but with a more readable syntax, e.g. using indentation instead of quoted strings} can retrieve contextual metadata from ORCID, GitHub and DOI registries and build and publish a completed RO-Crate \cite{ya2ro}.   While this technology still requires some understanding of editing, it is more approachable to data scientists.
+Futher work by the RO-Crate community has created more user-fronting tools such as \footurl{https://github.com/oeg-upm/ya2ro}{ya2ro}, which given metadata and identifier in a \footurl{https://yaml.org/}{YAML} file\footnote{YAML is a file format with the same data model as JSON, but with a more readable syntax, e.g. using indentation instead of quoted strings} can retrieve contextual metadata from ORCID, GitHub and DOI registries and build and publish a completed RO-Crate \cite{ya2ro}.   While this technology still requires some understanding of editing, it is intended to be more approachable to data scientists and for use with simple Web publishing platforms like \footurl{https://pages.github.com/}{GitHub Pages}.
 
-The \footurl{https://www.rohub.org/}{ROHub} has added RO-Crate import and export, and provides both a browseable repository for publishing crates, but also interactive and collaborative editing of its metadata. In this use case, RO-Crate plays the role as an exchange and archiving format, as the hub stores the crates in general-purpose repositories Zenodo and B2Share which do not have the facility to keep the granular metadata expressed within the RO-Crate metadata file.
+The repository \footurl{https://www.rohub.org/}{ROHub} \cite{Palma??} has added RO-Crate import and export, and provides both a browseable repository for publishing crates, but also interactive and collaborative editing of its metadata. In this use case, RO-Crate plays the role as an exchange and archiving format, as the hub stores the crates in general-purpose repositories Zenodo and B2Share which do not have the facility to keep the granular metadata expressed within the RO-Crate metadata file.
 
 
 \subsection{FDO and RO-Crate}
@@ -140,6 +140,15 @@ The \footurl{https://www.rohub.org/}{ROHub} has added RO-Crate import and export
 \subsection{Workflow}
 
 \subsubsection{Workflows as FAIR digital objects}
+
+\begin{figure}[htb]
+    \includegraphics[width=\textwidth]{figures/ch09/signposting.pdf}
+      \caption[Signposting]{\textbf{Signposting}. 
+      \footnotemark
+      }
+    \label{ch9:fig:signposting}
+  \end{figure}
+\footnotetext{\url{https://example.com/}}
 
 
 \subsubsection{Provenance of workflow runs}
