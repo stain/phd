@@ -40,7 +40,7 @@ These comparisons highlighted that the Web on the other hand has a flexible, sca
 However, if such implementation is to use Linked Data technologies, these must be constrained sufficiently in order to practically realize such an ecosystem within the FDO guidelines and without degrading the developer experience.
 
 
-\subsection{FDOs can be implemented on the Web using Signposting}
+\subsection{FDOs can be implemented on the Web using Signposting}\label{ch60:signposting}
 
 Section \vref{ch2:meeting-fdo-principles-using-linked-data-standards} explores how the FDO principles can be achieved for Linked Data as further constraints on existing standards.
 As this chapter \vref{chapter:fdo} has highlighted throughout, there are many technical details remaining to be specified for FDO to be consistently implemented according to its own principles.
@@ -175,10 +175,9 @@ As with other aspects of RO-Crate, there is a gradual approach towards Linked Da
 Developers with deeper familiarity with Semantic Web technologies can expand the profile capabilities to use existing ontology methodologies, in which case it would be preferrable to aggregate separate semantic artefacts from the Profile Crate.
 
 
-\subsection{User applications are needed to make FAIR research objects}
+\subsection{User applications are needed for researchers to generate FAIR research objects}
 
-RO-Crate and its best practices can be considered a type of \emph{middleware} used by application developers to capture and transmit metadata and relate data files that together form some tangible unit (a \emph{Research Object}). 
-It is therefore important to also consider the role of user applications in order to increase adoptation of FAIR research objects by scholars.
+RO-Crate and its best practices can be considered a type of \emph{middleware} used by application developers to capture and transmit metadata and relate data files that together form some tangible unit (a \emph{Research Object}). While RO-Crate have already been implemented by several repositories and applications such as workflow systems, it is important to also consider the role of user applications in order to increase adoptation of FAIR research objects by scholars in general.
 
 Futher work by the RO-Crate community has created more user-fronting tools such as \footurl{https://github.com/oeg-upm/ya2ro}{ya2ro}, which given metadata and identifier in a \footurl{https://yaml.org/}{YAML} file\footnote{YAML is a file format with the same data model as JSON, but with a more readable syntax, e.g. using indentation instead of quoted strings} can retrieve contextual metadata from ORCID, GitHub and DOI registries and build and publish a completed RO-Crate \cite{ya2ro}.   
 While this technology still requires some understanding of editing, it is intended to be more approachable to data scientists and for use with simple Web publishing platforms like \footurl{https://pages.github.com/}{GitHub Pages}.
@@ -195,7 +194,27 @@ Notably this tool is also intended for creation of such vocabularies, and as suc
 \footurl{https://schema.org/docs/schemas.html}{(SoSS)}.
 
 
-\subsection{FDO and RO-Crate}
+\subsection{Web-based FDOs can use RO-Crate for its metadata}
+
+Section \vref{ch4:lightweight-fdo} argues that many of the FDO requirements \cite{fdo-RequirementSpec} for metadata can be implemented using RO-Crate, with FAIR Signposting (section \vref{ch60:signposting}) assisting navigation from persistent identifiers. This was implemented in the repository WorkflowHub \cite{wittenburgFAIRDigitalObject2022b} and is being further developed by the \footurl{https://eurosciencegateway.eu/}{EuroScienceGateway project} \cite{10.5281/zenodo.7152762}.
+
+(..)
+
+\subsection{RO-Crate can capture collections of digital objects}
+
+RO-Crate has also been proposed as a generic mechanism for FDO Collections \cite{fdo-collections}, as an aggregator of FDOs by their PIDs. Such collections have a similar challenge in FDO as in Linked Data, in that clients would need to resolve an excessive number of persistent identifiers (see section \vref{ch20:avoid-lots-of-requests}) to FDOs which may be of different types. Using an RO-Crate for such collections, the bibliographic metadata of each PID can be directly embedded and normalized to a single vocabulary. 
+ 
+Work on building large data citations as a ``reliquary'' -- a \emph{container of persistent identifiers (PIDs)} \cite{10.1002/essoar.10509966.1} -- started from the earth science domain with AGU's \footurl{https://data.agu.org/DataCitationCoP/}{Data Citation Community of Practice} and continues in RDA's \footurl{https://www.rd-alliance.org/groups/complex-citations-working-group}{Complex Citation Working Group}. In this approach RO-Crate is being considered as a promising implementation to capture large number of citations along with minimal metadata including licensing and attribution. Here one motivation is to avoid excessive lists of data citations for publications rising of aggregated dataset processing, while still propagating each dataset's FAIR metadata (e.g. as required by the Creative Commons Attribution licence).
+
+
+\subsection{RO-Crate in data lakes}
+
+Knowledge Enhanced Digital Objects \footurl{https://github.com/luoyu357/KEDODataLake}{(KEOD)} \cite{Luo 2022} is an experimental approach of building a data lake using a combination of knowledge graphs, RO-Crate and PID records\cite{Luo 2023}. This is effectively an FDO implementation: A KEDO PID is a Handle that identifies a KEDO Object, described using a KEDO RO-Crate. This crate again has \emph{internal RO-Crate}s as parts, which records a combination of \emph{Features} and \emph{Insights}. The distinction is that features are mainly fixed at the digital object creation and considered directly describing its nature, while insights can be discovered later from further processing and linkage. This approach solves a mutability problem in FDOs, as the KEOD system only allows additional insights to be added along with provenance that connect PIDs when KEDOs evolve. Files in a KEDO RO-Crate are stored locally, and each recorded with a Handle PID within the crate.
+
+This KEOD setup of multiple graphs forming a single knowledge unit can be considered analoguous to nanopublications \cite{Kuhn 2021} but for FDOs. Indeed using nanopublication to capture FDOs of digital twins has also been proposed  \cite{10.3389/data.2022.883341}.
+
+
+
 
 \cite{FAIROs}
 
@@ -212,8 +231,6 @@ Notably this tool is also intended for creation of such vocabularies, and as suc
 
 
 \subsubsection{Web service vs command line tools}
-
-\subsection{RO-Crate can be an FDO if you use Signposting}
 
 \textbf{TODO}: Summarize/discuss 
 From \vref{ch4:lightweight-fdo}
