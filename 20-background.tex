@@ -13,13 +13,9 @@ In brief, the structure of a FAIR Digital Object (FDO) is to, given a \emph{pers
 \begin{figure}[hbt]
   \includegraphics[width=\textwidth]{figures/ch03/fdo.pdf}
     \caption[Idealised overview of a FAIR Digital Object]{\textbf{Idealised overview of a FAIR Digital Object}. The persistent identifier (PID), (e.g. a Handle, DOI or permalink), refers to an FDO through a PID Record, which may reference downloadble bytes, and optionally additional metadata in another FDO. A series of operations are accessible from an FDO (for instance retrieving the bytes). Similar to in object-oriented programming, the FDO Type indicates which operations and attributes are applicable to an FDO. FDOs can be cross-related using the PIDs, a Collection is then another such FDO which aggregates other FDOs by reference. The configuration shown here is just one of many possible \cite{fdo-ConfigurationTypes}, along with the choice of PID system, nature of the PID Record and metadata vocabularies, which are identified through an FDO Profile. In practice, some compromises from this idealised picture are taken depending on the implementation, for instance attribute keys may be simple strings rather than PIDs, and default operations are not explicitly declared.
-    \footnotemark
     }
   \label{ch3:fig:fdo}
 \end{figure}
-
-\footnotetext{\url{https://example.com/}}
-
 
 Recently, FDOs have been recognised by the European Open Science Cloud (\footurl{https://eosc.eu/}{EOSC}) as a suggested part of its Interoperability Framework \cite{eosc-interop-framework}, in particular for deploying active and interoperable FAIR resources that are \emph{machine actionable}. Development of the FDO concept continued within Research Data Alliance (\footurl{https://www.rd-alliance.org/}{RDA}) groups and EOSC projects like \footurl{https://www.go-fair.org/}{GO-FAIR}, concluding with a set of guidelines for implementing FDO \cite{bonino2019}. The \footurl{https://fairdo.org/}{FAIR Digital Objects Forum} has since taken over the maturing of FDO through focused working groups which have currently drafted several more detailed specification documents (see \emph{Next steps for FDO} \vpageref{ch3:next-step-fdo}).
 
@@ -83,7 +79,39 @@ The \textbf{Semantic Web} was developed as a vision by Tim Berners-Lee \cite{ber
 
 Through W3C, the Semantic Web was realised with the Resource Description Framework (RDF) \cite{w3-rdf11-primer} that used \emph{triples} of subject-predicate-object statements, with its initial serialisation format \cite{w3-rdf-syntax99} being RDF/XML (XML was at the time seen as a natural data-focused evolution from the document-centric SGML and HTML).
 
-While triple-based knowledge representations were not new \cite{stanczykProcessModellingInformation1987}, the main innovation of RDF was the use of global identifiers in the form of URIs\footnote{URIs \cite{rfc3986} are generalised forms of URLs that include locator-less identifiers such as ISBN book numbers (URNs). The distinction between locator-full and locator-less identifiers have weakened in recent years \cite{InfoURIRegistry}, for instance DOI identifiers now are commonly expressed with the prefix \texttt{https://doi.org/} rather than as URNs with \texttt{info:doi:} given that the URL/URN gap has been bridged by HTTP resolvers and the use of Persistent Identifiers (PIDs) \cite{jutyIdentifiersOrgMIRIAM2011}. RDF 1.1 formats use Unicode to support \emph{IRIs} \cite{Duerst 2005}, which extends URIs to include international characters and domain names.} as the primary identifier of the \emph{subject} (what the statement is about), \emph{predicate} (relation/attribute of the subject) and \emph{object} (what is pointed to). By using URIs not just for documents\footnote{URIs can also identify \emph{non-information resources} for any kind of physical object (e.g.~people), such identifiers can resolve with \texttt{303\ See\ Other} redirections to a corresponding \emph{information resources} \cite{sauermannCoolURIsSemantic2011}.}, the Semantic Web builds a self-described system of types and properties, where the meaning of a relation can be resolved by following its hyperlink to the definition within a \emph{vocabulary}. By applying these principles as well to any kind of resource that could be described at a URL, this then forms a global distributed Semantic Web.
+While triple-based knowledge representations were not new \cite{stanczykProcessModellingInformation1987}, the main innovation of RDF was the use of global identifiers in the form of URIs\footnote{URIs \cite{rfc3986} are generalised forms of URLs that include locator-less identifiers such as ISBN book numbers (URNs). The distinction between locator-full and locator-less identifiers have weakened in recent years \cite{InfoURIRegistry}, for instance DOI identifiers now are commonly expressed with the prefix \texttt{https://doi.org/} rather than as URNs with \texttt{info:doi:} given that the URL/URN gap has been bridged by HTTP resolvers and the use of Persistent Identifiers (PIDs) \cite{jutyIdentifiersOrgMIRIAM2011}. RDF 1.1 formats use Unicode to support \emph{IRIs} \cite{Duerst 2005}, which extends URIs to include international characters and domain names.} as the primary identifier of the \emph{subject} (what the statement is about), \emph{predicate} (relation/attribute of the subject) and \emph{object} (what is pointed to) -- see listing \vref{ch3:triples}. By using URIs not just for documents\footnote{URIs can also identify \emph{non-information resources} for any kind of physical object (e.g.~people), such identifiers can resolve with \texttt{303\ See\ Other} redirections to a corresponding \emph{information resources} \cite{sauermannCoolURIsSemantic2011}.}, the Semantic Web builds a self-described system of types and properties, where the meaning of a relation can be resolved by following its hyperlink to the definition within a \emph{vocabulary}. By applying these principles as well to any kind of resource that could be described at a URL, this then forms a global distributed Semantic Web (figure \vref{ch3:fig:jsonld}).
+
+
+\begin{figure}[hbt!]
+  \includegraphics[width=\textwidth]{figures/ch03/jsonld.pdf}
+    \caption[Example of linked RDF resources]{\textbf{Example of linked RDF resources}. Each \emph{resource} in an RDF graph has an identifier, here shown as absolute URIs, a type and a series of properties. A property value can either be a \emph{literal} (e.g. "Josiah Carberry") or another resource (e.g. \url{https://ror.org/03f0f6041}). A graph is formed by such cross-references across resources.
+    In the idealised Semantic Web, every URI would resolve to a description of its resource in RDF. In practice there can be misalignments of identifiers, vocabularies, resolution mechanisms, or simply lack of RDF adoptation. Therefore any RDF graph can describe any Web resource identified by its URI, and these descriptipns, using an \emph{open world assumption} \cite{openworld?}, can be merged with other graphs describing the same resource.
+    For brevity and comparison from later chapters this figure uses the newer RDF format JSON-LD \cite{w3-json-ld}, 
+    which can be expanded with context \url{http://schema.org/} (not shown) to anchor types and 
+    properties as absolute URIs and generate corresponding RDF triples (listing \vref{ch3:triples}). 
+    }
+  \label{ch3:fig:jsonld}
+\end{figure}
+
+\begin{listing}
+  \footnotesize
+  \begin{verbatim}
+    <http://example.com/figure.png> a <http://schema.org/ImageObject> .
+    <http://example.com/figure.png> <http://schema.org/name> "XXL-CT-scan of an XXL Tyrannosaurus rex skull" .
+    <http://example.com/figure.png> <http://schema.org/author> <https://orcid.org/0000-0002-1825-0097> .
+    <http://example.com/figure.png> <http://schema.org/encodingFormat> "image/png" .
+
+    <https://orcid.org/0000-0002-1825-0097> a <http://schema.org/Person> .
+    <https://orcid.org/0000-0002-1825-0097> <http://schema.org/name> "Josiah Carberry" .
+    <https://orcid.org/0000-0002-1825-0097> <http://schema.org/affiliation> <https://ror.org/03f0f6041> .
+
+    <https://ror.org/03f0f6041> a <http://schema.org/Organization> .
+    <https://ror.org/03f0f6041> <http://schema.org/name> "University of Technology Sydney" .
+    <https://ror.org/03f0f6041> <http://schema.org/url> "https://www.uts.edu.au/" .
+  \end{verbatim}  
+  \caption[Example of RDF triples]{\textbf{Example of RDF triples} corresponding to figure \vref{ch3:fig:jsonld} after expansion with a JSON-LD context. In this example the properties and types are all using the same vocabulary \cite{schema.org}, in the traditional Semantic Web it is common to mix vocabularies. This listing uses the RDF syntax N-Triples \cite{n-triples} where each line indicates \emph{subject}, \emph{predicate} and \emph{object}. Notable here is the syntactical difference between an URI reference that is part of the graph \texttt{<https://ror.org/03f0f6041>} and a string literal \texttt{"https://www.uts.edu.au/"} which just happens to be a URI. }
+  \label{ch3:triples}
+\end{listing}
 
 The early days of the Semantic Web saw fairly lightweight approaches with the establishment of vocabularies such as FOAF (to describe people and their affiliations) and Dublin Core (for bigbliographic data). Vocabularies themselves were formalised using RDFS or simply as human-readable HTML web pages defining each term. The main approach of this \emph{Web of Data} was that a URI identified a \emph{resource} (e.g.~an author) with a HTML \emph{representation} for human readers, along with a RDF representation for machine-readable data of the same resource. By using \emph{content negotiation} in HTTP\footnote{\url{https://developer.mozilla.org/en-US/docs/Web/HTTP/Content_negotiation}}, the same identifier could be used in both views, avoiding \texttt{index.html} vs \texttt{index.rdf} exposure in the URLs. The concept of \emph{namespaces} gave a way to give a group of RDF resources with the same URI base from a Semantic Web-aware service a common \emph{prefix}, avoiding repeated long URLs.
 
