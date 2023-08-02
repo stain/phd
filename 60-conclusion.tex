@@ -126,7 +126,7 @@ In order to reduce such ambiguity and multiple developer choices, in RO-Crate al
 RO-Crate 1.2 will also recommend that \footurl{https://www.researchobject.org/ro-crate/1.2-DRAFT/metadata.html\#common-principles-for-ro-crate-entities}{all entities} have a type, identifier and human-readable name. 
 
 
-\subsubsection{Profiles restrict general flexibility to gain specific predictability}
+\subsubsection{Profiles restrict general flexibility to gain specific predictability}\label{ch60:profiles}
 
 Section \vref{ch5:inuse} showed how RO-Crate is adapted by different scientific domains. 
 Since the publication of the corresponding manuscripts, RO-Crate has also been adopted by the \footurl{https://www.researchobject.org/ro-crate/in-use/LDaCA.html}{Language Data Commons of Australia} \cite{LREC2022}, \footurl{https://www.researchobject.org/ro-crate/in-use/survey-ontology.html}{Survey Ontology} \cite{surveyOntology}, 
@@ -158,7 +158,7 @@ While profiles are at first lightweight indicators of common conventions for a c
 
 \subsubsection{One vocabulary is not enough, but one profile may suffice}
 
-RO-Crate relies heavily on \cite{schema.org} as its main vocabulary, but as highlighted in section \vref{ch5:futurework} and by several profiles, domain-specific usage will eventually need to define their own terms in order to be specific enough for their use cases. However, we have found it is important to ensure a developer-friendly approach when specifying such profiles for RO-Crate -- earlier work on \footurl{https://www.researchobject.org/ro-crate/1.1/appendix/jsonld.html#adding-new-or-ad-hoc-vocabulary-terms}{ad-hoc terms} in RO-Crate use a simple CSV approach to be added to the \footurl{https://github.com/ResearchObject/ro-terms}{ro-terms} namespace.  
+RO-Crate relies heavily on \cite{schema.org} as its main vocabulary, but as highlighted in section \vref{ch5:futurework} and by several profiles, domain-specific usage will eventually need to define their own terms in order to be specific enough for their use cases. However, we have found it is important to ensure a developer-friendly approach when specifying such profiles for RO-Crate -- earlier work on \footurl{https://www.researchobject.org/ro-crate/1.1/appendix/jsonld.html\#adding-new-or-ad-hoc-vocabulary-terms}{ad-hoc terms} in RO-Crate use a simple CSV approach to be added to the \footurl{https://github.com/ResearchObject/ro-terms}{ro-terms} namespace.  
 
 As with other aspects of RO-Crate, there is a gradual approach towards Linked Data practices. While conventional wisdom in Semantic Web would be to sit down and make your own ontology following design patterns \cite{Blomquist 2009,Poveda 2010} and best practices for deployment \cite{Matentzoglu 2022}, in RO-Crate philosophy that would be more of a last resort. The middle of the ground is therefore adding the ad-hoc vocabulary directly to the profile crate, as shown in figure \vref{ch9:fig:profilecrate}. In this approach a single profile URI can, through Linked Data and Signposting, play the role of:
 
@@ -183,8 +183,16 @@ It is therefore important to also consider the role of user applications in orde
 Futher work by the RO-Crate community has created more user-fronting tools such as \footurl{https://github.com/oeg-upm/ya2ro}{ya2ro}, which given metadata and identifier in a \footurl{https://yaml.org/}{YAML} file\footnote{YAML is a file format with the same data model as JSON, but with a more readable syntax, e.g. using indentation instead of quoted strings} can retrieve contextual metadata from ORCID, GitHub and DOI registries and build and publish a completed RO-Crate \cite{ya2ro}.   
 While this technology still requires some understanding of editing, it is intended to be more approachable to data scientists and for use with simple Web publishing platforms like \footurl{https://pages.github.com/}{GitHub Pages}.
 
-The repository \footurl{https://www.rohub.org/}{ROHub} \cite{ch5-48} has added RO-Crate import and export \cite{Fouilloux 2023}, and provides both a browseable repository for publishing crates, but also interactive and collaborative editing of its metadata. 
-In this use case, RO-Crate plays the role as an exchange and archiving format, as the hub stores the crates in general-purpose repositories Zenodo and B2Share which do not have the facility to keep the granular metadata expressed within the RO-Crate metadata file.
+The repository \footurl{https://www.rohub.org/}{ROHub} \cite{ch5-48} has recently added RO-Crate import and export \cite{Fouilloux 2023}, and provides both a browseable repository for publishing crates, but also interactive and collaborative editing of its metadata. 
+In this use case, RO-Crate plays the role as an exchange and archiving format, as the hub stores the crates in general-purpose repositories Zenodo and B2Share which do not have the facility to keep the granular metadata expressed within the RO-Crate metadata file. As detailed in \cite{Fouilloux 2023}, a series of templates assist users create research objects with particular content and annotations. 
+
+The \footurl{https://schema.org/docs/schemas.html}{Crate-O} tool has been developed by Language Data Commons of Australia (\footurl{https://ldaca.edu.au/}{LDaCA}) as a general-purpose RO-Crate editor and successor to Describo \cite{ch5-78,} and Describo Online \cite{ch5-77}. 
+This tool can describe any folder and resources from the Web as an RO-Crate, supporting any schema.org type and property, pluggable with any rdfs vocabularies \cite{w3-rdf-schema}. 
+Notably this tool is also intended for creation of such vocabularies, and as such a lightweight user interface for building a Profile Crate (section \vref{ch60:profiles}) using Schema.org style Schemas\footnote{
+  It is notable that schema.org's own vocabulary definition use rdfs directly for Linked Data interoperability, 
+  rather than its own \url{http://schema.org/Class}, \url{http://schema.org/Property}, or the SKOS-like \url{http://schema.org/DefinedTerm}. 
+  On property definitions, SoSS use \url{http://schema.org/domainIncludes} and \url{http://schema.org/rangeIncludes} to avoid union classes for alternative domain/range types, which can clutter OWL/RDFS equivalent properties.} 
+\footurl{https://schema.org/docs/schemas.html}{(SoSS)}.
 
 
 \subsection{FDO and RO-Crate}
@@ -205,152 +213,25 @@ In this use case, RO-Crate plays the role as an exchange and archiving format, a
 
 \subsubsection{Web service vs command line tools}
 
-
-\textbf{TODO}: Summarize/discuss 
-From \vref{ch5:packaging-research-artefacts-with-ro-crate}
-
-RO-Crate has been established as an approach to packaging digital
-research artefacts with structured metadata.
-This approach assists
-developers and researchers to produce and consume FAIR archives of their
-research.
-
-RO-Crate is formed by a set of best practice recommendations, developed
-by an open and broad community.
-These guidelines show how to use ``just
-enough'' standards in a consistent way.
-The use of structured metadata
-with a rich base vocabulary can cover general-purpose contextual
-relations, with a Linked Data foundation that ensures extensibility to
-domain- and application-specific uses.
-We can therefore consider an
-RO-Crate not just as a structured data archive, but as a multimodal
-scholarly knowledge graph that can help ``FAIRify'' and combine metadata
-of existing resources.
-
-The adoption of simple Web technologies in the RO-Crate specification
-has helped a rapid development of a wide variety of supporting open
-source tools and libraries.
-RO-Crate fits into the larger landscape of
-open scholarly communication and FAIR Digital Object infrastructure, and
-can be integrated into data repository platforms.
-RO-Crate can be
-applied as a data/metadata exchange mechanism, assist in long-term
-archival preservation of metadata and data, or simply used at a small
-scale by individual researchers.
-Thanks to its strong community support,
-new and improved profiles and tools are being continuously added to the
-RO-Crate landscape, making it easier for adopters to find examples and
-support for their own use case.
-
-\subsubsection{Strictness vs flexibility}
-
-There is always a tradeoff between flexibility and strictness \cite{ch5-116}
-when deciding on semantics of metadata models.
-Strict requirements make
-it easier for users and code to consume and populate a model, by
-reducing choices and having mandated ``slots'' to fill in.
-But such
-rigidity can also restrict richness and applicability of the model, as
-it in turn enforce the initial assumptions about what can be described.
-
-RO-Crate attempts to strike a balance between these tensions, and
-provides a common metadata framework that encourages extensions.
-However, just like the RO-Crate specification can be thought of as a
-\emph{core profile} of Schema.org in JSON-LD, we cannot stress the
-importance of also establishing domain-specific RO-Crate profiles and
-conventions, as explored in Sections~\vref{ch5:profiles} and \vref
-{ch5:inuse}.
-Specialization comes
-hand-in-hand with the principle of \emph{graceful degradation}; RO-Crate
-applications and users are free to choose the semantic detail level they
-participate at, as long as they follow the common syntactic
-requirements.
-
-\subsubsection{Future Work}
-
-The direction of future RO-Crate work is determined by the community
-around it as a collaborative effort.
-We currently plan on further
-outreach, building training material (including a comprehensive
-entry-level tutorial) and maturing the reference implementation
-libraries.
-We will also collect and build examples of RO-Crate
-\emph{consumption}, e.g.~Jupyter Notebooks that query multiple crates
-using knowledge graphs.
-In addition, we are exploring ways to support
-some entity types requested by users, e.g.~detailed workflow runs or
-container provenance, which do not have a good match in Schema.org.
-Such
-support could be added, for instance, by integrating other vocabularies
-or by having separated (but linked) metadata files.
-
-Furthermore, we want to better understand how the community uses
-RO-Crate in practice and how it contrasts with other related efforts;
-this will help us to improve our specification and tools.
-By discovering
-commonalities in emerging usage (e.g.~additional Schema.org types), the
-community helps to reduce divergence that could otherwise occur with
-proliferation of further RO-Crate profiles.
-We plan to gather feedback
-via user studies, with the Linked Open Data community or as part of EOSC
-Bring-your-own-Data training events.
-
-We operate in an open community where future and potential users of
-RO-Crate are actively welcomed to participate and contribute feedback
-and requirements.
-In addition, we are targeting a wider audience through
-extensive
-outreach
-activities\footnote{\url{https://www.researchobject.org/ro-crate/outreach.html}} and by initiating new connections.
-Recent contacts include
-American Geophysical Union (AGU) on Data Citation Reliquary
-\cite{Agarwal 2021}, National
-Institute of Standards and Technology (NIST) on material science, and
-InvenioRDM\footnote{\url{https://inveniosoftware.org/products/rdm/}} used by the
-Zenodo data repository.
-New Horizon Europe projects adapting RO-Crate
-include BY-COVID,\footnote{\url{https://by-covid.org/}} which aims to improve FAIR
-access to data on COVID-19 and other infectious diseases.
-
-The main addition in the upcoming 1.2 release of the RO-Crate
-specifications will be the formalization of
-profiles\footnote{\url{https://www.researchobject.org/ro-crate/1.2-DRAFT/profiles}}
-for different categories of crates.
-Additional entity types have been
-requested by users, e.g. workflow runs, business workflows, containers
-and software packages, tabular data structures; these are not always
-matched well with existing Schema.org types, but may benefit from other
-vocabularies or even separate metadata files, e.g. from Frictionless
-Data.\footnote{\url{https://frictionlessdata.io/}} We will be further aligning
-and collaborating with related research artefact description efforts
-like CodeMeta\footnote{\url{https://codemeta.github.io/}} for software metadata,
-Science-on-Schema.org\footnote{\url{https://science-on-schema.org/}}
-\cite{ch5-66} for datasets, FAIR Digital
-Objects\footnote{\url{https://fairdo.org/}} \cite{De Smedt 2020} and
-activities in EOSC task forces\footnote{\url{https://www.eosc.eu/task-force-faq}}
-including the EOSC Interoperability Framework \cite{eosc-interop-framework}.
-
-
-
-
 \subsection{RO-Crate can be an FDO if you use Signposting}
 
 \textbf{TODO}: Summarize/discuss 
 From \vref{ch4:lightweight-fdo}
 
-Further work on RO-Crate profiles include to formalise links to the API
-operations and repositories (FDOF5,FDOF7), to include PIDs of
-profiles and types in the FAIR Signposting, and HTTP navigation to
-individual resources within the RO-Crate.
+\begin{quotation} 
+  Further work on RO-Crate profiles include to formalise links to the API
+  operations and repositories (FDOF5,FDOF7), to include PIDs of
+  profiles and types in the FAIR Signposting, and HTTP navigation to
+  individual resources within the RO-Crate.
 
-RO-Crate has shown a broad adoption by communities across many
-scientific disciplines, providing a lightweight, and therefore easy to
-adopt, approach to generating FAIR Digital Objects.
-It is rapidly
-becoming an integral part of the interoperability fabric between the
-different components as demonstrated here for WorkflowHub, contributing
-to building the European Open Science Cloud.
+  RO-Crate has shown a broad adoption by communities across many
+  scientific disciplines, providing a lightweight, and therefore easy to
+  adopt, approach to generating FAIR Digital Objects.
+  It is rapidly
+  becoming an integral part of the interoperability fabric between the
+  different components as demonstrated here for WorkflowHub, contributing
+  to building the European Open Science Cloud.
+\end{quotation}
 
 
 \subsection{workflows can be FDO something?}
@@ -358,69 +239,70 @@ to building the European Open Science Cloud.
 \textbf{TODO}: Summarize/discuss 
 From \vref{ch6:making-canonical-workflow-building-blocks-interoperable-across-workflow-languages}
 
-The proposed concept of Canonical Workflow Building Blocks can bridge
-the gap between FAIR Computational Workflows, interoperable
-reproducibility and for building canonical workflow descriptions to be
-used and described FAIRly across WfMSs.
+\begin{quotation} 
+  The proposed concept of Canonical Workflow Building Blocks can bridge
+  the gap between FAIR Computational Workflows, interoperable
+  reproducibility and for building canonical workflow descriptions to be
+  used and described FAIRly across WfMSs.
 
-The realisation of CWBBs can be achieved in many ways, not necessarily
-using the Python programming language together with RO-Crate as explored
-here.
-In particular if the envisioned Canonical Workflow Frameworks for
-Research become established in multiple WfMSs with the use of FAIR
-Digital Objects, the different implementations will need to agree on
-object types, software packaging and metadata formats in order to reuse
-tools and provide interoperable reproducibility for canonical workflows.
+  The realisation of CWBBs can be achieved in many ways, not necessarily
+  using the Python programming language together with RO-Crate as explored
+  here.
+  In particular if the envisioned Canonical Workflow Frameworks for
+  Research become established in multiple WfMSs with the use of FAIR
+  Digital Objects, the different implementations will need to agree on
+  object types, software packaging and metadata formats in order to reuse
+  tools and provide interoperable reproducibility for canonical workflows.
 
-Likewise, to build a meaningful collection of building blocks for a
-given research domain, a directed collaborative effort is needed to
-consistently wrap tools for a related set of WfMSs, chosen to target
-particular use cases (a family of canonical workflows).
+  Likewise, to build a meaningful collection of building blocks for a
+  given research domain, a directed collaborative effort is needed to
+  consistently wrap tools for a related set of WfMSs, chosen to target
+  particular use cases (a family of canonical workflows).
 
-For individual users, a library of Canonical Workflow Building Blocks
-simplifies many aspects of building pipelines, beyond the FAIR aspects
-and data compatibility across blocks.
-For instance, they can benefit
-from training of a CWBB family using Jupyter Notebooks, and then use
-this knowledge to utilise the same building blocks in a scalable HPC
-workflow with a CWL engine like Toil, knowing they will perform
-consistently thanks to the use of containers.
+  For individual users, a library of Canonical Workflow Building Blocks
+  simplifies many aspects of building pipelines, beyond the FAIR aspects
+  and data compatibility across blocks.
+  For instance, they can benefit
+  from training of a CWBB family using Jupyter Notebooks, and then use
+  this knowledge to utilise the same building blocks in a scalable HPC
+  workflow with a CWL engine like Toil, knowing they will perform
+  consistently thanks to the use of containers.
 
-While we have demonstrated CWBB in the biomedical domain, this approach
-is generally applicable to a wide range of sciences that execute
-pipelines of multiple file-based command line tools, however it may be
-harder to achieve with more algebraic ``in memory'' types of
-computational workflows, where steps could be challenging to
-containerize and distinguish as separate block.
+  While we have demonstrated CWBB in the biomedical domain, this approach
+  is generally applicable to a wide range of sciences that execute
+  pipelines of multiple file-based command line tools, however it may be
+  harder to achieve with more algebraic ``in memory'' types of
+  computational workflows, where steps could be challenging to
+  containerize and distinguish as separate block.
 
-We admit that biomolecular research is quite a homogenous field with
-respect to computational analyses and now becoming relatively mature in
-terms of tool composability in workflows, building on the experiences of
-the ``FAIR pioneers'' in the field of bioinformatics.
-Other fields, such
-as social sciences or ecology, can have a wider variety of methods and
-computational tools, often with human interactions, and may have to
-adapt the software to be workflow-ready \cite{ch6-37} before using them as
-Canonical Workflow Building Blocks.
-Domains adapting CWBB approach (or
-workflow systems in general) should take note of the great benefits of
-hosting collaborative events where developers meet each other and their
-potential users, demonstrated in our field with events such WorkflowsRI
-\cite{ch6-39} and Biohackathons \cite{ch6-40}.
+  We admit that biomolecular research is quite a homogenous field with
+  respect to computational analyses and now becoming relatively mature in
+  terms of tool composability in workflows, building on the experiences of
+  the ``FAIR pioneers'' in the field of bioinformatics.
+  Other fields, such
+  as social sciences or ecology, can have a wider variety of methods and
+  computational tools, often with human interactions, and may have to
+  adapt the software to be workflow-ready \cite{ch6-37} before using them as
+  Canonical Workflow Building Blocks.
+  Domains adapting CWBB approach (or
+  workflow systems in general) should take note of the great benefits of
+  hosting collaborative events where developers meet each other and their
+  potential users, demonstrated in our field with events such WorkflowsRI
+  \cite{ch6-39} and Biohackathons \cite{ch6-40}.
 
-The Common Workflow Language shows promise as a general canonical
-workflow building blocks mechanism: gathering execution details of tools
-along with their metadata and references, augmented with
-\footurl{https://docs.bioexcel.eu/cwl-best-practice-guide/devpractice/partial.html\#using-abstract-operations-as-placeholders}{abstract
-workflows} to represent canonical workflows.
-However, this would need
-further work to implement our CWBB recommendations in full.
-Future work
-for the Canonical Workflow Building Blocks concept includes formalising
-and automating publication practises, to make individual blocks
-available as FAIR Digital Objects on their own or as part of an
-aggregate collection like RO-Crate.
-
+  The Common Workflow Language shows promise as a general canonical
+  workflow building blocks mechanism: gathering execution details of tools
+  along with their metadata and references, augmented with
+  \footurl{https://docs.bioexcel.eu/cwl-best-practice-guide/devpractice/partial.html\#using-abstract-operations-as-placeholders}{abstract
+  workflows} to represent canonical workflows.
+  However, this would need
+  further work to implement our CWBB recommendations in full.
+  Future work
+  for the Canonical Workflow Building Blocks concept includes formalising
+  and automating publication practises, to make individual blocks
+  available as FAIR Digital Objects on their own or as part of an
+  aggregate collection like RO-Crate.
+\end{quotation}
 
 
 \subsection{Combining multiple FDO types in workflows?}
@@ -428,110 +310,110 @@ aggregate collection like RO-Crate.
 \textbf{TODO}: Summarize/discuss 
 From \vref{ch8:the-specimen-data-refinery}:
 
+  \begin{quotation}
+  Both kinds of FDO are essential.
+  They complement one another to support
+  implementation of the FAIR principles, especially the interoperable and
+  reusable principles by making workflows self-documenting.
+  This renders
+  automated whole processes (or fragments thereof) for digitizing and
+  extending natural history specimens' data as FAIR without adding
+  additional load to the researchers that stand to benefit most from that
+  \cite{ch8-27}.
+  Each FDO type originates from different Research
+  Infrastructures (ELIXIR, DiSSCo) with different implementation
+  frameworks.
+  Yet, they interoperate effectively due to their clear roles,
+  common conceptual model and separation of concerns.
 
 
-Both kinds of FDO are essential.
-They complement one another to support
-implementation of the FAIR principles, especially the interoperable and
-reusable principles by making workflows self-documenting.
-This renders
-automated whole processes (or fragments thereof) for digitizing and
-extending natural history specimens' data as FAIR without adding
-additional load to the researchers that stand to benefit most from that
-\cite{ch8-27}.
-Each FDO type originates from different Research
-Infrastructures (ELIXIR, DiSSCo) with different implementation
-frameworks.
-Yet, they interoperate effectively due to their clear roles,
-common conceptual model and separation of concerns.
+  openDS FDOs have their heritage in distributed digital object services
+  \cite{ch8-46} and are implemented through Digital Object Architecture (DOA)
+  \cite{ch8-62} with Digital Object Interface Protocol (DOIP) \cite{DONA 2018}, Digital
+  Object Identifier Resolution Protocol (DO-IRP) \cite{rfc3652}, and
+  recommendations of the Research Data Alliance \cite{ch8-65}.
+  Serialized as
+  JSON, they are machine-actionable and compatible with established
+  protocols of the World Wide Web.
 
+  RO-Crates are native to the World Wide Web, based on established web
+  protocols, machine-readable metadata using Linked Data Platform methods
+  \cite{ch8-66}, JSON-LD and Schema.org \cite{Bechhofer 2013}, and community-accepted
+  packaging mechanisms such as BagIt.
+  This makes RO-Crates straightforward
+  to incorporate into pre-existing platforms such as Galaxy and data
+  repositories such as Zenodo and DataVerse.
 
-openDS FDOs have their heritage in distributed digital object services
-\cite{ch8-46} and are implemented through Digital Object Architecture (DOA)
-\cite{ch8-62} with Digital Object Interface Protocol (DOIP) \cite{DONA 2018}, Digital
-Object Identifier Resolution Protocol (DO-IRP) \cite{rfc3652}, and
-recommendations of the Research Data Alliance \cite{ch8-65}.
-Serialized as
-JSON, they are machine-actionable and compatible with established
-protocols of the World Wide Web.
+  Both kinds of FDO use Persistent identifiers (PID), allowing instances
+  to be both uniquely identified and their location to be determined;
+  RO-Crates, as web natives, use URIs whereas openDS, as DOA objects, use
+  Handle PIDs.
+  Instances of both kinds are described by metadata and
+  contain or reference data.
 
-RO-Crates are native to the World Wide Web, based on established web
-protocols, machine-readable metadata using Linked Data Platform methods
-\cite{ch8-66}, JSON-LD and Schema.org \cite{Bechhofer 2013}, and community-accepted
-packaging mechanisms such as BagIt.
-This makes RO-Crates straightforward
-to incorporate into pre-existing platforms such as Galaxy and data
-repositories such as Zenodo and DataVerse.
+  RO-Crates are self-describing using a metadata file and use
+  openly-extensible profiles to type the Crates (profile-typing) to set
+  out expectations for their metadata and content. openDS uses an
+  object-oriented object typing and instance approach to define the
+  structure and content of data/metadata.
+  Complex object types are
+  constructed from basic types, an extension-section basic type.
+  Both
+  approaches seek to avoid locking objects into repository silos, ensuring
+  that FDO instances can be interpreted outside of the contexts in which
+  they were originally created/stored.
 
-Both kinds of FDO use Persistent identifiers (PID), allowing instances
-to be both uniquely identified and their location to be determined;
-RO-Crates, as web natives, use URIs whereas openDS, as DOA objects, use
-Handle PIDs.
-Instances of both kinds are described by metadata and
-contain or reference data.
+  Structurally and semantically openDS FDOs and RO-Crate FDOs are
+  potentially isomorphic, although at different granularity levels.
+  Their
+  main difference is in method calling.
+  As a DOA object, openDS would
+  expect to respond to type-specific method calls if these were
+  implemented.
+  RO-Crates delegate actionability to applications that
+  interpret their self-describing profile.
 
-RO-Crates are self-describing using a metadata file and use
-openly-extensible profiles to type the Crates (profile-typing) to set
-out expectations for their metadata and content. openDS uses an
-object-oriented object typing and instance approach to define the
-structure and content of data/metadata.
-Complex object types are
-constructed from basic types, an extension-section basic type.
-Both
-approaches seek to avoid locking objects into repository silos, ensuring
-that FDO instances can be interpreted outside of the contexts in which
-they were originally created/stored.
+  Within the SDR the two kinds of FDO fulfill distinct and interlocking
+  roles for data (openDS) and self-documented method (RO-Crate) so their
+  different forms is not an issue.
+  In future there may be a need to map
+  and convert between the approaches (e.g., for reconstructing past
+  processing), which would be assisted by the common FDO conceptual model
+  \cite{bonino2019}.
 
-Structurally and semantically openDS FDOs and RO-Crate FDOs are
-potentially isomorphic, although at different granularity levels.
-Their
-main difference is in method calling.
-As a DOA object, openDS would
-expect to respond to type-specific method calls if these were
-implemented.
-RO-Crates delegate actionability to applications that
-interpret their self-describing profile.
-
-Within the SDR the two kinds of FDO fulfill distinct and interlocking
-roles for data (openDS) and self-documented method (RO-Crate) so their
-different forms is not an issue.
-In future there may be a need to map
-and convert between the approaches (e.g., for reconstructing past
-processing), which would be assisted by the common FDO conceptual model
-\cite{bonino2019}.
-
+\end{quotation}
 
 
 \subsection{FDOs can be built incrementally with workflows}
 \textbf{TODO}: Summarize/discuss 
 From \vref{ch7:incrementally-building-fair-digital-objects-with-specimen-data-refinery-workflows}:
 
+\begin{quotation}
+  SDR is an example of machine-assisted construction of FDOs, which
+  highlight the needs for intermediate digital objects that are not yet
+  FDO compliant.
+  The passing of such ``local FDOs'' is beneficial not just
+  for efficiency and visual inspection, but also to simplify workflow
+  composition of canonical workflow building blocks.
+  At the same time we
+  see that it is insufficient to only pass FDOs as JSON objects, as they
+  also have references to other data such as images, which should not need
+  to be re-downloaded.
 
-SDR is an example of machine-assisted construction of FDOs, which
-highlight the needs for intermediate digital objects that are not yet
-FDO compliant.
-The passing of such ``local FDOs'' is beneficial not just
-for efficiency and visual inspection, but also to simplify workflow
-composition of canonical workflow building blocks.
-At the same time we
-see that it is insufficient to only pass FDOs as JSON objects, as they
-also have references to other data such as images, which should not need
-to be re-downloaded.
+  Further work will investigate the use of RO-Crate as a wrapper of
+  partial FDOs, but this needs to be coupled with more flexible FDO types
+  as profiles, in order to restrict ``impossible'' ordering of steps
+  depending on particular inner FDO fragments.
+  A distinction needs to be
+  made between open digital specimens that are in ``draft'' state and
+  those that can be pushed to DiSSCo registries.
 
-Further work will investigate the use of RO-Crate as a wrapper of
-partial FDOs, but this needs to be coupled with more flexible FDO types
-as profiles, in order to restrict ``impossible'' ordering of steps
-depending on particular inner FDO fragments.
-A distinction needs to be
-made between open digital specimens that are in ``draft'' state and
-those that can be pushed to DiSSCo registries.
-
-We are experimenting with changing the SDR components into Canonical
-Workflow Building Blocks \cite{Soiland-Reyes 2022a}
-(\vref{ch6:making-canonical-workflow-building-blocks-interoperable-across-workflow-languages}) 
-using the Common Workflow Language \cite{Crusoe 2022}.
-This gives
-flexibility to scalably execute SDR workflows on different compute
-backends such as HPC or local cluster, without the additional setup of
-Galaxy servers.
-
+  We are experimenting with changing the SDR components into Canonical
+  Workflow Building Blocks \cite{Soiland-Reyes 2022a}
+  (\vref{ch6:making-canonical-workflow-building-blocks-interoperable-across-workflow-languages}) 
+  using the Common Workflow Language \cite{Crusoe 2022}.
+  This gives
+  flexibility to scalably execute SDR workflows on different compute
+  backends such as HPC or local cluster, without the additional setup of
+  Galaxy servers.
+\end{quotation}
