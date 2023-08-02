@@ -85,7 +85,7 @@ While triple-based knowledge representations were not new \cite{stanczykProcessM
 \begin{figure}[hbt!]
   \includegraphics[width=\textwidth]{figures/ch03/jsonld.pdf}
     \caption[Example of linked RDF resources]{\textbf{Example of linked RDF resources}. Each \emph{resource} in an RDF graph has an identifier, here shown as absolute URIs, a type and a series of properties. A property value can either be a \emph{literal} (e.g. "Josiah Carberry") or another resource (e.g. \url{https://ror.org/03f0f6041}). A graph is formed by such cross-references across resources.
-    In the idealised Semantic Web, every URI would resolve to a description of its resource in RDF. In practice there can be misalignments of identifiers, vocabularies, resolution mechanisms, or simply lack of RDF adoptation. Therefore any RDF graph can describe any Web resource identified by its URI, and these descriptipns, using an \emph{open world assumption} \cite{openworld?}, can be merged with other graphs describing the same resource.
+    In the idealised Semantic Web, every URI would resolve to a description of its resource in RDF. In practice there can be misalignments of identifiers, vocabularies, resolution mechanisms, or simply lack of RDF adoptation. Therefore any RDF graph can describe any Web resource identified by its URI, and these descriptions, using an \emph{open world assumption} \cite{Drummond 2006}, can be merged with other graphs describing the same resource.
     For brevity and comparison from later chapters this figure uses the newer RDF format JSON-LD \cite{w3-json-ld}, 
     which can be expanded with context \url{http://schema.org/} (not shown) to anchor types and 
     properties as absolute URIs and generate corresponding RDF triples (listing \vref{ch3:triples}). 
@@ -96,18 +96,18 @@ While triple-based knowledge representations were not new \cite{stanczykProcessM
 \begin{listing}
   \footnotesize
   \begin{verbatim}
-    <http://example.com/figure.png> a <http://schema.org/ImageObject> .
-    <http://example.com/figure.png> <http://schema.org/name> "XXL-CT-scan of an XXL Tyrannosaurus rex skull" .
-    <http://example.com/figure.png> <http://schema.org/author> <https://orcid.org/0000-0002-1825-0097> .
-    <http://example.com/figure.png> <http://schema.org/encodingFormat> "image/png" .
+<http://example.com/figure.png> a <http://schema.org/ImageObject> .
+<http://example.com/figure.png> <http://schema.org/name> "XXL-CT-scan of an XXL Tyrannosaurus rex skull" .
+<http://example.com/figure.png> <http://schema.org/author> <https://orcid.org/0000-0002-1825-0097> .
+<http://example.com/figure.png> <http://schema.org/encodingFormat> "image/png" .
 
-    <https://orcid.org/0000-0002-1825-0097> a <http://schema.org/Person> .
-    <https://orcid.org/0000-0002-1825-0097> <http://schema.org/name> "Josiah Carberry" .
-    <https://orcid.org/0000-0002-1825-0097> <http://schema.org/affiliation> <https://ror.org/03f0f6041> .
+<https://orcid.org/0000-0002-1825-0097> a <http://schema.org/Person> .
+<https://orcid.org/0000-0002-1825-0097> <http://schema.org/name> "Josiah Carberry" .
+<https://orcid.org/0000-0002-1825-0097> <http://schema.org/affiliation> <https://ror.org/03f0f6041> .
 
-    <https://ror.org/03f0f6041> a <http://schema.org/Organization> .
-    <https://ror.org/03f0f6041> <http://schema.org/name> "University of Technology Sydney" .
-    <https://ror.org/03f0f6041> <http://schema.org/url> "https://www.uts.edu.au/" .
+<https://ror.org/03f0f6041> a <http://schema.org/Organization> .
+<https://ror.org/03f0f6041> <http://schema.org/name> "University of Technology Sydney" .
+<https://ror.org/03f0f6041> <http://schema.org/url> "https://www.uts.edu.au/" .
   \end{verbatim}  
   \caption[Example of RDF triples]{\textbf{Example of RDF triples} corresponding to figure \vref{ch3:fig:jsonld} after expansion with a JSON-LD context. In this example the properties and types are all using the same vocabulary \cite{schema.org}, in the traditional Semantic Web it is common to mix vocabularies. This listing uses the RDF syntax N-Triples \cite{n-triples} where each line indicates \emph{subject}, \emph{predicate} and \emph{object}. Notable here is the syntactical difference between an URI reference that is part of the graph \texttt{<https://ror.org/03f0f6041>} and a string literal \texttt{"https://www.uts.edu.au/"} which just happens to be a URI. }
   \label{ch3:triples}
