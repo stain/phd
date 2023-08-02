@@ -126,7 +126,7 @@ WorkflowHub repository follows several FDO principles:
   {[}FDOF2{]} or use \footurl{https://signposting.org/FAIR/}{FAIR
   Signposting} to find an RO-Crate containing the workflow {[}FDOF3{]}
   and richer JSON-LD metadata resources {[}FDOF5,FDOF8{]}, see
-  \protect\hyperlink{fig:signposting}{Figure 1}
+  Figure \vref{fig:signposting}.
 \item
   Metadata uses schema.org {[}FDOF7{]} following the community-developed
   Bioschemas
@@ -144,6 +144,8 @@ WorkflowHub repository follows several FDO principles:
   (e.g.~\url{https://w3id.org/workflowhub/workflow-ro-crate\#galaxy} is
   defined in metadata of the main workflow.
 \end{enumerate}
+
+
 
 %% Prepare for 4 evil footnotes
 \begin{figure}
@@ -179,7 +181,15 @@ individual resources within the RO-Crate.
 
 RO-Crate has shown a broad adoption by communities across many
 scientific disciplines, providing a lightweight, and therefore easy to
-adopt, approach to generating FAIR Digital Objects. It is rapidly
+adopt, approach to generating FAIR Digital Objects (Figure \vref{ch9:fig:signposting}). It is rapidly
 becoming an integral part of the interoperability fabric between the
 different components as demonstrated here for WorkflowHub, contributing
 to building the European Open Science Cloud.
+
+
+\begin{figure}[htb]
+  \includegraphics[width=\textwidth]{figures/ch09/signposting.pdf}
+    \caption[WorkflowHub FDOs using Signposting and RO-Crate]{\textbf{WorkflowHub FDOs using Signposting and RO-Crate}. In this implementation of FDO (compare with figure \vref{ch3:fig:fdo}), WorkflowHub uses DOIs for persistent identifiers, which for human readers resolve to a landing page. Machine clients can extract the FAIR Signposting \texttt{Link} headers \cite{Van de Sompel 2022} to form the FDO PID Record. Link relation \texttt{cite-as} provides the PID \cite{Bayarri 2022} (in case the WorkflowHub page was discovered in other ways), and \texttt{describedby} links to the metadata FDO in JSON-LD format. Within the metadata file it indicates conformance to the Workflow RO-Crate profile (a Profile Crate FDO), while \texttt{item} links to the downloadable ZIP archive, which contains both the Galaxy workflow files and the RO-Crate metadata file. Alternative metadata in XML following the DataCite Metadata Schema is also linked to using \texttt{describedby}. Link relation \texttt{type} in the Signposting can provide the FDO type; this is not yet implemented by WorkflowHub -- it is currently unclear if this type should be a \emph{Dataset} (the downloaded from this landing page is an RO-Crate) and/or \emph{ComputationalWorkflow} (the PID/page/crate identifies and describes a workflow)).
+    }
+  \label{ch9:fig:signposting}
+\end{figure}
