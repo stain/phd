@@ -7,16 +7,17 @@ In this chapter, we discuss the related work with respect to FAIR Digital Object
 
 The concept of \textbf{FAIR Digital Objects} \cite{schultesFAIRPrinciplesDigital2019a} has been introduced as way to expose research data as active objects that conform to the FAIR principles \cite{Wilkinson 2016}. This builds on the \emph{Digital Object} (DO) concept \cite{kahnFrameworkDistributedDigital2006b}, first introduced in 1995 \cite{kahnFrameworkDistributedDigital1995a} as a system of \emph{repositories} containing \emph{digital objects} identified by \emph{handles} and described by \emph{metadata} which may have references to other handles. DO was the inspiration for the ITU X.1255 framework \cite{x1255FrameworkDiscovery} which introduced an abstract \emph{Digital Entity Interface Protocol} for managing such objects programmatically, first realised by the Digital Object Interface Protocol (DOIP) \cite{DigitalObjectInterface}.
 
-In brief, the structure of a FAIR Digital Object (FDO) is to, given a \emph{persistent identifier} (PID) such as a DOI, resolve to a \emph{PID Record} that gives the object a \emph{type} along with a mechanism to retrieve its \emph{bit sequences}, \emph{metadata} and references to further programmatic \emph{operations}. The type of an FDO (itself an FDO) defines attributes to semantically describe and relate such FDOs to other concepts (typically other FDOs referenced by PIDs). The premise of systematically building an ecosystem of such digital objects is to give researchers a way to organise complex digital entities, associated with identifiers, metadata, and supporting automated processing \cite{wittenburgDigitalObjectsDrivers2019a}.
+In brief, the structure of a FAIR Digital Object (FDO) is to, given a \emph{persistent identifier} (PID) such as a DOI, resolve to a \emph{PID Record} that gives the object a \emph{type} along with a mechanism to retrieve its \emph{bit sequences}, \emph{metadata} and references to further programmatic \emph{operations} (figure \vref{ch3:fig:fdo}). The type of an FDO (itself an FDO) defines attributes to semantically describe and relate such FDOs to other concepts (typically other FDOs referenced by PIDs). The premise of systematically building an ecosystem of such digital objects is to give researchers a way to organise complex digital entities, associated with identifiers, metadata, and supporting automated processing \cite{wittenburgDigitalObjectsDrivers2019a}.
 
 
-\begin{figure}[htb]
+\begin{figure}[hbt]
   \includegraphics[width=\textwidth]{figures/ch03/fdo.pdf}
-    \caption[FDO]{\textbf{FDO}. 
+    \caption[Idealised overview of a FAIR Digital Object]{\textbf{Idealised overview of a FAIR Digital Object}. The persistent identifier (PID), (e.g. a Handle, DOI or permalink), refers to an FDO through a PID Record, which may reference downloadble bytes, and optionally additional metadata in another FDO. A series of operations are accessible from an FDO (for instance retrieving the bytes). Similar to in object-oriented programming, the FDO Type indicates which operations and attributes are applicable to an FDO. FDOs can be cross-related using the PIDs, a Collection is then another such FDO which aggregates other FDOs by reference. The configuration shown here is just one of many possible \cite{fdo-ConfigurationTypes}, along with the choice of PID system, nature of the PID Record and metadata vocabularies, which are identified through an FDO Profile. In practice, some compromises from this idealised picture are taken depending on the implementation, for instance attribute keys may be simple strings rather than PIDs, and default operations are not explicitly declared.
     \footnotemark
     }
   \label{ch3:fig:fdo}
 \end{figure}
+
 \footnotetext{\url{https://example.com/}}
 
 
