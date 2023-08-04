@@ -44,14 +44,24 @@
 \usepackage{xcolor}
 \IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
 \IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+% Disable before printing
+\definecolor{LinkColor}{rgb}{0.4300, 0.0075, 0.2050}
+\definecolor{URLColor}{rgb}{0.0075, 0.2050, 0.4300}
+\definecolor{CiteColor}{rgb}{0.1025, 0.2150, 0.0038}
 \hypersetup{
   pdftitle={Stian's PhD thesis},
   pdfauthor={Stian Soiland-Reyes},
   pdflang={en-GB},
   pdfkeywords={RO-Crate},
   pdfkeywords={Reproducibility, FAIR, FAIR Digital Object, RO-Crate},
-  hidelinks,
-  pdfcreator={LuaLaTeX}}
+%  hidelinks,
+  colorlinks,
+  linkcolor=LinkColor,
+  citecolor=CiteColor,
+  urlcolor=URLColor,
+  pdfcreator={LuaLaTeX}
+}
+
 
 \urlstyle{same} % disable monospaced font for URLs
 
@@ -130,6 +140,9 @@
   \fi
 \fi
 
+% For roman numbers in lists etc
+\usepackage{enumerate}
+
 %% END packages etc.
 
 
@@ -151,6 +164,7 @@
 
 \include{frontpage}
 
+\definecolor{LinkColor}{rgb}{0,0,0}
 \tableofcontents
 \addcontentsline{toc}{chapter}{Contents}
 
@@ -163,6 +177,7 @@
 \listoflistings
 %\lstlistoflistings
 \addcontentsline{toc}{chapter}{List of listings}
+\definecolor{LinkColor}{rgb}{0.4300, 0.0075, 0.2050}
 
 
 \mainmatter
