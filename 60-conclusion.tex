@@ -8,7 +8,7 @@ In this section I summarise and discuss the findings from the previous chapters,
 \subsection{Making a predictable ecosystem of FAIR digital objects}
 
 The main advantage of scholarly researchers publishing \emph{FAIR data} is to enable machine actionability \cite{Wilkinson 2016}, which again will accelerate further research, such as through computational workflows. 
-In practice, data publishing is largely approached either by depositions in general and institutional repositories for Open Data such as Figshare and Zenodo \cite{Dillen 2019}, or to specialized domain-specific repositories such as GBIF in biodiversity \cite{ch8-7}. 
+In practice, data publishing is largely approached either by depositions in general and institutional repositories for Open Data such as Figshare and Zenodo \cite{Dillen 2019}, or to specialized domain-specific repositories such as in biodiversity \cite{ch8-7}. 
 
 European research infrastructures supporting Open Science practices are coalescing their services to form the European Open Science Cloud (EOSC) \cite{10.2777/940154}, which are embracing FAIR principles \cite{Mons 2017} and building a common framework for interoperability \cite{eosc-interop-framework}. 
 
@@ -21,7 +21,7 @@ Conceptually FDO can clearly be useful for realizing FAIR principles with more a
 
 \subsubsection{Linked Data need more constraints and consistency to be FAIR}
 
-Examined in section \vref{ch3:ld}, the principles of \emph{Linked Data} emerged from the Semantic Web as a more data-centric view with a focus on navigation and cross-site interoperability, rather than elaborate logical inferencing systems.  
+Examined in section \vref{ch3:ld}, the principles of \emph{Linked Data} emerged from the Semantic Web as a data-centric view with a focus on navigation and cross-site interoperability, rather than say elaborate logical inferencing systems such as ontologies.  
 Yet the bewildering landscape of technology choices for using RDF in data platforms means that the developers suffer and still face a steep learning curve. 
 For clients consuming Linked Data from multiple sources -- \emph{Linked Data Mashup} \cite{Tran 2014} -- the situation is still baffling in that relatively small differences in identifiers, vocabularies and usage patterns across deployment result in incompatibilities that may require platform-specific workarounds and mappings \cite{Millard 2010}. 
 
@@ -35,17 +35,18 @@ Making the FAIR principles achieve practical benefits for researchers and platfo
 The framework-based comparisons in section \vref{ch3:results} considered the implementation details of both FDO and Linked Data, and evaluated to what extent either can be considered a global distributed object system. 
 The findings from this research show that FDO recommendations can benefit FAIR thinking to build machine actionable ecosystems and provide stronger promises of consistency and predictability across data platforms. 
 
-These comparisons highlighted that the Web on the other hand has a flexible, scalable and mature technology stack, which could form a solid basis for implementing FDO. 
+These comparisons highlighted that the Web on the other hand has a flexible, scalable and mature technology stack, which can form a solid basis for implementing FDO. 
 However, if such implementation is to use Linked Data technologies, these must be constrained sufficiently in order to practically realize such an ecosystem within the FDO guidelines and without degrading the developer experience.
 
 
 \subsection{FDOs can be implemented on the Web using Signposting}\label{ch60:signposting}
 
-Section \vref{ch2:meeting-fdo-principles-using-linked-data-standards} explores how the FDO principles can be achieved for Linked Data as further constraints on existing standards.
-As this chapter \vref{chapter:fdo} has highlighted throughout, there are many technical details remaining to be specified for FDO to be consistently implemented according to its own principles.
+Section \vref{ch2:meeting-fdo-principles-using-linked-data-standards} explored how the FDO principles can be achieved for Linked Data as further constraints on existing standards.
+As chapter \ref{chapter:fdo} has highlighted throughout, there are many technical details remaining to be specified for FDO to be consistently implemented according to its own principles.
 
-If such conventions need to be evolved and specified no matter the protocol basis for FDO, this chapter argues, then it would be intuitive to build FDO on the mature Web stack, unless there was an compelling argument for alternative protocol stacks having other advantages.
-For instance, a de-centralized, resiliant architecture and long term preservation was the motivation for IPFS as a \emph{Decentralized Web} \cite{Trautwein 2022}.
+If such conventions need to be evolved and specified no matter the protocol basis for FDO, this chapter argued, then it would be intuitive to build FDO on the mature Web stack, unless there was an compelling argument for alternative protocol stacks having other advantages.\footnote{
+  For instance, a de-centralized, resiliant architecture and long term preservation was the motivation for the design of the Interplanetary File System (IPFS) as a \emph{Decentralized Web} \cite{Trautwein 2022}.
+}
 
 Section \ref{ch2:discussion} also found that the basis of Web-based FDOs can be built using only Signposting \cite{vandesompel2015,Van de Sompel 2022}, adding a couple of non-intrusive HTTP headers that are agnostic to metadata standards and serializations. 
 The Signposting approach has also been highlighted both by EOSC \cite{10.5281/zenodo.7463421} and as a possible FDO configuration type \cite{fdo-ConfigurationTypes}.
@@ -211,6 +212,8 @@ Work on building large data citations as a ``reliquary'' -- a \emph{container of
 Knowledge Enhanced Digital Objects \footurl{https://github.com/luoyu357/KEDODataLake}{(KEOD)} \cite{Luo 2022} is an experimental approach of building a data lake using a combination of knowledge graphs, RO-Crate and PID records\cite{Luo 2023}. This is effectively an FDO implementation: A KEDO PID is a Handle that identifies a KEDO Object, described using a KEDO RO-Crate. This crate again has \emph{internal RO-Crate}s as parts, which records a combination of \emph{Features} and \emph{Insights}. The distinction is that features are mainly fixed at the digital object creation and considered directly describing its nature, while insights can be discovered later from further processing and linkage. This approach solves a mutability problem in FDOs, as the KEOD system only allows additional insights to be added along with provenance that connect PIDs when KEDOs evolve. Files in a KEDO RO-Crate are stored locally, and each recorded with a Handle PID within the crate.
 
 This KEOD setup of multiple graphs forming a single knowledge unit can be considered analoguous to nanopublications \cite{Kuhn 2021} but for FDOs. Indeed using nanopublication to capture FDOs of digital twins has also been proposed  \cite{10.3389/data.2022.883341}.
+
+%% FDO on Blockchain?? 
 
 
 \subsection{How FAIR are RO-Crates?}
