@@ -3,6 +3,9 @@ considerations)
 
 \section{Main Findings}
 
+In this section I summarise and discuss the findings from the previous chapters, and relate them with regards to our research questions.
+
+
 \subsection{Making a predictable ecosystem of FAIR digital objects}
 
 The main advantage of scholarly researchers publishing \emph{FAIR data} is to enable machine actionability \cite{Wilkinson 2016}, which again will accelerate further research, such as through computational workflows. 
@@ -12,7 +15,7 @@ European research infrastructures supporting Open Science practices are coalesci
 
 While existing practices for implementing FAIR have relied on the Linked Data stack, that is just one possible technology to achieve the benefits of interoperable machine actionability \cite{Mons 2017}. 
 
-Chapter \ref{chapter:fdo} explored the concept of \emph{FAIR Digital Objects} (FDO) \cite{Schultes 2019} as a potential distributed object system for FAIR data, comparing its proposed principles and current practices with the established Linked Data approach. 
+Chapter \ref{chapter:fdo} explored the emerging concept of \emph{FAIR Digital Objects} (FDO) \cite{Schultes 2019} as a potential distributed object system for FAIR data, comparing its proposed principles and current practices with the established Linked Data approach. 
 As detailed in section \vref{ch3:fdo}, FDO defines a handful of constraints and guides for a predictable way to organise complex machine actionable digital entities. 
 
 Conceptually FDO can clearly be useful for realizing FAIR principles with more active digital objects that can form a consistent ecosystem, but this opens many questions on actual FDO implementations with regards to protocols and standards.
@@ -43,14 +46,119 @@ Section \vref{ch2:meeting-fdo-principles-using-linked-data-standards} explores h
 
 If such conventions need to be evolved and specified no matter the protocol basis for FDO, this chapter argues, then it would be intuitive to build FDO on the mature Web stack, unless there was an compelling argument for alternative protocol stacks having other advantages. For instance, a de-centralized, resiliant architecture and long term preservation was the motivation for IPFS as a \emph{Decentralized Web} \cite{Trautwein 2022}.
 
-Section \ref{ch2:discussion} also found that the basis of Web-based FDOs can be built using only Signposting \cite{vandesompel2015,Van de Sompel 2022}, adding a couple of non-intrusive HTTP headers 
-that are agnostic to metadata standards and serializations. The Signposting approach has also been highlighted both by EOSC \cite{10.5281/zenodo.7463421} and as a possible FDO configuration type \cite{fdo-ConfigurationTypes}. The FAIR-IMPACT project has also launched an open call for building support for Signposting \cite{soilandreyes2023b} in data repositories and platforms.
-
-\section{RO-Crate}
+Section \ref{ch2:discussion} also found that the basis of Web-based FDOs can be built using only Signposting \cite{vandesompel2015,Van de Sompel 2022}, adding a couple of non-intrusive HTTP headers that are agnostic to metadata standards and serializations. 
+The Signposting approach has also been highlighted both by EOSC \cite{10.5281/zenodo.7463421} and as a possible FDO configuration type \cite{fdo-ConfigurationTypes}. The FAIR-IMPACT project has also launched an open call for building support for Signposting \cite{soilandreyes2023b} in data repositories and platforms.
 
 
 
-\subsection{RO-Crate is a developer-friendly approach to FAIR data packaging}
+\subsection{RO-Crate as a developer-friendly approach}
+
+As pointed out in section \vref{ch3:ld-web}, while Linked Data is a powerful and flexible approach to publishing structured data on the Web, the developer experience of using Semantic Web technology still needs simplifications, like reducing number of choices for vocabularies and serialization formats. 
+
+Chapter \vref{chapter:ro-crate} introduced \emph{RO-Crate} as a practical implementation of the FAIR principles for the purpose of packaging data alongside structured metadata. The approach builds on best practices for Linked Data, however RO-Crate specifications are primarily example-driven with simple JSON structures, and primarily use a single, general purpose vocabulary. 
+
+This way of ``Linked Data by stealth'' means that developers don't need to be concerned about RDF implementation details, although they can at their option take advantage of RDF knowledge graph technologies like SPARQL (section \vref{ch5:linkeddata}). Extension points are well defined, and although this do require some RDF knowledge like defining namespaces, reasonable examples and vocabulary repositories are provided by RO-Crate --  developers do not for instance need to learn about OWL reasoning or to deploy a web service serving multiple RDF serialisations for every described entity.
+
+
+
+\subsubsection{Just enough Linked Data}
+
+An important lesson from this work then is to use ``just enough'' Linked Data for the desired level of interoperability and knowledge representation. While previous efforts to `FAIRify' largely have been concerned about representing the data values using an RDF data model, this can lead to significant effort needed in developing ontologies and vocabularies. 
+
+RO-Crate is using schema.org \cite{schema.org} as its base vocabulary, and tries to follow its philosophy of adding a lightweight semantic structure by associating many free text attributes to the same node, rather than making elaborate interconnected semantic objects. For instance, while a \texttt{Person}'s \texttt{affiliation} ideally goes to a \texttt{Organization} with it's own URL and other attributes, in some cases, a free text string is all information available, and this can be used cirectly as the \texttt{affiliation}. 
+
+With retrospect we can say that this reduction in semantic rigidity compared to use in OWL ontologies is a move back to the simplicity of early RDF as an open-ended model (see section \vref{ch3:semweb}), where a property can be used to point to almost anything, and RDF authors are free to use almost any term.
+
+Another aspect that is not highlighted well in ontologies is where to stop formalization of an object. In schema.org, many properties like \url{http://schema.org/license} are defined as having the \emph{range}\footnote{Expected type of object \cite{w3-rdf-schema}, however note that schema.org uses \url{http://schema.org/rangeIncludes} instead of \texttt{rdfs:range}, to permit multiple alternatives without the need for a union class} of either \footurl{http://schema.org/CreativeWork}{\texttt{CreativeWork}} or \footurl{http://schema.org/URL}{\texttt{URL}}, hinting that the licence is not required to be explained as another entity with further properties, but that the attribute's primary purpose is navigation or identification. 
+
+This would be a key aspect of Linked Data, which traditionally have had the undefined structure of ``follow your nose'' navigation -- a client may attempt to request any node identifier (if it's a URL), and if, with content-negotiation, it returns some RDF, then that could be integrated into the knowlege graph, hopefully adding more description of that node, although possibly using other vocabularies. However, ontologies used in Linked Data have not commonly indicated navigation waypoints as done in Schema.org, a property's range to a given class leaves it undefined if users were expected to explain that node or link to it.
+
+
+\subsubsection{Embedding contextual information reduces need for navigation}
+
+A big difference from Linked Data practices in our RO-Crate approach is making a self-described container. Rather than assume that information will always be available from the referenced URIs, and requiring clients to crawl their way through the many identifiers to see which ones contain more information, the RO-Crate contains a minimal description of each referenced contextual entity (section \vref{ch5:contextualentities}). 
+
+This has multiple purposes:
+
+\begin{itemize}
+    \item Simplify user interfaces, e.g. show a human-readable label and type before the user chooses to click the link.
+    \item Vocabulary adaptation, for instance describing with schema.org in the crate, what was expressed in FOAF vocabulary at the URL.
+    \item Unify descriptions of semantic artefacts and web pages. Making ``ad-hoc'' semantic artefacts within the crate where none exited beforehand.
+    \item Embed ``as of at time of writing'' descriptions for longevity. An RO-Crate is self-contained and can be archived independently, and embedding contextual information reduces cross-organizational service dependencies (at the risk of outdated information).
+\end{itemize}
+
+Several of these reasons are also organizational in nature, reflecting back on the EOSC Interoperability Framework (section \vref{ch3:eosc-interoperability-framework}) -- rather than requiring for instance the Research Organization Registry (\footurl{https://ror.org/}{ROR}) to add Linked Data representations of organizations, one can be made ad-hoc by the RO-Crate's author, and contained by the crate as a contextual entity. 
+
+In this way we see a breaking of the chicken-and-egg problem, for instance orcid.org recently added schema.org content negotiation, but \emph{after} RO-Crate started describing people using ORCID identifiers\footnote{My earlier contribution to ORCID had in fact already established content-negotiation to RDF, but with the classical FOAF vocabulary. The registry is 
+currently returning person description with different semantic models depending on which serialization is requested}. 
+
+
+\subsubsection{FDO ecosystems need to permit flexible references}
+
+When reflecting on the above contextualization from the propositions of FAIR Digital Objects as covered back in chapter \ref{chapter:fdo}, we can predict a problem if every reference from an FDO must go to another pre-existing FDO (or at least a registered PID), in that there must then be a linear order of FDO creation within an ecosystem of compatible FDO types. A strict reading of the FDO principles mean implementations cannot utilise the established human-readable Web for bootstrapping. This risks large cross-organizational delays with a stronger need for collaboration and coordination, or alternatively, starting with a smaller FDO data models that can gradually evolve to add more navigation, when and if registries appear with FDO interfaces. 
+
+The emphasis on strong typing in FDOs also mean that seemingly incompatible types (for instance developed by biodiversity community vs. those from genomics communities) lead to a split of the PID space of referencable objects from a given type of FDOs.  Counter to this, the current FDO recomendations for attributes and types \cite{fdo-ImplAttributesTypesProfiles} do not require specification of the \emph{range} of an attribute to be a PID of an FDO, and as current FDO type declarations have been relatively lightweight (textual descriptions only), they are flexible enough to permit URLs to any Web resource or existing Linked Data concepts.  
+
+There is a concern however that some FDO serializations using the Handle system and key-value attributes cannot distinguish between string literals and object references. Combined with the use of PID references expressed as handles rather than as a URIs (e.g. \texttt{21.14100/2fcf49d3-0608-3373-a47f-0e721b7eaa87} instead of \url{https://hdl.handle.net/21.14100/2fcf49d3-0608-3373-a47f-0e721b7eaa87}), this means that machine actionability suffers, in that the string value is not typed to what kind of reference it may or may not be, or in what PID system.
+
+In schema.org we find a similar challenge with properties permitting both string values and object references. \texttt{https://schema.org/keywords} is perhaps the most ambiguous, as it permits \texttt{Text}\footnote{To conflate matters, the \texttt{keywords} property can be repeated, but also allows multiple keywords within a single comma-separated string.}, but also \texttt{URL} or \texttt{DefinedTerm}. The two latter cases are both intended for referencing controlled vocabularies, with the distinction that a \texttt{DefinedTerm} is defined explicitly within the referenced object, while the defined term is implied if only the URL is provided. JSON-LD contexts have the possibility of enforcing object references (\texttt{"@type: "@id"}), but this cannot be used in this case as freetext strings are also permitted. The result is that a freetext keyword that just looks like a URL cannot be distinguished from an intented URL reference, similar to the FDO example.
+
+In order to reduce such ambiguity and multiple developer choices, in RO-Crate all object references are in JSON-LD object form, and the RO-Crate context do not have any \texttt{@type} shortcuts for implicit references. RO-Crate 1.2 will also recommend that \footurl{https://www.researchobject.org/ro-crate/1.2-DRAFT/metadata.html\#common-principles-for-ro-crate-entities}{all entities} have a type, identifier and human-readable name. 
+
+
+\subsubsection{Profiles restrict general flexibility to gain specific predictability}
+
+Section \vref{ch5:inuse} showed how RO-Crate is adapted by different scientific domains. Since the publication of the corresponding manuscripts, RO-Crate has also been adopted by the \footurl{https://www.researchobject.org/ro-crate/in-use/LDaCA.html}{Language Data Commons of Australia} \cite{LREC2022}, \footurl{https://www.researchobject.org/ro-crate/in-use/survey-ontology.html}{Survey Ontology} \cite{surveyOntology}, 
+
+The discussion of strictness vs flexibility in section \vref{ch5:strictness-vs-flexibility} highlighted the tension between a  flexible open-ended model and the predictability needed to consistently create and consume content expressed by the model. While RO-Crate itself can be seen as a restriction of the more open-ended JSON-LD and schema.org, its extensibility points still allow different use cases to expand on those conventions.  
+
+Section \vref{ch5:profiles} detailed how semi-formalized profiles can be gradually formed to at first \emph{duck-type} a class of RO-Crates that have similar properties. Later work on formalizing this as \footurl{https://www.researchobject.org/ro-crate/1.2-DRAFT/profiles}{Profile Crate} to capture the profile itself have since manuscript publication also evolved to use the W3C Profiles Vocabulary \cite{dx-prof} to explicitly linked to vocabularies, mappings and importantly constraints expressed as RDF Shapes \cite{fdo-collections}. This turns RO-Crate profiles into machine-actionable type definitions, as existing RDF tooling can do for instance validation. Figure \vref{ch9:fig:profilecrate} shows how the usage of \emph{roles} within the profile crate indicates the purpose of the constituent parts. Roles are here particularly important as many of these Semantic Web resources are expressed in the same file format (e.g. `\texttt{text/turtle}') and may be used for different purposes (e.g. SKOS \cite{w3-skos-primer} can be both mapping and a vocabulary).
+
+\begin{figure}[htb]
+    \includegraphics[width=\textwidth]{figures/ch09/profile-crate.pdf}
+      \caption[Example of Profile Crate]{\textbf{Example of Profile Crate for Workflow Run Crate}. 
+      An RO-Crate \emph{WFRun Crate} declares conformance with a given RO-Crate profile. Resolving the profile URI retrieves the \emph{Profile Crate}, which parts include an \emph{RDF Shape}, an \emph{SKOS mapping} and a \emph{DefinedTermSet}. 
+      By using the indirection of \emph{ResourceDescriptor} from Profiles Vocabulary \cite{dx-prof}, the roles of each of these artefacts are defined, e.g. \emph{constraint}. The embedded \emph{vocabulary} defines ad-hoc terms like \emph{sourceParameter} used by the Workflow Run Crate\footnotemark.
+      }
+    \label{ch9:fig:profilecrate}
+  \end{figure}
+\footnotetext{\url{https://w3id.org/ro/wfrun/process/0.2}}
+
+\subsection{User applications are needed to make FAIR research objects}
+
+RO-Crate and its best practices can be considered a type of \emph{middleware} used by application developers to capture and transmit metadata and relate data files that together form some tangible unit (a \emph{Research Object}). It is therefore important to also consider the role of user applications in order to increase adoptation of FAIR research objects by scholars.
+
+Futher work by the RO-Crate community has created more user-fronting tools such as \footurl{https://github.com/oeg-upm/ya2ro}{ya2ro}, which given metadata and identifier in a \footurl{https://yaml.org/}{YAML} file\footnote{YAML is a file format with the same data model as JSON, but with a more readable syntax, e.g. using indentation instead of quoted strings} can retrieve contextual metadata from ORCID, GitHub and DOI registries and build and publish a completed RO-Crate \cite{ya2ro}.   While this technology still requires some understanding of editing, it is intended to be more approachable to data scientists and for use with simple Web publishing platforms like \footurl{https://pages.github.com/}{GitHub Pages}.
+
+The repository \footurl{https://www.rohub.org/}{ROHub} \cite{Palma??} has added RO-Crate import and export, and provides both a browseable repository for publishing crates, but also interactive and collaborative editing of its metadata. In this use case, RO-Crate plays the role as an exchange and archiving format, as the hub stores the crates in general-purpose repositories Zenodo and B2Share which do not have the facility to keep the granular metadata expressed within the RO-Crate metadata file.
+
+
+\subsection{FDO and RO-Crate}
+
+\cite{FAIROs}
+
+\subsection{Workflow}
+
+\subsubsection{Workflows as FAIR digital objects}
+
+\begin{figure}[htb]
+    \includegraphics[width=\textwidth]{figures/ch09/signposting.pdf}
+      \caption[Signposting]{\textbf{Signposting}. 
+      \footnotemark
+      }
+    \label{ch9:fig:signposting}
+  \end{figure}
+\footnotetext{\url{https://example.com/}}
+
+
+\subsubsection{Provenance of workflow runs}
+
+
+\subsubsection{Using and building FDOs from workflows}
+
+
+\subsubsection{Web service vs command line tools}
+
 
 \textbf{TODO}: Summarize/discuss 
 From \vref{ch5:packaging-research-artefacts-with-ro-crate}

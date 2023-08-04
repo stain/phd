@@ -1,13 +1,24 @@
 %\section{Background and related work}
 \label{ch3:background}
 
-In the following chapter, we discuss the related work with respect to FAIR Digital Objects and Linked Data. We do so by looking through the lens of development of these technologies over time, including future directions.
+In this chapter, we discuss the related work with respect to FAIR Digital Objects and Linked Data. We do so by looking through the lens of development of these technologies over time, including future directions.
 
 \section{FAIR Digital Object}\label{ch3:fdo}
 
 The concept of \textbf{FAIR Digital Objects} \cite{schultesFAIRPrinciplesDigital2019a} has been introduced as way to expose research data as active objects that conform to the FAIR principles \cite{Wilkinson 2016}. This builds on the \emph{Digital Object} (DO) concept \cite{kahnFrameworkDistributedDigital2006b}, first introduced in 1995 \cite{kahnFrameworkDistributedDigital1995a} as a system of \emph{repositories} containing \emph{digital objects} identified by \emph{handles} and described by \emph{metadata} which may have references to other handles. DO was the inspiration for the ITU X.1255 framework \cite{x1255FrameworkDiscovery} which introduced an abstract \emph{Digital Entity Interface Protocol} for managing such objects programmatically, first realised by the Digital Object Interface Protocol (DOIP) \cite{DigitalObjectInterface}.
 
 In brief, the structure of a FAIR Digital Object (FDO) is to, given a \emph{persistent identifier} (PID) such as a DOI, resolve to a \emph{PID Record} that gives the object a \emph{type} along with a mechanism to retrieve its \emph{bit sequences}, \emph{metadata} and references to further programmatic \emph{operations}. The type of an FDO (itself an FDO) defines attributes to semantically describe and relate such FDOs to other concepts (typically other FDOs referenced by PIDs). The premise of systematically building an ecosystem of such digital objects is to give researchers a way to organise complex digital entities, associated with identifiers, metadata, and supporting automated processing \cite{wittenburgDigitalObjectsDrivers2019a}.
+
+
+\begin{figure}[htb]
+  \includegraphics[width=\textwidth]{figures/ch03/fdo.pdf}
+    \caption[FDO]{\textbf{FDO}. 
+    \footnotemark
+    }
+  \label{ch3:fig:fdo}
+\end{figure}
+\footnotetext{\url{https://example.com/}}
+
 
 Recently, FDOs have been recognised by the European Open Science Cloud (\footurl{https://eosc.eu/}{EOSC}) as a suggested part of its Interoperability Framework \cite{eosc-interop-framework}, in particular for deploying active and interoperable FAIR resources that are \emph{machine actionable}. Development of the FDO concept continued within Research Data Alliance (\footurl{https://www.rd-alliance.org/}{RDA}) groups and EOSC projects like \footurl{https://www.go-fair.org/}{GO-FAIR}, concluding with a set of guidelines for implementing FDO \cite{bonino2019}. The \footurl{https://fairdo.org/}{FAIR Digital Objects Forum} has since taken over the maturing of FDO through focused working groups which have currently drafted several more detailed specification documents (see \emph{Next steps for FDO} \vpageref{ch3:next-step-fdo}).
 
