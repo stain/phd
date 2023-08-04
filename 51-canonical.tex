@@ -72,26 +72,55 @@ principles for research software development best practices \cite{Lamprecht 2019
 The result is a collection of building block modules, divided in sets of
 tool wrappers focused on similar functionalities (e.g.~Molecular
 Dynamics, Virtual Screening). Each of the modules is built from a
-combination of (i) software packaging
-(\footurl{https://pypi.org/project/biobb/}{Pip},
-\footurl{https://bioconda.github.io/search.html?q=biobb}{BioConda},
-\footurl{https://biocontainers.pro/}{BioContainers}), (ii) documentation
-(\footurl{https://biobb.readthedocs.io/}{ReadTheDocs}), (iii) interactive
-tutorials
-(\footurl{http://mmb.irbbarcelona.org/biobb/workflows/tutorials/md_setup}{Jupyter
-Notebooks},
-\footurl{https://bioexcel-binder.tsi.ebi.ac.uk/v2/gh/bioexcel/biobb_wf_md_setup/master?filepath=biobb_wf_md_setup\%2Fnotebooks\%2Fbiobb_MDsetup_tutorial.ipynb}{Binder}),
-(iv) registry \& findability (\footurl{https://bio.tools/biobb}{bio.tools},
-\footurl{https://bioschemas.org/profiles/ComputationalTool/0.5-DRAFT/}{BioSchemas},
-\footurl{https://workflowhub.eu/programmes/2}{WorkflowHub}), (v) WfMS
-integration stubs
-(\footurl{https://github.com/bioexcel/biobb_adapters/tree/v0.1.4/biobb_adapters/cwl}{CWL},
-\footurl{https://toolshed.g2.bx.psu.edu/repository?repository_id=e23296b413014cfc}{Galaxy},
-\footurl{https://github.com/bioexcel/biobb_adapters/tree/v0.1.4/biobb_adapters/pycompss}{PyCOMPSs}),
-(vi) source Code (\footurl{https://github.com/bioexcel/biobb}{GitHub}) and
-(vii) REST APIs
-(\footurl{https://mmb.irbbarcelona.org/biobb-api/rest}{OpenAPI},
-\footurl{https://mmb.irbbarcelona.org/biobb-api/rest/swagger.json}{Swagger}).
+combination of:
+
+\begin{enumerate}[(i)]
+  \item software packaging
+  (\footurl{https://pypi.org/project/biobb/}{Pip},
+  \footurl{https://bioconda.github.io/search.html?q=biobb}{BioConda},
+  \footurl{https://biocontainers.pro/}{BioContainers})
+  \item documentation
+  (\footurl{https://biobb.readthedocs.io/}{ReadTheDocs})
+  \item interactive
+  tutorials
+  (\footurl{http://mmb.irbbarcelona.org/biobb/workflows/tutorials/md_setup}{Jupyter
+  Notebooks},
+  \footurl{https://bioexcel-binder.tsi.ebi.ac.uk/v2/gh/bioexcel/biobb_wf_md_setup/master?filepath=biobb_wf_md_setup\%2Fnotebooks\%2Fbiobb_MDsetup_tutorial.ipynb}{Binder})
+  \item registry \& findability (\footurl{https://bio.tools/biobb}{bio.tools},
+  \footurl{https://bioschemas.org/profiles/ComputationalTool/0.5-DRAFT/}{BioSchemas},
+  \footurl{https://workflowhub.eu/programmes/2}{WorkflowHub})
+  \item WfMS
+  integration stubs
+  (\footurl{https://github.com/bioexcel/biobb_adapters/tree/v0.1.4/biobb_adapters/cwl}{CWL},
+  \footurl{https://toolshed.g2.bx.psu.edu/repository?repository_id=e23296b413014cfc}{Galaxy},
+  \footurl{https://github.com/bioexcel/biobb_adapters/tree/v0.1.4/biobb_adapters/pycompss}{PyCOMPSs})
+  \item source Code (\footurl{https://github.com/bioexcel/biobb}{GitHub})
+  \item REST APIs
+  (\footurl{https://mmb.irbbarcelona.org/biobb-api/rest}{OpenAPI},
+  \footurl{https://mmb.irbbarcelona.org/biobb-api/rest/swagger.json}{Swagger})
+\end{enumerate}
+
+%(i) software packaging
+%(\footurl{https://pypi.org/project/biobb/}{Pip},
+%\footurl{https://bioconda.github.io/search.html?q=biobb}{BioConda},
+%\footurl{https://biocontainers.pro/}{BioContainers}), 
+%(ii) documentation
+%(\footurl{https://biobb.readthedocs.io/}{ReadTheDocs}), 
+%(iii) interactive tutorials
+%(\footurl{http://mmb.irbbarcelona.org/biobb/workflows/tutorials/md_setup}{Jupyter Notebooks},
+%\footurl{https://bioexcel-binder.tsi.ebi.ac.uk/v2/gh/bioexcel/biobb_wf_md_setup/master?filepath=biobb_wf_md_setup\%2Fnotebooks\%2Fbiobb_MDsetup_tutorial.ipynb}{Binder}),
+%(iv) registry \& findability (
+%  \footurl{https://bio.tools/biobb}{bio.tools},
+%\footurl{https://bioschemas.org/profiles/ComputationalTool/0.5-DRAFT/}{BioSchemas},
+%\footurl{https://workflowhub.eu/programmes/2}{WorkflowHub}), (v) WfMS
+%integration stubs
+%(\footurl{https://github.com/bioexcel/biobb_adapters/tree/v0.1.4/biobb_adapters/cwl}{CWL},
+%\footurl{https://toolshed.g2.bx.psu.edu/repository?repository_id=e23296b413014cfc}{Galaxy},
+%\footurl{https://github.com/bioexcel/biobb_adapters/tree/v0.1.4/biobb_adapters/pycompss}{PyCOMPSs}),
+%(vi) source Code (\footurl{https://github.com/bioexcel/biobb}{GitHub}) and
+%(vii) REST APIs
+%(\footurl{https://mmb.irbbarcelona.org/biobb-api/rest}{OpenAPI},
+%\footurl{https://mmb.irbbarcelona.org/biobb-api/rest/swagger.json}{Swagger}).
 Notably all building blocks follow the same pattern of installation,
 configuration and interaction.
 
