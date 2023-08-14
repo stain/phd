@@ -21,7 +21,7 @@ Conceptually FDO can clearly be useful for realizing FAIR principles with more a
 
 \subsubsection{Linked Data need more constraints and consistency to be FAIR}
 
-Examined in section \vref{ch3:ld}, the principles of \emph{Linked Data} emerged from the Semantic Web as a data-centric view with a focus on navigation and cross-site interoperability, rather than say elaborate logical inferencing systems such as ontologies.  
+Examined in section \vref{ch3:ld}, the principles of \emph{Linked Data} emerged from the Semantic Web as a data-centric view with a focus on navigation and cross-site interoperability, rather than say elaborate logical inferencing systems using ontologies.  
 Yet the bewildering landscape of technology choices for using RDF in data platforms means that the developers suffer and still face a steep learning curve. 
 For clients consuming Linked Data from multiple sources -- \emph{Linked Data Mashup} \cite{Tran 2014} -- the situation is still baffling in that relatively small differences in identifiers, vocabularies and usage patterns across deployment result in incompatibilities that may require platform-specific workarounds and mappings \cite{Millard 2010}. 
 
@@ -48,7 +48,7 @@ If such conventions need to be evolved and specified no matter the protocol basi
   For instance, a de-centralized, resiliant architecture and long term preservation was the motivation for the design of the Interplanetary File System (IPFS) as a \emph{Decentralized Web} \cite{Trautwein 2022}.
 }
 
-Section \ref{ch2:discussion} also found that the basis of Web-based FDOs can be built using only Signposting \cite{vandesompel2015,Van de Sompel 2022}, adding a couple of non-intrusive HTTP headers that are agnostic to metadata standards and serializations. An implementation of such Web-based FDOs was shown in section \ref{ch4:lightweight-fdo}. 
+Section \ref{ch2:discussion} found that the basis of Web-based FDOs can be built using only Signposting \cite{vandesompel2015,Van de Sompel 2022}, adding a couple of non-intrusive HTTP headers that are agnostic to metadata standards and serializations. An implementation of such Web-based FDOs was shown in section \ref{ch4:lightweight-fdo}. 
 
 The Signposting approach has also been highlighted both by EOSC \cite{10.5281/zenodo.7463421} and as a possible FDO configuration type \cite{fdo-ConfigurationTypes}.
 The FAIR-IMPACT project launched an \footurl{https://fair-impact.eu/1st-open-call-support-closed}{open call} where 14 participating institutions are participating to help build support for Signposting \cite{soilandreyes2023b} in data repositories and platforms.
@@ -63,7 +63,7 @@ Chapter \vref{chapter:ro-crate} introduced \emph{RO-Crate} as a practical implem
 The approach builds on best practices for Linked Data, however RO-Crate specifications are example-driven with simple interrelated JSON structures, and primarily use a single, general purpose vocabulary. 
 
 This way of ``Linked Data by stealth'' means that developers don't need to be concerned about RDF implementation details, although they can at their option take advantage of RDF knowledge graph technologies like SPARQL (section \vref{ch5:linkeddata}).
-Extension points are well defined, and although extending RO-Crate do require some RDF knowledge like defining namespaces, reasonable examples and vocabulary repositories are provided by RO-Crate --  developers do not for instance need to learn about OWL reasoning or to deploy a web service serving multiple RDF serialisations for every described entity.
+Extension points are well defined, and although extending RO-Crate do require some RDF knowledge like defining namespaces, reasonable examples and vocabulary repositories are provided by RO-Crate --  developers do not for instance need to learn about ontologies nor need to deploy a web service serving multiple RDF serialisations for every described entity.
 
 
 
@@ -78,23 +78,23 @@ For instance, while a \texttt{Person}'s \texttt{affiliation} ideally goes to a \
 With retrospect we can say that this reduction in semantic rigidity compared to use in OWL ontologies is a move back to the simplicity of early RDF as an open-ended model (see section \vref{ch3:semweb}), where a property can be used to point to almost anything, and RDF authors are free to use almost any term.
 
 Another aspect that is not highlighted well in ontologies is where to stop in the formal knowledge representation of an object.
-In schema.org, many properties like \url{http://schema.org/license} are defined as having the \emph{range}\footnote{Expected type of object \cite{w3-rdf-schema}, however note that schema.org uses \url{http://schema.org/rangeIncludes} instead of \texttt{rdfs:range}, to permit multiple alternatives without the need for a union class} of either \footurl{http://schema.org/CreativeWork}{\texttt{CreativeWork}} or \footurl{http://schema.org/URL}{\texttt{URL}}, hinting that the licence is not required to be explained as another entity with further properties, but that the attribute's primary purpose is navigation or identification. 
+In schema.org, many properties like \url{http://schema.org/license} are defined as having the \emph{range}\footnote{Expected type of object \cite{w3-rdf-schema}, however note that schema.org uses \url{http://schema.org/rangeIncludes} instead of \texttt{rdfs:range}, to permit multiple alternatives without the need for a union class.} of either \footurl{http://schema.org/CreativeWork}{\texttt{CreativeWork}} or \footurl{http://schema.org/URL}{\texttt{URL}}, hinting that the licence is not required to be explained as another entity with further properties, but that the attribute's primary purpose is navigation or identification. 
 
-This would be a key aspect of Linked Data, which traditionally have had the undefined structure of ``follow your nose'' navigation -- a client may attempt to request any node identifier (if it's a URL), and if, with content-negotiation, it returns some RDF, then that could be integrated into the knowlege graph, hopefully adding more description of that node, although possibly using other vocabularies.
-However, ontologies used in Linked Data have not commonly indicated navigation waypoints as done in Schema.org, a property's range to a given class leaves it undefined if users were expected to explain that node or link to it. One notable exception is the Data Catalog Vocabulary (DCAT) \cite{DCAT2 2020} which have navigational properties like \texttt{dcat:landingPage} (to a \texttt{foaf:Document}) and \texttt{dcat:downloadURL} (to any \texttt{rdfs:Resource}).
+This would be a key aspect of Linked Data, which traditionally have had the rather undefined convention of ``follow your nose'' navigation -- a client may attempt to request any node identifier (if it's a URL), and if, with content-negotiation, it returns some RDF, then that could be integrated into a joint knowlege graph, hopefully adding more description of that node, although possibly using other vocabularies.
+However, ontologies used in Linked Data have not commonly indicated navigation waypoints as done in Schema.org, simply defining a property's range as a given class leaves it undefined if documents were expected to explain that node or link to its explanation. One notable exception is the Data Catalog Vocabulary (DCAT)\footnote{Although the \url{http://schema.org/Dataset} type used by RO-Crate's root entity is derived from DCAT, RO-Crate does not assume a corresponding data catalogue on the Web.} \cite{DCAT2 2020} which have navigational properties like \texttt{dcat:landingPage} (to a \texttt{foaf:Document}) and \texttt{dcat:downloadURL} (to any \texttt{rdfs:Resource}).
 
 % Should we discuss why not DCAT?
 
 \subsubsection{Embedding contextual information reduces need for navigation}
 
-A big difference from Linked Data practices in our RO-Crate approach is making a self-described container.
+A divergence from common Linked Data practices is that our RO-Crate approach is making a self-described container.
 Rather than assume that information will always be available from the referenced URIs, and requiring clients to crawl their way through the many identifiers to see which ones contain more information, the RO-Crate contains a minimal description of each referenced contextual entity (section \vref{ch5:contextualentities}). 
 
 This has multiple purposes:
 
 \begin{itemize}
     \item Simplify user interfaces, e.g. show a human-readable label and type before the user chooses to click the link.
-    \item Vocabulary adaptation, for instance describing with schema.org in the crate, what was expressed in FOAF vocabulary at the URL.
+    \item Vocabulary adaptation, for instance describing with schema.org in the crate, what was expressed in FOAF vocabulary at the URI.
     \item Unify descriptions of semantic artefacts and web pages. 
           Making ``ad-hoc'' semantic artefacts within the crate where none exited beforehand.
     \item Embed ``as of at time of writing'' descriptions for longevity. 
@@ -103,9 +103,10 @@ This has multiple purposes:
 
 Several of these reasons are also organizational in nature, reflecting back on the EOSC Interoperability Framework (section \vref{ch3:eosc-interoperability-framework}) -- rather than requiring for instance the Research Organization Registry \footurl{https://ror.org/}{(ROR)} to add Linked Data representations of organizations, one can be made ad-hoc by the RO-Crate's author, and contained by the crate as a contextual entity. 
 
-In this way we see a breaking of the chicken-and-egg problem, for instance orcid.org recently added schema.org content negotiation, but \emph{after} RO-Crate started describing people using ORCID identifiers\footnote{
-  My earlier contribution to ORCID had in fact already established content-negotiation to RDF, but with the classical FOAF vocabulary.
-  The registry is currently returning person description with different semantic models depending on which serialization is requested}. 
+This ability to describe a referenced entity locally is also a workaround for the chicken-and-egg problem of creating and linking Linked Data resources that vocabulary-wise are cross-related both ways. For instance orcid.org recently added schema.org content negotiation, but \emph{after} RO-Crate started describing people using the \url{http://schema.org/Person} type and ORCID identifiers.\footnote{
+  One of my earlier code contributions to ORCID already established content-negotiation to RDF -- but using the classical FOAF vocabulary \cite{FOAFVocabularySpecification}.
+  Slightly inconsistent with Semantic Web principles, the registry is currently returning \emph{Person} descriptions in different semantic models depending on the requested serialization. \\
+  \url{https://github.com/ORCID/ORCID-Source/blob/main/CONTENT_NEGOTIATION.md}} 
 
 
 \subsubsection{FDO ecosystems need to permit flexible references}
@@ -119,7 +120,7 @@ The emphasis on strong typing in FDOs also mean that seemingly incompatible type
 There is a concern however that some FDO serializations using the Handle system and key-value attributes cannot distinguish between string literals and object references.
 Combined with the use of PID references expressed as handles rather than as a URIs (e.g. \texttt{21.14100/2fcf49d3-0608-3373-a47f-0e721b7eaa87} instead of \url{https://hdl.handle.net/21.14100/2fcf49d3-0608-3373-a47f-0e721b7eaa87}), this means that machine actionability suffers, in that the string value is not typed to what kind of reference it may or may not be, or in what PID system.
 
-In schema.org we find a similar challenge with properties permitting both string values and object references. \texttt{https://schema.org/keywords} is perhaps the most ambiguous, as it permits \texttt{Text}\footnote{To conflate matters, the \texttt{keywords} property can be repeated, but also allows multiple keywords within a single comma-separated string.}, but also \texttt{URL} or \texttt{DefinedTerm}.
+In schema.org we find a similar challenge with properties permitting both string values and object references. \url{http://schema.org/keywords} is perhaps the most ambiguous, as it permits \texttt{Text}\footnote{To conflate matters, the \texttt{keywords} property can be repeated, but also allows multiple keywords within a single comma-separated string.}, but also \texttt{URL} or \texttt{DefinedTerm}.
 The two latter cases are both intended for referencing controlled vocabularies, with the distinction that a \texttt{DefinedTerm} is defined explicitly within the referenced object, while the defined term is implied if only the URL is provided.
 JSON-LD contexts have the possibility of enforcing object references (\texttt{"@type: "@id"}), but this cannot be used in this case as freetext strings are also permitted.
 The result is that a freetext keyword that just looks like a URL cannot be distinguished from an intented URL reference, similar to the FDO example.
