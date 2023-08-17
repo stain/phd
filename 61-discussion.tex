@@ -1,7 +1,6 @@
-In this section I summarise and discuss the findings from the previous chapters, relating them to emerging related work. 
+\section{Discussion}
 
-
-\section{Main Findings}
+In this section I summarise and discuss the findings from the previous chapters, relating them to emerging related work and future directions.
 
 \subsection{Making a predictable ecosystem of FAIR digital objects}
 
@@ -201,13 +200,22 @@ Notably this tool is also intended for creation of such vocabularies, and is thu
 
 \subsection{Web-based FDOs can use RO-Crate for its metadata}
 
-Section \vref{ch4:lightweight-fdo} argues that many of the FDO requirements \cite{fdo-RequirementSpec} for metadata can be implemented using RO-Crate, with FAIR Signposting (section \vref{ch60:signposting}) assisting navigation from persistent identifiers. This was implemented in the repository WorkflowHub \cite{wittenburgFAIRDigitalObject2022b} and is being further developed by the \footurl{https://eurosciencegateway.eu/}{EuroScienceGateway project} \cite{10.5281/zenodo.7152762}.
+Section \vref{ch4:lightweight-fdo} argues that many of the FDO requirements \cite{fdo-RequirementSpec} for metadata can be implemented as \emph{RO-Crate FDOs} (section \vref{ch8:fair-packaging-of-researchworkflow-objects-with-ro-crate}), with FAIR Signposting \cite{vandesompel2015,Van de Sompel 2022} assisting navigation from persistent identifiers, and the RO-Crate containing the metadata. 
 
-%(..)
+This approach was first implemented in the repository WorkflowHub \cite{Goble 2021,wittenburgFAIRDigitalObject2022b}, and in the FDO Forum \cite{Van de Sompel 2023} suggests RO-Crate with Signposting as a modern update to his OAI-ORE\footnote{OAI-ORE was also used by earlier Research Object approaches \cite{Belhajjame 2015,ch5-111} to capture the aggregation aspect of ROs.} approach from 2008 \cite{ORESpecificationAbstract}.  
+RO-Crate FDOs are being further developed within the Horizon Europe projects \footurl{https://eurosciencegateway.eu/}{EuroScienceGateway} \cite{10.5281/zenodo.7152762} and \footurl{https://fair-impact.eu/}{FAIR-IMPACT} \cite{10.5281/zenodo.7157647}.
+
+RO-Crate FDOs complements the findings of section \vref{ch60:signposting}, in that RO-Crate provides FDO with a generic metadata framework and a serialization that can work both for FDOs on the Web and with legacy Handle/DOIP approaches. 
+
+Some extra considerations is rightly needed on identifiers to reduce relative paths challenges with  RO-Crate FDOs -- for this purpose, the next specification \cite{rocrate1.2} introduce a distinction between an \footurl{https://www.researchobject.org/ro-crate/1.2-DRAFT/structure.html\#attached-ro-crate}{attached RO-Crate} (\emph{has some root directory containing other files referenced by relative paths, possibly archived in a ZIP or exposed on the Web}) and a \footurl{https://www.researchobject.org/ro-crate/1.2-DRAFT/structure.html\#detached-ro-crate}{detached RO-Crate} (\emph{no defined root directory, all references are absolute}). 
+This \emph{detached} style is suitable for an FDO architecture, even for use within APIs which do not lend themselves to relative path references (such as DOIP-over-HTTP \cite{DOIPAPIHTTPa}).
+RO-Crate 1.2 also define methods for \footurl{https://www.researchobject.org/ro-crate/1.2-DRAFT/appendix/relative-uris.html}{converting between attached/detached} crates using standard JSON-LD tooling, showing another advantage of using Linked Data as basis for RO-Crate. 
+
 
 \subsection{RO-Crate can capture collections of digital objects}
 
-RO-Crate has also been proposed as a generic mechanism for FDO Collections \cite{fdo-collections}, as an aggregator of FDOs by their PIDs. Such collections add a similar challenge in FDO as in Linked Data, in that clients may need to resolve an excessive number of persistent identifiers (see section \vref{ch20:avoid-lots-of-requests}) to FDOs which may be of different semantic types. Using an RO-Crate for such collections, the bibliographic metadata of each PID can be directly embedded and normalized to a single vocabulary, reducing client needs for recursive queries and type mappings. 
+RO-Crate has also been proposed as a generic mechanism for FDO Collections \cite{fdo-collections}, as an aggregator of FDOs by their PIDs. Such collections add a similar challenge in FDO as in Linked Data, in that clients may need to resolve an excessive number of persistent identifiers (see section \vref{ch20:avoid-lots-of-requests}) to FDOs which may be of different semantic types. 
+Using a detached RO-Crate for such collections, the bibliographic metadata of each PID can be directly embedded and normalized to a single vocabulary, reducing client needs for recursive queries and type mappings. 
  
 Work on building large data citations as a ``reliquary'' -- a \emph{container of persistent identifiers (PIDs)} \cite{Buck 2022} -- started from the earth science domain with AGU's \footurl{https://data.agu.org/DataCitationCoP/}{Data Citation Community of Practice} and continues in RDA's \footurl{https://www.rd-alliance.org/groups/complex-citations-working-group}{Complex Citation Working Group}. In this approach RO-Crate is being considered as a promising implementation to capture large number of citations along with minimal metadata, including licensing and attribution. Here a main motivation is to avoid excessive lists of data citations for scholarly publications following processing of aggregated datasets from repositories such as GBIF \cite{ch8-7}, while still propagating each dataset's FAIR metadata (as required by the Creative Commons Attribution licence) through the indirection of a collection. There is a potential overlap with workflow run provenance, although a workflow is not required by reliquaries.
 
