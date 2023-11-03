@@ -469,7 +469,7 @@ construct terms for in JSON-LD) or are at a different granularity level
 that might become overwhelming if represented directly in the RO-Crate
 Metadata file (e.g.~W3C PROV bundle detailing every step execution of a
 workflow run
-\cite{ch5-68}). RO-Crate
+\cite{Khan 2019}). RO-Crate
 allows such \emph{alternative metadata files} to co-exist, and be
 described as data entities with references to the standards and
 vocabularies they conform to. This simplifies further programmatic
@@ -668,7 +668,7 @@ Schema.org context means RO-Crate is also able to map in additional
 vocabularies where needed, namely the \emph{Portland Common Data Model}
 (PCDM) \cite{Cossu 2018}
 for
-repositories and Bioschemas \cite{bioschema-salad}
+repositories and Bioschemas \cite{Gray 2017}
 for
 describing computational workflows. RO-Crate profiles may
 extend\footnote{\url{https://www.researchobject.org/ro-crate/1.1/appendix/jsonld.html\#extending-ro-crate}}
@@ -750,7 +750,7 @@ EOSC-Life,\footnote{\url{https://www.eosc-life.eu/}}
 FAIRplus,\footnote{\url{https://fairplus-project.eu/}}
 CS3MESH4EOSC\footnote{\url{https://cs3mesh4eosc.eu/}} and
 BY-COVID.\footnote{\url{https://by-covid.eu/}} RO-Crate has also established
-collaborations with Bioschemas \cite{bioschema-salad}, GA4GH
+collaborations with Bioschemas \cite{Gray 2017}, GA4GH
 \cite{ch5-99}, OpenAIRE \cite{ch5-100}
 and multiple H2020 projects.
 
@@ -1026,7 +1026,7 @@ with WorkflowHub.
 Being cross-domain, WorkflowHub has to cater for many different workflow
 systems. Many of these, for instance Nextflow
 \cite{Di Tommaso 2017} and Snakemake
-\cite{ch5-73}, by
+\cite{Koster 2012}, by
 virtue of their script-like nature, reference multiple neighbouring
 files typically maintained in a GitHub repository. This calls for a data
 exchange method that allows keeping related files together. WorkflowHub
@@ -1048,7 +1048,7 @@ RO-Crate acts therefore as an interoperability layer between registries,
 repositories and users in WorkflowHub. The iterative development between
 WorkflowHub developers and the RO-Crate community heavily informed the
 creation of the Bioschemas
-\cite{bioschema-salad} profile for Computational
+\cite{Gray 2017} profile for Computational
 Workflows \footnote{\url{https://bioschemas.org/profiles/ComputationalWorkflow/1.0-RELEASE/}}, which again informed the
 RO-Crate
 1.1 specification on workflows \footnote{\url{https://www.researchobject.org/ro-crate/1.1/workflows.html}} and led to the RO-Crate Python library
@@ -1072,7 +1072,7 @@ particular \emph{workflow execution with test results}.
 
 This workflow run profile is a continuation of our previous work with
 capturing workflow provenance in a Research Object in CWLProv
-\cite{ch5-68} and
+\cite{Khan 2019} and
 TavernaPROV \cite{ch5-110}.
 In both cases, we used the PROV Ontology
 \cite{w3-prov-o},
@@ -1087,7 +1087,7 @@ profile will use a high level Schema.org
 provenance\footnote{\url{https://www.researchobject.org/ro-crate/1.1/provenance.html\#software-used-to-create-files}}
 for the input/output boundary of the overall workflow
 execution. This \emph{Level 1 workflow provenance}
-\cite{ch5-68} can be
+\cite{Khan 2019} can be
 expressed generally across workflow languages with minimal workflow
 engine changes, with the option of more detailed provenance traces as
 separate PROV artefacts in the RO-Crate as data entities. In the current
@@ -1162,7 +1162,7 @@ workflows to biomedical regulators. For instance, a genomics sequencing
 pipeline, as part of a personalised cancer treatment study, can be
 submitted to the US Food and Drugs Administration (FDA) for approval.
 BCOs are formalised in the standard IEEE 2791-2020
-\cite{ch5-64}
+\cite{ieee2791}
 as a combination of JSON
 Schemas\footnote{\url{https://w3id.org/ieee/ieee-2791-schema/}}
 that define the structure of JSON metadata files describing
@@ -1546,7 +1546,7 @@ RO-Bundle evolved to Research Object
 BagIt archives\footnote{\url{https://w3id.org/ro/bagit}}, a variant of RO Bundle as a BagIt archive
 \cite{ch5-74}, used by Big Data Bags
 \cite{Chard 2016},
-CWLProv \cite{ch5-68} and
+CWLProv \cite{Khan 2019} and
 WholeTale \cite{ch5-76,Chard 2019}.
 
 \subsubsection{FAIR Digital Objects}\label{ch5:fair-digital-objects}
@@ -1687,7 +1687,7 @@ in BioContainers.\footnote{\url{https://biocontainers.pro/\#/registry}}
 
 Docker and Conda have been integrated into workflow systems such as
 Snakemake
-\cite{ch5-73}, Galaxy
+\cite{Koster 2012}, Galaxy
 \cite{Afgan 2018} and Nextflow
 \cite{Di Tommaso 2017}, meaning
 a downloaded workflow definition can now be executed on a ``blank''
