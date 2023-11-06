@@ -367,7 +367,7 @@ The export of workflow execution provenance data as Workflow Run Crates has been
 This feature provides a more interoperable alternative to the basic export of Galaxy workflow
 \emph{invocations}: the workflow definition; a set of serialisations of the invocation-related metadata in Galaxy native, json-formatted files;
 and the input and output data files.
-This is achieved by extracting provenance from Galaxy entities related to the workflow run, along with associated metadata, converting them to RO-Crate metadata using the ro-crate-py library~\cite{De Geest 2022}; by describing all files contained in the basic invocation export within the RO-crate metadata;
+This is achieved by extracting provenance from Galaxy entities related to the workflow run, along with associated metadata, converting them to RO-Crate metadata using the ro-crate-py library~\cite{ro-crate-py}; by describing all files contained in the basic invocation export within the RO-crate metadata;
 and finally by making the Workflow Run Crate available for export to the user through Galaxy's web interface and API.
 
 We extract the prospective provenance contained in Galaxy's YAML-based gxformat2
@@ -473,7 +473,7 @@ The retrospective provenance data is included with the RO-Crate archive and incl
 Both prospective and retrospective provenance data are included in the final RO-Crate JSON-LD metadata file. Autosubmit uses the Workflow Run RO-Crate profile.
 
 As one of the most recent implementations, much of the code added in Autosubmit 4 for RO-Crates was adapted from existing implementations like COMPSs and StreamFlow.
-ro-crate-py~\cite{De Geest 2022} was used for the heavy lifting work of creating the RO-Crate archive in Python, and adding information for the JSON-LD metadata.
+ro-crate-py~\cite{ro-crate-py} was used for the heavy lifting work of creating the RO-Crate archive in Python, and adding information for the JSON-LD metadata.
 
 The main challenges for adopting RO-Crate in Autosubmit were incorporating Autosubmit's ``Project'' feature, and the lack of validation tools and of documentation and examples on how to use the standard with \emph{coarse-grained} workflow management systems (as described in~\cite{Goble 2020}) that do not track inputs and outputs, which is the case of Autosubmit --- as well as Cylc and ecFlow.
 
