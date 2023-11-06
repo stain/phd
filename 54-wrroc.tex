@@ -276,7 +276,7 @@ All these implementations are described in the following sections.
 
 \subsubsection{Runcrate}\label{ch54:runcrate}
 
-Runcrate \cite{Leo 2023a} is a generic Workflow Run RO-Crate toolkit which also serves as a reference implementation of the proposed profiles.
+Runcrate \cite{runcrate} is a generic Workflow Run RO-Crate toolkit which also serves as a reference implementation of the proposed profiles.
 It consists of a Python package with a nested command line interface, providing a straightforward path to integration in Python software and other workflows.
 The runcrate toolkit includes functionality to convert CWLProv ROs to RO-Crates conforming to the Provenance Run Crate profile (\emph{runcrate convert}), effectively providing an indirect implementation of the format for cwltool.
 Indeed, the CWLProv model provided a basis for the Provenance Run Crate profile, and the implementation of a conversion tool in runcrate at times drove the improvement and extension of the profile as new requirements or gaps in the old designs emerged.
@@ -506,7 +506,7 @@ Table \vref{ch54:implementation_summary_table} shows an overview of the differen
   {\bf Implementation} & {\bf Profile} & {\bf Version URL/DOI} &
   {\bf Example}\\
   \hline
-  runcrate & Provenance & \tiny \footurl{https://doi.org/10.5281/zenodo.7762627} & \cite{Leo 2023b} \\
+  runcrate & Provenance & \tiny \footurl{https://doi.org/10.5281/zenodo.7762627} & \cite{Leo 2023c} \\
   Galaxy & Workflow & \tiny \footurl{https://github.com/galaxyproject/galaxy/releases/tag/v23.0.1} & \cite{De Geest 2023} \\
   COMPSs & Workflow & \tiny \footurl{https://github.com/bsc-wdc/compss/tree/3.2}  & \cite{Poiata 2023} \\
   Streamflow & Provenance & \tiny \footurl{https://github.com/alpha-unito/streamflow/releases/tag/0.2.0.dev10} & \cite{Colonnelli 2023} \\
@@ -542,9 +542,9 @@ To assess the interoperability of the format, using the same exemplary workflow 
 In the first case, the workflow was executed with the StreamFlow WMS, for which the Provenance Run Crate implementation is discussed in Section \vref{ch54:provenance-run-crate}.
 In the second case, we executed the CWL workflow with cwltool and converted the resulting CWLProv RO to a Provenance Run Crate with the runcrate tool (section \vref{ch54:runcrate}).
 
-The RO-Crates obtained in the two cases~\cite{Colonnelli 2023, Leo 2023b}
+The RO-Crates obtained in the two cases~\cite{Colonnelli 2023, Leo 2023c}
 are very similar to each other, differing only in a few details: for instance,~\cite{Colonnelli 2023} includes the StreamFlow configuration file and has separate files for the workflow and the two tools, while
-\cite{Leo 2023b} has the workflow and the tools stored in a single file (CWL's "packed" format).
+\cite{Leo 2023c} has the workflow and the tools stored in a single file (CWL's "packed" format).
 Apart from these minor differences, the description of the computation is essentially the same.
 Four actions are represented: the workflow itself, the two executions of the tissue extraction tool and the execution of the tumour classification tool.
 Each action is linked to the corresponding workflow or tool via the
