@@ -129,8 +129,8 @@ The \emph{Person} or
 Figure~\vref{ch54:fig:process_crate_er} shows the entities used in Process Run Crate together with their relationships.
 
 \begin{figure}[!ht]
-\includegraphics[width=\textwidth]{figures/ch54/image1.png}
-\caption{{\bf Entity-Relationship diagram for Process Run Crate.}
+  \includegraphics[width=26em]{figures/ch54/wrroc-figure1.drawio.pdf}
+  \caption[Entity-Relationship diagram for Process Run Crate]{{\bf Entity-Relationship diagram for Process Run Crate.}
 The central entity is the \emph{CreateAction}, which represents the execution of an application.
 It relates with the application itself via \emph{instrument}, with the entity that executed it via \emph{agent} and with its inputs and outputs via \emph{object}
 and \emph{result}, respectively. 
@@ -148,8 +148,8 @@ Figure~\vref{ch54:fig:head_sort} contains a diagram of the two actions and their
 Note how the actions are connected by the fact that the output of ``Run Head'' is also the input of ``Run Sort'': they form an ``implicit workflow'', whose steps have been executed manually rather than by a higher level software tool.
 
 \begin{figure}[!ht]
-\includegraphics[width=29em]{figures/ch54/image2.png}
-\caption{{\bf Diagram of a simple workflow} where the head and sort programs were run manually by a user.
+  \includegraphics[width=29em]{figures/ch54/wrroc-figure-example.drawio.pdf}
+\caption[Diagram of a simple workflow]{{\bf Diagram of a simple workflow} where the head and sort programs were run manually by a user.
 The executions of the individual software programs are connected by the fact that the file output by head was used as input for sort, documenting the computational flow in an implicit way.
 Such executions can be represented with Process Run Crate.}
 \label{ch54:fig:head_sort}
@@ -207,8 +207,8 @@ Additionally, the inheritance mechanism allows to reuse the specifications alrea
 Figure~\vref{ch54:fig:workflow_crate_er} shows the entities used in Workflow Run Crate together with their relationships.
 
 \begin{figure}[!h]
-\includegraphics[width=22em]{figures/ch54/image3.png}
-\caption{{\bf Entity-Relationship diagram for Workflow Run Crate.}
+\includegraphics[width=26em]{figures/ch54/wrroc-figure2.drawio.pdf}
+\caption[Entity-Relationship diagram for Workflow Run Crate]{{\bf Entity-Relationship diagram for Workflow Run Crate.}
 The main differences with Process Run Crate are the representation of formal parameters and the fact that the application is expected to be an entity with types \emph{File}, \emph{SoftwareSourceCode} and \emph{ComputationalWorkflow}.
 Effectively, the entity belongs to all three types, and its properties are the union of the properties of the individual types.
 }
@@ -237,11 +237,13 @@ The \emph{object} attribute of the
 
 Figure~\vref{ch54:fig:provenance_crate_er} shows the various entities involved in the representation of a workflow run via Provenance Run Crate together with their relationships.
 
-\begin{figure}[!h]
-\includegraphics[width=21em]{figures/ch54/image4.png}
-\caption{{\bf Entity-Relationship diagram for Provenance Run Crate.}
-In addition to the workflow run, this profile represents the execution of individual steps and their related tools.}
-\label{ch54:fig:provenance_crate_er}
+\begin{figure}[ht]
+  \begin{center}    
+    \includegraphics[width=15cm]{figures/ch54/wrroc-figure3.drawio.pdf}
+    \caption[Entity-Relationship diagram for Provenance Run Crate]{{\bf Entity-Relationship diagram for Provenance Run Crate.}
+    In addition to the workflow run, this profile represents the execution of individual steps and their related tools.}
+    \label{ch54:fig:provenance_crate_er}
+  \end{center}
 \end{figure}
 
 This profile also includes specifications on how to describe connections between parameters.
@@ -260,8 +262,8 @@ a \emph{ParameterConnection} type with
 This profile is the most detailed of the three, and offers the highest level of granularity. Figure~\vref{ch54:fig:profile_venn} shows the relationship between the specifications of the profiles as a Venn diagram.
 
 \begin{figure}[!h]
-  \includegraphics[width=21em]{figures/ch54/venn.png}
-  \caption{{\bf Venn diagram of the specifications for the various RO-Crate profiles.}
+  \includegraphics[width=26em]{figures/ch54/wrroc-venn.drawio.pdf}
+  \caption[Venn diagram of the specifications for the various RO-Crate profiles]{{\bf Venn diagram of the specifications for the various RO-Crate profiles.}
   Workflow Run Crate inherits the specifications of both Process Run Crate and Workflow RO-Crate. Provenance Run Crate, in turn, inherits the specifications of Workflow Run Crate.}
   \label{ch54:fig:profile_venn}
   \end{figure}
@@ -320,37 +322,37 @@ The full results of the analysis can be found at \url{https://github.com/RenskeW
 %\begin{adjustwidth}{-1.4cm}{0in} % Comment out/remove adjustwidth environment if table fits in text column.
 \centering
 \caption{
-{\bf Summarised results of our qualitative analysis of runcrate.}}
-\begin{tabular}{r|l|l|c|c|c}
+Summarised results of our qualitative analysis of runcrate}
+\begin{tabular}{r|l|l|c|c|c|c}
 \hline
 %% TODO: Check ticks are in right places
-{\bf Type} & {\bf Subtype} & {\bf Name} & {\bf CWL} & {\bf CWLProv} & {\bf RO-Crate} \\ \hline
-T1 & SC1 & Workflow design & $\blacksquare$ & &\\ 
-& SC2 & Entity annotations & $\square$ & &\\ 
-& SC3 & Workflow execution annotations  & & $\varnothing$ &  \\ \hline
-T2 & D1 & Data identification & $\square$ & & \\
-& D2 & File characteristics & $\square$ & $\square$ & $\square$ \\
-& D3 & Data access & $\square$ & & \\ 
-& D4 & Parameter mapping & $\blacksquare$ & $\blacksquare$ & $\blacksquare$ \\ \hline 
-T3 & SW1 & Software identification & $\square$ & & \\ 
-& SW2 & Software documentation & $\square$ & & \\  
-& SW3 & Software access & $\square$ & & \\ \hline 
-T4 & WF1 & Workflow software metadata & $\blacksquare$ & $\square$ & $\square$ \\ 
-& WF2 & Workflow parameters & $\blacksquare$ & $\square$ & $\square$ \\ 
-& WF3 & Workflow requirements & $\blacksquare$ & & \\ \hline 
-T5 & ENV1 & Software environment & $\blacksquare$ & $\varnothing$ & \\ 
-& ENV2 & Hardware environment & $\square$ & $\varnothing$ &\\ 
-& ENV3 & Container image & $\square$ & $\square$ & \\ \hline 
-T6 & EX1 & Execution timestamps & $\blacksquare$ & $\blacksquare$ &\\ 
-& EX2 & Consumed resources & &  $\varnothing$  & \\ 
-& EX3 & Workflow engine & $\square$ & $\blacksquare$ & \\  
-& EX4 & Human agent & $\blacksquare$ & $\blacksquare$ & \\ \hline
+{\bf Type} & {\bf Subtype} & {\bf Name} & {\bf CWL} & {\bf CWLProv} & {\bf RO-Crate} & {\bf WRROC}  \\ \hline
+T1 & SC1 & Workflow design & $\bullet$ &  $\cdot$  &  $\cdot$ & $\circ$ \\
+& SC2 & Entity annotations & $\circ$ &  $\cdot$  &  $\cdot$  & $\cdot$ \\
+& SC3 & Workflow execution ann.  &  $\cdot$  & $\cdot$ &  $\cdot$ & $\cdot$ \\ \hline
+T2 & D1 & Data identification & $\circ$ & $\cdot$ &  $\cdot$ & $\cdot$ \\
+& D2 & File characteristics & $\circ$ & $\circ$ & $\circ$ & $\cdot$ \\
+& D3 & Data access & $\circ$ &  $\cdot$  &  $\cdot$  & $\cdot$ \\
+& D4 & Parameter mapping & $\bullet$ & $\bullet$ & $\bullet$ & $\cdot$\\ \hline
+T3 & SW1 & Software identification & $\circ$ &  $\cdot$  &  $\cdot$ & $\cdot$ \\
+& SW2 & Software documentation & $\circ$ &  $\cdot$  &  $\cdot$ & $\cdot$ \\
+& SW3 & Software access & $\circ$ &  $\cdot$  &  $\cdot$ & $\cdot$ \\ \hline
+T4 & WF1 & Workflow software & $\bullet$ & $\circ$ & $\circ$ & $\cdot$\\
+& WF2 & Workflow parameters & $\bullet$ & $\circ$ & $\circ$ & $\cdot$\\
+& WF3 & Workflow requirements & $\bullet$ &  $\cdot$  &  $\cdot$  & $\cdot$\\ \hline
+T5 & ENV1 & Software environment & $\bullet$ & $\cdot$ &  $\cdot$ & $\cdot$ \\
+& ENV2 & Hardware environment & $\circ$ & $\cdot$ &  $\cdot$  & $\cdot$\\
+& ENV3 & Container image & $\circ$ & $\circ$ &  $\cdot$ & $\cdot$ \\ \hline
+T6 & EX1 & Execution timestamps & $\bullet$ & $\bullet$ &  $\cdot$ & $\cdot$ \\
+& EX2 & Consumed resources &  $\cdot$  &  $\cdot$  &  $\cdot$& $\cdot$  \\
+& EX3 & Workflow engine & $\circ$ & $\bullet$ &  $\cdot$ & $\cdot$  \\
+& EX4 & Human agent & $\bullet$ & $\bullet$ &  $\cdot$ & $\cdot$ \\ \hline
 \end{tabular}
 \begin{flushleft} We compared RO-Crates with the CWLProv ROs from which they were generated.
-The analysis was based on a provenance taxonomy reflecting relevant provenance metadata based on realistic use cases for ROs associated with a real-life bioinformatics workflow.
-We only considered provenance metadata which was already represented in CWLProv RDF or CWL-specific documents (packed.cwl, primary-job.json, and primary-output.json).
-Since packed.cwl is also included in RO-Crate, we only considered how the metadata was represented in ro-crate-metadata.json.\\
-\textbf{Legend:} $\square$ = partially represented, $\blacksquare$ = fully represented. $\varnothing$ = missing or unstructured representation in CWLProv
+    The analysis was based on a provenance taxonomy reflecting relevant provenance metadata based on realistic use cases for ROs associated with a real-life bioinformatics workflow.
+    We only considered provenance metadata which was already represented in CWLProv RDF or CWL-specific documents (packed.cwl, primary-job.json, and primary-output.json).
+    Since packed.cwl is also included in RO-Crate, we only considered how the metadata was represented in ro-crate-metadata.json.\\
+    \textbf{Legend:} $\bullet$ fully represented  $\;\;\circ$ partially represented  $\;\;\cdot$ missing/unstructured representation
 \end{flushleft}
 \label{ch54:analysis_table}
 %\end{adjustwidth}
@@ -502,8 +504,7 @@ Table \vref{ch54:implementation_summary_table} shows an overview of the differen
 \begin{table}[!ht]
   %\begin{adjustwidth}{-1.4cm}{0in} % Comment out/remove adjustwidth environment if table fits in text column.
   \centering
-  \caption{
-  {\bf Workflow Run Crate implementation}}
+  \caption{Workflow Run Crate implementations}
   \begin{tabular}{l|l|l|l}
   \hline
   {\bf Implementation} & {\bf Profile} & {\bf Version URL/DOI} &
@@ -719,8 +720,7 @@ Our aim is to be compatible with both Schema.org and W3C PROV. Provenance Run Cr
   %\begin{adjustwidth}{-2.25in}{0in} % Comment out/remove adjustwidth environment if 
   %\begin{adjustwidth}{-1.5cm}{0in}
   \centering
-  \caption{
-  {\bf Mapping between W3C PROV concepts and their equivalents in Workflow Run RO-Crate.}}
+  \caption{Mapping between W3C PROV concepts and their equivalents in Workflow Run RO-Crate.}
   \begin{tabular}{p{35mm}|p{40mm}|p{40mm}}
   \hline
   {\bf W3C PROV} & {\bf RO-Crate} & \textbf{Relationship} \\
