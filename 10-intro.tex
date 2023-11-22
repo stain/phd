@@ -3,19 +3,67 @@ study and give an overview of the
 thesis}
 
 \section{Research Outline and Questions}
-\subsection{?1}
-\subsection{?1}
+
+In this thesis I explore three research questions:
+
+
+\paragraph{RQ1:} Can the FAIR Digital Object concept be realized using Web technologies?
+
+\paragraph{RQ2:} How can we use Linked Data practices to implement FAIR Research Objects for scholarly communication?
+
+\paragraph{RQ3:} How can we use improve reproducibility and shareability of Computational Workflows?
+
+
+\subsection{Aims of FAIR Digital Objects on the Web}
+
+(FDO)
+
+
+\subsection{Aims of FAIR Research Objects}
+
+(RO)
+
+\begin{itemize}
+    \item Describe and package data collections, datasets, software etc. with their metadata
+    \item Platform-independent object exchange between repositories and services
+    \item Support reproducibility and analysis: link data with codes and workflows
+    \item Transfer of sensitive/large distributed datasets with persistent identifiers
+    \item Aggregate citations and persistent identifiers
+    \item Propagate provenance and existing metadata
+    \item Publish and archive mixed objects and references
+    \item Reuse existing standards, but hide their complexity
+\end{itemize}
+
+Implementations of FAIR Research Objects should be infrastructure independent – a solution should avoid dependence of silos such as particular repositories or platforms. 
+
+For wide adoption it needs to be familiar, developer friendly, web native, machine- and human-readable, search-engine accessible. 
+
+Embrace diversity, legacy, unknowns, open-ended, multi-interpretation, self-describing, interlingua.
+
+
+\subsection{Aims of FAIR Computational Workflows}
+
+(FAIR CW)
+
+
 \section{Main Contributions}
+
+FDO evaluation
+RO-Crate
+Workflow Run Crate profiles
+Broad use 
+
+
 
 \section{Thesis Overview}
 
 Chapter \vref{chapter:background} gives the background of concepts \emph{FAIR Digital Object} (FDO) and \emph{Linked Data}, including a brief history of the \emph{Semantic Web} and a critical analysis of these technologies and their use. 
 
-Chapter \vref{chapter:fdo} contributes a framework-based evaluation of Linked Data and FDO as possible architectures for implementing a distributed object system for the purpose of FAIR data publishing, and discusses how the two approaches can benefit from each others strengths. 
+Chapter \vref{chapter:fdo} consider RQ1 and contributes a framework-based evaluation of Linked Data and FDO as possible architectures for implementing a distributed object system for the purpose of FAIR data publishing, and discusses how the two approaches can benefit from each others strengths. 
 
-Chapter \vref{chapter:ro-crate} introduces the contribution of \emph{RO-Crate}, a pragmatic data packaging mechanism using Linked Data standards to implement FDO and be extensible for domain-specific metadata.  
+Chapter \vref{chapter:ro-crate} RQ2 by introduces the contribution of \emph{RO-Crate}, a pragmatic data packaging mechanism using Linked Data standards to implement FDO and be extensible for domain-specific metadata.  
 
-Chapter \vref{chapter:workflows} explores the relationship between Computational Workflows and FAIR practices using RO-Crate and FDO, with use cases from molecular dynamics and specimen digitization. 
+Chapter \vref{chapter:workflows} address RQ3 by exploring the relationship between Computational Workflows and FAIR practices using RO-Crate and FDO, with use cases from molecular dynamics and specimen digitization. The contribution of the \emph{Workflow Run Crate profiles} is presented as an interoperable way to capture and publish workflow execution provenance. 
 
 Chapter \vref{chapter:conclusions} summarizes and concludes the contributions from this thesis, and reflects on later developments and future work.
 
@@ -39,4 +87,4 @@ Section \ref{ch7:incrementally-building-fair-digital-objects-with-specimen-data-
 Refinery workflows} \cite{Woolland 2022} (see appendices \ref{ch11:incrementally-fdo} and \ref{ch10:incrementally-fdo}). I am the main author of this manuscript.
 
 Section \ref{ch54:wrroc} is based on the preprint \emph{
-Recording provenance of workflow runs with RO-Crate} \cite{workflow-run-crate} . I am the last author of this manuscript, and have mainly contributed to sections \ref{ch54:introduction}, \ref{ch54:discussion}, \ref{ch54:trusted-workflow-run-crate}, \ref{ch54:bco-crate} while supervising the Workflow Run Crate task force together with its chairs Simone Leo and Laura Rodríguez-Navas.
+Recording provenance of workflow runs with RO-Crate} \cite{workflow-run-crate} . I am the last author and co-editor of this manuscript, and have mainly contributed to sections \ref{ch54:introduction}, \ref{ch54:discussion}, \ref{ch54:trusted-workflow-run-crate}, \ref{ch54:bco-crate} while supervising the Workflow Run Crate task force together with its chairs Simone Leo and Laura Rodríguez-Navas.
