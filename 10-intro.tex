@@ -4,22 +4,29 @@ In this thesis I investigate Linked Data approaches to implementing FAIR Researc
 
 I explore three research questions on this topic:
 
-
 \paragraph{RQ1:} Can the FAIR Digital Object concept be realized using Web technologies?
 
-\paragraph{RQ2:} How can we use Linked Data practices to implement FAIR Research Objects for scholarly communication?
+\paragraph{RQ2:} Can pragmatic use of Linked Data practices implement FAIR Research Objects for scholarly communication?
 
 \paragraph{RQ3:} How can we use improve reproducibility and shareability of Computational Workflows?
 
 
 \subsection{Aims of FAIR Digital Objects on the Web (RQ1)}
 
-(FDO)
-Why Semantic Web didn't do it.
+FAIR Digital Object (FDO) has been proposed as a machine-actionable ecosystem of scholarly outputs \cite{Schultes 2019}, in theory realizing the FAIR principles \cite{Wilkinson 2016} for a programmable mesh of strongly typed objects that go beyond the open data publication practices that the FAIR guidelines have popularized.
+
+FDO specifications \cite{fdo-Overview} are conceptual in nature, however most existing Digital Object implementation \cite{Kahn 2006} rely on the protocols DOIP \cite{DigitalObjectInterface} and Handle system \cite{rfc3650}, neither of which are particularly familiar to software developers.
+
+The Web, on the other side, is ubiquitous in modern software engineering, used for everything from user interfaces, mobile applications, cross-platform integrations and microservices hosted by cloud computing. 
+
+A research question therefore is if the promising FDO concept can be realised using existing Web technology, taking into account the lessons learnt from the early Semantic Web developments and more recent Linked Data practices. 
+
 
 \subsection{Aims of FAIR Research Objects (RQ2)}
 
-(RO)
+Research Objects (RO) \cite{Bechhofer 2013} were proposed as a mechanism to capture a range of diverse scholarly outputs in a single archivable item, with detailed metadata to. The RO concept was realized using Semantic Web ontologies \cite{Belhajjame 2015} and primarily implemented for the purpose of long-term preservation of computational workflows and their outputs.
+
+However the principles of Research Objects go much beyond workflows, which were utillised as a mechanism to capture computational methods. Following the lessons learnt on RO implementations and the FAIR principles, the updated aims of FAIR Research Objects can be summarised as:
 
 \begin{itemize}
     \item Describe and package data collections, datasets, software etc. with their metadata
@@ -32,11 +39,7 @@ Why Semantic Web didn't do it.
     \item Reuse existing standards, but hide their complexity
 \end{itemize}
 
-Implementations of FAIR Research Objects should be infrastructure independent – a solution should avoid dependence of silos such as particular repositories or platforms. 
-
-For wide adoption it needs to be familiar, developer friendly, web native, machine- and human-readable, search-engine accessible. 
-
-Embrace diversity, legacy, unknowns, open-ended, multi-interpretation, self-describing, interlingua.
+A research question is then if a more pragmatic use of Linked Data practices can better implement Research Objects for a wider developer audience by using more familiar Web technologies and give lightweight recommendations rather than stringent ontologies.
 
 
 \subsection{Aims of FAIR Computational Workflows (RQ3)}
