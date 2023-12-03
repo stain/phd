@@ -26,11 +26,11 @@ I address RQ1 in chapter \vref{chapter:fdo}.
 
 \subsection{Aims of FAIR Research Objects (RQ2)}
 
-\emph{Research Objects} (RO) \cite{Bechhofer 2013} have been proposed as a mechanism to capture a range of diverse scholarly outputs in a single archivable item, with detailed metadata to. The RO concept was first realized using Semantic Web ontologies \cite{ch5-92,Belhajjame 2015} these approaches primarily targetted long-term preservation of computational workflows, utillised by RO as a mechanism to capture computational methods.
+\emph{Research Objects} (RO) \cite{Bechhofer 2013} have been proposed as a mechanism to capture a range of diverse scholarly outputs in a single archivable item, with detailed metadata to. The RO concept was first realized using Semantic Web ontologies \cite{ch5-92,Belhajjame 2015} -- these approaches primarily targetted long-term preservation of computational workflows, utillised by RO as a mechanism to capture computational methods.
 
 The principles of Research Objects extend far beyond workflows, RO implementations still mainly focused on capturing software \cite{goble-ro2018}. To some extent the lack of wider adoption of ontology-based ROs can also be explained by developers of researcher-facing software and platforms (e.g. repositories, data management systems) having a lack of familiarity with use of Semantic Web technology -- or worse, they have tried and then struggled \cite{carrieroLandscapeOntologyReuse2020a,Tudorache 2020}.
 
-Following the lessons learnt on early RO implementations and the emerging FAIR principles \cite{Wilkinson 2016,Jacobsen 2020}, a small community in digital libraries agreed to formulate a lightweight approach to Research Objects \cite{Sefton 2018,10.5281/zenodo.3337883} for the purpose of data packaging. The updated aims of \emph{FAIR Research Objects} can be summarised as:
+Following the lessons learnt on early RO implementations and the emerging FAIR principles \cite{Wilkinson 2016,Jacobsen 2020}, after engaging the digital libraries community we agreed to formulate a lightweight approach to Research Objects \cite{Sefton 2018,10.5281/zenodo.3337883} for the purpose of data packaging. The updated aims of \emph{FAIR Research Objects} can be summarised as:
  
 \begin{itemize}
     \item Describe and package data collections, datasets, software etc. with their metadata
@@ -50,9 +50,13 @@ RQ2 is addressed by chapter \vref{chapter:ro-crate}.
 
 \subsection{Aims of FAIR Computational Workflows (RQ3)}
 
-\emph{Computational Workflows} (or Scientific Workflows) are used to structure and automate data analysis pipelines so they can be scalable, portable and explainable \cite{Atkinson 2017}. There exists a plethora of workflow systems \cite{Leipzig 2021} and languages \cite{ch8-43}, recent effort have also specified a Common Workflow Language \cite{Crusoe 2022} that is implemented by multiple engines. 
+A growing, if not majority, part of scientific analysis is now conducted using software and computational models. The concept of \emph{Research Software Engineering} \cite{Cohen 2020} has been established along with new professions \emph{Research Software Engineer} \cite{Baxter 2012} and \cite{Data Scientist} \cite{van der Aalst 2014} -- researchers are not just using off-the-shelf software, but also combining computational tools (e.g. pipelines) and writing their own analytical source code (e.g. R scripts) and simulations.
 
-Research Software \cite{ch6-3}
+From this observation emerges the need to treat software as FAIR research outputs \cite{Lamprecht 2019}, following best practices for documentation \cite{Lee 2018}, open development \cite{Prlić 2012} and ensuring research software is robust \cite{Taschuk 2017} so others can use it.  With this motivation the principles of FAIR Research Software \cite{Katz 2021b} have been established by the RDA FAIR for Research Software (FAIR4RS) Working Group \cite{Barker 2022} and are gradually building traction, particularly in the life sciences.   
+
+\emph{Computational Workflows} (or Scientific Workflows) are used to structure and automate data analysis pipelines so they can be scalable, portable and explainable \cite{Atkinson 2017}. There exists a plethora of workflow systems \cite{Leipzig 2021} and languages \cite{ch8-43}, recent effort have also specified the Common Workflow Language \cite{Crusoe 2022} that is implemented by multiple engines. 
+
+reproducible \cite{ch5-101}? 
 
 Notably, workflow definitions themselves can be considered FAIR scholarly outputs \cite{Goble 2020} and are published in repositories including Dockstore \cite{Yuen 2021} and WorkflowHub \cite{Goble 2021}.
 
