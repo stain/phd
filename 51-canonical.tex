@@ -21,7 +21,7 @@ barriers.
 \subsection{Introduction}\label{ch6:introduction}
 
 The need for \emph{reproducibility} of research software usage is well
-established \cite{Stodden 2016,Leipzig 2021,Katz 2021a}, and adaptation of \emph{workflow management
+established \cite{Stodden 2016,Leipzig 2021,ch6-3}, and adaptation of \emph{workflow management
 systems} (\textbf{WfMS}) together with \emph{software packaging and
 containers} \cite{ch6-4} have been proposed as key ingredients for making
 research software usage \emph{FAIR} and reproducible \cite{Cohen-Boulakia 2017,Gruning 2018b,Lamprecht 2019}.
@@ -281,7 +281,7 @@ The notion of \emph{abstract workflows} \cite{Garijo 2011}, structural workflow
 descriptions separated from their concrete execution realisations and
 augmented with Linked Data annotations, have been emphasised as
 essential for reuse and consistency across workflow systems. Identifying
-\emph{common motifs} for workflow operations \cite{Katz 2021a0} (e.g.~Data
+\emph{common motifs} for workflow operations \cite{ch6-30} (e.g.~Data
 preparation, Format transformation, Filter, Combine) are important to
 simplify and understand otherwise fine-grained workflow provenance
 traces.
@@ -291,13 +291,13 @@ have been done within the scope of a single WfMS, allowing customised
 user interaction, data visualisation, configuration and findability, for
 instance
 \footurl{http://www.taverna.org.uk/documentation/taverna-2-x/components/}{Taverna
-components} had prototypical building blocks \cite{Katz 2021a1} which were
+components} had prototypical building blocks \cite{ch6-31} which were
 instantiated at runtime by reference from a registry.
 \footurl{https://docs.knime.com/2020-07/analytics_platform_components_guide/index.html}{KNIME
 components and metanodes}, shared on the
 \footurl{https://hub.knime.com/}{KNIME Hub} are frequently designed to be
 interoperable, but with a perhaps weaker notion of component families.
-The \footurl{https://toolshed.g2.bx.psu.edu/}{Galaxy toolshed} \cite{Katz 2021a2} is
+The \footurl{https://toolshed.g2.bx.psu.edu/}{Galaxy toolshed} \cite{ch6-32} is
 likewise populated with different sets of tool wrappers that are largely
 made to be interoperable within a category.
 
@@ -417,7 +417,7 @@ A similar question of granularity applies at the workflow tool level
 \cite{ch6-4}, particularly for Findability and Accessibility, as we can
 consider at lowest granularity the \emph{scientific method} in general
 (e.g.~any algorithm for sequence alignment), followed by an
-\emph{application suite} (bio.tools entry \cite{Katz 2021a5}, homepage,
+\emph{application suite} (bio.tools entry \cite{ch6-35}, homepage,
 documentation), instantiated as a particular \emph{software
 installation} (Debian package, Docker container) with its dependencies
 at same level. The installation includes one or more \emph{software
@@ -471,7 +471,7 @@ Canonical Workflow Frameworks for Research \cite{cwfr}.
 The core purpose of a CWBB is to wrap a command line tool or other
 software that can perform an operation as part of a computational
 workflow. As such, the general advice for making software workflow-ready
-applies \cite{Katz 2021a7} (e.g.~easy to install, documented, parallelizable,
+applies \cite{ch6-37} (e.g.~easy to install, documented, parallelizable,
 reproducible output), however a CWBB is also permitted to make use of
 additional scripts or \emph{shims} to further adapt a third-party tool
 for workflow use and for data interoperability across blocks.
@@ -551,12 +551,12 @@ terms of tool composability in workflows, building on the experiences of
 the ``FAIR pioneers'' in the field of bioinformatics. Other fields, such
 as social sciences or ecology, can have a wider variety of methods and
 computational tools, often with human interactions, and may have to
-adapt the software to be workflow-ready \cite{Katz 2021a7} before using them as
+adapt the software to be workflow-ready \cite{ch6-37} before using them as
 Canonical Workflow Building Blocks. Domains adapting CWBB approach (or
 workflow systems in general) should take note of the great benefits of
 hosting collaborative events where developers meet each other and their
 potential users, demonstrated in our field with events such WorkflowsRI
-\cite{Katz 2021a9} and Biohackathons \cite{ch6-40}.
+\cite{ch6-39} and Biohackathons \cite{ch6-40}.
 
 The Common Workflow Language shows promise as a general canonical
 workflow building blocks mechanism: gathering execution details of tools
