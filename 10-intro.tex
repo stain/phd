@@ -26,10 +26,10 @@ A research question (RQ1) therefore is if the promising FDO concept can be reali
 
 \emph{Research Objects} (RO) \cite{Bechhofer 2013} have been proposed as a mechanism to capture a range of diverse scholarly outputs in a single archivable item, with detailed metadata to. The RO concept was first realized using Semantic Web ontologies \cite{ch5-92,Belhajjame 2015} these approaches primarily targetted long-term preservation of computational workflows, utillised by RO as a mechanism to capture computational methods.
 
-The principles of Research Objects extend far beyond workflow
-\cite{Leipzig 2021,Atkinson 2017}
-Following the lessons learnt on RO implementations and the since emerged FAIR principles, the updated aims of \emph{FAIR Research Objects} can be summarised as:
+The principles of Research Objects extend far beyond workflows, RO implementations still mainly focused on capturing software \cite{goble-ro2018}. To some extent the lack of wider adoption of ontology-based ROs can also be explained by developers of researcher-facing software and platforms (e.g. repositories, data management systems) having a lack of familiarity with use of formalised ontologies -- or worse, they have tried and then struggled \cite{carrieroLandscapeOntologyReuse2020a,Tudorache 2020}.
 
+Following the lessons learnt on RO implementations and the since emerged FAIR principles, the updated aims of \emph{FAIR Research Objects} can be summarised as:
+ 
 \begin{itemize}
     \item Describe and package data collections, datasets, software etc. with their metadata
     \item Platform-independent object exchange between repositories and services
@@ -41,12 +41,15 @@ Following the lessons learnt on RO implementations and the since emerged FAIR pr
     \item Reuse existing standards, but hide their complexity
 \end{itemize}
 
-The second research question (RQ2) is then if a more pragmatic use of Linked Data practices can better implement Research Objects for a wider developer audience, by using more familiar Web technologies and give lightweight recommendations.
+The second research question (RQ2) is if a more pragmatic use of Linked Data practices can better implement Research Objects for a wider developer audience, by using more familiar Web technologies and give lightweight recommendations.
 
 
 \subsection{Aims of FAIR Computational Workflows (RQ3)}
 
-\emph{Computational Workflows} (or Scientific Workflows) are used to structure and automate a data analysis pipeline so that it can be scalable, portable and explainable \cite{Atkinson 2017,Leipzig 2021}. While there exists a plethora of workflow systems and languages \cite{ch8-43}, recent effort have agreed on common workflow language \cite{Crusoe 2022}. Notably, workflow definitions themselves can be considered FAIR scholarly outputs \cite{Goble 2020} and are published in repositories including Dockstore \cite{Yuen 2021} and WorkflowHub \cite{Goble 2021}.
+\emph{Computational Workflows} (or Scientific Workflows) are used to structure and automate a data analysis pipeline so that it can be scalable, portable and explainable \cite{Atkinson 2017}. There exists a plethora of workflow systems \cite{Leipzig 2021} and languages \cite{Amstutz 2021}, recent effort have also specified a Common Workflow Language \cite{Crusoe 2022} that is implemented by multiple engines. 
+
+Research Software \cite{Katz 2021a}
+Notably, workflow definitions themselves can be considered FAIR scholarly outputs \cite{Goble 2020} and are published in repositories including Dockstore \cite{Yuen 2021} and WorkflowHub \cite{Goble 2021}.
 
 %Workflows produce provenance, but in which format? 
 
