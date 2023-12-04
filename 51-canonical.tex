@@ -170,8 +170,16 @@ These are fairly disparate workflow languages, yet by the use of the same canoni
 One challenge found is how to publish such canonical workflows in registries like the \footurl{https://workflowhub.eu/}{WorkflowHub}.
 The hub supports the registration of Digital Objects in the form of RO-Crate \cite{Soiland-Reyes 2022}, with the option of abstract CWL for describing the canonical workflow template, along with direct references to the workflow's GitHub repository.
 
-For instance in the RO-Crate for \url{https://doi.org/10.48546/workflowhub.workflow.200.1} \cite{ch6-26}, which can also be \footurl{https://rawcdn.githack.com/bioexcel/biobb_hpc_workflows/53958e7c278e53c277a7217057b785482f193f7f/ro-crate-preview.html}{rendered} from GitHub, we have an entry for the \emph{\footurl{https://rawcdn.githack.com/bioexcel/biobb_hpc_workflows/53958e7c278e53c277a7217057b785482f193f7f/ro-crate-preview.html\#workflows/MD/md_list.py}{main workflow}} according to the \footurl{https://w3id.org/workflowhub/workflow-ro-crate/1.0}{Workflow RO-Crate profile}, detailing each canonical workflow building block used (e.g.~\footurl{https://rawcdn.githack.com/bioexcel/biobb_hpc_workflows/53958e7c278e53c277a7217057b785482f193f7f/ro-crate-preview.html\#https\%3A//pypi.org/project/biobb-md/3.6.0/}{biobb-md metadata}).
-Here the FAIR aspect of the building blocks to help software citation is exercised, as the building block wrapper has one set of authors, documentation and licence (Apache-2.0), while the wrapped software (e.g.~\footurl{https://rawcdn.githack.com/bioexcel/biobb_hpc_workflows/53958e7c278e53c277a7217057b785482f193f7f/ro-crate-preview.html\#https\%3A//doi.org/10.5281/zenodo.2564764}{GROMACS metadata}) has different authors, licence (GPL-2.1+) and documentation.
+\clearpage % footnotes explode otherwise!
+For instance in the RO-Crate for \url{https://doi.org/10.48546/workflowhub.workflow.200.1} \cite{ch6-26}, which can also be
+\footurl{https://rawcdn.githack.com/bioexcel/biobb_hpc_workflows/53958e7c278e53c277a7217057b785482f193f7f/ro-crate-preview.html}{rendered} from GitHub, we have an entry for the 
+\footurl{https://rawcdn.githack.com/bioexcel/biobb_hpc_workflows/53958e7c278e53c277a7217057b785482f193f7f/ro-crate-preview.html\#workflows/MD/md_list.py}{\emph{main workflow}}
+according to the
+\footurl{https://w3id.org/workflowhub/workflow-ro-crate/1.0}{Workflow RO-Crate profile}, 
+detailing each canonical workflow building block used 
+(e.g.~\footurl{https://rawcdn.githack.com/bioexcel/biobb_hpc_workflows/53958e7c278e53c277a7217057b785482f193f7f/ro-crate-preview.html\#https\%3A//pypi.org/project/biobb-md/3.6.0/}{biobb-md metadata}).
+Here the FAIR aspect of the building blocks to help software citation is exercised, as the building block wrapper has one set of authors, documentation and licence (Apache-2.0), while the wrapped software 
+(e.g.~\footurl{https://rawcdn.githack.com/bioexcel/biobb_hpc_workflows/53958e7c278e53c277a7217057b785482f193f7f/ro-crate-preview.html\#https\%3A//doi.org/10.5281/zenodo.2564764}{GROMACS metadata})~has different authors, licence (GPL-2.1+) and documentation.
 
 However, the deposit of such RO-Crates in WorkflowHub results in one registration entry per workflow language, which are not otherwise related and may not even share the same source code repository.
 Thus, we've identified the need for adding an overall \emph{canonical workflow entry}, which can bring in workflow documentation and references shared across WfMS implementations, including a set of links to the more granular canonical workflow building blocks used by the workflow, but also to the individual WfMS implementations as separate digital objects.
