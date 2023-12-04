@@ -1,8 +1,10 @@
 \section{Discussion}
+\label{ch61:discuss}
 
 In this section I summarise and discuss the findings from the previous chapters, relating them to emerging related work and future directions.
 
 \subsection{Making a predictable ecosystem of FAIR digital objects}
+\label{ch61:ecosystem}
 
 The main advantage of scholarly researchers publishing \emph{FAIR data} is to enable machine actionability \cite{Wilkinson 2016}, which again will accelerate further research, such as through computational workflows. 
 In practice, data publishing is largely approached either by depositions in general and institutional repositories for Open Data such as Figshare and Zenodo \cite{Dillen 2019}, or to specialized domain-specific repositories such as in biodiversity \cite{ch8-7}. 
@@ -17,6 +19,7 @@ As detailed in section \vref{ch3:fdo}, FDO defines a handful of constraints and 
 Conceptually FDO can clearly be useful for realizing FAIR principles with more active digital objects that can form a consistent ecosystem, but this opens many questions on actual FDO implementations with regards to protocols and standards.
 
 \subsubsection{Linked Data need more constraints and consistency to be FAIR}
+\label{ch61:constraints}
 
 Examined in section \vref{ch3:ld}, the principles of \emph{Linked Data} emerged from the Semantic Web as a data-centric view with a focus on navigation and cross-site interoperability, rather than say elaborate logical inferencing systems using ontologies.  
 Yet the bewildering landscape of technology choices for using RDF in data platforms means that the developers suffer and still face a steep learning curve. 
@@ -28,6 +31,7 @@ Evaluations by EOSC has since found that FAIRness metrics can vary widely across
 Making the FAIR principles achieve practical benefits for researchers and platform developers thus requires more specific constraints and broader consistency.
 
 \subsubsection{FDOs as a distributed object system on the Web}
+\label{ch61:distributed}
 
 The framework-based comparisons in section \vref{ch3:results} considered the implementation details of both FDO and Linked Data, and evaluated to what extent either can be considered a global distributed object system. 
 The findings from this research show that FDO recommendations can benefit FAIR thinking to build machine actionable ecosystems and provide stronger promises of consistency and predictability across data platforms. 
@@ -36,7 +40,8 @@ These comparisons highlighted that the Web on the other hand has a flexible, sca
 However, if such implementation is to use Linked Data technologies, these must be constrained sufficiently in order to practically realize such an ecosystem within the FDO guidelines and without degrading the developer experience.
 
 
-\subsection{FDOs can be implemented on the Web using Signposting}\label{ch60:signposting}
+\subsection{FDOs can be implemented on the Web using Signposting}\label{ch61:signposting}
+\label{ch61:signposting}
 
 Section \vref{ch2:meeting-fdo-principles-using-linked-data-standards} explored how the FDO principles can be achieved for Linked Data as further constraints on existing standards.
 As chapter \ref{chapter:fdo} has highlighted throughout, there are many technical details remaining to be specified for FDO it to be consistently implemented according to its own principles.
@@ -48,11 +53,12 @@ If such conventions need to be evolved and specified no matter the protocol basi
 Section \ref{ch2:discussion} found that the basis of Web-based FDOs can be built using only Signposting \cite{vandesompel2015,Van de Sompel 2022}, adding a couple of non-intrusive HTTP headers that are agnostic to metadata standards and serializations. An implementation of such Web-based FDOs was shown in section \ref{ch4:lightweight-fdo}. 
 
 The Signposting approach has also been highlighted both by EOSC \cite{10.5281/zenodo.7463421} and as a possible FDO configuration type \cite{fdo-ConfigurationTypes}.
-The FAIR-IMPACT project launched an \footurl{https://fair-impact.eu/1st-open-call-support-closed}{open call} where 14 participating institutions are participating to help build support for Signposting \cite{soilandreyes2023b} in data repositories and platforms.
+The FAIR-IMPACT project launched an \footurl{https://fair-impact.eu/1st-open-call-support-closed}{open call} where 14 participating institutions participated to help build support for Signposting \cite{soilandreyes2023b} in data repositories and platforms.
 
 
 
 \subsection{RO-Crate as a developer-friendly approach}
+\label{ch61:crate}
 
 As pointed out in section \vref{ch3:ld-web}, while Linked Data is a powerful and flexible approach to publishing structured data on the Web, the developer experience of using Semantic Web technology still needs simplifications, like reducing number of choices for vocabularies and serialization formats. 
 
@@ -65,6 +71,7 @@ Extension points are well defined, and although extending RO-Crate do require so
 
 
 \subsubsection{Just enough Linked Data}
+\label{ch61:justenough}
 
 An important lesson from this work then is to use ``just enough'' Linked Data for the desired level of interoperability and knowledge representation.
 While previous efforts to `FAIRify' largely have been concerned about representing the data values using an RDF data model, this can lead to significant effort needed in developing ontologies and vocabularies. 
@@ -83,6 +90,7 @@ However, ontologies used in Linked Data have not commonly indicated navigation w
 % Should we discuss why not DCAT?
 
 \subsubsection{Embedding contextual information reduces need for navigation}
+\label{ch61:contextual}
 
 A divergence from common Linked Data practices is that our RO-Crate approach is making a self-described container.
 Rather than assume that information will always be available from the referenced URIs, and requiring clients to crawl their way through the many identifiers to see which ones contain more information, the RO-Crate contains a minimal description of each referenced contextual entity (section \vref{ch5:contextualentities}). 
@@ -107,6 +115,7 @@ This ability to describe a referenced entity locally is also a workaround for th
 
 
 \subsubsection{FDO ecosystems need to permit flexible references}
+\label{ch61:references}
 
 When reflecting on the above contextualization from the propositions of FAIR Digital Objects as covered back in chapter \ref{chapter:fdo}, we can predict a problem if every reference from an FDO must go to another pre-existing FDO (or at least a registered PID), in that there must then be a linear order of FDO creation within an ecosystem of compatible FDO types.
 A strict reading of the FDO principles means implementations cannot utilise the established human-readable Web for bootstrapping.
@@ -126,7 +135,8 @@ In order to reduce such ambiguity and multiple developer choices, in RO-Crate al
 RO-Crate 1.2 will also recommend that \footurl{https://www.researchobject.org/ro-crate/1.2-DRAFT/metadata.html\#common-principles-for-ro-crate-entities}{all entities} have a type, identifier and human-readable name. 
 
 
-\subsubsection{Profiles restrict general flexibility to gain specific predictability}\label{ch60:profiles}
+\subsubsection{Profiles restrict general flexibility to gain specific predictability}
+\label{ch61:profiles}
 
 Section \vref{ch5:inuse} showed how RO-Crate is adopted by different scientific domains. 
 Since the publication of the corresponding manuscripts in chapter \ref{chapter:ro-crate}, RO-Crate has also been used by the \footurl{https://www.researchobject.org/ro-crate/in-use/LDaCA.html}{Language Data Commons of Australia} \cite{LREC2022} building language corpa, \footurl{https://www.researchobject.org/ro-crate/in-use/survey-ontology.html}{Survey Ontology} \cite{surveyOntology} describing surveys, \footurl{https://nfdi4plants.org/content/learn-more/annotated-research-context.html}{DataPlant} for plant experiments, \footurl{https://w3id.org/cpm/ro-crate}{distributed provenance} of biological specimens \cite{Wittner 2020,Wittner 2023,Wittner 2023b}, \footurl{https://w3id.org/ro/doi/10.5281/zenodo.6913045}{COVID-19 causal inferences} to compare public health interventions internationally \cite{Meurisse 2023}, and \footurl{https://w3id.org/5s-crate/0.4}{Trusted Research Environments} for controlled workflow computation on sensitive health data. Several of these use cases have also expanded RO-Crate with additional terms from schema.org or defined in corresponding RO-Crate profiles. The span of these domains shows that RO-Crate is flexible for a range of use cases and can be adopted by developers not familiar with Semantic Web technologies.
@@ -137,7 +147,7 @@ While RO-Crate itself can be seen as a restriction of the more open-ended JSON-L
 Section \vref{ch5:profiles} detailed how semi-formalized profiles can be gradually formed to at first \emph{duck-type} a class of RO-Crates that have similar properties.
 Later work has formalized this as \footurl{https://www.researchobject.org/ro-crate/1.2-DRAFT/profiles}{Profile Crate} to capture the profile itself as a separate crate. This have now evolved to use the W3C Profiles Vocabulary \cite{dx-prof} to explicitly link to vocabularies, mappings and importantly constraints expressed as RDF Shapes \cite{fdo-collections}. 
 This turns RO-Crate profiles into machine-actionable type definitions, from which existing RDF tooling can do for instance validation. 
-Figure \ref{ch9:fig:profilecrate} shows how the usage of \emph{roles} within the profile crate indicates the purpose of the constituent parts.
+Figure \ref{ch61:fig:profilecrate} shows how the usage of \emph{roles} within the profile crate indicates the purpose of the constituent parts.
 Roles are here particularly important as many of these Semantic Web resources are expressed in the same file format (e.g. \texttt{text/turtle}) and may be used for different purposes (e.g.
 SKOS is used to represent either a \emph{mapping} or a \emph{vocabulary} \cite{w3-skos-primer}).
 
@@ -149,7 +159,7 @@ SKOS is used to represent either a \emph{mapping} or a \emph{vocabulary} \cite{w
       By using the indirection of \emph{ResourceDescriptor} from the Profiles Vocabulary \cite{dx-prof}, the roles of each of these artefacts are defined, e.g. \emph{constraints}. 
       The embedded \emph{vocabulary} as a \emph{DefinedTermSet} defines ad-hoc terms like \emph{sourceParameter} used by the Workflow Run Crate\footnotemark~ profile \cite{workflow-run-crate}.
       }
-    \label{ch9:fig:profilecrate}
+    \label{ch61:fig:profilecrate}
   \end{figure}
 \footnotetext{\url{https://w3id.org/ro/wfrun/process/0.2}}
 
@@ -157,10 +167,11 @@ While profiles are at first lightweight indicators of common conventions for a c
 
 
 \subsubsection{One vocabulary is not enough, but one profile may suffice}
+\label{ch61:oneprofile}
 
-RO-Crate relies heavily on \cite{schema.org} as its main vocabulary, but as highlighted in section \vref{ch5:futurework} and \vref{ch60:profiles}, domain-specific usage will eventually need to define their own terms in order to be specific enough for their use cases. However, we have found it is important to ensure a developer-friendly approach when specifying such profiles for RO-Crate -- earlier work on \footurl{https://www.researchobject.org/ro-crate/1.1/appendix/jsonld.html\#adding-new-or-ad-hoc-vocabulary-terms}{ad-hoc terms} in RO-Crate used a simple CSV approach to be added to the \footurl{https://github.com/ResearchObject/ro-terms}{ro-terms} namespace.  
+RO-Crate relies heavily on \cite{schema.org} as its main vocabulary, but as highlighted in section \vref{ch5:futurework} and \vref{ch61:profiles}, domain-specific usage will eventually need to define their own terms in order to be specific enough for their use cases. However, we have found it is important to ensure a developer-friendly approach when specifying such profiles for RO-Crate -- earlier work on \footurl{https://www.researchobject.org/ro-crate/1.1/appendix/jsonld.html\#adding-new-or-ad-hoc-vocabulary-terms}{ad-hoc terms} in RO-Crate used a simple CSV approach to be added to the \footurl{https://github.com/ResearchObject/ro-terms}{ro-terms} namespace.  
 
-As with other aspects of RO-Crate, there is a gradual approach towards Linked Data practices. While conventional wisdom in Semantic Web would be to sit down and make your own ontology following design patterns \cite{Blomquist 2009,Poveda 2010} and best practices for deployment \cite{Matentzoglu 2022}, in RO-Crate philosophy that would be more of a last resort. The middle of the ground is therefore adding the ad-hoc vocabulary directly to the profile crate, as shown in figure \vref{ch9:fig:profilecrate}. In this approach a single profile URI can, through Linked Data and Signposting, play the role of:
+As with other aspects of RO-Crate, there is a gradual approach towards Linked Data practices. While conventional wisdom in Semantic Web would be to sit down and make your own ontology following design patterns \cite{Blomquist 2009,Poveda 2010} and best practices for deployment \cite{Matentzoglu 2022}, in RO-Crate philosophy that would be more of a last resort. The middle of the ground is therefore adding the ad-hoc vocabulary directly to the profile crate, as shown in figure \vref{ch61:fig:profilecrate}. In this approach a single profile URI can, through Linked Data and Signposting, play the role of:
 
 \begin{itemize}
   \item Human-readable documentation of conventions (negotiated to HTML preview)
@@ -177,7 +188,8 @@ It should be reasonable to expect developers able to make RO-Crates with their o
 In the FAIR-IMPACT project we are evaluating if the Profile Crate approach is also suitable for FAIR publishing of semantic artefacts themselves, e.g. ontologies and mappings. This is an attractive proposal because such artefacts are also becoming multifaceted, with multiple formats and profiles (e.g. an ontology expressed with OWL2 RL in RDF Turtle syntax), documentation and similar attribution and provenance challenges that RO-Crate resolves.
 
 
-\subsection{User applications are needed for researchers to generate FAIR research objects}
+\subsection{User applications are needed for researchers to generate FAIR Research Objects}
+\label{ch61:appliations}
 
 RO-Crate and its best practices can be considered a type of \emph{middleware} used by application developers to capture and transmit metadata and relate data files that together form some tangible unit (a \emph{Research Object} \cite{Bechhofer 2013}). While RO-Crate have already been implemented by several repositories and applications such as workflow systems, it is important to also consider the role of user applications in order to increase adoptation of FAIR research objects by scholars in general.
 
@@ -191,7 +203,7 @@ In this use case, RO-Crate plays the role as an exchange and archiving format, a
 
 The \footurl{https://schema.org/docs/schemas.html}{Crate-O} tool has been developed by Language Data Commons of Australia \footurl{https://ldaca.edu.au/}{(LDaCA)} as a general-purpose RO-Crate editor and successor to Describo \cite{ch5-78} and Describo Online \cite{ch5-77}. 
 This tool can describe any folder and resources from the Web as an RO-Crate, supporting any schema.org type and property, pluggable with any rdfs vocabularies \cite{w3-rdf-schema}. 
-Notably this tool is also intended for creation of such vocabularies, and is thus a lightweight user interface for building a Profile Crate (section \vref{ch60:profiles}) using Schema.org style Schemas\footnote{
+Notably this tool is also intended for creation of such vocabularies, and is thus a lightweight user interface for building a Profile Crate (section \vref{ch61:profiles}) using Schema.org style Schemas\footnote{
   It is notable that schema.org's own vocabulary definition use rdfs directly for Linked Data interoperability, 
   rather than its own \url{http://schema.org/Class}, \url{http://schema.org/Property}, or the SKOS-like \url{http://schema.org/DefinedTerm}. 
   On property definitions, SoSS use \url{http://schema.org/domainIncludes} and \url{http://schema.org/rangeIncludes} to avoid union classes for alternative domain/range types, which can clutter OWL/RDFS equivalent properties.} 
@@ -199,13 +211,14 @@ Notably this tool is also intended for creation of such vocabularies, and is thu
 
 
 \subsection{Web-based FDOs can use RO-Crate for its metadata}
+\label{ch61:webfdo}
 
 Section \vref{ch4:lightweight-fdo} argues that many of the FDO requirements \cite{fdo-RequirementSpec} for metadata can be implemented as \emph{RO-Crate FDOs} (section \vref{ch8:fair-packaging-of-researchworkflow-objects-with-ro-crate}), with FAIR Signposting \cite{vandesompel2015,Van de Sompel 2022} assisting navigation from persistent identifiers, and the RO-Crate containing the metadata. 
 
 This approach was first implemented in the repository WorkflowHub \cite{Goble 2021,wittenburgFAIRDigitalObject2022b}, and in the FDO Forum \cite{Van de Sompel 2023} suggests RO-Crate with Signposting as a modern update to his OAI-ORE\footnote{OAI-ORE was also used by earlier Research Object approaches \cite{Belhajjame 2015,ch5-111} to capture the aggregation aspect of ROs.} approach from 2008 \cite{ORESpecificationAbstract}.  
 RO-Crate FDOs are being further developed within the Horizon Europe projects \footurl{https://eurosciencegateway.eu/}{EuroScienceGateway} \cite{10.5281/zenodo.7152762} and \footurl{https://fair-impact.eu/}{FAIR-IMPACT} \cite{10.5281/zenodo.7157647}.
 
-RO-Crate FDOs complements the findings of section \vref{ch60:signposting}, in that RO-Crate provides FDO with a generic metadata framework and a serialization that can work both for FDOs on the Web and with legacy Handle/DOIP approaches --  this metadata role for RO-Crate in the FDO ecosystem is also highlighted by \cite{Wittenburg 2023b}.
+RO-Crate FDOs complements the findings of section \vref{ch61:signposting}, in that RO-Crate provides FDO with a generic metadata framework and a serialization that can work both for FDOs on the Web and with legacy Handle/DOIP approaches --  this metadata role for RO-Crate in the FDO ecosystem is also highlighted by \cite{Wittenburg 2023b}.
 
 Some extra considerations is rightly needed on identifiers to reduce relative paths challenges with  RO-Crate FDOs -- for this purpose, the next specification \cite{rocrate1.2} introduce a distinction between an \footurl{https://www.researchobject.org/ro-crate/1.2-DRAFT/structure.html\#attached-ro-crate}{attached RO-Crate} (\emph{has some root directory containing other files referenced by relative paths, possibly archived in a ZIP or exposed on the Web}) and a \footurl{https://www.researchobject.org/ro-crate/1.2-DRAFT/structure.html\#detached-ro-crate}{detached RO-Crate} (\emph{no defined root directory, all references are absolute}). 
 This \emph{detached} style is suitable for an FDO architecture, even for use within APIs which do not lend themselves to relative path references (such as DOIP-over-HTTP \cite{DOIPAPIHTTPa}).
@@ -213,6 +226,7 @@ RO-Crate 1.2 also define methods for \footurl{https://www.researchobject.org/ro-
 
 
 \subsection{RO-Crate can capture collections of digital objects}
+\label{ch61:collections}
 
 RO-Crate has also been proposed as a generic mechanism for FDO Collections \cite{fdo-collections}, as an aggregator of FDOs by their PIDs. Such collections add a similar challenge in FDO as in Linked Data, in that clients may need to resolve an excessive number of persistent identifiers (see section \vref{ch20:avoid-lots-of-requests}) to FDOs which may be of different semantic types. 
 Using a detached RO-Crate for such collections, the bibliographic metadata of each PID can be directly embedded and normalized to a single vocabulary, reducing client needs for recursive queries and type mappings. 
@@ -221,6 +235,7 @@ Work on building large data citations as a ``reliquary'' -- a \emph{container of
 
 
 \subsection{RO-Crate in data lakes}
+\label{ch61:datalakes}
 
 Knowledge Enhanced Digital Objects \footurl{https://github.com/luoyu357/KEDODataLake}{(KEOD)} \cite{Luo 2022} is an experimental approach of building a data lake using a combination of knowledge graphs, RO-Crate and PID records \cite{Luo 2023}. This is effectively an FDO implementation: A KEDO PID is a Handle that identifies a KEDO Object, described using a KEDO RO-Crate. This crate again has \emph{internal RO-Crate}s as parts, which records a combination of \emph{Features} and \emph{Insights}. The distinction is that features are mainly fixed at digital object creation and considered directly describing the object's nature, while insights can be discovered later from further processing and linkage. This approach solves a mutability problem in FDOs, as the KEOD system only allows insights to be added along with provenance that connect PIDs when KEDOs evolve. Files in a KEDO RO-Crate are stored locally, and each recorded with a Handle PID within the crate.
 
@@ -233,16 +248,19 @@ This KEOD setup of multiple graphs forming a single knowledge unit can be consid
 %https://beta.dpid.org/46?jsonld
 %https://descifoundation.org/
 
-\subsection{How FAIR are RO-Crates?}
+%\subsection{How FAIR are RO-Crates?}
+%\label{ch61:fair-crates}
 
-\cite{FAIROs} 
+%\cite{FAIROs} 
 
 
 \subsection{Workflow}
+\label{ch61:workflow}
 
 Chapter \vref{chapter:workflows} explored in depth different ways in which FAIR Digital Objects and RO-Crate are applied to computational workflows. 
 
 \subsubsection{Workflows as FAIR digital objects}
+\label{ch61:workflowfdo}
 
 We have previously proposed the concept of \emph{FAIR Computational Workflows} \cite{Goble 2020}. 
 That work expands on the well-established motivations for using scientific workflow systems \cite{ch6-4,Atkinson 2017}, such as supporting Automation, Scalable execution, Abstraction, and Provenance \cite{Ludascher 2016}, and highlights that workflows themselves benefit from and contribute to FAIR data, for instance providing metadata for describing workflow outputs. In addition workflow themselves can be considered digital objects that should be shared as a reproducible computational method.
@@ -262,11 +280,13 @@ Given that FAIR Digital Objects emphasize machine-actionability, and we can cons
 
 
 \subsubsection{Using and building FDOs from workflows}
+\label{ch61:buildingfdo}
 
 Section \vref{ch8:the-specimen-data-refinery} 
 
 
 \subsubsection{Provenance of workflow runs}
+\label{ch61:provenance}
 
 \cite{workflow-run-crate}
 
@@ -274,6 +294,7 @@ Section \vref{ch54:wrroc}
 
 
 \subsection{Combining multiple FDO types in workflows?}
+\label{ch61:combining}
 
 \cite{Wittenburg 2023a}
 
@@ -355,6 +376,7 @@ From \vref{ch8:the-specimen-data-refinery}:
 
 
 \subsection{FDOs can be built incrementally with workflows}
+\label{ch61:incremental}
 \textbf{TODO}: Summarize/discuss 
 From \vref{ch7:incrementally-building-fair-digital-objects-with-specimen-data-refinery-workflows}:
 
