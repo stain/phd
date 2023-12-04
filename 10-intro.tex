@@ -8,7 +8,7 @@ I explore three research questions on this topic:
 
 \paragraph{RQ2:} Can pragmatic use of Linked Data practices implement FAIR Research Objects for scholarly communication?
 
-\paragraph{RQ3:} How can we use improve reproducibility and shareability of Computational Workflows?
+\paragraph{RQ3:} How can we unify a FAIR Digital Object approach for computational workflows that can be consistently implemented?
 
 
 \subsection{Aims of FAIR Digital Objects on the Web (RQ1)}
@@ -50,21 +50,24 @@ RQ2 is addressed by chapter \vref{chapter:ro-crate}.
 
 \subsection{Aims of FAIR Computational Workflows (RQ3)}
 
-A growing, if not majority, part of scientific analysis is now conducted using software and computational models. The concept of \emph{Research Software Engineering} \cite{Cohen 2020} has been established along with new professions \emph{Research Software Engineer} \cite{Baxter 2012} and \cite{Data Scientist} \cite{van der Aalst 2014} -- researchers are not just using off-the-shelf software, but also combining computational tools (e.g. pipelines) and writing their own analytical source code (e.g. R scripts) and simulations.
+A growing (if not majority) part of scientific analysis is now conducted using software and computational models. The concept of \emph{Research Software Engineering} \cite{Cohen 2020} has been established along with new professions \emph{Research Software Engineer} \cite{Baxter 2012} and \cite{Data Scientist} \cite{van der Aalst 2014} -- researchers are not just using off-the-shelf software, but also combining computational tools (e.g. pipelines) and writing their own analytical source code (e.g. R scripts) and simulations.
 
-From this observation emerges the need to treat software as FAIR research outputs \cite{Lamprecht 2019}, following best practices for documentation \cite{Lee 2018}, open development \cite{Prlić 2012} and ensuring research software is robust \cite{Taschuk 2017} so others can use it.  With this motivation the principles of FAIR Research Software \cite{Katz 2021b} have been established by the RDA FAIR for Research Software (FAIR4RS) Working Group \cite{Barker 2022} and are gradually building traction, particularly in the life sciences.   
+From this observation emerges the need to treat software as FAIR artefacts \cite{Lamprecht 2019}, following best practices for documentation \cite{Lee 2018}, open development \cite{Prlić 2012} and ensuring research software is robust \cite{Taschuk 2017} so it can be reused and cited as scholarly outputs \cite{Smith 2016}. 
+With this motivation the principles of FAIR Research Software \cite{Katz 2021b} have been established by the RDA FAIR for Research Software (FAIR4RS) Working Group \cite{Barker 2022} and are gradually building traction, particularly in the life sciences. A remaining challenge is how research software can cite other software that helped produce its outputs. 
 
-\emph{Computational Workflows} (or Scientific Workflows) are used to structure and automate data analysis pipelines so they can be scalable, portable and explainable \cite{Atkinson 2017}. There exists a plethora of workflow systems \cite{Leipzig 2021} and languages \cite{ch8-43}, recent effort have also specified the Common Workflow Language \cite{Crusoe 2022} that is implemented by multiple engines. 
-
-reproducible \cite{ch5-101}? 
-
+While sharing of research software helps distribute the computational methods, the \emph{way} software is used for a particular analysis requires additional measures to make it reproducible \cite{Stodden 2016,ch5-101}. 
+\emph{Computational Workflows} (or Scientific Workflows) are used to structure and automate data analysis pipelines so they can be scalable, portable and explainable \cite{Atkinson 2017}, and as a side-effect of these features can signifiantly improve reproducibility \cite{Cohen-Boulakia 2017}. 
+There exists however a plethora of workflow systems and languages \cite{Leipzig 2021,ch8-43}, although recent effort we have created the Common Workflow Language \cite{Crusoe 2022} as a standard representation that is executable by multiple engines. 
 Notably, workflow definitions themselves can be considered FAIR scholarly outputs \cite{Goble 2020} and are published in repositories including Dockstore \cite{Yuen 2021} and WorkflowHub \cite{Goble 2021}.
+While one could consider computational workflows as a kind of FAIR Research Software \cite{de Visser 2023}, from their nature workflows also assist or encourage developers and users to follow the FAIR principles (e.g. preparing a computational tool for use by workflows systems \cite{ch6-37}), in addition most workflow systems provide explicit provenance logs of their executions.
+Workflow systems are also useful for creating and consuming FAIR Digital Objects \cite{ch8-27}. 
 
-%Workflows produce provenance, but in which format? 
+Approaches to describing workflow provenance in a machine-readable format was initially diverse \cite{Cruz 2009}, and later converged on the use of ontologies \cite{Missier 2010}, most notably using W3C PROV-O \cite{w3-prov-o} but with various specializations \cite{Garijo 2011,Garijo 2012,Missier 2013,Belhajjame 2015,Cuevas-Vicenttín 2016}. 
+The tendency for workflow provenance models to diverge may be down to implementation differences in the execution semantics of different workflow systems -- which if accurately reflected in provenance means further differences at this level. This in turn leads to incompatibility of provenance traces, in addition execution details may even be obscuring the link from the computational procesesses and the final workflow data outputs.
 
-The third research question (RQ3) therefore is we can unify better the approach to workflow provenance in a way that is more focused on data and the context of the workflow, as well as being possible to consistently implement by developers of workflow management systems.
+The third research question (RQ3) from these considerations is therefore: Can a FAIR Digital Object approach for computational workflows unify machine-readable descriptions of research software, data and provenance, as well as being possible to consistently implement by developers of different workflow management systems?
 
-Multiple aspects of RQ3 are adressed by chapter \vref{chapter:workflows}.
+The multiple aspects of RQ3, as highlighted in this section, are adressed by chapter \vref{chapter:workflows}.
 
 
 \section{Main Contributions}
