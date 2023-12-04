@@ -317,6 +317,8 @@ Section \vref{ch54:wrroc}
 \subsubsection{Combining multiple FDO types in workflows?}
 \label{ch61:combining}
 
+
+
 \cite{Wittenburg 2023a}
 
 
@@ -398,37 +400,4 @@ From \vref{ch8:the-specimen-data-refinery}:
 \end{quotation}
 
 
-\subsubsection{FDOs can be built incrementally with workflows}
-\label{ch61:incremental}
-\textbf{TODO}: Summarize/discuss 
-From \vref{ch7:incrementally-building-fair-digital-objects-with-specimen-data-refinery-workflows}:
 
-\begin{quotation}
-  SDR is an example of machine-assisted construction of FDOs, which
-  highlight the needs for intermediate digital objects that are not yet
-  FDO compliant.
-  The passing of such ``local FDOs'' is beneficial not just
-  for efficiency and visual inspection, but also to simplify workflow
-  composition of canonical workflow building blocks.
-  At the same time we
-  see that it is insufficient to only pass FDOs as JSON objects, as they
-  also have references to other data such as images, which should not need
-  to be re-downloaded.
-
-  Further work will investigate the use of RO-Crate as a wrapper of
-  partial FDOs, but this needs to be coupled with more flexible FDO types
-  as profiles, in order to restrict ``impossible'' ordering of steps
-  depending on particular inner FDO fragments.
-  A distinction needs to be
-  made between open digital specimens that are in ``draft'' state and
-  those that can be pushed to DiSSCo registries.
-
-  We are experimenting with changing the SDR components into Canonical
-  Workflow Building Blocks \cite{Soiland-Reyes 2022b}
-  (\vref{ch6:making-canonical-workflow-building-blocks-interoperable-across-workflow-languages}) 
-  using the Common Workflow Language \cite{Crusoe 2022}.
-  This gives
-  flexibility to scalably execute SDR workflows on different compute
-  backends such as HPC or local cluster, without the additional setup of
-  Galaxy servers.
-\end{quotation}
