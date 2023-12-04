@@ -274,20 +274,20 @@ Chapter \vref{chapter:workflows} explored in depth different ways in which FAIR 
 \label{ch61:workflowfdo}
 
 We have previously proposed the concept of \emph{FAIR Computational Workflows} \cite{Goble 2020}. 
-That work expands on the well-established motivations for using scientific workflow systems \cite{ch6-4,Atkinson 2017}, such as supporting Automation, Scalable execution, Abstraction, and Provenance \cite{Ludascher 2016}, and highlights that workflows themselves benefit from and contribute to FAIR data, for instance providing metadata for describing workflow outputs. In addition workflow themselves can be considered digital objects that should be shared as a reproducible computational method.
+That work expands on the well-established motivations for using scientific workflow systems \cite{ch6-4,Atkinson 2017}, such as supporting Automation, Scalable execution, Abstraction, and Provenance \cite{Ludascher 2016}, and highlights that workflows themselves benefit from and contribute to FAIR data, for instance providing metadata for describing workflow outputs. 
+In addition workflow themselves can be considered digital objects that should be shared as a reproducible computational method.
 
 Applying the FAIR principles for workflows in practice has however revealed additional challenges, such as lack of clarify of what constitutes a \emph{workflow} as opposed to FAIR Research Software in general \cite{Katz 2021b}, or reduced reusability when the workflow requires unwritten, human-centric operations between computational steps (e.g. trivial file column manipulations) \cite{wilkinsonWorkflowsWhenParts2022b}. 
 
 In developing the repository \footurl{https://workflowhub.eu/}{WorkflowHub} \cite{Goble 2021} we emphasised the importance of preserving and publishing not just executable workflow definitions, 
-but their structured descriptions independent of workflow formats as well as further references to external sources, software required (including the workflow engine). For this we developed the Workflow RO-Crate Profile \cite{Bacall 2022}, which became a foundational format for more specific workflow execution profiles (section \vref{ch54:wrroc}).
+but their structured descriptions independent of workflow formats as well as further references to external sources, software required (including the workflow engine).
+For this we developed the Workflow RO-Crate Profile \cite{Bacall 2022}, which became a foundational format for more specific workflow execution profiles (section \vref{ch54:wrroc}).
 
 One aspect that makes workflow management systems different from research software in general, is that the they frequently encourage modularization, in that the composition of steps also can reflect the analytical process that is intended by the scientists.
 Mature workflow systems like Galaxy \cite{Galaxy 2022} provide a large collection of re-usable components that wrap underlying command line tools and make them interoperable without manual adjustments. 
 In CWL  \cite{Crusoe 2022}, tool definitions include not just execution details, but also structured input/output definitions, allowing them to be reused and combined in multiple workflows.
 
-Section \vref{ch6:making-canonical-workflow-building-blocks-interoperable-across-workflow-languages} explored how such building blocks can themselves be considered FAIR digital objects. These assist workflow systems in propagating rich metadata about tools and their analytical purpose, but also allows building blocks to be reused across workflow systems. This in effect means that a \emph{canonical workflow} \emph{ch8-27} can be implemented in different workflow languages, each executing the same \emph{canonical steps} in the same way. 
-
-Given that FAIR Digital Objects emphasize machine-actionability, and we can consider workflows as FDOs, it is important to have the ability not just to reliably re-execute a workflow, but even re-use its constituent steps, as demonstrated in this section. 
+Section \vref{ch6:making-canonical-workflow-building-blocks-interoperable-across-workflow-languages} explored how such building blocks can themselves be considered FAIR digital objects. These assist workflow systems in propagating rich metadata about tools and their analytical purpose, but also allows building blocks to be reused across workflow systems. This in effect means that a \emph{canonical workflow} \emph{ch8-27} can be implemented in different workflow languages, each executing the same \emph{canonical steps} in the same way. Given that FAIR Digital Objects emphasize machine-actionability, and we can consider workflows as FDOs, it is important to have the ability not just to reliably re-execute a workflow, but even re-use its constituent steps. 
 
 
 \subsubsection{Using and building FDOs from workflows}
