@@ -123,8 +123,8 @@ Fig~\ref{fig:process_crate_er} shows the entities used in Process Run Crate toge
 
 \begin{figure}[!h]
 %\includegraphics[width=\textwidth]{image1.png}
-%\includegraphics[width=26em]{wrroc-figure1.drawio.pdf}
-\includegraphics[width=26em]{process_crate_er.eps}
+\includegraphics[width=26em]{figures/ch54/wrroc-figure1.drawio.pdf}
+%\includegraphics[width=26em]{process_crate_er.eps}
 \caption{{\bf UML class diagram for Process Run Crate.}
 The central entity is the \emph{CreateAction}, which represents the execution of an application.
 It relates with the application itself via \emph{instrument}, with the entity that executed it via \emph{agent} and with its inputs and outputs via \emph{object}
@@ -145,8 +145,8 @@ Note how the actions are connected by the fact that the output of ``Run Head'' i
 
 \begin{figure}[!ht]
 %\includegraphics[width=29em]{image2.png}
-%\includegraphics[width=29em]{wrroc-figure-example.drawio.pdf}
-\includegraphics[width=29em]{head_sort.eps}
+\includegraphics[width=29em]{figures/ch54/wrroc-figure-example.drawio.pdf}
+%\includegraphics[width=29em]{head_sort.eps}
 \caption{{\bf Diagram of a simple workflow} where the \texttt{head} and \texttt{sort} programs were run manually by a user.
 The executions of the individual software programs are connected by the fact that the file output by \texttt{head} was used as input for \texttt{sort}, documenting the computational flow in an implicit way.
 Such executions can be represented with Process Run Crate.}
@@ -204,8 +204,8 @@ Additionally, the inheritance mechanism allows to reuse the specifications alrea
 Fig~\ref{fig:workflow_crate_er} shows the entities used in Workflow Run Crate together with their relationships.
 
 \begin{figure}[!h]
-%\includegraphics[width=26em]{wrroc-figure2.drawio.pdf}
-\includegraphics[width=26em]{workflow_crate_er.eps}
+\includegraphics[width=26em]{figures/ch54/wrroc-figure2.drawio.pdf}
+%\includegraphics[width=26em]{workflow_crate_er.eps}
 \caption{{\bf UML class diagram for Workflow Run Crate.}
 The main differences with Process Run Crate are the representation of formal parameters and the fact that the application is expected to be an entity with types \emph{File}, \emph{SoftwareSourceCode} and \emph{ComputationalWorkflow}.
 Effectively, the entity belongs to all three types, and its properties are the union of the properties of the individual types.
@@ -238,8 +238,8 @@ Fig~\ref{fig:provenance_crate_er} shows the various entities involved in the rep
 
 \begin{figure}[!h]
 %\includegraphics[width=21em]{image4.png}
-%\includegraphics[width=\textwidth]{wrroc-figure3.drawio.pdf}
-\includegraphics[width=\textwidth]{provenance_crate_er.eps}
+\includegraphics[width=\textwidth]{figures/ch54/wrroc-figure3.drawio.pdf}
+%\includegraphics[width=\textwidth]{provenance_crate_er.eps}
 \caption{{\bf UML class diagram for Provenance Run Crate.}
 In addition to the workflow run, this profile represents the execution of individual steps and their related tools.}
 \label{fig:provenance_crate_er}
@@ -262,8 +262,8 @@ This profile is the most detailed of the three, and offers the highest level of 
 
 \begin{figure}[!h]
 %  \includegraphics[width=21em]{venn.png}
-  %\includegraphics[width=26em]{wrroc-venn.drawio.pdf}
-  \includegraphics[width=26em]{profile_venn.eps}
+  \includegraphics[width=26em]{figures/ch54/wrroc-venn.drawio.pdf}
+  %\includegraphics[width=26em]{profile_venn.eps}
   \caption{{\bf Venn diagram of the specifications for the various RO-Crate profiles.}
   Workflow Run Crate inherits the specifications of both Process Run Crate and Workflow RO-Crate. Provenance Run Crate, in turn, inherits the specifications of Workflow Run Crate.}
   \label{fig:profile_venn}
@@ -457,7 +457,7 @@ Table \ref{implementation_summary_table} shows an overview of the different impl
 
 
 \begin{table}[!ht]
-  \begin{adjustwidth}{-1.4cm}{0in} % Comment out/remove adjustwidth environment if table fits in text column.
+%  \begin{adjustwidth}{-1.4cm}{0in} % Comment out/remove adjustwidth environment if table fits in text column.
   \centering
   \caption{
   {\bf Workflow Run Crate implementations}}
@@ -465,7 +465,7 @@ Table \ref{implementation_summary_table} shows an overview of the different impl
   \hline
   {\bf Impl.} & {\bf Profile} & {\bf Version URL/DOI} &
   {\bf Example}\\
-  \thickhline
+  \hline
   runcrate & Provenance & \footnotesize \cite{runcrate}  & \footnotesize \cite{run-pathology} \\
   Galaxy & Workflow & \footnotesize \cite{Galaxy 2023} & \footnotesize \cite{De Geest 2023} \\
   COMPSs & Workflow & \footnotesize \cite{Ejarque 2023} & \footnotesize \cite{Poiata 2023} \\
@@ -478,7 +478,7 @@ Table \ref{implementation_summary_table} shows an overview of the different impl
     Summary of each WRROC implementation, together with the profiles it implements, the latest software citation and an example crate of its application. Runcrate is a toolkit that converts CWLProv ROs to Provenance Run Crates, while the others are WMS.
   \end{flushleft}
   \label{implementation_summary_table}
-  \end{adjustwidth}
+ % \end{adjustwidth}
 \end{table}
   
 
@@ -515,7 +515,7 @@ The listing below (Fig~\ref{lst:ml_pipeline_streamflow_report}) shows the output
 For each action (workflow or tool run), the tool reports the associated instrument (workflow or tool), the starting and ending time and the list of inputs and outputs, with arrows pointing from the formal parameter to the corresponding actual value taken during the execution of the action.
 
 \begin{figure}
-\begin{adjustwidth}{-0.5cm}{0in}
+%\begin{adjustwidth}{-0.5cm}{0in}
 \begin{footnotesize}
 \begin{verbatim}
 action: #30a65cba-1b75-47dc-ad47-1d33819cf156
@@ -577,7 +577,7 @@ action: #ae2163a8-1a2a-4d78-9c81-caad76a72e47
 \caption{\label{lst:ml_pipeline_streamflow_report}\texttt{runcrate report} command line output. This informal listing of relevant RO-Crate entities describe each step execution. Note that inputs and outputs are of different types (not shown), e.g. \texttt{tissue\_low>0.9} is a string parameter, \texttt{6b15de…} is a filename, and \texttt{\#af0253…} is a collection.}
 \end{footnotesize}
 
-\end{adjustwidth}
+%\end{adjustwidth}
 \end{figure}
 
 
@@ -690,14 +690,14 @@ The full results of the analysis can be found in \cite{de Wit 2023}.
 
 % Place tables after the first paragraph in which they are cited.
 \begin{table}[!ht]
-\begin{adjustwidth}{-1.4cm}{0in} % Comment out/remove adjustwidth environment if table fits in text column.
+%\begin{adjustwidth}{-1.4cm}{0in} % Comment out/remove adjustwidth environment if table fits in text column.
 \centering
 \caption{
 {\bf Summarised results of our qualitative analysis of runcrate.}}
 \begin{tabular}{r|l|l|c|c|c|c}
 \hline
 %% TODO: Check ticks are in right places
-{\bf Type} & {\bf Subtype}      & {\bf Name} & {\bf CWL} & {\bf CWLProv} & {\bf RO-Crate} & {\bf WRROC}  \\ \thickhline
+{\bf Type} & {\bf Subtype}      & {\bf Name} & {\bf CWL} & {\bf CWLProv} & {\bf RO-Crate} & {\bf WRROC}  \\ \hline
 T1 & SC1 & Workflow design      & $\bullet$ &  $\cdot$ & $\circ$ & $\dots$ \\ 
 & SC2 & Entity annotations      & $\cdot$ &  $\cdot$ &  $\cdot$  & $\dots$ \\ 
 & SC3 & Workflow execution ann. &  $\cdot$  & $\cdot$ &  $\cdot$ & $\dots$ \\ \hline
@@ -729,7 +729,7 @@ The categories in the first three columns are explained in \cite{De Wit 2022}.
 \textbf{Legend:} $\bullet$ fully represented  $\;\;\circ$ partially represented   $\;\;\cdot$ missing or unstructured representation $\;\;\dots$ optional (e.g. schema.org attribute)
 \end{flushleft}
 \label{analysis_table}
-\end{adjustwidth}
+%\end{adjustwidth}
 \end{table}
 
 From this analysis it is worth highlighting the gaps and potential for Workflow Run RO-Crates. Several areas have been flagged by this study as important aspects of workflow metadata, such as Data Access (D3), Software Documentation (SW2) and Workflow Requirements (WF3). Many such aspects require human annotation and cannot be provided by workflow engines alone, although they may be propagated from workflow and tool definitions. Some areas like Consumed Resources (EX2) require additional terms to be defined, and are part of future work.
@@ -741,7 +741,7 @@ Our aim is to be compatible with both Schema.org and W3C PROV. Provenance Run Cr
 
 \begin{table}[!ht]
   %\begin{adjustwidth}{-2.25in}{0in} % Comment out/remove adjustwidth environment if 
-  \begin{adjustwidth}{-1.5cm}{0in}
+  %\begin{adjustwidth}{-1.5cm}{0in}
   \centering
   \caption{
   {\bf Mapping from Workflow Run RO-Crate to equivalent W3C PROV concepts} using SKOS \cite{Isaac 2009}. For instance, \emph{CreateAction} has \textbf{broader} match PROV's \emph{Activity}, meaning that \emph{Activity} is more general.}
@@ -749,7 +749,7 @@ Our aim is to be compatible with both Schema.org and W3C PROV. Provenance Run Cr
   \hline
 %  {\bf W3C PROV} & {\bf RO-Crate} & \textbf{Relationship} \\
   {\bf RO-Crate} & \textbf{Relationship} & {\bf W3C PROV-O} \\
-  \thickhline
+  \hline
 
   \emph{Action} (superclass of \emph{CreateAction}, \emph{OrganizeAction}) & 
     Has close match 
@@ -820,7 +820,7 @@ Our aim is to be compatible with both Schema.org and W3C PROV. Provenance Run Cr
   \end{tabular}
   %\begin{flushleft} Table notes \end{flushleft}
   \label{rocrate_prov_mapping}
-  \end{adjustwidth}
+ % \end{adjustwidth}
 \end{table}
   
 
