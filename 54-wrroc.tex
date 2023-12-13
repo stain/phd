@@ -221,7 +221,7 @@ The Provenance Run Crate profile \cite{WRROC 2023c} extends Workflow Run Crate b
 Individual tool executions are represented by additional \emph{CreateAction} instances that refer to the tool itself via \emph{instrument} -- analogously to its use in Process Run Crate.
 The workflow is required to refer to the tools it orchestrates through the \emph{hasPart} property, as suggested in the Bioschemas ComputationalWorkflow profile, though in the latter it is only a recommendation.
 
-To represent the logical steps defined by the workflow, this profile uses \emph{HowToStep} i.e., “A step in the instructions for how to achieve a result” (\url{https://schema.org/HowToStep}).
+To represent the logical steps defined by the workflow, this profile uses \footurl{https://schema.org/HowToStep}{\emph{HowToStep}} i.e., “A step in the instructions for how to achieve a result”.
 Steps point to the corresponding tools via the \emph{workExample} property and are referenced from the workflow via the \emph{step} property; the execution of a step is represented by a \emph{ControlAction} pointing to the
 \emph{HowToStep} via \emph{instrument} and to the \emph{CreateAction}
 instance(s) that represent the corresponding tool execution(s) via
@@ -313,8 +313,8 @@ and the input and output data files.
 This is achieved by extracting provenance from Galaxy entities related to the workflow run, along with associated metadata, converting them to RO-Crate metadata using the ro-crate-py library~\cite{ro-crate-py}; by describing all files contained in the basic invocation export within the RO-crate metadata;
 and finally by making the Workflow Run Crate available for export to the user through Galaxy's web interface and API \cite{De Geest 2022b}.
 
-We extract the prospective provenance contained in Galaxy's YAML-based gxformat2
-(\url{https://galaxyproject.github.io/gxformat2/v19_09.html}) workflow definition, which includes details of the analysis pipeline such as the graph of tools that need to be executed, and metadata about the data types required.
+We extract the prospective provenance contained in Galaxy's YAML-based 
+\footurl{https://galaxyproject.github.io/gxformat2/v19_09.html}{gxformat2} workflow definition, which includes details of the analysis pipeline such as the graph of tools that need to be executed, and metadata about the data types required.
 The retrospective provenance -- i.e., the details of the executed workflow such as the inputs, outputs, parameter values used -- is extracted from Galaxy's data \footurl{https://docs.galaxyproject.org/en/master/lib/galaxy.model.html}{model}, which is not directly accessible to users in the context of a public Galaxy server.
 All of this provenance information is then mapped to RO-Crate metadata, including some Galaxy-specific data entities such as dataset collections.
 An exemplary exported Galaxy Workflow Run Crate is available on Zenodo~\cite{De Geest 2023}.
@@ -344,7 +344,7 @@ application in the MareNostrum IV supercomputer.
 BackTrackBB targets the detection and location of seismic sources using the statistical coherence of the wave field recorded by seismic networks and antennas.
 The resulting RO-Crate~\cite{Poiata 2023} complies with the Workflow Run Crate profile, and includes the application source files, a diagram of the workflow's graph, application profiling and input and output files.
 
-The implementation of provenance recording following Workflow Run Crate has been fully integrated in the COMPSs runtime, and is available since release 3.2 \cite{Ejarque 2023} (\url{https://github.com/bsc-wdc/compss/tree/3.2}).
+The implementation of provenance recording following Workflow Run Crate has been fully integrated in the COMPSs runtime, and is available since \footurl{https://github.com/bsc-wdc/compss/tree/3.2}{release 3.2} \cite{Ejarque 2023}.
 
 
 \subsubsection{StreamFlow}\label{streamflow}
@@ -412,7 +412,7 @@ Sapporo supports export to Workflow Run Crate since release 1.5.1 \cite{Suetake 
 Autosubmit~\cite{Manubens-Gil 2016} is an open source lightweight workflow manager and meta-scheduler created in 2011 for use in climate research to configure and run scientific experiments.
 It supports scheduling jobs via SSH to Slurm~\cite{Yoo 2003}, PBS~\cite{Feng 2007} and other remote batch servers used in HPC.
 
-The ``archive'' feature was added in Autosubmit 3.1.0, released in 2015 (\url{https://earth.bsc.es/gitlab/es/autosubmit/-/tags/v3.1.0}).
+The ``archive'' feature was added in \footurl{https://earth.bsc.es/gitlab/es/autosubmit/-/tags/v3.1.0}{Autosubmit 3.1.0}, released in 2015.
 This feature archives the experiment directory and all its contents into a ZIP file, which can be used later to access the provenance data or to execute the Autosubmit experiment again.
 Even though the data in the ZIP file includes prospective provenance and retrospective provenance, it contains no structure, and users have no way to tell which is which from just looking at the ZIP file and its contents.
 
@@ -737,8 +737,7 @@ From this analysis it is worth highlighting the gaps and potential for Workflow 
 
 \subsubsection{Workflow Run RO-Crate and the W3C PROV standard}
 
-Our aim is to be compatible with both Schema.org and W3C PROV. Provenance Run Crate is the profile that most closely matches the level of detail provided by CWLProv, which extends W3C PROV. Table \ref{rocrate_prov_mapping} shows how the main entities and relationships represented by Provenance Run Crate map to PROV constructs, using the SKOS vocabulary to indicate the type of relationship between each pair of terms. A machine-readable version of the mapping can be found in the RO-Crate accompanying this article \cite{wrroc-crate} (\url{https://w3id.org/ro/doi/10.5281/zenodo.10368989}).
-% TODO: Update to w3id PID
+Our aim is to be compatible with both Schema.org and W3C PROV. Provenance Run Crate is the profile that most closely matches the level of detail provided by CWLProv, which extends W3C PROV. Table \ref{rocrate_prov_mapping} shows how the main entities and relationships represented by Provenance Run Crate map to PROV constructs, using the SKOS vocabulary to indicate the type of relationship between each pair of terms. A machine-readable version of the mapping can be found in the \footurl{https://w3id.org/ro/doi/10.5281/zenodo.10368989}{accompanying RO-Crate} of this article \cite{wrroc-crate}.
 
 \begin{table}[!ht]
   %\begin{adjustwidth}{-2.25in}{0in} % Comment out/remove adjustwidth environment if 
