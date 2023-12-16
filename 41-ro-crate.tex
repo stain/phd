@@ -884,11 +884,17 @@ managers who need to manage and curate large amounts of data.
 
 \small
 \begin{longtable}[]{@{}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.21}}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.11}}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.19}}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.09}}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.40}}@{}}
+>{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.21}}
+>{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.11}}
+>{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.19}}
+>{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.09}}
+>{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.40}}@{}}
+\caption[Applications and libraries implementing RO-Crate]{{\bf Applications and libraries implementing RO-Crate}, targeting
+  different types of users across multiple programming languages. Status
+  is indicative as assessed by this work (Alpha \textless{} Beta
+  \textless{} Release Candidate (RC) \textless{} Release).
+}
+\label{ch5:tab1}\tabularnewline
 \toprule
 Tool Name & Targets & Language /Platform & Status & Brief Description \\
 \midrule
@@ -963,12 +969,7 @@ RO-Crates-and-Excel
 & Java (CLI) & Alpha & Describe column/data details of spreadsheets as
 RO-Crate using DataCube vocabulary \\
 \bottomrule
-\caption[Applications and libraries implementing RO-Crate]{Applications and libraries implementing RO-Crate, targeting
-  different types of users across multiple programming languages. Status
-  is indicative as assessed by this work (Alpha \textless{} Beta
-  \textless{} Release Candidate (RC) \textless{} Release).
-}
-\label{ch5:tab1}
+
 \end{longtable}
 
 \normalsize
@@ -1065,7 +1066,7 @@ simplicity and for establishing best practices.
 
 RO-Crates in WorkflowHub have so far been focused on workflows that are
 ready to be run, and development of WorkflowHub is now creating a
-\textbf{Workflow Run RO-Crate profile} for the purposes of benchmarking,
+\textbf{Workflow Run RO-Crate profile}\footnote{Section \vref{ch54:wrroc}} for the purposes of benchmarking,
 testing and executing workflows. As such, RO-Crate serves as a container
 of both a \emph{workflow definition} that may be executed and of a
 particular \emph{workflow execution with test results}.
