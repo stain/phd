@@ -128,7 +128,7 @@ The \emph{Person} or
 \emph{Organization} entity that performed the action is referred to via the \emph{agent} property.
 Figure~\vref{ch54:fig:process_crate_er} shows the entities used in Process Run Crate together with their relationships.
 
-\begin{figure}[!h]
+\begin{figure}[htp]
 %\includegraphics[width=\textwidth]{image1.png}
 \includegraphics[width=26em]{figures/ch54/wrroc-figure1.drawio.pdf}
 %\includegraphics[width=26em]{process_crate_er.eps}
@@ -150,7 +150,7 @@ command on \texttt{selection.txt}, storing the sorted output in a new file named
 Figure~\vref{ch54:fig:head_sort} contains a diagram of the two actions and their relationships to the other entities involved.
 Note how the actions are connected by the fact that the output of ``Run Head'' is also the input of ``Run Sort'': they form an ``implicit workflow'', whose steps have been executed manually rather than by a software tool.
 
-\begin{figure}[!ht]
+\begin{figure}[htp]
 %\includegraphics[width=29em]{image2.png}
 \includegraphics[width=29em]{figures/ch54/wrroc-figure-example.drawio.pdf}
 %\includegraphics[width=29em]{head_sort.eps}
@@ -215,7 +215,7 @@ Additionally, the inheritance mechanism allows to reuse the specifications alrea
 
 Figure~\vref{ch54:fig:workflow_crate_er} shows the entities used in Workflow Run Crate together with their relationships.
 
-\begin{figure}[!h]
+\begin{figure}[htp]
 \includegraphics[width=26em]{figures/ch54/wrroc-figure2.drawio.pdf}
 %\includegraphics[width=26em]{workflow_crate_er.eps}
 \caption[UML class diagram]{{\bf UML class diagram for Workflow Run Crate.}
@@ -248,7 +248,7 @@ The \emph{object} attribute of the
 
 Figure~\vref{ch54:fig:provenance_crate_er} shows the various entities involved in the representation of a workflow run via Provenance Run Crate together with their relationships.
 
-\begin{figure}[!h]
+\begin{figure}[htp]
 %\includegraphics[width=21em]{image4.png}
 \includegraphics[width=\textwidth]{figures/ch54/wrroc-figure3.drawio.pdf}
 %\includegraphics[width=\textwidth]{provenance_crate_er.eps}
@@ -272,7 +272,7 @@ a \emph{ParameterConnection} type with
 
 This profile is the most detailed of the three, and offers the highest level of granularity. Fig.~\vref{ch54:fig:profile_venn} shows the relationship between the specifications of the profiles as a Venn diagram.
 
-\begin{figure}[!h]
+\begin{figure}[htp]
 %  \includegraphics[width=21em]{venn.png}
   \includegraphics[width=26em]{figures/ch54/wrroc-venn.drawio.pdf}
   %\includegraphics[width=26em]{profile_venn.eps}
@@ -474,7 +474,7 @@ This validation was performed by the Workflow Run RO-Crate community in a public
 Table \vref{ch54:implementation_summary_table} shows an overview of the different implementations presented in this section.
 
 
-\begin{table}[!ht]
+\begin{table}[htp]
 %  \begin{adjustwidth}{-1.4cm}{0in} % Comment out/remove adjustwidth environment if table fits in text column.
   %\centering
   \begin{tabular}{l|l|l|l}
@@ -891,7 +891,7 @@ Workflow Run RO-Crate has already been adopted by six WMS, including Galaxy, Str
 
 Workflow Run RO-Crate is an ongoing project driven by an open community.
 A natural consequence of this is that the profiles are not static entities, but keep being updated to cater for new requirements and use cases.
-In-progress features are tracked in the GitHub repository  \footurl{https://github.com/ResearchObject/workflow-run-crate/issues}{issues} section and are open to discussion for the community.
+In-progress features are tracked in the GitHub repository  \footurl{https://github.com/ResearchObject/workflow-run-crate/issues}{issues} and are open to discussion for the community.
 New features under discussion include a representation of the execution environment and recording workflow resource usage.
 The runcrate toolkit is planned to be expanded both to better support the current features and to include new ones that may arise.
 
