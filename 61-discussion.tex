@@ -52,8 +52,8 @@ If such conventions need to be evolved and specified no matter the protocol basi
 
 Section \ref{ch2:discussion} found that the basis of Web-based FDOs can be built using only Signposting \cite{vandesompel2015,Van de Sompel 2022}, adding a couple of non-intrusive HTTP headers that are agnostic to metadata standards and serializations. An implementation of such Web-based FDOs was shown in section \ref{ch4:lightweight-fdo}. 
 
-The Signposting approach has also been highlighted both by EOSC \cite{10.5281/zenodo.7463421} and as a possible FDO configuration type \cite{fdo-ConfigurationTypes}.
-The FAIR-IMPACT project launched an \footurl{https://fair-impact.eu/1st-open-call-support-closed}{open call} where 14 participating institutions participated to help build support for Signposting \cite{soilandreyes2023b} in data repositories and platforms.
+The Signposting approach has also been highlighted both by EOSC \cite{10.5281/zenodo.7463421,Wilkinson2023b} and as a possible FDO configuration type \cite{fdo-ConfigurationTypes}.
+The FAIR-IMPACT project launched an \footurl{https://fair-impact.eu/1st-open-call-support-closed}{open call} where 14 participating institutions participated to build support for Signposting \cite{soilandreyes2023b} in their data repositories and platforms.
 
 
 
@@ -76,7 +76,7 @@ Extension points are well defined, and although extending RO-Crate do require so
 An important lesson from this work then is to use ``just enough'' Linked Data for the desired level of interoperability and knowledge representation.
 While previous efforts to `FAIRify' largely have been concerned about representing the data values using an RDF data model, this can lead to significant effort needed in developing ontologies and vocabularies. 
 
-RO-Crate is using schema.org \cite{schema.org} as its base vocabulary, and tries to follow its philosophy of building a lightweight semantic structure by associating many free text attributes to the same node, rather than making elaborate interconnected semantic objects.
+RO-Crate is using \cite{schema.org} as its base vocabulary, and tries to follow its philosophy of building a lightweight semantic structure by associating many free text attributes to the same node, rather than making elaborate interconnected semantic objects.
 For instance, while a \texttt{Person}'s \texttt{affiliation} ideally goes to a \texttt{Organization} with it's own URL and other attributes, in some cases, a free text string is all information available, and this can be used cirectly as the \texttt{affiliation}. 
 
 With retrospect we can say that this reduction in semantic rigidity compared to use in OWL ontologies is a move back to the simplicity of early RDF as an open-ended model (see section \vref{ch3:semweb}), where a property can be used to point to almost anything, and RDF authors are free to use almost any term.
@@ -85,6 +85,8 @@ Another aspect that is not highlighted well in ontologies is where to stop in th
 In schema.org, many properties like \url{http://schema.org/license} are defined as having the \emph{range}\footnote{Expected type of object \cite{w3-rdf-schema}, however note that schema.org uses \url{http://schema.org/rangeIncludes} instead of \texttt{rdfs:range}, to permit multiple alternatives without the need for a union class.} of either \footurl{http://schema.org/CreativeWork}{\texttt{CreativeWork}} or \footurl{http://schema.org/URL}{\texttt{URL}}, hinting that the licence is not required to be explained as another entity with further properties, but that the attribute's primary purpose is navigation or identification. 
 
 This would be a key aspect of Linked Data, which traditionally have had the rather undefined convention of ``follow your nose'' navigation -- a client may attempt to request any node identifier (if it's a URL), and if, with content-negotiation, it returns some RDF, then that could be integrated into a joint knowlege graph, hopefully adding more description of that node, although possibly using other vocabularies.
+Signposting on the URL helps to make such navigation and expected profiles explicit.
+
 However, ontologies used in Linked Data have not commonly indicated navigation waypoints as done in Schema.org, simply defining a property's range as a given class leaves it undefined if documents were expected to explain that node or link to its explanation. One notable exception is the Data Catalog Vocabulary (DCAT)\footnote{Although the \url{http://schema.org/Dataset} type used by RO-Crate's root entity is derived from DCAT, RO-Crate does not assume a corresponding data catalogue on the Web.} \cite{DCAT2 2020} which have navigational properties like \texttt{dcat:landingPage} (to a \texttt{foaf:Document}) and \texttt{dcat:downloadURL} (to any \texttt{rdfs:Resource}).
 
 % Should we discuss why not DCAT?
@@ -110,9 +112,11 @@ Several of these reasons are also organizational in nature, reflecting back on t
 
 This ability to describe a referenced entity locally is also a workaround for the chicken-and-egg problem of creating and linking Linked Data resources that vocabulary-wise are cross-related both ways. For instance orcid.org recently added schema.org content negotiation, but \emph{after} RO-Crate started describing people using the \url{http://schema.org/Person} type and ORCID identifiers.\footnote{
   One of my earlier code contributions to ORCID already established content-negotiation to RDF -- but using the classical FOAF vocabulary \cite{FOAFVocabularySpecification}.
-  Slightly inconsistent with Semantic Web principles, the registry is currently returning \emph{Person} descriptions in different semantic models depending on the requested serialization. \\
+  Slightly inconsistent with Semantic Web principles\footnotemark, the registry is currently returning \emph{Person} descriptions in different semantic models depending on the requested serialization. \\
   \url{https://github.com/ORCID/ORCID-Source/blob/main/CONTENT_NEGOTIATION.md}} 
 
+% Yes finally I needed a footnote in a footnote!  
+\footnotetext{Signposting \cite{Van de Sompel 2022} would indicate alternative vocabularies using distinct \texttt{profile} URIs.} 
 
 \subsubsection{FDO ecosystems need to permit flexible references}
 \label{ch61:references}
@@ -163,7 +167,7 @@ SKOS is used to represent either a \emph{mapping} or a \emph{vocabulary} \cite{w
   \end{figure}
 \footnotetext{\url{https://w3id.org/ro/wfrun/process/0.2}}
 
-While profiles are at first lightweight indicators of common conventions for a class of crates (which may be implicit or explicit), they can be gradually formalized in a \emph{eat own dogfood} way through another RO-Crate, optionally taking advantage of existing Semantic Web technology that can enable for instance strict validation of domain-specific RO-Crates.
+While profiles are at first lightweight indicators of common conventions for a class of crates (which may be implicit or explicit), they can be gradually formalized in a \emph{eat own dogfood} way through another RO-Crate, optionally taking advantage of existing Semantic Web technology that enable for instance strict validation of domain-specific RO-Crates.
 
 
 \subsubsection{One vocabulary is not enough, but one profile may suffice}
@@ -185,7 +189,7 @@ As with other aspects of RO-Crate, there is a gradual approach towards Linked Da
 
 It should be reasonable to expect developers able to make RO-Crates with their own additional terms to also be able to make a lightweight Profile Crate once those terms have stabilised. Developers with deeper familiarity with Semantic Web technologies can expand the profile capabilities to use existing ontology methodologies, in which case it would be preferrable to aggregate separate semantic artefacts from the Profile Crate rather than embedding them in the RO-Crate Metadata File.
 
-In the FAIR-IMPACT project we are evaluating if the Profile Crate approach is also suitable for FAIR publishing of semantic artefacts themselves, e.g. ontologies and mappings. This is an attractive proposal because such artefacts are also becoming multifaceted, with multiple formats and profiles (e.g. an ontology expressed with OWL2 RL in RDF Turtle syntax), documentation and similar attribution and provenance challenges that RO-Crate resolves.
+In the FAIR-IMPACT project we are evaluating if the Profile Crate approach is also suitable for FAIR publishing of semantic artefacts themselves, e.g. ontologies and mappings. This is an attractive proposal because such artefacts are also becoming multifaceted, with multiple formats and profiles (e.g. an ontology expressed with OWL2 RL in RDF Turtle syntax), documentation and similar attribution and provenance challenges which RO-Crate is built to handle.
 
 \subsection{Future RO-Crate directions}
 \label{ch61:rocratefuture}
@@ -197,14 +201,17 @@ In this section we consider future directions for RO-Crate and ongoing RO-Crate 
 
 RO-Crate and its best practices can be considered a type of \emph{middleware} used by application developers to capture and transmit metadata and relate data files that together form some tangible unit (a \emph{Research Object} \cite{Bechhofer 2013}). While RO-Crate have already been implemented by several repositories and applications such as workflow systems, it is important to also consider the role of user applications in order to increase adoptation of FAIR research objects by scholars in general.
 
+\paragraph{Template-based crates with ya2ro}
 Futher work by the RO-Crate community has created more user-fronting tools such as \footurl{https://github.com/oeg-upm/ya2ro}{ya2ro,} which given metadata and identifier in a YAML\footnote{
   YAML is a file format with the same data model as JSON, but with a more readable syntax, e.g. using indentation instead of quoted strings.  \url{https://yaml.org/}} 
 file can retrieve contextual metadata from ORCID, GitHub and DOI registries and build and publish a completed RO-Crate \cite{ya2ro}.   
 While this technology still requires some understanding of editing, it is intended to be more approachable to data scientists and for use with simple Web publishing platforms like \footurl{https://pages.github.com/}{GitHub Pages.} The GitHub Action \footurl{https://github.com/marketplace/actions/ro-crate-preview}{ro-crate-preview} also automate HTML preview generation of crates on GitHub Pages.
 
+\paragraph{Editing and publishing RO-Crate in ROHub}
 The repository \footurl{https://www.rohub.org/}{ROHub} \cite{ch5-48} has recently added RO-Crate import and export \cite{Fouilloux 2023}, and provides both a browseable repository for publishing crates, but also interactive and collaborative editing of its metadata. 
 In this use case, RO-Crate plays the role as an exchange and archiving format, as the hub stores the crates in general-purpose repositories Zenodo and B2Share which do not have the facility to keep the granular metadata expressed within the RO-Crate metadata file. As detailed in \cite{Fouilloux 2023}, a series of templates assist users in creating research objects with particular content and annotations. 
 
+\paragraph{Making ad-hoc vocabularies in Crate-O}\label{ch61:crate-o}
 The \footurl{https://schema.org/docs/schemas.html}{Crate-O} tool has been developed by Language Data Commons of Australia \footurl{https://ldaca.edu.au/}{(LDaCA)} as a general-purpose RO-Crate editor and successor to Describo \cite{ch5-78} and Describo Online \cite{ch5-77}. 
 This tool can describe any folder and resources from the Web as an RO-Crate, supporting any schema.org type and property, pluggable with any rdfs vocabularies \cite{w3-rdf-schema}. 
 Notably this tool is also intended for creation of such vocabularies, and is thus a lightweight user interface for building a Profile Crate (section \vref{ch61:profiles}) using Schema.org style Schemas\footnote{
@@ -213,8 +220,7 @@ Notably this tool is also intended for creation of such vocabularies, and is thu
   On property definitions, SoSS use \url{http://schema.org/domainIncludes} and \url{http://schema.org/rangeIncludes} to avoid union classes for alternative domain/range types, which can clutter OWL/RDFS equivalent properties.} 
 \footurl{https://schema.org/docs/schemas.html}{(SoSS)}.
 
-
-\subsubsection{Executable papers can fully represent their computation using RO-Crate}
+\paragraph{Executable papers can fully represent their computation using RO-Crate}
 \label{ch61:livepublication}
 
 \footurl{https://livepublication.github.io/LP_Pub_LID/}{LivePublication} \cite{Ellerm 2023} is a proof of concept of an \emph{executable paper}, which interactive visualization and statistical calculations can be regenerated on the fly taking into consideration data sources updated after the paper's publication date. A \footurl{https://livepublication.github.io/LP_Pub_OrchestrationCrate/}{corresponding RO-Crate} is the mechanism to enable this execution on the Globus infrastructure through individual RO-Crates and containers for each computable element of the paper.
@@ -236,10 +242,15 @@ This \emph{detached} style is suitable for an FDO architecture, even for use wit
 RO-Crate 1.2 also define methods for \footurl{https://www.researchobject.org/ro-crate/1.2-DRAFT/appendix/relative-uris.html}{converting between attached/detached} crates using standard JSON-LD tooling, showing another advantage of using Linked Data as basis for RO-Crate. 
 
 
-\paragraph{How FAIR are RO-Crates?}
+\subsubsection{How FAIR are RO-Crates?}
 \label{ch61:fair-crates}
 
 FAIROs \cite{FAIROs} is a framework for calculating a ``FAIRness'' score for research objects. For RO-Crate evaluation this puts additional requirements on the use of persistent identifier for the RO-Crate, and that the core metadata of the crate (e.g. licensing) is provided. These aspects are important for ensuring FDO machine actionability of RO-Crates.
+
+Another aspect of FAIRness for RO-Crate is if extensions are themselves following FAIR principles (RDA-I2-01M \emph{Metadata uses FAIR-compliant vocabularies}).  The Profile Crate specifications for \footurl{https://www.researchobject.org/ro-crate/1.2-DRAFT/profiles\#extension-vocabularies}{extension vocabularies} recommends the use of \texttt{DefinedTerm} or \texttt{DefinedTermSet} as a mechanism to ``import'' an existing term or vocabulary to the profile, allowing a neutral way to define these terms independent of their ontology technology. There is some tension with Crate-O's   ``Schema.org style Schemas'' (see section \vref{ch61:crate-o}) which desired compatibility with \texttt{rdfs:Class} and \texttt{rdfs:Property} and wide-spread RDFS tooling -- the RO-Crate community consensus is to use the rdfs types when the term is \emph{defined} by the profile rather than imported and to avoid the RDFS-like \url{http://schema.org/Class} and \url{http://schema.org/Property} overall.
+
+The use of profiles, and particularly nested profiles as in figure \vref{ch54:fig:profile_venn}, makes validation of RO-Crates more complex. An initial approach of \footurl{https://github.com/ResearchObject/runcrate/pull/17}{ShEx validation in runcrate} extended the \footurl{https://github.com/ResearchObject/ro-crate-validator-py}{ro-crate-validator-py} library to use ShEx based validation \cite{ShapeExpressionsShEx} depending on declared WRROC profiles.
+\footurl{https://s11.no/2023/comp66090/profiles/}{Future work} is planned to further investigate this using a combination of Semantic Web and RDF Shapes technologies, possibly using hierarchical profile validation with \footurl{https://github.com/surroundaustralia/cheka}{Cheka} but based on the crate's declared \texttt{conformsTo} statements.
 
 
 \subsubsection{RO-Crate can build collections of digital objects}
@@ -311,12 +322,22 @@ The later section \vref{ch54:the-workflow-run-ro-crate-profiles} showed how RO-C
 \subsubsection{Provenance of workflow runs}
 \label{ch61:provenance}
 
-\cite{workflow-run-crate}
 
-TODO: Discuss/relate section \vref{ch54:wrroc}
+Section \vref{ch54:wrroc} introduced the Workflow Run Crate (WRROC) profiles for capturing workflow provenance. It was highlighted that the multiple levels were designed to ease adoptability -- indeed the different WRROC implementations (section \vref{ch54:implementations}) have chosen  profiles depending on the provenance available to that particular engine. In addition, some implementations had to utilise optionality of some attributes, for instance to handle dynamic workflows. 
+
+In addition the \emph{Process Crate} profile was shown to be suitable also for ``manual workflows'' where processes are executed by hand, as illustrated by the \footurl{https://w3id.org/ro/doi/10.5281/zenodo.6913045}{BY-COVID WP5 T5.2 Baseline Use Case} RO-Crate from the BY-COVID \cite{Meurisse 2023} project in figure \vref{ch61:fig:baseline-usecase}.
+
+\begin{figure}[htb]
+  \includegraphics[width=\textwidth]{figures/ch09/baseline-usecase-crate.pdf}
+    \caption[Example of RO-Crate using Profile Crate profile]{\textbf{Example of RO-Crate using Profile Crate profile}. ..
+    }
+  \label{ch61:fig:baseline-usecase}
+\end{figure}
 
 
-Multiple levels to ease adoptability
+
+The practical implementation of RO-Crate by multiple developers highlights the 
+
 
 Meurisse
 
@@ -367,4 +388,6 @@ Next: profile stuff, crate-o, software profiles,   Signposting
 
 
 
+
+%% profiles of profiles of profiles
 
