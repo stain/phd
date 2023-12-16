@@ -300,7 +300,7 @@ Indeed, the CWLProv model provided a basis for the Provenance Run Crate profile,
 Runcrate converts both the retrospective provenance part of the CWLProv RO (the RDF graph of the workflow's execution) and the prospective provenance part (the CWL files, including the workflow itself).
 Both parts are thus converted into a single, workflow language-agnostic metadata resource.
 
-Another functionality offered by the runcrate package is \emph{runcrate report} which reports on the various executions described in an input RO-Crate, listing their starting and ending times, the values of the various parameters, etc. (example output is showns in listing \vref{ch54:lst:ml_pipeline_streamflow_report}).
+Another functionality offered by the runcrate package is \emph{runcrate report} which reports on the various executions described in an input RO-Crate, listing their starting and ending times, the values of the various parameters, etc. (example output in listing \vref{ch54:lst:ml_pipeline_streamflow_report}).
 Runcrate report demonstrates how the provenance profiles presented in this work enable comparison of runs interoperably across different workflow languages or different implementations of the same language.
 This functionality has also been used as a lightweight validator for the various implementations.
 
@@ -686,7 +686,7 @@ WHERE {
 \end{listing}
 
 Additionally, having workflow runs and plans described according to the RO-Crate model allows capturing the context of the workflow itself (e.g.~authors, related publications, other workflows, etc.) rather than the trace alone. 
-Being based on RO-Crate, the profiles and their implementations are part of a growing ecosystem of tools and services maintained by the RO-Crate \footurl{https://www.researchobject.org/ro-crate/in-use/}{community}.
+Being based on RO-Crate, the profiles and their implementations are part of a growing \footurl{https://www.researchobject.org/ro-crate/in-use/}{ecosystem} of tools and services maintained by the RO-Crate community. 
 
 Another advantage of RO-Crate is that the files corresponding to the data entities (inputs, outputs, code, etc.) do not necessarily have to be stored together with the metadata file: for instance, they can be remote and referred to via an http(s) URI. This is mostly relevant in situations where the file is very large or cannot be shared publicly: the data entity's identifier can be a URI that is accessible only through authentication, or resolvable only within the boundaries of the generating organisation.
 
@@ -698,7 +698,7 @@ The Workflow Run RO-Crate profiles, the associated tooling, the implementations 
 The WRROC community brings together members of the RO-Crate community~\cite{Soiland-Reyes 2022}, WMS users and developers, Workflow users and developers, GA4GH~\cite{Rehm 2021} Cloud developers and provenance model authors, and is open to anyone who is interested in the representation of workflow provenance.
 The inclusion of WMS developers and workflow users was key to keeping the specifications flexible, easy to implement and grounded on real use cases, while the diversity of the stakeholders allowed to keep a plurality of viewpoints while driving the model's development forward.
 
-One of the main benefits of this development process is that the profiles are already in use, with seven implementations (six WMS and one conversion tool) already available as described in section \vref{ch54:implementations} .
+One of the main benefits of this development process is that the profiles are already in use, with seven implementations (six WMS and one conversion tool) already available as described in section \vref{ch54:implementations}.
 
 In the following subsections, we provide an evaluation of the metadata coverage of runcrate and we discuss WRROC relates to standards such as W3C PROV and to other community projects.
 
