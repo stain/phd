@@ -300,7 +300,7 @@ Indeed, the CWLProv model provided a basis for the Provenance Run Crate profile,
 Runcrate converts both the retrospective provenance part of the CWLProv RO (the RDF graph of the workflow's execution) and the prospective provenance part (the CWL files, including the workflow itself).
 Both parts are thus converted into a single, workflow language-agnostic metadata resource.
 
-Another functionality offered by the runcrate package is \emph{runcrate report} which reports on the various executions described in an input RO-Crate, listing their starting and ending times, the values of the various parameters, etc.
+Another functionality offered by the runcrate package is \emph{runcrate report} which reports on the various executions described in an input RO-Crate, listing their starting and ending times, the values of the various parameters, etc. (example output is showns in listing \vref{ch54:lst:ml_pipeline_streamflow_report}).
 Runcrate report demonstrates how the provenance profiles presented in this work enable comparison of runs interoperably across different workflow languages or different implementations of the same language.
 This functionality has also been used as a lightweight validator for the various implementations.
 
@@ -513,7 +513,8 @@ More specifically, we demonstrate the generation of RO-Crates to save provenance
 The image annotation process is implemented in a CWL workflow consisting of three steps, each executing inference on an image using a deep learning model: inference of a low-resolution tissue mask to select areas for further processing;
 high-resolution tissue inference on areas identified in the previous step to refine borders; high-resolution cancer identification on areas identified in the first step.
 The two tissue inference steps run the same tool, but set different values for the parameter that controls the magnification level.
-The workflow is integrated in the CRS4 Digital Pathology \footurl{https://github.com/crs4/DigitalPathologyPlatform}{Platform}, a web-based platform to support clinical studies involving the examination and/or the annotation of digital pathology images.
+The workflow is integrated in the 
+\footurl{https://github.com/crs4/DigitalPathologyPlatform}{CRS4 Digital Pathology Platform}, a web-based platform to support clinical studies involving the examination and/or the annotation of digital pathology images.
 
 To assess the interoperability of WRROC, we recorded the provenance of the same exemplary workflow in two different execution platforms.
 In the first case, the workflow was executed with the StreamFlow WMS, for which the Provenance Run Crate implementation is discussed in Section \vref{ch54:streamflow}.
@@ -523,16 +524,20 @@ The RO-Crates obtained in the two cases~\cite{Colonnelli 2023, run-pathology}
 are very similar to each other, differing only in a few details: for instance,~\cite{Colonnelli 2023} includes the StreamFlow configuration file and has separate files for the workflow and the two tools, while
 \cite{run-pathology} has the workflow and the tools stored in a single file (CWL's ``packed'' format).
 Apart from these minor differences, the description of the computation is essentially the same.
+
 Four actions are represented: the workflow itself, the two executions of the tissue extraction tool and the execution of the tumour classification tool.
 Each action is linked to the corresponding workflow or tool via the
 \emph{instrument} property, and reports its starting and ending time. For each action, input and output slots are referenced by the workflow, while the corresponding values are referenced by the action itself.
 The data entities and \emph{PropertyValue} instances corresponding to the input and output values link to the corresponding parameter slots via the \emph{exampleOfWork} property, providing information on the values taken by the parameters.
-The listing below (Listing~\vref{ch54:lst:ml_pipeline_streamflow_report}) shows the output of the
+
+Listing~\vref{ch54:lst:ml_pipeline_streamflow_report} shows the output of the
 \texttt{runcrate report} command for the StreamFlow RO-Crate. 
 For each action (workflow or tool run), the tool reports the associated instrument (workflow or tool), the starting and ending time and the list of inputs and outputs, with arrows pointing from the formal parameter to the corresponding actual value taken during the execution of the action.
 
 \begin{listing}
 %\begin{adjustwidth}{-0.5cm}{0in}
+  \caption[runcrate report command line output]{\texttt{runcrate report} command line output. This informal listing of relevant RO-Crate entities describe each step execution. Note that inputs and outputs are of different types (not shown), e.g. \texttt{tissue\_low>0.9} is a string parameter, \texttt{6b15de…} is a filename, and \texttt{\#af0253…} is a collection.}
+  \label{ch54:lst:ml_pipeline_streamflow_report}
 \begin{footnotesize}
 \begin{verbatim}
 action: #30a65cba-1b75-47dc-ad47-1d33819cf156
@@ -591,8 +596,6 @@ action: #ae2163a8-1a2a-4d78-9c81-caad76a72e47
   outputs:
     4fd6110ee3c544182027f82ffe84b5ae7db5fb81 <- classify_tumor.cwl#tumor
 \end{verbatim}
-\caption[runcrate report command line output]{\texttt{runcrate report} command line output. This informal listing of relevant RO-Crate entities describe each step execution. Note that inputs and outputs are of different types (not shown), e.g. \texttt{tissue\_low>0.9} is a string parameter, \texttt{6b15de…} is a filename, and \texttt{\#af0253…} is a collection.}
-\label{ch54:lst:ml_pipeline_streamflow_report}
 \end{footnotesize}
 %\end{adjustwidth}
 \end{listing}
@@ -611,26 +614,29 @@ This was also made possible by the fact that the CWL workflow included informati
 Overall, this shows how reproducibility is a hard-to-achieve goal that can only be supported, but not ensured, by the profiles, since it also depends on factors like the characteristics of the computation, the choice of workflow language and whether best practices such as containerisation are followed.
 
 This use case highlighted the need to add specifications on how to represent multi-file datasets \cite[section Representing multi-file objects]{WRROC 2023a}. In the MIRAX format, in fact, the ``main'' file must be accompanied by a directory in the same location containing additional files with a specific structure.
-To represent this, we added specifications to the Process Run Crate profile on describing “composite” datasets consisting of multiple files and directories to be treated as a single unit -- as opposed to more conventional input or output parameters consisting of a single file. The profile specifies that such datasets should be represented by a \emph{Collection} entity linking to individual files and directories via the \emph{hasPart} property, and referencing the main part (if any) via the \emph{mainEntity} property. Note that, by adding this specification to Process Run Crate, we also made it available to Workflow Run Crate and Provenance Run Crate. In the output of the runcrate report tool the additional files are not shown, since the formal parameter points to the \emph{Collection} entity that describes the whole dataset.
+To represent this, we added specifications to the Process Run Crate profile on \footurl{https://w3id.org/ro/wfrun/process/0.4\#representing-multi-file-objects}{describing “composite” datasets} consisting of multiple files and directories to be treated as a single unit -- as opposed to more conventional input or output parameters consisting of a single file. The profile specifies that such datasets should be represented by a \emph{Collection} entity linking to individual files and directories via the \emph{hasPart} property, and referencing the main part (if any) via the \emph{mainEntity} property. Note that, by adding this specification to Process Run Crate, we also made it available to Workflow Run Crate and Provenance Run Crate. In the output of the runcrate report tool the additional files are not shown, since the formal parameter points to the \emph{Collection} entity that describes the whole dataset.
 
 \subsubsection{Process Run Crate and CPM RO-Crate for cancer detection}\label{ch54:process-run-crate-and-cpm-ro-crate-for-cancer-detection}
 
 This section presents an RO-Crate created to describe an execution of a computational pipeline that trains AI models to detect the presence of carcinoma cells in high-resolution digital images of magnified human prostate tissue.
 The RO-Crate makes use of Process Run Crate and CPM RO-\footurl{https://w3id.org/cpm/ro-crate}{Crate}, an RO-Crate profile that supports the representation of entities described according to the Common Provenance Model (CPM) \cite{Wittner 2022,Wittner 2023b}. 
+
 The CPM, an extension of the W3C PROV model \cite{Moreau 2013} is a recently developed provenance model that enables the representation of distributed provenance. 
 Distributed provenance is created when an object involved in the research process, either digital or physical (e.g., biological material), is exchanged between organisations, so that each organisation can document only a portion of the object’s life cycle. 
 Individual provenance components are generated, stored, and managed individually by each organisation, and are linked together in a chain. 
 The CPM prescribes how to represent such provenance, and how to enable its traversal and processing using a common algorithm, independently from the type of object being described. 
 In addition, the CPM defines a notion of meta-provenance, which contains metadata about the history of individual provenance components. 
+
 CPM RO-Crate supports the identification of CPM-based provenance and meta-provenance files within an RO-Crate, allowing to pack data, metadata, and CPM-based provenance information together. 
 An RO-Crate generated according to the CPM-RO-Crate profile embeds parts of the distributed provenance, which may be linked to the provenance of precursors and successors of the packed data. 
+
 The CPM-RO-Crate profile synergises well with Process Run Crate, since the former can add references to CPM-based provenance descriptions of computational executions described with the latter, integrating them in the distributed provenance. Since CPM-based provenance and meta-provenance files are typically themselves produced by computations, Process Run Crate allows to represent these along with the main computations that produce the datasets being exchanged, providing the full picture in a cohesive ensemble.
 
 
 The pipeline consists of three main computational steps: a preprocessing step that splits input images into small patches and divides them into a training and a testing set; a training step that trains the model to recognise the presence of carcinoma cells in the images; an evaluation step that measures the accuracy of the trained model on the testing set.
 In addition to the pipeline steps, the RO-Crate describes additional computations related to the generation of the CPM provenance and meta-provenance files.
 All computations are described according to the Process Run Crate profile, while the CPM files are referenced according to the CPM RO-Crate profile. 
-%(section \namevref{ch54:synergy-with-the-cpm-ro-crate-profile}).
+
 Also represented via Process Run Crate are: the input dataset; the results of the pipeline execution; the scripts that implement the pipeline; the log files generated by the scripts; a script that converts the logs into the CPM files.
 This allowed us to describe all involved elements as a single aggregate, with entities and their relationships represented according to the RO-Crate model.
 The RO-Crate discussed here is available from Zenodo~\cite{Wittner 2023c}.
@@ -639,8 +645,10 @@ The CPM files complement the RO-Crate with internal details about the pipeline e
 For instance, it contains a representation of a checkpoint of the AI model after the second training iteration.
 The corresponding entity's attributes contain paths to the respective model stored as a file.
 The entity is related to the respective training iteration activity, which contains the iteration parameters represented as an attribute list.
+
 In addition, the CPM generally provides means to link the input dataset provenance to the provenance of its precursors -- human prostate tissues and biological samples the tissues were derived from; this is not included in the example because we used a publicly available input database for which provenance of the precursors was not available.
 However, the linking mechanism for provenance precursors is exactly the same as between the bundles for the AI pipeline parts.
+
 While the RO-Crate is focused on the execution of the pipeline, the provenance included in the CPM files intends to be interlinked with provenance of the precursors or successors, providing means to traverse the whole provenance chain.
 For the described digital pathology pipeline, the precursors would be: 
 
