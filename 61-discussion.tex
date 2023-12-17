@@ -316,16 +316,21 @@ This scenario, where we experimented with strict validation with JSON Schema for
 In effect the Specimen Data Refinery (SDR) workflow can be considered as a variant of the classic \emph{Builder pattern} \cite[pp. 97--106]{Gamma 1995}, which gradually constructs an object through a series of operations on an intermediate object (the builder).
 However, as highlighted by section \vref{ch7:fdo-lessons}, ducktyping-like profiles/interfaces are needed for typing incremental FDOs, to ensure that a later workflow step receives a partial FDO with the expected fragments populated, otherwise workflow users would be able to compose steps with the FDO in an invalid state. 
 
-The later section \vref{ch54:the-workflow-run-ro-crate-profiles} showed how RO-Crate profiles for workflow provenance FDOs can be staggered for different granularity levels, but that is more of a class hierarchy, as each level builds on previous complete levels.  The Five Safes Workflow Run Crate profile (section \vref{ch54:trusted-workflow-run-crate}) however, has a similar incremental pattern as the SDR FDOs, and the different review states should be performed in a particular order. To enforce this for FDO typing purposes may require explicit rule-based abstract state machines (ASM) \cite{Gurevich 1995}, as has been demonstrated for Linked Data with ASM4LD \cite{Käfer 2018a,Käfer 2018b}.
+The later section \vref{ch54:the-workflow-run-ro-crate-profiles} showed how RO-Crate profiles for workflow provenance FDOs can be staggered for different granularity levels, but that is more akin to a class hierarchy, as each level builds on previous complete levels.  The Five Safes Workflow Run Crate profile (section \vref{ch54:trusted-workflow-run-crate}) however, has a similar incremental pattern as the SDR FDOs, and the different review states should be performed in a particular order. Enforcing this for typing purposes may require explicit rule-based abstract state machines (ASM) \cite{Gurevich 1995}, as has been demonstrated for Linked Data with ASM4LD \cite{Käfer 2018a,Käfer 2018b}.
 
 
 \subsubsection{Flexible profiles increase adaptability of interoperable provenance}
 \label{ch61:provenance}
 
 
-Section \vref{ch54:wrroc} introduced the Workflow Run Crate (WRROC) profiles for capturing workflow provenance. It was highlighted that the multiple levels were designed to ease adoptability -- indeed the different WRROC implementations (section \vref{ch54:implementations}) have chosen  profiles depending on the provenance available to that particular engine. In addition, some implementations had to utilise optionality of some attributes, for instance to handle dynamic workflows. 
+Section \vref{ch54:wrroc} introduced the Workflow Run Crate (WRROC) profiles for capturing workflow provenance. It was highlighted that the multiple levels were designed to ease adoptability -- indeed the different WRROC implementations (section \vref{ch54:implementations}) have chosen  profiles depending on the provenance available to that particular engine. 
+In addition, some implementations had to utilise optionality of some attributes, for instance to handle dynamic workflows. 
 
-In addition the \emph{Process Run Crate} profile was shown to be suitable also for ``manual workflows'' where processes are executed by hand, as illustrated by figure \vref{ch61:fig:baseline-usecase}. In this example, the process run is only a small part of the crate, namely to generate the synthetic dataset, but of bigger importance in this crate is the causal model that explains to humans the relationships that led to the synthetic dataset. There is no overall computational workflow as the individual computational steps are performed with human interaction. 
+In addition the \emph{Process Run Crate} profile was shown to be suitable also for ``manual workflows'' where processes are executed by hand, as illustrated by figure \vref{ch61:fig:baseline-usecase}.
+In this example, the process run is only a small part of the crate, namely to generate the synthetic dataset, but of bigger importance in this crate is the causal model that explains to humans the relationships that led to the synthetic dataset. 
+There is no overall computational workflow as the individual computational steps are performed with human interaction, however this also means the RO-Crate metadata must be created by human interaction.
+
+
 
 \begin{landscape}
 \begin{figure}[p]
@@ -339,7 +344,17 @@ In addition the \emph{Process Run Crate} profile was shown to be suitable also f
 \end{figure}
 \end{landscape}
 
-The community making WRROC involved multiple developers from different backgrounds and a variety of workflow systems. A lesson to learn from that experience is that even though RO-Crate profiles give additional rigidity (as discussed in section \cite{ch61:profiles}) that enable interoperability like the \emph{runcrate run} reproducibility in section \vref{ch54:runcrate}, profiles need to also ensure sufficient flexibility for individual implementations of different capabilities and purposes.  Profiles are therefore different from stricter type systems and bounded schemas as previously used by FDO implementations and Linked Data ontologies.
+The community making WRROC involved multiple developers from different backgrounds and a variety of workflow systems. 
+A lesson to learn from that experience is that even though RO-Crate profiles give additional rigidity (as discussed in section \cite{ch61:profiles}) that enable interoperability like the \emph{runcrate run} reproducibility in section \vref{ch54:runcrate}, profiles need to also ensure sufficient flexibility for individual implementations of different capabilities and purposes.
+Profiles are therefore different from stricter type systems and bounded schemas as previously used by FDO implementations and Linked Data ontologies.
+
+
+\subsubsection{Profiles should not need to define subclasses}
+
+Part of RO-Crate's philosophy is to use Semantic Web technology while avoiding many of its potential difficulties, as discussed in section \vref{ch3:semweb} and \vref{ch5:simplicity}. 
+An unusual consequence of this is that extension profiles like WRROC end up reusing multiple types for the same entity.  
+
+Traditional ontology thinking such as with OWL would have been to create a series of subclasses
 
 \subsubsection{Provenance and PROV}
 
