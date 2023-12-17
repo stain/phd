@@ -316,7 +316,7 @@ This scenario, where we experimented with strict validation with JSON Schema for
 In effect the Specimen Data Refinery (SDR) workflow can be considered as a variant of the classic \emph{Builder pattern} \cite[pp. 97--106]{Gamma 1995}, which gradually constructs an object through a series of operations on an intermediate object (the builder).
 However, as highlighted by section \vref{ch7:fdo-lessons}, ducktyping-like profiles/interfaces are needed for typing incremental FDOs, to ensure that a later workflow step receives a partial FDO with the expected fragments populated, otherwise workflow users would be able to compose steps with the FDO in an invalid state. 
 
-The later section \vref{ch54:the-workflow-run-ro-crate-profiles} showed how RO-Crate profiles for workflow provenance FDOs can be staggered for different granularity levels, but that is more akin to a class hierarchy, as each level builds on previous complete levels.  The Five Safes Workflow Run Crate profile (section \vref{ch54:trusted-workflow-run-crate}) however, has a similar incremental pattern as the SDR FDOs, and the different review states should be performed in a particular order. Enforcing this for typing purposes may require explicit rule-based abstract state machines (ASM) \cite{Gurevich 1995}, as has been demonstrated for Linked Data with ASM4LD \cite{Käfer 2018a,Käfer 2018b}.
+The later section \vref{ch54:the-workflow-run-ro-crate-profiles} showed how RO-Crate profiles for workflow provenance FDOs can be staggered for different granularity levels, but that is more akin to a class hierarchy, as each level builds on previous complete levels.  The Five Safes Crate profile (section \vref{ch54:trusted-workflow-run-crate}) however, has a similar incremental pattern as the SDR FDOs, and the different review states should be performed in a particular order. Enforcing this for typing purposes may require explicit rule-based abstract state machines (ASM) \cite{Gurevich 1995}, as has been demonstrated for Linked Data with ASM4LD \cite{Käfer 2018a,Käfer 2018b}.
 
 
 \subsubsection{Flexible profiles increase adaptability of interoperable provenance}
@@ -345,7 +345,7 @@ There is no overall computational workflow as the individual computational steps
 \end{landscape}
 
 The community making WRROC involved multiple developers from different backgrounds and a variety of workflow systems. 
-A lesson to learn from that experience is that even though RO-Crate profiles give additional rigidity (as discussed in section \cite{ch61:profiles}) that enable interoperability like the \emph{runcrate run} reproducibility in section \vref{ch54:runcrate}, profiles need to also ensure sufficient flexibility for individual implementations of different capabilities and purposes.
+A lesson to learn from that experience is that even though RO-Crate profiles give additional rigidity (as discussed in section \vref{ch61:profiles}) that enable interoperability like the \emph{runcrate run} reproducibility in section \vref{ch54:runcrate}, profiles need to also ensure sufficient flexibility for individual implementations of different capabilities and purposes.
 Profiles are therefore different from stricter type systems and bounded schemas as otherwise used by FDO implementations and Linked Data ontologies.
 
 An interoperability challenge remains on how much flexibility to permit, as discussed in \vref{ch61:profiles}. However it is arguably more interoperable to have optional features defined by the community when needed, rather than individual vendor extensions -- giving common ground and graceful fallback. This practice is in line with FDO principle FDO-FDOR4 (\emph{can include other community defined and registered attributes}) \cite{fdo-RequirementSpec} and FAIR principle RDA-R1.3-01M (\emph{Metadata complies with a community standard}) \cite{groupFAIRDataMaturity2020}.
@@ -372,30 +372,32 @@ Listing \vref{ch61:wrroc-in-owl} shows an attempt to declare the partial WRROC r
 
 :ProcessRunCrateProfile rdf:type owl:Class ;
     rdfs:subClassOf :ROCrateProfile ,
-    [ rdf:type owl:Restriction ;
-      owl:onProperty [ owl:inverseOf dct:conformsTo ] ;    
-      owl:allValuesFrom [ rdf:type owl:Restriction ;
-          owl:onProperty s:mentions ;
-          owl:someValuesFrom :ProcessRunAction
-        ]
-    ] ;
+      [ rdf:type owl:Restriction ;
+        owl:onProperty [ owl:inverseOf dct:conformsTo ] ;    
+        owl:allValuesFrom [ 
+            rdf:type owl:Restriction ;
+            owl:onProperty s:mentions ;
+            owl:someValuesFrom :ProcessRunAction
+          ]
+      ] ;
     rdfs:label "Process Run Crate profile"@en-gb .
 
 :ProcessRunAction rdf:type owl:Class ;
-  owl:equivalentClass [ owl:intersectionOf ( 
-             [ rdf:type owl:Class ;
-               owl:unionOf ( s:ActivateAction s:CreateAction s:UpdateAction )
-             ]
-             [ rdf:type owl:Restriction ;
-               owl:onProperty s:instrument ;
-               owl:someValuesFrom [ rdf:type owl:Class ;
-                    owl:unionOf ( s:SoftwareApplication s:SoftwareSourceCode
-                     bioschemas:ComptuationalWorkflow )
-              ]
-             ]
-           ) ;
-        rdf:type owl:Class
-      ] ;
+  owl:equivalentClass [ 
+    owl:intersectionOf ( 
+      [ rdf:type owl:Class ;
+        owl:unionOf ( s:ActivateAction s:CreateAction s:UpdateAction )
+      ]
+      [ rdf:type owl:Restriction ;
+        owl:onProperty s:instrument ;
+        owl:someValuesFrom [ rdf:type owl:Class ;
+            owl:unionOf ( s:SoftwareApplication s:SoftwareSourceCode
+              bioschemas:ComptuationalWorkflow )
+        ]
+      ]
+    ) ;
+    rdf:type owl:Class
+  ] ;
   rdfs:subClassOf s:Action ;
   rdfs:label "ProcessRunAction"@en-gb .
   \end{verbatim}
@@ -406,29 +408,47 @@ Listing \vref{ch61:wrroc-in-owl} shows an attempt to declare the partial WRROC r
  \label{ch61:wrroc-in-owl}
 \end{listing}
 
-However, that is not to say that such OWL rules cannot be generated from simpler definitions of RO-Crate profile requirements. Of future consideration is that the tool Crate-O's  \footurl{https://github.com/Language-Research-Technology/ro-crate-editor-profiles}{Editor profiles} (mainly for driving the UI form generations), and \footurl{https://linkml.io/linkml/}{LinkML} which can generate ShEx, SHACL, OWL and JSON-LD context from a concise YAML definition. 
+However, that is not to say that such OWL rules cannot be generated from simpler definitions of RO-Crate profile requirements. Of future consideration is that the tool Crate-O's  \footurl{https://github.com/Language-Research-Technology/ro-crate-editor-profiles}{Editor profiles} (mainly for driving the UI form generations), and \footurl{https://linkml.io/linkml/}{LinkML} which can generate ShEx, SHACL, OWL and JSON-LD context from a concise YAML definition -- in coordination with validation as discussed in section \vref{ch61:fair-crates}.
 
 
 
 
-\subsubsection{Provenance and PROV}
+\subsubsection{Linked data provenance models can be made approachable}
 
-CPM for more detailed provenance. This is true also for non-compute. However real-life objects particularly need schema.org-like vocabulary. Biosample discussion. 
+As dicussed in sections \vref{intro:rq3} and \vref{ch54:introduction}, the subject of capturing provenance from computational workflow executions is both diverse and mature, with most of the implementations coalescing on the W3C PROV data model \cite{Moreau 2013}, and in particular specializations of the OWL ontology serialization PROV-O \cite{w3-prov-o}. Yet even with earlier approaches like Research Objects wfprov \cite{Belhajjame 2015}, D-PROV \cite{Missier 2013} and CWLProv \cite{Khan 2019}, the uptake of these technologies by scientific workflow systems is fragmented at best.
 
-PROV vs RO-Crate - Figure 5.8
+Given these approaches rely on Semantic Web technology and hierarchies of ontologies, it is not a far stretch to hypothesie that some of the challenges on uptake of Linked Data we discussed in section \vref{ch3:ld} and \vref{ch5:simplicity} also apply to the use of PROV-O by workflow systems developers. 
 
-Unusual terminology object/result
+A core concern for workflow users is to get their result data -- the exact computational structure is often of less concern as it is taken for given from the workflow definition. A change of focus from process-oriented to data-oriented will therefore also be beneficial for workflow provenance. 
 
-FormalParameter vs role
+Targeted workflow provenance models like Biocompute Objects (BCO) \cite{ieee2791,Alterovitz 2018} emphasise the \emph{context} of the workflow -- what is the purpose? What are possible inputs? What data sources are referenced?  BCO is being implemented by workflow management systems in Life Science domain including Nextflow and Galaxy, but is not deemed generic enough for other domains like earth sciences or medical imaging.  While extensions are possible in BCO (e.g. \footurl{https://wiki.biocomputeobject.org/index.php?title=Extension-fhir}{FHIR}) they are separate from the rest of the descriptions and do not natively support Linked Data principles.
 
-executable paper
-
-storage of wrroc -- b2?
-
-reference to external resources such as subjectOf to monitoring tool
-
-highlights distributed provenance challenge  --> CPM
+Section \vref{ch54:implementations} presented the range of workflow systems that have implemented WRROC, and section \vref{ch54:exemplary-use-cases} illustrated usage in the biomedical domain. While it is too early to tell to what extent WRROC is an approachable lightweight provenance model that can be implemented for many different research domains, the reception from those approaching it so far has been overwhelmingly positive. At the same time, new members of the WRROC community tend to contribute new requirements or adjustments that means the model is both maturing and evolving.
 
 
-%% profiles of profiles of profiles ? 
+\subsubsection{Combining provenance and metadata models gives the best of both worlds}
 
+The intention of Workflow Run Crate, and indeed RO-Crate overall, is not to replace all existing Linked Data descriptions of research data and workflows. Even if the format of RO-Crate is JSON-LD, and in theory can support any RDF vocabulary, that does not mean that doing so is the right design decision. The engineering principle of \emph{separation of concern} applies just as well to Linked Data formats which seem possible to integrate -- in other words, just because it is \emph{possible} to merge two knowledge graphs that does not mean they should be!
+
+The FAIR community has a long history of developing metadata standards, ontologies and provenance models. Research domains have also developed specific vocabularies and formats for repository submissions (often CSV-based), and likewise domain-specific models for making their registered data available as FAIR resources (often RDF-based, now more frequently JSON). 
+
+If we consider the lessons of evaluating FAIR Digital Objects and Linked Data in chapter \vref{chapter:fdo}, and the philosophy of RO-Crate from chapter \vref{chapter:ro-crate}, then it would seem important to facilitate proliferation of existing community standards, but also make their content more generally Findable and Accessible using a common overlay.
+
+An approach that we have foun useful with RO-Crate is therefore to propagate the existing provenance and metadata serializations, but also annotate their format and profiles in the RO-Crate metadata as not all formats are self-describing or well known. General metadata (e.g. authors, license, subject) can then be extracted and replicated in the RO-Crate, increasing its coverage of the domain and making the metadata available to a wider set of technologies. 
+
+One approach for this covered by section section \vref{ch54:process-run-crate-and-cpm-ro-crate-for-cancer-detection} describes how the PROV-based Common Provenance Model is used together with RO-Crate, both as a container of identified PROV bundles and by replicating the overall computation structure in the WRROC profiles.  The full details are left in the PROV serialization that is carried along within the crate, and can be combined with distributed provenance of real-life processes such as transferring a biosample between a hospital and a lab. 
+
+Likewise interopreability with existing models is imporch54:trusted-workflow-run-cratetant, and section \vref{ch54:prov} showed how WRROC provenance can be mapped back to PROV. It is important to note that some of the workflow details could be lost or muddled in such a generic mapping if they don't have a corresponding pattern in PROV -- for instance the expression of the workflow engine execution does not explicitly type it as such, that would require a particular PROV extension such as OPMW-PROV. 
+
+
+\subsubsection{A strong community trumps semantically correctness}
+
+The development of Workflow Run Crate was done as a community activity (section \vref{ch54:conclusion}), following the same pattern as RO-Crate itself (section \vref{ch5:community}) and many activities within the ELIXIR Europe life science network \cite{Harrow 2022}. 
+
+When collectively building semantic models, particularly using ontology design patterns \cite{Hitzler 2016}, it can often take much longer to figure out what is the \emph{meaning} of a term (e.g.~its semantics) rather than how it should be formalized in an ontology language. In research domains this often comes down to considering redefining core concepts of the field itself, which in life sciences for instance easily turn into philosophical dialectic arguments \cite{Falk 2010}. 
+
+The recently started Workflows Community Initiative has a working group for \footurl{https://workflows.community/groups/fair/}{FAIR computational workflows}, but before it is able to formalise the FAIR principles for workflows, the group had to discuss to length what is or is not a \emph{workflow}, and what makes it different from other research software.
+
+While such fundamentals are important to get right, they should not become blockers for community progress. In the pragmatic take by the WRROC community for instance, a reverse argument was made that it is not so important if a workflow engine exist or not, but rather that we wanted to capture "workflowy" provenance. The principle of ``I know it when I see it'' does not just apply to censorship of obscene material \cite{Gewirtz 1996}, but also to semantic design. In designing WRROC and RO-Crate it was useful to be constrained by the [schema.org] vocabulary, for instance the type \url{http://schema.org/HowTo} -- with current examples showing how to change tires on a car -- was also found adequate for describing a computational workflow and its steps in the Provenance Crate Profile (section \vref{ch54:provenance-run-crate}). 
+
+This forced generalization may also have helped to make the model general enough for the different forms of workflow systems who implemented it, as each would have to ``squint'' slightly to map the WRROC concepts to their much more specific engine concepts. This also leads to fruitful community discussions and allowing reinterpretions of existing assumptions, placing the ``just enough Linked Data'' idea (section \vref{ch61:justenough}) into practice.
