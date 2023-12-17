@@ -346,31 +346,74 @@ There is no overall computational workflow as the individual computational steps
 
 The community making WRROC involved multiple developers from different backgrounds and a variety of workflow systems. 
 A lesson to learn from that experience is that even though RO-Crate profiles give additional rigidity (as discussed in section \cite{ch61:profiles}) that enable interoperability like the \emph{runcrate run} reproducibility in section \vref{ch54:runcrate}, profiles need to also ensure sufficient flexibility for individual implementations of different capabilities and purposes.
-Profiles are therefore different from stricter type systems and bounded schemas as previously used by FDO implementations and Linked Data ontologies.
+Profiles are therefore different from stricter type systems and bounded schemas as otherwise used by FDO implementations and Linked Data ontologies.
+
+An interoperability challenge remains on how much flexibility to permit, as discussed in \vref{ch61:profiles}. However it is arguably more interoperable to have optional features defined by the community when needed, rather than individual vendor extensions -- giving common ground and graceful fallback. This practice is in line with FDO principle FDO-FDOR4 (\emph{can include other community defined and registered attributes}) \cite{fdo-RequirementSpec} and FAIR principle RDA-R1.3-01M (\emph{Metadata complies with a community standard}) \cite{groupFAIRDataMaturity2020}.
 
 
 \subsubsection{Profiles should not need to define subclasses}
 
-Part of RO-Crate's philosophy is to use Semantic Web technology while avoiding many of its potential difficulties, as discussed in section \vref{ch3:semweb} and \vref{ch5:simplicity}. 
-An unusual consequence of this is that extension profiles like WRROC end up reusing multiple types for the same entity.  
+Part of RO-Crate's philosophy is to use Semantic Web technology while avoiding many of its pitfalls discussed in section \vref{ch3:semweb} and \vref{ch5:simplicity}. 
+An unusual consequence of this is that extension profiles like WRROC end up reusing multiple types for the same entity.  For instance, the \emph{CreateAction} representing a \footurl{https://w3id.org/ro/wfrun/process/0.4}{process run} has an \emph{instrument} to either a \texttt{SoftwareApplication}, \texttt{SoftwareCourceCode} or \texttt{ComputationalWorkflow}. In the specialising profile for \footurl{https://w3id.org/ro/wfrun/workflow/0.4}{workflow run} the actual type of the instrument is however a combination: \texttt{["File", "SoftwareSourceCode", "ComputationalWorkflow"]}
 
-Traditional ontology thinking such as with OWL would have been to create a series of subclasses
+Traditional ontology thinking such as with OWL and RDFS would be to create a class hierarchy, indeed both  \url{http://schema.org/SoftwareSourceCode} and \url{http://schema.org/MediaObject} (aliased as \texttt{File} in RO-Crate's JSON-LD) are subtypes of \url{http://schema.org/CreativeWork} which has most of the useful properties like \emph{author} and \emph{license}. It would however not be RO-Crate's job to modify the existing schema.org class hierarchy to inject artificial superclasses like \emph{ApplicationOrSourceCodeOrWorkflow}, neither would it be desirable to create a subproperty of \emph{instrument} with the intended \emph{domainIncludes}, as that means using custom terms that diverge from schema.org. 
+
+It's an important part of the simplification of the Semantic Web in RO-Crate that consumers should not need to do any ontology retrieval or reasoning. For RO-Crate users it is therefore natural to occassionally combine types, enabling properties from both. schema.org is not a strict ontology with disjoint classes, so this usually do not cause any problem. It's however not desirable to re-iterate supertypes already defined within schema.org such as \emph{CreativeWork}. 
+
+RO-Crate profiles like WRROC live are doing a combination of \emph{restrictions} (requiring the crate to have a particular entity) and \emph{extensions} (suggesting additional terms to use). By following the RO-Crate philosophy the profiles also reuse existing schema.org types as much as possible, adding a filtered overlay of their many properties, just like RO-Crate itself, and only adding terms where no appropiate alternative exist.
+
+Listing \vref{ch61:wrroc-in-owl} shows an attempt to declare the partial WRROC requirements from the top of this section in OWL. In doing so it was necessary to introduce additional types for the profile and the action, in addition to anonymous union classes and inverse properties. It is clear that expressing a full RO-Crate profile in this matter would require a deep understanding of OWL ontologies and would require its own set of unit tests, and would not be inline with the RO-Crate philosophy of \emph{just enough Linked Data}.
+
+\begin{listing}
+  \begin{verbatim}
+<https://w3id.org/ro/wfrun/process/0.4> 
+  rdf:type owl:NamedIndividual, :ProcessRunCrateProfile ;
+  rdfs:label "Process Run Crate profile 0.4"@en-gb .    
+
+:ProcessRunCrateProfile rdf:type owl:Class ;
+    rdfs:subClassOf :ROCrateProfile ,
+    [ rdf:type owl:Restriction ;
+      owl:onProperty [ owl:inverseOf dct:conformsTo ] ;    
+      owl:allValuesFrom [ rdf:type owl:Restriction ;
+          owl:onProperty s:mentions ;
+          owl:someValuesFrom :ProcessRunAction
+        ]
+    ] ;
+    rdfs:label "Process Run Crate profile"@en-gb .
+
+:ProcessRunAction rdf:type owl:Class ;
+  owl:equivalentClass [ owl:intersectionOf ( 
+             [ rdf:type owl:Class ;
+               owl:unionOf ( s:ActivateAction s:CreateAction s:UpdateAction )
+             ]
+             [ rdf:type owl:Restriction ;
+               owl:onProperty s:instrument ;
+               owl:someValuesFrom [ rdf:type owl:Class ;
+                    owl:unionOf ( s:SoftwareApplication s:SoftwareSourceCode
+                     bioschemas:ComptuationalWorkflow )
+              ]
+             ]
+           ) ;
+        rdf:type owl:Class
+      ] ;
+  rdfs:subClassOf s:Action ;
+  rdfs:label "ProcessRunAction"@en-gb .
+  \end{verbatim}
+  \caption[Defining a Process Run action as an OWL equivalence class]{\textbf{Defining a Process Run action as an OWL equivalence class}. A versioned \texttt{:ProcessRunCrateProfile} is given a restriction in that the RO-Crate root which list the profile as \texttt{conformsTo} must \emph{mention} an action (one of \emph{ActivateAction},  \emph{CreateAction},  \emph{UpdateAction}) which \emph{instrument} have at least one instance of \emph{SoftwareApplication} \emph{SoftwareSourceCode} or \emph{ComptuationalWorkflow}. This OWL ontology uses equivalence classes as the WRROC types must be inferred and not declared in their JSON-LD \texttt{@id}.
+  OWL Turtle snippet modified from \url{https://github.com/ResearchObject/workflow-run-crate/pull/69}
+  
+  }
+ \label{ch61:wrroc-in-owl}
+\end{listing}
+
+However, that is not to say that such OWL rules cannot be generated from simpler definitions of RO-Crate profile requirements. Of future consideration is that the tool Crate-O's  \footurl{https://github.com/Language-Research-Technology/ro-crate-editor-profiles}{Editor profiles} (mainly for driving the UI form generations), and \footurl{https://linkml.io/linkml/}{LinkML} which can generate ShEx, SHACL, OWL and JSON-LD context from a concise YAML definition. 
+
+
+
 
 \subsubsection{Provenance and PROV}
 
-Multiple types, not new subclasses fig 5.9
-HowToStep vs wfdesc  -- optional type for prov crate
-ParameterConnection
-
-Sapporo as an example not using these parameters
-
-Community building
-
-How much flexibility? FDO ducktyping.   Optional such as MIRAX types.
-Possible source of interoperability, but better these are defined in the community profile than in vendor extensions -- graceful fallback.
-
-
-\subsubsection{Provenance and PROV}
+CPM for more detailed provenance. This is true also for non-compute. However real-life objects particularly need schema.org-like vocabulary. Biosample discussion. 
 
 PROV vs RO-Crate - Figure 5.8
 
@@ -378,34 +421,14 @@ Unusual terminology object/result
 
 FormalParameter vs role
 
-
-
 executable paper
 
 storage of wrroc -- b2?
 
-compss highlight flexibility of not having a fixed wf model
-
 reference to external resources such as subjectOf to monitoring tool
-
-Streamflow example of where deployment info is also part of wfexecution
 
 highlights distributed provenance challenge  --> CPM
 
 
-validation
-
-
-
-Next: profile stuff, crate-o, software profiles,   Signposting 
-
-5s-crate
-
-
-
-
-
-
-
-%% profiles of profiles of profiles
+%% profiles of profiles of profiles ? 
 
