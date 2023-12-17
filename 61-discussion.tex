@@ -319,48 +319,51 @@ However, as highlighted by section \vref{ch7:fdo-lessons}, ducktyping-like profi
 The later section \vref{ch54:the-workflow-run-ro-crate-profiles} showed how RO-Crate profiles for workflow provenance FDOs can be staggered for different granularity levels, but that is more of a class hierarchy, as each level builds on previous complete levels.  The Five Safes Workflow Run Crate profile (section \vref{ch54:trusted-workflow-run-crate}) however, has a similar incremental pattern as the SDR FDOs, and the different review states should be performed in a particular order. To enforce this for FDO typing purposes may require explicit rule-based abstract state machines (ASM) \cite{Gurevich 1995}, as has been demonstrated for Linked Data with ASM4LD \cite{Käfer 2018a,Käfer 2018b}.
 
 
-\subsubsection{Provenance of workflow runs}
+\subsubsection{Flexible profiles increase adaptability of interoperable provenance}
 \label{ch61:provenance}
 
 
 Section \vref{ch54:wrroc} introduced the Workflow Run Crate (WRROC) profiles for capturing workflow provenance. It was highlighted that the multiple levels were designed to ease adoptability -- indeed the different WRROC implementations (section \vref{ch54:implementations}) have chosen  profiles depending on the provenance available to that particular engine. In addition, some implementations had to utilise optionality of some attributes, for instance to handle dynamic workflows. 
 
-In addition the \emph{Process Crate} profile was shown to be suitable also for ``manual workflows'' where processes are executed by hand, as illustrated by the \footurl{https://w3id.org/ro/doi/10.5281/zenodo.6913045}{BY-COVID WP5 T5.2 Baseline Use Case} RO-Crate from the BY-COVID \cite{Meurisse 2023} project in figure \vref{ch61:fig:baseline-usecase}.
+In addition the \emph{Process Run Crate} profile was shown to be suitable also for ``manual workflows'' where processes are executed by hand, as illustrated by figure \vref{ch61:fig:baseline-usecase}. In this example, the process run is only a small part of the crate, namely to generate the synthetic dataset, but of bigger importance in this crate is the causal model that explains to humans the relationships that led to the synthetic dataset. There is no overall computational workflow as the individual computational steps are performed with human interaction. 
 
-\begin{figure}[htb]
-  \includegraphics[width=\textwidth]{figures/ch09/baseline-usecase-crate.pdf}
-    \caption[Example of RO-Crate using Profile Crate profile]{\textbf{Example of RO-Crate using Profile Crate profile}. ..
+\begin{landscape}
+\begin{figure}[p]
+  \includegraphics[height=\textheight]{figures/ch09/baseline-usecase.pdf}
+  
+    \caption[Example of RO-Crate using the Process Run Crate profile]{\footnotesize \textbf{Example of RO-Crate using the Process Run Crate profile} to
+    describe a BY-COVID use case for modelling vaccine effectiveness \cite{Meurisse 2023}.
+    The crate \emph{hasPart} multiple data entities, and \emph{mentions} several process runs according to the profile. The use case is further described with extra schema.org attributes like \emph{temporalCoverage}. Screenshot of RO-Crate preview HTML, modified for print from \url{https://w3id.org/ro/doi/10.5281/zenodo.6913045}
     }
   \label{ch61:fig:baseline-usecase}
 \end{figure}
+\end{landscape}
+
+The community making WRROC involved multiple developers from different backgrounds and a variety of workflow systems. A lesson to learn from that experience is that even though RO-Crate profiles give additional rigidity (as discussed in section \cite{ch61:profiles}) that enable interoperability like the \emph{runcrate run} reproducibility in section \vref{ch54:runcrate}, profiles need to also ensure sufficient flexibility for individual implementations of different capabilities and purposes.  Profiles are therefore different from stricter type systems and bounded schemas as previously used by FDO implementations and Linked Data ontologies.
+
+\subsubsection{Provenance and PROV}
+
+Multiple types, not new subclasses fig 5.9
+HowToStep vs wfdesc  -- optional type for prov crate
+ParameterConnection
+
+Sapporo as an example not using these parameters
+
+Community building
+
+How much flexibility? FDO ducktyping.   Optional such as MIRAX types.
+Possible source of interoperability, but better these are defined in the community profile than in vendor extensions -- graceful fallback.
 
 
-
-The practical implementation of RO-Crate by multiple developers highlights the 
-
-
-Meurisse
+\subsubsection{Provenance and PROV}
 
 PROV vs RO-Crate - Figure 5.8
 
 Unusual terminology object/result
 
-
-
 FormalParameter vs role
 
-Community building
 
-Multiple types, not new subclasses fig 5.9
-
-HowToStep vs wfdesc  -- optional type for prov crate
-
-ParameterConnection
-
-Sapporo as an example not using these parameters
-
-How much flexibility? FDO ducktyping.   Optional such as MIRAX types.
-Possible source of interoperability, but better these are defined in the community profile than in vendor extensions -- graceful fallback.
 
 executable paper
 
