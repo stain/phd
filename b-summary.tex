@@ -1,49 +1,13 @@
-\emph{a summary of the whole thesis}
+\textbf{FAIR Research Objects and Computational Workflows – A Linked Data Approach}
 
-% ChatGPT!
+This PhD thesis explores the topics of RO-Crate, FAIR Digital Objects (FDOs), and computational workflows, in order to examine research questions relating to how these can be implemented and integrated using Linked Data approaches -- forming ``FAIR Research Objects''.
 
-The thesis begins with an exploration of RO-Crate, FAIR Digital Objects (FDOs), and computational workflows, driven by three primary research questions. The main contributions involve the evaluation and integration of these components to enhance the FAIR principles in research data. It underscores the importance of a strong community in driving semantic model development and outlines the thesis's structure.
+The background covers the evolution of the Semantic Web, Linked Data, and FAIR Digital Objects, which are then evaluated against the FAIR principles and several frameworks, to consider these technologies as potential middleware for a global distributed object system that enable machine-actionable research outputs. 
 
-The background section delves into the evolution of the Semantic Web, Linked Data, and FAIR Digital Objects, providing context for the subsequent discussions. The evaluation of FAIR Digital Objects and Linked Data as distributed object systems is presented, analyzing frameworks and implementations. The synthesis of Linked Data practices for FAIR Digital Objects principles is explored, emphasizing the need for constraints and consistency.
+This work introduces the community-developed method \emph{RO-Crate} for packaging research artifacts with their contextual information, relationships and metadata -- taking advantage of Linked Data standards that have been simplified and documented for pragmatic use by software developers. The tension between flexibility for implementations and rigidity of semantic constraints is explored, and demonstrated by various profiles of RO-Crate that have been implemented across research domains such as bioinformatics, regulatory sciences, biodiversity and digital humanities. 
 
-RO-Crate is introduced as a tool for packaging research artifacts, detailing its development methodology, conceptual definition, and tooling. Various profiles of RO-Crate in use across domains such as bioinformatics, regulatory sciences, and digital humanities are highlighted. The section also discusses creating lightweight FAIR Digital Objects with RO-Crate and presents a formalization of RO-Crate in First Order Logic.
+Computational workflows, commonly used by scientists for reproducible data analysis across execution platforms, are then examined as potential FAIR Digital Objects, considering them both as shareable research outputs (capturing the computational method for later reuse) as well as a part of provenance of computational results, captured in a Workflow Run Crate, defined as an RO-Crate profile. 
+Additionally the concept of \emph{Canonical Workflow Building Blocks} is introduced as a method for FAIR sharing of tools across workflow systems. A case study from natural history museums and biodiversity shows how the combination of workflows and RO-Crate can be used to incrementally annotate digitised specimens and gradually build reproducible domain-specific FDOs. 
 
-Computational workflows, treated as FAIR Digital Objects, are examined in detail. The thesis addresses the interoperability of canonical workflow building blocks across different languages and introduces the Specimen Data Refinery, a case study illustrating the challenges and benefits of implementing FAIR Digital Objects within workflows. The incremental construction of FAIR Digital Objects within workflows is discussed, emphasizing the need for flexible profiles to ensure typing accuracy.
+The discussion part of this thesis explores how the emerging ecosystem of FAIR Digital Objects can learn from the community development of RO-Crate and carefully adapt ``just enough'' of Linked Data technologies, balancing flexibility and predictability. Future directions for RO-Crate are examined, including new adoptations and further alignments with FAIR and FDO principles. Lessons from computational workflows further inform directions of FDO and RO-Crate. The main findings of this thesis concludes on the significance of community-driven pragmatic solutions over strict semantic correctness, supporting advancement of the FAIR principles through practical and interoperable implementations of Web standards.
 
-The thesis concludes with a comprehensive discussion covering various aspects, including making ecosystems of FAIR Digital Objects predictable, the developer-friendly approach of RO-Crate, and future directions for both RO-Crate and computational workflows. The importance of user applications, web-based FDOs, and the adaptability of workflow profiles is emphasized. The conclusion reinforces the main findings and highlights the significance of community-driven pragmatic solutions over strict semantic correctness.
-%
-%%% 
-%Given the content of the thesis, it appears to have several potential impacts on the field of Linked Data, open research, and FAIR principles:
-%
-%    Advancement of FAIR Principles: The thesis explores and contributes to the advancement of FAIR principles, particularly in the context of digital objects and computational workflows. This has the potential to enhance the accessibility, interoperability, and reusability of research data, aligning with the broader goals of open and FAIR research.
-%
-%    Practical Implementation through RO-Crate: The emphasis on RO-Crate as a tool for packaging research artifacts introduces a practical and developer-friendly approach. This could have a significant impact on how researchers organize, share, and disseminate their work, making it more understandable and reusable for others.
-%
-%    Interoperability and Linked Data Practices: By evaluating FAIR Digital Objects and Linked Data as distributed object systems, the thesis addresses the challenges and opportunities for interoperability. This can have implications for how researchers and institutions structure their data, enabling more seamless integration with Linked Data practices.
-%
-%    Workflow Provenance and Incremental Construction: The exploration of computational workflows as FAIR Digital Objects and the discussion on incremental construction within workflows contribute to the understanding of workflow provenance. This has implications for tracking and reproducing scientific experiments, ensuring transparency and reliability in research.
-%
-%    Community Engagement: The emphasiGiven the content of the thesis, it appears to have several potential impacts on the field of Linked Data, open research, and FAIR principles:
-%
-%    Advancement of FAIR Principles: The thesis explores and contributes to the advancement of FAIR principles, particularly in the context of digital objects and computational workflows. This has the potential to enhance the accessibility, interoperability, and reusability of research data, aligning with the broader goals of open and FAIR research.
-%
-%    Practical Implementation through RO-Crate: The emphasis on RO-Crate as a tool for packaging research artifacts introduces a practical and developer-friendly approach. This could have a significant impact on how researchers organize, share, and disseminate their work, making it more understandable and reusable for others.
-%
-%    Interoperability and Linked Data Practices: By evaluating FAIR Digital Objects and Linked Data as distributed object systems, the thesis addresses the challenges and opportunities for interoperability. This can have implications for how researchers and institutions structure their data, enabling more seamless integration with Linked Data practices.
-%
-%    Workflow Provenance and Incremental Construction: The exploration of computational workflows as FAIR Digital Objects and the discussion on incremental construction within workflows contribute to the understanding of workflow provenance. This has implications for tracking and reproducing scientific experiments, ensuring transparency and reliability in research.
-%
-%    Community Engagement: The emphasis on the importance of a strong community in the development of semantic models and frameworks suggests a collaborative approach. If the thesis findings are widely adopted, it could foster a sense of community engagement and shared responsibility in implementing and improving FAIR principles.
-%
-%    Future Directions for RO-Crate: The thesis outlines future directions for RO-Crate, including user applications for generating FAIR Research Objects and web-based FDOs using RO-Crate metadata. If these directions are pursued, it could lead to the development of more user-friendly tools and practices for researchers.
-%
-%    Impact on Research Data Management: The thesis, by addressing challenges in packaging research artifacts and improving interoperability, may impact how institutions and researchers approach research data management. This could lead to more standardized and effective practices in handling and sharing research data.
-%
-%In summary, the thesis has the potential to contribute significantly to the ongoing discourse and implementation of FAIR principles, especially in the context of digital objects, computational workflows, and the practical application of tools like RO-Crate. The impact will largely depend on how widely these findings are adopted within the research community and integrated into existing research practices.
-%s on the importance of a strong community in the development of semantic models and frameworks suggests a collaborative approach. If the thesis findings are widely adopted, it could foster a sense of community engagement and shared responsibility in implementing and improving FAIR principles.
-%
-%    Future Directions for RO-Crate: The thesis outlines future directions for RO-Crate, including user applications for generating FAIR Research Objects and web-based FDOs using RO-Crate metadata. If these directions are pursued, it could lead to the development of more user-friendly tools and practices for researchers.
-%
-%    Impact on Research Data Management: The thesis, by addressing challenges in packaging research artifacts and improving interoperability, may impact how institutions and researchers approach research data management. This could lead to more standardized and effective practices in handling and sharing research data.
-%
-%In summary, the thesis has the potential to contribute significantly to the ongoing discourse and implementation of FAIR principles, especially in the context of digital objects, computational workflows, and the practical application of tools like RO-Crate. The impact will largely depend on how widely these findings are adopted within the research community and integrated into existing research practices.
