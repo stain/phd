@@ -7,7 +7,7 @@ In this section I summarise and discuss the findings from the previous chapters,
 \label{ch61:ecosystem}
 
 The main advantage of scholarly researchers publishing \emph{FAIR data} is to enable machine actionability \cite{Wilkinson 2016}, which again will accelerate further research, such as through computational workflows. 
-In practice, data publishing is largely approached either by depositions in general and institutional repositories for Open Data such as Figshare and Zenodo \cite{Dillen 2019}, or to specialized domain-specific repositories such as in biodiversity \cite{ch8-7}. 
+In practice, data publishing is largely approached either by depositions in general and institutional repositories for Open Data such as Figshare and Zenodo \cite{Dillen 2019}, or to specialised domain-specific repositories such as in biodiversity \cite{ch8-7}. 
 
 European research infrastructures supporting Open Science practices are coalescing their services to form the European Open Science Cloud (EOSC) \cite{10.2777/940154}, which are embracing FAIR principles \cite{Mons 2017} and building a common framework for interoperability \cite{eosc-interop-framework}. 
 
@@ -47,7 +47,7 @@ Section \vref{ch2:meeting-fdo-principles-using-linked-data-standards} explored h
 As chapter \ref{chapter:fdo} has highlighted throughout, there are many technical details remaining to be specified for FDO it to be consistently implemented according to its own principles.
 
 If such conventions need to be evolved and specified no matter the protocol basis for FDO, this chapter argued, then it would be intuitive to build FDO on the mature Web stack, unless there was an compelling argument for alternative protocol stacks having other advantages.\footnote{
-  For instance, a de-centralized, resiliant architecture and long term preservation was the motivation for the design of the Interplanetary File System (IPFS) as a \emph{Decentralized Web} \cite{Trautwein 2022}.
+  For instance, a de-centralised, resiliant architecture and long term preservation was the motivation for the design of the Interplanetary File System (IPFS) as a \emph{Decentralized Web} \cite{Trautwein 2022}.
 }
 
 Section \ref{ch2:discussion} found that the basis of Web-based FDOs can be built using only Signposting \cite{vandesompel2015,Van de Sompel 2022}, adding a couple of non-intrusive HTTP headers that are agnostic to metadata standards and serializations. An implementation of such Web-based FDOs was shown in section \ref{ch4:lightweight-fdo}. 
@@ -148,8 +148,8 @@ Since the publication of the corresponding manuscripts in chapter \ref{chapter:r
 The discussion of strictness vs flexibility in section \vref{ch5:strictness-vs-flexibility} highlighted the tension between a flexible open-ended model and the predictability needed to consistently create and consume content expressed by the model.
 While RO-Crate itself can be seen as a restriction of the more open-ended JSON-LD and schema.org, its extensibility points still allow different use cases to expand on those conventions.  
 
-Section \vref{ch5:profiles} detailed how semi-formalized profiles can be gradually formed to at first \emph{duck-type} a class of RO-Crates that have similar properties.
-Later work has formalized this as \footurl{https://www.researchobject.org/ro-crate/1.2-DRAFT/profiles}{Profile Crate} to capture the profile itself as a separate crate. This have now evolved to use the W3C Profiles Vocabulary \cite{dx-prof} to explicitly link to vocabularies, mappings and importantly constraints expressed as RDF Shapes \cite{fdo-collections}. 
+Section \vref{ch5:profiles} detailed how semi-formalised profiles can be gradually formed to at first \emph{duck-type} a class of RO-Crates that have similar properties.
+Later work has formalised this as \footurl{https://www.researchobject.org/ro-crate/1.2-DRAFT/profiles}{Profile Crate} to capture the profile itself as a separate crate. This have now evolved to use the W3C Profiles Vocabulary \cite{dx-prof} to explicitly link to vocabularies, mappings and importantly constraints expressed as RDF Shapes \cite{fdo-collections}. 
 This turns RO-Crate profiles into machine-actionable type definitions, from which existing RDF tooling can do for instance validation. 
 Figure \ref{ch61:fig:profilecrate} shows how the usage of \emph{roles} within the profile crate indicates the purpose of the constituent parts.
 Roles are here particularly important as many of these Semantic Web resources are expressed in the same file format (e.g. \texttt{text/turtle}) and may be used for different purposes (e.g.
@@ -167,7 +167,7 @@ SKOS is used to represent either a \emph{mapping} or a \emph{vocabulary} \cite{w
   \end{figure}
 \footnotetext{\url{https://w3id.org/ro/wfrun/process/0.2}}
 
-While profiles are at first lightweight indicators of common conventions for a class of crates (which may be implicit or explicit), they can be gradually formalized in a \emph{eat own dogfood} way through another RO-Crate, optionally taking advantage of existing Semantic Web technology that enable for instance strict validation of domain-specific RO-Crates.
+While profiles are at first lightweight indicators of common conventions for a class of crates (which may be implicit or explicit), they can be gradually formalised in a \emph{eat own dogfood} way through another RO-Crate, optionally taking advantage of existing Semantic Web technology that enable for instance strict validation of domain-specific RO-Crates.
 
 
 \subsubsection{One vocabulary is not enough, but one profile may suffice}
@@ -257,7 +257,7 @@ The use of profiles, and particularly nested profiles as in figure \vref{ch54:fi
 \label{ch61:collections}
 
 RO-Crate has also been proposed as a generic mechanism for FDO Collections \cite{fdo-collections}, as an aggregator of FDOs by their PIDs. Such collections add a similar challenge in FDO as in Linked Data, in that clients may need to resolve an excessive number of persistent identifiers (see section \vref{ch20:avoid-lots-of-requests}) to FDOs which may be of different semantic types. 
-Using a detached RO-Crate for such collections, the bibliographic metadata of each PID can be directly embedded and normalized to a single vocabulary, reducing client needs for recursive queries and type mappings. 
+Using a detached RO-Crate for such collections, the bibliographic metadata of each PID can be directly embedded and normalised to a single vocabulary, reducing client needs for recursive queries and type mappings. 
  
 Work on building large data citations as a ``reliquary'' -- a \emph{container of persistent identifiers (PIDs)} \cite{Buck 2022} -- started from the earth science domain with AGU's \footurl{https://data.agu.org/DataCitationCoP/}{Data Citation Community of Practice} and continues in RDA's \footurl{https://www.rd-alliance.org/groups/complex-citations-working-group}{Complex Citation Working Group}. In this approach RO-Crate is being considered as a promising implementation to capture large number of citations along with minimal metadata, including licensing and attribution. Here a main motivation is to avoid excessive lists of data citations for scholarly publications following processing of aggregated datasets from repositories such as GBIF \cite{ch8-7}, while still propagating each dataset's FAIR metadata (as required by the Creative Commons Attribution licence) through the indirection of a collection. There is a potential overlap with workflow run provenance, although a workflow is not required by reliquaries.
 
@@ -447,7 +447,7 @@ Likewise interoperability with existing models is important, and section \vref{c
 
 The development of Workflow Run Crate was done as a community activity (section \vref{ch54:conclusion}), following the same pattern as RO-Crate itself (section \vref{ch5:community}) and many activities within the ELIXIR Europe life science network \cite{Harrow 2022}. 
 
-When collectively building semantic models, particularly using ontology design patterns \cite{Hitzler 2016}, it can often take much longer to figure out what is the \emph{meaning} of a term (e.g.~its semantics) rather than how it should be formalized in an ontology language. In research domains this often comes down to considering redefining core concepts of the field itself, which in life sciences for instance easily turn into philosophical dialectic arguments \cite{Falk 2010}. 
+When collectively building semantic models, particularly using ontology design patterns \cite{Hitzler 2016}, it can often take much longer to figure out what is the \emph{meaning} of a term (e.g.~its semantics) rather than how it should be formalised in an ontology language. In research domains this often comes down to considering redefining core concepts of the field itself, which in life sciences for instance easily turn into philosophical dialectic arguments \cite{Falk 2010}. 
 
 The recently started Workflows Community Initiative has a working group for \footurl{https://workflows.community/groups/fair/}{FAIR computational workflows}, but before it is able to formalise the FAIR principles for workflows (building on \cite{Goble 2020}), the group had to discuss to length what is or is not a \emph{workflow}, and what makes it different from other research software.
 

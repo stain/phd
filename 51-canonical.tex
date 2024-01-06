@@ -20,7 +20,7 @@ This interoperability is shown with the BioBB demonstrator workflows, along with
 We propose that these building blocks and their families can themselves be considered \emph{composite Digital Objects}: collections of software packages and their source code, guides and tutorials, as well as workflow management system integrations and workflow examples.
 In addition, the building blocks, as wrappers of upstream open source tools, benefit from and refer to the tools' existing documentation, support forums, academic publications and wider development context.
 
-Given BioBB as a starting point, we define a generalized methodology of \emph{Canonical Workflow Building Blocks} (\textbf{CWBB}), through the definition of a set of requirements and recommendations for how to formalize and develop a family of compatible computational tools as Digital Objects.
+Given BioBB as a starting point, we define a generalised methodology of \emph{Canonical Workflow Building Blocks} (\textbf{CWBB}), through the definition of a set of requirements and recommendations for how to formalise and develop a family of compatible computational tools as Digital Objects.
 These building blocks let researchers instantiate a Canonical Workflow in multiple workflow management systems, while also benefiting from the FAIR aspects of the CWBB Digital Objects.
 
 \subsection{Methods}\label{ch6:methods}
@@ -142,7 +142,7 @@ With multiple leading workflow engines now supporting CWL, and experimental Gala
 
 One obvious challenge is that the implementing WfMS needs to have CWL support, along with support for either containers or Conda packaging to find the described executables.
 While it is possible to run a CWL tool directly using a \texttt{\#!/usr/bin/env\ cwl-runner} \footurl{https://en.wikipedia.org/wiki/Shebang_(Unix)}{shebang} on POSIX systems, this still requires pre-installation and possibly configuration of a CWL engine like \footurl{https://pypi.org/project/cwltool/}{cwltool} or \footurl{https://toil.readthedocs.io/en/latest/running/cwl.html}{Toil} \cite{Vivian 2017}.
-However workflow engines have multiple dependencies and often cannot easily be run from a container themselves\footnote{To execute the wrapped tool, a containerized workflow engine would need \emph{nested containers} which are not generally recommended for security reasons.
+However workflow engines have multiple dependencies and often cannot easily be run from a container themselves\footnote{To execute the wrapped tool, a containerised workflow engine would need \emph{nested containers} which are not generally recommended for security reasons.
 It is possible to work around this limitation using \emph{Singularity} (\url{https://sylabs.io/singularity/}) or \emph{Conda} (\url{https://docs.bioexcel.eu/cwl-best-practice-guide/devpractice/containers/conda.html}).}.
 
 Within the CWL community it was originally envisioned that a wider set of workflow systems would adopt CWL for tool description/execution, with a subset implementing full CWL workflow support.
