@@ -178,13 +178,13 @@ RO-Crate relies heavily on \cite{schema.org} as its main vocabulary, but as high
 As with other aspects of RO-Crate, there is a gradual approach towards Linked Data practices. While conventional wisdom in Semantic Web would be to sit down and make your own ontology following design patterns \cite{Blomquist 2009,Poveda 2010} and best practices for deployment \cite{Matentzoglu 2022}, in RO-Crate philosophy that would be more of a last resort. The middle of the ground is therefore adding the ad-hoc vocabulary directly to the profile crate, as shown in figure \vref{ch61:fig:profilecrate}. In this approach a single profile URI can, through Linked Data and Signposting, play the role of:
 
 \begin{itemize}
-  \item Human-readable documentation of conventions (negotiated to HTML preview)
-  \item List of software and repositories the profile is intended for
-  \item List of additional schema.org types and properties utillised by the profile
-  \item Indication of which content is expected in the crate (e.g. a Workflow)
-  \item Validation of a manifest conforming to the profile
-  \item Vocabulary definitions of additional terms
-  \item JSON-LD context which namespaces the additional terms  (as any JSON-LD document can also be a JSON-LD context \cite{w3-json-ld})
+  \item Human-readable documentation of conventions (negotiated to HTML preview).
+  \item List of software and repositories the profile is intended for.
+  \item List of additional schema.org types and properties utillised by the profile.
+  \item Indication of which content is expected in the crate (e.g. a Workflow).
+  \item Validation of a manifest conforming to the profile.
+  \item Vocabulary definitions of additional terms.
+  \item JSON-LD context which namespaces the additional terms  (as any JSON-LD document can also be a JSON-LD context \cite{w3-json-ld}).
 \end{itemize}
 
 It should be reasonable to expect developers able to make RO-Crates with their own additional terms to also be able to make a lightweight Profile Crate once those terms have stabilised. Developers with deeper familiarity with Semantic Web technologies can expand the profile capabilities to use existing ontology methodologies, in which case it would be preferrable to aggregate separate semantic artefacts from the Profile Crate rather than embedding them in the RO-Crate Metadata File.
