@@ -1,9 +1,9 @@
 \section{Evaluating FAIR Digital Object and Linked Data as distributed object systems}\label{ch3:evaluating-fdo-ld}
 
-FAIR Digital Object (FDO) is an emerging concept that is highlighted by European Open Science Cloud (EOSC) as a potential candidate for building an ecosystem of machine-actionable research outputs. In this work we systematically evaluate FDO and its implementations as a global distributed object system, by using five different conceptual frameworks that cover interoperability, middleware, FAIR principles, EOSC requirements and FDO guidelines themself.
+FAIR Digital Object (FDO) is an emerging concept that is highlighted by European Open Science Cloud (EOSC) as a potential candidate for building an ecosystem of machine-actionable research outputs. In this work we systematically evaluate FDO and its implementations as a global distributed object system, by using five different conceptual frameworks that cover interoperability, middleware, FAIR principles, EOSC requirements and FDO guidelines themselves.
 
 We compare the FDO approach with established Linked Data practices and the existing Web architecture, and provide a brief history of the Semantic Web\footnote{
-  See section \vref{ch3:background} for background information on Linked Data and FDO}. while discussing why these technologies may have been difficult to adopt for FDO purposes. We conclude with recommendations for both Linked Data and FDO communities to further their adaptation and alignment.
+  In this thesis moved to section \vref{ch3:background} as background information on Linked Data and FDO.} while discussing why these technologies may have been difficult to adopt for FDO purposes. We conclude with recommendations for both Linked Data and FDO communities to further their adaptation and alignment.
 
 \subsection{Introduction}\label{ch3:introduction}
 
@@ -15,11 +15,11 @@ In other discourse, Linked Data \cite{Bizer 2009} has been seen as an establishe
 
 One challenge that may, perhaps counter-intuitively, steer developers towards a not-invented-here mentality \cite{stefiDevelopersMakeUnbiased2015,stefiDevelopReuseTwo2015a} when exposing their data on the Web is the heterogeneity and apparent complexity of Semantic Web approaches themselves \cite{merono-penuelaWebDataApis2021b}.
 
-These approaches -- FDO and Linked Data -- thus, form two of the major avenues for allowing developers and the wider research community to achieve the goal of FAIR data. Given their importance, in this article, we compare FAIR Digital Objects with Linked Data and the Web architecture in the context of the discourse around FAIR data.
+These approaches -- FDO and Linked Data -- thus, form two of the major avenues for allowing developers and the wider research community to achieve the goal of FAIR data. Given their importance, in this article we compare FAIR Digital Objects with Linked Data and the Web architecture in the context of the discourse around FAIR data.
 
 Concretely, the contribution of this paper is a {\bf systematic comparison between FDO and Linked Data using 5 different conceptual frameworks} that capture different perspectives on interoperability and readiness for implementation.
 
-In chapter \vref{ch3:background} we gave a background primer on FDO and Linked Data to provide a foundation for this work. The rest of this section is organised as follows:  In the Method section \vpageref{ch3:method}, we introduce the conceptual frameworks we use for comparison. Sub sequently, in the Results section \vpageref{ch3:results}, we systematically step through the outcomes of applying these frameworks to both FDO and Linked Data. For each framework, we derive key observations. We end \vpageref{ch3:discussion} with a discussion of these results and their implications for both approaches and conclude.
+In chapter \vref{ch3:background} we gave a background primer on FDO and Linked Data to provide a foundation for this work. The rest of this article is organised as follows:  In the Method section \vref{ch3:method}, we introduce the conceptual frameworks we use for comparison. Subsequently, in the Results section \vref{ch3:results}, we systematically step through the outcomes of applying these frameworks to both FDO and Linked Data. For each framework, we derive key observations. We end in section \vref{ch3:discussion} with a discussion of these results and their implications for both approaches and conclude.
 
 
 \subsection{Method}\label{ch3:method}
@@ -44,7 +44,7 @@ To better understand the relationship between the FDO framework and other existi
   EOSC Interoperability Framework \cite{eosc-interop-framework} which gives recommendations for technical, semantic, organisational and legal interoperability, particularly from a metadata perspective.
 \end{enumerate}
 
-Conceptual framework 1, 3, 5 consider more general views of interoperability between systems, whereas frameworks 2 and 4 are developed specifically for addressing FAIR principles. 
+Conceptual framework 1, 3, 5 considers more general views of interoperability between systems, whereas frameworks 2 and 4 are developed specifically for addressing FAIR principles. 
 
 The reason for this wide-ranged comparison is to exercise the different dimensions that together form FAIR Digital Objects: Data, Metadata, Service, Access, Operations, Computation.
 We have left out further comparisons on type systems, persistent identifiers and social aspects as principles and practices within these dimensions are still taking form within the FDO community (as detailed in section \vpageref{ch3:next-step-fdo}).
@@ -71,8 +71,8 @@ We have chosen to investigate using this framework as it covers the higher level
 \label{ch3:fdo-web-interoperability-framework}}\tabularnewline
 \toprule
 Quality & 
-FDO w/ DOIP & 
-Web w/ Linked Data \\
+FDO with DOIP & 
+Web with Linked Data \\
 \midrule
 \endfirsthead
 \toprule
@@ -85,7 +85,9 @@ Web w/ Linked Data \\
   & The purpose of FDO is to enable federated machine actionable digital objects for scholarly purposes, in practice this also requires agreement of compatibility between FDO types. FDO encourages research communities to develop common type registries to be shared across instances. In current DOIP practice, each service have their own types, attributes and operations. The wider symbiosis is consistent use of PIDs.
   & The Web is loosely coupled and encourages collaboration and linking by URL. In practice, REST APIs \cite{fieldingArchitecturalStylesDesign2000a} end up being mandated centrally by dominant (often commercial) providers \cite{fieldingReflectionsRESTArchitectural2017a}, and the clients are required to use each API as-is with special code per service. Use of Linked Data enables common tooling and semantic mapping across differences. \\
 \textbf{Pragmatic}: \emph{using interaction contracts so processes can be choreographed in workflows}
-  & FDO types and operations enable detailed choreography (Canonical Workflows \cite{cwfr}). \texttt{0.TYPE/DOIPOperation} has lightweight definition of operation, \texttt{0.DOIP/Request} or \texttt{0.DOIP/Response} may give FDO Type or any other kind of ``specifics'' (incl.~human readable docs). Semantics/purpose of operations not formalised (similar operations can be grouped with \texttt{0.DOIP/OperationReference}).
+  & FDO types and operations enable detailed choreography (Canonical Workflows \cite{cwfr}). Attributes\footnote{
+    DOIP's predefined attributes, types and operations have Handle-like identifiers with prefixes \texttt{0.TYPE} and \texttt{0.DOIP}, these are however not registered in the Handle system.
+  } \texttt{0.TYPE/DOIPOperation} has lightweight definition of operation, \texttt{0.DOIP/Request} or \texttt{0.DOIP/Response} may give FDO Type or any other kind of ``specifics'' (incl.~human readable docs). Semantics/purpose of operations not formalised (similar operations can be grouped with \texttt{0.DOIP/OperationReference}).
   & ``Follow your nose'' crawler navigation, which may lead to frequent dead ends. Operational composition, typically within a single API provider, documented by OpenAPI 3 \cite{OpenAPISpecificationV3}, schema.org Actions \cite{SchemaOrgActions}, WSDL/SOAP \cite{w3-wsdl20-primer}, but frequently just as human-readable developer documentation with examples. \\
 \textbf{Semantic}: \emph{ensuring consistent understanding of messages, interoperability of rules, knowledge and ontologies}
   & FDO semantic enable navigation and typing. Every FDO has a type. Types maintained in FDO Type registries, which may add additional semantics, e.g.~the ePIC \footurl{https://hdl.handle.net/21.11104/c1a0ec5ad347427f25d6}{PID-InfoType for Model}. No single type semantic, Type FDOs can link to existing vocabularies \& ontologies. JSON-LD used within some FDO objects (e.g.~DISSCO Digital Specimen, NIST Material Science schema) \cite{wittenburgFAIRDigitalObject2022b}
@@ -119,7 +121,7 @@ It is also a question as to whether a highly constrained protocol revolving arou
 
 The Interoperability Framework for Fast Data also provides a brief \emph{metamodel} which we use in Table \vref{ch3:metamodel-concepts} to map and examplify corresponding concepts in FDO's DOIP realization and the Web using HTTP semantics \cite{rfc9110}.
 
-From this mapping\footnote{An equivalent SKOS mapping \cite{w3-skos-primer} is provided as part of the \href{https://w3id.org/ro/doi/10.5281/zenodo.8075229}{RO-Crate for this article} \cite{soilandreyes2023}.} we can identify the conceptual similarities between DOIP and HTTP, often with common terminology. Notable are that neither DOIP or HTTP have strong support for transactions (explored further in section \vref{ch3:middleware}), as well that HTTP has poor direct support for processes, as the Web is primarily stateless by design.
+From this mapping\footnote{An equivalent SKOS mapping \cite{w3-skos-primer} is provided as part of the \href{https://w3id.org/ro/doi/10.5281/zenodo.8075229}{RO-Crate for this article} \cite{soilandreyes2023}.} we can identify the conceptual similarities between DOIP and HTTP, often with common terminology. Notable are that neither DOIP or HTTP have strong support for transactions (explored further in section \vref{ch3:middleware}), as well that HTTP has poor direct support for processes, as the Web is primarily stateless by design \cite{fieldingArchitecturalStylesDesign2000a}.
 
 \begin{table}[htp]
   \centering
@@ -297,7 +299,7 @@ A key observation from this is that simply using DOIP does not achieve many of t
 
 \begin{itemize}
   \item
-    G1 and G2 call for stability and trustworthiness. While the foundations of both DOIP and Linked Data approaches are now well established -- the FDO requirements and in particular how they can be implemented are still taking shape and subject to change.
+    G1 and G2 call for stability and trustworthiness. While the foundations of both DOIP and Linked Data approaches are now well established -- the FDO requirements and in particular, how they can be implemented, are still taking shape and subject to change.
   \item
     Machine actionability (G4, G6) is a core feature of both FDOs and Linked Data. Conceptually they differ in the which way types and operations are discovered, with FDO seemingly more rigorous. In practice, however, we see that DOIP also relies on dynamic discovery of operations and that operation expectations for types (FDOF7) have not yet been defined.
   \item
@@ -334,8 +336,8 @@ For this purpose, we here utillise the Comparison Framework for Middleware Infra
   \label{ch3:fdo-web-middleware}}\tabularnewline
   \toprule
   Quality & 
-  FDO w/ DOIP & 
-  Web w/ Linked Data \\
+  FDO with DOIP & 
+  Web with Linked Data \\
   \midrule
   \endfirsthead
   \toprule
