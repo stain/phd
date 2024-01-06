@@ -164,7 +164,7 @@ Attribute(s,p,o)    & \Rightarrow &     Triple(s,p,o) \land IRI(s) \land Literal
 \end{eqnarray*}
 \normalsize
 
-Note that in the JSON-LD serialization of RO-Crate, the expression of $Class$ and $Property$ is typically indirect: The JSON-LD \texttt{@context} maps to Schema.org IRIs, which, when resolved as Linked Data, embed their formal definition as RDFa. Extensions may however include such term definitions directly in the RO-Crate.
+Note that in the JSON-LD serialization of RO-Crate, the expression of $Class$ and $Property$ is typically indirect: The JSON-LD \texttt{@context} maps to Schema.org IRIs, which, when resolved as Linked Data, embed their formal definition as RDFa. Extensions may, however, include such term definitions directly in the RO-Crate.
 
 \subsection{RO-Crate 1.1 Metadata File Descriptor}
 
@@ -183,7 +183,7 @@ MetadataFile(m) & \Rightarrow & CreativeWork(m) \land about(m,R) \land ROCrate(R
 
 Note that although the metadata file necessarily is an \emph{information resource} written to disk or served over the network (as JSON-LD), it is not considered to be a contained \emph{part} of the RO-Crate in the form of a \emph{data entity}, rather it is described only as a \emph{contextual entity}.
 
-In the conceptual model, the \emph{RO-Crate Metadata File} can be seen as the top-level node that describes the \emph{RO-Crate Root}, however in the formal model (and the JSON-LD format) the metadata file descriptor is an additional contextual entity that is not affecting the depth-limit of the RO-Crate.
+In the conceptual model, the \emph{RO-Crate Metadata File} can be seen as the top-level node that describes the \emph{RO-Crate Root}; however, in the formal model (and the JSON-LD format) the metadata file descriptor is an additional contextual entity that is not affecting the depth-limit of the RO-Crate.
 
 \subsection{Forward-chained Production Rules for JSON-LD}
 

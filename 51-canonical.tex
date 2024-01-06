@@ -138,7 +138,7 @@ Most other efforts to standardise a set of disparate analytical tools have been 
 The \footurl{https://toolshed.g2.bx.psu.edu/}{Galaxy toolshed} \cite{ch6-32} is likewise populated with different sets of tool wrappers that are largely made to be interoperable within a category.
 
 The \emph{Common Workflow Language} (\textbf{CWL}) \cite{Crusoe 2022} has a strong emphasis on interoperable command line tool descriptions, with \footurl{https://www.commonwl.org/user_guide/07-containers/}{support for containers} and Conda packaging, as well as \footurl{https://www.commonwl.org/user_guide/17-metadata/}{support for FAIR metadata} like contributors, license and EDAM ontology type annotations.
-With multiple leading workflow engines now supporting CWL, and experimental Galaxy support, this seems perhaps the most promising candidate for both making and describing canonical workflow building blocks, however we've identified a few stumbling blocks.
+With multiple leading workflow engines now supporting CWL, and experimental Galaxy support, this seems perhaps the most promising candidate for both making and describing canonical workflow building blocks; however, we've identified a few stumbling blocks.
 
 One obvious challenge is that the implementing WfMS needs to have CWL support, along with support for either containers or Conda packaging to find the described executables.
 While it is possible to run a CWL tool directly using a \texttt{\#!/usr/bin/env\ cwl-runner} \footurl{https://en.wikipedia.org/wiki/Shebang_(Unix)}{shebang} on POSIX systems, this still requires pre-installation and possibly configuration of a CWL engine like \footurl{https://pypi.org/project/cwltool/}{cwltool} or \footurl{https://toil.readthedocs.io/en/latest/running/cwl.html}{Toil} \cite{Vivian 2017}.
@@ -152,7 +152,7 @@ However, with the exception of experimental tool support in Galaxy, in practice 
 Another challenge is that making a set of building blocks frequently requires the use of \emph{shims}, for instance file conversion, small search/replace operations or file renames.
 In a CWL approach these can either be performed with an \footurl{https://www.commonwl.org/v1.2/Workflow.html\#Expressions_(Optional)}{Expression} using JavaScript snippets which only has limited access to file content, or as an additional workflow step added before or after the main tool step.
 This combination could then be nested as a subworkflow, similar to KNIME's \emph{metanodes}, and would also be flexible by allowing different containers or packages for any pre- or post-steps.
-Such a CWL building block however becomes harder to access from a non-CWL WfMS, because of lack of control over configuration/execution options for the
+Such a CWL building block, however, becomes harder to access from a non-CWL WfMS, because of lack of control over configuration/execution options for the
 now nested CWL tools.
 In practice\footnote{It is worth mentioning that it would also be possible to generate WfMS-specific bindings from CWL descriptions 
 (e.g.~as demonstrated with 
@@ -202,7 +202,7 @@ This view of software as composition of other software typically also applies at
 Building on the experiences with BioBB, we here propose requirements and recommendations for establishing Canonical Workflow Building Blocks (CWBB) as implementations of \emph{canonical steps} introduced for Canonical Workflow Frameworks for Research \cite{cwfr}.
 
 The core purpose of a CWBB is to wrap a command line tool or other software that can perform an operation as part of a computational workflow.
-As such, the general advice for making software workflow-ready applies \cite{ch6-37} (e.g.~easy to install, documented, parallelizable, reproducible output), however a CWBB is also permitted to make use of additional scripts or \emph{shims} to further adapt a third-party tool for workflow use and for data interoperability across blocks.
+As such, the general advice for making software workflow-ready applies \cite{ch6-37} (e.g.~easy to install, documented, parallelizable, reproducible output); however, a CWBB is also permitted to make use of additional scripts or \emph{shims} to further adapt a third-party tool for workflow use and for data interoperability across blocks.
 
 The way tools are installed or invoked varies slightly across WfMS and operating systems, therefore a CWBB should provide multiple methods for distributing software; currently containers (Docker, Singularity) and distribution-independent packaging (e.g.~Conda, Homebrew) are promising by having reproducible install recipes and a wide range of open source dependencies (e.g.~Java, Python).
 Additionally building blocks should allow overriding execution paths, e.g.~for use with HPC module system and hardware-optimised binaries.
@@ -230,7 +230,7 @@ Likewise, to build a meaningful collection of building blocks for a given resear
 For individual users, a library of Canonical Workflow Building Blocks simplifies many aspects of building pipelines, beyond the FAIR aspects and data compatibility across blocks.
 For instance, they can benefit from training of a CWBB family using Jupyter Notebooks, and then use this knowledge to utilise the same building blocks in a scalable HPC workflow with a CWL engine like Toil, knowing they will perform consistently thanks to the use of containers.
 
-While we have demonstrated CWBB in the biomedical domain, this approach is generally applicable to a wide range of sciences that execute pipelines of multiple file-based command line tools, however it may be harder to achieve with more algebraic ``in memory'' types of computational workflows, where steps could be challenging to containerize and distinguish as separate block.
+While we have demonstrated CWBB in the biomedical domain, this approach is generally applicable to a wide range of sciences that execute pipelines of multiple file-based command line tools -- however, it may be harder to achieve with more algebraic ``in memory'' types of computational workflows, where steps could be challenging to containerize and distinguish as separate block.
 
 We admit that biomolecular research is quite a homogenous field with respect to computational analyses and now becoming relatively mature in terms of tool composability in workflows, building on the experiences of the ``FAIR pioneers'' in the field of bioinformatics.
 Other fields, such as social sciences or ecology, can have a wider variety of methods and computational tools, often with human interactions, and may have to adapt the software to be workflow-ready \cite{ch6-37} before using them as Canonical Workflow Building Blocks.

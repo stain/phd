@@ -876,9 +876,9 @@ The initial implementation of this profile used WfExS as the workflow execution 
 \subsubsection{Biocompute Object RO-Crate}\label{ch54:bco-crate}
 \cite{ieee2791}, colloquially \emph{Biocompute Objects} (BCO), is a standard for representing provenance of a genomic sequencing pipeline, intended for submission of the workflow to regulatory bodies, e.g. as part of a personalised medical treatment method \cite{Alterovitz 2018}. 
 The BCO is represented as a single JSON file which includes description of the workflow and its steps and intended purpose, as well as references for tools used and data sources accessed. 
-There is overlap in the goals of BCO and Workflow Run Crate profiles, however their intentions and focus are different. 
+There is overlap in the goals of BCO and Workflow Run Crate profiles; however, their intentions and focus are different. 
 BCO is primarily conveying a computational method for the purpose of manual regulatory review and further reuse, with any values provided as an exemplar run.  
-A Workflow Run Crate however is primarily documenting a particular workflow execution, and the workflow is associated to facilitate rerun rather than reuse. 
+A Workflow Run Crate, however, is primarily documenting a particular workflow execution, and the workflow is associated to facilitate rerun rather than reuse. 
 
 Previously, a \footurl{https://biocompute-objects.github.io/bco-ro-crate/}{guide} to packaging BioCompute Objects using RO-Crate was developed as a profile to combine both standards \cite{Soiland-Reyes 2021}.
 In this early approach, RO-Crate was primarily a vessel to transport the BCO along with its constituent resources, including the workflow and data files, as well as provide these resources with additional typing and licence metadata that is not captured by the BCO JSON. 
