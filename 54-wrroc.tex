@@ -63,13 +63,13 @@ RO-Crate is general enough to be able to describe any dataset, but can also be m
 \emph{profiles}.
 At the same time, the broad set of types and properties from Schema.org, complemented by a few additional terms from other vocabularies, make the RO-Crate model capable of expressing a wide range of contextual information that complements and enriches the core information specified by the profile.
 This may include, among others, the workflow authors and their affiliations, associated publications, licensing information, related software, etc.
-This is an approach used by WorkflowHub \cite{Goble 2021}, a workflow system agnostic workflow registry which specifies a Workflow RO-Crate profile \cite{Bacall 2022} to gather the workflow definition with such metadata in an archived RO-Crate. 
+This is an approach used by WorkflowHub \cite{Goble 2021}, a workflow system agnostic workflow registry which specifies a Workflow RO-Crate profile \cite{Bacall 2022} to gather the workflow definition with such metadata in an archived RO-Crate \footnote{See section \vref{ch5:workflows}.}. 
 
 In this work, we present \textbf{Workflow Run RO-Crate} (WRROC), an extension of RO-Crate for representing computational workflow execution provenance.
 Our main contributions are the following:
 
 \begin{itemize}
-\item   A collection of RO-Crate profiles to represent and package both the prospective and the retrospective provenance of a computational workflow run in a way that is machine-actionable \cite{Batista 2022},  independent of the specific workflow language or execution system, and including support for reexecution.
+\item   A collection of RO-Crate profiles to represent and package both the prospective and the retrospective provenance of a computational workflow run in a way that is machine-actionable \cite{Batista 2022},  independent of the specific workflow language or execution system, and including support for re-execution.
 \item   Implementations of the model in six workflow management systems and one conversion tool.
 \item   A mapping of our profiles against the W3C PROV-O Standard using the Simple Knowledge Organisation System (SKOS) \cite{w3-skos-primer}.
 \end{itemize}
@@ -79,13 +79,13 @@ This flexible approach increases the model's adaptability to the diverse landsca
 The base profile, in particular, is applicable to any kind of computational process, not necessarily described in a formal workflow language.
 All profiles are supported and sustained by the Workflow Run RO-Crate community, which meets regularly to discuss extensions, issues and new implementations.
 
-The rest of this work is organised as follows: we first describe the Workflow Run RO-Crate profiles; we then illustrate implementations and usage examples; this is followed by a discussion and plans for future work.
+The rest of this section is organised as follows: we first describe the Workflow Run RO-Crate profiles; we then illustrate implementations and usage examples; this is followed by a discussion and plans for future work.
 
 
 %% 
 \subsection{The Workflow Run RO-Crate profiles}\label{ch54:the-workflow-run-ro-crate-profiles}
 
-RO-Crate profiles are extensions of the base RO-Crate specification that describe how to represent the entities and relationships that appear in a specific domain or use case.
+RO-Crate profiles are extensions of the base RO-Crate specification that describe how to represent the entities and relationships that appear in a specific domain or use case\footnote{See sections \vref{ch5:inuse} and \vref{ch61:profiles}.}.
 An RO-Crate conforming to a profile is not just machine-readable, but also machine-actionable as a digital object whose type is represented by the profile itself~\cite{10.3897/rio.8.e93937}.
 
 The Workflow Run RO-Crate profiles are the main outcome of the activities of the Workflow Run RO-Crate \footurl{https://www.researchobject.org/workflow-run-crate}{Community}, an open working group that includes workflow users and developers, WMS users and developers, and researchers and software engineers interested in workflow execution provenance and Findable, Accessible, Interoperable and Reusable (FAIR) approaches for data and software.

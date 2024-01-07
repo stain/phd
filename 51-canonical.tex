@@ -63,10 +63,10 @@ Each of the modules is built from a combination of:
 %(vii) REST APIs
 %(\footurl{https://mmb.irbbarcelona.org/biobb-api/rest}{OpenAPI},
 %\footurl{https://mmb.irbbarcelona.org/biobb-api/rest/swagger.json}{Swagger}).
-Notably all building blocks follow the same pattern of installation, configuration and interaction.
+Notably, all building blocks follow the same pattern of installation, configuration and interaction.
 
 Since the publication of the library, several \footurl{https://mmb.irbbarcelona.org/biobb/documentation/source}{new building block modules} (Chemistry, Machine Learning, AMBER MD, Virtual Screening, etc.) have been added, and the set of operations for the existing BioBB families have been expanded.
-While we previously provided curated adapters (Figure \vref{ch6:figure1}) for running BioBB in workflow systems using Common Workflow Language (CWL) and PyCOMPSs, along with Galaxy Toolshed bindings, we have now started auto-generating these bindings, along with command line wrappers and REST web service APIs, using annotations within BioBB's Python docstrings as source.
+While BioExcel previously provided curated adapters (Figure \vref{ch6:figure1}) for running BioBB in workflow systems using Common Workflow Language (CWL) and PyCOMPSs, along with Galaxy Toolshed bindings, we have now started auto-generating these bindings, along with command line wrappers and REST web service APIs, using annotations within BioBB's Python docstrings as source.
 These annotations include sufficient information for a WfMS to launch a particular building block: \emph{input} and \emph{output} parameters (including \emph{mandatory/optional} flags), compatible \emph{formats} (including from EDAM ontology \cite{ch6-11}), \emph{example} files (essential for testing purposes), default values and \emph{dependencies}.
 This ensures human-readable documentation, FAIR metadata and programmatic accessibility can be generated consistently and comparably.
 
@@ -138,7 +138,7 @@ Most other efforts to standardise a set of disparate analytical tools have been 
 The \footurl{https://toolshed.g2.bx.psu.edu/}{Galaxy toolshed} \cite{ch6-32} is likewise populated with different sets of tool wrappers that are largely made to be interoperable within a category.
 
 The \emph{Common Workflow Language} (\textbf{CWL}) \cite{Crusoe 2022} has a strong emphasis on interoperable command line tool descriptions, with \footurl{https://www.commonwl.org/user_guide/07-containers/}{support for containers} and Conda packaging, as well as \footurl{https://www.commonwl.org/user_guide/17-metadata/}{support for FAIR metadata} like contributors, license and EDAM ontology type annotations.
-With multiple leading workflow engines now supporting CWL, and experimental Galaxy support, this seems perhaps the most promising candidate for both making and describing canonical workflow building blocks; however, we've identified a few stumbling blocks.
+With multiple leading workflow engines \footurl{https://www.commonwl.org/implementations/}{now supporting CWL}, and experimental Galaxy support, this seems perhaps the most promising candidate for both making and describing canonical workflow building blocks; however, we have identified a few stumbling blocks.
 
 One obvious challenge is that the implementing WfMS needs to have CWL support, along with support for either containers or Conda packaging to find the described executables.
 While it is possible to run a CWL tool directly using a \texttt{\#!/usr/bin/env\ cwl-runner} \footurl{https://en.wikipedia.org/wiki/Shebang_(Unix)}{shebang} on POSIX systems, this still requires pre-installation and possibly configuration of a CWL engine like \footurl{https://pypi.org/project/cwltool/}{cwltool} or \footurl{https://toil.readthedocs.io/en/latest/running/cwl.html}{Toil} \cite{Vivian 2017}.
@@ -182,7 +182,7 @@ Here the FAIR aspect of the building blocks to help software citation is exercis
 (e.g.~\footurl{https://rawcdn.githack.com/bioexcel/biobb_hpc_workflows/53958e7c278e53c277a7217057b785482f193f7f/ro-crate-preview.html\#https\%3A//doi.org/10.5281/zenodo.2564764}{GROMACS metadata})~has different authors, licence (GPL-2.1+) and documentation.
 
 However, the deposit of such RO-Crates in WorkflowHub results in one registration entry per workflow language, which are not otherwise related and may not even share the same source code repository.
-Thus, we've identified the need for adding an overall \emph{canonical workflow entry}, which can bring in workflow documentation and references shared across WfMS implementations, including a set of links to the more granular canonical workflow building blocks used by the workflow, but also to the individual WfMS implementations as separate digital objects.
+Thus, we have identified the need for adding an overall \emph{canonical workflow entry}, which can bring in workflow documentation and references shared across WfMS implementations, including a set of links to the more granular canonical workflow building blocks used by the workflow, but also to the individual WfMS implementations as separate digital objects.
 
 A similar question of granularity applies at the workflow tool level \cite{ch6-4}, particularly for Findability and Accessibility, as we can consider at lowest granularity the \emph{scientific method} in general (e.g.~any algorithm for sequence alignment), followed by an \emph{application suite} (bio.tools entry \cite{ch6-35}, homepage, documentation), instantiated as a particular \emph{software installation} (Debian package, Docker container) with its dependencies at same level.
 The installation includes one or more \emph{software executables} (a particular binary, a running service service), providing at the highest detailed granularity level the specific types of \emph{software functionality} (a particular mode of operation, choice of analysis), for instance using certain command line flags.

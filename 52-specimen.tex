@@ -379,7 +379,7 @@ to describing and associating all of this content together in a
 machine-readable form so that it can be easily preserved, shared and
 exchanged. Workflow objects are a specific subclass of research objects.
 
-RO-Crate\footnote{Chapter \vref{ch5:packaging-research-artefacts-with-ro-crate}} \cite{OCarragain 2019,Soiland-Reyes 2022} has been established as a community standard to
+RO-Crate\footnote{Section \vref{ch5:packaging-research-artefacts-with-ro-crate}} \cite{OCarragain 2019,Soiland-Reyes 2022} has been established as a community standard to
 practically achieve FAIR packaging of research objects with their
 structured metadata. Based on well-established Web standards, RO-Crate
 uses JSON-LD \cite{w3-json-ld} with \cite{schema.org} for its common metadata representation. It is extensible with
@@ -533,12 +533,12 @@ All FDO types are serialised as JSON.
 \subsubsection{Canonical components}\label{canonical-components}
 
 Each workflow component from a canonical library (to be built,
-illustrated as tools \#1 - \#4 in figure \ref{ch8:figure2}) describes what attributes it
+illustrated as tools \#1 - \#4 in figure \vref{ch8:figure2}) describes what attributes it
 requires from the openDS FDO to be able to function, and the attributes
 it will in turn populate or enrich. The interface between the component
 and the openDS FDO is formed by the wrapper (orange in figure \ref{ch8:figure2}) around
 the (optionally) containerised command-line tool (blue/green in figure
-2). Canonical components can be used individually, or in series. The
+\ref{ch8:figure2}). Canonical components can be used individually, or in series. The
 openDS FDO data flows between components will always be of the same
 type, being modified as the workflow proceeds.
 
@@ -708,7 +708,7 @@ protocols of the World Wide Web.
 
 RO-Crates are native to the World Wide Web, based on established web
 protocols, machine-readable metadata using Linked Data Platform methods
-\cite{ch8-66}, JSON-LD and Schema.org \cite{Bechhofer 2013}, and community-accepted
+\cite{ch8-66}, JSON-LD and Schema.org \cite{Bechhofer 2013,Soiland-Reyes 2022}, and community-accepted
 packaging mechanisms such as BagIt. This makes RO-Crates straightforward
 to incorporate into pre-existing platforms such as Galaxy and data
 repositories such as Zenodo and DataVerse.

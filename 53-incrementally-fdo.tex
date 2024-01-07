@@ -64,7 +64,7 @@ FDOs understandable by domain experts and to verify accuracy of SDR.
 
 We are adding workflows for partial stages, e.g.~detection of regions
 \cite{Livermore 2022a} and hand-written text recognition
-\cite{Livermore 2022b}, which we'll combine with scalability testing and wider
+\cite{Livermore 2022b}, which we will combine with scalability testing and wider
 testing by project users. Additional workflows will enhance existing
 FDOs and use new tools such as barcode detection of museums' internal
 identifiers.
@@ -76,7 +76,7 @@ addressed.
 
 \subsection{FDO lessons}\label{ch7:fdo-lessons}
 
-We highlight the \emph{De novo} use case because this workflow is
+We highlight the \emph{de novo} use case because this workflow is
 exchanging \emph{partial} FDOs -- openDS objects which are not fully
 completed and not yet assigned persistent identifiers.
 \footurl{https://github.com/DiSSCo/openDS}{openDS schemas} are still in
@@ -103,7 +103,7 @@ JSON queries and JSON Schemas, but indicates that it may be more
 beneficial to have FDO fragments as separate objects. Adding openDS
 fragment steps would, however, complicate workflows.
 
-Several of our tools process the referenced images, currently https URLs
+Several of our tools process the referenced images, currently \texttt{https} URLs
 in openDS. We added a caching layer to avoid repeated image downloading,
 coupled with local file-paths wiring in the workflow. A similar
 challenge occurs if accessing image data using DOIP, which unlike HTTP,
@@ -111,9 +111,11 @@ has no caching mechanisms.
 
 \subsection{RO-Crate lessons}\label{ch7:ro-crate-lessons}
 
-Galaxy is developing support for importing and
-exporting \footurl{https://www.researchobject.org/workflow-run-crate/}{Workflow
-Run Crates}, a profile of RO-Crate \cite{Soiland-Reyes 2022} to
+Galaxy is developing\footnote{
+    Completed after publication of this article, see section \vref{ch54:galaxy}.
+} support for importing and
+exporting Workflow
+Run Crates\footnote{\url{https://www.researchobject.org/workflow-run-crate/} see also section \vref{ch54:wrroc}.}, a profile of RO-Crate \cite{Soiland-Reyes 2022} to
 captures execution history of a workflow, including its definition and
 intermediate data \cite{De Geest 2022}. SDR is adopting this support to
 combine openDS FDOs with workflow provenance, as envisioned by
