@@ -7,7 +7,7 @@ publications. However, scientific articles may be ambiguous, incomplete
 and difficult to process by automated systems. In this paper we
 introduce RO-Crate, an open, community-driven, and lightweight approach
 to packaging research artefacts along with their metadata in a machine
-readable manner. RO-Crate is based on Schema.org annotations in JSON-LD,
+readable manner. RO-Crate is based on schema.org annotations in JSON-LD,
 aiming to establish best practices to formally describe metadata in an
 accessible and practical way for their use in a wide variety of
 situations.
@@ -83,9 +83,9 @@ making multiple types of research artefacts FAIR. Specifically, the
 contributions of this paper are as follows:
 
 \begin{enumerate}
-  \item[1.] An introduction to RO-Crate, its purpose and context;
-  \item[2.] A guide to the RO-Crate community and tooling;
-  \item[3.] Examples of RO-Crate usage, demonstrating its value as connective tissue for different artefacts from different communities.
+  \item An introduction to RO-Crate, its purpose and context.
+  \item A guide to the RO-Crate community and tooling.
+  \item Examples of RO-Crate usage, demonstrating its value as connective tissue for different artefacts from different communities.
 \end{enumerate}
 
 The rest of this paper is organised as follows. We first describe
@@ -118,7 +118,7 @@ reusability.
 The question then arises as to how the directory with all this material
 should be packaged in a manner that is accessible and usable by others.
 This means programmatically and automatically accessible by machines and
-human readable. A de facto approach to sharing collections of resources
+human-readable. A de facto approach to sharing collections of resources
 is through compressed archives (e.g.~a zip file). This solves the
 problem of ``packaging'', but it does not guarantee downstream access to
 all artefacts in a programmatic fashion, nor describe the role of each
@@ -142,10 +142,10 @@ frustration with current tooling and specifications
 RO-Crate seeks to address this complexity by:
 
 \begin{enumerate}
-  \item[1.] being conceptually simple and easy to understand for developers;
-  \item[2.] providing strong, easy tooling for integration into community projects;
-  \item[3.] providing a strong and opinionated guide regarding current best practices;
-  \item[4.] adopting de-facto standards that are widely used on the Web.
+  \item Being conceptually simple and easy to understand for developers.
+  \item Providing strong, easy tooling for integration into community projects.
+  \item Providing a strong and opinionated guide regarding current best practices.
+  \item Adopting de-facto standards that are widely used on the Web.
 \end{enumerate}
 
 In the following sections we demonstrate how the RO-Crate specification
@@ -342,7 +342,7 @@ terms\footnote{\url{https://www.researchobject.org/ro-crate/1.1/appendix/jsonld.
 case where their PID does not directly resolve to human-readable
 documentation.
 
-Figure \vref{ch5:fig:uml} shows a simplified UML class
+Figure \vref{ch5:fig:uml} shows a simplified class
 diagram of RO-Crate, highlighting the different types of data entities
 and contextual entities that can be aggregated and related. While an
 RO-Crate would usually contain one or more data entities
@@ -351,7 +351,7 @@ entities (\texttt{mentions}).
 
 \begin{figure}
 \includegraphics[width=\textwidth]{figures/ch05/ro-crate-uml.pdf}
-	\caption[Simplified UML class diagram of RO-Crate]{\textbf{Simplified UML class diagram of RO-Crate}. The 
+	\caption[Simplified class diagram of RO-Crate]{\textbf{Simplified class diagram of RO-Crate}. The 
 \emph{RO-Crate Metadata File} conforms to a version of the specification;
 and contains a JSON-LD graph \cite{w3-ldp} that describes the
 entities that make up the RO-Crate. The \emph{RO-Crate Root Data
@@ -359,7 +359,7 @@ Entity} represent the Research Object as a dataset. The RO-Crate
 aggregates \emph{data entities} (\texttt{hasPart}) which are further
 described using \emph{contextual entities} (which may include
 aggregated and non-aggregated data entities). Multiple types and
-relations from Schema.org allow annotations to be more specific,
+relations from schema.org allow annotations to be more specific,
 including figures, nested datasets, computational workflows, people,
 organisations, instruments and places. Contextual entities not
 otherwise cross-referenced from other entities' properties 
@@ -378,12 +378,12 @@ each of the underlying technologies in detail.
 As such, the RO-Crate 1.1
 specification\footnote{\url{https://w3id.org/ro/crate/1.1}} \cite{rocrate1.1}
 can be seen as an opinionated and example-driven guide to writing
-\footurl{https://schema.org/}{Schema.org}
+\footurl{https://schema.org/}{schema.org}
 \cite{Guha 2015} metadata as
 JSON-LD \cite{w3-ldp} (see
 section \vref{ch5:implementation}), which
 leaves it open for implementers to include additional metadata using
-other Schema.org types and properties, or even additional Linked Data
+other schema.org types and properties, or even additional Linked Data
 vocabularies/ontologies or their own ad-hoc terms.
 
 However the primary purpose of the RO-Crate specification is to assist
@@ -484,7 +484,7 @@ profiles.
 model}\label{ch5:implementation}
 
 The RO-Crate conceptual model has been realised using JSON-LD and
-Schema.org in a prescriptive form as discussed in Section~\vref{ch5:conceptual}. These technical
+schema.org in a prescriptive form as discussed in Section~\vref{ch5:conceptual}. These technical
 choices were made to cater for simplicity from a developer perspective
 (as introduced in Section~\vref{ch5:methodology}).
 
@@ -609,7 +609,7 @@ common \emph{subject} (\texttt{@id}), mapped \emph{properties} like
 properties are listed in its own entity), or a JSON \texttt{{[}list{]}}
 of these. If processed as JSON-LD, this forms an RDF graph by matching
 the \texttt{@id} IRIs and applying the \texttt{@context} mapping to
-Schema.org terms. \normalsize
+schema.org terms. \normalsize
 
 \paragraph{Flattened JSON-LD}\label{ch5:flattened-json-ld}
 
@@ -654,7 +654,7 @@ document that provides mapping from JSON keys to Linked Data term IRIs,
 and can enable various JSON-LD directives to cater for customised JSON
 structures for translating to RDF.
 
-RO-Crate reuses vocabulary terms and IRIs from Schema.org, but provides
+RO-Crate reuses vocabulary terms and IRIs from schema.org, but provides
 its own versioned JSON-LD
 context,\footnote{\url{https://w3id.org/ro/crate/1.1/context}} which has a flat list
 with the mapping from JSON-LD keys to their IRI equivalents (e.g. key
@@ -664,7 +664,7 @@ The rationale behind this decision is to support JSON-based RO-Crate
 applications that are largely unaware of JSON-LD, that still may want to
 process the \texttt{@context} to find or add Linked Data definitions of
 otherwise unknown properties and types. Not reusing the official
-Schema.org context means RO-Crate is also able to map in additional
+schema.org context means RO-Crate is also able to map in additional
 vocabularies where needed, namely the \emph{Portland Common Data Model}
 (PCDM) \cite{Cossu 2018}
 for
@@ -675,7 +675,7 @@ extend\footnote{\url{https://www.researchobject.org/ro-crate/1.1/appendix/jsonld
 the \texttt{@context} to re-use additional domain-specific ontologies.
 
 
-Similarly, while the Schema.org context
+Similarly, while the schema.org context
 currently\footnote{\url{https://schema.org/version/13.0/schemaorg-current-http.jsonld}}
 have \texttt{"@type": "@id"} annotations for implicit object properties, RO-Crate
 JSON-LD distinguishes explicitly between references to other entities
@@ -700,11 +700,11 @@ The RO-Crate community consists of:
 
 \begin{enumerate}
 \item
-  a diverse set of people representing a variety of stakeholders;
+  A diverse set of people representing a variety of stakeholders.
 \item
-  a set of collective norms;
+  A set of collective norms.
 \item
-  an open platform that facilitates communication (GitHub, Google Docs,
+  An open platform that facilitates communication (GitHub, Google Docs,
   monthly teleconferences).
 \end{enumerate}
 
@@ -773,18 +773,18 @@ facilitated the development of RO-Crate and contributed to the ability
 for RO-Crate research packages to be FAIR. This is not to say that there
 are no other norms within the community nor that everyone in the
 community holds these uniformly. Instead, what we emphasise is that
-these norms are helpful and also shaped by community practices.
+these norms are helpful and also shaped by community practices:
 
 \begin{enumerate}
 \item
-  Simplicity
+  Simplicity.
 \item
-  Developer friendliness
+  Developer friendliness.
 \item
   Focus on examples and best practices rather than rigorous
-  specification
+  specification.
 \item
-  Reuse ``just enough'' Web standards
+  Reuse ``just enough'' Web standards.
 \end{enumerate}
 
 A core norm of RO-Crate is that of \textbf{simplicity}, which sets the
@@ -852,7 +852,9 @@ conduct, and as of October 2021 has more than 50 members (see \vref{ro-crate-com
 
 The work of the community has led to the development of a number of
 tools for creating and using RO-Crates. Table \vref{ch5:tab1} shows the current set
-of implementations. Reviewing this list, one can see support for
+of implementations\footnote{
+  Several new implementations have appeared since the publication of this article, see section \vref{ch61:rocratefuture}.
+}. Reviewing this list, one can see support for
 commonly used programming languages, including Python, JavaScript, and
 Ruby. Additionally, the tools can be integrated into commonly used
 research environments, in particular, the command line tool
@@ -993,7 +995,7 @@ ideally with a declared licence and workflow language. Specific
 additional recommendations such as on identifiers is also needed to meet
 the emerging requirements of FAIR Digital
 Objects.\footnote{\url{https://fairdo.org/}} Work has now
-begun\footnote{\url{https://github.com/ResearchObject/ro-crate/issues/153}} to
+begun\footnote{\url{https://github.com/ResearchObject/ro-crate/issues/153} was implemented after publication of this article -- see section \vref{ch61:profiles}.} to
 formalise these different \textit{profiles} of RO-Crates, which may impose
 additional constraints based on the needs of a specific domain or use case.
 
@@ -1084,7 +1086,7 @@ data, which required significant workflow engine integration.\footnote{CWLProv
   Research Object packaging method with JSON-LD metadata.}
 
 Simplifying from the CWLProv approach, the planned Workflow Run RO-Crate
-profile will use a high level Schema.org
+profile will use a high level schema.org
 provenance\footnote{\url{https://www.researchobject.org/ro-crate/1.1/provenance.html\#software-used-to-create-files}}
 for the input/output boundary of the overall workflow
 execution. This \emph{Level 1 workflow provenance}
@@ -1276,7 +1278,7 @@ presenting a domain-specific view of the items -- the RO-Crate is
 The PARADISEC use case takes advantage of several RO-Crate features and
 principles. Firstly, the transcribed metadata are now independent of the
 PARADISEC platform and can be archived, preserved and processed in its
-own right, using Schema.org as base vocabulary and extended with
+own right, using schema.org as base vocabulary and extended with
 PARADISEC-specific terms.
 
 In this approach, RO-Crate is the holder of itemised metadata, stored in
@@ -1396,18 +1398,18 @@ university, Harvard Data Commons has the following primary objectives:
 
 \begin{enumerate}
 \item
-  the integration of Harvard Research Computing with Harvard Dataverse
+  The integration of Harvard Research Computing with Harvard Dataverse
   by leveraging Globus endpoints
   \cite{Chard 2014}; this will allow
   an automatic transfer of large datasets to the repository. In some
   cases, only the metadata will be transferred while the data stays
-  stored in remote storage;
+  stored in remote storage.
 \item
-  support for advanced research workflows and providing packaging
+  Support for advanced research workflows and providing packaging
   options for assets such as code and workflows in the Harvard Dataverse
-  repository to enable reproducibility and reuse, and
+  repository to enable reproducibility and reuse.
 \item
-  interation of repositories supported by Harvard, which include
+  Interation of repositories supported by Harvard, which include
   DASH\footnote{\url{https://dash.harvard.edu/}}, the open access institutional
   repository, the Digital Repository Services (DRS) for preserving
   digital asset collections, and the Harvard Dataverse.
@@ -1423,7 +1425,7 @@ the necessary structure to make all research artefacts FAIR. The
 Dataverse software already has
 extensive
 support\footnote{\url{https://guides.dataverse.org/en/latest/user/appendix.html}} for metadata, including the Data Documentation Initiative
-(DDI), Dublin Core, DataCite, and Schema.org. Incorporating RO-Crate,
+(DDI), Dublin Core, DataCite, and schema.org. Incorporating RO-Crate,
 which has the flexibility to describe a wide range of research
 resources, will facilitate their seamless transition from one
 infrastructure to the other within the Harvard Data Commons.
@@ -1584,7 +1586,7 @@ reached. We argue that RO-Crate can play an important role for FDOs:
   By providing a natural Metadata FDO in the form of the RO-Crate
   Metadata File.
 \item
-  By being based on Linked Data and Schema.org vocabulary, meaning that
+  By being based on Linked Data and schema.org vocabulary, meaning that
   PIDs already exist for common types and properties.
 \end{enumerate}
 
@@ -1774,7 +1776,7 @@ it in turn enforce the initial assumptions about what can be described.
 RO-Crate attempts to strike a balance between these tensions, and
 provides a common metadata framework that encourages extensions.
 However, just like the RO-Crate specification can be thought of as a
-\emph{core profile} of Schema.org in JSON-LD, we cannot stress the
+\emph{core profile} of schema.org in JSON-LD, we cannot stress the
 importance of also establishing domain-specific RO-Crate profiles and
 conventions, as explored in Sections~\vref{ch5:profiles} and \vref
 {ch5:inuse}. Specialization comes
@@ -1793,14 +1795,14 @@ libraries. We will also collect and build examples of RO-Crate
 \emph{consumption}, e.g.~Jupyter Notebooks that query multiple crates
 using knowledge graphs. In addition, we are exploring ways to support
 some entity types requested by users, e.g.~detailed workflow runs or
-container provenance, which do not have a good match in Schema.org. Such
+container provenance, which do not have a good match in schema.org. Such
 support could be added, for instance, by integrating other vocabularies
 or by having separated (but linked) metadata files.
 
 Furthermore, we want to better understand how the community uses
 RO-Crate in practice and how it contrasts with other related efforts;
 this will help us to improve our specification and tools. By discovering
-commonalities in emerging usage (e.g.~additional Schema.org types), the
+commonalities in emerging usage (e.g.~additional schema.org types), the
 community helps to reduce divergence that could otherwise occur with
 proliferation of further RO-Crate profiles. We plan to gather feedback
 via user studies, with the Linked Open Data community or as part of EOSC
@@ -1826,7 +1828,7 @@ profiles\footnote{\url{https://www.researchobject.org/ro-crate/1.2-DRAFT/profile
 for different categories of crates. Additional entity types have been
 requested by users, e.g. workflow runs, business workflows, containers
 and software packages, tabular data structures; these are not always
-matched well with existing Schema.org types, but may benefit from other
+matched well with existing schema.org types, but may benefit from other
 vocabularies or even separate metadata files, e.g. from Frictionless
 Data.\footnote{\url{https://frictionlessdata.io/}} We will be further aligning
 and collaborating with related research artefact description efforts

@@ -49,7 +49,7 @@ Additionally, the CWLProv RO may include several other metadata files and PROV s
 
 As for granularity, CWLProv proposed multiple levels of provenance \cite[figure 2]{Khan 2019}, from Level 0 (capturing workflow definition) to Level 3 (domain-specific annotations). 
 In practice, the CWL reference implementation \emph{cwltool} \cite{Amstutz 2023} and the corresponding CWLProv specification \cite{Soiland-Reyes 2018} records provenance details of all task executions together with the intermediate data and any nested workflows (CWLProv level 2), a granularity level that requires substantial support from the WMS.
-This approach is appropriate for workflow languages where the execution plan, including its distribution among the various tasks, is well known in advance (such as CWL).
+This approach is appropriate for workflow languages where the execution plan, including its distribution among the various tasks, is known well in advance (such as CWL).
 However, it can be at odds with other systems where the execution is more dynamic, depending on the verification of specific runtime conditions, such as the size and distribution of the data (e.g., COMPSs~\cite{Lordan 2014}).
 
 This makes the implementation of CWLProv challenging, as shown by the fact that at the time of writing the format is supported only by cwltool.
@@ -709,7 +709,7 @@ In order to assess the metadata coverage of \emph{runcrate} (section \vref{ch54:
 For this analysis, we followed the same approach as for an earlier evaluation of CWLProv~\cite{de Wit 2022}.
 In that work, we identified and analysed three levels of representation:
 firstly, in RDF; secondly, in a structured, but CWL-specific document;
-and finally, in an unstructured, human readable format.
+and finally, in an unstructured, human-readable format.
 From this earlier analysis, we concluded that the CWLProv RDF representation of the workflow runs lacked many provenance metadata that was included in CWL-specific documents, such as the packed workflow and input parameter file.
 For example, the CWLProv RDF only contained the name of each workflow step, without including the link to the underlying CommandLineTool or nested Workflow that was executed; information that could be extracted from the packed workflow.
 
