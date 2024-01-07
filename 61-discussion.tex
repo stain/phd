@@ -358,18 +358,18 @@ An unusual consequence of this is that extension profiles like WRROC end up reus
 
 Traditional ontology thinking such as with OWL and RDFS would be to create a class hierarchy, indeed both  \url{http://schema.org/SoftwareSourceCode} and \url{http://schema.org/MediaObject} (aliased as \texttt{File} in RO-Crate's JSON-LD) are subtypes of \url{http://schema.org/CreativeWork} which has most of the useful properties like \emph{author} and \emph{license}. It would however not be RO-Crate's job to modify the existing schema.org class hierarchy to inject artificial superclasses like \emph{ApplicationOrSourceCodeOrWorkflow}, neither would it be desirable to create a subproperty of \emph{instrument} with the intended \emph{domainIncludes}, as that means using custom terms that diverge from schema.org. 
 
-It's an important part of the simplification of the Semantic Web in RO-Crate that consumers should not need to do any ontology retrieval or reasoning. For RO-Crate users it is therefore natural to occassionally combine types, enabling properties from both. schema.org is not a strict ontology with disjoint classes, so this usually do not cause any problem. It is however not desirable to re-iterate supertypes already defined within schema.org such as \emph{CreativeWork}. 
+It is an important part of the simplification of the Semantic Web in RO-Crate that consumers should not need to do any ontology retrieval or reasoning. For RO-Crate users it is therefore natural to occassionally combine types, enabling properties from both. schema.org is not a strict ontology with disjoint classes, so this usually do not cause any problem. It is however not desirable to re-iterate supertypes already defined within schema.org such as \emph{CreativeWork}. 
 
 RO-Crate profiles like WRROC live are doing a combination of \emph{restrictions} (requiring the crate to have a particular entity) and \emph{extensions} (suggesting additional terms to use). By following the RO-Crate philosophy the profiles also reuse existing schema.org types as much as possible, adding a filtered overlay of their many properties, just like RO-Crate itself, and only adding terms where no appropiate alternative exist.
 
 Listing \vref{ch61:wrroc-in-owl} shows an attempt to declare the partial WRROC requirements from the top of this section in OWL. In doing so it was necessary to introduce additional types for the profile and the action, in addition to anonymous union classes and inverse properties. It is clear that expressing a full RO-Crate profile in this matter would require a deep understanding of OWL ontologies and would require its own set of unit tests, and would not be inline with the RO-Crate philosophy of \emph{just enough Linked Data}.
 
 \begin{listing}
+  \footnotesize
   \begin{verbatim}
 <https://w3id.org/ro/wfrun/process/0.4> 
   rdf:type owl:NamedIndividual, :ProcessRunCrateProfile ;
   rdfs:label "Process Run Crate profile 0.4"@en-gb .    
-
 :ProcessRunCrateProfile rdf:type owl:Class ;
     rdfs:subClassOf :ROCrateProfile ,
       [ rdf:type owl:Restriction ;
@@ -381,22 +381,18 @@ Listing \vref{ch61:wrroc-in-owl} shows an attempt to declare the partial WRROC r
           ]
       ] ;
     rdfs:label "Process Run Crate profile"@en-gb .
-
 :ProcessRunAction rdf:type owl:Class ;
   owl:equivalentClass [ 
+    rdf:type owl:Class;
     owl:intersectionOf ( 
       [ rdf:type owl:Class ;
-        owl:unionOf ( s:ActivateAction s:CreateAction s:UpdateAction )
-      ]
+        owl:unionOf ( s:ActivateAction s:CreateAction s:UpdateAction ) ]
       [ rdf:type owl:Restriction ;
         owl:onProperty s:instrument ;
         owl:someValuesFrom [ rdf:type owl:Class ;
             owl:unionOf ( s:SoftwareApplication s:SoftwareSourceCode
-              bioschemas:ComptuationalWorkflow )
-        ]
-      ]
-    ) ;
-    rdf:type owl:Class
+              bioschemas:ComptuationalWorkflow ) ]
+      ] )
   ] ;
   rdfs:subClassOf s:Action ;
   rdfs:label "ProcessRunAction"@en-gb .
@@ -419,7 +415,7 @@ As dicussed in sections \vref{intro:rq3} and \vref{ch54:introduction}, the subje
 
 Given these approaches rely on Semantic Web technology and hierarchies of ontologies, it is not a far stretch to hypothesie that some of the challenges on uptake of Linked Data we discussed in section \vref{ch3:ld} and \vref{ch5:simplicity} also apply to the use of PROV-O by workflow systems developers. 
 
-A core concern for workflow users is to get holf of and distribute their result data -- the exact computational structure is often of less concern as it is taken for given from the workflow definition. A change of focus from process-oriented to data-oriented will therefore also be beneficial for workflow provenance. 
+A core concern for workflow users is to get hold of and distribute their result data -- the exact computational structure is often of less concern as it is taken for given from the workflow definition. A change of focus from process-oriented to data-oriented will therefore also be beneficial for workflow provenance. 
 
 Targeted workflow provenance models like Biocompute Objects (BCO) \cite{ieee2791,Alterovitz 2018}, discussed in sections \vref{ch5:regulatorysciences} and \vref{ch54:bco-crate}, emphasise the \emph{context} of the workflow -- what is the purpose? What are possible inputs? What data sources are referenced?  BCO is being implemented by workflow management systems in Life Science domain including Nextflow and Galaxy, but is perhaps not deemed generic enough for other domains like earth sciences or astronomy.  While extensions are possible in BCO (e.g. \footurl{https://wiki.biocomputeobject.org/index.php?title=Extension-fhir}{FHIR}) they are separate from the rest of the descriptions and do not natively support Linked Data principles.
 
