@@ -28,7 +28,7 @@ PROV-O has been widely extended for workflows (D-PROV \cite{Missier 2013}, ProvO
 \emph{Retrospective provenance} refers to what actually happened during an execution, i.e.~what were the values of the input parameters, which outputs were produced, which tools were executed, how much time did the execution take, whether the execution was successful or not, etc.
 Retrospective provenance can also be represented at different levels of abstraction depending on available computing resources: for instance, by the workflow execution becoming a single activity which produces results, by specifying the individual execution of each workflow step, or by going a step further and indicating how each step is divided into sub-processes when a workflow is deployed in a cluster.
 
-Different workflow systems have adopted and extended PROV (and its PROV-O representation) to the workflow domain (WINGS \cite{Gil 2011, Garijo 2014}, VisTrails \cite{Scheidegger 2008,Costa 2013}), in order to ease the burden of provenance collection from tool developers to workflow management systems (WMS) \cite{Atkinson 2017,Pérez 2018}.
+Different workflow systems have adopted and extended PROV (and its PROV-O representation) to the workflow domain (WINGS \cite{Gil 2011,Garijo 2014b}, VisTrails \cite{Scheidegger 2008,Costa 2013}), in order to ease the burden of provenance collection from tool developers to workflow management systems (WMS) \cite{Atkinson 2017,Pérez 2018}.
 
 D-PROV, PROV-ONE, OPMW-PROV, P-Plan propose representations of workflow plans and their respective executions, taking into account the features of the workflow systems implementing them (e.g., hierarchical representations, sub-processes, etc.).
 Other data models like \emph{wfprov} and \emph{wfdesc}
@@ -520,7 +520,7 @@ To assess the interoperability of WRROC, we recorded the provenance of the same 
 In the first case, the workflow was executed with the StreamFlow WMS, for which the Provenance Run Crate implementation is discussed in Section \vref{ch54:streamflow}.
 In the second case, we executed the CWL workflow with cwltool and converted the resulting CWLProv RO to a Provenance Run Crate with the runcrate tool (Section \vref{ch54:runcrate}).
 
-The RO-Crates obtained in the two cases~\cite{Colonnelli 2023a, run-pathology}
+The RO-Crates obtained in the two cases~\cite{Colonnelli 2023a,Leo 2023}
 are very similar to each other, differing only in a few details: for instance,~\cite{Colonnelli 2023a} includes the StreamFlow configuration file and has separate files for the workflow and the two tools, while
 \cite{Leo 2023} has the workflow and the tools stored in a single file (CWL's ``packed'' format).
 Apart from these minor differences, the description of the computation is essentially the same.
