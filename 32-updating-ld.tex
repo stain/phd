@@ -34,7 +34,7 @@ through formalising their metadata, types, identifiers and exposing
 their computational operations, making them actionable FAIR objects
 rather than passive data sources.
 
-FDO is a set of principles \cite{bonino2019}, implementable in multiple ways. Current realisations mostly
+FDO is a set of principles \cite{Bonino 2019}, implementable in multiple ways. Current realisations mostly
 use \emph{Digital Object Interface Protocol} (DOIPv2)
 \cite{DONA 2018}, with the
 main implementation
@@ -43,10 +43,10 @@ can consider DOIPv2 as a simplified combination of object-oriented
 (CORBA, SOAP) and document-based (HTTP, FTP) approaches.
 
 More recently, the \footurl{https://fairdo.org/}{FDO Forum} has prepared 
-detailed recommendations\footnote{See section \vref{ch3:next-step-fdo}} \cite{fdo-Specs},
+detailed recommendations\footnote{See section \vref{ch3:next-step-fdo}} \cite{FDO Specs},
 currently open for comments, including a
-DOIP endorsement \cite{fdo-DOIPEndorsement} and updated
-FDO requirements \cite{fdo-RequirementSpec}. These point out \textbf{Linked Data} as another possible
+DOIP endorsement \cite{Schwardmann 2022a} and updated
+FDO requirements \cite{Anders 2023}. These point out \textbf{Linked Data} as another possible
 technology stack, which is the focus of this work.
 
 \subsubsection{Linked Data}
@@ -101,8 +101,8 @@ While CRUD operations (FDOF6) are supported by native HTTP operations
 (GET/PUT/POST/DELETE) as in \footurl{https://www.w3.org/TR/ldp/}{LDP},
 there is little consistency on how to define operation interfaces in LD
 (FDOF5). Existing REST approaches like
-\footurl{https://swagger.io/specification/}{OpenAPI} \cite{OpenAPISpecificationV3} and
-URI templates \cite{rfc6570} are mature and
+\footurl{https://swagger.io/specification/}{OpenAPI} \cite{Miller 2021} and
+URI templates \cite{Gregorio 2012} are mature and
 good candidates, and should be related to defined types to support
 machine-actionable composition (FDOF7). HTTP error code \emph{410 Gone}
 is used in tombstone pages for removed resources (FDOF12), although more
@@ -136,7 +136,7 @@ different collections -- significant effort have created manual and
 automated semantic mappings \cite{Baker 2013,de Mello 2022}.
 
 Currently the FDO Forum has suggested the use of LDP as a possible
-alternative for implementing FAIR Digital Objects \cite{bonino2021}, which
+alternative for implementing FAIR Digital Objects \cite{Bonino 2020}, which
 proposes a novel approach of content-negotiation with custom media
 types.
 
@@ -153,7 +153,7 @@ challenges for agreeing on usage profiles apply equally to DOIP as LD
 approaches.
 
 We have worked with different scientific communities to define 
-RO-Crate \cite{Soiland-Reyes 2022}, a
+RO-Crate \cite{Soiland-Reyes 2022a}, a
 lightweight method to package research outputs along with their
 metadata. While RO-Crate's use of schema.org shows just one possible
 metadata model, it's powerful enough to be able to express FDOs, and

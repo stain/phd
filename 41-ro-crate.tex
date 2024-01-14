@@ -25,7 +25,7 @@ reproducibility.
 
 The move towards Open Science has increased the need and demand for the
 publication of artefacts of the research process
-\cite{Sefton 2021}. This is
+\cite{Sefton 2021a}. This is
 particularly apparent in domains that rely on computational experiments;
 for example, the publication of software, datasets and records of the
 dependencies that such experiments rely on
@@ -41,18 +41,18 @@ they are Findable, Accessible, Interoperable and Reusable. These
 principles are agnostic to the \emph{implementation} strategy needed to
 comply with them. Hence, there has been an increasing amount of work in
 the development of platforms and specifications that aim to fulfil these
-goals \cite{ch5-91}.
+goals \cite{Mons 2018}.
 
 Important examples include data publication with rich metadata
-(e.g.~Zenodo \cite{Dillen 2019}),
+(e.g.~Zenodo \cite{Dillen 2019a}),
 domain-specific data deposition (e.g.~PDB
 \cite{Berman 2007}) and following
 practices for reproducible research software
-\cite{ch5-101} (e.g.~use
+\cite{Sandve 2013} (e.g.~use
 of containers). While these platforms are useful, experience has shown
 that it is important to put greater emphasis on the interconnection of
 the multiple artefacts that make up the research process
-\cite{ch5-71}.
+\cite{Koesten 2021}.
 
 The notion of \textbf{Research Objects}
 \cite{Bechhofer 2013}
@@ -75,7 +75,7 @@ typically tailored to a particular platform and are also not easily
 usable by end-users.
 
 To address this gap, a new community came together
-\cite{OCarragain 2019} to develop
+\cite{Ó Carragáin 2019a} to develop
 \textbf{RO-Crate} --- an \emph{approach to package and aggregate
 research artefacts with their metadata and relationships}. The aim of
 this paper is to introduce RO-Crate and assess it as a strategy for
@@ -130,14 +130,14 @@ describing each and linking them together.
 Examples of metadata descriptions across a wide range of
 domains\footnote{\url{https://rdamsc.bath.ac.uk/scheme-index}} abound within the
 literature, both in research data management
-\cite{Amorim 2016,Farnel 2014,eosc-interop-framework}
+\cite{Amorim 2016,Farnel 2014,Kurowski 2021}
 and within library and information
-systems\footnote{\url{https://www.loc.gov/librarians/standards}} \cite{Mai Chan 1995,ch5-127}. However, many of these approaches require
+systems\footnote{\url{https://www.loc.gov/librarians/standards}} \cite{Mai Chan 1995,Žumer 2009}. However, many of these approaches require
 knowledge of metadata schemas, particular annotation systems, or the
 use of complex software stacks. Indeed, particularly within research,
 these requirements have led to a lack of adoption and growing
 frustration with current tooling and specifications
-\cite{ch5-94,ch5-119,ch5-102}.
+\cite{Neylon 2017,Volk 2014,Schriml 2020}.
 
 RO-Crate seeks to address this complexity by:
 
@@ -176,7 +176,7 @@ channels including bi-monthly meetings, which we describe in section \vref{ch5:c
 Addressing the simplicity of understanding and engaging with RO-Crate by
 data practitioners is through the platforms, for example with
 interactive tools (section \vref{ch5:tooling}) like
-Describo\footnote{\url{https://arkisto-platform.github.io/describo/}} \cite{ch5-78} and
+Describo\footnote{\url{https://arkisto-platform.github.io/describo/}} \cite{La Rosa 2021d} and
 Jupyter notebooks
 \cite{Kluyver 2016}, and by
 close discussions with domain scientists on how to appropriately capture
@@ -191,7 +191,7 @@ specific for their needs (section \vref{ch5:inuse}).
 A key premise of RO-Crate is the existence of a wide variety of
 resources on the Web that can help describe research. As such, RO-Crate
 relies on the Linked Data principles
-\cite{ch5-63}.
+\cite{Heath 2011}.
 Figure \vref{ch5:fig:conceptual} shows the main conceptual
 elements involved in an RO-Crate: The RO-Crate Metadata File (top)
 describes the Research Object using structured metadata including
@@ -209,11 +209,11 @@ Data constructs within the RO-Crate metadata file.
 	\caption[Conceptual overview of RO-Crate]{\textbf{Conceptual overview of RO-Crate}. A \emph{Persistent
   Identifier} (PID) \cite{McMurry 2017} points to a
   \emph{Research Object} (RO), which may be archived using different
-  packaging approaches like BagIt \cite{ch5-74}, OCFL \cite
-  {ch5-96}, git or ZIP. The RO is described within a \emph{RO-Crate
+  packaging approaches like BagIt \cite{Kunze 2018}, OCFL \cite
+  {OCFL 2020}, git or ZIP. The RO is described within a \emph{RO-Crate
   Metadata File}, providing identifiers for \emph{authors} using ORCID,
   \emph{organisations} using Research Organization Registry (ROR) 
-  \cite{ch5-79} and licences such as Creative Commons using SPDX
+  \cite{Lammey 2020} and licences such as Creative Commons using SPDX
   identifiers. The \emph{RO-Crate content} is further described with
   additional metadata following a Linked Data approach. Data can be
   embedded files and directories, as well as links to external Web
@@ -224,7 +224,7 @@ Data constructs within the RO-Crate metadata file.
 \paragraph{Linked Data as a foundation}\label{ch5:linkeddata}
 
 The \textbf{Linked Data} principles \cite{Bizer 2011}
-(use of IRIs\footnote{\textbf{IRI}s \cite{Duerst 2005} are a generalisation
+(use of IRIs\footnote{\textbf{IRI}s \cite{Dürst 2005} are a generalisation
  of \textit{URI}s
 (which include well-known http/https URLs), permitting international
 Unicode characters without percent encoding, commonly used on the
@@ -280,7 +280,7 @@ The Root Data Entity is a directory, the \emph{RO-Crate Root},
 identified by the presence of the \textbf{RO-Crate Metadata File}
 \texttt{ro-crate-metadata.json} (top of Figure \vref{ch5:fig:conceptual}). This file describes the
 RO-Crate using Linked Data, its content and related metadata using
-Linked Data in JSON-LD format \cite{w3-ldp}. This
+Linked Data in JSON-LD format \cite{Sporny 2014}. This
 is a W3C standard RDF serialisation that has become popular; it is easy
 to read by humans while also offering some advantages for data exchange
 on the Internet. JSON-LD, a subset of the widely supported and
@@ -293,8 +293,8 @@ entity identifying its \texttt{license} -- additional metadata are commonly
 added to entities depending on the purpose of the particular RO-Crate.
 
 RO-Crates can be stored, transferred or published in multiple ways,
-e.g.~BagIt \cite{ch5-74}, Oxford
-Common File Layout \cite{ch5-96} (OCFL),
+e.g.~BagIt \cite{Kunze 2018}, Oxford
+Common File Layout \cite{OCFL 2020} (OCFL),
 downloadable ZIP archives in Zenodo or through dedicated online
 repositories, as well as published directly on the Web, e.g.~using
 GitHub Pages.\footnote{\url{https://pages.github.com/}} Combined with Linked Data identifiers, this caters for a diverse set of storage and access
@@ -311,7 +311,7 @@ Entities}\label{ch5:contextualentities}
 RO-Crate distinguishes between data and contextual
 entities\footnote{\url{https://www.researchobject.org/ro-crate/1.1/contextual-entities.html\#contextual-vs-data-entities}} in a similar way to HTTP terminology's early
 attempt to separate \emph{information} (data) and \emph{non-information}
-(contextual) resources \cite{ch5-120}. Data entities are usually files and directories located by relative IRI
+(contextual) resources \cite{W3C 2007}. Data entities are usually files and directories located by relative IRI
 references within the RO-Crate Root, but they can also be Web resources
 or restricted data identified with absolute IRIs, including
 \emph{Persistent Identifiers} (PIDs)
@@ -353,7 +353,7 @@ entities (\texttt{mentions}).
 \includegraphics[width=\textwidth]{figures/ch05/ro-crate-uml.pdf}
 	\caption[Simplified class diagram of RO-Crate]{\textbf{Simplified class diagram of RO-Crate}. The 
 \emph{RO-Crate Metadata File} conforms to a version of the specification;
-and contains a JSON-LD graph \cite{w3-ldp} that describes the
+and contains a JSON-LD graph \cite{Sporny 2014} that describes the
 entities that make up the RO-Crate. The \emph{RO-Crate Root Data
 Entity} represent the Research Object as a dataset. The RO-Crate
 aggregates \emph{data entities} (\texttt{hasPart}) which are further
@@ -376,11 +376,11 @@ describe research outputs and their provenance, without having to learn
 each of the underlying technologies in detail.
 
 As such, the RO-Crate 1.1
-specification\footnote{\url{https://w3id.org/ro/crate/1.1}} \cite{rocrate1.1}
+specification\footnote{\url{https://w3id.org/ro/crate/1.1}} \cite{RO-Crate 1.1.3}
 can be seen as an opinionated and example-driven guide to writing
 \footurl{https://schema.org/}{schema.org}
 \cite{Guha 2015} metadata as
-JSON-LD \cite{w3-ldp} (see
+JSON-LD \cite{Sporny 2014} (see
 section \vref{ch5:implementation}), which
 leaves it open for implementers to include additional metadata using
 other schema.org types and properties, or even additional Linked Data
@@ -488,7 +488,7 @@ schema.org in a prescriptive form as discussed in Section~\vref{ch5:conceptual}.
 choices were made to cater for simplicity from a developer perspective
 (as introduced in Section~\vref{ch5:methodology}).
 
-JSON-LD\footnote{\url{https://json-ld.org/}} \cite{w3-ldp}
+JSON-LD\footnote{\url{https://json-ld.org/}} \cite{Sporny 2014}
 provides a way to express Linked Data as a JSON structure, where a
 \emph{context} provides mapping to RDF properties and classes. While
 JSON-LD cannot map arbitrary JSON structures to RDF, we found that it
@@ -613,7 +613,7 @@ schema.org terms. \normalsize
 
 \paragraph{Flattened JSON-LD}\label{ch5:flattened-json-ld}
 
-When JSON-LD 1.0 \cite{w3-ldp}
+When JSON-LD 1.0 \cite{Sporny 2014}
 was
 proposed, one of the motivations was to seamlessly apply an RDF nature
 on top of regular JSON as frequently used by Web APIs. JSON objects in
@@ -684,7 +684,7 @@ and string values \texttt{"Alice"} -- meaning
 RO-Crate applications can find references for corresponding entities
 and IRIs without parsing the \texttt{@context} to understand a particular
 property. Notably this is exploited by the \textit{ro-crate-html-js}
-\cite{ch5-95} tool to provide reliable HTML rendering for
+\cite{ro-crate-html-js} tool to provide reliable HTML rendering for
 otherwise unknown properties and types.
 
 \subsubsection{RO-Crate Community}\label{ch5:community}
@@ -718,7 +718,7 @@ up on considerations made at a Research Data Alliance (RDA) meeting on
 Research Data
 Packaging\footnote{\url{https://rd-alliance.org/approaches-research-data-packaging-rda-11th-plenary-bof-meeting}}
 that found similar goals across multiple data packaging efforts
-\cite{OCarragain 2019}: simplicity, structured metadata and the
+\cite{Ó Carragáin 2019a}: simplicity, structured metadata and the
 use of JSON-LD.
 
 An important outcome of discussions that took place at RO2018 was the
@@ -751,7 +751,7 @@ FAIRplus,\footnote{\url{https://fairplus-project.eu/}}
 CS3MESH4EOSC\footnote{\url{https://cs3mesh4eosc.eu/}} and
 BY-COVID.\footnote{\url{https://by-covid.eu/}} RO-Crate has also established
 collaborations with Bioschemas \cite{Gray 2017}, GA4GH
-\cite{Rehm 2021}, OpenAIRE \cite{ch5-100}
+\cite{Rehm 2021}, OpenAIRE \cite{Rettberg 2015}
 and multiple H2020 projects.
 
 A key set of stakeholders are developers: the RO-Crate community has
@@ -858,23 +858,23 @@ of implementations\footnote{
 commonly used programming languages, including Python, JavaScript, and
 Ruby. Additionally, the tools can be integrated into commonly used
 research environments, in particular, the command line tool
-\textit{ro-crate-html-js} \cite{ch5-95} for creating a human-readable
+\textit{ro-crate-html-js} \cite{ro-crate-html-js} for creating a human-readable
 preview of an RO-Crate as a sidecar HTML file. Furthermore, there are
-tools that cater to end-users (\textit{Describo} \cite{ch5-78}, \textit{WorkflowHub}
-\cite{ch5-124}), in order to simplify creating and managing
+tools that cater to end-users (\textit{Describo} \cite{La Rosa 2021d}, \textit{WorkflowHub}
+\cite{WorkflowHub 2023}), in order to simplify creating and managing
 RO-Crate. For example, Describo was developed to help researchers of
 the Australian Criminal Characters
 project\footnote{\url{https://criminalcharacters.com/}} to annotate historical prisoner
 records for greater insight into the history of Australia
-\cite{ch5-97}.
+\cite{Piper 2020}.
 
 While the development of these tools is promising, our analysis of their
 maturity status shows that the majority of them are in the Beta stage.
 This is partly due to the fact that the RO-Crate specification itself
 only recently reached 1.0 status, in November 2019
-\cite{ch5-105}. Now that there
+\cite{RO-Crate 1.0}. Now that there
 is a fixed point of reference: With version 1.1 (October 2020)
-\cite{ch5-107} RO-Crate has
+\cite{RO-Crate 1.1} RO-Crate has
 stabilised based on feedback from application development, and now we
 are seeing a further increase in the maturity of these tools, along with
 the creation of new ones.
@@ -901,53 +901,53 @@ managers who need to manage and curate large amounts of data.
 Tool Name & Targets & Language /Platform & Status & Brief Description \\
 \midrule
 \endhead
-Describo \cite{ch5-78} &
+Describo \cite{La Rosa 2021d} &
 Research Data Managers & NodeJS (Desktop) & RC & Interactive desktop
 application to create, update and export RO-Crates for different
 profiles \\
 Describo Online
-\cite{ch5-77} &
+\cite{La Rosa 2021c} &
 Platform developers & NodeJS (Web) & Alpha & Web-based application to
 create RO-Crates using cloud storage \\
 ro-crate-excel
-\cite{ch5-84} & Data
+\cite{Lynch 2022} & Data
 managers & JavaScript & Beta & Command-line tool to create/edit
 RO-Crates with spreadsheets \\
 ro-crate-html-js
-\cite{ch5-95} &
+\cite{ro-crate-html-js} &
 Developers & JavaScript & Beta & HTML rendering of RO-Crate \\
 ro-crate-js
-\cite{ch5-49} & Research
+\cite{Sefton 2021b} & Research
 Data Managers & JavaScript & Alpha & Library for creating/manipulating
 crates; basic validation code \\
 ro-crate-ruby
 \cite{Bacall 2022b} &
 Developers & Ruby & Beta & Ruby library for reading/writing RO-Crate,
 with workflow support \\
-ro-crate-py \cite{ro-crate-py}) &
+ro-crate-py \cite{De Geest 2023a}) &
 Developers & Python & Alpha & Object-oriented Python library for
 reading/writing RO-Crate and use by Jupyter Notebook \\
-WorkflowHub \cite{ch5-124} & Workflow
+WorkflowHub \cite{WorkflowHub 2023} & Workflow
 users & Ruby & Beta & Workflow repository; imports and exports Workflow
 RO-Crate \\
 Life Monitor \cite{CRS4 2022} & Workflow
 developers & Python & Alpha & Workflow testing and monitoring service;
 Workflow Testing profile of RO-Crate \\
-SCHeMa \cite{ch5-118} & Workflow
+SCHeMa \cite{Vergoulis 2022} & Workflow
 users & PHP & Alpha & Workflow execution using RO-Crate as exchange
 mechanism
-\cite{10.5281/zenodo.4671709} \\
-galaxy2cwl \cite{ch5-50}
+\cite{Vergoulis 2021} \\
+galaxy2cwl \cite{Eguinoa 2020}
 & Workflow developers & Python & Alpha & Wraps Galaxy workflow as
 Workflow RO-Crate \\
-Modern PARADISEC \cite{ch5-51} &
+Modern PARADISEC \cite{La Rosa 2021a} &
 Repository managers & Platform & Beta & Cultural Heritage portal based
 on OCFL and RO-Crate \\
 ONI express
 \cite{Arkisto 2022} &
 Repository managers & Platform & Beta & Platform for publishing data and
 documents stored in an OCFL repository via a Web interface \\
-ocfl-tools \cite{ch5-52} &
+ocfl-tools \cite{La Rosa 2021b} &
 Developers & JavaScript (CLI) & Beta & Tools for managing RO-Crates in
 an OCFL repository \\
 RO Composer
@@ -967,7 +967,7 @@ CheckMyCrate
 Developers & Python (CLI) & Alpha & Validation according to Workflow
 RO-Crate profile \\
 RO-Crates-and-Excel
-\cite{ch5-126} & Data Managers
+\cite{Zoubek 2021} & Data Managers
 & Java (CLI) & Alpha & Describe column/data details of spreadsheets as
 RO-Crate using DataCube vocabulary \\
 \bottomrule
@@ -1029,7 +1029,7 @@ with WorkflowHub.
 Being cross-domain, WorkflowHub has to cater for many different workflow
 systems. Many of these, for instance Nextflow
 \cite{Di Tommaso 2017} and Snakemake
-\cite{Koster 2012}, by
+\cite{Köster 2012}, by
 virtue of their script-like nature, reference multiple neighbouring
 files typically maintained in a GitHub repository. This calls for a data
 exchange method that allows keeping related files together. WorkflowHub
@@ -1055,7 +1055,7 @@ creation of the Bioschemas
 Workflows \footnote{\url{https://bioschemas.org/profiles/ComputationalWorkflow/1.0-RELEASE/}}, which again informed the
 RO-Crate
 1.1 specification on workflows \footnote{\url{https://www.researchobject.org/ro-crate/1.1/workflows.html}} and led to the RO-Crate Python library
-\cite{ro-crate-py} and
+\cite{De Geest 2023a} and
 WorkflowHub's
 \textbf{Workflow
 RO-Crate profile}\footnote{\url{https://w3id.org/workflowhub/workflow-ro-crate/1.0}}, which, in a similar fashion to RO-Crate itself,
@@ -1078,11 +1078,11 @@ capturing workflow provenance in a Research Object in CWLProv
 \cite{Khan 2019} and
 TavernaPROV \cite{Soiland-Reyes 2016}.
 In both cases, we used the PROV Ontology
-\cite{w3-prov-o},
+\cite{Lebo 2013a},
 including details of every task execution with all the intermediate
 data, which required significant workflow engine integration.\footnote{CWLProv
   and TavernaProv predate RO-Crate, but use RO-Bundle
-  \cite{ch5-111}, a similar
+  \cite{Soiland-Reyes 2014}, a similar
   Research Object packaging method with JSON-LD metadata.}
 
 Simplifying from the CWLProv approach, the planned Workflow Run RO-Crate
@@ -1095,7 +1095,7 @@ expressed generally across workflow languages with minimal workflow
 engine changes, with the option of more detailed provenance traces as
 separate PROV artefacts in the RO-Crate as data entities. In the current
 development of Specimen Data
-Refinery\footnote{\url{https://github.com/DiSSCo/SDR}} \cite{Walton 2020} these
+Refinery\footnote{\url{https://github.com/DiSSCo/SDR}} \cite{Walton 2020a} these
 RO-Crates will document the text recognition workflow runs of digitised
 biological specimens, exposed as FAIR Digital Objects
 \cite{De Smedt 2020}.
@@ -1103,7 +1103,7 @@ biological specimens, exposed as FAIR Digital Objects
 WorkflowHub has recently enabled minting of Digital Object Identifiers
 (DOIs), a PID commonly used for scholarly artefacts, for registered
 workflows, e.g.~\texttt{10.48546/workflowhub.workflow.56.1}
-\cite{ch5-83},
+\cite{Lowe 2021b},
 lowering the barrier for citing workflows as computational methods along
 with their FAIR metadata -- captured within an RO-Crate. While it is not
 an aim for WorkflowHub to be a repository of workflow runs and their
@@ -1122,7 +1122,7 @@ service, could shift to a different URL or modify its access protocol;
 or the workflow itself may develop hard-to-find bugs as it is updated.
 This \emph{workflow decay} can take a big toll on the workflow's
 reusability and on the reproducibility of any processes it evokes
-\cite{ch5-125}.
+\cite{Zhao 2012}.
 
 For this reason, WorkflowHub is complemented by a monitoring and testing
 service called LifeMonitor
@@ -1165,7 +1165,7 @@ workflows to biomedical regulators. For instance, a genomics sequencing
 pipeline, as part of a personalised cancer treatment study, can be
 submitted to the US Food and Drugs Administration (FDA) for approval.
 BCOs are formalised in the standard IEEE 2791-2020
-\cite{ieee2791}
+\cite{IEEE 2791-2020}
 as a combination of JSON
 Schemas\footnote{\url{https://w3id.org/ieee/ieee-2791-schema/}}
 that define the structure of JSON metadata files describing
@@ -1215,7 +1215,7 @@ RO-Crate as a set of files, where the \emph{transport-level} metadata,
 such as checksum of files, are delegated to separate
 BagIt\footnote{\url{https://www.researchobject.org/ro-crate/1.1/appendix/implementation-notes.html\#adding-ro-crate-to-bagit}}
 manifests, a standard focusing on the preservation challenges of digital
-libraries \cite{ch5-74}. As such,
+libraries \cite{Kunze 2018}. As such,
 RO-Crate metadata files are not required to iterate all the files in
 their folder hierarchy, only those that benefit from being described.
 
@@ -1238,7 +1238,7 @@ distribution (Docker).
   implemented in Common Workflow Language (CWL), that installs the
   workflow's software dependencies as Docker containers or BioConda
   packages. An example execution of the workflow shows the different
-  kinds of result outputs, which may be external, using GitHub LFS \cite {ch5-85} to support larger data. RO-Crate gathers all these local
+  kinds of result outputs, which may be external, using GitHub LFS \cite {GitHub 2021} to support larger data. RO-Crate gathers all these local
   and external resources, relating them and giving individual
   descriptions, for instance permanent DOI identifiers for reused
   datasets accessed from Zenodo, but also adding external identifiers to
@@ -1256,7 +1256,7 @@ distribution (Docker).
 Heritage}\label{ch5:culturalheritage}}
 
 The Pacific And Regional Archive for Digital Sources in Endangered
-Cultures (PARADISEC\footnote{\url{https://www.paradisec.org.au/}}) \cite{ch5-114}
+Cultures (PARADISEC\footnote{\url{https://www.paradisec.org.au/}}) \cite{Thieberger 2012}
 maintains a repository of more than 500,000 files documenting
 endangered languages across more than 16,000 items, collected and
 digitised over many years by researchers interviewing and recording
@@ -1285,7 +1285,7 @@ In this approach, RO-Crate is the holder of itemised metadata, stored in
 regular files that are organised using
 Oxford Common File
 Layout\footnote{\url{https://ocfl.io/1.0/spec/}} (OCFL)
-\cite{ch5-96}, which ensures file integrity
+\cite{OCFL 2020}, which ensures file integrity
 and versioning on a regular shared file system. This lightweight
 infrastructure also gives flexibility for future developments and
 maintenance. For example a consumer can use Linked Data software such as
@@ -1293,7 +1293,7 @@ a graph database and query the whole corpora using SPARQL triple
 patterns across multiple RO-Crates. For long term digital preservation,
 beyond the lifetime of PARADISEC portals, a ``last resort'' fallback is
 storing the generic RO-Crate HTML preview
-\cite{ch5-95}. Such
+\cite{ro-crate-html-js}. Such
 human-readable rendering of RO-Crates can be hosted as static files by
 any Web server, in line with the approach taken by the Endings
 Project.\footnote{The Endings Project \url{https://endings.uvic.ca/} 
@@ -1306,17 +1306,17 @@ Project.\footnote{The Endings Project \url{https://endings.uvic.ca/}
 
 Machine-actionable Data Management Plans (maDMPs) have been proposed as
 an improvement to automate FAIR data management tasks in research
-\cite{ch5-88}; maDMPs
+\cite{Miksa 2019b}; maDMPs
 use PIDs and controlled vocabularies to describe what happens to data
 over the research life cycle
 \cite{Cardoso 2020a}. The
 Research Data Alliance's \emph{DMP Common Standard} for maDMPs
-\cite{ch5-121} is one such
+\cite{Miksa 2019a} is one such
 formalisation for expressing maDMPs, which can be expressed as Linked
 Data using the DMP Common Standard Ontology
 \cite{Cardoso 2020b}, a
 specialisation of the W3C Data Catalog Vocabulary (DCAT)
-\cite{DCAT2 2020}.
+\cite{Albertoni 2020}.
 RDA maDMPs are usually expressed using regular JSON, conforming to the
 DMP JSON Schema.
 
@@ -1355,7 +1355,7 @@ originally defined as \emph{``cyber-infrastructure that co-locates data,
 storage, and computing infrastructure with commonly used tools for
 analysing and sharing data to create an interoperable resource for the
 research community''}
-\cite{ch5-59}. More recently,
+\cite{Grossman 2016}. More recently,
 Data Commons has been established to mean integration of active
 data-intensive research with data management and archival best
 practices, along with a supporting computational infrastructure.
@@ -1371,7 +1371,7 @@ initiative that enables local researchers and industries to access
 computing infrastructure, training, and curated datasets for
 data-intensive research. NCI's Genomic
 Data Commons\footnote{\url{https://gdc.cancer.gov/}} (GDC)
-\cite{ch5-65} provides
+\cite{Jensen 2017} provides
 the cancer research community with access to a vast volume of genomic
 and clinical data. Initiatives such as
 Research Data Alliance (RDA) Global Open Research Commons\footnote{\url{https://www.rd-alliance.org/groups/global-open-research-commons-ig}}
@@ -1449,7 +1449,7 @@ approaches to make it interoperable and reusable by others.
 With the increasing digitisation of research processes, there has been a
 significant call for the wider adoption of interoperable sharing of data
 and its associated metadata. We refer to
-\cite{ch5-72} for a
+\cite{Koesten 2020} for a
 comprehensive overview and recommendations, in particular for data;
 notably that review highlights the wide variety of metadata and
 documentation that the literature prescribes for enabling data reuse.
@@ -1461,7 +1461,7 @@ computational research.
 Here we focus on approaches for bundling research artefacts along with
 their metadata. This notion of publishing compound objects for scholarly
 communication has a long history behind it
-\cite{Claerbout 1992,ch5-117},
+\cite{Claerbout 1992,Van de Sompel 2007},
 but recent approaches have followed three main strands: (i) publishing to
 centralised repositories; (ii) packaging approaches similar to RO-Crate;
 and (iii) bundling the computational workflow around a scientific
@@ -1472,7 +1472,7 @@ Artefacts}\label{ch5:bundling-and-packaging-digital-research-artefacts}
 
 Early work making the case for publishing compound scholarly
 communication units
-\cite{ch5-117}
+\cite{Van de Sompel 2007}
 led to the development of the
 Object Re-Use and Exchange
 model\footnote{\url{http://www.openarchives.org/ore/1.0/primer}} (OAI-ORE), providing a structured \textbf{resource map}
@@ -1501,14 +1501,14 @@ of \emph{in-silico experiments} involving computational workflows and
 the reuse of existing RDF vocabularies.
 
 The first implementation of Research Objects for sharing workflows in
-myExperiment \cite{ch5-57} was
+myExperiment \cite{Goble 2010} was
 based on RDF ontologies
-\cite{ch5-93}, building on
+\cite{Newman 2009}, building on
 Dublin Core, FOAF, SIOC, Creative Commons and OAI-ORE to form
 myExperiment ontologies for describing social networking, attribution
 and credit, annotations, aggregation packs, experiments, view
 statistics, contributions, and workflow components
-\cite{ch5-92}.
+\cite{myExperiment 2009}.
 
 This initially workflow-centric approach was further formalised as the
 Wf4Ever Research Object Model
@@ -1518,7 +1518,7 @@ based on existing ontologies (FOAF, Dublin Core Terms, OAI-ORE and
 AO/OAC precursors to the W3C Web Annotation Model
 \cite{Ciccarese 2017})
 and adds specializations for workflow models and executions using W3C
-PROV-O \cite{w3-prov-o}.
+PROV-O \cite{Lebo 2013a}.
 The Research Object statements are saved in a \emph{manifest} (the
 OAI-ORE \emph{resource map}), with additional annotation resources
 containing user-provided details such as title and description.
@@ -1528,7 +1528,7 @@ Object model for general packaging digital research artefacts was
 exactly this re-use of multiple existing vocabularies (FAIR principle
 I2: \emph{Metadata use vocabularies that follow FAIR principles}), which
 in itself is recognised as a challenge
-\cite{ch5-67}. Adapters
+\cite{Katsumi 2016}. Adapters
 of the Wf4Ever RO model would have to navigate documentation of multiple
 overlapping ontologies, in addition to facing the usual Semantic Web
 development choices for RDF serialization formats, identifier minting
@@ -1536,9 +1536,9 @@ and publishing resources on the Web.
 
 Several developments for Research Objects improved on this situation,
 such as ROHub used by Earth Sciences
-\cite{ch5-48}, which provides a
+\cite{Garcia-Silva 2019}, which provides a
 user-interface for making Research Objects, along with Research Object
-Bundle \cite{ch5-111} (RO
+Bundle \cite{Soiland-Reyes 2014} (RO
 Bundle), which is a ZIP-archive embedding data files and a JSON-LD
 serialization of the manifest with mappings for a limited set of terms.
 RO Bundle was also used for storing detailed workflow run provenance
@@ -1547,10 +1547,10 @@ RO Bundle was also used for storing detailed workflow run provenance
 
 RO-Bundle evolved to Research Object
 BagIt archives\footnote{\url{https://w3id.org/ro/bagit}}, a variant of RO Bundle as a BagIt archive
-\cite{ch5-74}, used by Big Data Bags
+\cite{Kunze 2018}, used by Big Data Bags
 \cite{Chard 2016},
 CWLProv \cite{Khan 2019} and
-WholeTale \cite{ch5-76,Chard 2019}.
+WholeTale \cite{Chard 2020,Chard 2019}.
 
 \subsubsection{FAIR Digital Objects}\label{ch5:fair-digital-objects}
 
@@ -1612,7 +1612,7 @@ results FAIR \cite{Goble 2020}, for
 instance by improving reproducibility
 \cite{Cohen-Boulakia 2017}, but also
 because programmatic data usage help propagate their metadata and
-provenance \cite{ch5-69}. At the
+provenance \cite{Kim 2008}. At the
 same time, workflows raise additional FAIR challenges, since they can be
 considered important research artefacts themselves. This viewpoint poses
 the problem of capturing and explaining the computational methods of a
@@ -1621,7 +1621,7 @@ pipeline in sufficient machine-readable detail
 
 Even when researchers follow current best practices for workflow
 reproducibility
-\cite{Gruning 2018b,Cohen-Boulakia 2017}, the
+\cite{Grüning 2018b,Cohen-Boulakia 2017}, the
 communication of computational outcomes through traditional academic
 publishing routes effectively adds barriers as authors are forced to
 rely on a textual manuscript representations. This hinder
@@ -1647,11 +1647,11 @@ This attention to reporting detail for computational workflows is
 unfortunately not yet the norm, and although bioinformatics journals
 have strong \emph{data availability} requirements, they frequently do
 not require authors to include or cite \emph{software, scripts and
-pipelines} used for analysing and producing results \cite{ch5-108}.
+pipelines} used for analysing and producing results \cite{Soiland-Reyes 2020a}.
 Indeed, in the absence of a specific requirement and an editorial policy
 to back it up -- such as eliminating the reference limit -- authors are
 effectively discouraged from properly and comprehensively citing
-software \cite{ch5-53}.
+software \cite{Nature 2019}.
 
 However detailed this additional information might be, another
 researcher who wants to reuse a particular computational method may
@@ -1662,7 +1662,7 @@ different platform or newer tools) and ultimately Reusable (similar
 results for different input data), Repurposable (reusing parts of the
 method for making a new method) or Replicable (rewriting the workflow
 following the method description)
-\cite{Benureau 2017,ch5-54}.
+\cite{Benureau 2017,Goble 2016}.
 
 Following the textual description alone, researchers would be forced to
 jump straight to evaluate ``Replicable'' by rewriting the pipeline from
@@ -1677,20 +1677,20 @@ requirements for software installations.
 In recent years the situation has been greatly improved by software
 packaging and container technologies like Docker and Conda, these
 technologies have been increasingly adopted in life sciences
-\cite{ch6-4} thanks to
+\cite{Möller 2017} thanks to
 collaborative efforts such as BioConda
-\cite{Gruning 2018a} and
+\cite{Grüning 2018a} and
 BioContainers
 \cite{da Veiga Leprevost 2017}, and
 support by Linux distributions (e.g.~Debian Med
-\cite{ch5-89}). As of
+\cite{Möller 2010}). As of
 November 2021, more than 9,000 software packages are available in
 BioConda alone,\footnote{\url{https://anaconda.org/bioconda/}} and 10,000 containers
 in BioContainers.\footnote{\url{https://biocontainers.pro/\#/registry}}
 
 Docker and Conda have been integrated into workflow systems such as
 Snakemake
-\cite{Koster 2012}, Galaxy
+\cite{Köster 2012}, Galaxy
 \cite{Afgan 2018} and Nextflow
 \cite{Di Tommaso 2017}, meaning
 a downloaded workflow definition can now be executed on a ``blank''
@@ -1766,7 +1766,7 @@ support for their own use case.
 \subsubsection{Strictness vs
 flexibility}\label{ch5:strictness-vs-flexibility}
 
-There is always a tradeoff between flexibility and strictness \cite{ch5-116}
+There is always a tradeoff between flexibility and strictness \cite{Troncy 2010}
 when deciding on semantics of metadata models. Strict requirements make
 it easier for users and code to consume and populate a model, by
 reducing choices and having mandated ``slots'' to fill in. But such
@@ -1834,7 +1834,7 @@ Data.\footnote{\url{https://frictionlessdata.io/}} We will be further aligning
 and collaborating with related research artefact description efforts
 like CodeMeta\footnote{\url{https://codemeta.github.io/}} for software metadata,
 Science-on-Schema.org\footnote{\url{https://science-on-schema.org/}}
-\cite{ch5-66} for datasets, FAIR Digital
+\cite{Jones 2021} for datasets, FAIR Digital
 Objects\footnote{\url{https://fairdo.org/}} \cite{De Smedt 2020} and
 activities in EOSC task forces\footnote{\url{https://www.eosc.eu/task-force-faq}}
-including the EOSC Interoperability Framework \cite{eosc-interop-framework}.
+including the EOSC Interoperability Framework \cite{Kurowski 2021}.

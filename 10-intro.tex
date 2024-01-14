@@ -17,9 +17,9 @@ Following this topic, this section elaborates Research Questions (RQ) on these i
 
 \emph{FAIR Digital Object} (FDO) has been proposed as a machine-actionable ecosystem of scholarly outputs \cite{Schultes 2019}, in theory realizing the FAIR principles \cite{Wilkinson 2016} for a programmable mesh of strongly typed objects that go beyond the open data publication practices that the FAIR guidelines have popularised \cite{Jacobsen 2020}.
 
-The FDO specifications \cite{fdo-Overview} are conceptual in nature; however, most existing Digital Object implementations \cite{Kahn 2006} rely on the DOIP protocol \cite{DigitalObjectInterface} and the Handle system \cite{rfc3650}, neither of which are particularly familiar to software developers.
+The FDO specifications \cite{Ivonne 2023} are conceptual in nature; however, most existing Digital Object implementations \cite{Kahn 2006} rely on the DOIP protocol \cite{Reilly 2009} and the Handle system \cite{Sun 2003a}, neither of which are particularly familiar to software developers.
 
-The Web, on the other side, is ubiquitous in modern software engineering \cite{Taivalsaari 2021}, used for everything from user interfaces, mobile applications and controlling devices to enterprise cross-platform integrations, backend data processing and microservices, frequently utilising cloud computing which itself is controlled using Web technologies \cite{Marinescu 2022}.
+The Web, on the other side, is ubiquitous in modern software engineering \cite{Taivalsaari 2021}, used for everything from user interfaces, mobile applications and controlling devices to enterprise cross-platform integrations, backend data processing and microservices, frequently utilising cloud computing which itself is controlled using Web technologies \cite{Marinescu 2023}.
 
 A relevant research question therefore is: 
 
@@ -32,11 +32,11 @@ I address RQ1 in chapters \ref{chapter:background} and \ref{chapter:fdo}.
 \subsection{Aims for FAIR Research Objects (RQ2)}
 \label{intro:rq2}
 
-\emph{Research Objects} (RO) \cite{Bechhofer 2013} have been proposed as a mechanism to capture a range of diverse scholarly outputs in a single archivable item with detailed metadata. The RO concept was first realised using Semantic Web ontologies \cite{ch5-92,Belhajjame 2015} -- these approaches primarily targetted long-term preservation of scientific workflows, utillised by RO as a mechanism to capture computational methods.
+\emph{Research Objects} (RO) \cite{Bechhofer 2013} have been proposed as a mechanism to capture a range of diverse scholarly outputs in a single archivable item with detailed metadata. The RO concept was first realised using Semantic Web ontologies \cite{myExperiment 2009,Belhajjame 2015} -- these approaches primarily targetted long-term preservation of scientific workflows, utillised by RO as a mechanism to capture computational methods.
 
-The principles of Research Objects extend far beyond workflows; however, early RO implementations mainly focused on capturing software \cite{goble-ro2018}. To some extent the lack of wider adoption of ontology-based ROs can also be explained by developers of researcher-facing software and platforms (e.g. repositories, data management systems) having a lack of familiarity with use of Semantic Web technology -- or worse, they tried and then struggled \cite{carrieroLandscapeOntologyReuse2020a,Tudorache 2020}.
+The principles of Research Objects extend far beyond workflows; however, early RO implementations mainly focused on capturing software \cite{Goble 2018}. To some extent the lack of wider adoption of ontology-based ROs can also be explained by developers of researcher-facing software and platforms (e.g. repositories, data management systems) having a lack of familiarity with use of Semantic Web technology -- or worse, they tried and then struggled \cite{Carriero 2010,Tudorache 2020}.
 
-Following the lessons learnt on early RO implementations and the emerging FAIR principles \cite{Wilkinson 2016,Jacobsen 2020}, after engagement with the digital libraries community it was agreed to formulate a lightweight approach to Research Objects \cite{Sefton 2018,10.5281/zenodo.3337883} for the purpose of data packaging. The updated aims of \emph{FAIR Research Objects} can be summarised as:
+Following the lessons learnt on early RO implementations and the emerging FAIR principles \cite{Wilkinson 2016,Jacobsen 2020}, after engagement with the digital libraries community it was agreed to formulate a lightweight approach to Research Objects \cite{Sefton 2018,Ó Carragáin 2019b} for the purpose of data packaging. The updated aims of \emph{FAIR Research Objects} can be summarised as:
  
 \begin{itemize}
     \item Describe and package data collections, datasets, software etc. with their metadata.
@@ -64,15 +64,15 @@ A growing (if not majority) part of scientific analysis is now conducted using s
 From this observation emerges the need to treat software as FAIR artefacts \cite{Lamprecht 2019}, following best practices for documentation \cite{Lee 2018}, open development \cite{Prlić 2012} and ensuring research software is robust \cite{Taschuk 2017} so it can be reused and cited as scholarly outputs \cite{Smith 2016}. 
 With this motivation the principles of FAIR Research Software \cite{Katz 2021b} have been established by the RDA FAIR for Research Software (FAIR4RS) Working Group \cite{Barker 2022} and are gradually building traction, particularly in the life sciences. A remaining challenge is how citations of research software can be practically propagated following their execution. 
 
-While sharing of research software helps distribute the computational methods, the \emph{way} software is used for a particular analysis requires additional measures to make it \emph{reproducible} \cite{Stodden 2016,ch5-101}.
+While sharing of research software helps distribute the computational methods, the \emph{way} software is used for a particular analysis requires additional measures to make it \emph{reproducible} \cite{Stodden 2016,Sandve 2013}.
 
 \emph{Computational Workflows} (or Scientific Workflows) are used to structure and automate data analysis pipelines so they can be scalable, portable and explainable \cite{Atkinson 2017}, and as a side-effect of these features can significantly improve reproducibility \cite{Cohen-Boulakia 2017}. 
-There exists, however, a plethora of workflow systems and languages \cite{Leipzig 2021,ch8-43}, although recent efforts have created the Common Workflow Language \cite{Crusoe 2022} as a standard representation with \footurl{https://www.commonwl.org/user_guide/topics/metadata-and-authorship.html}{FAIR metadata capabilities} that is executable by multiple engines. 
+There exists, however, a plethora of workflow systems and languages \cite{Leipzig 2021,Amstutz 2021}, although recent efforts have created the Common Workflow Language \cite{Crusoe 2022} as a standard representation with \footurl{https://www.commonwl.org/user_guide/topics/metadata-and-authorship.html}{FAIR metadata capabilities} that is executable by multiple engines. 
 
 Notably, workflow definitions themselves can be considered FAIR scholarly outputs \cite{Goble 2020} and are published in repositories including Dockstore \cite{Yuen 2021} and WorkflowHub \cite{Goble 2021}.
-One could consider computational workflows as a kind of FAIR Research Software \cite{de Visser 2023}, but by their nature workflows also \emph{encourage the FAIR principles} (e.g. preparing a computational tool for a workflow system \cite{ch6-37} may include publishing it in a container registry). Workflow systems are also useful for creating and consuming FAIR Digital Objects \cite{ch8-27}, and in addition workflow systems commonly provide explicit provenance logs of their executions.
+One could consider computational workflows as a kind of FAIR Research Software \cite{de Visser 2023}, but by their nature workflows also \emph{encourage the FAIR principles} (e.g. preparing a computational tool for a workflow system \cite{Brack 2022a} may include publishing it in a container registry). Workflow systems are also useful for creating and consuming FAIR Digital Objects \cite{Wittenburg 2021}, and in addition workflow systems commonly provide explicit provenance logs of their executions.
 
-Approaches to describing workflow provenance in a machine-readable format were initially diverse \cite{Cruz 2009}, and later converged on the use of ontologies \cite{Missier 2010}, most notably using W3C PROV-O \cite{w3-prov-o} but with various specializations \cite{Garijo 2011,Garijo 2012,Missier 2013,Belhajjame 2015,Cuevas-Vicenttín 2016}. 
+Approaches to describing workflow provenance in a machine-readable format were initially diverse \cite{Cruz 2009}, and later converged on the use of ontologies \cite{Missier 2010}, most notably using W3C PROV-O \cite{Lebo 2013a} but with various specializations \cite{Garijo 2011,Garijo 2012,Missier 2013,Belhajjame 2015,Cuevas-Vicenttín 2016}. 
 
 The tendency for workflow provenance models to diverge may be down to differences in the execution semantics of different workflow systems -- which if accurately reflected in provenance means further differences at this level. This in turn leads to incompatibility of provenance traces and lack of common tooling. In addition execution details may obscure the link from the computational procesesses and the final workflow data outputs that researchers ultimately care more about than the intricacies of the workflow engine.
 
@@ -114,13 +114,13 @@ Chapter \vref{chapter:conclusions} summarises and discusses the contributions fr
 \section{Origins}
 \label{intro:origins}
 
-Chapter \ref{ch3:background} and section \ref{ch3:evaluating-fdo-ld} are based on the journal article \emph{Evaluating FAIR Digital Object and Linked Data as distributed object systems} \cite{soilandreyes2023c}  (see appendices \ref{ch11:fdo} and \ref{ch10:fdo}). I am the main author of this manuscript.
+Chapter \ref{ch3:background} and section \ref{ch3:evaluating-fdo-ld} are based on the journal article \emph{Evaluating FAIR Digital Object and Linked Data as distributed object systems} \cite{Soiland-Reyes 2023c}  (see appendices \ref{ch11:fdo} and \ref{ch10:fdo}). I am the main author of this manuscript.
 
-Section \ref{ch2:updating-linked-data-practices-for-fair-digital-object-principles} is based on \emph{Updating Linked Data practices for FAIR Digital Object principles} \cite{10.3897/rio.8.e94501} (see appendices \ref{ch11:updating-ld} and \ref{ch10:updating-ld}). I am the main author of this manuscript.
+Section \ref{ch2:updating-linked-data-practices-for-fair-digital-object-principles} is based on \emph{Updating Linked Data practices for FAIR Digital Object principles} \cite{Soiland-Reyes 2022d} (see appendices \ref{ch11:updating-ld} and \ref{ch10:updating-ld}). I am the main author of this manuscript.
 
-Sections \ref{ch5:packaging-research-artefacts-with-ro-crate} and \ref{ch5:formaldefinition} are based on the publication \emph{Packaging research artefacts with RO-Crate} \cite{Soiland-Reyes 2022} (see appendices \ref{ch11:packagingrocrate}, \ref{ch10:packagingrocrate} and \ref{ch10:formalizing}). I am the main author of this manuscript.
+Sections \ref{ch5:packaging-research-artefacts-with-ro-crate} and \ref{ch5:formaldefinition} are based on the publication \emph{Packaging research artefacts with RO-Crate} \cite{Soiland-Reyes 2022a} (see appendices \ref{ch11:packagingrocrate}, \ref{ch10:packagingrocrate} and \ref{ch10:formalizing}). I am the main author of this manuscript.
 
-Section \ref{ch4:lightweight-fdo} is based on the publication \emph{Creating lightweight FAIR digital objects with RO-Crate} \cite{10.3897/rio.8.e93937} (see appendices \ref{ch11:lightweight} and \ref{ch10:lightweight}). I am the main author of this manuscript.
+Section \ref{ch4:lightweight-fdo} is based on the publication \emph{Creating lightweight FAIR digital objects with RO-Crate} \cite{Soiland-Reyes 2022c} (see appendices \ref{ch11:lightweight} and \ref{ch10:lightweight}). I am the main author of this manuscript.
 
 Section \ref{ch6:making-canonical-workflow-building-blocks-interoperable-across-workflow-languages} is based on the publication \emph{Making Canonical Workflow Building Blocks interoperable across workflow languages} \cite{Soiland-Reyes 2022b} (see appendices \ref{ch11:canonical} and \ref{ch10:canonical}). I am the main author of this manuscript.
 
@@ -131,4 +131,4 @@ Section \ref{ch7:incrementally-building-fair-digital-objects-with-specimen-data-
 Refinery workflows} \cite{Woolland 2022} (see appendices \ref{ch11:incrementally-fdo} and \ref{ch10:incrementally-fdo}). I am the main author of this manuscript.
 
 Section \ref{ch54:wrroc} is based on the preprint \emph{
-Recording provenance of workflow runs with RO-Crate} \cite{workflow-run-crate} (see appendices \ref{ch11:wrroc} and \ref{ch10:wrroc}). I am the last author of this manuscript, and have mainly contributed to sections \ref{ch54:introduction}, \ref{ch54:discussion}, \ref{ch54:trusted-workflow-run-crate}, \ref{ch54:bco-crate}.
+Recording provenance of workflow runs with RO-Crate} \cite{Leo 2023b} (see appendices \ref{ch11:wrroc} and \ref{ch10:wrroc}). I am the last author of this manuscript, and have mainly contributed to sections \ref{ch54:introduction}, \ref{ch54:discussion}, \ref{ch54:trusted-workflow-run-crate}, \ref{ch54:bco-crate}.

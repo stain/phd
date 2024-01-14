@@ -27,9 +27,9 @@ and workflows. SDR workflows are
 \footurl{https://workflowhub.eu/projects/72}{published in WorkflowHub} as
 FDOs.
 
-We implemented the use case \emph{De novo digitization} in Galaxy \cite{Brack 2022}.
+We implemented the use case \emph{De novo digitization} in Galaxy \cite{Brack 2022b}.
 Shown in Figure \vref{ch7:figure1} the
-workflow steps exchange openDS JSON \cite{Hardisty 2019}, for
+workflow steps exchange openDS JSON \cite{Hardisty 2019a}, for
 incremental completion of a digital specimen. Initial stages build a
 template openDS from a CSV with metadata and image references --
 subsequent analysis completes the rest of the JSON with \emph{regions}
@@ -39,7 +39,7 @@ of interest, \emph{text} digitised from handwriting, and recognised
 \begin{figure}%[t]
     \includegraphics[width=\textwidth]{figures/ch07/figure1.png}
 	\caption[FDO propagation in workflow]{\textbf{FDO propagation in workflow}. 
-    Draft Galaxy workflow \cite{Brack 2022} 
+    Draft Galaxy workflow \cite{Brack 2022b} 
     shows propagation of partial Open Digital Specimen FDOs between
     individual canonical workflow building blocks. First steps process a CSV
     file to create the initial openDS, where referenced images are analysed
@@ -115,11 +115,11 @@ Galaxy is developing\footnote{
     Completed after publication of this article, see section \vref{ch54:galaxy}.
 } support for importing and
 exporting Workflow
-Run Crates\footnote{\url{https://www.researchobject.org/workflow-run-crate/} see also section \vref{ch54:wrroc}.}, a profile of RO-Crate \cite{Soiland-Reyes 2022} to
+Run Crates\footnote{\url{https://www.researchobject.org/workflow-run-crate/} see also section \vref{ch54:wrroc}.}, a profile of RO-Crate \cite{Soiland-Reyes 2022a} to
 captures execution history of a workflow, including its definition and
 intermediate data \cite{De Geest 2022}. SDR is adopting this support to
 combine openDS FDOs with workflow provenance, as envisioned by
-\cite{Walton 2020}.
+\cite{Walton 2020a}.
 
 Our prototype \emph{de novo} workflow returns results as a ZIP file of
 openDS objects. End-users should also get copies of the referenced
