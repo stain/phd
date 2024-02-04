@@ -41,12 +41,10 @@ regarding the metadata accompanying the actual research outcome.
 RO-Crate extends \cite{schema.org}, a popular
 vocabulary for describing resources on the Web
 \cite{Guha 2016}. A generic
-RO-Crate is not required to be typed beyond \texttt{Dataset}\footnote{To
-  execute the wrapped tool, a containerised workflow engine would need
-  \emph{nested containers} which are not generally recommended for
-  security reasons. It is possible to work around this limitation using
-  \footurl{https://sylabs.io/singularity/}{Singularity} or
-  \footurl{https://docs.bioexcel.eu/cwl-best-practice-guide/devpractice/containers/conda.html}{Conda}.}
+RO-Crate is not required to be typed beyond \texttt{Dataset}\footnote{
+  Resources described by an RO-Crate are also typed, e.g. \texttt{Person}, \texttt{Organization}, \texttt{ScholarlyArticle}, \texttt{ImageObject}. \\
+  \url{https://www.researchobject.org/ro-crate/1.1/contextual-entities.html}
+}
 In practice, RO-Crates declare conformance to particular
 \footurl{https://www.researchobject.org/ro-crate/profiles.html}{profiles},
 allowing processing based on the specific needs and assumptions of a
@@ -62,7 +60,7 @@ and vice versa. The ELIXIR Software Management Plans
 \cite{Alves 2021} is
 planning to move their questionnaire to a machine-actionable format with
 RO-Crate. ELIXIR \footurl{https://biohackathon-europe.org/}{Biohackathon}
-2022 \footurl{will}{See report \cite{Eguinoa 2023}}
+2022 will\footnote{See report \cite{Eguinoa 2023}}
 \footurl{https://github.com/elixir-europe/biohackathon-projects-2022/tree/main/10}{explore}
 integration of RO-Crate and the \footurl{https://ds-wizard.org/}{Data
 Stewardship Wizard} 
