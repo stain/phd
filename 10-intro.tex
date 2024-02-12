@@ -4,35 +4,50 @@ In this thesis I investigate Linked Data approaches to implementing FAIR Researc
 
 \subsection{FAIR Principles}
 
-The FAIR Principles \cite{Wilkinson 2016} were introduced to improve sharing and reuse of scientific data as part of emerging open research practices. The main goals of FAIR are to support \textbf{F}indability, \textbf{A}ccessability, \textbf{I}nteroperability and \textbf{R}eusability, through machine-readable metadata formats and publication methods for data.
+The FAIR Principles (Table \vref{ch10:fair}) were introduced to improve sharing and reuse of scientific data as part of emerging open research practices \cite{Wilkinson 2016} . The main goals of FAIR are to support \textbf{F}indability, \textbf{A}ccessability, \textbf{I}nteroperability and \textbf{R}eusability, through machine-readable metadata formats and publication methods for data.
 
-The principles formulated by \cite{Wilkinson 2016} (bold and italics indicate my emphasis) are:
+\begin{table}[htp]
+\small
+\begin{tabular}{|r l|}
+    \hline
+    \multicolumn{2}{|l|}{In order to be \textbf{Findable}:} \\
+    F1 & (Meta)data are assigned a globally unique and persistent \emph{identifier}. \\
+    F2 & Data are described with rich \emph{metadata} (defined by R1 below). \\
+    F3 & Metadata clearly and explicitly \emph{include the identifier} of the data it describes. \\
+    F4 & (Meta)data are \emph{registered} or \emph{indexed} in a searchable resource. \\
+    & \\
+     \multicolumn{2}{|l|}{In order to be \textbf{Accessible}:} \\
 
-\begin{itemize}
-    \item F1. (meta)data are assigned a globally unique and persistent \textbf{identifier}
-    \item F2. data are described with rich \textbf{metadata} (defined by R1 below)
-    \item F3. metadata clearly and explicitly \textbf{include the identifier} of the data it describes
-    \item F4. (meta)data are \textbf{registered} or \textbf{indexed} in a searchable resource
-    \item A1. (meta)data are \textbf{retrievable} by their identifier using a
-        standardized communications protocol
-        \begin{itemize} 
-            \item A1.1 the protocol is \textbf{open}, free, and universally implementable
-            \item A1.2 the protocol allows for an \textbf{authentication} and 
-            \textbf{authorization} procedure, where necessary
-        \end{itemize}
-     \item A2. \textbf{metadata} are accessible, even when the \emph{data are no longer available}
-     \item I1. (meta)data use a \textbf{formal}, accessible, shared, and
-         broadly applicable \textbf{language for knowledge representation}.
-     \item I2. (meta)data use \textbf{vocabularies} that follow FAIR principles
-     \item I3. (meta)data include qualified \textbf{references} to other (meta)data
-     \item R1. meta(data) are richly described with a plurality of
-         accurate and relevant \textbf{attributes}
-         \begin{itemize}
-            \item R1.1. (meta)data are released with a clear and accessible \textbf{data usage license}
-            \item R1.2. (meta)data are associated with detailed \textbf{provenance}
-            \item R1.3. (meta)data meet domain-relevant community \textbf{standards}
-        \end{itemize}     
-\end{itemize}
+
+    A1 & (Meta)data are \emph{retrievable} by their identifier using a 
+        \emph{standardized} communications protocol. \\
+    A1.1 & The protocol is \emph{open}, free, and universally implementable. \\
+    A1.2 & The protocol allows for an \emph{authentication} and  
+            \emph{authorization} procedure, where necessary. \\
+     A2 & \emph{Metadata} are accessible, even when the \emph{data are no longer available}. \\
+
+     & \\
+     \multicolumn{2}{|l|}{In order to be \textbf{Interoperable}:} \\
+     I1 & 
+     (Meta)data use a \emph{formal}, accessible, shared, and 
+         broadly applicable \emph{language for} \\
+        &  \emph{knowledge representation}. \\
+     I2 & (Meta)data use \emph{vocabularies} that follow FAIR principles. \\
+     I3 & (Meta)data include qualified \emph{references} to other (meta)data.. \\
+
+     & \\
+     \multicolumn{2}{|l|}{In order to be \textbf{Reusable}:} \\
+     R1 & Meta(data) are richly described with a plurality of 
+         accurate and relevant \emph{attributes}. \\
+            R1.1 & (Meta)data are released with a clear and accessible \emph{data usage license}. \\
+            R1.2 & (Meta)data are associated with detailed \emph{provenance}. \\
+            R1.3 & (Meta)data meet domain-relevant community \emph{standards}. \\
+    \hline
+
+\end{tabular}
+\caption{FAIR Guiding Principles, adapted from \cite{Wilkinson 2016} (my emphasis in \emph{italics}).}
+\label{ch10:fair}
+\end{table}
 
 Although these guidelines are quite specific, they do not prescribe any particular technology or repository. Further formalizations of the FAIR principles include RDA's FAIR Data Maturity Model \cite{FAIR Maturity 2020,Bahui 2020} which for instance distinguishes metadata/data requirements in order to make the principles assessible for implementers.
 
