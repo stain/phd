@@ -56,13 +56,51 @@ Implementation of the principles by platform developers and researchers have how
 
 For instance, in order to evaluate a given resource's \emph{FAIRness}, additional technical constraints need to be assumed, such as use of particular Semantic Web technologies or formal vocabularies. \emph{FAIR metrics} \cite{Wilkinson 2018,Devaraju 2021} has recently become an area of active research, as different FAIR assessment tools may give a range of results for the same data resource, primarily based on which technical assumptions are made \cite{Wilkinson 2022a,Verburg 2023}.
 
+More recently there have been increased emphasis on training and awareness on the FAIR principles \cite{Shanahan 2021,Rocca-Serra 2023}, and registries of standards and vocabularies \cite{Sansone 2019}; however with a general lack of skills in data management planning, inadequate (opaque) data formats and lack of time investment to provide rich metadata this means data, even when shared through repositories, effectively becomes "un-findable" or near impossible to reuse \cite{Carballo-Garcia 2022}.
 
+\subsection{FAIR Digital Objects}
+
+\emph{FAIR Digital Object} (FDO) has been proposed as a machine-actionable ecosystem of scholarly outputs \cite{Schultes 2019}, in theory realizing the FAIR principles \cite{Wilkinson 2016} for a programmable mesh of strongly typed objects that go beyond the open data publication practices that the FAIR guidelines have popularised \cite{Jacobsen 2020}.
+
+FDOs comply to a set of requirements \cite{Anders 2023}, quoted below:
+
+\begin{description}
+        \small
+\item[G1] FDOs should provide a path for long term infrastructure investments that is not tied to any particular technology stack. 
+\item[G2] FDOs need to generate trust in accurate data survival over long periods of time, assuring researchers, funders, and developers that their significant effort in reusing them will be worthwhile. 
+\item[G3] FDOs must offer compliance with the FAIR principles through measurable indicators of FAIRness.
+\item[G4] FDOs need to support machine actionability as being specified by FDO PR-MachineActionDef-2.0 \cite{Weiland 2022b} or later. 
+\item[G5] FDOs need to support the abstraction principle, i.e., abstracting away details that are not needed at the basic object management level.  At that level there is no need to distinguish among different types such as data, metadata, software, semantic assertions, etc., for data management operations. 
+\item[G6] FDOs need to support stable bindings among all information entities required for machine navigation of the global data space through the use of global, unique, and resolvable persistent identifiers. 
+\item[G7] FDOs need to support encapsulation, such that operations can be associated with FDOs of all types.  
+\item[G8] FDOs need to support technology independence, allowing implementations using different technologies. 
+\item[G9] FDOs need to comply with minimal agreed standards, e.g., for movement of FDOs between systems, for interaction with FDOs, etc., to guarantee FDO interoperability across heterogeneous systems.
+\item[FDO-GR1] A PID, standing for a globally unique, persistent and resolvable identifier, is assumed to be the basis for FAIR Digital Objects.  Every FDO is assigned one or more PIDs. 
+\item[FDO-GR2] A PID resolves to a structured record (PID Record) compliant with a specified PID Profile which leads to resolution results that enable programmatic resolution from PID back to the FDO and its elements as specified by these requirements.  PID Records represent the information characterising FDOs and together with their resolving PIDs they can themselves be FDOs.
+\item[FDO-GR3] If an FDO contains a structured bit-sequence, the structured PID record includes at least a reference to the location(s) 1 where the bit-sequence encoding the content of a FAIR-DO (FDO) can be accessed as well as the type definition of the FDO.  The structured record may also contain PIDs pointing to Metadata FDOs describing properties of the target FDO. 
+\item[FDO-GR4] The PID record needs to contain mandatory FDO attributes, may contain optional FDO attributes and attributes agreed upon by recognized communities.  Values of attributes can be part of the PID record or they can be references.  Expectations of which attribute values are contained within the PID record and which are references pointing from the record to external sources should be specified in the PID profile or definition of said attribute in a Data Type Registry. 
+\item[FDO-GR5] Each FDO identified by a PID can be accessed or operated on using an interface protocol by specifying the PID of a registered supported operation. 
+\item[FDO-GR6] Any basic FDO interface protocol offers standard Create, Read, Update, Delete (CRUD) operations on FDOs and a possibility to use extended/domain operations for specific FDO applications.  The addition of an operation to list available extended/domain operation for specific FDO types is strongly recommended. 
+\item[FDO-GR7] The relations between FDO Types and supported operations are maintained in separate registries. 
+\item[FDO-GR8] Metadata can themselves be FDOs which describe the properties of the referenced FDO.  They must be specified by a registered schema that refers to defined and registered metadata categories. 
+\item[FDO-GR9] Metadata can be of different types such as descriptive, domain specific, provenance, system, access permissions, transactions, etc. 
+\item[FDO-GR10] Metadata schemas are maintained by communities of practice and are FDOs.  Such metadata schemas should therefore themselves follow FAIR principles. 
+\item[FDO-GR11] A collection of FDOs is also an FDO.  The content of collection FDOs describes its construction using an agreed formal language which specifies the relationships of the constituent members.  An FDO may be a member of several collections. 
+\item[FDO-GR12] Deletion of an FDO must lead to standardised and thus machine interpretable tombstone notes in metadata and PID records.  The PID itself is not deleted.
+\item[FDO-GR13] The PID resolution and the FDO Layer information must be “machine actionable” i.e., are machine interpretable and belong to a type for which operations have been specified in symbolic grammar. 
+\item[FDO-GR14] FDOs can be configured in different ways as long as the configurations are compliant with the FDO Specifications. 
+\item[FDO-GR15] The granularity of FDOs is dependent on pragmatic utility decisions within the communities of practice Those communities define the level of useful entities to use in the corresponding application field.
+\end{description}
+
+These guidelines and the more detailed specifications \cite{Ivonne 2023} are largely conceptual in nature, with several demonstrated implementations \cite{Wittenburg 2022a,Lannom 2022a} which in theory can operate side-by-side. Many of these rely on network protocols \cite{Reilly 2009,Sun 2003a} which are not particularly familiar to software developers, and not commonly supported by software libraries or frameworks.
+
+This divergence, while sound from a technical perspective, raises organisational challenges for wider adoption of FDOs, e.g. within EOSC research infrastructures, as well as sustainability risks 
 
 
 \section{Research Outline and Questions}
 \label{intro:outline}
 
-Following this topic, this section elaborates Research Questions (RQ) on these interlinked ideas:
+Following the above motivation, this section elaborates Research Questions (RQ) on these interlinked ideas:
 
 \begin{enumerate}
     \item Realization of the FAIR Digital Object concept using Web technologies.
@@ -70,15 +108,12 @@ Following this topic, this section elaborates Research Questions (RQ) on these i
     \item Unifying a FAIR Digital Object approach for computational workflows.
 \end{enumerate}
 
-
 \subsection{Aims for FAIR Digital Objects on the Web (RQ1)}
 \label{intro:rq1}
 
-\emph{FAIR Digital Object} (FDO) has been proposed as a machine-actionable ecosystem of scholarly outputs \cite{Schultes 2019}, in theory realizing the FAIR principles \cite{Wilkinson 2016} for a programmable mesh of strongly typed objects that go beyond the open data publication practices that the FAIR guidelines have popularised \cite{Jacobsen 2020}.
+%% FDO...
 
-The FDO specifications \cite{Ivonne 2023} are conceptual in nature; however, most existing Digital Object implementations \cite{Kahn 2006} rely on the DOIP protocol \cite{Reilly 2009} and the Handle system \cite{Sun 2003a}, neither of which are particularly familiar to software developers.
-
-The Web, on the other side, is ubiquitous in modern software engineering \cite{Taivalsaari 2021}, used for everything from user interfaces, mobile applications and controlling devices to enterprise cross-platform integrations, backend data processing and microservices, frequently utilising cloud computing which itself is controlled using Web technologies \cite{Marinescu 2023}.
+The Web is ubiquitous in modern software engineering \cite{Taivalsaari 2021}, used for everything from user interfaces, mobile applications and controlling devices to enterprise cross-platform integrations, backend data processing and microservices, frequently utilising cloud computing which itself is controlled using Web technologies \cite{Marinescu 2023}.
 
 A relevant research question therefore is: 
 
