@@ -152,7 +152,9 @@ From this mapping\footnote{An equivalent SKOS mapping \cite{Isaac 2009} is provi
 
 \subsubsection{Assessing FDO implementations}\label{ch3:doip-fdo-compare}
 
-The FAIR Digital Object guidelines \cite{Bonino 2019} sets out recommendations for FDO implementations. Note that the proposed update to FDO specification \cite{Anders 2023} clarifies these definitions with equivalent identifiers\footnote{Newer \cite{Anders 2023} renames \texttt{FDOF*} to \texttt{FDOR*} but follows same ordering.} and relates them to further FDO requirements such as FDO Data Type Registries.
+The FAIR Digital Object guidelines \cite{Bonino 2019} sets out recommendations for FDO implementations. Note that the proposed update to FDO specification \cite{Anders 2023} clarifies these definitions with equivalent identifiers\footnote{
+  Newer \cite{Anders 2023} renames \texttt{FDOF*} to \texttt{FDOR*} but follows same ordering. For a brief listing of the requirements, see section \vref{ch10:fdo-guidelines}.
+} and relates them to further FDO requirements such as FDO Data Type Registries.
 
 In Table \vref{ch3:fdo-checks} we evaluate completeness of the guidelines in two current realizations: 1) DOIPv2 \cite{DONA 2018} and 2) Linked Data Platform \cite{Sporny 2014}, as proposed by \cite{Bonino 2020}.
 We provide our analysis of each realisation with respect to the FDO Guideline and also provide suggestions for that realisation to meet the given guideline
@@ -426,7 +428,9 @@ Based on the analysis in Table \vref{ch3:fdo-web-middleware}, we make the follow
 
 In addition to having ``FAIR'' in its name, the FAIR Digital Object guidelines \cite{Anders 2023} also include \emph{G3: FDOs must offer compliance with the FAIR principles through measurable indicators of FAIRness}.
 
-Here we evaluate to what extent the FDO guidelines and its implementation with DOIP and Linked Data Platform \cite{Bonino 2020} comply with the FAIR principles \cite{Wilkinson 2016}. Here we have used the RDA's FAIR Data Maturity Model \cite{FAIR Maturity 2020} as it has decomposed the FAIR principles to a structured list of FAIR indicators \cite{Bahui 2020}, importantly considering \emph{Data} and \emph{Metadata} separately. In our interpretation for Table \vref{ch3:fair-data-maturity-model} we have for simplicity chosen to interpret ``data'' in FDOs as the associated bytestream of arbitrary formats, with remaining JSON or RDF structures always considered as metadata.
+Here we evaluate to what extent the FDO guidelines and its implementation with DOIP and Linked Data Platform \cite{Bonino 2020} comply with the FAIR principles \cite{Wilkinson 2016}\footnote{
+  For a brief list of the principles, see Table \vref{ch10:fair}.
+}. Here we have used the RDA's FAIR Data Maturity Model \cite{FAIR Maturity 2020} as it has decomposed the FAIR principles to a structured list of FAIR indicators \cite{Bahui 2020}, importantly considering \emph{Data} and \emph{Metadata} separately. In our interpretation for Table \vref{ch3:fair-data-maturity-model} we have for simplicity chosen to interpret ``data'' in FDOs as the associated bytestream of arbitrary formats, with remaining JSON or RDF structures always considered as metadata.
 
 \begin{landscape}
   \begin{small}
