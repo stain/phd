@@ -43,7 +43,7 @@
 }]{URL}{URL}{Uniform Resource Locator}
 
 \newacronym[description={
-        Globally unique identifier string (e.g. \texttt{http://example.com/} or \texttt{urn:isbn:0451450523}). The \emph{scheme} (\textt{http}, \texttt{urn:isbn}) classifies the identifier. URIs are superset of URLs, as the scheme is not required to have an associated network protocol \cite{Berners-Lee 2005}
+        Globally unique identifier string (e.g. \texttt{http://example.com/} or \texttt{urn:isbn:0451450523}). The \emph{scheme} (\texttt{http}, \texttt{urn:isbn}) classifies the identifier. URIs are superset of URLs, as the scheme is not required to have an associated network protocol \cite{Berners-Lee 2005}
 }]{URI}{URI}{Uniform Resource Identifier}
 
 \newacronym[description={
@@ -53,7 +53,7 @@
 \newacronym[description={
         Network protocol used for retrieving Web pages and invoking Web APIs
         \cite{Fielding 1999}. The secure version of the protocol \texttt{https} adds 
-}]{http}{HTTP}{Hypertext Transfer Protocol}
+}]{HTTP}{HTTP}{Hypertext Transfer Protocol}
 
 \newacronym[description={
         Architectural style for Web applications, where the stateless nature of Web is exploited by navigating the application state through Web resources, facilitating hypermedia formats \cite{Fielding 2000}. 
@@ -124,7 +124,7 @@ CRUD is..
 HTML is..
 }]{HTML}{HTML}{HTML ...}
 
-\newglossaryentry{signposting}{
+\newglossaryentry{Signposting}{
         name={Signposting},
         description={A method to provide machines with navigational link relations \cite{Nottingham 2017} between Web resources, by providing HTTP \texttt{Link:} headers, HTML \texttt{<link>} elements or a linkset \cite{Wilde 2020} \cite{Van de Sompel 2022}
 }}
@@ -132,3 +132,22 @@ HTML is..
 
 
 %\newacronym[description={}]{ABC}{ABC}{A B C}
+
+\newacronym[description={
+        UDP is a connectionless overlay of IP, commonly used for scenarios where a short latency or high performance is more important than completeness of data packages (e.g. video streaming, gaming). 
+}]{UDP}{UDP}{User Datagram Protocol}
+
+\newacronym[description={
+        TCP is the most common connection protocol used on top of IP (TCP/IP), 
+        which opens a bidirectional channel where data is received by the application in the same order it was sent. The protocol includes handshakes and retried transmissions.
+}]{TCP}{TCP}{Transport Control Protocol}
+
+\newacronym[description={
+        Routable network protocols used for all traffic on the Internet. IPv4 addresses (e.g. \texttt{8.8.8.8} are gradually being replaced by IPv6 addresses (e.g. \texttt{2001:4860:4860::8844}); application-wise the two versions are largely compatible)
+}]{IP}{IP}{Internet Protocol}
+
+\newacronym[description={
+        Text based format for representing two-dimensional data, rows are separated by newlines and fields by comma or semicolon. The format is very common (e.g.  exported from Microsoft Excel spreadsheets) as it is relatively easy to consume or edit, however it is notoriously underspecified with many incompatible dialects and conventions
+}]{CSV}{CSV}{Comma-Seperated Values}
+
+

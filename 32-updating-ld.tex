@@ -1,11 +1,15 @@
 \section{Updating Linked Data practices for FAIR Digital Object principles}
 \label{ch2:updating-linked-data-practices-for-fair-digital-object-principles}
 
-Realization of FAIR Digital Objects has a great potential if combined with the mature technology stack of Linked Data and knowledge graphs.
+Realization of \acrfull{FDO}
+%FAIR Digital Objects
+has a great potential if combined with the mature technology stack of Linked Data and knowledge graphs.
 
 Here I will briefly discuss how FDO principles can be achieved using existing standards that have powered the Web for the last 30 years. Using this mature approach can accelerate uptake of FDO by scholars and existing research infrastructures.
 
-I will also reflect on how the Linked Data community can adapt to better welcome approaches like FDO.
+I will also reflect on how the \acrfull{LD}
+%Linked Data
+community can adapt to better welcome approaches like FDO.
 
 \subsection{Background}
 \label{ch2:background}
@@ -16,17 +20,20 @@ their broad interpretation and many ways to implement can lead to
 inconsistencies and incompatibility
 \cite{Jacobsen 2020}.
 
-The European Open Science Cloud \footurl{https://www.eosc.eu/}{(EOSC)} has
+The 
+\acrfull{EOSC}
+%European Open Science Cloud \footurl{https://www.eosc.eu/}{(EOSC)} 
+has
 been instrumental in maturing and encouraging FAIR practices across a
 wide range of research areas. Linked Data in the form of
-\footurl{https://www.w3.org/TR/rdf11-primer/}{RDF} (Resource Description
-Framework) is the common way to implement machine-readability in FAIR;
+\footurl{https://www.w3.org/TR/rdf11-primer/}{RDF} (\acrfull{RDF}) is the common way to implement machine-readability in FAIR;
 however, the principles do not prescribe RDF or any particular technology
 \cite{Mons 2017}.
 
 \subsubsection{FAIR Digital Object}
 \label{ch2:fair-digital-object}
 
+\acrfull{FDO}
 \textbf{FAIR Digital Object} (FDO)
 \cite{Schultes 2019}
 has been proposed to improve researcher's access to digital objects
@@ -61,10 +68,10 @@ million sites for indexing by search engines --
 \footurl{https://w3techs.com/technologies/details/da-jsonld}{43\% of all
 websites} use \footurl{https://json-ld.org/}{JSON-LD}.
 
-Although LD practices align to FAIR \cite{Hasnain 2018},
+Although \acrshort{LD} practices align to \acrshort{FAIR} \cite{Hasnain 2018},
 they do not fully encompass active aspects of FDOs. The HTTP protocol is
 used heavily for applications (e.g.~mobile apps and cloud services),
-with REST APIs of customised \footurl{https://json-schema.org/}{JSON
+with \acrshort{REST} \acrshort{API}s of customised \footurl{https://json-schema.org/}{JSON
 structures}. Approaches that merge the LD and REST worlds include
 \footurl{https://www.w3.org/TR/ldp/}{Linked Data Platform} (LDP),
 \footurl{https://www.hydra-cg.com/}{Hydra} and
@@ -77,30 +84,32 @@ standards}\label{ch2:meeting-fdo-principles-using-linked-data-standards}
 Considering the potential of FDOs when combined with the mature
 technology stack of LD, here we briefly discuss how FDO principles can
 be achieved using existing standards. The general principles (G1--G9)
-apply well: Open standards with HTTP being stable for 30 years, JSON-LD
-is widely used, FAIR practitioners mainly use RDF, and a clear
+apply well: Open standards with HTTP being stable for 30 years, \acrshort{JSON-LD}
+is widely used, FAIR practitioners mainly use \acrshort{RDF}, and a clear
 abstraction between the RDF model with stable bindings available in
 multiple serialisations.
 
 However, when considering the specific principles (FDOF1--FDOF12) we
 find that additional constraints and best practices need to be
 established -- arbitrary LD resources cannot be assumed to follow FDO
-principles. This is equivalent to how existing use of DOIP is not
+principles. This is equivalent to how existing use of \acrshort{DOIP} is not
 FDO-compliant without additional constraints.
 
-Namely, persistent identifiers (PIDs) \cite{McMurry 2017}
-(FDOF1) are common in LD world (e.g.~using \url{http://purl.org/} or
+Namely, 
+\acrfullpl{PID} 
+\cite{McMurry 2017}
+(FDOF1) are common in \acrshort{LD} world (e.g.~using \url{http://purl.org/} or
 \url{https://w3id.org/}); however, they don't always have a declared type
 (FDOF2), or the PID may not even appear in the metadata. URL-based PIDs
-are resolvable (FDOF3), typically over HTTP using redirections and
-content-negotiation. One great advantage of RDF is that all attributes
+are resolvable (FDOF3), typically over \acrshort{HTTP} using redirections and
+content-negotiation. One great advantage of \acrshort{RDF} is that all attributes
 are defined semantic artefacts with PIDs (FDOF4), and attributes can be
 reused across vocabularies.
 
-While CRUD operations (FDOF6) are supported by native HTTP operations
+While \gls{CRUD} operations (FDOF6) are supported by native HTTP operations
 (GET/PUT/POST/DELETE) as in \footurl{https://www.w3.org/TR/ldp/}{LDP},
 there is little consistency on how to define operation interfaces in LD
-(FDOF5). Existing REST approaches like
+(FDOF5). Existing \acrshort{REST} approaches like
 \footurl{https://swagger.io/specification/}{OpenAPI} \cite{Miller 2021} and
 URI templates \cite{Gregorio 2012} are mature and
 good candidates, and should be related to defined types to support
@@ -108,7 +117,7 @@ machine-actionable composition (FDOF7). HTTP error code \emph{410 Gone}
 is used in tombstone pages for removed resources (FDOF12), although more
 frequent is \emph{404 Not Found}.
 
-Metadata is resolved to HTTP documents with their own URIs, but these
+Metadata is resolved to HTTP documents with their own \acrshortpl{URI}s, but these
 frequently don't have their own PID (FDOF8).
 \footurl{https://w3c.github.io/rdf-star/}{RDF-Star} and nanopublications
 \cite{Kuhn 2021} give ways
@@ -159,7 +168,7 @@ metadata. While RO-Crate's use of schema.org shows just one possible
 metadata model, it's powerful enough to be able to express FDOs, and
 familiar to web developers.
 
-We have also used FAIR Signposting \cite{Van de Sompel 2022} with HTTP
+We have also used FAIR \gls{Signposting} \cite{Van de Sompel 2022} with HTTP
 \texttt{Link:} headers as a way to support navigation to the individual
 core properties of an FDO (PID, type, metadata, licence, bytestream)
 that does not require heuristics of content-negotiation and is agnostic

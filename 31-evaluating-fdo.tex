@@ -1,15 +1,27 @@
 \section{Evaluating FAIR Digital Object and Linked Data as distributed object systems}\label{ch3:evaluating-fdo-ld}
 
-FAIR Digital Object (FDO) is an emerging concept that is highlighted by European Open Science Cloud (EOSC) as a potential candidate for building an ecosystem of machine-actionable research outputs. In this work we systematically evaluate FDO and its implementations as a global distributed object system, by using five different conceptual frameworks that cover interoperability, middleware, FAIR principles, EOSC requirements and FDO guidelines themselves.
+\acrfull{FDO}
+%FAIR Digital Object (FDO) 
+is an emerging concept that is highlighted by 
+\acrfull{EOSC}
+%European Open Science Cloud (EOSC) 
+as a potential candidate for building an ecosystem of machine-actionable research outputs. In this work we systematically evaluate FDO and its implementations as a global distributed object system, by using five different conceptual frameworks that cover interoperability, middleware, FAIR principles, EOSC requirements and FDO guidelines themselves.
 
 We compare the FDO approach with established Linked Data practices and the existing Web architecture, and provide a brief history of the Semantic Web\footnote{
   In this thesis moved to section \vref{ch3:background} as background information on Linked Data and FDO.} while discussing why these technologies may have been difficult to adopt for FDO purposes. We conclude with recommendations for both Linked Data and FDO communities to further their adaptation and alignment.
 
 \subsection{Introduction}\label{ch3:introduction}
 
-The FAIR principles \cite{Wilkinson 2016} encourage sharing of scientific data with machine-readable metadata and the use of interoperable formats, and are being adapted by a wide range of research infrastructures. They have been recognised by the research community and policy makers as a goal to strive for \cite{EU 2016}. In particular, the European Open Science Cloud \footurl{https://www.eosc.eu/}{(EOSC)} has promoted adaptation of FAIR data sharing of data resources across electronic research infrastructures \cite{Mons 2017}. The EOSC Interoperability Framework \cite{Kurowski 2021} puts particular emphasis on how interoperability can be achieved technically, semantically, organisationally, and legally -- laying out a vision of how data, publication, software and services can work together to form an ecosystem of digital objects that are extensively described. Such descriptions for interoperability connect a range of information -- from protocols and presentations, to hardware designs and scientific workflows, including extensive metadata of the information itself.
+The \acrshort{FAIR} principles \cite{Wilkinson 2016} encourage sharing of scientific data with machine-readable metadata and the use of interoperable formats, and are being adapted by a wide range of research infrastructures. They have been recognised by the research community and policy makers as a goal to strive for \cite{EU 2016}. In particular, the 
+\acrlong{EOSC}
+%European Open Science Cloud 
+\footurl{https://www.eosc.eu/}{(EOSC)} 
+has promoted adaptation of FAIR data sharing of data resources across electronic research infrastructures \cite{Mons 2017}. The EOSC Interoperability Framework \cite{Kurowski 2021} puts particular emphasis on how interoperability can be achieved technically, semantically, organisationally, and legally -- laying out a vision of how data, publication, software and services can work together to form an ecosystem of digital objects that are extensively described. Such descriptions for interoperability connect a range of information -- from protocols and presentations, to hardware designs and scientific workflows, including extensive metadata of the information itself.
 
-Specifically, the EOSC Interoperability framework highlights the emerging FAIR Digital Object (FDO) concept \cite{Schultes 2019} as a possible foundation for building a semantically interoperable ecosystem to fully realise the FAIR principles beyond individual repositories and infrastructures. The FDO approach has great potential, as it proposes strong requirements for identifiers, types, access and formalises interactive operations on objects.
+Specifically, the EOSC Interoperability framework highlights the emerging 
+\acrfull{FDO}
+%FAIR Digital Object (FDO) 
+concept \cite{Schultes 2019} as a possible foundation for building a semantically interoperable ecosystem to fully realise the FAIR principles beyond individual repositories and infrastructures. The FDO approach has great potential, as it proposes strong requirements for identifiers, types, access and formalises interactive operations on objects.
 
 In other discourse, Linked Data \cite{Bizer 2009} has been seen as an established set of principles based on Semantic Web technologies that can achieve the vision of the FAIR principles \cite{Bonino 2016,Hasnain 2018}. Yet regular researchers and developers of emerging platforms for computation and data management are reluctant to adapt such a ``FAIR Linked Data'' approach fully \cite{Verborgh 2020}, opting instead for custom in-house models and JSON-derived formats from RESTful Web services \cite{Meroño-Peñuela 2021a,Neumann 2021}. While such focus on simplicity allows rapid development and highly specialised services, it raises wider concerns about interoperability \cite{Turcoane 2014,Wilkinson 2022b}.
 
@@ -90,14 +102,14 @@ Web w/ Linked Data \\
   } \texttt{0.TYPE/DOIPOperation} has lightweight definition of operation, \texttt{0.DOIP/Request} or \texttt{0.DOIP/Response} may give FDO Type or any other kind of ``specifics'' (incl.~human-readable docs). Semantics/purpose of operations not formalised (similar operations can be grouped with \texttt{0.DOIP/OperationReference}).
   & ``Follow your nose'' crawler navigation, which may lead to frequent dead ends. Operational composition, typically within a single API provider, documented by OpenAPI 3 \cite{Miller 2021}, schema.org Actions \cite{schema actions}, WSDL/SOAP \cite{Liu 2007}, but frequently just as human-readable developer documentation with examples. \\
 \textbf{Semantic}: \emph{ensuring consistent understanding of messages, interoperability of rules, knowledge and ontologies}
-  & FDO semantic enable navigation and typing. Every FDO has a type. Types maintained in FDO Type registries, which may add additional semantics, e.g.~the ePIC \footurl{https://hdl.handle.net/21.11104/c1a0ec5ad347427f25d6}{PID-InfoType for Model}. No single type semantic, Type FDOs can link to existing vocabularies \& ontologies. JSON-LD used within some FDO objects (e.g.~DISSCO Digital Specimen, NIST Material Science schema) \cite{Wittenburg 2022a}
-  & Lightweight HTTP semantics for authenticity/navigation. Semantic Type not commonly expressed on PID/header level, may be declared within Linked Data metadata. Semantic of type implied by Linked Data formats (e.g.~OWL2, RDFS), although choice of type system may not be explicit. \\
+  & FDO semantic enable navigation and typing. Every FDO has a type. Types maintained in FDO Type registries, which may add additional semantics, e.g.~the ePIC \footurl{https://hdl.handle.net/21.11104/c1a0ec5ad347427f25d6}{PID-InfoType for Model}. No single type semantic, Type FDOs can link to existing vocabularies \& ontologies. \acrshort{JSON-LD} used within some FDO objects (e.g.~DISSCO Digital Specimen, NIST Material Science schema) \cite{Wittenburg 2022a}
+  & Lightweight HTTP semantics for authenticity/navigation. Semantic Type not commonly expressed on PID/header level, may be declared within Linked Data metadata. Semantic of type implied by Linked Data formats (e.g.~\acrshort{OWL}2, \acrshort{RDFS}), although choice of type system may not be explicit. \\
 \textbf{Syntactic}: \emph{serialising messages for digital exchange, structure representation}
   & DOIP serialise FDOs as JSON, metadata commonly use JSON, typed with JSON Schema. Multiple byte stream attachments of any media type.
   & Textual HTTP headers (including any signposting), single byte stream of any media type, e.g.~Linked Data formats (JSON-LD, Turtle, RDF/XML) or embedded in document (HTML with RDFa, JSON-LD or Microdata). XML was previously the main syntax used by APIs, JSON is now dominant. \\
 \textbf{Connective}: \emph{transferring messages to another application, e.g.~wrapping in other protocols}
   & DOIP \cite{DONA 2018} is transport-independent, commonly TLS TCP/IP port 9000, DOIP over HTTP \cite{CNRI 2023a}
-  & HTTP/1.1 TCP/IP port 80 \cite{Fielding 1999}; HTTP/1.1+TLS, TCP/IP 443 \cite{Rescorla 2000}; HTTP/2, as HTTP/1* but binary \cite{Belshe 2022}; HTTP/3, like HTTP/2+TLS but UDP \cite{Bishop 2022} \\
+  & HTTP/1.1 TCP/IP port 80 \cite{Fielding 1999}; HTTP/1.1+TLS, TCP/IP 443 \cite{Rescorla 2000}; HTTP/2, as HTTP/1* but binary \cite{Belshe 2022}; HTTP/3, like HTTP/2+TLS but \acrshort{UDP} \cite{Bishop 2022} \\
 \textbf{Environmental}: \emph{how applications are deployed and affected by its environment, portability}
   & Main DOIP implementation is \footurl{https://www.cordra.org/}{\emph{Cordra}}, which can be single-instance or \footurl{https://www.cordra.org/documentation/configuration/distributed-deployment.html}{distributed}. Cordra \footurl{https://www.cordra.org/documentation/configuration/storage-backends.html}{storage backends} include file system, S3, MongoDB (itself scalable). Unique DOIP protocol can be hard to add to existing Web application frameworks, although proxy services have been developed (e.g.~B2SHARE adapter).
   & HTTP services widely deployed in a myriad of ways, ranging from single instance servers, horizontally \& vertically scaled application servers, to multi-cloud Content-Delivery Networks (CDN). Current scalable cloud technologies for Web hosting may not support HTTP features previously seen as important for Semantic Web, e.g.~content negotiation and semantic HTTP status codes. \\
@@ -143,8 +155,8 @@ From this mapping\footnote{An equivalent SKOS mapping \cite{Isaac 2009} is provi
   Message	    & Segment, \texttt{requestId} 
                                     & Message, Representation \\
   Channel	    & DOIP Transport protocol (e.g.~TCP/IP, TLS). JSWS signatures.
-                                    & TCP/IP, TLS, UDP \\
-  Protocol  	& DOIP 2.0, ++	      & HTTP/1.1, HTTP/2, HTTP/3 \\
+                                    & \acrshort{TCP}/\acrshort{IP}, \acrshort{TLS}, \acrshort{UDP} \\
+  Protocol  	& DOIP 2.0, ++	      & \acrshort{HTTP}/1.1, HTTP/2, HTTP/3 \\
   Link	      & PID/Handle	        & URL \\ 
    \hline
    \end{tabular}\end{table}
@@ -156,7 +168,7 @@ The FAIR Digital Object guidelines \cite{Bonino 2019} sets out recommendations f
   Newer \cite{Anders 2023} renames \texttt{FDOF*} to \texttt{FDOR*} but follows same ordering. For a brief listing of the requirements, see section \vref{ch10:fdo-guidelines}.
 } and relates them to further FDO requirements such as FDO Data Type Registries.
 
-In Table \vref{ch3:fdo-checks} we evaluate completeness of the guidelines in two current realizations: 1) DOIPv2 \cite{DONA 2018} and 2) Linked Data Platform \cite{Sporny 2014}, as proposed by \cite{Bonino 2020}.
+In Table \vref{ch3:fdo-checks} we evaluate completeness of the guidelines in two current realizations: 1) DOIPv2 \cite{DONA 2018}\ and 2) Linked Data Platform \cite{Sporny 2014}, as proposed by \cite{Bonino 2020}.
 We provide our analysis of each realisation with respect to the FDO Guideline and also provide suggestions for that realisation to meet the given guideline
 
 \begin{landscape}
@@ -740,7 +752,9 @@ RDA-R1.3-02D
 
 \subsubsection{EOSC Interoperability Framework}\label{ch3:eosc-interoperability-framework}
 
-The European Open Science Cloud (EOSC) is a large EU initiative to promote Open Science by implementing a joint research infrastructure by federating existing and new services and focusing on interoperability, accessability, best practices as well as technical infrastructure \cite{Ayris 2016}. The EOSC Interoperability Framework \cite{Kurowski 2021} details\footnote{
+The \acrfull{EOSC}
+%European Open Science Cloud (EOSC)
+is a large EU initiative to promote Open Science by implementing a joint research infrastructure by federating existing and new services and focusing on interoperability, accessability, best practices as well as technical infrastructure \cite{Ayris 2016}. The EOSC Interoperability Framework \cite{Kurowski 2021} details\footnote{
   EOSC-IF has since been expanded on by a draft EOSC report \cite{Åkerström 2024}, which references the preprint of this section \cite{Soiland-Reyes 2023c}.
 }
 the principles for creating a common way to achieve interoperability between all digital aspects of research activities in EOSC, including data, protocols and software. The recommendations are realised through 4 layers, Technical (e.g. protocols), Semantic (e.g. metadata models), Organisational (e.g. recommendations) and Legal (e.g. agreements), with a particular aim to address the FAIR interoperability principles and building on the concept of FAIR Digital Objects. 
