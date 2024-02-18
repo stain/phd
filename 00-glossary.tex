@@ -67,62 +67,60 @@
 }]{PID}{PID}{Persistent Identifier}
 
 
-%
 \newacronym[description={
-RDFS is..
-}]{RDFS}{RDFS}{RDFS ...}
-%
+        RDFS is a lightweight vocabulary to define classes and properties for use in RDF \cite{Guha 2014} 
+}]{RDFS}{RDFS}{RDF Schema}
+
 \newacronym[description={
-OWL is..
-}]{OWL}{OWL}{OWL ...}
-%
+        OWL is a method to express ontologies (classes, properties, hierarchies and rules). OWL is conceptually not RDF based, but considered part of the Semantic Web: OWL uses URIs as identifiers, is often used to define vocabularies for Linked Data, which are frequently published in RDFS-based serialisations.
+\cite{W3C 2012}
+}]{OWL}{OWL}{Web Ontology Language}
+
 \newacronym[description={
-DOIP is..
-}]{DOIP}{DOIP}{DOIP ...}
-%
+        DOIP is a network protocol used over SSL/TLS or TCP/IP that exposes an API for a digital object, including basic CRUD operations, but also additional operations \cite{DONA 2018}. The digital objects may be addressed by Handle identifiers, although that is not a requirement.
+}]{DOIP}{DOIP}{Digital Object Interface Protocol}
+
+\newglossaryentry{Handle}{
+        name={Handle},
+        description={
+        The Handle system \cite{Sun 2003a,Sun 2003b} is a distributed
+        identifier system for digital objects. Unlike DNS, which generally only address machines and not individual resources, in the Handle system each identified object (handle) has its own registration with a set of key/value strings. 
+        Pre-defined keys can be used for data retrieval from a server, but each handle is free to use additional keys -- the Handle protocol is also used for creating/updating handles. 
+        Many proponents of Persistent Identifiers argue for the use of the Handle system, however not all handles are persistent identifiers.
+}}
+
 \newacronym[description={
-Handle is..
-}]{Handle}{Handle}{Handle ...}
-%
+        Cryptographic protocol that largely replaces SSL for secure communication. Unlike SSL, TLS can be also be initiated from within an existing channel and gives the application further 
+        control of the encryption.
+}]{TLS}{TLS}{Transport Layer Security}
+
 \newacronym[description={
-TLS is..
-}]{TLS}{TLS}{TLS ...}
-%
-\newacronym[description={
-DRM is..
-}]{DRM}{DRM}{DRM ...}
-%
-\newacronym[description={
-DCAT is..
-}]{DCAT}{DCAT}{DCAT ...}
-%
+        Cryptographic protocol commonly used on top of TCP/IP (e.g. \texttt{https://} URLs indicate HTTP over SSL). The secured connection is transparant - the application can treat the channel like any other. SSL relies on a chain of pre-signed certificates to verify a server authenticity (infrequently with equivalent client certificates)
+}]{SSL}{SSL}{Secure Socket Layer}
+
 \newacronym[description={
         A set of recommendations for interoperability across services and data in the European Open Science Cloud \cite{Kurowski 2021,Åkerström 2024} 
 }]{EOSC-IF}{EOSC-IF}{EOSC Interoperability Framework}
-%
+
 \newacronym[description={
-SKOS is..
-}]{SKOS}{SKOS}{SKOS ...}
-%
+        SKOS is a lighweight RDF-based method of expressing vocabularies (terms and their definitions), frequently als used for mapping between vocabularies and ontologies \cite{Isaac 2009} 
+}]{SKOS}{SKOS}{Simple Knowledge Organization System}
+
 \newacronym[description={
-ROR is..
-}]{ROR}{ROR}{ROR ...}
-%
+        Hierarchical global string-based name registry; dominant for mapping \emph{domain names} to IP addresses on the Web and Internet in general. Resolving the name \texttt{www.foo.example.com} will recursively look up the  \emph{name servers} for \texttt{com}, \texttt{example.com}, and \texttt{foo.example.com} before retrieving the record \texttt{www.foo.example.com}. Only a few record types are defined, e.g. \texttt{A} (IPv4 address), \texttt{AAAA} (IPv6), \texttt{NS} (name server), \texttt{CNAME} (alias to another name).
+}]{DNS}{DNS}{Domain Name System}
+
 \newacronym[description={
-DNS is..
-}]{DNS}{DNS}{DNS ...}
-%
+        Exposed set of methods and resources for programmatic use by a separate component, either within a programming language (e.g. Java interface declarations) or across a network protocol (e.g. REST services).
+}]{API}{API}{Application Programming Interface}
+
 \newacronym[description={
-API is..
-}]{API}{API}{API ...}
-%
+        Common basic data operations, e.g. for files, database rows, Web resources
+}]{CRUD}{CRUD}{Create, Read, Update, Delete}
+
 \newacronym[description={
-CRUD is..
-}]{CRUD}{CRUD}{CRUD ...}
-%
-\newacronym[description={
-HTML is..
-}]{HTML}{HTML}{HTML ...}
+        Text-based format used for representing Web page content, typically served over HTTP(S), styled with Cascading Style Sheets (CSS) and made interactive with JavaScript (JS).
+}]{HTML}{HTML}{HyperText Markup Language}
 
 \newglossaryentry{Signposting}{
         name={Signposting},
