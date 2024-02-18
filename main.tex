@@ -143,6 +143,13 @@
 % For roman numbers in lists etc
 \usepackage{enumerate}
 
+% Glossaries
+\usepackage[toc]{glossaries}
+\makeglossaries
+\setacronymstyle{long-short-desc}
+\include{00-glossary}
+
+
 %% END packages etc.
 
 
@@ -150,7 +157,7 @@
 
 \title{FAIR Research Objects and Computational Workflows – A Linked Data Approach}
 \author{Stian Soiland-Reyes}
-\date{2024-01-22}
+\date{2024-02-16}
 
 
 \setcounter{tocdepth}{3}
@@ -161,29 +168,18 @@
 
 \frontmatter
 \maketitle
+\include{01-frontpage}
+\include{02-tocs}
 
-\include{frontpage}
+\printglossaries
+%\printglossary[type=\acronymtype]
+%\printglossary
 
-\definecolor{LinkColor}{rgb}{0,0,0}
-\tableofcontents
-\addcontentsline{toc}{chapter}{Contents}
-
-\listoffigures
-\addcontentsline{toc}{chapter}{List of figures}
-
-\listoftables
-\addcontentsline{toc}{chapter}{List of tables}
-
-\listoflistings
-%\lstlistoflistings
-\addcontentsline{toc}{chapter}{List of listings}
-\definecolor{LinkColor}{rgb}{0.4300, 0.0075, 0.2050}
 
 
 \mainmatter
 \fancyhead[LO]{\leftmark}
 \fancyhead[RE]{Chapter \thechapter}
-
 
 \chapter{Introduction}
 \label{chapter:introduction}
@@ -236,6 +232,8 @@
 \fancyhead[RE]{}
 \phantomsection\addcontentsline{toc}{chapter}{Bibliography}
 \include{b-references}
+
+
 
 \chapter{Summary}
 \include{b-summary}
