@@ -1,109 +1,120 @@
 
-
 \newacronym[description={
-        A set of principles for sharing of research data and metadata using machine-readable formats \cite{Wilkinson 2016}. See section \ref{ch10:fair-principles}
+        A set of principles for sharing of research data and metadata using machine-readable formats \cite{Wilkinson 2016}. See section \ref{ch10:fair-principles}.
 }]{FAIR}{FAIR}{Findable, Accessible, Interoperable, Reusable}
 
 \newacronym[description={
-        Guidelines and specifications for machine-actionable and self-described digital resources, with an emphasis on identifiers, types, attributes and operations. See section \ref{ch3:fdo}
+        Digital resource which follows certain guidelines and specifications to be machine-actionable and self-described, with an emphasis on identifiers, types, attributes and operations. See section \ref{ch3:fdo}.
 }]{FDO}{FDO}{FAIR Digital Object}
 
 \newacronym[description={
-        Grouping of digital scholarly outputs with relationships, semantic descriptions and executable code \cite{Bechhofer 2013}. See section \ref{intro:rq2}
+        Grouping of digital scholarly outputs with relationships, semantic descriptions and executable code \cite{Bechhofer 2013}. See section \ref{intro:rq2}.
 }]{RO}{RO}{Research Object}
 
 \newacronym[description={
-        Method to package Research Objects with metad40-cratesata in an embedded JSON-LD file \cite{Soiland-Reyes 2022a} (section \ref{40-crates}).
-}]{RO-Crate}{RO-Crate}{Research Object Crate}
+        Method to package Research Objects with metadata in an embedded JSON-LD file \cite{Soiland-Reyes 2022a}. See section \ref{40-crates}.
+},
+see={JSON-LD,RO}]{RO-Crate}{RO-Crate}{Research Object Crate}
 
 \newacronym[description={
         EU initiative to foster Open Science by integrating research infrastructures, interoperability standards, core services (e.g. persistent identifiers, authentication) and best practices \cite{Ayris 2016} 
 }]{EOSC}{EOSC}{European Open Science Cloud}
 
 \newacronym[description={
-        A structured general purpose data format derived from the JavaScript programming language, commonly preferred by Web APIs. A JSON document consists of key-based objects (dictionaries), arrays, strings and numbers \cite{Bray 2017}
+        A structured general purpose data format derived from the JavaScript programming language, commonly preferred by Web APIs. A JSON document consists of key-based objects (dictionaries), arrays, strings and numbers \cite{Bray 2017}.
 }]{JSON}{JSON}{JavaScript Object Notation}
 
 \newacronym[description={
-        A JSON-based serialization of Linked Data \cite{Sporny 2020}. Typically includes a \texttt{@context} which defines the mapping to RDF. Examples shown in Figure \ref{ch3:fig:jsonld} and listing \ref{ch5:lis1}
-}]{JSON-LD}{JSON-LD}{JSON Linked Data}
+        A JSON-based serialization of Linked Data \cite{Sporny 2020}. Typically includes a \texttt{@context} which defines the mapping to RDF. Examples shown in Figure \ref{ch3:fig:jsonld} and listing \ref{ch5:lis1}.
+},
+see={JSON,RDF}]{JSON-LD}{JSON-LD}{JSON Linked Data}
 
 
 \newacronym[description={
         Conceptual model for knowledge graph representation in the form of triples that relate Web resources
-        \cite{Schreiber 2014}, realised through multiple serialisation formats
+        \cite{Schreiber 2014}, realised through multiple serialisation formats. See section \ref{ch3:semweb}.
 }]{RDF}{RDF}{Resource Description Framework}
 
 \newacronym[description={
-        Set of practices for publishing and relating data on the Web using RDF technologies \cite{Bizer 2009}, see also section \ref{ch3:ld-web}
+        Set of practices for publishing and relating data on the Web using RDF technologies \cite{Bizer 2009}. See section \ref{ch3:ld-web}.
 }]{LD}{LD}{Linked Data}
 
 \newacronym[description={
-        Globally unique string (e.g. \texttt{http://example.com/}) to identify a resource that can be retrieved (located) using its defined protocol (e.g. \texttt{http}). 
-}]{URL}{URL}{Uniform Resource Locator}
+        Globally unique string (e.g. \texttt{http://example.com/doc}) to identify a resource path (\texttt{/doc}) that can be retrieved (located) using the defined protocol (\texttt{http}) from the given domain name (\texttt{example.com}). Used for hyperlinks in HTML and most Web applications.
+},
+see={DNS,HTML,HTTP}]{URL}{URL}{Uniform Resource Locator}
 
 \newacronym[description={
-        Globally unique identifier string (e.g. \texttt{http://example.com/} or \texttt{urn:isbn:0451450523}). The \emph{scheme} (\texttt{http}, \texttt{urn:isbn}) classifies the identifier. URIs are superset of URLs, as the scheme is not required to have an associated network protocol \cite{Berners-Lee 2005}
-}]{URI}{URI}{Uniform Resource Identifier}
+        Globally unique identifier string (e.g. \texttt{http://example.com/} or \texttt{urn:isbn:0451450523}). The \emph{scheme} (\texttt{http}, \texttt{urn:isbn}) classifies the identifier. URIs are superset of URLs, as the scheme is not required to have an associated network protocol \cite{Berners-Lee 2005}. Used as identifiers in RDF.
+},
+see={URL,RDF}
+]{URI}{URI}{Uniform Resource Identifier}
 
 \newacronym[description={
-        Globally unique identifier string, equivalent to URIs, but permitting all internatinal Unicode characters witout \texttt{\%} escaping.
-}]{IRI}{IRI}{International Resource Identifier}
+        Globally unique identifier string, equivalent to URIs, but permitting all international Unicode characters without needing escaping. Used as identifiers in JSON-LD.
+},
+see={URI,JSON-LD}]{IRI}{IRI}{International Resource Identifier}
 
 \newacronym[description={
         Network protocol used for retrieving Web pages and invoking Web APIs
-        \cite{Fielding 1999}. The secure version of the protocol \texttt{https} adds 
-}]{HTTP}{HTTP}{Hypertext Transfer Protocol}
+        \cite{Fielding 1999}. The secure version of the protocol \texttt{https} adds encryption.
+},
+see={SSL,TLS}]{HTTP}{HTTP}{Hypertext Transfer Protocol}
 
 \newacronym[description={
         Architectural style for Web applications, where the stateless nature of Web is exploited by navigating the application state through Web resources, facilitating hypermedia formats \cite{Fielding 2000}. 
-        \emph{RESTful} Web Services are the dominant form of Web APIs, although the hypermedia aspect is frequently neglected
-}]{REST}{REST}{Representational State Transfer}
-
+        \emph{RESTful} Web Services exchanging JSON are the dominant form of Web APIs, although the hypermedia aspect is frequently neglected.
+},
+see={API,HTTP,JSON}]{REST}{REST}{Representational State Transfer}
 
 \newacronym[description={
         An identifier string that is globally unique, resolvable (typically through a resolver or registry) and with an organisational promise of persistence, suitable for inclusion in long-term archives and data publications
-        \cite{McMurry 2017}
-}]{PID}{PID}{Persistent Identifier}
+        \cite{McMurry 2017}. 
+},
+see={URI,Handle}]{PID}{PID}{Persistent Identifier}
 
 
 \newacronym[description={
-        RDFS is a lightweight vocabulary to define classes and properties for use in RDF \cite{Guha 2014} 
+        RDFS is a lightweight RDF vocabulary to define classes and properties for use in other RDF resources \cite{Guha 2014}.
 }]{RDFS}{RDFS}{RDF Schema}
 
 \newacronym[description={
-        OWL is a method to express ontologies (classes, properties, hierarchies and rules). OWL is conceptually not RDF based, but considered part of the Semantic Web: OWL uses URIs as identifiers, is often used to define vocabularies for Linked Data, which are frequently published in RDFS-based serialisations.
-\cite{W3C 2012}
-}]{OWL}{OWL}{Web Ontology Language}
+        OWL is a method to express ontologies (classes, properties, hierarchies and inference rules). OWL is conceptually not RDF based, but considered part of the Semantic Web: OWL uses URIs as identifiers, is often used to define vocabularies for Linked Data, which are frequently published in RDFS-based serialisations
+        \cite{W3C 2012}.
+},
+see={RDF,LD}]{OWL}{OWL}{Web Ontology Language}
 
 \newacronym[description={
-        DOIP is a network protocol used over SSL/TLS or TCP/IP that exposes an API for a digital object, including basic CRUD operations, but also additional operations \cite{DONA 2018}. The digital objects may be addressed by Handle identifiers, although that is not a requirement.
-}]{DOIP}{DOIP}{Digital Object Interface Protocol}
+        DOIP is a text-based network protocol that exposes an API for a digital object, including basic CRUD operations, but also additional operations \cite{DONA 2018}. The digital objects may optionally be addressed by Handle identifiers.
+},
+see={API,CRUD,Handle}]{DOIP}{DOIP}{Digital Object Interface Protocol}
 
 \newglossaryentry{Handle}{
         name={Handle},
         description={
         The Handle system \cite{Sun 2003a,Sun 2003b} is a distributed
-        identifier system for digital objects. Unlike DNS, which generally only address machines and not individual resources, in the Handle system each identified object (handle) has its own registration with a set of key/value strings. 
-        Pre-defined keys can be used for data retrieval from a server, but each handle is free to use additional keys -- the Handle protocol is also used for creating/updating handles. 
-        Many proponents of Persistent Identifiers argue for the use of the Handle system, however not all handles are persistent identifiers.
+        identifier system for digital objects. Each identified object (handle) within a \emph{prefix} has a set of key/value strings. 
+        Pre-defined keys enable data retrieval from a server, additional keys can be added. The Handle protocol is also used for creating/updating handles. 
 }}
 
 \newacronym[description={
         Cryptographic protocol that largely replaces SSL for secure communication. Unlike SSL, TLS can be also be initiated from within an existing channel and gives the application further 
         control of the encryption.
-}]{TLS}{TLS}{Transport Layer Security}
+},
+see={SSL}]{TLS}{TLS}{Transport Layer Security}
 
 \newacronym[description={
-        Cryptographic protocol commonly used on top of TCP/IP (e.g. \texttt{https://} URLs indicate HTTP over SSL). The secured connection is transparant - the application can treat the channel like any other. SSL relies on a chain of pre-signed certificates to verify a server authenticity (infrequently with equivalent client certificates)
-}]{SSL}{SSL}{Secure Socket Layer}
+        Cryptographic protocol commonly used on top of TCP/IP (e.g. \texttt{https://} URLs indicate HTTP over SSL). The secured connection is transparant - the application can treat the channel like any other. SSL relies on a chain of pre-signed certificates to verify a server authenticity (infrequently with equivalent client certificates).
+},
+see={TCP,TLS,URL}]{SSL}{SSL}{Secure Socket Layer}
 
 \newacronym[description={
-        A set of recommendations for interoperability across services and data in the European Open Science Cloud \cite{Kurowski 2021,Åkerström 2024} 
-}]{EOSC-IF}{EOSC-IF}{EOSC Interoperability Framework}
+        A set of recommendations for interoperability across services and data in the European Open Science Cloud \cite{Kurowski 2021,Åkerström 2024}. See section \ref{ch3:eosc-interoperability-framework}.
+},
+see={EOSC}]{EOSC-IF}{EOSC-IF}{EOSC Interoperability Framework}
 
 \newacronym[description={
-        SKOS is a lighweight RDF-based method of expressing vocabularies (terms and their definitions), frequently als used for mapping between vocabularies and ontologies \cite{Isaac 2009} 
+        SKOS is a lighweight RDF-based method of expressing vocabularies (terms and their definitions), frequently als used for mapping between vocabularies and ontologies \cite{Isaac 2009}.
 }]{SKOS}{SKOS}{Simple Knowledge Organization System}
 
 \newacronym[description={
@@ -111,41 +122,57 @@
 }]{DNS}{DNS}{Domain Name System}
 
 \newacronym[description={
-        Exposed set of methods and resources for programmatic use by a separate component, either within a programming language (e.g. Java interface declarations) or across a network protocol (e.g. REST services).
-}]{API}{API}{Application Programming Interface}
+        Documented exposed set of methods and resources for programmatic use by a separate component, either within a programming language (e.g. Java interface declarations) or across a network protocol (e.g. REST services).
+},
+see={REST}
+]{API}{API}{Application Programming Interface}
 
 \newacronym[description={
-        Common basic data operations, e.g. for files, database rows, Web resources
+        Basic data operations, e.g. for files, database rows, Web resources.
 }]{CRUD}{CRUD}{Create, Read, Update, Delete}
 
 \newacronym[description={
-        Text-based format used for representing Web page content, typically served over HTTP(S), styled with Cascading Style Sheets (CSS) and made interactive with JavaScript (JS).
-}]{HTML}{HTML}{HyperText Markup Language}
+        Text-based format used for representing Web page content, typically served over HTTP, styled with Cascading Style Sheets (CSS) and made interactive with JavaScript (JS).
+},
+see={HTTP}]{HTML}{HTML}{HyperText Markup Language}
 
 \newglossaryentry{Signposting}{
         name={Signposting},
-        description={A method to provide machines with navigational link relations \cite{Nottingham 2017} between Web resources, by providing HTTP \texttt{Link:} headers, HTML \texttt{<link>} elements or a linkset \cite{Wilde 2020} \cite{Van de Sompel 2022}
-}}
+        description={A method to provide machines with navigational link relations \cite{Nottingham 2017} between Web resources, by providing HTTP \texttt{Link:} headers, HTML \texttt{<link>} elements or linkset JSON \cite{Wilde 2020} \cite{Van de Sompel 2022}.
+},
+see={HTTP,HTML,JSON}}
 
 
 
-%\newacronym[description={}]{ABC}{ABC}{A B C}
+
+
 
 \newacronym[description={
-        UDP is a connectionless overlay of IP, commonly used for scenarios where a short latency or high performance is more important than completeness of data packages (e.g. video streaming, gaming). 
-}]{UDP}{UDP}{User Datagram Protocol}
+        UDP is a connectionless overlay of IP, commonly used for scenarios where a short latency or high performance is more important than completeness of data packages (e.g. video streaming, gaming).
+},
+see={IP}
+]{UDP}{UDP}{User Datagram Protocol}
 
 \newacronym[description={
         TCP is the most common connection protocol used on top of IP (TCP/IP), 
         which opens a bidirectional channel where data is received by the application in the same order it was sent. The protocol includes handshakes and retried transmissions.
-}]{TCP}{TCP}{Transport Control Protocol}
+},
+see={IP}
+]{TCP}{TCP}{Transport Control Protocol}
 
 \newacronym[description={
-        Routable network protocols used for all traffic on the Internet. IPv4 addresses (e.g. \texttt{8.8.8.8} are gradually being replaced by IPv6 addresses (e.g. \texttt{2001:4860:4860::8844}); application-wise the two versions are largely compatible)
+        Routable network protocols used for all traffic on the Internet. IPv4 (e.g. address \texttt{8.8.8.8}) is gradually being replaced by IPv6 (e.g. \texttt{2001:4860:4860::8844}).
 }]{IP}{IP}{Internet Protocol}
 
 \newacronym[description={
-        Text based format for representing two-dimensional data, rows are separated by newlines and fields by comma or semicolon. The format is very common (e.g.  exported from Microsoft Excel spreadsheets) as it is relatively easy to consume or edit, however it is notoriously underspecified with many incompatible dialects and conventions
+        Text-based format for representing two-dimensional data, rows are separated by newlines and fields by comma or semicolon. The format is very common (e.g.  exported from Microsoft Excel spreadsheets) as it is relatively easy to consume or edit, however it is notoriously underspecified with many incompatible dialects and conventions.
 }]{CSV}{CSV}{Comma-Seperated Values}
 
 
+
+%\newacronym[description={}]{ABC}{ABC}{A B C}
+%\newglossaryentry{X}{
+%        name={X},
+%        description={
+%       ..
+%}
