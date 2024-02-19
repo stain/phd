@@ -12,7 +12,7 @@
 }]{RO}{RO}{Research Object}
 
 \newacronym[description={
-        Method to package Research Objects with metadata in an embedded JSON-LD file \cite{Soiland-Reyes 2022a}. See section \ref{40-crates}.
+        Method to package Research Objects with metadata in an embedded JSON-LD file \cite{Soiland-Reyes 2022a}. See section \ref{ch5:packaging-research-artefacts-with-ro-crate}.
 },
 see={JSON-LD,RO}]{RO-Crate}{RO-Crate}{Research Object Crate}
 
@@ -56,6 +56,17 @@ see={URL,RDF}
 see={URI,JSON-LD}]{IRI}{IRI}{International Resource Identifier}
 
 \newacronym[description={
+        Globally unique identifier string. Subset of URIs which are not required to be locateable with a network protocol, e.g. \texttt{urn:isbn:9780062515865} or \texttt{urn:uuid:f7262a84-bd45-434e-a79f-32cbb55dc8b1}. URNs are to some extent deprecated in favour of HTTP-based PIDs, e.g. \url{https://identifiers.org/isbn/9780062515865} 
+},
+see={URI,PID}]{URN}{URN}{Uniform Resource Name}
+
+%  
+\newacronym[description={
+        Globally unique identifier (also called \emph{GUID}), a hexadecimal string representing a 128-bit number, e.g. \texttt{b91d75c1-891d-4305-85f9-7db73d9164da} \cite{Leach 2005}. Typically generated from a random number generator. UUIDs can be generated independently and represent anything, but are not directly resolvable.
+},
+see={URN}]{UUID}{UUID}{Universally Unique Identifier}
+
+\newacronym[description={
         Network protocol used for retrieving Web pages and invoking Web APIs
         \cite{Fielding 1999}. The secure version of the protocol \texttt{https} adds encryption.
 },
@@ -93,8 +104,8 @@ see={API,CRUD,Handle}]{DOIP}{DOIP}{Digital Object Interface Protocol}
         name={Handle},
         description={
         The Handle system \cite{Sun 2003a,Sun 2003b} is a distributed
-        identifier system for digital objects. Each identified object (handle) within a \emph{prefix} has a set of key/value strings. 
-        Pre-defined keys enable data retrieval from a server, additional keys can be added. The Handle protocol is also used for creating/updating handles. 
+        identifier system for digital objects. Each identified object (handle) (e.g. \texttt{2117/384589}) within a \emph{prefix} has a set of key/value strings. 
+        Pre-defined keys \texttt{URL} \texttt{0.LOC} enable data retrieval from a server, additional keys can be added. The Handle protocol is also used for creating/updating handles. Expressed as URIs with the \url{https://hdl.handle.net/} resolver, replacing the URN scheme \texttt{info:hdl:}
 }}
 
 \newacronym[description={
@@ -138,14 +149,9 @@ see={HTTP}]{HTML}{HTML}{HyperText Markup Language}
 
 \newglossaryentry{Signposting}{
         name={Signposting},
-        description={A method to provide machines with navigational link relations \cite{Nottingham 2017} between Web resources, by providing HTTP \texttt{Link:} headers, HTML \texttt{<link>} elements or linkset JSON \cite{Wilde 2020} \cite{Van de Sompel 2022}.
+        description={A method to provide machines with explicit navigational link relations \cite{Nottingham 2017} between Web resources, by providing HTTP \texttt{Link:} headers, HTML \texttt{<link>} elements or linkset JSON \cite{Wilde 2020} \cite{Van de Sompel 2022}.
 },
-see={HTTP,HTML,JSON}}
-
-
-
-
-
+see={HTTP,HTML,JSON,content-negotiation}}
 
 \newacronym[description={
         UDP is a connectionless overlay of IP, commonly used for scenarios where a short latency or high performance is more important than completeness of data packages (e.g. video streaming, gaming).
@@ -169,10 +175,36 @@ see={IP}
 }]{CSV}{CSV}{Comma-Seperated Values}
 
 
+\newglossaryentry{media type}{
+        name={media type},
+        description={
+        Syntactic format of a bytestream within a network message, identified by a string. For instance, the HTTP header \texttt{Content-Type: text/html} in indicates the media type for HTML. There is an official \footurl{https://www.iana.org/assignments/media-types}{Media Type registry}.
+},
+see={HTML,HTTP}}
 
-%\newacronym[description={}]{ABC}{ABC}{A B C}
+\newglossaryentry{content-negotiation}{
+        name={content-negotiation},
+        description={
+       HTTP mechanism to request a desired media type of a resource that has multiple serialisation formats, e.g. \texttt{Accept: application/ld+json} to ask for JSON-LD. Commonly used on the
+       Semantic Web for providing both a human-readable HTML representation and various RDF formats.
+},
+see={HTTP,media type,JSON-LD,RDF}
+}
+
+\newacronym[description={
+       Community-led global initiative that build consensus on methods for open sharing and re-use of data and metadata. \url{https://rd-alliance.org/}
+}
+]{RDA}{RDA}{Research Data Alliance}
+
+
+\newacronym[description={
+        Handle-based persistent identifier, e.g. \texttt{10.5281/zenodo.8113625} -- typically assigned to scholarly outputs (journal articles, datasets, reports) through one of the DOI registries (e.g. CrossRef, DataCite). Frequently expressed as an URI using the \url{https://doi.org/} resolver.
+},see={Handle,PID,URI}]{DOI}{DOI}{Digital Object Identifier}
+
+
 %\newglossaryentry{X}{
 %        name={X},
 %        description={
 %       ..
 %}
+
