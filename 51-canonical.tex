@@ -5,13 +5,15 @@ languages}
 
 We introduce the concept of \emph{Canonical Workflow Building Blocks} (CWBB), a methodology of describing and wrapping computational tools, in order for them to be utilised in a reproducible manner from multiple workflow languages and execution platforms.
 The concept is implemented and demonstrated with the BioExcel Building Blocks library (BioBB), a collection of tool wrappers in the field of computational biomolecular simulation.
-Interoperability across different workflow languages is showcased through a protein Molecular Dynamics setup transversal workflow, built using this library and run with 5 different Workflow Manager Systems (WfMS).
+Interoperability across different workflow languages is showcased through a protein Molecular Dynamics setup transversal workflow, built using this library and run with 5 different 
+\acrfullpl{WfM}
+%Workflow Manager Systems (WfMS).
 We argue such practice is a necessary requirement for FAIR Computational Workflows and an element of Canonical Workflow Frameworks for Research (CWFR) in order to improve widespread adoption and reuse of computational methods across workflow language barriers.
 
 \subsection{Introduction}\label{ch6:introduction}
 
-The need for \emph{reproducibility} of research software usage is well established \cite{Stodden 2016,Leipzig 2021,Katz 2021a}, and adaptation of \emph{workflow management systems} (\textbf{WfMS}) together with \emph{software packaging and containers} \cite{Möller 2017} have been proposed as key ingredients for making research software usage \emph{FAIR} and reproducible \cite{Cohen-Boulakia 2017,Grüning 2018b,Lamprecht 2019}.
-Recently it is also argued that computational workflows should also be treated as FAIR Digital Objects \cite{De Smedt 2020} in their own right, with identifier, metadata \cite{Leipzig 2021} and interoperability requirements \cite{Goble 2020}.
+The need for \emph{reproducibility} of research software usage is well established \cite{Stodden 2016,Leipzig 2021,Katz 2021a}, and adaptation of \emph{workflow management systems} (\textbf{WfMS}) together with \emph{software packaging and containers} \cite{Möller 2017} have been proposed as key ingredients for making research software usage \acrshort{FAIR} and reproducible \cite{Cohen-Boulakia 2017,Grüning 2018b,Lamprecht 2019}.
+Recently it is also argued that computational workflows should also be treated as \acrfullpl{FDO} \cite{De Smedt 2020} in their own right, with identifier, metadata \cite{Leipzig 2021} and interoperability requirements \cite{Goble 2020}.
 
 \footurl{https://bioexcel.eu/}{BioExcel}, a European Centre of Excellence for Computational Biomolecular Research, has a particular focus on the research domains molecular dynamics simulations and bioinformatics with use of \emph{High Performance Computing} (\textbf{HPC}) to approach Exascale performance, while also improving usability.
 The \emph{BioExcel Building Blocks} (\textbf{BioBB}) \cite{Andrio 2019} have been created as portable wrappers of open-source computational tools identified as useful for BioExcel workflows, forming several \emph{families} of documented and interoperable operations that can be called from multiple workflow systems.
@@ -66,8 +68,11 @@ Each of the modules is built from a combination of:
 Notably, all building blocks follow the same pattern of installation, configuration and interaction.
 
 Since the publication of the library, several \footurl{https://mmb.irbbarcelona.org/biobb/documentation/source}{new building block modules} (Chemistry, Machine Learning, AMBER MD, Virtual Screening, etc.) have been added, and the set of operations for the existing BioBB families have been expanded.
-While BioExcel previously provided curated adapters (Figure \vref{ch6:figure1}) for running BioBB in workflow systems using Common Workflow Language (CWL) and PyCOMPSs, along with Galaxy Toolshed bindings, we have now started auto-generating these bindings, along with command line wrappers and REST web service APIs, using annotations within BioBB's Python docstrings as source.
-These annotations include sufficient information for a WfMS to launch a particular building block: \emph{input} and \emph{output} parameters (including \emph{mandatory/optional} flags), compatible \emph{formats} (including from EDAM ontology \cite{Ison 2013}), \emph{example} files (essential for testing purposes), default values and \emph{dependencies}.
+While BioExcel previously provided curated adapters (Figure \vref{ch6:figure1}) for running BioBB in workflow systems using 
+\acrfull{CWL}
+%Common Workflow Language (CWL)
+and PyCOMPSs, along with Galaxy Toolshed bindings, we have now started auto-generating these bindings, along with command line wrappers and REST web service APIs, using annotations within BioBB's Python docstrings as source.
+These annotations include sufficient information for a \acrshort{WfMS} to launch a particular building block: \emph{input} and \emph{output} parameters (including \emph{mandatory/optional} flags), compatible \emph{formats} (including from EDAM ontology \cite{Ison 2013}), \emph{example} files (essential for testing purposes), default values and \emph{dependencies}.
 This ensures human-readable documentation, FAIR metadata and programmatic accessibility can be generated consistently and comparably.
 
 \begin{figure}%[t]
@@ -88,7 +93,7 @@ This assembly of available demonstration workflows have been successfully used i
 (e.g.~BioExcel Summer \& Winter School, webinars and virtual training).
 In training we particularly utilised the Binder infrastructure of the BioExcel Cloud portal \cite{Niewielska 2020} to give users a web-based first experience of the building blocks before they try them in other workflow systems.
 
-We can observe that workflow building blocks such as BioBB are necessarily composed of a comprehensive list of digital objects, encompassing source code, packaging, containerization, documentation, attributions, citations, registry entries, WfMS integrations and REST APIs.
+We can observe that workflow building blocks such as BioBB are necessarily composed of a comprehensive list of digital objects, encompassing source code, packaging, containerization, documentation, attributions, citations, registry entries, WfMS integrations and \acrshort{REST} \acrshort{API}s.
 
 We propose to consider building blocks as \emph{composite digital objects} in their own right: gathering the above software components along with their metadata, identifiers and operations then forms a \emph{Canonical Workflow Building Block} (\textbf{CWBB}).
 We suggest this concept as a fundamental element of FAIR Digital Objects for Computational Workflows: researchers use the building blocks computationally as functional operations across WfMSs, while the FAIR aspect of CWBB propagates information and resources that are essential for reproducibility, reuse and understanding by anyone discovering the workflow.
@@ -130,7 +135,7 @@ A selection of these have similarly been assembled for different WfMS using the 
 Early work on libraries of workflows fragments include Web Service-based approaches where tools are wrapped and exposed using common, interoperable data types in \footurl{http://biomoby.open-bio.org/}{BioMoby} \cite{BioMoby 2008} for bioinformatics and similarly \footurl{https://en.wikipedia.org/wiki/CaBIG}{caBIG} \cite{Saltz 2006} for cancer genomics.
 While these efforts were interoperable across WfMSs they required a large up-front investment in agreeing to and adapting native data to common RDF or XML representations.
 
-The notion of \emph{abstract workflows} \cite{Garijo 2011}, structural workflow descriptions separated from their concrete execution realisations and augmented with Linked Data annotations, have been emphasised as essential for reuse and consistency across workflow systems.
+The notion of \emph{abstract workflows} \cite{Garijo 2011}, structural workflow descriptions separated from their concrete execution realisations and augmented with \acrlong{LD} annotations, have been emphasised as essential for reuse and consistency across workflow systems.
 Identifying \emph{common motifs} for workflow operations \cite{Garijo 2014a} (e.g.~Data preparation, Format transformation, Filter, Combine) are important to simplify and understand otherwise fine-grained workflow provenance traces.
 
 Most other efforts to standardise a set of disparate analytical tools have been done within the scope of a single WfMS, allowing customised user interaction, data visualisation, configuration and findability, for instance \footurl{http://www.taverna.org.uk/documentation/taverna-2-x/components/}{Taverna components} had prototypical building blocks \cite{De Giovanni 2016} which were instantiated at runtime by reference from a registry. 
@@ -168,7 +173,7 @@ We therefore also provide such workflow templates for multiple WfMS, including C
 These are fairly disparate workflow languages, yet by the use of the same canonical workflow building blocks (which again invoke the same software binaries), such WfMS-specific workflows effectively are instantiations of the same canonical workflow.
 
 One challenge found is how to publish such canonical workflows in registries like the \footurl{https://workflowhub.eu/}{WorkflowHub}.
-The hub supports the registration of Digital Objects in the form of RO-Crate \cite{Soiland-Reyes 2022a}, with the option of abstract CWL for describing the canonical workflow template, along with direct references to the workflow's GitHub repository.
+The hub supports the registration of Digital Objects in the form of \acrshort{RO-Crate} \cite{Soiland-Reyes 2022a}, with the option of abstract CWL for describing the canonical workflow template, along with direct references to the workflow's GitHub repository.
 
 \clearpage % footnotes explode otherwise!
 For instance in the RO-Crate for \url{https://doi.org/10.48546/workflowhub.workflow.200.1} \cite{Hospital 2021a}, which can also be

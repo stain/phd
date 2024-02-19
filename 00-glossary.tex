@@ -201,10 +201,46 @@ see={HTTP,media type,JSON-LD,RDF}
         Handle-based persistent identifier, e.g. \texttt{10.5281/zenodo.8113625} -- typically assigned to scholarly outputs (journal articles, datasets, reports) through one of the DOI registries (e.g. CrossRef, DataCite). Frequently expressed as an URI using the \url{https://doi.org/} resolver.
 },see={Handle,PID,URI}]{DOI}{DOI}{Digital Object Identifier}
 
+\newacronym[description={
+        YAML-based file format for computational workflows, executable by a range of workflow engines
+      \cite{Crusoe 2022}.  \url{https://www.commonwl.org/}
+},
+see={YAML}]{CWL}{CWL}{Common Workflow Language}
+
+%ORCID
+
+\newacronym[description={
+        YAML is a file format with the same data model as JSON, but with a more readable syntax, e.g. using indentation instead of quoted strings.  \url{https://yaml.org/}
+},
+see={JSON}
+]{YAML}{YAML}{Yet Another Markup Language}
+
+\newglossaryentry{workflow}{
+        name={workflow},
+        description={
+       In this thesis, a \emph{computational workflow} is a machine-readable definition for executing a series of computational tools, typically executed using a workflow management system. 
+}}
+
+\newglossaryentry{scientific workflow}{
+        name={scientific workflow},
+        see={workflow},
+        description={
+        Data-driven computational workflow to \emph{pipeline} scientific data for a particular analysis, e.g. data cleaning, image conversion}}
+
+\newacronym[description={
+        Software or platform which can execute computational workflow definitions, and may manage data and provenance related to such executions.
+}]{WfMS}{WfMS}{Workflow Management System}
+
+% Canonical Workflow Frameworks for Research (CWFR)
+% High Performance Computing
 
 %\newglossaryentry{X}{
 %        name={X},
 %        description={
 %       ..
-%}
+%}}
 
+
+%\newacronym[description={
+%        ...
+%}]{CRUD}{CRUD}{Create, Read, Update, Delete}
