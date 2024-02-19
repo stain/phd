@@ -106,7 +106,7 @@ Web w/ Linked Data \\
   & Lightweight HTTP semantics for authenticity/navigation. Semantic Type not commonly expressed on PID/header level, may be declared within Linked Data metadata. Semantic of type implied by Linked Data formats (e.g.~\acrshort{OWL}2, \acrshort{RDFS}), although choice of type system may not be explicit. \\
 \textbf{Syntactic}: \emph{serialising messages for digital exchange, structure representation}
   & DOIP serialise FDOs as JSON, metadata commonly use JSON, typed with JSON Schema. Multiple byte stream attachments of any \gls{media type}.
-  & Textual HTTP headers (including any signposting), single byte stream of any media type, e.g.~Linked Data formats (JSON-LD, Turtle, RDF/XML) or embedded in document (HTML with RDFa, JSON-LD or Microdata). XML was previously the main syntax used by APIs, JSON is now dominant. \\
+  & Textual HTTP headers (including any signposting), single byte stream of any media type, e.g.~Linked Data formats (JSON-LD, Turtle, RDF/XML) or embedded in document (HTML with \acrshort{RDFa}, JSON-LD or Microdata). XML was previously the main syntax used by APIs, JSON is now dominant. \\
 \textbf{Connective}: \emph{transferring messages to another application, e.g.~wrapping in other protocols}
   & DOIP \cite{DONA 2018} is transport-independent, commonly TLS TCP/IP port 9000, DOIP over HTTP \cite{CNRI 2023a}
   & HTTP/1.1 TCP/IP port 80 \cite{Fielding 1999}; HTTP/1.1+TLS, TCP/IP 443 \cite{Rescorla 2000}; HTTP/2, as HTTP/1* but binary \cite{Belshe 2022}; HTTP/3, like HTTP/2+TLS but \acrshort{UDP} \cite{Bishop 2022} \\

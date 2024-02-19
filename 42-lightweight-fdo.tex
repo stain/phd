@@ -16,7 +16,11 @@ including consistent use of persistent identifiers, provenance,
 community standards, clear machine/human-readable licensing for metadata
 and data, and Web publication of RO-Crates.
 
-The FAIR Digital Object (FDO) approach
+
+The 
+\acrfull{FDO}
+%FAIR Digital Object (FDO) 
+approach
 \cite{De Smedt 2020}
 gives a set of recommendations that aims to improve findability,
 accessibility, interoperability and reproducibility for any digital
@@ -27,7 +31,7 @@ Here we present how we have followed the FDO recommendations and turned
 research outcomes into FDOs by publishing RO-Crates on the Web using
 HTTP, following best practices for Linked Data. We highlight challenges
 and advantages of the FDO approach, and reflect on what is required for
-an FDO profile to achieve FAIR RO-Crates.
+an FDO profile to achieve \acrshort{FAIR} RO-Crates.
 
 The implementation allows for a broad range of use cases, across
 scientific domains. A minimal RO-Crate may be represented as a
@@ -105,7 +109,9 @@ this raises some challenges with regards to mutability and persistence
 of crates.
 
 To illustrate how such challenges can be handled, we detail how the
-WorkflowHub repository follows several FDO principles:
+WorkflowHub repository follows several FDO principles\footnote{
+  See table \vref{ch10:fdo-guidelines}
+}:
 
 \begin{enumerate}
 
@@ -118,7 +124,7 @@ WorkflowHub repository follows several FDO principles:
 \item
   Computational workflows can be composed of multiple files used as a
   whole, e.g.~CWL files in a GitHub repository. These are snapshotted as
-  a single RO-Crate ZIP, indicating the main workflow. {[}FDF11{]}
+  a single RO-Crate ZIP, indicating the main workflow. {[}FDOF11{]}
 \item
   PID resolution can content-negotiate to Datacite's PID metadata
   {[}FDOF2{]} or use \footurl{https://signposting.org/FAIR/}{FAIR

@@ -95,7 +95,10 @@ FDOs comply to a set of requirements \cite{Anders 2023}, quoted\footnote{
 \item[FDO-GR3] If an FDO contains a structured bit-sequence, the structured PID record includes at least a reference to the location(s) 1 where the bit-sequence encoding the content of a FAIR-DO (FDO) can be accessed as well as the type definition of the FDO.  The structured record may also contain PIDs pointing to Metadata FDOs describing properties of the target FDO. 
 \item[FDO-GR4] The PID record needs to contain mandatory FDO attributes, may contain optional FDO attributes and attributes agreed upon by recognized communities.  Values of attributes can be part of the PID record or they can be references.  Expectations of which attribute values are contained within the PID record and which are references pointing from the record to external sources should be specified in the PID profile or definition of said attribute in a Data Type Registry. 
 \item[FDO-GR5] Each FDO identified by a PID can be accessed or operated on using an interface protocol by specifying the PID of a registered supported operation. 
-\item[FDO-GR6] Any basic FDO interface protocol offers standard Create, Read, Update, Delete (CRUD) operations on FDOs and a possibility to use extended/domain operations for specific FDO applications.  The addition of an operation to list available extended/domain operation for specific FDO types is strongly recommended. 
+\item[FDO-GR6] Any basic FDO interface protocol offers standard 
+\acrfull{CRUD}
+%Create, Read, Update, Delete (CRUD)
+operations on FDOs and a possibility to use extended/domain operations for specific FDO applications.  The addition of an operation to list available extended/domain operation for specific FDO types is strongly recommended. 
 \item[FDO-GR7] The relations between FDO Types and supported operations are maintained in separate registries. 
 \item[FDO-GR8] Metadata can themselves be FDOs which describe the properties of the referenced FDO.  They must be specified by a registered schema that refers to defined and registered metadata categories. 
 \item[FDO-GR9] Metadata can be of different types such as descriptive, domain specific, provenance, system, access permissions, transactions, etc. 

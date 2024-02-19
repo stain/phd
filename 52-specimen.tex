@@ -17,15 +17,22 @@ funding levels.
 We show how computer vision, optical character recognition, handwriting
 recognition, named entity recognition and language translation
 technologies can be implemented into canonical workflow component
-libraries with findable, accessible, interoperable, and reusable (FAIR)
+libraries with findable, accessible, interoperable, and reusable (\acrshort{FAIR})
 characteristics. These libraries are being developed in a cloud-based
 workflow platform -- the `Specimen Data Refinery' (SDR) -- founded on
-Galaxy workflow engine, Common Workflow Language, Research Object Crates
-(RO-Crate) and WorkflowHub technologies. The SDR can be applied to
+Galaxy workflow engine, 
+\acrlong{CWL},
+%Common Workflow Language, 
+\acrfullpl{RO-Crate}
+%Research Object Crates (RO-Crate)
+and WorkflowHub technologies. The SDR can be applied to
 specimens' labels and other artefacts, offering the prospect of greatly
 accelerated and more accurate data capture in computable form.
 
-Two kinds of FAIR Digital Objects (FDO) are created by packaging outputs
+Two kinds of 
+\acrfull{FDO}
+%FAIR Digital Objects (FDO)
+are created by packaging outputs
 of SDR workflows and workflow components as digital objects with
 metadata, a persistent identifier, and a specific type definition. The
 first kind of FDO are computable Digital Specimen (DS) objects that can
@@ -115,7 +122,9 @@ forms for components and interactions between components that can lead
 to improved FAIR characteristics for both the workflows themselves and
 the data resulting from workflow execution.
 
-FAIR Digital Objects (FDO) are created by packaging outputs of workflows
+\acrfullpl{FDO}
+%FAIR Digital Objects (FDO)
+are created by packaging outputs of workflows
 and workflow components as digital objects with metadata, a persistent
 identifier, and a specific type definition against which operations can
 be executed \cite{De Smedt 2020}. The Refinery uses two kinds of FDOs:
@@ -136,7 +145,9 @@ be executed \cite{De Smedt 2020}. The Refinery uses two kinds of FDOs:
 
 We first summarise related work before describing the problem to be
 addressed by the Specimen Data Refinery. We then explain our Canonical
-Workflows for Research (CWFR) approach using these FDOs in the design of
+Workflows for Research (CWFR)
+% \acrfull{CWFR}
+approach using these FDOs in the design of
 the SDR, the experimental setup, and results so far from the work in
 progress. While future work will clarify full results and challenges of
 implementing a robust, reliable, and easy-to-use production-capability
@@ -240,13 +251,14 @@ flow. Their significant defining characteristics are (i) abstraction,
 through the separation of the workflow specification (the work to be
 done) from its execution (how it is done), and (ii) composition whereby
 the components can be cleanly combined and reused and workflows
-themselves can be neatly packaged as components \cite{Atkinson 2017}. Workflow
-management systems typically provide the necessary mechanisms for
+themselves can be neatly packaged as components \cite{Atkinson 2017}. 
+\acrfullpl{WfMS}
+typically provide the necessary mechanisms for
 explicitly defining workflows in a reusable way together with a workflow
 engine that executes the workflow steps and keeps an accountable record
 of the processing -- logging the codes executed and the data lineage of
 the results. In the past decade there has been a rise in popularity in
-both the development of WfMS and their use, driven by the increasing
+both the development of \acrshort{WfMS} and their use, driven by the increasing
 scales of data and the accompanying complexity of its processing
 \cite{Atkinson 2017}.
 
@@ -309,10 +321,12 @@ workflow components, thus making them able to meet the need and ease the
 burden of compiling FAIR compliant data throughout the research
 lifecycle \cite{Wittenburg 2022b}.
 
-A digital object exhibiting FAIR characteristics is a FAIR Digital
-Object \cite{De Smedt 2020} and is defined formally as ``a unit composed of data
+A digital object exhibiting FAIR characteristics is a 
+\acrlong{FDO}
+%FAIR Digital Object 
+\cite{De Smedt 2020} and is defined formally as ``a unit composed of data
 and/or metadata regulated by structures or schemas, and with an assigned
-globally unique and persistent identifier (PID), which is findable,
+globally unique and \acrfull{PID}, which is findable,
 accessible, interoperable and reusable both by humans and computers for
 the reliable interpretation and processing of the data represented by
 the object''.
@@ -321,7 +335,7 @@ Supporting `FAIRness' internally and acting as glue between the steps of
 canonical workflows, FDOs record and can represent the state of a
 workflow, its inputs and outputs, and the component steps performed in a
 comprehensive manner \cite{Wittenburg 2022b}. Each FDO is anchored by a globally unique
-and resolvable, persistent identifier (PID) (such as a DOI®, for
+and resolvable \acrshort{PID} (such as a \acrshort{DOI}®, for
 example) that clearly refers to one digital entity. The PID resolution
 offers persistent references to find, access and reuse all information
 entities that are relevant to access and interpret the content of an
@@ -707,8 +721,7 @@ JSON, they are machine-actionable and compatible with established
 protocols of the World Wide Web.
 
 RO-Crates are native to the World Wide Web, based on established web
-protocols, machine-readable metadata using Linked Data Platform methods
-\cite{Speicher 2015}, JSON-LD and Schema.org \cite{Bechhofer 2013,Soiland-Reyes 2022a}, and community-accepted
+protocols, machine-readable metadata using Linked Data methods, JSON-LD and Schema.org \cite{Bechhofer 2013,Soiland-Reyes 2022a}, and community-accepted
 packaging mechanisms such as BagIt. This makes RO-Crates straightforward
 to incorporate into pre-existing platforms such as Galaxy and data
 repositories such as Zenodo and DataVerse.
