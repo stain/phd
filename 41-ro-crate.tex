@@ -7,12 +7,12 @@ publications. However, scientific articles may be ambiguous, incomplete
 and difficult to process by automated systems. In this paper we
 introduce RO-Crate, an open, community-driven, and lightweight approach
 to packaging research artefacts along with their metadata in a machine
-readable manner. RO-Crate is based on schema.org annotations in JSON-LD,
+readable manner. RO-Crate is based on schema.org annotations in \acrshort{JSON-LD},
 aiming to establish best practices to formally describe metadata in an
 accessible and practical way for their use in a wide variety of
 situations.
 
-An RO-Crate is a structured archive of all the items that contributed to
+An \acrfull{RO-Crate} is a structured archive of all the items that contributed to
 a research outcome, including their identifiers, provenance, relations
 and annotations. As a general purpose packaging approach for data and
 their metadata, RO-Crate is used across multiple areas, including
@@ -165,7 +165,7 @@ adopter projects from a range of disciplines and groups, primarily
 addressing developers of platforms. Thus the base level for simplicity
 was \textbf{developer friendliness}.
 
-We assumed a developer familiar with making Web applications with JSON
+We assumed a developer familiar with making Web applications with \acrshort{JSON}
 data (who would then learn how to make \emph{RO-Crate JSON-LD}), which
 informed core design choices for our JSON-level documentation approach
 and RO-Crate serialization (section \vref{ch5:implementation}). Our group of early
@@ -207,7 +207,7 @@ Data constructs within the RO-Crate metadata file.
 \begin{figure}%[t!]
   \includegraphics[width=\textwidth]{figures/ch05/ro-crate-overview.pdf}
 	\caption[Conceptual overview of RO-Crate]{\textbf{Conceptual overview of RO-Crate}. A \emph{Persistent
-  Identifier} (PID) \cite{McMurry 2017} points to a
+  Identifier} (\acrshort{PID}) \cite{McMurry 2017} points to a
   \emph{Research Object} (RO), which may be archived using different
   packaging approaches like BagIt \cite{Kunze 2018}, OCFL \cite
   {OCFL 2020}, git or ZIP. The RO is described within a \emph{RO-Crate
@@ -224,8 +224,8 @@ Data constructs within the RO-Crate metadata file.
 \paragraph{Linked Data as a foundation}\label{ch5:linkeddata}
 
 The \textbf{Linked Data} principles \cite{Bizer 2011}
-(use of IRIs\footnote{\textbf{IRI}s \cite{Dürst 2005} are a generalisation
- of \textit{URI}s
+(use of IRIs\footnote{\acrshortpl{IRI} \cite{Dürst 2005} are a generalisation
+ of \acrshortpl{URI}s
 (which include well-known http/https URLs), permitting international
 Unicode characters without percent encoding, commonly used on the
 browser address bar and in HTML5.} to identify resources (i.e. artefacts), resolvable via
@@ -268,7 +268,7 @@ referencing \emph{contextual entities}. A \textbf{data entity} is either
 a \emph{file} (i.e.~a byte sequence stored on disk somewhere) or a
 \emph{directory} (i.e.~set of named files and other directories). A file
 does not need to be stored inside the RO-Crate root, it can be
-referenced via a PID/IRI. A \textbf{contextual entity} exists outside
+referenced via a \acrshort{PID}/\acrshort{IRI}. A \textbf{contextual entity} exists outside
 the information system (e.g.~a Person, a workflow language) and is
 stored solely by its metadata. The representation of a \emph{data
 entity} as a byte sequence makes it possible to store a variety of
@@ -280,8 +280,8 @@ The Root Data Entity is a directory, the \emph{RO-Crate Root},
 identified by the presence of the \textbf{RO-Crate Metadata File}
 \texttt{ro-crate-metadata.json} (top of Figure \vref{ch5:fig:conceptual}). This file describes the
 RO-Crate using Linked Data, its content and related metadata using
-Linked Data in JSON-LD format \cite{Sporny 2014}. This
-is a W3C standard RDF serialisation that has become popular; it is easy
+\acrlong{LD} in \acrshort{JSON-LD} format \cite{Sporny 2014}. This
+is a W3C standard \acrshort{RDF} serialisation that has become popular; it is easy
 to read by humans while also offering some advantages for data exchange
 on the Internet. JSON-LD, a subset of the widely supported and
 well-known JSON format, has tooling available for many programming languages.\footnote{\url{https://json-ld.org/\#developers}}
@@ -314,7 +314,8 @@ attempt to separate \emph{information} (data) and \emph{non-information}
 (contextual) resources \cite{W3C 2007}. Data entities are usually files and directories located by relative IRI
 references within the RO-Crate Root, but they can also be Web resources
 or restricted data identified with absolute IRIs, including
-\emph{Persistent Identifiers} (PIDs)
+\acrlongpl{PID}
+%\emph{Persistent Identifiers} (PIDs)
 \cite{McMurry 2017}.
 
 As both types of entities are identified by IRIs, their distinction is
@@ -336,7 +337,7 @@ In RO-Crate, a referenced contextual entity (e.g.~a person identified by
 ORCID) should always be described within the RO-Crate Metadata File with
 at least a \emph{type} and \emph{name}, even where their PID might
 resolve to further Linked Data. This is so that clients are not required
-to follow every link for presentation purposes, for instance HTML
+to follow every link for presentation purposes, for instance \acrshort{HTML}
 rendering. Similarly any imported extension
 terms\footnote{\url{https://www.researchobject.org/ro-crate/1.1/appendix/jsonld.html\#extending-ro-crate}} would themselves also have a human-readable description in the
 case where their PID does not directly resolve to human-readable
@@ -404,7 +405,7 @@ conventional wisdom in RDF best
 practices\footnote{\url{https://www.w3.org/TR/swbp-vocab-pub/}} is to establish a
 vocabulary with a new IRI namespace, formalised using RDF
 Schema\footnote{\url{http://www.w3.org/TR/2014/REC-rdf-schema-20140225/}} or
-OWL\footnote{\url{http://www.w3.org/TR/2012/REC-owl2-overview-20121211/}}
+\acrshort{OWL}\footnote{\url{http://www.w3.org/TR/2012/REC-owl2-overview-20121211/}}
 ontologies. However, this may seem an excessive learning curve for
 non-experts in semantic knowledge representation, and the RO-Crate
 community instead agreed on a dual lightweight approach: (i)
@@ -448,7 +449,7 @@ the RO-Crate specification. Following the RO-Crate mantra of
 \emph{guidance over strictness}, profiles are mainly \emph{duck-typing}
 rather than strict syntactic or semantic types, but may also have
 corresponding machine-readable schemas at multiple levels (file formats,
-JSON, RDF shapes, RDFS/OWL semantics).
+JSON, RDF shapes, \acrshort{RDFS}/OWL semantics).
 
 The next version of the RO-Crate specification 1.2 will define a
 formalization\footnote{\url{https://www.researchobject.org/ro-crate/1.2-DRAFT/profiles}}
@@ -613,7 +614,7 @@ schema.org terms. \normalsize
 
 \paragraph{Flattened JSON-LD}\label{ch5:flattened-json-ld}
 
-When JSON-LD 1.0 \cite{Sporny 2014}
+When \acrshort{JSON-LD} 1.0 \cite{Sporny 2014}
 was
 proposed, one of the motivations was to seamlessly apply an RDF nature
 on top of regular JSON as frequently used by Web APIs. JSON objects in

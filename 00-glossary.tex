@@ -96,7 +96,7 @@ see={URI,Handle}]{PID}{PID}{Persistent Identifier}
 see={RDF,LD}]{OWL}{OWL}{Web Ontology Language}
 
 \newacronym[description={
-        DOIP is a text-based network protocol that exposes an API for a digital object, including basic CRUD operations, but also additional operations \cite{DONA 2018}. The digital objects may optionally be addressed by Handle identifiers.
+        Text-based network protocol that exposes an API for a digital object, including basic CRUD operations, but also additional operations \cite{DONA 2018}. The digital objects may optionally be addressed by Handle identifiers.
 },
 see={API,CRUD,Handle}]{DOIP}{DOIP}{Digital Object Interface Protocol}
 
@@ -115,7 +115,7 @@ see={API,CRUD,Handle}]{DOIP}{DOIP}{Digital Object Interface Protocol}
 see={SSL}]{TLS}{TLS}{Transport Layer Security}
 
 \newacronym[description={
-        Cryptographic protocol commonly used on top of TCP/IP (e.g. \texttt{https://} URLs indicate HTTP over SSL). The secured connection is transparant - the application can treat the channel like any other. SSL relies on a chain of pre-signed certificates to verify a server authenticity (infrequently with equivalent client certificates).
+        Cryptographic protocol commonly used on top of TCP/IP (e.g. \texttt{https://} URLs indicate HTTP over SSL). The secured connection is transparant - the application can treat the channel like any other. SSL relies on a chain of pre-signed certificates for server (and infrequently client) authentication.
 },
 see={TCP,TLS,URL}]{SSL}{SSL}{Secure Socket Layer}
 
@@ -125,7 +125,7 @@ see={TCP,TLS,URL}]{SSL}{SSL}{Secure Socket Layer}
 see={EOSC}]{EOSC-IF}{EOSC-IF}{EOSC Interoperability Framework}
 
 \newacronym[description={
-        SKOS is a lighweight RDF-based method of expressing vocabularies (terms and their definitions), frequently als used for mapping between vocabularies and ontologies \cite{Isaac 2009}.
+        SKOS is a lighweight RDF-based method of expressing vocabularies (terms and their definitions), frequently used for mapping between vocabularies and ontologies \cite{Isaac 2009}.
 }]{SKOS}{SKOS}{Simple Knowledge Organization System}
 
 \newacronym[description={
@@ -149,7 +149,7 @@ see={HTTP}]{HTML}{HTML}{HyperText Markup Language}
 
 \newglossaryentry{Signposting}{
         name={Signposting},
-        description={A method to provide machines with explicit navigational link relations \cite{Nottingham 2017} between Web resources, by providing HTTP \texttt{Link:} headers, HTML \texttt{<link>} elements or linkset JSON \cite{Wilde 2020} \cite{Van de Sompel 2022}.
+        description={A method to provide machines with explicit navigational link relations \cite{Nottingham 2017} between Web resources, by providing HTTP \texttt{Link:} headers, HTML \texttt{<link>} elements or linkset JSON documens \cite{Wilde 2020,Van de Sompel 2022}.
 },
 see={HTTP,HTML,JSON,content-negotiation}}
 
@@ -161,7 +161,7 @@ see={IP}
 
 \newacronym[description={
         TCP is the most common connection protocol used on top of IP (TCP/IP), 
-        which opens a bidirectional channel where data is received by the application in the same order it was sent. The protocol includes handshakes and retried transmissions.
+        which opens a bidirectional channel where data is received by the application in the same order it was sent. The protocol includes handshakes and retried transmissions for reliable communication.
 },
 see={IP}
 ]{TCP}{TCP}{Transport Control Protocol}
@@ -225,15 +225,16 @@ see={JSON}
         name={scientific workflow},
         see={workflow},
         description={
-        Data-driven computational workflow to \emph{pipeline} scientific data for a particular analysis, e.g. data cleaning, image conversion}}
+        Data-driven computational workflow to \emph{pipeline} scientific data for a particular analysis, e.g. data cleaning, image conversion.}}
 
 \newacronym[description={
         Software or platform which can execute computational workflow definitions, and may manage data and provenance related to such executions.
-}]{WfMS}{WfMS}{Workflow Management System}
+},see={workflow}]{WfMS}{WfMS}{Workflow Management System}
 
 % Canonical Workflow Frameworks for Research (CWFR)
 % High Performance Computing
 % Digital Specimen (DS)
+% WRROC
 
 \newacronym[description={
         Mechanism to embed RDF statements within HTML documents by assigning attributes
