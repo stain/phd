@@ -165,7 +165,7 @@ From this mapping\footnote{An equivalent \acrshort{SKOS} mapping \cite{Isaac 200
 \subsubsection{Assessing FDO implementations}\label{ch3:doip-fdo-compare}
 
 The FAIR Digital Object guidelines \cite{Bonino 2019} sets out recommendations for FDO implementations. Note that the proposed update to FDO specification \cite{Anders 2023} clarifies these definitions with equivalent identifiers\footnote{
-  Newer \cite{Anders 2023} renames \texttt{FDOF*} to \texttt{FDOR*} but follows same ordering. For a brief listing of the requirements, see also section \vref{ch10:fdo-guidelines}.
+  Newer \cite{Anders 2023} renames \texttt{FDOF*} to \texttt{FDO-GR*} but follows same ordering. For a brief listing of the requirements, see section \vref{ch10:fdo-guidelines}.
 } and relates them to further FDO requirements such as FDO Data Type Registries.
 
 In Table \vref{ch3:fdo-checks} we evaluate completeness of the guidelines in two current realizations: 1) \acrshort{DOIP}v2 \cite{DONA 2018}\ and 2) \acrfull{LDP} \cite{Sporny 2014}, as proposed by \cite{Bonino 2020}.
@@ -489,14 +489,14 @@ RDA-F1-01D
   & ``Cool'' URIs \cite{Berners-Lee 1998}, PURL services incl.~\texttt{purl.org}, \texttt{w3id.org} \\
 RDA-F1-02M
   & Metadata is identified by a globally unique identifier
-  & FDOR4 FDOF8
+  & FDOF4 FDOF8
   & Optional \emph{Metadata FDO}, unspecified how to indicate
   & Content-negotiation to URL
   & Not required, content-negotiation can redirect to URL or \texttt{Content-Location}. FAIR Signposting. \\
 RDA-F1-02D
   & Data is identified by a globally unique identifier
   & FDOF1
-  & All FDOs have PIDs (FDOR1), DOIP uses Handle system
+  & All FDOs have PIDs (FDOF1), DOIP uses Handle system
   & FDOF-IR (Identifier Record)
   & Always accessed by URL \\
 RDA-F2-01M
@@ -583,7 +583,7 @@ RDA-A1.1-01D
   & URI, DNS, HTTP, TLS. Non-free DRM may be used (e.g.~subscription video streaming) \\
 RDA-A1.2-01D
   & Data is accessible through an access protocol that supports authentication and authorisation
-  & (FDOR9)
+  & (FDOF9)
   & TLS certificates, \texttt{authentication} field (details unspecified)
   & Implied
   & HTTP authentication, TLS certificates \\
@@ -613,7 +613,7 @@ RDA-I1-02M
   & Always implied by use of RDF syntaxes. \\
 RDA-I1-02D
   & Data uses machine-understandable knowledge representation
-  & G4 G7 FDOR2
+  & G4 G7 FDOF2
   & No requirements on binary data formats
   & Only indirectly, \footurl{https://www.w3.org/TR/ldp/\#dfn-linked-data-platform-basic-container}{LDP Basic Container} reference only information resources
   & Common, specially for scientific data formats \\
@@ -631,37 +631,37 @@ RDA-I2-01D
   & Uncommon, except for some XML and RDF-embedding formats, e.g.~Extensible Metadata Platform (XMP) \cite{ISO 16684} \\
 RDA-I3-01M
   & Metadata includes references to other metadata
-  & FDOR8
+  & FDOF8
   & Implied (attributes to PIDs), currently unspecified if given attribute is value or reference
   & ---
   & By definition (Linked Data reference existing URIs \cite{W3C 2015}), \texttt{rdfs:seeAlso}, FAIR signposting \cite{Van de Sompel 2022} \texttt{describedby} \\
 RDA-I3-01D
   & Data includes references to other data
-  & G6 FDOR3 FDOR11
+  & G6 FDOF3 FDOF11
   & ---
   & ---
   & URL hyperlinks common in several formats (HTML, PDF, JSON, XML). \\
 RDA-I3-02M
   & Metadata includes references to other data
-  & G6 FDOR3 FDOR8
+  & G6 FDOF3 FDOF8
   & Implied from custom FDO type's attribute
   & LDP Direct Container members can be any resources
   & URI objects are frequently data references, may be indirect via PID \\
 RDA-I3-02D
   & Data includes qualified references to other data
-  & FDOR3 FDOR11
+  & FDOF3 FDOF11
   & Only indirectly through FDO metadata
   & Indirectly through LDP membership
   & Uncommon: Link relations, FAIR Signposting \\
 RDA-I3-03M
   & Metadata includes qualified references to other metadata
-  & (FDOR3)
+  & (FDOF3)
   & Qualification by attribute keys defined per FDO Type
   & \footurl{https://www.w3.org/TR/ldp/\#dfn-linked-data-platform-direct-container}{LDP Direct Container}
   & Qualifications by property, PROV bundles \cite{Lebo 2013b}, \footurl{https://schema.org/Role}{schema.org/Role} \\
 RDA-I3-04M
   & Metadata include qualified references to other data
-  & (FDOR3)
+  & (FDOF3)
   & Qualification by attribute keys defined per FDO type
   & \footurl{https://www.w3.org/TR/ldp/\#dfn-linked-data-platform-indirect-container}{LDP Indirect Container}
   & Qualifications by property, n-ary indirection (schema.org Role \cite{Holland 2014}, \texttt{prov:specializationOf} \cite{Lebo 2013a}, OAI-ORE Proxy \cite{Lagoze 2008}) \\
@@ -691,25 +691,25 @@ RDA-R1.1-03M
   & \footurl{https://spdx.dev/resources/use/\#documents}{SPDX documents} uncommon \\
 RDA-R1.2-01M
   & Metadata includes provenance information according to community-specific standards
-  & FDOR9 FDOR10
+  & FDOF9 FDOF10
   & Unspecified (some Cordra types add \texttt{getProvenance} methods). PID Kernel attributes? 
   & ----
   & Unspecified W3C PROV-O, PAV \\
 RDA-R1.2-02M
   & Metadata includes provenance information according to a cross-community language
-  & FDOR9 FDOR8
+  & FDOF9 FDOF8
   & ---
   & ---
   & W3C PROV-O \cite{Lebo 2013a}, PAV \cite{Ciccarese 2013}, Dublin Core Terms \cite{DCMI 2020} \\
 RDA-R1.3-01M
   & Metadata complies with a community standard
-  & FDOR10 FROR8
+  & FDOF10 FROR8
   & (Emerging, e.g.~DiSSCo Digital Specimen \cite{Hardisty 2022})
   & ---
   & Common, e.g.~DCAT 2 \cite{Albertoni 2020}, BioSchemas \cite{Gray 2017} \\
 RDA-R1.3-01D
   & Data complies with a community standard
-  & (FDOR3)
+  & (FDOF3)
   & ---
   & ---
   & Common, HTTP use registered IANA \footurl{https://www.iana.org/assignments/media-types/media-types.xhtml}{media types}, additional scientific file formats frequently not standardised or identified \\
@@ -721,7 +721,7 @@ RDA-R1.3-02M
   & Common practice for ontologies, specially in bioinformatics, e.g.~BioPortal \cite{NCBO}, Darwin Core \cite{Wieczorek 2012} \\
 RDA-R1.3-02D
   & Data is expressed in compliance with a machine-understandable community standard
-  & (FDOR2)
+  & (FDOF2)
   & No, FDO is typed but data can be any bytestream
   & ---
   & Occassionally, (e.g.~\footurl{https://github.com/The-Sequence-Ontology/Specifications/blob/master/gff3.md}{GFF3}, \footurl{https://fits.gsfc.nasa.gov/fits_standard.html}{FITS}, \footurl{https://www.loc.gov/preservation/digital/formats/fdd/fdd000280.shtml}{ESRI}) \\
