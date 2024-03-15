@@ -68,7 +68,8 @@ Implementation of the principles by platform developers and researchers have how
 
 For instance, in order to evaluate a given resource's \emph{FAIRness}, additional technical constraints need to be assumed, such as use of particular Semantic Web technologies or formal vocabularies. \emph{FAIR metrics} \cite{Wilkinson 2018,Devaraju 2021} have recently become an area of active research, as different FAIR assessment tools may give a range of results for the same data resource, primarily based on which technical assumptions are made \cite{Wilkinson 2022a,Verburg 2023}.
 
-Recently there have been increased emphasis on training and awareness on the FAIR principles \cite{Shanahan 2021,Rocca-Serra 2023}, and registries of standards and vocabularies \cite{Sansone 2019}.However---with a general lack of skills in data management planning, inadequate (opaque) data formats and lack of time investment to provide rich metadata---data, even when shared through repositories, often becomes effectively "un-findable" or near impossible to reuse \cite{Carballo-Garcia 2022}.
+Recently there have been increased emphasis on training and awareness on the FAIR principles \cite{Shanahan 2021,Rocca-Serra 2023}, and registries of standards and vocabularies \cite{Sansone 2019}.
+However---with a general lack of skills in data management planning, inadequate (opaque) data formats and lack of time investment to provide rich metadata---data, even when shared through repositories, often becomes effectively "un-findable" or near impossible to reuse \cite{Carballo-Garcia 2022}.
 
 From this we can identify challenges with regards to practical ways for research software developers to generate and consume FAIR data.
 
@@ -186,7 +187,7 @@ With this motivation the principles of FAIR Research Software \cite{Katz 2021b} 
 
 While sharing of research software helps distribute the computational methods, the \emph{way} software is used for a particular analysis requires additional measures to make it \emph{reproducible} \cite{Stodden 2016,Sandve 2013}.
 
-\emph{Computational Workflows} (or Scientific Workflows) are used to structure and automate data analysis pipelines so they can be scalable, portable and explainable \cite{Atkinson 2017}, and as a side-effect of these features can significantly improve reproducibility \cite{Cohen-Boulakia 2017}. 
+\emph{Computational Workflows} (or \glspl{scientific workflow}) are used to structure and automate data analysis pipelines so they can be scalable, portable and explainable \cite{Atkinson 2017}, and as a side-effect of these features can significantly improve reproducibility \cite{Cohen-Boulakia 2017}. 
 There exists, however, a plethora of workflow systems and languages \cite{Leipzig 2021,Amstutz 2021}, although recent efforts have created the Common Workflow Language \cite{Crusoe 2022} as a standard representation with \footurl{https://www.commonwl.org/user_guide/topics/metadata-and-authorship.html}{FAIR metadata capabilities} that is executable by multiple engines. 
 
 Notably, workflow definitions themselves can be considered FAIR scholarly outputs \cite{Goble 2020} and are published in repositories including Dockstore \cite{Yuen 2021} and WorkflowHub \cite{Goble 2021}.
