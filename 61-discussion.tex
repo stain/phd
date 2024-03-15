@@ -309,7 +309,7 @@ Chapter \vref{chapter:workflows} explored in depth different ways in which FAIR 
 \label{ch61:workflowfdo}
 
 As introduced in section \vref{intro:rq3}, we have previously proposed the concept of \emph{FAIR Computational Workflows} \cite{Goble 2020}. 
-That work expands on the well-established motivations for using scientific workflow systems \cite{Möller 2017,Atkinson 2017}, such as supporting Automation, Scalable execution, Abstraction, and Provenance \cite{Ludäscher 2016}, and highlights that workflows themselves benefit from and contribute to FAIR data, for instance providing metadata for describing workflow outputs. 
+That work expands on the well-established motivations for using \glspl{scientific workflow} systems \cite{Möller 2017,Atkinson 2017}, such as supporting Automation, Scalable execution, Abstraction, and Provenance \cite{Ludäscher 2016}, and highlights that workflows themselves benefit from and contribute to FAIR data, for instance providing metadata for describing workflow outputs. 
 In addition workflow themselves can be considered digital objects that should be shared as a reproducible computational method.
 
 Applying the FAIR principles for workflows in practice has however revealed additional challenges, such as lack of clarify of what constitutes a \emph{workflow} as opposed to FAIR Research Software in general \cite{Katz 2021b}, or reduced reusability when the workflow requires unwritten, human-centric operations between computational steps (e.g. trivial file column manipulations) \cite{Wilkinson 2022b}. 
@@ -434,7 +434,7 @@ However, that is not to say that such OWL rules cannot be generated from simpler
 
 \subsubsection{Linked data provenance models can be made approachable}
 
-As discussed in sections \vref{intro:rq3} and \vref{ch54:introduction}, the subject of capturing provenance from computational workflow executions is both diverse and mature, with most of the implementations coalescing on the W3C PROV data model \cite{Moreau 2013}, and in particular specializations of the OWL ontology serialization PROV-O \cite{Lebo 2013a}. Yet even with earlier approaches like Research Objects wfprov \cite{Belhajjame 2015}, D-PROV \cite{Missier 2013} and CWLProv \cite{Khan 2019}, the uptake of these technologies by scientific workflow systems is fragmented at best.
+As discussed in sections \vref{intro:rq3} and \vref{ch54:introduction}, the subject of capturing provenance from computational workflow executions is both diverse and mature, with most of the implementations coalescing on the W3C PROV data model \cite{Moreau 2013}, and in particular specializations of the OWL ontology serialization PROV-O \cite{Lebo 2013a}. Yet even with earlier approaches like Research Objects wfprov \cite{Belhajjame 2015}, D-PROV \cite{Missier 2013} and CWLProv \cite{Khan 2019}, the uptake of these technologies by \acrlongpl{WfMS} is fragmented at best.
 
 Given these approaches rely on Semantic Web technology and hierarchies of ontologies, it is not a far stretch to hypothesise that some of the challenges on uptake of Linked Data we discussed in section \vref{ch3:ld} and \vref{ch5:simplicity} also apply to the use of PROV-O by workflow systems developers. 
 
