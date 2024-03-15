@@ -66,17 +66,22 @@ Although these guidelines are quite specific, they do not prescribe any particul
 The FAIR principles have become highly influential for open research stakeholders \cite{Jacobsen 2020}, particularly in large research infrastructure initatives such as by the European Open Science Cloud \footurl{https://eosc.eu/}{(EOSC)} \cite{Schouppe 2018}, and increasing awareness and support for the principles by national Open Science policies and funders \cite{Davidson 2019,Davidson 2022}.
 Implementation of the principles by platform developers and researchers have however raised many questions and practical challenges \cite{Mons 2020,Riungu-Kalliosaari 2022}. 
 
-For instance, in order to evaluate a given resource's \emph{FAIRness}, additional technical constraints need to be assumed, such as use of particular Semantic Web technologies or formal vocabularies. \emph{FAIR metrics} \cite{Wilkinson 2018,Devaraju 2021} has recently become an area of active research, as different FAIR assessment tools may give a range of results for the same data resource, primarily based on which technical assumptions are made \cite{Wilkinson 2022a,Verburg 2023}.
+For instance, in order to evaluate a given resource's \emph{FAIRness}, additional technical constraints need to be assumed, such as use of particular Semantic Web technologies or formal vocabularies. \emph{FAIR metrics} \cite{Wilkinson 2018,Devaraju 2021} have recently become an area of active research, as different FAIR assessment tools may give a range of results for the same data resource, primarily based on which technical assumptions are made \cite{Wilkinson 2022a,Verburg 2023}.
 
-More recently there have been increased emphasis on training and awareness on the FAIR principles \cite{Shanahan 2021,Rocca-Serra 2023}, and registries of standards and vocabularies \cite{Sansone 2019}; however with a general lack of skills in data management planning, inadequate (opaque) data formats and lack of time investment to provide rich metadata this means data, even when shared through repositories, effectively becomes "un-findable" or near impossible to reuse \cite{Carballo-Garcia 2022}.
+Recently there have been increased emphasis on training and awareness on the FAIR principles \cite{Shanahan 2021,Rocca-Serra 2023}, and registries of standards and vocabularies \cite{Sansone 2019}.However---with a general lack of skills in data management planning, inadequate (opaque) data formats and lack of time investment to provide rich metadata---data, even when shared through repositories, often becomes effectively "un-findable" or near impossible to reuse \cite{Carballo-Garcia 2022}.
+
+From this we can identify challenges with regards to practical ways for research software developers to generate and consume FAIR data.
+
 
 \subsection{FAIR Digital Objects}
 
-\emph{FAIR Digital Object} (\acrshort{FDO}) has been proposed as a machine-actionable ecosystem of scholarly outputs \cite{Schultes 2019}, in theory realizing the FAIR principles \cite{Wilkinson 2016} for a programmable mesh of strongly typed objects that go beyond the open data publication practices that the FAIR guidelines have popularised \cite{Jacobsen 2020}.
+\emph{FAIR Digital Object} (\acrshort{FDO}) has been proposed as a machine-actionable ecosystem of scholarly outputs \cite{Schultes 2019}, in theory realising the \acrshort{FAIR} principles 
+%\cite{Wilkinson 2016}
+for a programmable mesh of strongly typed objects, which goes beyond the open data publication practices that the FAIR guidelines have popularised.
 
 FDOs comply to a set of requirements \cite{Anders 2023}, quoted\footnote{
-    Original \emph{FDOF} identifiers from \cite{Bonino 2019} shown italics.
-    For full list of requirements, including for persistent identifiers (FDO-PIDR1 -- FDO-PIDR6), attributes (FDO-FDOR1 -- FDO-FDOR11) and resources (FDO-RESR1 -- FDO-RESR2), see \cite{Anders 2023}. Further details on FDO specicications are provided in section \vref{ch3:next-step-fdo}.
+    Original \emph{FDOF} identifiers from \cite{Bonino 2019} shown in italics.
+    The full list \cite{Anders 2023} also include requirements for persistent identifiers (FDO-PIDR1 -- FDO-PIDR6), attributes (FDO-FDOR1 -- FDO-FDOR11) and resources (FDO-RESR1 -- FDO-RESR2). FDO specifications are detailed further in section \vref{ch3:next-step-fdo}.
 } below:
 
 \begin{description}
@@ -119,7 +124,7 @@ This divergence, while sound from a technical perspective, raises organisational
 \section{Research Outline and Questions}
 \label{intro:outline}
 
-Following the above motivation, this section elaborates Research Questions (RQ) on these interlinked ideas:
+Following the above motivation, this section elaborates my Research Questions (RQ) on these interlinked ideas:
 
 \begin{enumerate}
     \item Realization of the FAIR Digital Object concept using Web technologies.
@@ -130,9 +135,9 @@ Following the above motivation, this section elaborates Research Questions (RQ) 
 \subsection{Aims for FAIR Digital Objects on the Web (RQ1)}
 \label{intro:rq1}
 
-%% FDO...
-
 The Web is ubiquitous in modern software engineering \cite{Taivalsaari 2021}, used for everything from user interfaces, mobile applications and controlling devices to enterprise cross-platform integrations, backend data processing and microservices, frequently utilising cloud computing which itself is controlled using Web technologies \cite{Marinescu 2023}.
+
+The goals of \acrfullpl{FDO} seem to have an overlap with the motivations for the Semantic Web and Linked Data, and it is not clear if a different set of network protocols are required for FDO.
 
 A relevant research question therefore is: 
 
