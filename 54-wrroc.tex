@@ -5,7 +5,10 @@ Recording the provenance of scientific computation results is key to the support
 Several data models have been explored to address this need, providing representations of workflow plans and their executions as well as means of packaging the resulting information for archiving and sharing.
 However, existing approaches tend to lack interoperable adoption across workflow management systems.
 
-In this work we present \textbf{Workflow Run RO-Crate}, an extension of RO-Crate (Research Object Crate) and Schema.org to capture the provenance of the execution of computational workflows at different levels of granularity and bundle together all their associated products (inputs, outputs, code, etc.).
+In this work we present \textbf{Workflow Run RO-Crate}, an extension of 
+\acrfull{RO-Crate} 
+%(Research Object Crate) 
+and Schema.org to capture the provenance of the execution of computational workflows at different levels of granularity and bundle together all their associated products (inputs, outputs, code, etc.).
 The model is supported by a diverse, open community that runs regular meetings, discussing development, maintenance and adoption aspects.
 Workflow Run RO-Crate is already implemented by several workflow management systems, allowing interoperable comparisons between workflow runs from heterogeneous systems.
 We describe the model, its alignment to standards such as W3C PROV, and its implementation in six workflow systems.
@@ -28,27 +31,36 @@ PROV-O has been widely extended for workflows (D-PROV \cite{Missier 2013}, ProvO
 \emph{Retrospective provenance} refers to what actually happened during an execution, i.e.~what were the values of the input parameters, which outputs were produced, which tools were executed, how much time did the execution take, whether the execution was successful or not, etc.
 Retrospective provenance can also be represented at different levels of abstraction depending on available computing resources: for instance, by the workflow execution becoming a single activity which produces results, by specifying the individual execution of each workflow step, or by going a step further and indicating how each step is divided into sub-processes when a workflow is deployed in a cluster.
 
-Different workflow systems have adopted and extended PROV (and its PROV-O representation) to the workflow domain (WINGS \cite{Gil 2011,Garijo 2014b}, VisTrails \cite{Scheidegger 2008,Costa 2013}), in order to ease the burden of provenance collection from tool developers to workflow management systems (WMS) \cite{Atkinson 2017,Pérez 2018}.
+Different workflow systems have adopted and extended PROV (and its PROV-O representation) to the workflow domain (WINGS \cite{Gil 2011,Garijo 2014b}, VisTrails \cite{Scheidegger 2008,Costa 2013}), in order to ease the burden of provenance collection from tool developers to 
+%workflow management systems (WfMS)
+\acrfullpl{WfMS}
+\cite{Atkinson 2017,Pérez 2018}.
 
 D-PROV, PROV-ONE, OPMW-PROV, P-Plan propose representations of workflow plans and their respective executions, taking into account the features of the workflow systems implementing them (e.g., hierarchical representations, sub-processes, etc.).
 Other data models like \emph{wfprov} and \emph{wfdesc}
-\cite{Belhajjame 2015} go a step further by considering not only the link between plans and executions, but how to package the various artefacts as a Research Object (RO) ~\cite{Bechhofer 2013} in order to ease portability while keeping the context of a digital experiment.
+\cite{Belhajjame 2015} go a step further by considering not only the link between plans and executions, but how to package the various artefacts as a 
+\acrlong{RO}
+%Research Object (RO) 
+~\cite{Bechhofer 2013} in order to ease portability while keeping the context of a digital experiment.
 
-However, while these models address some workflow provenance representation issues, they have two main limitations: Firstly, the extensions of PROV are not directly interoperable because of differences in granularity or different assumptions in their workflow representations; secondly, their support from WMS is typically one system per model.  An early approach to unify and integrate workflow provenance traces across WMS was WEST (Workflow Ecosystems through STandards) \cite{Garijo 2014b}, through the use of WINGS \cite{Gil 2011} to build workflow templates and different converters. 
+However, while these models address some workflow provenance representation issues, they have two main limitations: Firstly, the extensions of PROV are not directly interoperable because of differences in granularity or different assumptions in their workflow representations; secondly, their support from WfMS is typically one system per model.  An early approach to unify and integrate workflow provenance traces across WfMS was WEST (Workflow Ecosystems through STandards) \cite{Garijo 2014b}, through the use of WINGS \cite{Gil 2011} to build workflow templates and different converters. 
 
 In all of these workflow provenance models, the emphasis is on the workflow execution structure as a directed graph, with only partial references for the data items. 
 The REPRODUCE-ME ontology \cite{Samuel 2022} extended PROV and P-Plan to explain the overall scientific process with the experimental context including real life objects (e.g. instruments, specimens) and human activities (e.g. lab protocols, screening), demonstrating provenance of individual Jupyter Notebook \footurl{https://sheeba-samuel.github.io/REPRODUCE-ME/research/provbook.html}{cells} and highlighting the need for provenance also where there is no workflow management system. 
 
-More recently, interoperability have been partially addressed by Common Worlflow Language Prov (CWLProv)~\cite{Khan 2019}, which represents workflow enactments as ROs serialised according to the Big Data Bag (BDBag) approach~\cite{Chard 2016}.
+More recently, interoperability have been partially addressed by Common Workflow Language Prov (CWLProv)~\cite{Khan 2019}, which represents workflow enactments as \acrshortpl{RO} serialised according to the Big Data Bag (BDBag) approach~\cite{Chard 2016}.
 The resulting format is a folder containing several data and metadata files~\cite{Soiland-Reyes 2018}, expanding on the RO Bundle approach of Taverna \cite{Soiland-Reyes 2016}.
-CWLProv also extends PROV with a representation of executed processes (activities), their inputs and outputs (entities) and their executors (agents), together with their Common Workflow Language specification
+CWLProv also extends PROV with a representation of executed processes (activities), their inputs and outputs (entities) and their executors (agents), together with their 
+\acrfull{CWL}
+%Common Workflow Language
+specification
 \cite{Crusoe 2022} -- a standard workflow specification adopted by at least a dozen different  \footurl{https://www.commonwl.org/implementations/}{workflow systems}. Although CWLProv includes prospective provenance as a \emph{plan}
 within PROV (based on the \emph{wfdesc} model), in practice its implementation does not include tool definitions or file formats, as proposed by the wfdesc extension \footurl{https://wf4ever.github.io/ro/2016-01-28/roterms}{Roterms}.
-In order for CWLProv consumers to reconstruct the full prospective provenance for understanding the workflow, they would also need to inspect the separate workflow definition in the native language of the WMS.
+In order for CWLProv consumers to reconstruct the full prospective provenance for understanding the workflow, they would also need to inspect the separate workflow definition in the native language of the WfMS.
 Additionally, the CWLProv RO may include several other metadata files and PROV serialisations conforming to different formats, complicating its generation and consumption.
 
 As for granularity, CWLProv proposed multiple levels of provenance \cite[figure 2]{Khan 2019}, from Level 0 (capturing workflow definition) to Level 3 (domain-specific annotations). 
-In practice, the CWL reference implementation \emph{cwltool} \cite{Amstutz 2023} and the corresponding CWLProv specification \cite{Soiland-Reyes 2018} records provenance details of all task executions together with the intermediate data and any nested workflows (CWLProv level 2), a granularity level that requires substantial support from the WMS.
+In practice, the CWL reference implementation \emph{cwltool} \cite{Amstutz 2023} and the corresponding CWLProv specification \cite{Soiland-Reyes 2018} records provenance details of all task executions together with the intermediate data and any nested workflows (CWLProv level 2), a granularity level that requires substantial support from the WfMS.
 This approach is appropriate for workflow languages where the execution plan, including its distribution among the various tasks, is known well in advance (such as CWL).
 However, it can be at odds with other systems where the execution is more dynamic, depending on the verification of specific runtime conditions, such as the size and distribution of the data (e.g., COMPSs~\cite{Lordan 2014}).
 
@@ -65,7 +77,7 @@ At the same time, the broad set of types and properties from Schema.org, complem
 This may include, among others, the workflow authors and their affiliations, associated publications, licensing information, related software, etc.
 This is an approach used by WorkflowHub \cite{Goble 2021}, a workflow system agnostic workflow registry which specifies a Workflow RO-Crate profile \cite{Bacall 2022} to gather the workflow definition with such metadata in an archived RO-Crate \footnote{See section \vref{ch5:workflows}.}. 
 
-In this work, we present \textbf{Workflow Run RO-Crate} (WRROC), an extension of RO-Crate for representing computational workflow execution provenance.
+In this work, we present \textbf{Workflow Run RO-Crate} (\acrshort{WRROC}), an extension of RO-Crate for representing computational workflow execution provenance.
 Our main contributions are the following:
 
 \begin{itemize}
@@ -75,7 +87,7 @@ Our main contributions are the following:
 \end{itemize}
 
 To foster usability, the profiles are characterised by different levels of detail, and the set of mandatory metadata items is kept to a minimum in order to ease the implementation.
-This flexible approach increases the model's adaptability to the diverse landscape of WMS used in practice.
+This flexible approach increases the model's adaptability to the diverse landscape of WfMS used in practice.
 The base profile, in particular, is applicable to any kind of computational process, not necessarily described in a formal workflow language.
 All profiles are supported and sustained by the Workflow Run RO-Crate community, which meets regularly to discuss extensions, issues and new implementations.
 
@@ -88,14 +100,14 @@ The rest of this section is organised as follows: we first describe the Workflow
 RO-Crate profiles are extensions of the base RO-Crate specification that describe how to represent the entities and relationships that appear in a specific domain or use case\footnote{See sections \vref{ch5:inuse} and \vref{ch61:profiles}.}.
 An RO-Crate conforming to a profile is not just machine-readable, but also machine-actionable as a digital object whose type is represented by the profile itself~\cite{Soiland-Reyes 2022c}.
 
-The Workflow Run RO-Crate profiles are the main outcome of the activities of the Workflow Run RO-Crate \footurl{https://www.researchobject.org/workflow-run-crate}{Community}, an open working group that includes workflow users and developers, WMS users and developers, and researchers and software engineers interested in workflow execution provenance and Findable, Accessible, Interoperable and Reusable (FAIR) approaches for data and software.
+The Workflow Run RO-Crate profiles are the main outcome of the activities of the Workflow Run RO-Crate \footurl{https://www.researchobject.org/workflow-run-crate}{Community}, an open working group that includes workflow users and developers, WfMS users and developers, and researchers and software engineers interested in workflow execution provenance and Findable, Accessible, Interoperable and Reusable (FAIR) approaches for data and software.
 In order to develop the Workflow-Run RO-Crate profiles, one of the first community efforts was to compile a list of requirements in the form of competency \footurl{https://www.researchobject.org/workflow-run-crate/requirements}{questions} to be addressed by the model.
 Each requirement was backed up by a rationale and linked to a GitHub issue to drive the public discussion forward. When a requirement was addressed, related changes were integrated into the profiles and the relevant issue was closed. Many of the original issues are now closed, and the profiles have had four official releases on Zenodo.
 
 
 As requirements were being defined, it became apparent that one single profile would not have been sufficient to cater for all possible usage scenarios.
 In particular, while some use cases required a detailed description of all computations orchestrated by the workflow, others were only concerned with a ``black box'' representation of the workflow and its execution as a whole (i.e., whether the execution was successful and which results were obtained).
-Additionally, some computations involve a data flow across multiple applications that are executed without the aid of a WMS and thus are not formally described in a standard workflow language.
+Additionally, some computations involve a data flow across multiple applications that are executed without the aid of a WfMS and thus are not formally described in a standard workflow language.
 These observations led to the development of three profiles: 
 
 \begin{enumerate}[(1)]
@@ -117,7 +129,7 @@ We also developed a context extension through a dedicated ``workflow-run'' \foot
 The Process Run Crate profile \cite{WRROC 2023a} contains specifications on describing the execution of one or more software applications that contribute to the same overall computation, but are not necessarily coordinated by a top-level workflow or script.
 For instance, they could be executed manually by a human agent, one after the other as intermediate datasets become available, as shown in the process run \footurl{https://w3id.org/ro/doi/10.5281/zenodo.6913045}{crate} from \cite{Meurisse 2023}.
 
-Being the basis for all profiles in the WRROC collection, Process Run Crate specifies how to describe the fundamental entities involved in a computational run: a software application (represented by a
+Being the basis for all profiles in the \acrshort{WRROC} collection, Process Run Crate specifies how to describe the fundamental entities involved in a computational run: a software application (represented by a
 \emph{SoftwareApplication}, \emph{SoftwareSourceCode} or
 \emph{ComputationalWorkflow} entity) and its execution (represented by a \emph{CreateAction} entity), with the latter linking to the former via the \emph{instrument} property.
 Other important properties of the
@@ -169,9 +181,9 @@ One of the implications of this approach is that consumers need to code defensiv
 
 \subsubsection{Workflow Run Crate}\label{ch54:workflow-run-crate}
 
-The Workflow Run Crate profile \cite{WRROC 2023b} combines the Process Run Crate and WorkflowHub's Workflow RO-Crate \cite{Bacall 2022} profiles to describe the execution of “proper” computational workflows managed by a WMS.
-Such workflows are typically written in a special-purpose language, such as CWL or Snakemake
-\cite{Köster 2012}, and run by one or more WMS (e.g., StreamFlow \cite{Colonnelli 2021}, Galaxy~\cite{Galaxy 2022}).
+The Workflow Run Crate profile \cite{WRROC 2023b} combines the Process Run Crate and WorkflowHub's Workflow RO-Crate \cite{Bacall 2022} profiles to describe the execution of “proper” computational workflows managed by a \acrshort{WfMS}.
+Such workflows are typically written in a special-purpose language, such as \acrshort{CWL} or Snakemake
+\cite{Köster 2012}, and run by one or more WfMS (e.g., StreamFlow \cite{Colonnelli 2021}, Galaxy~\cite{Galaxy 2022}).
 As in Process Run Crate, the execution is described by a \emph{CreateAction}
 that links to the application via \emph{instrument}, but in this case the application must be a workflow, as prescribed by Workflow RO-Crate.
 More specifically, Workflow RO-Crate states that the RO-Crate must contain a main workflow typed as \emph{File}, \emph{SoftwareSourceCode}
@@ -211,7 +223,7 @@ For instance, in the JSON-LD snippet of Listing \vref{ch54:formalparameter} a fo
 
 %% Moved to discussion
 %The derivation of Workflow Run Crate from Workflow RO-Crate makes RO-Crates that conform to this profile compatible with the WorkflowHub workflow registry by also conforming to its Workflow RO-Crate profile.
-%Thus, users of a WMS that implements this profile (or Provenance Run Crate, which inherits it) are able to register their workflows in WorkflowHub -- together with an execution trace -- by simply running them and uploading the resulting RO-Crates.
+%Thus, users of a WfMS that implements this profile (or Provenance Run Crate, which inherits it) are able to register their workflows in WorkflowHub -- together with an execution trace -- by simply running them and uploading the resulting RO-Crates.
 %Additionally, the inheritance mechanism allows to reuse the specifications already developed for Workflow RO-Crate, which form part of the guidelines on representing the prospective provenance.
 %%
 
@@ -242,11 +254,11 @@ instance(s) that represent the corresponding tool execution(s) via
 \emph{object}.
 Note that a step execution does not coincide with a tool execution: an example where this distinction is apparent is when a step maps to multiple executions of the same tool over a list of inputs (e.g. the ``scattering'' feature in CWL).
 
-An RO-Crate following this profile can also represent the execution of the WMS itself (e.g., cwltool) via
-\emph{OrganizeAction}, pointing to a representation of the WMS via
+An RO-Crate following this profile can also represent the execution of the WfMS itself (e.g., cwltool) via
+\emph{OrganizeAction}, pointing to a representation of the WfMS via
 \emph{instrument}, to the steps via \emph{object} and to the workflow run via \emph{result}.
 The \emph{object} attribute of the
-\emph{OrganizeAction} can additionally point to a configuration file containing a description of the settings that affected the behaviour of the WMS during the execution.
+\emph{OrganizeAction} can additionally point to a configuration file containing a description of the settings that affected the behaviour of the WfMS during the execution.
 
 Figure~\vref{ch54:fig:provenance_crate_er} shows the various entities involved in the representation of a workflow run via Provenance Run Crate together with their relationships.
 
@@ -288,9 +300,9 @@ This profile is the most detailed of the three, and offers the highest level of 
 \subsection{Implementations}\label{ch54:implementations}
 
 Support for the Workflow Run RO-Crate profiles presented in this work has been implemented in a number of systems, showing support from the community and demonstrating their usability in practice.
-We describe seven of these implementations (one in a conversion tool and six in WMS) in the following sections.
+We describe seven of these implementations (one in a conversion tool and six in WfMS) in the following sections.
 These tools have been developed in parallel by different teams, and independently from each other. 
-RO-Crate has a strong ecosystem of tools \cite{Soiland-Reyes 2022a} (section \vref{ch5:tooling}), and the WRROC implementations have either re-used these or added their own approach to the standards.
+RO-Crate has a strong ecosystem of tools \cite{Soiland-Reyes 2022a} (section \vref{ch5:tooling}), and the \acrshort{WRROC} implementations have either re-used these or added their own approach to the standards.
 
 
 \subsubsection{Runcrate}\label{ch54:runcrate}
@@ -316,7 +328,7 @@ Of course, achieving a full re-execution in the general case may not always be p
 
 \subsubsection{Galaxy}\label{ch54:galaxy}
 
-The Galaxy project~\cite{Galaxy 2022} provides a WMS with data management functionalities as a multi-user platform, aiming to make computational biology more accessible to research scientists that do not have computer programming or systems administration experience.
+The Galaxy project~\cite{Galaxy 2022} provides a WfMS with data management functionalities as a multi-user platform, aiming to make computational biology more accessible to research scientists that do not have computer programming or systems administration experience.
 Galaxy's most prominent features include: a collection of 7500+ integrated \footurl{https://galaxyproject.org/toolshed/}{tools};
 a web interface that allows the execution and definition of workflows using the integrated tools; a network of dedicated (public) Galaxy instances.
 
@@ -327,7 +339,7 @@ and the input and output data files.
 This is achieved by extracting provenance from Galaxy entities related to the workflow run, along with associated metadata, converting them to RO-Crate metadata using the ro-crate-py library~\cite{De Geest 2023a}; by describing all files contained in the basic invocation export within the RO-crate metadata;
 and finally by making the Workflow Run Crate available for export to the user through Galaxy's web interface and API \cite{De Geest 2022}.
 
-We extract the prospective provenance contained in Galaxy's YAML-based 
+We extract the prospective provenance contained in Galaxy's \acrshort{YAML}-based 
 \footurl{https://galaxyproject.github.io/gxformat2/v19_09.html}{gxformat2} workflow definition, which includes details of the analysis pipeline such as the graph of tools that need to be executed, and metadata about the data types required.
 The retrospective provenance -- i.e., the details of the executed workflow such as the inputs, outputs, parameter values used -- is extracted from Galaxy's data \footurl{https://docs.galaxyproject.org/en/master/lib/galaxy.model.html}{model}, which is not directly accessible to users in the context of a public Galaxy server.
 All of this provenance information is then mapped to RO-Crate metadata, including some Galaxy-specific data entities such as dataset collections.
@@ -346,7 +358,7 @@ In practice, a user would take the following steps to obtain a Workflow Run Crat
 
 COMPSs~\cite{Lordan 2014} is a task-based programming model that allows users to transform a sequential application into a parallel one by simply annotating some of its methods, thus making it efficient to exploit the resources available (either distributed or in a cluster).
 When a COMPSs application is executed, a corresponding workflow describing the application's tasks and their data dependencies is dynamically generated and used by the COMPSs runtime to orchestrate the execution of the application in the infrastructure.
-As a WMS, COMPSs stands out for its many advanced features that enable applications to achieve fine-grained high efficiency in HPC systems, such as the ability to exploit underlying parallelisation frameworks (i.e.~MPI, OpenMP), compilers (e.g.~NUMBA), failure management, task grouping, and more.
+As a WfMS, COMPSs stands out for its many advanced features that enable applications to achieve fine-grained high efficiency in HPC systems, such as the ability to exploit underlying parallelisation frameworks (i.e.~MPI, OpenMP), compilers (e.g.~NUMBA), failure management, task grouping, and more.
 
 Provenance recording for COMPSs workflows has been explored in previous work~\cite{Sirvent 2022}, where the Workflow RO-Crate profile was adopted in the implementation of a very lightweight approach to document provenance while avoiding the introduction of any significant run time performance overheads.
 However, because of the dynamic nature of COMPSs workflows, the Workflow Run Crate profile is better suited to represent them, since workflows are created when the application is executed and, thus, a prior static workflow definition does not exist before that moment.
@@ -369,7 +381,7 @@ The implementation of provenance recording following Workflow Run Crate has been
 
 \subsubsection{StreamFlow}\label{ch54:streamflow}
 
-The \footurl{https://github.com/alpha-unito/streamflow}{StreamFlow} framework~\cite{Colonnelli 2021} is a container-native WMS based on the CWL standard.
+The \footurl{https://github.com/alpha-unito/streamflow}{StreamFlow} framework~\cite{Colonnelli 2021} is a container-native \acrshort{WfMS} based on the \acrshort{CWL} standard.
 It has been designed around two primary principles: first, it allows the execution of tasks in multi-container environments, supporting the concurrent execution of communicating tasks in a multi-agent ecosystem; second, it relaxes the requirement of a single shared data space, allowing for hybrid workflow executions on top of multi-cloud, hybrid cloud/HPC, and federated infrastructures.
 StreamFlow orchestrates hybrid workflows by combining a \emph{workflow description} (e.g., a CWL workflow description and a set of input values) with one or more \emph{deployment descriptions} -- i.e.
 representations of the execution environments in terms of infrastructure-as-code (e.g., Docker Compose files \cite{Reis 2022}, HPC batch scripts, and Helm charts \cite{Zerouali 2023}).
@@ -378,13 +390,13 @@ At execution time, StreamFlow automatically takes care of all the secondary aspe
 
 StreamFlow stores prospective and retrospective provenance data in a proprietary format into a persistent pluggable database (using sqlite3 as the default choice).
 After a CWL workflow execution completes, users can generate an RO-Crate through the \texttt{streamflow prov <workflow\_name>}
-command, which extracts the provenance data stored in the database for one or more workflow executions and converts it to an RO-Crate archive that is fully compliant with the Provenance Run Crate Profile, including the details of each task run by the WMS.
+command, which extracts the provenance data stored in the database for one or more workflow executions and converts it to an RO-Crate archive that is fully compliant with the Provenance Run Crate Profile, including the details of each task run by the WfMS.
 Support for the format has been integrated into the main development branch and will be included in release 0.2.0 \cite{Colonnelli 2023b}.
 
 From the StreamFlow point of view, the main limitation in the actual version of the Provenance Run Crate standard is the lack of support for distributed provenance, i.e., a standard way to describe the set of locations involved in a workflow execution and their topology. As a temporary solution,
 the StreamFlow configuration and a description of the hybrid execution environment are preserved by directly including the \texttt{streamflow.yml} file into the generated archive.
-However, this product-specific solution prevents a wider adoption from other WMS and forces agnostic frameworks (e.g., WorkflowHub) to provide ad-hoc plugins to interpret the StreamFlow format.
-Since the support for hybrid and cross-facility workflows is gaining traction in the WMS ecosystem, we envision support for distributed provenance as a feature for future versions of Workflow Run RO-Crate.
+However, this product-specific solution prevents a wider adoption from other WfMS and forces agnostic frameworks (e.g., WorkflowHub) to provide ad-hoc plugins to interpret the StreamFlow format.
+Since the support for hybrid and cross-facility workflows is gaining traction in the WfMS ecosystem, we envision support for distributed provenance as a feature for future versions of Workflow Run RO-Crate.
 
 \subsubsection{WfExS-backend}\label{ch54:wfexs}
 
@@ -420,8 +432,8 @@ Further, the Tonkaz companion command line software has integrated functionality
 Developers can use this unique feature to build a CI/CD platform for their workflows to ensure that changes to the product do not produce an unexpected result.
 Workflow users can also use this feature to verify the results from the same workflow deployed in different environments.
 
-While Sapporo supports Workflow Run Crate, since WES is a WMS wrapper, it does not parse the provided workflow definition files. 
-Instead, it embeds the information in the files passed by the WES request to record the provenance of execution rather than using the actual workflow parameters meant for the wrapped WMS.
+While Sapporo supports Workflow Run Crate, since WES is a WfMS wrapper, it does not parse the provided workflow definition files. 
+Instead, it embeds the information in the files passed by the WES request to record the provenance of execution rather than using the actual workflow parameters meant for the wrapped WfMS.
 Therefore, the current implementation of Sapporo does not capture the connections between the inputs/outputs depicted in the workflow and the actual files used/generated during the run.
 Thus, the profile generated by Sapporo has fields representing input and output files, but they are not linked to formal parameters.
 
@@ -433,10 +445,10 @@ Autosubmit~\cite{Manubens-Gil 2016} is an open source lightweight workflow manag
 It supports scheduling jobs via SSH to Slurm~\cite{Yoo 2003}, PBS~\cite{Feng 2007} and other remote batch servers used in HPC.
 
 The ``archive'' feature was added in \footurl{https://earth.bsc.es/gitlab/es/autosubmit/-/tags/v3.1.0}{Autosubmit 3.1.0}, released in 2015.
-This feature archives the experiment directory and all its contents into a ZIP file, which can be used later to access the provenance data or to execute the Autosubmit experiment again.
+This feature archives the experiment directory and all its contents into a \gls{ZIP} file, which can be used later to access the provenance data or to execute the Autosubmit experiment again.
 Even though the data in the ZIP file includes prospective provenance and retrospective provenance, it contains no structure, and users have no way to tell which is which from just looking at the ZIP file and its contents.
 
-Recent releases of Autosubmit 4 include an updated YAML configuration management system that allows users to combine multiple YAML files into a single unified configuration file.
+Recent releases of Autosubmit 4 include an updated \acrshort{YAML} configuration management system that allows users to combine multiple YAML files into a single unified configuration file.
 While this gave users flexibility, it also increased the complexity to track the configuration changes and to relate these to the provenance data.
 Another feature added in Autosubmit 4 is the option to use only the experiment manager features of Autosubmit, delegating the workflow execution to a different backend workflow engine, like ecFlow~\cite{Bahra 2011}, Cylc~\cite{Oliver 2019}, or a CWL runner.
 
@@ -494,7 +506,7 @@ Table \vref{ch54:implementation_summary_table} shows an overview of the differen
   \end{tabular}
   %\begin{flushleft} 
     
-\caption[Workflow Run Crate implementations]{{\bf Workflow Run Crate implementations}. Summary of each WRROC implementation, together with the profiles it implements, the latest software citation and an example crate of its application. Runcrate is a toolkit that converts CWLProv ROs to Provenance Run Crates, while the others are WMS.}
+\caption[Workflow Run Crate implementations]{{\bf Workflow Run Crate implementations}. Summary of each \acrshort{WRROC} implementation, together with the profiles it implements, the latest software citation and an example crate of its application. Runcrate is a toolkit that converts CWLProv ROs to Provenance Run Crates, while the others are WfMS.}
   %\end{flushleft}
   \label{ch54:implementation_summary_table}
  % \end{adjustwidth}
@@ -505,7 +517,7 @@ Table \vref{ch54:implementation_summary_table} shows an overview of the differen
 %% 
 \subsection{Exemplary Use Cases}\label{ch54:exemplary-use-cases}
 
-We illustrate Workflow Run RO-Crate on two exemplary use cases, which are similar in terms of application domain -- machine learning-aided tumour detection in human prostate images -- but quite different in the way computations are executed and provenance is represented: in the first, the analysis is conducted by means of a CWL workflow and the outcome is represented with Provenance Run Crate; in the second, a combination of Process Run Crate and CPM RO-Crate is used to represent a sequence of computations linked to their corresponding CPM provenance information.
+We illustrate Workflow Run RO-Crate on two exemplary use cases, which are similar in terms of application domain -- machine learning-aided tumour detection in human prostate images -- but quite different in the way computations are executed and provenance is represented: in the first, the analysis is conducted by means of a \acrshort{CWL} workflow and the outcome is represented with Provenance Run Crate; in the second, a combination of Process Run Crate and CPM RO-Crate is used to represent a sequence of computations linked to their corresponding CPM provenance information.
 
 
 \subsubsection{Provenance Run Crate for Digital Pathology}\label{ch54:provenance-run-crate-for-digital-pathology}
@@ -518,8 +530,8 @@ The two tissue inference steps run the same tool, but set different values for t
 The workflow is integrated in the 
 \footurl{https://github.com/crs4/DigitalPathologyPlatform}{CRS4 Digital Pathology Platform}, a web-based platform to support clinical studies involving the examination and/or the annotation of digital pathology images.
 
-To assess the interoperability of WRROC, we recorded the provenance of the same exemplary workflow in two different execution platforms.
-In the first case, the workflow was executed with the StreamFlow WMS, for which the Provenance Run Crate implementation is discussed in Section \vref{ch54:streamflow}.
+To assess the interoperability of \acrshort{WRROC}, we recorded the provenance of the same exemplary workflow in two different execution platforms.
+In the first case, the workflow was executed with the StreamFlow WfMS, for which the Provenance Run Crate implementation is discussed in Section \vref{ch54:streamflow}.
 In the second case, we executed the CWL workflow with cwltool and converted the resulting CWLProv RO to a Provenance Run Crate with the runcrate tool (Section \vref{ch54:runcrate}).
 
 The RO-Crates obtained in the two cases~\cite{Colonnelli 2023a,Leo 2023}
@@ -668,7 +680,7 @@ As a result, combining the CPM and RO-Crate enables the lookup of research artef
 
 
 The RO-Crate profiles presented here provide a unified data model to describe the prospective and retrospective provenance of the execution of a computational workflow, together with contextual metadata about the workflow itself and its associated entities (inputs, outputs, code, etc.). 
-The profiles are flexible, allowing to tailor the description to a broad variety of use cases, agnostic with respect to the WMS used and allow describing provenance traces at different levels of granularity. 
+The profiles are flexible, allowing to tailor the description to a broad variety of use cases, agnostic with respect to the WfMS used and allow describing provenance traces at different levels of granularity. 
 This facilitates developing implementations by multiple workflow systems (often with heterogeneous assumptions and requirements) -- six of which have already been developed and are described in Section \vref{ch54:implementations} -- allowing to perform comparisons between runs across heterogeneous systems.
 For instance, the \footurl{https://www.w3.org/TR/sparql11-overview/}{SPARQL} query in Listing \vref{ch54:sparql} returns all actions in a Workflow Run RO-Crate, together with their instruments and their starting and ending times:
 
@@ -694,13 +706,13 @@ Another advantage of RO-Crate is that the files corresponding to the data entiti
 
 The derivation of Workflow Run Crate from Workflow RO-Crate and, in turn, of Provenance Run Crate from Workflow Run Crate makes RO-Crates that conform to these profiles compatible with the WorkflowHub workflow registry, allowing workflow runs to be registered and easily found and shared with other researchers. Additionally, the inheritance mechanism allows reusing the specifications already developed for Workflow RO-Crate, which form part of the guidelines on representing the prospective provenance
 
-The Workflows Community Summit \cite{Ferreira da Silva} identified as one of the current open challenges in the Scientific Workflows domain the ability to build FAIR into Workflow Management Systems, with the objective of achieving FAIR Computational Workflows. The profiles introduced in this article are able to help tackle this by introducing interoperable metadata among WMSs that captures the provenance of their corresponding workflow executions.
+The Workflows Community Summit \cite{Ferreira da Silva} identified as one of the current open challenges in the Scientific Workflows domain the ability to build \acrshort{FAIR} into Workflow Management Systems, with the objective of achieving FAIR Computational Workflows. The profiles introduced in this article are able to help tackle this by introducing interoperable metadata among WfMSs that captures the provenance of their corresponding workflow executions.
 
 The Workflow Run RO-Crate profiles, the associated tooling, the implementations and the examples are developed by a community that runs regular virtual meetings (every two weeks at the time of writing) and coordinates on Slack and the RO-Crate mailing list.
-The WRROC community brings together members of the RO-Crate community~\cite{Soiland-Reyes 2022a}, WMS users and developers, Workflow users and developers, GA4GH~\cite{Rehm 2021} Cloud developers and provenance model authors, and is open to anyone who is interested in the representation of workflow provenance.
-The inclusion of WMS developers and workflow users was key to keeping the specifications flexible, easy to implement and grounded on real use cases, while the diversity of the stakeholders allowed to keep a plurality of viewpoints while driving the model's development forward.
+The \acrshort{WRROC} community brings together members of the RO-Crate community~\cite{Soiland-Reyes 2022a}, \acrshort{WfMS} users and developers, Workflow users and developers, GA4GH~\cite{Rehm 2021} Cloud developers and provenance model authors, and is open to anyone who is interested in the representation of workflow provenance.
+The inclusion of WfMS developers and workflow users was key to keeping the specifications flexible, easy to implement and grounded on real use cases, while the diversity of the stakeholders allowed to keep a plurality of viewpoints while driving the model's development forward.
 
-One of the main benefits of this development process is that the profiles are already in use, with seven implementations (six WMS and one conversion tool) already available as described in section \vref{ch54:implementations}.
+One of the main benefits of this development process is that the profiles are already in use, with seven implementations (six WfMS and one conversion tool) already available as described in section \vref{ch54:implementations}.
 
 In the following subsections, we provide an evaluation of the metadata coverage of runcrate and we discuss WRROC relates to standards such as W3C PROV and to other community projects.
 
@@ -890,7 +902,7 @@ Further work is being planned with the BCO community to update the BCO-RO profil
 
 In this work we presented Workflow Run RO-Crate, a collection of RO-Crate profiles to represent the provenance of the execution of computational workflows at different levels of granularity.
 We described each profile and their corresponding implementations, shown how they apply to real use cases and described the community behind their development process.
-Workflow Run RO-Crate has already been adopted by six WMS, including Galaxy, StreamFlow and COMPSs. The flexibility of our model eases its implementation in more systems, allowing interoperability between their workflow run descriptions.
+Workflow Run RO-Crate has already been adopted by six WfMS, including Galaxy, StreamFlow and COMPSs. The flexibility of our model eases its implementation in more systems, allowing interoperability between their workflow run descriptions.
 
 Workflow Run RO-Crate is an ongoing project driven by an open community.
 A natural consequence of this is that the profiles are not static entities, but keep being updated to cater for new requirements and use cases.
@@ -901,7 +913,7 @@ The runcrate toolkit is planned to be expanded both to better support the curren
 Many of the presented implementations will also develop new features. For example, the Galaxy implementation will add metadata detailing each step of a workflow run to conform to the Provenance Run Crate profile; develop and/or integrate RO-Crate more deeply with import and export of Galaxy histories through the implementation of a profile; and further developing features to allow for user-guided import of RO-Crates as Galaxy datasets, histories and workflows.
 
 Finally, we are currently exploring the cloud execution of Workflow Run RO-Crates.
-On the one hand, the Workflow Execution Service (WES) specification is used by the Global Alliance for Genomics and Health (GA4GH) \cite{Rehm 2021} to enable WMS-agnostic interpretation of workflows and scheduling of task execution. On the other hand, the Task Execution Service (TES) specification enables the execution of individual, atomic, containerised tasks in a compute backend-independent manner.
+On the one hand, the Workflow Execution Service (WES) specification is used by the Global Alliance for Genomics and Health (GA4GH) \cite{Rehm 2021} to enable WfMS-agnostic interpretation of workflows and scheduling of task execution. On the other hand, the Task Execution Service (TES) specification enables the execution of individual, atomic, containerised tasks in a compute backend-independent manner.
 
 We are planning to undertake an in-depth analysis of the degree of interoperability between the TES and WES API standards -- roughly the equivalents of Process and Workflow Run Crates, respectively -- by placing their focus on the actual execution of tasks/processes and workflows in cloud environments and liaising with the GA4GH Cloud community to align schemas where necessary.
 We will then build an interconversion library that attempts to:

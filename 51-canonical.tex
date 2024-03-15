@@ -142,7 +142,10 @@ Most other efforts to standardise a set of disparate analytical tools have been 
 \footurl{https://docs.knime.com/2020-07/analytics_platform_components_guide/index.html}{KNIME components and metanodes}, shared on the \footurl{https://hub.knime.com/}{KNIME Hub} are frequently designed to be interoperable, but with a perhaps weaker notion of component families.
 The \footurl{https://toolshed.g2.bx.psu.edu/}{Galaxy toolshed} \cite{Blankenberg 2014} is likewise populated with different sets of tool wrappers that are largely made to be interoperable within a category.
 
-The \emph{Common Workflow Language} (\textbf{CWL}) \cite{Crusoe 2022} has a strong emphasis on interoperable command line tool descriptions, with \footurl{https://www.commonwl.org/user_guide/07-containers/}{support for containers} and Conda packaging, as well as \footurl{https://www.commonwl.org/user_guide/17-metadata/}{support for FAIR metadata} like contributors, license and EDAM ontology type annotations.
+The
+\acrfull{CWL}
+%\emph{Common Workflow Language} (\acrshort{CWL})
+\cite{Crusoe 2022} has a strong emphasis on interoperable command line tool descriptions, with \footurl{https://www.commonwl.org/user_guide/07-containers/}{support for containers} and Conda packaging, as well as \footurl{https://www.commonwl.org/user_guide/17-metadata/}{support for FAIR metadata} like contributors, license and EDAM ontology type annotations.
 With multiple leading workflow engines \footurl{https://www.commonwl.org/implementations/}{now supporting CWL}, and experimental Galaxy support, this seems perhaps the most promising candidate for both making and describing canonical workflow building blocks; however, we have identified a few stumbling blocks.
 
 One obvious challenge is that the implementing WfMS needs to have CWL support, along with support for either containers or Conda packaging to find the described executables.
