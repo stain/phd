@@ -19,7 +19,7 @@ recognition, named entity recognition and language translation
 technologies can be implemented into canonical workflow component
 libraries with findable, accessible, interoperable, and reusable (\acrshort{FAIR})
 characteristics. These libraries are being developed in a cloud-based
-workflow platform -- the `Specimen Data Refinery' (SDR) -- founded on
+workflow platform -- the `\acrlong{SDR}' (SDR) -- founded on
 Galaxy workflow engine, 
 \acrlong{CWL},
 %Common Workflow Language, 
@@ -66,7 +66,9 @@ However, the advent of rapid, high-quality digital imaging has meant
 that digitizing specimens, including their labels, is now faster and
 cheaper \cite{Thiers 2016}. With initiatives such as Advancing Digitization of
 Biological Collections (ADBC), integrated Digitized Biocollections
-(iDigBio) and the Distributed System of Scientific Collections (DiSSCo)
+(iDigBio) and the 
+\acrfull{DiSSCo}
+%Distributed System of Scientific Collections (DiSSCo)
 \cite{Nelson 2019a,Nelson 2019b,Addink 2019,Lannom 2020} aiming to increase the rate and accuracy of both mass and
 on-demand digitization of natural history collections, the gap between
 expectations of what should be digitally available and computable, and
@@ -106,13 +108,15 @@ Workflow technologies from the ELIXIR Research Infrastructure \cite{Harrow 2021}
 including Galaxy \cite{Afgan 2018}, Common Workflow Language \cite{Crusoe 2022}, Research
 Object Crates (RO-Crates) \cite{Ó Carragáin 2019a,Soiland-Reyes 2022a} and WorkflowHub \cite{Goble 2021}, and
 selected tools are integrated in a cloud-based workflow platform for
-natural history specimens -- the `Specimen Data Refinery' \cite{Walton 2020a} that
+natural history specimens -- the `\acrlong{SDR}' \cite{Walton 2020a} that
 will become one of the main services to be offered by the planned DiSSCo
 research infrastructure \cite{Addink 2019}. The tools themselves, implemented with
 findable, accessible, interoperable, and reusable (FAIR) characteristics
 \cite{Wilkinson 2016} are packaged into canonical workflow component libraries
 \cite{Wittenburg 2022b}, rendering them reusable, and interoperable with one another.
-FAIR Digital Objects are adopted as the common input/output pattern,
+\acrlongpl{FDO}
+%FAIR Digital Objects 
+are adopted as the common input/output pattern,
 fully compatible with digital objects at the core of DiSSCo data
 management \cite{Hardisty 2019b}.
 
@@ -273,7 +277,8 @@ systems based on their ``plugged-in'' availability of data type
 specialist codes, the catered-for skills level of the workflow
 developers, and its documentation, community support and perceived
 sustainability. For the Specimen Data Refinery, the Galaxy workflow
-system \cite{Afgan 2018} in conjunction with Common Workflow Language (CWL)
+system \cite{Afgan 2018} in conjunction with \acrfull{CWL}
+%Common Workflow Language (CWL)
 \cite{Crusoe 2022} has been chosen. CWL is a workflow specification standard
 geared towards supporting interoperable and scalable production
 pipelines, abstracting away from the internal data structures of some of
@@ -286,7 +291,7 @@ can be built by manually experimenting with data manipulations in a
 workflows, or by a more traditional drag-and-drop composition approach.
 New components can be created by wrapping existing programs, with
 in-built dependency management and automated conversion to executable
-containers. As such, Galaxy and CWL offer possibilities for a rich
+containers. As such, Galaxy and \acrshort{CWL} offer possibilities for a rich
 canonical workflow component landscape with a workflow management regime
 that can be both easily FAIR compliant and efficient internally
 \cite{Wittenburg 2022b}. The WorkflowHub, which facilitates CWL and enables workflows
@@ -294,7 +299,7 @@ to be registered, shared and published, is mutually coupled with Galaxy
 so that workflows can be discovered in the Hub and immediately executed
 in a public-use Galaxy instance.
 
-In the context of the SDR, users can construct institution or
+In the context of the \acrshort{SDR}, users can construct institution or
 project-specific variants of digitization workflows to suit their
 specific needs. As collections are heterogeneous, different specimen
 types or specific sets of specimens are likely to have variations and
@@ -355,7 +360,8 @@ information extracted and captured from labels by digitization
 workflows) with other data -- often to be found from third-party sources
 -- derived from analysis and use of the specimen.
 
-openDS \cite{openDS 2021} is the developing specification for open Digital
+\acrshort{openDS}
+\cite{openDS 2021} is the developing specification for open Digital
 Specimens and other related object types, defining: 
 
 \begin{itemize}
@@ -366,7 +372,9 @@ Specimens and other related object types, defining:
   handling rules and behaviors governing digital specimen object
   operations in general.
   \item Serialization and packaging as
-  JavaScript Object Notation (JSON) for lightweight data interchange
+  \acrfull{JSON}
+  %JavaScript Object Notation (JSON) 
+  for lightweight data interchange
   between systems, sub-systems and components of systems (for which, read
   `workflow components' \cite{Bray 2017}. 
 \end{itemize}
@@ -376,8 +384,10 @@ digitization of natural history collections and to Digital Specimens as
 self-standing digital objects on the Internet, amenable to computer
 processing. It contributes to the new transformative generation of FAIR
 infrastructure and applications based on Digital Object Architecture
-that is planned for the Distributed System of Scientific Collections
-(DiSSCo) \cite{Lannom 2020,Addink 2019,Hardisty 2020} European research infrastructure.
+that is planned for the 
+\acrfull{DiSSCo}
+%Distributed System of Scientific Collections (DiSSCo) 
+\cite{Lannom 2020,Addink 2019,Hardisty 2020} European research infrastructure.
 
 Henceforth we refer to these as \textbf{openDS FDOs}.
 
@@ -403,8 +413,10 @@ profiles, e.g., for domains such as earth sciences \cite{Corcho 2021}, bioscienc
 workflow runs). RO-Crate has been proposed for the implementation of
 FAIR Digital Objects on the World Wide Web as a common representation of
 the FDO Metadata objects foreseen by the FDO Framework \cite{Goble 2021,Bonino 2019}.
-Combined with FAIR Signposting \cite{Van de Sompel 2022} for resolving persistent
-identifiers (PID) to FDOs on the World Wide Web, these RO-Crates are
+Combined with FAIR \gls{Signposting} \cite{Van de Sompel 2022} for resolving 
+\acrlongpl{PID}
+%persistent identifiers (PID) 
+to FDOs on the World Wide Web, these RO-Crates are
 findable, accessible, interoperable, and reusable by machines to both
 create and obtain the information they need to function.
 
@@ -534,15 +546,15 @@ RO-Crate FDOs capture two aspects of a workflow:
 \end{enumerate}
 
 The final step in SDR workflows can be a data exporter tool, allowing
-users to export the entire openDS object as is, or to convert and export
-it in another format, such as CSV, DarwinCore Archive, etc. This
+users to export the entire \acrshort{openDS} object as is, or to convert and export
+it in another format, such as \acrshort{CSV}, DarwinCore Archive, etc. This
 reconfigurable nature of data export allows users to define their own
 transformer function to allow export to match formats specific to
 specific collection management systems in use by their institution, such
 that refined data can be repatriated. The provenance exporter transforms
 Galaxy workflow history data into a Workflow-Run-RO-Crate FDO.
 
-All FDO types are serialised as JSON.
+All \acrshort{FDO} types are serialised as \acrshort{JSON}.
 
 \subsubsection{Canonical components}\label{canonical-components}
 
@@ -559,7 +571,7 @@ type, being modified as the workflow proceeds.
 This allows tools to function both as standalone components and as part
 of any sequence of chained tools, provided that the specific openDS FDO
 attributes required for a tool to work are pre-populated. This keeps the
-SDR flexible and customisable for different digitization pipelines.
+\acrshort{SDR} flexible and customisable for different digitization pipelines.
 
 Two entry points are provided for users of the SDR. One is named as the
 `\emph{de novo} digitization' entry point (figure \ref{ch8:figure2}) fulfilling the
@@ -582,12 +594,17 @@ according to specific need: image segmentation, barcode reading, optical
 character recognition, text contextualisation/entity recognition,
 geocoding, taxonomic linkage, people linkage, specimen condition
 checking, automated identification, and data export/conversion. Broadly
-speaking there are two main kinds of workflow: (i) specimen workflows,
-where the specimen itself is analysed for morphological traits, colour
-analysis, condition checking and automated identification; and (ii) text
-and label workflows, where handwritten, typed or printed text from the
-image is read, named entities are classified, then linked to identifiers
-or enhanced through post processing.
+speaking there are two main kinds of workflow: 
+
+\begin{enumerate}[(i)]
+  \item Specimen workflows,
+  where the specimen itself is analysed for morphological traits, colour
+  analysis, condition checking and automated identification.
+  \item Text
+  and label workflows, where handwritten, typed or printed text from the
+  image is read, named entities are classified, then linked to identifiers
+  or enhanced through post processing.
+\end{enumerate}
 
 Both kinds of workflow can begin with initial openDS object creation
 based on the submission of specimen image files and accompanying input
@@ -643,7 +660,7 @@ openDS FDOs as Galaxy custom data types.
 
 \subsection{Results}\label{results}
 
-openDS FDOs are the core data object at the heart of the SDR, playing
+openDS FDOs are the core data object at the heart of the \acrshort{SDR}, playing
 not only the workflow input/output role but acting also as a common data
 structure between tool steps within the workflow. Users can launch the
 workflow with either an openDS object, for further augmentation by the
@@ -665,8 +682,10 @@ and outputs against versions of the schema.
 
 On ingestion, every openDS is assigned a persistent identifier, ensuring
 unambiguity and referential integrity for every processed object. In
-production, DOIs will be minted by the DiSSCo service; for the
-proof-of-concept Handles with prefix \texttt{20.5000.1025/} will be
+production, \acrshortpl{DOI} 
+%DOIs 
+will be minted by the \acrshort{DiSSCo} service; for the
+proof-of-concept \glspl{Handle} with prefix \texttt{20.5000.1025/} will be
 used.
 
 \subsection{Discussion}\label{ch8:discussion}
