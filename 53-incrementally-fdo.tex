@@ -1,15 +1,16 @@
 \section[Incrementally building FAIR Digital Objects with the Specimen Data Refinery]{Incrementally building FAIR Digital Objects with Specimen Data Refinery workflows}
 \label{ch7:incrementally-building-fair-digital-objects-with-specimen-data-refinery-workflows}
 
-\emph{Specimen Data Refinery} (SDR) is a developing platform for
+\emph{Specimen Data Refinery} (\acrshort{SDR}) is a developing platform for
 automating transcription of specimens from natural history collections
 \cite{Hardisty 2022} (section \vref{ch8:the-specimen-data-refinery}). SDR is
-based on computational workflows and digital twins using FAIR Digital
-Objects.
+based on computational workflows and digital twins using
+\acrlongpl{FDO}.
+%FAIR Digital Objects.
 
 We show our recent experiences with building SDR using the Galaxy
 workflow system and combining two FDO methodologies with open digital
-specimens (openDS) and RO-Crate data packaging. We suggest FDO
+specimens (\acrshort{openDS}) and RO-Crate data packaging. We suggest FDO
 improvements for incremental building of digital objects in
 computational workflows.
 
@@ -29,9 +30,9 @@ FDOs.
 
 We implemented the use case \emph{De novo digitization} in Galaxy \cite{Brack 2022b}.
 Shown in Figure \vref{ch7:figure1} the
-workflow steps exchange openDS JSON \cite{Hardisty 2019a}, for
+workflow steps exchange openDS \acrshort{JSON} \cite{Hardisty 2019a}, for
 incremental completion of a digital specimen. Initial stages build a
-template openDS from a CSV with metadata and image references --
+template openDS from a \acrshort{CSV} with metadata and image references --
 subsequent analysis completes the rest of the JSON with \emph{regions}
 of interest, \emph{text} digitised from handwriting, and recognised
 \emph{named entities}.
@@ -41,12 +42,12 @@ of interest, \emph{text} digitised from handwriting, and recognised
 	\caption[FDO propagation in workflow]{\textbf{FDO propagation in workflow}. 
     Draft Galaxy workflow \cite{Brack 2022b} 
     shows propagation of partial Open Digital Specimen FDOs between
-    individual canonical workflow building blocks. First steps process a CSV
+    individual canonical workflow building blocks. First steps process a \acrshort{CSV}
     file to create the initial openDS, where referenced images are analysed
-    to detect text lines which are OCRed and then recognised as named
+    to detect text lines which are \acrshort{OCR}ed and then recognised as named
     entities. Bands indicate flow of collections of openDS, processed
     concurrently by each step. The final step bundles the collection of
-    openDS FDOs as JSON files in a ZIP archive.}
+    openDS FDOs as JSON files in a \gls{ZIP} archive.}
     \label{ch7:figure1}
   \end{figure}
 

@@ -25,11 +25,11 @@ Conceptually FDO can clearly be useful for realizing FAIR principles with more a
 \label{ch61:constraints}
 
 Examined in section \vref{ch3:ld}, the principles of \emph{Linked Data} emerged from the Semantic Web as a data-centric view with a focus on navigation and cross-site interoperability, rather than say elaborate logical inferencing systems using ontologies.  
-Yet the bewildering landscape of technology choices for using RDF in data platforms means that the developers suffer and still face a steep learning curve. 
+Yet the bewildering landscape of technology choices for using \acrshort{RDF} in data platforms means that the developers suffer and still face a steep learning curve. 
 For clients consuming \acrlong{LD} from multiple sources -- \emph{Linked Data Mashup} \cite{Tran 2014} -- the situation is still baffling in that relatively small differences in identifiers, vocabularies and usage patterns across deployment result in incompatibilities that may require platform-specific workarounds and mappings \cite{Millard 2010}. 
 
 The ecosystem of FAIR tooling is not currently mature enough to support Linked Data consumption in a user-friendly and efficient way \cite{Thompson 2020}, although recent metrics and tools for assessing \emph{FAIRness} \cite{Wilkinson 2018} can assist both data providers and consumers. 
-Evaluations by EOSC has since found that FAIRness metrics can vary widely across the different assessment tools for the same data resource \cite{Wilkinson 2022a}, showing that further definitions of conventions and practices are needed for consistent Linked Data publishing and consumption. 
+Evaluations by \acrshort{EOSC} has since found that FAIRness metrics can vary widely across the different assessment tools for the same data resource \cite{Wilkinson 2022a}, showing that further definitions of conventions and practices are needed for consistent Linked Data publishing and consumption. 
 
 Making the FAIR principles achieve practical benefits for researchers and platform developers thus requires more specific constraints and broader consistency.
 
@@ -53,7 +53,7 @@ If such conventions need to be evolved and specified no matter the protocol basi
   For instance, a de-centralised, resiliant architecture and long term preservation was the motivation for the design of the Interplanetary File System (IPFS) as a \emph{Decentralized Web} \cite{Trautwein 2022}.
 }
 
-Section \ref{ch2:discussion} found that the basis of Web-based FDOs can be built using only \gls{Signposting} \cite{Van de Sompel 2015,Van de Sompel 2022}, adding a couple of non-intrusive HTTP headers that are agnostic to metadata standards and serializations. An implementation of such Web-based FDOs was shown in section \ref{ch4:lightweight-fdo}. 
+Section \ref{ch2:discussion} found that the basis of Web-based FDOs can be built using only \gls{Signposting} \cite{Van de Sompel 2015,Van de Sompel 2022}, adding a couple of non-intrusive \acrshort{HTTP} headers that are agnostic to metadata standards and serializations. An implementation of such Web-based FDOs was shown in section \ref{ch4:lightweight-fdo}. 
 
 The Signposting approach has also been highlighted both by \acrshort{EOSC} \cite{Wilkinson 2022a,Wilkinson 2024} and as a possible FDO configuration type \cite{Lannom 2022a}.
 The FAIR-IMPACT project launched an \footurl{https://fair-impact.eu/1st-open-call-support-closed}{open call} where 14 participating institutions participated to build support for Signposting \cite{Soiland-Reyes 2023b} in their data repositories and platforms.
@@ -71,8 +71,8 @@ The approach builds on best practices for
 %Linked Data,
 however \acrshort{RO-Crate} specifications are example-driven with simple interrelated \acrshort{JSON} structures, and primarily use a single, general purpose vocabulary. 
 
-This way of ``Linked Data by stealth'' means that developers don't need to be concerned about RDF implementation details, although they can at their option take advantage of RDF knowledge graph technologies like SPARQL (section \vref{ch5:linkeddata}).
-Extension points are well defined, and although extending RO-Crate do require some \acrshort{RDF} knowledge like defining namespaces, reasonable examples and vocabulary repositories are provided by RO-Crate --  developers do not for instance need to learn about ontologies nor need to deploy a web service serving multiple RDF serialisations for every described entity.
+This way of ``Linked Data by stealth'' means that developers don't need to be concerned about \acrshort{RDF} implementation details, although they can at their option take advantage of RDF knowledge graph technologies like SPARQL (section \vref{ch5:linkeddata}).
+Extension points are well defined, and although extending RO-Crate do require some RDF knowledge like defining namespaces, reasonable examples and vocabulary repositories are provided by RO-Crate --  developers do not for instance need to learn about ontologies nor need to deploy a web service serving multiple RDF serialisations for every described entity.
 
 
 
@@ -331,7 +331,9 @@ Section \vref{ch6:making-canonical-workflow-building-blocks-interoperable-across
 Sections \vref{ch8:the-specimen-data-refinery} and \vref{ch7:incrementally-building-fair-digital-objects-with-specimen-data-refinery-workflows} showed another aspect of using such building blocks, where FDOs are the unit of communication between steps in the workflow. 
 This approach is pushing the envelope of FAIR Digital Objects concept, by having the FDO built incrementally by different stages of the specimen digitization pipeline, and exchanged only within the workflow system before it is ready to be published. 
 This scenario, where we experimented with strict validation with JSON Schema for every step, highlighted limitations of having larger composite FDO object types, as intermediate FDOs would not validate without significantly softening the schema.
-In effect the Specimen Data Refinery (SDR) workflow can be considered as a variant of the classic \emph{Builder pattern} \cite[pp. 97--106]{Gamma 1995}, which gradually constructs an object through a series of operations on an intermediate object (the builder).
+In effect the \acrfull{SDR}
+%Specimen Data Refinery (SDR)
+workflow can be considered as a variant of the classic \emph{Builder pattern} \cite[pp. 97--106]{Gamma 1995}, which gradually constructs an object through a series of operations on an intermediate object (the builder).
 However, as highlighted by section \vref{ch7:fdo-lessons}, ducktyping-like profiles/interfaces are needed for typing incremental FDOs, to ensure that a later workflow step receives a partial FDO with the expected fragments populated, otherwise workflow users would be able to compose steps with the FDO in an invalid state. 
 
 The later section \vref{ch54:the-workflow-run-ro-crate-profiles} showed how RO-Crate profiles for workflow provenance FDOs can be staggered for different granularity levels, but that is more akin to a class hierarchy, as each level builds on previous complete levels.  The Five Safes Crate profile (section \vref{ch54:trusted-workflow-run-crate}) however, has a similar incremental pattern as the SDR FDOs, and the different review states should be performed in a particular order. Enforcing this for typing purposes may require explicit rule-based abstract state machines (ASM) \cite{Gurevich 1995}, as has been demonstrated for Linked Data with ASM4LD \cite{Käfer 2018a,Käfer 2018b}.
