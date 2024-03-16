@@ -1,14 +1,15 @@
+
 In this thesis I investigate Linked Data approaches to implementing FAIR Research Objects and sharing reproducible Computational Workflows.
 
-%\section{Glossary test}
+\acrlong{LD} is a set of practices for publishing and relating data on the Web, based on \acrshort{RDF} technologies which relates different Web resources using controlled vocabularies. 
 
-%The \Gls{latex} typesetting markup language is specially suitable 
-%for documents that include \gls{maths}. \Glspl{formula} are 
-%rendered properly an easily once one gets used to the commands.
+\acrshort{FAIR} are a set of principles for making data and their metadata \acrlong{FAIR}, in order for them to be reachable and understandable for programmatic use.
 
-%Given a set of numbers, there are elementary methods to compute 
-%its \acrlong{gcd}, which is abbreviated \acrshort{gcd}. This 
-%process is similar to that used for the \acrfull{lcm}.
+\acrfull{RO} is a concept for sharing composites of research artefacts, together with their history and related resources such as software and external references.
+ 
+Computational \Glspl{workflow} are ways to structure execution of software tools, for instance for scientific data analysis, so that, by using a \gls{WfMS}, tool execution is reproducible, scalable and documented.
+
+These concepts are explained in further detail in this Section, as well as in Chapter \vref{ch3:background}.
 
 
 \section{Motivation}
@@ -66,12 +67,12 @@ Although these guidelines are quite specific, they do not prescribe any particul
 The FAIR principles have become highly influential for open research stakeholders \cite{Jacobsen 2020}, particularly in large research infrastructure initatives such as by the European Open Science Cloud \footurl{https://eosc.eu/}{(EOSC)} \cite{Schouppe 2018}, and increasing awareness and support for the principles by national Open Science policies and funders \cite{Davidson 2019,Davidson 2022}.
 Implementation of the principles by platform developers and researchers have however raised many questions and practical challenges \cite{Mons 2020,Riungu-Kalliosaari 2022}. 
 
-For instance, in order to evaluate a given resource's \emph{FAIRness}, additional technical constraints need to be assumed, such as use of particular Semantic Web technologies or formal vocabularies. \emph{FAIR metrics} \cite{Wilkinson 2018,Devaraju 2021} have recently become an area of active research, as different FAIR assessment tools may give a range of results for the same data resource, primarily based on which technical assumptions are made \cite{Wilkinson 2022a,Verburg 2023}.
+For instance, in order to evaluate a given resource's \emph{FAIRness}, additional technical constraints need to be assumed, such as use of particular formal vocabularies. \emph{FAIR metrics} \cite{Wilkinson 2018,Devaraju 2021} have recently become an area of active research, as different FAIR assessment tools may give a range of results for the same data resource, primarily based on which technical assumptions are made \cite{Wilkinson 2022a,Verburg 2023}.
 
 Recently there have been increased emphasis on training and awareness on the FAIR principles \cite{Shanahan 2021,Rocca-Serra 2023}, and registries of standards and vocabularies \cite{Sansone 2019}.
 However---with a general lack of skills in data management planning, inadequate (opaque) data formats and lack of time investment to provide rich metadata---data, even when shared through repositories, often becomes effectively "un-findable" or near impossible to reuse \cite{Carballo-Garcia 2022}.
 
-From this we can identify challenges with regards to practical ways for research software developers to generate and consume FAIR data.
+From this we can identify challenges with regards to finding practical ways for research software developers to generate and consume FAIR data.
 
 
 \subsection{FAIR Digital Objects}
@@ -119,19 +120,41 @@ operations on FDOs and a possibility to use extended/domain operations for speci
 
 These guidelines and the more detailed FDO specifications \cite{Ivonne 2023} are largely conceptual in nature, with several demonstrated implementations \cite{Wittenburg 2022a,Lannom 2022a} which in theory can operate side-by-side. Many of these rely on network protocols \cite{Reilly 2009,Sun 2003a} which are not particularly familiar to software developers, and not commonly supported by software libraries or frameworks.
 
-This divergence, while sound from a technical perspective, raises organisational challenges for wider adoption of FDOs, e.g. within EOSC research infrastructures, as well as a long-term sustainability risks for the published digital objects as more specialized data servers are frequently neglected by research teams and system administrators. %% CITE?
+This divergence, while sound from a technical perspective, raises organisational challenges for wider adoption of FDOs, e.g. within EOSC and research infrastructures, and might be introducing a steeper learning curve than already exists for FAIR.
+
+
+\subsection{Computational Workflows}
+
+A growing (if not majority) part of scientific analysis is now conducted using software and computational models. The concept of \emph{Research Software Engineering} \cite{Cohen 2020} has been established along with new professions \emph{Research Software Engineer} \cite{Baxter 2012} and \emph{Data Scientist} \cite{van der Aalst 2014} -- researchers are not just using off-the-shelf software, but also combining computational tools (e.g. pipelines) and writing their own analytical source code (e.g. R scripts) and simulations.
+
+From this observation emerges the need to treat software as FAIR artefacts \cite{Lamprecht 2019}, following best practices for documentation \cite{Lee 2018}, open development \cite{Prlić 2012} and ensuring research software is robust \cite{Taschuk 2017} so it can be reused and cited as scholarly outputs \cite{Smith 2016}. 
+With this motivation the principles of FAIR Research Software \cite{Katz 2021b} have been established by the RDA FAIR for Research Software (FAIR4RS) Working Group \cite{Barker 2022} and are gradually building traction, particularly in the life sciences. A remaining challenge is how citations of research software can be practically propagated following their execution. 
+
+While sharing of research software helps distribute the computational methods, the \emph{way} software is used for a particular analysis requires additional measures to make it \emph{reproducible} \cite{Stodden 2016,Sandve 2013}.
+
+\emph{Computational Workflows} (or \glspl{scientific workflow}) are used to structure and automate data analysis pipelines so they can be scalable, portable and explainable \cite{Atkinson 2017}, and as a side-effect of these features can significantly improve reproducibility \cite{Cohen-Boulakia 2017}. 
+
+Several challenges emerge when considering sharing of workflows as FAIR digital objects. For instance, a workflow composes multiple tools that themselves need to be shared. Data used by a workflow have their own attribution and licenses. The execution of a workflow produces many intermediate data, but understanding that data creation requires deep knowledge about the particular \acrfull{WfMS}.
+
+
+\subsection{Research Objects and Linked Data}
+
+The vision on the Semantic Web \cite{Berners-Lee 1999} were proposed as a way to make structured data on the Web. This evolved into a \acrfull{LD} stack that uses logic-based ontologies, Web deployment of individually described resources, and cross-references between these resources with \acrfull{URI} identifiers. The Semantic Web then is the ecosystem of such \acrlong{LD} resources, which can be queried, traversed and reasoned about. 
+
+\acrfullpl{RO}
+\cite{Bechhofer 2013} have been proposed as a mechanism to capture a range of diverse scholarly outputs in a single archivable item with detailed metadata. The RO concept was first realised using Semantic Web ontologies \cite{myExperiment 2009,Belhajjame 2015} -- these approaches primarily targetted long-term preservation of \glspl{scientific workflow}, utillised by RO as a mechanism to capture computational methods.
+
+The principles of Research Objects extend far beyond workflows; however, early RO implementations mainly focused on capturing software \cite{Goble 2018}. To some extent the lack of wider adoption of ontology-based ROs can also be explained by developers of researcher-facing software and platforms (e.g. repositories, data management systems) having a lack of familiarity with use of Semantic Web technology -- or worse, they tried and then struggled \cite{Carriero 2010,Tudorache 2020}.
+
+From this, a challenge is to make Linked Data technology approachable for developers who are best placed at implementing the FAIR principles, in platforms that are effectively making Research Objects.
+
 
 
 \section{Research Outline and Questions}
 \label{intro:outline}
 
-Following the above motivation, this section elaborates my Research Questions (RQ) on these interlinked ideas:
+Following the above motivation, this section elaborates Research Questions (RQ) on three interlinked ideas.
 
-\begin{enumerate}
-    \item Realization of the FAIR Digital Object concept using Web technologies.
-    \item Implementing FAIR Research Objects with an pragmatic use of Linked Data practices.
-    \item Unifying a FAIR Digital Object approach for computational workflows.
-\end{enumerate}
 
 \subsection{Aims for FAIR Digital Objects on the Web (RQ1)}
 \label{intro:rq1}
@@ -151,13 +174,7 @@ I address RQ1 in chapters \ref{chapter:background} and \ref{chapter:fdo}.
 \subsection{Aims for FAIR Research Objects (RQ2)}
 \label{intro:rq2}
 
-\acrfullpl{RO}
-%\emph{Research Objects} (\acrshort{RO}) 
-\cite{Bechhofer 2013} have been proposed as a mechanism to capture a range of diverse scholarly outputs in a single archivable item with detailed metadata. The RO concept was first realised using Semantic Web ontologies \cite{myExperiment 2009,Belhajjame 2015} -- these approaches primarily targetted long-term preservation of \glspl{scientific workflow}, utillised by RO as a mechanism to capture computational methods.
-
-The principles of Research Objects extend far beyond workflows; however, early RO implementations mainly focused on capturing software \cite{Goble 2018}. To some extent the lack of wider adoption of ontology-based ROs can also be explained by developers of researcher-facing software and platforms (e.g. repositories, data management systems) having a lack of familiarity with use of Semantic Web technology -- or worse, they tried and then struggled \cite{Carriero 2010,Tudorache 2020}.
-
-Following the lessons learnt on early RO implementations and the emerging FAIR principles \cite{Wilkinson 2016,Jacobsen 2020}, after engagement with the digital libraries community it was agreed to formulate a lightweight approach to Research Objects \cite{Sefton 2018,Ó Carragáin 2019b} for the purpose of data packaging. The updated aims of \emph{FAIR Research Objects} can be summarised as:
+Following the lessons learnt on early \acrfull{RO} implementations and the emerging \acrshort{FAIR} principles, a new engagement between the RO and digital libraries communities started in 2018, where it was agreed to formulate a lightweight approach to Research Objects \cite{Sefton 2018,Ó Carragáin 2019b} for the purpose of data packaging. The updated aims of \emph{FAIR Research Objects} can be summarised as:
  
 \begin{itemize}
     \item Describe and package data collections, datasets, software etc. with their metadata.
@@ -170,7 +187,7 @@ Following the lessons learnt on early RO implementations and the emerging FAIR p
     \item Reuse existing standards, but hide their complexity.
 \end{itemize}
 
-Following from these, the second research question is: 
+Following from these aims, the second research question is: 
 
 \paragraph{RQ2:}\label{rq2}  Can a more pragmatic use of Linked Data practices better implement Research Objects for a wider developer audience, by using familiar Web technologies and give lightweight recommendations?
 
@@ -180,17 +197,9 @@ RQ2 is primarily addressed by Chapter \ref{chapter:ro-crate}.
 \subsection{Aims for FAIR Computational Workflows (RQ3)}
 \label{intro:rq3}
 
-A growing (if not majority) part of scientific analysis is now conducted using software and computational models. The concept of \emph{Research Software Engineering} \cite{Cohen 2020} has been established along with new professions \emph{Research Software Engineer} \cite{Baxter 2012} and \emph{Data Scientist} \cite{van der Aalst 2014} -- researchers are not just using off-the-shelf software, but also combining computational tools (e.g. pipelines) and writing their own analytical source code (e.g. R scripts) and simulations.
+There exists a plethora of \gls{workflow} systems and languages \cite{Leipzig 2021,Amstutz 2021}, although some recent efforts have created the Common Workflow Language \cite{Crusoe 2022} as a standard representation with \footurl{https://www.commonwl.org/user_guide/topics/metadata-and-authorship.html}{FAIR metadata capabilities} that is executable by multiple engines. 
 
-From this observation emerges the need to treat software as FAIR artefacts \cite{Lamprecht 2019}, following best practices for documentation \cite{Lee 2018}, open development \cite{Prlić 2012} and ensuring research software is robust \cite{Taschuk 2017} so it can be reused and cited as scholarly outputs \cite{Smith 2016}. 
-With this motivation the principles of FAIR Research Software \cite{Katz 2021b} have been established by the RDA FAIR for Research Software (FAIR4RS) Working Group \cite{Barker 2022} and are gradually building traction, particularly in the life sciences. A remaining challenge is how citations of research software can be practically propagated following their execution. 
-
-While sharing of research software helps distribute the computational methods, the \emph{way} software is used for a particular analysis requires additional measures to make it \emph{reproducible} \cite{Stodden 2016,Sandve 2013}.
-
-\emph{Computational Workflows} (or \glspl{scientific workflow}) are used to structure and automate data analysis pipelines so they can be scalable, portable and explainable \cite{Atkinson 2017}, and as a side-effect of these features can significantly improve reproducibility \cite{Cohen-Boulakia 2017}. 
-There exists, however, a plethora of workflow systems and languages \cite{Leipzig 2021,Amstutz 2021}, although recent efforts have created the Common Workflow Language \cite{Crusoe 2022} as a standard representation with \footurl{https://www.commonwl.org/user_guide/topics/metadata-and-authorship.html}{FAIR metadata capabilities} that is executable by multiple engines. 
-
-Notably, workflow definitions themselves can be considered FAIR scholarly outputs \cite{Goble 2020} and are published in repositories including Dockstore \cite{Yuen 2021} and WorkflowHub \cite{Goble 2021}.
+Notably, workflow definitions themselves can be considered FAIR scholarly outputs \cite{Goble 2020} -- \emph{FAIR Computational Workflows} which are published in repositories including Dockstore \cite{Yuen 2021} and WorkflowHub \cite{Goble 2021}.
 One could consider computational workflows as a kind of FAIR Research Software \cite{de Visser 2023}, but by their nature workflows also \emph{encourage the FAIR principles} (e.g. preparing a computational tool for a workflow system \cite{Brack 2022a} may include publishing it in a container registry). Workflow systems are also useful for creating and consuming FAIR Digital Objects \cite{Wittenburg 2022b}, and in addition workflow systems commonly provide explicit provenance logs of their executions.
 
 Approaches to describing workflow provenance in a machine-readable format were initially diverse \cite{Cruz 2009}, and later converged on the use of ontologies \cite{Missier 2010}, most notably using W3C PROV-O \cite{Lebo 2013a} but with various specializations \cite{Garijo 2011,Garijo 2012,Missier 2013,Belhajjame 2015,Cuevas-Vicenttín 2016}. 
