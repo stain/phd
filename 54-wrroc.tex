@@ -75,7 +75,7 @@ RO-Crate is general enough to be able to describe any dataset, but can also be m
 \emph{profiles}.
 At the same time, the broad set of types and properties from Schema.org, complemented by a few additional terms from other vocabularies, make the RO-Crate model capable of expressing a wide range of contextual information that complements and enriches the core information specified by the profile.
 This may include, among others, the workflow authors and their affiliations, associated publications, licensing information, related software, etc.
-This is an approach used by WorkflowHub \cite{Goble 2021}, a workflow system agnostic workflow registry which specifies a Workflow RO-Crate profile \cite{Bacall 2022} to gather the workflow definition with such metadata in an archived RO-Crate \footnote{See section \vref{ch5:workflows}.}. 
+This is an approach used by WorkflowHub \cite{Goble 2021}, a workflow system agnostic workflow registry which specifies a Workflow RO-Crate profile \cite{Bacall 2022} to gather the workflow definition with such metadata in an archived RO-Crate \footnote{See Section \vref{ch5:workflows}.}. 
 
 In this work, we present \textbf{Workflow Run RO-Crate} (\acrshort{WRROC}), an extension of RO-Crate for representing computational workflow execution provenance.
 Our main contributions are the following:
@@ -188,7 +188,7 @@ As in Process Run Crate, the execution is described by a \emph{CreateAction}
 that links to the application via \emph{instrument}, but in this case the application must be a workflow, as prescribed by Workflow RO-Crate.
 More specifically, Workflow RO-Crate states that the RO-Crate must contain a main workflow typed as \emph{File}, \emph{SoftwareSourceCode}
 and \emph{ComputationalWorkflow}.
-The execution of the individual workflow steps, instead, is not represented: that is left to the more detailed Provenance Run Crate profile (described in the next section \vref{ch54:provenance-run-crate}).
+The execution of the individual workflow steps, instead, is not represented: that is left to the more detailed Provenance Run Crate profile (described in the next Section \vref{ch54:provenance-run-crate}).
 
 The Workflow Run RO-Crate profile also contains recommendations on how to represent the workflow's input and output parameters, based on the aforementioned Bioschemas~\cite{Gray 2017} ComputationalWorkflow profile.
 All these elements are represented via the \emph{FormalParameter} entity and are referenced from the main workflow via the \emph{input} and
@@ -302,7 +302,7 @@ This profile is the most detailed of the three, and offers the highest level of 
 Support for the Workflow Run RO-Crate profiles presented in this work has been implemented in a number of systems, showing support from the community and demonstrating their usability in practice.
 We describe seven of these implementations (one in a conversion tool and six in WfMS) in the following sections.
 These tools have been developed in parallel by different teams, and independently from each other. 
-RO-Crate has a strong ecosystem of tools \cite{Soiland-Reyes 2022a} (section \vref{ch5:tooling}), and the \acrshort{WRROC} implementations have either re-used these or added their own approach to the standards.
+RO-Crate has a strong ecosystem of tools \cite{Soiland-Reyes 2022a} (Section \vref{ch5:tooling}), and the \acrshort{WRROC} implementations have either re-used these or added their own approach to the standards.
 
 
 \subsubsection{Runcrate}\label{ch54:runcrate}
@@ -321,7 +321,7 @@ This functionality has also been used as a lightweight validator for the various
 We also added a \emph{run} subcommand to re-execute the computation described by an input Workflow Run Crate or Provenance Run Crate where CWL was used as a workflow language.
 It works by mapping the RO-Crate description of input parameters and their values (the workflow's
 \emph{input} and the action's \emph{object}) to the format expected by CWL, which is then used to relaunch the workflow on the input data.
-This functionality shows the machine-actionability of the profiles to support reproducibility, and was used to successfully re-execute the digital pathology annotation workflow described in section \vref{ch54:provenance-run-crate-for-digital-pathology}.
+This functionality shows the machine-actionability of the profiles to support reproducibility, and was used to successfully re-execute the digital pathology annotation workflow described in Section \vref{ch54:provenance-run-crate-for-digital-pathology}.
 
 Of course, achieving a full re-execution in the general case may not always be possible: reproducibility is supported by the profiles, but also benefits from the characteristics of the workflow language (which should provide a clear formalism to map input items to their corresponding parameter slots) and from cooperation on the part of the workflow's author, who can help considerably by containerizing the environment required by each step and providing the relevant annotations (if allowed by the workflow language).
 
@@ -712,14 +712,14 @@ The Workflow Run RO-Crate profiles, the associated tooling, the implementations 
 The \acrshort{WRROC} community brings together members of the RO-Crate community~\cite{Soiland-Reyes 2022a}, \acrshort{WfMS} users and developers, Workflow users and developers, GA4GH~\cite{Rehm 2021} Cloud developers and provenance model authors, and is open to anyone who is interested in the representation of workflow provenance.
 The inclusion of WfMS developers and workflow users was key to keeping the specifications flexible, easy to implement and grounded on real use cases, while the diversity of the stakeholders allowed to keep a plurality of viewpoints while driving the model's development forward.
 
-One of the main benefits of this development process is that the profiles are already in use, with seven implementations (six WfMS and one conversion tool) already available as described in section \vref{ch54:implementations}.
+One of the main benefits of this development process is that the profiles are already in use, with seven implementations (six WfMS and one conversion tool) already available as described in Section \vref{ch54:implementations}.
 
 In the following subsections, we provide an evaluation of the metadata coverage of runcrate and we discuss WRROC relates to standards such as W3C PROV and to other community projects.
 
 
 \subsubsection{Evaluation of metadata coverage using runcrate convert}
 
-In order to assess the metadata coverage of \emph{Leo 2023a} (section \vref{ch54:runcrate}), we performed a qualitative analysis of the tool's \emph{convert} mode, in which we evaluated how the generated RO-Crates preserve the metadata contained in the CWLProv ROs from which they are derived.
+In order to assess the metadata coverage of \emph{Leo 2023a} (Section \vref{ch54:runcrate}), we performed a qualitative analysis of the tool's \emph{convert} mode, in which we evaluated how the generated RO-Crates preserve the metadata contained in the CWLProv ROs from which they are derived.
 For this analysis, we followed the same approach as for an earlier evaluation of CWLProv~\cite{de Wit 2022}.
 In that work, we identified and analysed three levels of representation:
 firstly, in RDF; secondly, in a structured, but CWL-specific document;
