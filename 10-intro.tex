@@ -12,9 +12,7 @@ Computational \Glspl{workflow} are ways to structure execution of software tools
 These concepts are explained in further detail in this Section, as well as in Chapter \vref{ch3:background}.
 
 
-\section{Motivation}
-
-\subsection{FAIR Principles}
+\section{FAIR Principles}
 \label{ch10:fair-principles}
 
 The \acrshort{FAIR} Principles \cite{Wilkinson 2016} were introduced to improve sharing and digital reuse of research outputs ("\emph{data}") as part of emerging open research practices. The main goals of FAIR are to support \textbf{F}indability, \textbf{A}ccessability, \textbf{I}nteroperability and \textbf{R}eusability, through machine-readable metadata and standardised publication methods for data, as quoted in Table \vref{ch10:fair}.
@@ -75,52 +73,48 @@ However---with a general lack of skills in data management planning, inadequate 
 From this we can identify challenges with regards to finding practical ways for research software developers to generate and consume FAIR data.
 
 
-\subsection{FAIR Digital Objects}
+\section{Achieving FAIR}
+
+.. Exisubtin
+
+
+\subsection{Existing approaches to implementing FAIR}
+
+GO-FAIR etc. 
+FIP
+
+Linked DAta go here
+
+
+The vision on the Semantic Web \cite{Berners-Lee 1999} were proposed as a way to make structured data on the Web. This evolved into a \acrfull{LD} stack that uses logic-based ontologies, Web deployment of individually described resources, and cross-references between these resources with \acrfull{URI} identifiers. The Semantic Web then is the ecosystem of such \acrlong{LD} resources, which can be queried, traversed and reasoned about. 
+
+..
+
+
+\subsection{FAIR Digital Objects (FDO)}
 
 \emph{FAIR Digital Object} (\acrshort{FDO}) has been proposed as a machine-actionable ecosystem of scholarly outputs \cite{Schultes 2019}, in theory realising the \acrshort{FAIR} principles 
 %\cite{Wilkinson 2016}
 for a programmable mesh of strongly typed objects, which goes beyond the open data publication practices that the FAIR guidelines have popularised.
 
-FDOs comply to a set of requirements \cite{Anders 2023}, quoted\footnote{
-    Original \emph{FDOF} identifiers from \cite{Bonino 2019} shown in italics.
-    The full list \cite{Anders 2023} also include requirements for persistent identifiers (FDO-PIDR1 -- FDO-PIDR6), attributes (FDO-FDOR1 -- FDO-FDOR11) and resources (FDO-RESR1 -- FDO-RESR2). FDO specifications are detailed further in Section \vref{ch3:next-step-fdo}.
-} below:
-
-\begin{description}
-    \label{ch10:fdo-guidelines}
-        \small
-\item[G1] FDOs should provide a path for long term infrastructure investments that is not tied to any particular technology stack. 
-\item[G2] FDOs need to generate trust in accurate data survival over long periods of time, assuring researchers, funders, and developers that their significant effort in reusing them will be worthwhile. 
-\item[G3] FDOs must offer compliance with the \acrshort{FAIR} principles through measurable indicators of FAIRness.
-\item[G4] FDOs need to support machine actionability as being specified by FDO PR-MachineActionDef-2.0 \cite{Weiland 2022b} or later. 
-\item[G5] FDOs need to support the abstraction principle, i.e., abstracting away details that are not needed at the basic object management level.  At that level there is no need to distinguish among different types such as data, metadata, software, semantic assertions, etc., for data management operations. 
-\item[G6] FDOs need to support stable bindings among all information entities required for machine navigation of the global data space through the use of global, unique, and resolvable persistent identifiers. 
-\item[G7] FDOs need to support encapsulation, such that operations can be associated with FDOs of all types.  
-\item[G8] FDOs need to support technology independence, allowing implementations using different technologies. 
-\item[G9] FDOs need to comply with minimal agreed standards, e.g., for movement of FDOs between systems, for interaction with FDOs, etc., to guarantee FDO interoperability across heterogeneous systems.
-\item[FDO-GR1] \emph{(FDOF1)} A \acrshort{PID}, standing for a globally unique, persistent and resolvable identifier, is assumed to be the basis for FAIR Digital Objects.  Every FDO is assigned one or more PIDs. 
-\item[FDO-GR2] \emph{(FDOF2)} A PID resolves to a structured record (PID Record) compliant with a specified PID Profile which leads to resolution results that enable programmatic resolution from PID back to the FDO and its elements as specified by these requirements.  PID Records represent the information characterising FDOs and together with their resolving PIDs they can themselves be FDOs.
-\item[FDO-GR3] \emph{(FDOF3)} If an FDO contains a structured bit-sequence, the structured PID record includes at least a reference to the location(s) 1 where the bit-sequence encoding the content of a FAIR-DO (FDO) can be accessed as well as the type definition of the FDO.  The structured record may also contain PIDs pointing to Metadata FDOs describing properties of the target FDO. 
-\item[FDO-GR4] \emph{(FDOF4)} The PID record needs to contain mandatory FDO attributes, may contain optional FDO attributes and attributes agreed upon by recognized communities.  Values of attributes can be part of the PID record or they can be references.  Expectations of which attribute values are contained within the PID record and which are references pointing from the record to external sources should be specified in the PID profile or definition of said attribute in a Data Type Registry. 
-\item[FDO-GR5] \emph{(FDOF5)} Each FDO identified by a PID can be accessed or operated on using an interface protocol by specifying the PID of a registered supported operation. 
-\item[FDO-GR6] \emph{(FDOF6)} Any basic FDO interface protocol offers standard 
-\acrfull{CRUD}
-%Create, Read, Update, Delete (CRUD)
-operations on FDOs and a possibility to use extended/domain operations for specific FDO applications.  The addition of an operation to list available extended/domain operation for specific FDO types is strongly recommended. 
-\item[FDO-GR7] \emph{(FDOF7)} The relations between FDO Types and supported operations are maintained in separate registries. 
-\item[FDO-GR8] \emph{(FDOF8)} Metadata can themselves be FDOs which describe the properties of the referenced FDO.  They must be specified by a registered schema that refers to defined and registered metadata categories. 
-\item[FDO-GR9] \emph{(FDOF9)} Metadata can be of different types such as descriptive, domain specific, provenance, system, access permissions, transactions, etc. 
-\item[FDO-GR10] \emph{(FDOF10)} Metadata schemas are maintained by communities of practice and are FDOs.  Such metadata schemas should therefore themselves follow FAIR principles. 
-\item[FDO-GR11] \emph{(FDOF11)} A collection of FDOs is also an FDO.  The content of collection FDOs describes its construction using an agreed formal language which specifies the relationships of the constituent members.  An FDO may be a member of several collections. 
-\item[FDO-GR12] \emph{(FDOF12)} Deletion of an FDO must lead to standardised and thus machine interpretable tombstone notes in metadata and PID records.  The PID itself is not deleted.
-\item[FDO-GR13] The PID resolution and the FDO Layer information must be “machine actionable” i.e., are machine interpretable and belong to a type for which operations have been specified in symbolic grammar. 
-\item[FDO-GR14] FDOs can be configured in different ways as long as the configurations are compliant with the FDO Specifications. 
-\item[FDO-GR15] The granularity of FDOs is dependent on pragmatic utility decisions within the communities of practice Those communities define the level of useful entities to use in the corresponding application field.
-\end{description}
-
-These guidelines and the more detailed FDO specifications \cite{Ivonne 2023} are largely conceptual in nature, with several demonstrated implementations \cite{Wittenburg 2022a,Lannom 2022a} which in theory can operate side-by-side. Many of these rely on network protocols \cite{Reilly 2009,Sun 2003a} which are not particularly familiar to software developers, and not commonly supported by software libraries or frameworks.
+The FDO guidelines\footnote{Section \vref{ch3:fdo-requirements}} \cite{Anders 2023} and the more detailed FDO specifications \cite{Ivonne 2023} are largely conceptual in nature, with several demonstrated implementations \cite{Wittenburg 2022a,Lannom 2022a} which in theory can operate side-by-side. Many of these rely on network protocols \cite{Reilly 2009,Sun 2003a} which are not particularly familiar to software developers, and not commonly supported by software libraries or frameworks.
 
 This divergence, while sound from a technical perspective, raises organisational challenges for wider adoption of FDOs, e.g. within EOSC and research infrastructures, and might be introducing a steeper learning curve than already exists for FAIR.
+
+
+
+\subsection{Research Objects}
+
+Importance of processes to FAIR. Reproducibility. 
+
+\acrfullpl{RO}
+\cite{Bechhofer 2013} have been proposed as a mechanism to capture a range of diverse scholarly outputs in a single archivable item with detailed metadata. The RO concept was first realised using Semantic Web ontologies \cite{myExperiment 2009,Belhajjame 2015} -- these approaches primarily targetted long-term preservation of \glspl{scientific workflow}, utillised by RO as a mechanism to capture computational methods.
+
+The principles of Research Objects extend far beyond workflows; however, early RO implementations mainly focused on capturing software \cite{Goble 2018}. To some extent the lack of wider adoption of ontology-based ROs can also be explained by developers of researcher-facing software and platforms (e.g. repositories, data management systems) having a lack of familiarity with use of Semantic Web technology -- or worse, they tried and then struggled \cite{Carriero 2010,Tudorache 2020}.
+
+From this, a challenge is to make Linked Data technology approachable for developers who are best placed at implementing the FAIR principles, in platforms that are effectively making Research Objects.
+
+
 
 
 \subsection{Computational Workflows}
@@ -137,16 +131,6 @@ While sharing of research software helps distribute the computational methods, t
 Several challenges emerge when considering sharing of workflows as FAIR digital objects. For instance, a workflow composes multiple tools that themselves need to be shared. Data used by a workflow have their own attribution and licenses. The execution of a workflow produces many intermediate data, but understanding that data creation requires deep knowledge about the particular \acrfull{WfMS}.
 
 
-\subsection{Research Objects and Linked Data}
-
-The vision on the Semantic Web \cite{Berners-Lee 1999} were proposed as a way to make structured data on the Web. This evolved into a \acrfull{LD} stack that uses logic-based ontologies, Web deployment of individually described resources, and cross-references between these resources with \acrfull{URI} identifiers. The Semantic Web then is the ecosystem of such \acrlong{LD} resources, which can be queried, traversed and reasoned about. 
-
-\acrfullpl{RO}
-\cite{Bechhofer 2013} have been proposed as a mechanism to capture a range of diverse scholarly outputs in a single archivable item with detailed metadata. The RO concept was first realised using Semantic Web ontologies \cite{myExperiment 2009,Belhajjame 2015} -- these approaches primarily targetted long-term preservation of \glspl{scientific workflow}, utillised by RO as a mechanism to capture computational methods.
-
-The principles of Research Objects extend far beyond workflows; however, early RO implementations mainly focused on capturing software \cite{Goble 2018}. To some extent the lack of wider adoption of ontology-based ROs can also be explained by developers of researcher-facing software and platforms (e.g. repositories, data management systems) having a lack of familiarity with use of Semantic Web technology -- or worse, they tried and then struggled \cite{Carriero 2010,Tudorache 2020}.
-
-From this, a challenge is to make Linked Data technology approachable for developers who are best placed at implementing the FAIR principles, in platforms that are effectively making Research Objects.
 
 
 
