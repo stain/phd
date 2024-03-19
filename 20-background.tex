@@ -34,6 +34,50 @@ FDOs have been recognised by the European Open Science Cloud (\footurl{https://e
   \label{ch3:fig:fdo}
 \end{figure}
 
+\subsection{FDO requirements}\label{ch3:fdo-requirements}
+
+FDOs comply to a set of requirements \cite{Anders 2023}, quoted below:
+
+\begin{description}
+  \label{ch10:fdo-guidelines}
+      \small
+\item[G1] FDOs should provide a path for long term infrastructure investments that is not tied to any particular technology stack. 
+\item[G2] FDOs need to generate trust in accurate data survival over long periods of time, assuring researchers, funders, and developers that their significant effort in reusing them will be worthwhile. 
+\item[G3] FDOs must offer compliance with the \acrshort{FAIR} principles through measurable indicators of FAIRness.
+\item[G4] FDOs need to support machine actionability as being specified by FDO PR-MachineActionDef-2.0 \cite{Weiland 2022b} or later. 
+\item[G5] FDOs need to support the abstraction principle, i.e., abstracting away details that are not needed at the basic object management level.  At that level there is no need to distinguish among different types such as data, metadata, software, semantic assertions, etc., for data management operations. 
+\item[G6] FDOs need to support stable bindings among all information entities required for machine navigation of the global data space through the use of global, unique, and resolvable persistent identifiers. 
+\item[G7] FDOs need to support encapsulation, such that operations can be associated with FDOs of all types.  
+\item[G8] FDOs need to support technology independence, allowing implementations using different technologies. 
+\item[G9] FDOs need to comply with minimal agreed standards, e.g., for movement of FDOs between systems, for interaction with FDOs, etc., to guarantee FDO interoperability across heterogeneous systems.
+\item[FDO-GR1] \emph{(FDOF1)} A \acrshort{PID}, standing for a globally unique, persistent and resolvable identifier, is assumed to be the basis for FAIR Digital Objects.  Every FDO is assigned one or more PIDs. 
+\item[FDO-GR2] \emph{(FDOF2)} A PID resolves to a structured record (PID Record) compliant with a specified PID Profile which leads to resolution results that enable programmatic resolution from PID back to the FDO and its elements as specified by these requirements.  PID Records represent the information characterising FDOs and together with their resolving PIDs they can themselves be FDOs.
+\item[FDO-GR3] \emph{(FDOF3)} If an FDO contains a structured bit-sequence, the structured PID record includes at least a reference to the location(s) 1 where the bit-sequence encoding the content of a FAIR-DO (FDO) can be accessed as well as the type definition of the FDO.  The structured record may also contain PIDs pointing to Metadata FDOs describing properties of the target FDO. 
+\item[FDO-GR4] \emph{(FDOF4)} The PID record needs to contain mandatory FDO attributes, may contain optional FDO attributes and attributes agreed upon by recognized communities.  Values of attributes can be part of the PID record or they can be references.  Expectations of which attribute values are contained within the PID record and which are references pointing from the record to external sources should be specified in the PID profile or definition of said attribute in a Data Type Registry. 
+\item[FDO-GR5] \emph{(FDOF5)} Each FDO identified by a PID can be accessed or operated on using an interface protocol by specifying the PID of a registered supported operation. 
+\item[FDO-GR6] \emph{(FDOF6)} Any basic FDO interface protocol offers standard 
+\acrfull{CRUD}
+%Create, Read, Update, Delete (CRUD)
+operations on FDOs and a possibility to use extended/domain operations for specific FDO applications.  The addition of an operation to list available extended/domain operation for specific FDO types is strongly recommended. 
+\item[FDO-GR7] \emph{(FDOF7)} The relations between FDO Types and supported operations are maintained in separate registries. 
+\item[FDO-GR8] \emph{(FDOF8)} Metadata can themselves be FDOs which describe the properties of the referenced FDO.  They must be specified by a registered schema that refers to defined and registered metadata categories. 
+\item[FDO-GR9] \emph{(FDOF9)} Metadata can be of different types such as descriptive, domain specific, provenance, system, access permissions, transactions, etc. 
+\item[FDO-GR10] \emph{(FDOF10)} Metadata schemas are maintained by communities of practice and are FDOs.  Such metadata schemas should therefore themselves follow FAIR principles. 
+\item[FDO-GR11] \emph{(FDOF11)} A collection of FDOs is also an FDO.  The content of collection FDOs describes its construction using an agreed formal language which specifies the relationships of the constituent members.  An FDO may be a member of several collections. 
+\item[FDO-GR12] \emph{(FDOF12)} Deletion of an FDO must lead to standardised and thus machine interpretable tombstone notes in metadata and PID records.  The PID itself is not deleted.
+\item[FDO-GR13] The PID resolution and the FDO Layer information must be “machine actionable” i.e., are machine interpretable and belong to a type for which operations have been specified in symbolic grammar. 
+\item[FDO-GR14] FDOs can be configured in different ways as long as the configurations are compliant with the FDO Specifications. 
+\item[FDO-GR15] The granularity of FDOs is dependent on pragmatic utility decisions within the communities of practice Those communities define the level of useful entities to use in the corresponding application field.
+\end{description}
+
+Original \emph{FDOF} identifiers from \cite{Bonino 2019} shown in italics above.
+The full list in \cite{Anders 2023} also include requirements for persistent identifiers (FDO-PIDR1 -- FDO-PIDR6), attributes (FDO-FDOR1 -- FDO-FDOR11) and resources (FDO-RESR1 -- FDO-RESR2). 
+The FDO specifications are detailed further in Section \vref{ch3:next-step-fdo}.
+
+%\normalsize
+  
+
+
 \subsection{FDO approaches}\label{ch3:fdo-approaches}
 
 FDO is an evolving concept. A set of FDO Demonstrators \cite{Wittenburg 2022a} highlights how current adapters are approaching implementations of FDO from different angles:
@@ -59,7 +103,7 @@ The FAIR Digital Object Forum \cite{FAIRDigitalObjects} working groups have prep
 
 The \textbf{FDO Forum Document Standards} \cite{Weiland 2022a} documents the recommendation process within the forum, starting at \emph{Working Draft} (WD) status within the closed working group and later within the open forum, then \emph{Proposed Recommendation} (PR) published for public review, finalised as \emph{FDO Forum Recommendation} (REC) following any revisions. In addition, the forum may choose to \emph{endorse} existing third-party notes and specifications.
 
-The \textbf{FDO Requirement Specifications} \cite{Anders 2023} is an update of \cite{Bonino 2019} as the foundational definition of FDO. This sets the criteria for classifying an digital entity as a FAIR Digital Object, allowing for multiple implementations. The requirements shown in Table \vref{ch3:fdo-checks} are largely equivalent, but in this specification clarified with references to other FDO documents.
+The \textbf{FDO Requirement Specifications} \cite{Anders 2023} is an update of \cite{Bonino 2019} as the foundational definition of FDO. This sets the criteria for classifying an digital entity as a FAIR Digital Object, allowing for multiple implementations. The requirements shown in Table \vref{ch3:fdo-checks} are largely equivalent, but in this specification clarified and expanded with references to other FDO documents.
 
 \textbf{Machine Actionability}\label{def:machineactionable} \cite{Weiland 2022b} sets out to define what is meant by \emph{machine actionability} for FDOs. \emph{Machine readable} is defined as elements of bit-sequences defined by structural specification, \emph{machine interpretable} elements that can be identified and related with semantic artefacts, while \emph{machine actionable} are elements with a type with operations in a symbolic grammar. The document largely describes requirements for resolving an FDO to metadata, and how types should be related to possible operations.
 
