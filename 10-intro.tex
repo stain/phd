@@ -1,15 +1,53 @@
+Science is increasingly dependent on digital means, with researchers using computational methods for almost all aspects, ranging from digitising plant specimens in herbariums \cite{Thiers 2016}, to molecular simulations of protein bindings for pharmacetical drug design \cite{Sledz 2018}. 
 
-In this thesis I investigate Linked Data approaches to implementing FAIR Research Objects and sharing reproducible Computational Workflows.
+Academics, government agencies and industry are now commonly making data publicly available under open licenses, feeding a broadening democratisation of science \cite{Kitchin 2021} across social-economic borders\footnote{Although open data practices do not necessarily benefit the Global South \cite{Serwadda 2018}}, and expanding the potential for new multidiciplinary fields, commercialisation, citizen engagement and wider societal benefits \cite{Bisol 2014}.
 
-\acrlong{LD} is a set of practices for publishing and relating data on the Web, based on \acrshort{RDF} technologies which relates different Web resources using controlled vocabularies. 
+Cloud-based computational infrastructures for ``big data'' are readily available for use with a wide range of open source software, making research outputs accessible for further large scale secondary data analysis and detailed visualisations \cite{Hashem 2015}.
 
-\acrshort{FAIR} are a set of principles for making data and their metadata \acrlong{FAIR}, in order for them to be reachable and understandable for programmatic use.
+However, in this accelerated ecosystem of Open Science, concerns have been raised about replicability of research findings \cite{Ioannidis 2005}, flagged as a ``reproducibility crisis'' \cite{Baker 2016}. It is perhaps then ironic that the increased use of computers -- with their inherently repeatable execution mechanisms -- has negatively contributed to this crisis, as research publications do \emph{not} commonly provide sufficient computational details such as code, data downloads or software versions \cite{Stodden 2016}.
 
-\acrfull{RO} is a concept for sharing composites of research artefacts, together with their history and related resources such as software and external references.
+A recent increased focus on reusability of digital data and computational methods has seen the attention of funders and research communities. This led to the development of the \acrshort{FAIR} principles for making data and their metadata \acrlong{FAIR}, in order for them to be retrievable and understandable through programmatic use \cite{Wilkinson 2016}.
+
+One technological measure for achieving FAIR is using \acrlong{LD}, a set of practices for publishing and relating data on the Web using controlled vocabularies, serialised using formats of the \acrfull{RDF}. 
+
+Computational \glspl{Workflow} have been developed as ways to structure execution of software tools, for instance for scientific data analysis, so that, by using a \gls{WfMS}, tool execution is reproducible, scalable and documented. For this purpose, workflow systems have become heavily adopted by some research fields such as life sciences, however the workflows are not commonly shared as part of scholarly outputs.
+
+\acrfull{RO} is a concept proposed for sharing composites of research artefacts, together with their history and related resources such as software, workflows and external references.
  
-Computational \Glspl{workflow} are ways to structure execution of software tools, for instance for scientific data analysis, so that, by using a \gls{WfMS}, tool execution is reproducible, scalable and documented.
+The FAIR principles are widely referenced in Open Science literature, and nominally adapted by many research data repositories, but how can they be translated into practice by typical researchers which may be using workflow systems, but not know any Linked Data technologies? 
 
-These concepts are explained in further detail in this Section, as well as in Chapter \vref{ch3:background}.
+This is the focus for this thesis, where I investigate \emph{Linked Data approaches to implementing FAIR Research Objects and sharing reproducible Computational Workflows}.
+
+\subsection{What else?}
+
+%%
+
+
+
+How are people trying FAIR ? 
+
+A major initiative for looking at implementing FAIR has been FDO.
+
+FDO aims to provide concrete constraints for systems that lead to predictable machine actions / machine actionability.
+
+Reference implemantations. --> RQ1
+
+*Define machine actionability*
+
+--> RQ1
+
+There may be existing FDO implemantations, we look at Web stuff
+
+%%
+
+Then lead into RO-Crate
+
+%% 
+
+Going beyond data into methods and workflows.
+
+
+
 
 
 \section{FAIR Principles}
@@ -75,7 +113,7 @@ From this we can identify challenges with regards to finding practical ways for 
 
 \section{Achieving FAIR}
 
-.. Exisubtin
+.. Existing
 
 
 \subsection{Existing approaches to implementing FAIR}
@@ -83,7 +121,7 @@ From this we can identify challenges with regards to finding practical ways for 
 GO-FAIR etc. 
 FIP
 
-Linked DAta go here
+Linked Data go here
 
 
 The vision on the Semantic Web \cite{Berners-Lee 1999} were proposed as a way to make structured data on the Web. This evolved into a \acrfull{LD} stack that uses logic-based ontologies, Web deployment of individually described resources, and cross-references between these resources with \acrfull{URI} identifiers. The Semantic Web then is the ecosystem of such \acrlong{LD} resources, which can be queried, traversed and reasoned about. 
