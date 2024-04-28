@@ -76,7 +76,7 @@ usable by end-users.
 
 To address this gap, a new community came together
 \cite{Ó Carragáin 2019a} to develop
-\textbf{RO-Crate} --- an \emph{approach to package and aggregate
+\textbf{RO-Crate}---an \emph{approach to package and aggregate
 research artefacts with their metadata and relationships}. The aim of
 this paper is to introduce RO-Crate and assess it as a strategy for
 making multiple types of research artefacts FAIR. Specifically, the
@@ -289,7 +289,7 @@ well-known JSON format, has tooling available for many programming languages.\fo
 The minimal requirements for the root data entity
 metadata\footnote{\url{https://www.researchobject.org/ro-crate/1.1/root-data-entity.html\#direct-properties-of-the-root-data-entity}}
 are \texttt{name}, \texttt{description} and \texttt{datePublished}, as well as a contextual
-entity identifying its \texttt{license} -- additional metadata are commonly
+entity identifying its \texttt{license}---additional metadata are commonly
 added to entities depending on the purpose of the particular RO-Crate.
 
 RO-Crates can be stored, transferred or published in multiple ways,
@@ -605,7 +605,7 @@ containing data entities described using contextual entities.
 In this flattened profile of JSON-LD, each \texttt{\{entity\}} are
 directly under \texttt{@graph} and represents the RDF triples with a
 common \emph{subject} (\texttt{@id}), mapped \emph{properties} like
-\texttt{hasPart}, and \emph{objects} --- as either literal
+\texttt{hasPart}, and \emph{objects}---as either literal
 \texttt{"string"} values, referenced \texttt{\{objects\}} (which
 properties are listed in its own entity), or a JSON \texttt{{[}list{]}}
 of these. If processed as JSON-LD, this forms an RDF graph by matching
@@ -681,7 +681,7 @@ currently\footnote{\url{https://schema.org/version/13.0/schemaorg-current-http.j
 have \texttt{"@type": "@id"} annotations for implicit object properties, RO-Crate
 JSON-LD distinguishes explicitly between references to other entities
 \texttt{\{"@id": "\#alice"}\}
-and string values \texttt{"Alice"} -- meaning
+and string values \texttt{"Alice"}---meaning
 RO-Crate applications can find references for corresponding entities
 and IRIs without parsing the \texttt{@context} to understand a particular
 property. Notably this is exploited by the \textit{ro-crate-html-js}
@@ -996,7 +996,7 @@ ideally with a declared licence and workflow language. Specific
 additional recommendations such as on identifiers is also needed to meet
 the emerging requirements of FAIR Digital
 Objects.\footnote{\url{https://fairdo.org/}} Work has now
-begun\footnote{\url{https://github.com/ResearchObject/ro-crate/issues/153} was implemented after publication of this article -- see Section \vref{ch61:profiles}.} to
+begun\footnote{\url{https://github.com/ResearchObject/ro-crate/issues/153} was implemented after publication of this article---see Section \vref{ch61:profiles}.} to
 formalise these different \textit{profiles} of RO-Crates, which may impose
 additional constraints based on the needs of a specific domain or use case.
 
@@ -1027,26 +1027,10 @@ with WorkflowHub.
 \paragraph{Profile for describing workflows}
 \label{ch5:profile-for-describing-workflows}
 
-Being cross-domain, WorkflowHub has to cater for many different workflow
-systems. Many of these, for instance Nextflow
-\cite{Di Tommaso 2017} and Snakemake
-\cite{Köster 2012}, by
-virtue of their script-like nature, reference multiple neighbouring
-files typically maintained in a GitHub repository. This calls for a data
-exchange method that allows keeping related files together. WorkflowHub
-has tackled this problem by adopting RO-Crate as the packaging mechanism
-\cite{Bietrix 2021}, typing and
-annotating the constituent files of a workflow and --- crucially ---
-marking up the workflow language, as many workflow engines use common
-file extensions like \texttt{*.xml} and \texttt{*.json}. Workflows are
-further described with authors, license, diagram previews and a listing
-of their inputs and outputs. RO-Crates can thus be used for
-interoperable deposition of workflows to WorkflowHub, but are also used
-as an archive for downloading workflows, embedding metadata registered
-with the WorkflowHub entry and translated workflow files such as
-abstract Common Workflow Language (CWL)
-\cite{Crusoe 2022} definitions and
-diagrams \cite{Goble 2021}.
+Being cross-domain, WorkflowHub has to cater for many different workflow systems. Many of these, for instance Nextflow \cite{Di Tommaso 2017} and Snakemake \cite{Köster 2012}, by virtue of their script-like nature, reference multiple neighbouring files typically maintained in a GitHub repository.
+This calls for a data exchange method that allows keeping related files together.
+WorkflowHub has tackled this problem by adopting RO-Crate as the packaging mechanism \cite{Bietrix 2021}, typing and annotating the constituent files of a workflow and---crucially---marking up the workflow language, as many workflow engines use commonfile extensions like \texttt{*.xml} and \texttt{*.json}. Workflows are further described with authors, license, diagram previews and a listing of their inputs and outputs.
+RO-Crates can thus be used for interoperable deposition of workflows to WorkflowHub, but are also used as an archive for downloading workflows, embedding metadata registered with the WorkflowHub entry and translated workflow files such as abstract Common Workflow Language (CWL) \cite{Crusoe 2022} definitions and diagrams \cite{Goble 2021}.
 
 RO-Crate acts therefore as an interoperability layer between registries,
 repositories and users in WorkflowHub. The iterative development between
@@ -1107,7 +1091,7 @@ WorkflowHub has recently enabled minting of Digital Object Identifiers
 workflows, e.g.~\texttt{10.48546/workflowhub.workflow.56.1}
 \cite{Lowe 2021b},
 lowering the barrier for citing workflows as computational methods along
-with their FAIR metadata -- captured within an RO-Crate. While it is not
+with their FAIR metadata---captured within an RO-Crate. While it is not
 an aim for WorkflowHub to be a repository of workflow runs and their
 data, RO-Crates of \emph{exemplar workflow runs} serve as useful
 workflow documentation, as well as being an exchange mechanism that
@@ -1273,7 +1257,7 @@ uses RO-Crate to describe the overall structure and to capture the
 metadata of each item. The existing PARADISEC data collection has been
 ported and captured as RO-Crates. A Web portal then exposes the
 repository and its entries by indexing the RO-Crate metadata files,
-presenting a domain-specific view of the items -- the RO-Crate is
+presenting a domain-specific view of the items---the RO-Crate is
 ``hidden'' and does not change the user interface.
 
 
@@ -1349,7 +1333,7 @@ What is significant to note in this approach is the importance of
 achievable, and how RO-Crate can fit into earlier stages of the research
 life cycle.
 
-\subsubsection{Institutional data repositories -- Harvard Data Commons}
+\subsubsection{Institutional data repositories---Harvard Data Commons}
 \label{ch5:institutionalrepos}
 
 The concept of a \textbf{Data Commons} for research collaboration was
@@ -1651,7 +1635,7 @@ have strong \emph{data availability} requirements, they frequently do
 not require authors to include or cite \emph{software, scripts and
 pipelines} used for analysing and producing results \cite{Soiland-Reyes 2020a}.
 Indeed, in the absence of a specific requirement and an editorial policy
-to back it up -- such as eliminating the reference limit -- authors are
+to back it up---such as eliminating the reference limit---authors are
 effectively discouraged from properly and comprehensively citing
 software \cite{Nature 2019}.
 
@@ -1717,11 +1701,11 @@ with unclear functionality, licenses and attributions.
 From this we see that computational workflows are themselves complex
 digital objects that need to be recorded not just as files, but in the
 context of their execution environment, dependencies and analytical
-purpose in research -- as well as other metadata (e.g.~version, license,
+purpose in research---as well as other metadata (e.g.~version, license,
 attribution and identifiers).
 
 It is important to note that having all these computational details in
-order to represent them in an RO-Crate is an ideal scenario -- in
+order to represent them in an RO-Crate is an ideal scenario---in
 practice there will always be gaps of knowledge, and exposing all
 provenance details automatically would require improvements to the data
 sources, workflow, workflow engine and its dependencies. RO-Crate can be

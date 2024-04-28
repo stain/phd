@@ -16,7 +16,7 @@ The \acrshort{FAIR} principles \cite{Wilkinson 2016} encourage sharing of scient
 \acrlong{EOSC}
 %European Open Science Cloud 
 \footurl{https://www.eosc.eu/}{(EOSC)} 
-has promoted adaptation of FAIR data sharing of data resources across electronic research infrastructures \cite{Mons 2017}. The EOSC Interoperability Framework \cite{Kurowski 2021} puts particular emphasis on how interoperability can be achieved technically, semantically, organisationally, and legally -- laying out a vision of how data, publication, software and services can work together to form an ecosystem of digital objects that are extensively described. Such descriptions for interoperability connect a range of information -- from protocols and presentations, to hardware designs and scientific workflows, including extensive metadata of the information itself.
+has promoted adaptation of FAIR data sharing of data resources across electronic research infrastructures \cite{Mons 2017}. The EOSC Interoperability Framework \cite{Kurowski 2021} puts particular emphasis on how interoperability can be achieved technically, semantically, organisationally, and legally---laying out a vision of how data, publication, software and services can work together to form an ecosystem of digital objects that are extensively described. Such descriptions for interoperability connect a range of information---from protocols and presentations, to hardware designs and scientific workflows, including extensive metadata of the information itself.
 
 Specifically, the EOSC Interoperability framework highlights the emerging 
 \acrfull{FDO}
@@ -27,7 +27,7 @@ In other discourse, Linked Data \cite{Bizer 2009} has been seen as an establishe
 
 One challenge that may, perhaps counter-intuitively, steer developers towards a not-invented-here mentality \cite{Stefi 2015b,Stefi 2015a} when exposing their data on the Web is the heterogeneity and apparent complexity of Semantic Web approaches themselves \cite{Meroño-Peñuela 2021b}.
 
-These approaches -- FDO and Linked Data -- thus, form two of the major avenues for allowing developers and the wider research community to achieve the goal of FAIR data. Given their importance, in this article we compare FAIR Digital Objects with Linked Data and the Web architecture in the context of the discourse around FAIR data.
+These approaches---FDO and Linked Data---thus, form two of the major avenues for allowing developers and the wider research community to achieve the goal of FAIR data. Given their importance, in this article we compare FAIR Digital Objects with Linked Data and the Web architecture in the context of the discourse around FAIR data.
 
 Concretely, the contribution of this paper is a {\bf systematic comparison between FDO and Linked Data using 5 different conceptual frameworks} that capture different perspectives on interoperability and readiness for implementation.
 
@@ -315,11 +315,11 @@ A key observation from this is that simply using DOIP does not achieve many of t
 
 \begin{itemize}
   \item
-    G1 and G2 call for stability and trustworthiness. While the foundations of both DOIP and Linked Data approaches are now well established -- the FDO requirements and in particular, how they can be implemented, are still taking shape and subject to change.
+    G1 and G2 call for stability and trustworthiness. While the foundations of both DOIP and Linked Data approaches are now well established---the FDO requirements and in particular, how they can be implemented, are still taking shape and subject to change.
   \item
     Machine actionability (G4, G6) is a core feature of both FDOs and Linked Data. Conceptually they differ in the way types and operations are discovered, with FDO seemingly more rigorous. In practice, however, we see that DOIP also relies on dynamic discovery of operations and that operation expectations for types (FDOF7) have not yet been defined.
   \item
-    FDO proposes that types can have additional operations beyond CRUD (FDOF5, FDOF6), while Linked Data mainly achieves this with RESTful patterns using CRUD on additional resources, e.g.~\texttt{order/152/items}. These are mainly stylistics but affect the architectural view -- FDOs have more of an object-oriented approach.
+    FDO proposes that types can have additional operations beyond CRUD (FDOF5, FDOF6), while Linked Data mainly achieves this with RESTful patterns using CRUD on additional resources, e.g.~\texttt{order/152/items}. These are mainly stylistics but affect the architectural view---FDOs have more of an object-oriented approach.
   \item
     FDO puts strong emphasis on the use of PIDs (FDOF1, FDOF2, FDOF3, FDOF5), but in current practice DOIP use local types, local extended operations (FDOF5) and attributes (FDOF4) that are not bound to any global namespace.
   \item
@@ -430,7 +430,7 @@ Based on the analysis in Table \vref{ch3:fdo-web-middleware}, we make the follow
   \item
     HTTP optimisations for performance (e.g.~HTTP/2, multiplexing) are largely used for commercial media distribution (e.g.~Netflix), and not commonly used by providers of FAIR data
   \item
-    Cloud deployment of Web applications give many middleware benefits (Scalability, Distribution, Access transparancy, Location transparancy) -- it is unclear how DOIP as a custom protocol would perform in a cloud setting as most of this infrastructure assumes HTTP as the protocol.
+    Cloud deployment of Web applications give many middleware benefits (Scalability, Distribution, Access transparancy, Location transparancy)---it is unclear how DOIP as a custom protocol would perform in a cloud setting as most of this infrastructure assumes HTTP as the protocol.
   \item
     Programmatically the Web is rather unstructured as middleware, as there are many implementation choices. Usually it is undeclared what to expect for a given URI/service, and programmers follow documented examples for a particular service rather than automated programmatic exploration across providers. This mean one can consider the Web as an ecosystem of smaller middlewares with commonalities.
   \item
@@ -571,7 +571,7 @@ RDA-A1.1-01M
   & Partially realised: Handle system is open\footnote{
         The \texttt{Handle.net} system was previously covered by software patent US6135646A(\url{https://patents.google.com/patent/US6135646A/en}) which expired in 2013 (\url{https://circleid.com/posts/20161025_selling_dona_snake_oil_at_the_itu\#11461})} 
     protocol \cite{Sun 2003b}. One server implementation \cite{Handle}, free\footnote{
-        The \footurl{http://www.handle.net/HNRj/HNR-9-License.pdf}{Handle.net public license} is not OSI-approved \cite{OSI 022}  as an open source license -- it includes usage restrictions and requires Service Agreements. It is not a DOIP requirement to host a local Handle instance, e.g.~EOSC provides the \emph{B2HANDLE} service for acquiring Handle prefixes (\url{https://sp.eudat.eu/catalog/resources/fc6b2d30-09cd-4c25-b71a-7bc6de77910c}).}. 
+        The \footurl{http://www.handle.net/HNRj/HNR-9-License.pdf}{Handle.net public license} is not OSI-approved \cite{OSI 022}  as an open source license---it includes usage restrictions and requires Service Agreements. It is not a DOIP requirement to host a local Handle instance, e.g.~EOSC provides the \emph{B2HANDLE} service for acquiring Handle prefixes (\url{https://sp.eudat.eu/catalog/resources/fc6b2d30-09cd-4c25-b71a-7bc6de77910c}).}. 
     One DOIPv2 implementation \footurl{https://www.cordra.org/}{(Cordra)}: free under BSD-like license (not recognised as Open Source).    
   & LDP is open W3C recommendation \cite{Sporny 2014}. \footurl{https://www.w3.org/wiki/LDP_Implementations}{Multiple LDP implementations}.    
   & DNS, HTTP, TLS, RDF standards are open, free and universal, large number of Open Source clients and \footurl{https://en.wikipedia.org/wiki/Comparison_of_web_server_software}{servers}. \\
@@ -693,7 +693,7 @@ RDA-R1.2-01M
   & Metadata includes provenance information according to community-specific standards
   & FDOF9 FDOF10
   & Unspecified (some Cordra types add \texttt{getProvenance} methods). PID Kernel attributes? 
-  & ----
+  & ---
   & Unspecified W3C PROV-O, PAV \\
 RDA-R1.2-02M
   & Metadata includes provenance information according to a cross-community language
@@ -738,7 +738,7 @@ RDA-R1.3-02D
 \item
   FDO/DOIP are stronger on identifier indicators, while Linked Data approach for identifiers relies on best practices. 
 \item
-  Indicators on standard protocols (RDA-A1-04M, RDA-A1-04D, RDA-A1.1-01M, RDA-A1.1-01D) favour LDP's mature standards (HTTP, URI) -- the DOIPv2 specification \cite{DONA 2018} has currently only a couple of implementations and is expressed informally. The underlying Handle system for PIDs is arguably mature and commonly used by researchers (this article alone references about 80 DOIs), however DOIs are more commonly accessed as HTTP redirects through resolvers like \url{https://doi.org/} and \url{http://hdl.handle.net/} rather than the Handle protocol.
+  Indicators on standard protocols (RDA-A1-04M, RDA-A1-04D, RDA-A1.1-01M, RDA-A1.1-01D) favour LDP's mature standards (HTTP, URI)---the DOIPv2 specification \cite{DONA 2018} has currently only a couple of implementations and is expressed informally. The underlying Handle system for PIDs is arguably mature and commonly used by researchers (this article alone references about 80 DOIs), however DOIs are more commonly accessed as HTTP redirects through resolvers like \url{https://doi.org/} and \url{http://hdl.handle.net/} rather than the Handle protocol.
 \item
   RDA-A1-02M and RDA-A1-02D highlights access by manual intervention, which is common for http/https URIs, but also using above PID resolvers for DOIP implementation \footurl{https://www.cordra.org/}{Cordra} (e.g.~\url{https://hdl.handle.net/21.14100/90ec1c7b-6f5e-4e12-9137-0cedd16d1bce}), yet neither LDP, FDO nor DOIP specifications recommends human-readable representations to be provided
 \item
@@ -842,7 +842,7 @@ In Table \vref{ch3:eosctable} we review the EOSC Interoperability Framework (EOS
     & Implied only by some communities, tendency to specialise \\
   Organisational  & Usage recommendations of standardised data formats 
     & None 
-    & None -- but common for metadata (e.g.~JSON-LD) \\
+    & None---but common for metadata (e.g.~JSON-LD) \\
   Organisational  & Usage recommendations of vocabularies 
     & Recommended by community 
     & Common (see \footurl{https://rdmkit.elixir-europe.org/metadata_management}{RDMKit}) \\
@@ -926,7 +926,7 @@ The FAIR Digital Object approach raises many important points for Linked Data pr
 At first glance, the explicit requirements of FDOs may seem to be easy to furfill by different parts of the Semantic Web Cake \cite[slide 10]{Berners-Lee 2000}, as has previously been proposed \cite{Soiland-Reyes 2022d}\footnote{Section \vref{ch2:updating-linked-data-practices-for-fair-digital-object-principles}} .
 However, this deeper investigation, based on multiple frameworks, highlights that the openness and variability of how Linked Data is deployed can make it difficult to achieve the FDO goals without significant effort.
 
-While RDF and Linked Data have been suggested as prime candidates for making FAIR data, we argue that when different developers have too many degrees of freedom (such as serialization formats, vocabularies, identifiers, navigation), interoperability is hampered -- this makes it hard for machines to reliably consume multiple FAIR resources across repositories and data providers. 
+While RDF and Linked Data have been suggested as prime candidates for making FAIR data, we argue that when different developers have too many degrees of freedom (such as serialization formats, vocabularies, identifiers, navigation), interoperability is hampered---this makes it hard for machines to reliably consume multiple FAIR resources across repositories and data providers. 
 Indeed, this may be one reason why the initial FDO effort steered away from Linked Data approaches, but now seems in a danger of opening the many same degrees of freedom within FDO.
 
 We therefore identify the need for a new explicit FDO profile of Linked Data that sets pragmatic constraints and stronger recommendations for consistent and developer-friendly deployment of digital objects. 

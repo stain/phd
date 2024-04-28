@@ -4,7 +4,7 @@ Academics, government agencies and industry are now commonly making data publicl
 
 Cloud-based computational infrastructures for ``big data'' are readily available for use with a wide range of open source software, making research outputs accessible for further large scale secondary data analysis and detailed visualisations \cite{Hashem 2015}.
 
-However, in this accelerated ecosystem of Open Science, concerns have been raised about replicability of research findings \cite{Ioannidis 2005}, flagged as a ``reproducibility crisis'' \cite{Baker 2016}. It is perhaps then ironic that the increased use of computers -- with their inherently repeatable execution mechanisms -- can negatively contribute to this crisis, as research publications do \emph{not} commonly provide sufficient computational details such as code, data downloads or software versions \cite{Stodden 2016}.
+However, in this accelerated ecosystem of Open Science, concerns have been raised about replicability of research findings \cite{Ioannidis 2005}, flagged as a ``reproducibility crisis'' \cite{Baker 2016}. It is perhaps then ironic that the increased use of computers---with their inherently repeatable execution mechanisms---can negatively contribute to this crisis, as research publications do \emph{not} commonly provide sufficient computational details such as code, data downloads or software versions \cite{Stodden 2016}.
 
 A recent increased focus on reusability of digital data and computational methods has seen the attention of funders and research communities. This led to the development of the \acrshort{FAIR} principles for making data and their metadata \acrlong{FAIR}, in order for them to be retrievable and understandable through programmatic use \cite{Wilkinson 2016}.
 
@@ -146,9 +146,9 @@ This divergence, while sound from a technical perspective, raises organisational
 Importance of processes to FAIR. Reproducibility. 
 
 \acrfullpl{RO}
-\cite{Bechhofer 2013} have been proposed as a mechanism to capture a range of diverse scholarly outputs in a single archivable item with detailed metadata. The RO concept was first realised using Semantic Web ontologies \cite{myExperiment 2009,Belhajjame 2015} -- these approaches primarily targetted long-term preservation of \glspl{scientific workflow}, utillised by RO as a mechanism to capture computational methods.
+\cite{Bechhofer 2013} have been proposed as a mechanism to capture a range of diverse scholarly outputs in a single archivable item with detailed metadata. The RO concept was first realised using Semantic Web ontologies \cite{myExperiment 2009,Belhajjame 2015}---these approaches primarily targetted long-term preservation of \glspl{scientific workflow}, utillised by RO as a mechanism to capture computational methods.
 
-The principles of Research Objects extend far beyond workflows; however, early RO implementations mainly focused on capturing software \cite{Goble 2018}. To some extent the lack of wider adoption of ontology-based ROs can also be explained by developers of researcher-facing software and platforms (e.g. repositories, data management systems) having a lack of familiarity with use of Semantic Web technology -- or worse, they tried and then struggled \cite{Carriero 2010,Tudorache 2020}.
+The principles of Research Objects extend far beyond workflows; however, early RO implementations mainly focused on capturing software \cite{Goble 2018}. To some extent the lack of wider adoption of ontology-based ROs can also be explained by developers of researcher-facing software and platforms (e.g. repositories, data management systems) having a lack of familiarity with use of Semantic Web technology---or worse, they tried and then struggled \cite{Carriero 2010,Tudorache 2020}.
 
 From this, a challenge is to make Linked Data technology approachable for developers who are best placed at implementing the FAIR principles, in platforms that are effectively making Research Objects.
 
@@ -157,7 +157,7 @@ From this, a challenge is to make Linked Data technology approachable for develo
 
 \subsection{Computational Workflows}
 
-A growing (if not majority) part of scientific analysis is now conducted using software and computational models. The concept of \emph{Research Software Engineering} \cite{Cohen 2020} has been established along with new professions \emph{Research Software Engineer} \cite{Baxter 2012} and \emph{Data Scientist} \cite{van der Aalst 2014} -- researchers are not just using off-the-shelf software, but also combining computational tools (e.g. pipelines) and writing their own analytical source code (e.g. R scripts) and simulations.
+A growing (if not majority) part of scientific analysis is now conducted using software and computational models. The concept of \emph{Research Software Engineering} \cite{Cohen 2020} has been established along with new professions \emph{Research Software Engineer} \cite{Baxter 2012} and \emph{Data Scientist} \cite{van der Aalst 2014}---researchers are not just using off-the-shelf software, but also combining computational tools (e.g. pipelines) and writing their own analytical source code (e.g. R scripts) and simulations.
 
 From this observation emerges the need to treat software as FAIR artefacts \cite{Lamprecht 2019}, following best practices for documentation \cite{Lee 2018}, open development \cite{Prlić 2012} and ensuring research software is robust \cite{Taschuk 2017} so it can be reused and cited as scholarly outputs \cite{Smith 2016}. 
 With this motivation the principles of FAIR Research Software \cite{Katz 2021b} have been established by the RDA FAIR for Research Software (FAIR4RS) Working Group \cite{Barker 2022} and are gradually building traction, particularly in the life sciences. A remaining challenge is how citations of research software can be practically propagated following their execution. 
@@ -227,12 +227,12 @@ RQ2 is primarily addressed by Chapter \ref{chapter:ro-crate}.
 
 There exists a plethora of \gls{workflow} systems and languages \cite{Leipzig 2021,Amstutz 2021}, although some recent efforts have created the Common Workflow Language \cite{Crusoe 2022} as a standard representation with \footurl{https://www.commonwl.org/user_guide/topics/metadata-and-authorship.html}{FAIR metadata capabilities} that is executable by multiple engines. 
 
-Notably, workflow definitions themselves can be considered FAIR scholarly outputs \cite{Goble 2020} -- \emph{FAIR Computational Workflows} which are published in repositories including Dockstore \cite{Yuen 2021} and WorkflowHub \cite{Goble 2021}.
+Notably, workflow definitions themselves can be considered FAIR scholarly outputs \cite{Goble 2020}---\emph{FAIR Computational Workflows} which are published in repositories including Dockstore \cite{Yuen 2021} and WorkflowHub \cite{Goble 2021}.
 One could consider computational workflows as a kind of FAIR Research Software \cite{de Visser 2023}, but by their nature workflows also \emph{encourage the FAIR principles} (e.g. preparing a computational tool for a workflow system \cite{Brack 2022a} may include publishing it in a container registry). Workflow systems are also useful for creating and consuming FAIR Digital Objects \cite{Wittenburg 2022b}, and in addition workflow systems commonly provide explicit provenance logs of their executions.
 
 Approaches to describing workflow provenance in a machine-readable format were initially diverse \cite{Cruz 2009}, and later converged on the use of ontologies \cite{Missier 2010}, most notably using W3C PROV-O \cite{Lebo 2013a} but with various specializations \cite{Garijo 2011,Garijo 2012,Missier 2013,Belhajjame 2015,Cuevas-Vicenttín 2016}. 
 
-The tendency for workflow provenance models to diverge may be down to differences in the execution semantics of different workflow systems -- which if accurately reflected in provenance means further differences at this level. This in turn leads to incompatibility of provenance traces and lack of common tooling. In addition execution details may obscure the link from the computational procesesses and the final workflow data outputs that researchers ultimately care more about than the intricacies of the workflow engine.
+The tendency for workflow provenance models to diverge may be down to differences in the execution semantics of different workflow systems---which if accurately reflected in provenance means further differences at this level. This in turn leads to incompatibility of provenance traces and lack of common tooling. In addition execution details may obscure the link from the computational procesesses and the final workflow data outputs that researchers ultimately care more about than the intricacies of the workflow engine.
 
 The third research question from these considerations is therefore: 
 
@@ -262,7 +262,7 @@ Chapter \vref{chapter:background} gives the background of the concepts \emph{FAI
 
 Chapter \vref{chapter:fdo} targets RQ1 and contributes a framework-based evaluation of Linked Data and FDO as possible architectures for implementing a distributed object system for the purpose of FAIR data publishing. The discussion in this chapter considers how the two approaches can benefit from each other's strengths. 
 
-Chapter \vref{chapter:ro-crate} addresses RQ2 by introducing the contribution of \emph{RO-Crate} -- a pragmatic data packaging mechanism using Linked Data standards to implement FDO and be extensible for domain-specific metadata.  
+Chapter \vref{chapter:ro-crate} addresses RQ2 by introducing the contribution of \emph{RO-Crate}---a pragmatic data packaging mechanism using Linked Data standards to implement FDO and be extensible for domain-specific metadata.  
 
 Chapter \vref{chapter:workflows} considers RQ3 by exploring the relationship between Computational Workflows and FAIR practices using RO-Crate and FDO, with use cases from molecular dynamics and specimen digitization. The contribution of the \emph{Workflow Run Crate profiles} is presented as an interoperable way to capture and publish workflow execution provenance. 
 
