@@ -1,0 +1,70 @@
+
+
+\section{Research Outline and Questions}
+\label{intro:outline}
+
+Following the motivation in Section \vref{ch10:motivation}, this section elaborates Research Questions (RQ) on three interlinked ideas:
+
+\begin{enumerate}
+    \item Realization of the FAIR Digital Object concept using Web technologies.
+    \item Implementing FAIR Research Objects with an pragmatic use of Linked Data practices.
+    \item Unifying a FAIR Digital Object approach for computational workflows
+\end{enumerate}
+
+
+\subsection{Aims for FAIR Digital Objects on the Web (RQ1)}
+\label{intro:rq1}
+
+The Web is ubiquitous in modern software engineering \cite{Taivalsaari 2021}, used for everything from user interfaces, mobile applications and controlling devices to enterprise cross-platform integrations, backend data processing and microservices, frequently utilising cloud computing which itself is controlled using Web technologies \cite{Marinescu 2023}.
+
+The goals of \acrfullpl{FDO} seem to have an overlap with the motivations for the Semantic Web and Linked Data, and it is not clear if a different set of network protocols are required for FDO.
+
+A relevant research question therefore is: 
+
+\paragraph{RQ1:}\label{rq1} 
+Can the promising FDO concept be realised using existing Web technology, taking into account the lessons learnt from the early Semantic Web developments and more recent Linked Data practices?
+
+I address RQ1 in Chapters \ref{chapter:background} and \ref{chapter:fdo}.
+
+
+\subsection{Aims for FAIR Research Objects (RQ2)}
+\label{intro:rq2}
+
+Following the lessons learnt on early \acrfull{RO} implementations and the emerging \acrshort{FAIR} principles, a new engagement between the RO and digital libraries communities started in 2018, where it was agreed to formulate a lightweight approach to Research Objects \cite{Sefton 2018,Ó Carragáin 2019b} for the purpose of data packaging. From this initative, the updated aims of \emph{FAIR Research Objects} can be summarised as:
+ 
+\begin{itemize}
+    \item Describe and package data collections, datasets, software etc. with their metadata.
+    \item Platform-independent object exchange between repositories and services.
+    \item Support reproducibility and analysis: link data with codes and workflows.
+    \item Transfer of sensitive/large distributed datasets with persistent identifiers.
+    \item Aggregate citations and persistent identifiers.
+    \item Propagate provenance and existing metadata.
+    \item Publish and archive mixed objects and references.
+    \item Reuse existing standards, but hide their complexity.
+\end{itemize}
+
+Following from these aims, the second research question is: 
+
+\paragraph{RQ2:}\label{rq2}  Can a more pragmatic use of Linked Data practices better implement Research Objects for a wider developer audience, by using familiar Web technologies and give lightweight recommendations?
+
+RQ2 is primarily addressed by Chapter \ref{chapter:ro-crate}.
+
+
+\subsection{Aims for FAIR Computational Workflows (RQ3)}
+\label{intro:rq3}
+
+There exists a plethora of \gls{workflow} systems and languages \cite{Leipzig 2021,Amstutz 2021}, with recent efforts creating the Common Workflow Language \cite{Crusoe 2022} as a standard representation with \footurl{https://www.commonwl.org/user_guide/topics/metadata-and-authorship.html}{FAIR metadata capabilities} that is executable by multiple engines. 
+
+Notably, workflow definitions themselves can be considered FAIR scholarly outputs \cite{Goble 2020}---\emph{FAIR Computational Workflows} which are published in repositories including Dockstore \cite{Yuen 2021} and WorkflowHub \cite{Goble 2021}.
+One could consider computational workflows as a kind of FAIR Research Software \cite{de Visser 2023}, but by their nature workflows also \emph{encourage the FAIR principles} (e.g. preparing a computational tool for a workflow system \cite{Brack 2022a} may include publishing it in a container registry). Workflow systems are also useful for creating and consuming FAIR Digital Objects \cite{Wittenburg 2022b}, and in addition workflow systems commonly provide explicit provenance logs of their executions.
+
+Approaches to describing workflow provenance in a machine-readable format were initially diverse \cite{Cruz 2009}, and later converged on the use of ontologies \cite{Missier 2010}, most notably using W3C PROV-O \cite{Lebo 2013a} but with various specializations \cite{Garijo 2011,Garijo 2012,Missier 2013,Belhajjame 2015,Cuevas-Vicenttín 2016}. 
+
+The tendency for workflow provenance models to diverge may be down to differences in the execution semantics of different workflow systems---which if accurately reflected in provenance means further differences at this level. This in turn leads to incompatibility of provenance traces and lack of common tooling. In addition execution details may obscure the link from the computational procesesses and the final workflow data outputs that researchers ultimately care more about than the intricacies of the workflow engine.
+
+The third research question from these considerations is therefore: 
+
+\paragraph{RQ3:} \label{rq3} Can a FAIR Digital Object approach for computational workflows unify machine-readable descriptions of research software, data and provenance, which can be consistently implemented by developers of different workflow management systems?
+
+The multiple aspects of RQ3, as highlighted in this section, are adressed by Chapter \ref{chapter:workflows}.
+
