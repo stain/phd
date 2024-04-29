@@ -17,7 +17,7 @@ Following the motivation in Section \vref{ch10:motivation}, this section elabora
 
 The Web is ubiquitous in modern software engineering \cite{Taivalsaari 2021}, used for everything from user interfaces, mobile applications and controlling devices to enterprise cross-platform integrations, backend data processing and microservices, frequently utilising cloud computing which itself is controlled using Web technologies \cite{Marinescu 2023}.
 
-The goals of \acrfullpl{FDO} seem to have an overlap with the motivations for the Semantic Web and Linked Data, and it is not clear if a different set of network protocols are required for FDO.
+The principles of \acrfullpl{FDO} seem important to achieve machine-actionable scholarly outputs, but several of these goals have an overlap with the motivations for the Semantic Web and Linked Data---yet it is not clear if changing from the Web stack to a different set of network protocols are necessary to achieve the FDO benefits.
 
 A relevant research question therefore is: 
 
@@ -55,7 +55,7 @@ RQ2 is primarily addressed by Chapter \ref{chapter:ro-crate}.
 
 There exists a plethora of \gls{workflow} systems and languages \cite{Leipzig 2021,Amstutz 2021}, with recent efforts creating the Common Workflow Language \cite{Crusoe 2022} as a standard representation with \footurl{https://www.commonwl.org/user_guide/topics/metadata-and-authorship.html}{FAIR metadata capabilities} that is executable by multiple engines. 
 
-Notably, workflow definitions themselves can be considered FAIR scholarly outputs \cite{Goble 2020}---\emph{FAIR Computational Workflows} which are published in repositories including Dockstore \cite{Yuen 2021} and WorkflowHub \cite{Goble 2021}.
+Notably, workflow definitions themselves can be considered FAIR scholarly outputs \cite{Goble 2020}---\emph{FAIR Computational Workflows} which are published in repositories like Dockstore \cite{Yuen 2021} and WorkflowHub \cite{Goble 2021}.
 One could consider computational workflows as a kind of FAIR Research Software \cite{de Visser 2023}, but by their nature workflows also \emph{encourage the FAIR principles} (e.g. preparing a computational tool for a workflow system \cite{Brack 2022a} may include publishing it in a container registry). Workflow systems are also useful for creating and consuming FAIR Digital Objects \cite{Wittenburg 2022b}, and in addition workflow systems commonly provide explicit provenance logs of their executions.
 
 Approaches to describing workflow provenance in a machine-readable format were initially diverse \cite{Cruz 2009}, and later converged on the use of ontologies \cite{Missier 2010}, most notably using W3C PROV-O \cite{Lebo 2013a} but with various specializations \cite{Garijo 2011,Garijo 2012,Missier 2013,Belhajjame 2015,Cuevas-Vicenttín 2016}. 
