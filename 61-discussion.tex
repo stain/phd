@@ -217,7 +217,7 @@ In this section we consider future directions for RO-Crate and ongoing RO-Crate 
 RO-Crate and its best practices can be considered a type of \emph{middleware} used by application developers to capture and transmit metadata and relate data files that together form some tangible unit (a \emph{
 \acrfull{RO}
 %Research Object
-} \cite{Bechhofer 2013}). While RO-Crate have already been implemented by several repositories and applications such as workflow systems, it is important to also consider the role of user applications in order to increase adoptation of FAIR Research Objects by scholars in general.
+} \cite{Bechhofer 2013}). While RO-Crate have already been implemented by several repositories and applications such as workflow systems, it is important to also consider the role of user applications in order to increase adoption of FAIR Research Objects by scholars in general.
 
 \paragraph{Template-based crates with ya2ro}
 Futher work by the RO-Crate community has created more user-fronting tools such as \footurl{https://github.com/oeg-upm/ya2ro}{Pavel 2023,} which given metadata and identifier in a \acrshort{YAML}
@@ -312,13 +312,13 @@ As introduced in Section \vref{intro:rq3}, we have previously proposed the conce
 That work expands on the well-established motivations for using \glspl{scientific workflow} systems \cite{Möller 2017,Atkinson 2017}, such as supporting Automation, Scalable execution, Abstraction, and Provenance \cite{Ludäscher 2016}, and highlights that workflows themselves benefit from and contribute to FAIR data, for instance providing metadata for describing workflow outputs. 
 In addition workflow themselves can be considered digital objects that should be shared as a reproducible computational method.
 
-Applying the FAIR principles for workflows in practice has however revealed additional challenges, such as lack of clarify of what constitutes a \emph{workflow} as opposed to FAIR Research Software in general \cite{Katz 2021b}, or reduced reusability when the workflow requires unwritten, human-centric operations between computational steps (e.g. trivial file column manipulations) \cite{Wilkinson 2022b}. 
+Applying the FAIR principles for workflows in practice has however revealed additional challenges, such as lack of clarify of what constitutes a \emph{workflow} as opposed to FAIR \acrlong{RS} in general \cite{Katz 2021b}, or reduced reusability when the workflow requires unwritten, human-centric operations between computational steps (e.g. trivial file column manipulations) \cite{Wilkinson 2022b}. 
 
 In developing the repository \footurl{https://workflowhub.eu/}{WorkflowHub} \cite{Goble 2021} we emphasised the importance of preserving and publishing not just executable workflow definitions, 
 but their structured descriptions independent of workflow formats as well as further references to external sources, software required (including the workflow engine).
 For this we developed the Workflow RO-Crate Profile \cite{Bacall 2022}, which became a foundational format for more specific workflow execution profiles (Section \vref{ch54:wrroc}).
 
-One aspect that makes workflow management systems different from research software in general, is that they frequently encourage modularization, in that the composition of steps also can reflect the analytical process that is intended by the scientists.
+One aspect that makes workflow management systems different from Research Software in general, is that they frequently encourage modularization, in that the composition of steps also can reflect the analytical process that is intended by the scientists.
 Mature workflow systems like Galaxy \cite{Galaxy 2022} provide a large collection of re-usable components that wrap underlying command line tools and make them interoperable without manual adjustments. 
 In CWL  \cite{Crusoe 2022}, tool definitions include not just execution details, but also structured input/output definitions, allowing them to be reused and combined in multiple workflows.
 
@@ -468,7 +468,7 @@ The development of Workflow Run Crate was done as a community activity (Section 
 
 When collectively building semantic models, particularly using ontology design patterns \cite{Hitzler 2016}, it can often take much longer to figure out what is the \emph{meaning} of a term (e.g.~its semantics) rather than how it should be formalised in an ontology language. In research domains this often comes down to considering redefining core concepts of the field itself, which in life sciences for instance easily turn into philosophical dialectic arguments \cite{Falk 2010}. 
 
-The recently started Workflows Community Initiative has a working group for \footurl{https://workflows.community/groups/fair/}{FAIR computational workflows}, but before it is able to formalise the FAIR principles for workflows (building on \cite{Goble 2020}), the group had to discuss to length what is or is not a \emph{workflow}, and what makes it different from other research software.
+The recently started Workflows Community Initiative has a working group for \footurl{https://workflows.community/groups/fair/}{FAIR computational workflows}, but before it is able to formalise the FAIR principles for workflows (building on \cite{Goble 2020}), the group had to discuss to length what is or is not a \emph{workflow}, and what makes it different from other \acrlong{RS}.
 
 While such fundamentals are important to get right, they should not become blockers for community progress. In the pragmatic take by the WRROC community for instance, a reverse argument was made that it is not so important if a workflow engine exists or not, but rather that we wanted to capture "workflowy" provenance. The principle of ``I know it when I see it'' does not just apply to censorship of obscene material \cite{Gewirtz 1996}, but also to semantic design. In designing WRROC and RO-Crate it was useful to be constrained by the \cite{schema.org} vocabulary, for instance the type \url{http://schema.org/HowTo}---with current examples showing how to change tires on a car---was also found adequate for describing a computational workflow and its steps in the Provenance Crate Profile (Section \vref{ch54:provenance-run-crate}). 
 
