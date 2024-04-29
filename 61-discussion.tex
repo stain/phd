@@ -6,7 +6,7 @@ In this section I summarise and discuss the findings from the previous chapters,
 \subsection{Making a predictable ecosystem of FAIR digital objects}
 \label{ch61:ecosystem}
 
-The main advantage of scholarly researchers publishing \emph{FAIR data} is to enable machine actionability \cite{Wilkinson 2016}, which again will accelerate further research, such as through computational workflows. 
+The main advantage of scholarly researchers publishing \acrshort{FAIR} data is to enable machine actionability \cite{Wilkinson 2016}, which again will accelerate further research, such as through computational workflows. 
 In practice, data publishing is largely approached either by depositions in general and institutional repositories for Open Data such as Figshare and Zenodo \cite{Dillen 2019a}, or to specialised domain-specific repositories such as in biodiversity \cite{GBIF 2021}. 
 
 European research infrastructures supporting Open Science practices are coalescing their services to form the
@@ -14,7 +14,7 @@ European research infrastructures supporting Open Science practices are coalesci
 %European Open Science Cloud (EOSC)
  \cite{Ayris 2016}, which are embracing \acrshort{FAIR} principles \cite{Mons 2017} and building a common framework for interoperability \cite{Kurowski 2021}. 
 
-While existing practices for implementing FAIR have relied on the Linked Data stack, that is just one possible technology to achieve the benefits of interoperable machine actionability \cite{Mons 2017}. 
+While existing practices for implementing FAIR have relied on the \acrfull{LD} stack, that is just one possible technology to achieve the benefits of interoperable machine actionability \cite{Mons 2017}. 
 
 Chapter \ref{chapter:fdo} explored the emerging concept of \emph{FAIR Digital Objects} (\acrshort{FDO}) \cite{Schultes 2019} as a potential distributed object system for FAIR data, comparing its proposed principles and current practices with the established Linked Data approach. 
 As detailed in Section \vref{ch3:fdo}, FDO defines a handful of constraints and guides for a predictable way to organise complex machine actionable digital entities. 
@@ -56,7 +56,8 @@ If such conventions need to be evolved and specified no matter the protocol basi
 Section \ref{ch2:discussion} found that the basis of Web-based FDOs can be built using only \gls{Signposting} \cite{Van de Sompel 2015,Van de Sompel 2022}, adding a couple of non-intrusive \acrshort{HTTP} headers that are agnostic to metadata standards and serializations. An implementation of such Web-based FDOs was shown in Section \ref{ch4:lightweight-fdo}. 
 
 The Signposting approach has also been highlighted both by \acrshort{EOSC} \cite{Wilkinson 2022a,Wilkinson 2024} and as a possible FDO configuration type \cite{Lannom 2022a}.
-The FAIR-IMPACT project launched an \footurl{https://fair-impact.eu/1st-open-call-support-closed}{open call} where 14 participating institutions participated to build support for Signposting \cite{Soiland-Reyes 2023b} in their data repositories and platforms.
+The FAIR-IMPACT project launched an \footurl{https://fair-impact.eu/1st-open-call-support-closed}{open call} where 14 participating institutions participated to build support for Signposting \cite{Soiland-Reyes 2023b} in their data repositories and platforms. 
+The results showed that development of ``Webby FDOs'' using Signposting for FDO structure and RO-Crate for metadata was largely achievable across participants with often little former experience, for a modest effort equivalent to 5 working days \cite{Soiland-Reyes 2024c} or during a 5 day hackathon \cite{Soiland-Reyes 2024a}.
 
 
 
@@ -82,7 +83,7 @@ Extension points are well defined, and although extending RO-Crate do require so
 An important lesson from this work then is to use ``just enough'' \acrlong{LD} for the desired level of interoperability and knowledge representation.
 While previous efforts to `FAIRify' largely have been concerned about representing the data values using an \acrshort{RDF} data model, this can lead to significant effort needed in developing ontologies and vocabularies. 
 
-RO-Crate is using \cite{schema.org} as its base vocabulary, and tries to follow its philosophy of building a lightweight semantic structure by associating many free text attributes to the same node, rather than making elaborate interconnected semantic objects.
+RO-Crate is using \href{https://schema.org/}{schema.org} as its base vocabulary, and tries to follow its philosophy of building a lightweight semantic structure by associating many free text attributes to the same node, rather than making elaborate interconnected semantic objects.
 For instance, while a \texttt{Person}'s \texttt{affiliation} ideally goes to a \texttt{Organization} with it's own \acrshort{URL} and other attributes, in some cases, a free text string is all information available, and this can be used cirectly as the \texttt{affiliation}. 
 
 With retrospect we can say that this reduction in semantic rigidity compared to use in \acrshort{OWL} ontologies is a move back to the simplicity of early RDF as an open-ended model (see Section \vref{ch3:semweb}), where a property can be used to point to almost anything, and RDF authors are free to use almost any term.
