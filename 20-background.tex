@@ -130,7 +130,7 @@ implemented in the implementations considered here.
 
 Existing FDO implementations \cite{Wittenburg 2022a} are thus not fully consolidated in choices such as protocols, type systems and serialisations---this divergence and corresponding additional technical requirements mean that FDOs are not yet in a single ecosystem.
 
-
+\clearpage
 \section{From the Semantic Web to Linked Data}\label{ch3:ld}
 
 In order to describe \emph{Linked Data} as it is used today, we will start with an (opinionated) description of the evolution of its foundation, the \emph{Semantic Web}.
@@ -146,8 +146,8 @@ The distinction between locator-full and locator-less identifiers has weakened i
 RDF 1.1 formats use Unicode to support \acrshortpl{IRI} \cite{Dürst 2005}, which extend URIs to include international characters and domain names.} as the primary identifier of the \emph{subject} (what the statement is about), \emph{predicate} (relation/attribute of the subject) and \emph{object} (what is pointed to)---see Listing \vref{ch3:triples}.
 By using URIs not just for documents\footnote{URIs can also identify \emph{non-information resources} for any kind of physical object (e.g.~people), such identifiers can resolve with \texttt{303\ See\ Other} redirections to a corresponding \emph{information resources} \cite{Sauermann 2008}.}, the Semantic Web builds a self-described system of types and properties, where the meaning of a relation can be resolved by following its hyperlink to the definition within a \emph{vocabulary}. By applying these principles as well to any kind of resource that could be described at a URL, this then forms a global distributed Semantic Web (Figure \vref{ch3:fig:jsonld}).
 
-
-\begin{figure}[hbt!]
+\newpage
+\begin{figure}[tbh]
   \includegraphics[width=\textwidth]{figures/ch03/jsonld.pdf}
     \caption[Example of linked RDF resources]{\textbf{Example of linked RDF resources}. Each \emph{resource} in an RDF graph has an identifier, here shown as absolute URIs, a type and a series of properties. A property value can either be a \emph{literal} (e.g. "Josiah Carberry") or another resource (e.g. \url{https://ror.org/03f0f6041}). A graph is formed by such cross-references across resources.
     In the idealised Semantic Web, every URI would resolve to a description of its resource in RDF. In practice there can be misalignments of identifiers, vocabularies, resolution mechanisms, or simply lack of RDF adoption. Therefore, any RDF graph can describe any Web resource identified by its URI, and these descriptions, using an \emph{open world assumption} \cite{Drummond 2006}, can be merged with other graphs describing the same resource.
@@ -157,6 +157,8 @@ By using URIs not just for documents\footnote{URIs can also identify \emph{non-i
     }
   \label{ch3:fig:jsonld}
 \end{figure}
+
+
 
 \begin{listing}
   \footnotesize
@@ -179,6 +181,7 @@ By using URIs not just for documents\footnote{URIs can also identify \emph{non-i
 \end{listing}
 
 The early days of the Semantic Web saw fairly lightweight approaches with the establishment of vocabularies such as FOAF (to describe people and their affiliations) and Dublin Core (for bigbliographic data). Vocabularies themselves were formalised using RDFS or simply as human-readable HTML web pages defining each term. The main approach of this \emph{Web of Data} was that a URI identified a \emph{resource} (e.g.~an author) with an HTML \emph{representation} for human readers, along with a RDF representation for machine-readable data of the same resource. By using \footurl{https://developer.mozilla.org/en-US/docs/Web/HTTP/Content\_negotiation}{content negotiation} in HTTP, the same identifier could be used in both views, avoiding \texttt{index.html} vs \texttt{index.rdf} exposure in the URLs. The concept of \emph{namespaces} gave a way to give a group of RDF resources with the same URI base from a Semantic Web-aware service a common \emph{prefix}, avoiding repeated long URLs.
+
 
 The mid-2000s saw large academic interest and growth of the Semantic Web, with the development of more formal representation system for ontologies, such as OWL \cite{W3C 2012}, allowing complex class hierarchies and logic inference rules following \emph{open world} paradigm. (e.g.~a \emph{ex:Parent} is equivalent to a subclass of \emph{foaf:Person} which must \emph{ex:hasChild} at least one \emph{foaf:Person}, then if we know \emph{:Alice a ex:Parent} we can infer \emph{:Alice ex:hasChild {[}a foaf:Person{]}} even if we don't know who that child is). More human-readable syntaxes for RDF such as Turtle evolved at this time, and conferences such as \footurl{https://iswc2022.semanticweb.org/}{ISWC} \cite{Horrocks 2022} gained traction, with a large interest in knowledge representation and logic systems based on Semantic Web technologies evolving at the same time.
 

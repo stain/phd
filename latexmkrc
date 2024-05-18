@@ -7,8 +7,8 @@ $aux_dir='./build/';
 $out_dir='./build/';
 
 #$pdf_mode = 1;        # pdflatex
-#$pdf_mode = 4;        # lualatex
-$pdf_mode = 5;        # xelatex
+$pdf_mode = 4;        # lualatex
+#$pdf_mode = 5;        # xelatex
 
 add_cus_dep('glo', 'gls', 0, 'run_makeglossaries');
 add_cus_dep('acn', 'acr', 0, 'run_makeglossaries');
