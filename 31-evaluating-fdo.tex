@@ -260,7 +260,7 @@ FDOF3: \emph{PID resolvable to bytestream \& metadata}
   & URIs resolvable by default. Multiple ways to resolve metadata, unclear preference.
   & Add FAIR Signposting and preference order. \\
 FDOF4: \emph{Additional attributes}
-  & Freetext attribute keys. Attributes should be defined for FDO type (?).
+  & Freetext attribute keys. Attributes should be defined for FDO type.
   & Require that attribute keys should be PIDs (or have predefined mapping to PIDs). Explicitly allow attributes not already defined in type.
   & All attributes individually identified. Any Linked Data attributes can be used by URI or with mapped prefix.
   & Clarify type expectations of required/recommended/optional attributes. \\
@@ -285,7 +285,7 @@ FDOF8: \emph{Metadata as FDO, semantic assertions}
   & Assertions are always with semantics, using RDF vocabularies. Unspecified how to find additional metadata resources, \texttt{rdfs:seeAlso} is common.
   & Use FAIR Signposting \texttt{describedby} link relation to additional metadata PIDs \\
 FDOF9: \emph{Different metadata levels}
-  & Defines open-ended ``Response Attributes'' without namespaces, but mandated as ``None'' for all CRUD operations. Metadata would need to be bundled within custom FDO types or attributes. Unclear how levels are separated within single FDO representation (need FDOF8?).
+  & Defines open-ended ``Response Attributes'' without namespaces, but mandated as ``None'' for all CRUD operations. Metadata would need to be bundled within custom FDO types or attributes. Unclear how levels are separated within single FDO representation (may need FDOF8).
   & Declare which metadata are expected within response attribute or within FDO object. Require PIDs for custom attributes. Define how alternate metadata levels can be represented separately.
   & Undefined how to handle multiple metadata granularities or domains, alternative LDP containers can present different views on same stored objects.
   & Define how to navigate to alternate views and their semantic implications, e.g.~\texttt{owl:sameAs} \\
@@ -438,6 +438,7 @@ Based on the analysis in Table \vref{ch3:fdo-web-middleware}, we make the follow
 \end{itemize}
 
 
+\newpage
 \subsubsection{Assessing FDO against FAIR}\label{ch3:fair-compare}
 
 In addition to having ``\acrshort{FAIR}'' in its name, the FAIR Digital Object guidelines \cite{Anders 2023} also include \emph{G3: FDOs must offer compliance with the FAIR principles through measurable indicators of FAIRness}.
