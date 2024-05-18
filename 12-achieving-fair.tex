@@ -59,9 +59,9 @@ Implementation of the principles by platform developers and researchers have how
 For instance, in order to evaluate a given resource's \emph{FAIRness}, additional technical constraints need to be assumed, such as use of particular formal vocabularies. \emph{FAIR metrics} \cite{Wilkinson 2018,Devaraju 2021} have recently become an area of active research, as different FAIR assessment tools may give a range of results for the same data resource, primarily based on which technical assumptions are made \cite{Wilkinson 2022a,Verburg 2023}.
 
 Recently there have been increased emphasis on training and awareness on the FAIR principles \cite{Shanahan 2021,Rocca-Serra 2023}, and registries of standards and vocabularies \cite{Sansone 2019}.
-However---with a general lack of skills in data management planning, inadequate (opaque) data formats and lack of time investment to provide rich metadata---data, even when shared through repositories, often becomes effectively "un-findable" or near impossible to reuse \cite{Carballo-Garcia 2022}.
+However---with a general lack of skills in data management planning, inadequate (opaque) data formats, and not enough time investment to provide rich metadata---research data, even when shared through repositories, can become effectively "un-findable" or near impossible to reuse \cite{Carballo-Garcia 2022}.
 
-From this we can identify several challenges with regards to finding practical ways for developers of \acrlong{RS} to generate and consume FAIR data.
+From this current situation of we can identify several challenges with regards to finding practical ways for developers of \acrlong{RS} to generate and consume FAIR data.
 
 
 
@@ -71,10 +71,10 @@ The vision on the Semantic Web \cite{Berners-Lee 1999} were proposed as a way to
 
 Linked Data was seen early on as a possible mean to implementing the FAIR principles, and a large focus of initiatives like \footurl{https://www.go-fair.org/}{GO-FAIR} and \footurl{https://www.rd-alliance.org/}{Research Data Alliance} and the wider FAIR community has been to find ways to \emph{FAIRify} existing data sources, such as developing domain-specific vocabularies and mappings, along with training and tooling to support these processes. FAIR publishing of datasets is encouraged using Data Catalog Vocabulary (DCAT) \cite{Albertoni 2023}, e.g. by the European Commission's Semantic Interoperability Community Europe \footurl{https://joinup.ec.europa.eu/collection/semic-support-centre}{(SEMIC)} and the larger \footurl{https://joinup.ec.europa.eu/interoperable-europe}{Interoperable Europe} initiative.
 
-There are now a large number of choices for Semantic Web technologies, serialisation formats, vocabularies, deployments and identifiers---motivating the proposal of \emph{FAIR Implementation Profiles} \cite{Schultes 2020} to document and guide these choices. 
+There are now a large number of choices for Semantic Web technologies, serialisation formats, vocabularies, deployments and identifiers---motivating the proposal of \emph{FAIR Implementation Profiles} \cite{Schultes 2020} to document and guide technology decisions. 
 
-The field of Life Sciences was an early adopter of Linked Data, establishing training portals like \footurl{https://faircookbook.elixir-europe.org}{FAIR Cookbook} \cite{Rocca-Serra 2023} and has over \footurl{https://tess.elixir-europe.org/materials?q=FAIR}{170 training materials for FAIR} listed in ELIXIR Europe's training portal TeSS (as of 2024-04-28).
-The ELIXIR service \footurl{https://fairsharing.org/}{FAIRsharing} \cite{Sansone 2019} has over 1700 standards, 2100 databases and 250 policies (as of 2024-04-28) for FAIR sharing of research data\footnote{It is worth noting that not all of these databases and standards are based on Linked Data methods, and may be supporting FAIR principles in a looser sense.}. 
+The field of Life Sciences was an early adopter of Linked Data, establishing training portals like \footurl{https://faircookbook.elixir-europe.org}{FAIR Cookbook} \cite{Rocca-Serra 2023}, developing biomedical ontologies as indexed in \footurl{https://bioportal.bioontology.org/}{BioPortal} \cite{Whetzel 2011} (over 1300 as of 2024-05-18), and sharing practices at conferences like Semantic Web Applications for Health Care and Life Sciences \footurl{https://www.swat4ls.org/}{(SWAT4HCLS)} active since 2008.
+The life science research infrastructure \footurl{https://elixir-europe.org/}{ELIXIR Europe} has over \footurl{https://tess.elixir-europe.org/materials?q=FAIR}{170 training materials for FAIR} listed in its training portal TeSS (as of 2024-04-28), while the ELIXIR service \footurl{https://fairsharing.org/}{FAIRsharing} \cite{Sansone 2019} has over 1700 standards, 2100 databases and 250 policies (as of 2024-04-28) for FAIR sharing of research data\footnote{It is worth noting that not all of these databases and standards are based on Linked Data methods, and may be supporting FAIR principles in a looser sense.}. 
 
 A challenge for consumption of FAIR services in such a diverse landscape is thus how to support reliable \emph{machine actionability}---making the data generally interpretable and typed sufficiently to allow invocation of pre-defined operations.
 
@@ -86,7 +86,7 @@ FDO proponents envision a programmable mesh of strongly typed objects, which goe
 For this, FDO aims to provide concrete constraints for systems, which lead to predictable machine actions.
 
 The FDO guidelines\footnote{Section \vref{ch3:fdo-requirements}} \cite{Anders 2023} and the more detailed FDO specifications \cite{Ivonne 2023} are largely conceptual in nature, with several demonstrated implementations \cite{Wittenburg 2022a,Lannom 2022a} which in theory can operate side-by-side.
-Many of these, however, rely novel or older network protocols \cite{Reilly 2009,Sun 2003a} which are not particularly familiar to software developers, and not commonly supported by software libraries or frameworks.
+Many of these, however, rely on novel or older network protocols \cite{Reilly 2009,Sun 2003a} which are not particularly familiar to software developers, and not commonly supported by software libraries or frameworks.
 
 This divergence from the more Web-centric ``FAIR majority view'', while sound from a technical perspective and promising with regards to predictable computational consumption, raises organisational challenges for wider adoption of FDOs, e.g. within EOSC and research infrastructures, and might be introducing a steeper learning curve than already exists for FAIR, particularly for developers of \acrlong{RS} who are primarily interested in solving scientific challenges. 
 
@@ -115,7 +115,7 @@ The identified need for communicating computational methods through \acrlong{RS}
 
 \acrfullpl{RO} \cite{Bechhofer 2013} have been proposed as a mechanism to capture a range of diverse scholarly outputs in a single archivable item with detailed metadata. The RO concept was first realised using Semantic Web ontologies \cite{myExperiment 2009,Belhajjame 2015}---these approaches primarily targetted long-term preservation of \glspl{scientific workflow}, utillised by RO as a mechanism to capture computational methods, augmented by the workflow inputs, outputs,  workflow engine configuration and human-readable explanation of each step.
 
-The principles of Research Objects extend far beyond workflows---however, early RO implementations mainly focused on capturing software \cite{Goble 2018}. To some extent, the lack of wider adoption of ontology-based ROs can also be explained by Research Software Engineers (e.g. molecular dynamics simulations) and platforms (e.g. repositories, data management systems) having a lack of familiarity with workflow systems or Semantic Web technology---or worse, they tried these technologies and then struggled \cite{Carriero 2010,Tudorache 2020}.
+The principles of Research Objects extend far beyond workflows---however, early RO implementations mainly focused on capturing software \cite{Goble 2018}. To some extent, the lack of wider adoption of ontology-based ROs can also be explained by Research Software Engineers (e.g. developers of molecular dynamics simulations) and platforms (e.g. repositories, data management systems) having a lack of familiarity with workflow systems or Semantic Web technology---or worse, they tried these technologies and then struggled \cite{Carriero 2010,Tudorache 2020}.
 
 From this, a challenge is to make Linked Data technology approachable for developers who are best placed at implementing the FAIR principles, in platforms that are effectively making Research Objects.
 
