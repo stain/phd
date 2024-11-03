@@ -146,6 +146,9 @@
 % For roman numbers in lists etc
 \usepackage{enumerate}
 
+% To include our cover
+\usepackage{pdfpages}
+
 % Glossaries
 \usepackage[toc,nopostdot]{glossaries}
 \makeglossaries
@@ -160,7 +163,7 @@
 
 \title{FAIR Research Objects and Computational Workflows – A Linked Data Approach}
 \author{Stian Soiland-Reyes}
-\date{2024-10-19}
+\date{2024-11-03}
 
 
 \setcounter{tocdepth}{3}
@@ -170,6 +173,10 @@
 
 
 \frontmatter
+
+\includepdf{figures/cover.pdf}
+
+
 \maketitle
 \include{01-frontpage}
 \include{02-tocs}
@@ -246,5 +253,8 @@
 \include{b-summary}
 \chapter{Sammenvatting}
 \include{b-summary-nl}
+
+
+\includepdf{figures/backcover.pdf}
 
 \end{document}
