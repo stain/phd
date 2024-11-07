@@ -1,0 +1,41 @@
+
+Changes since submitted version 2024-05-26
+<https://github.com/stain/phd/compare/2024-05-26..2024-11-07>
+
+Frontpage and backpage cover added.
+
+Page i:
+- Date 2024-11-07
+
+Copyright-page ii:
+- Logos added: INDElab, eScience Lab
+- ORCID added
+- Attribution for Cover added
+- ISBN added
+
+Page iii:
+- Date and place of PhD viva added
+- ORCID removed
+
+Page xiii (List of Tables):
+- Table 1.1 title shortened to fit listing
+
+Page 14 (Origins):
+- version added for 2312.07852v1 as chapter matches content pre peer-review
+
+Page 212 (Personal Acknowledgements):
+- Minor typo/grammar fixes
+
+Page 227 (Acknowledgements):
+- Clarified the arXiV preprint is now "revised manuscript published in PLOS One"
+- Added DOI and PLOS One citation info for "Recording provenance of workflow runs with RO-Crate"
+
+Page 249--> (Bibliography):
+- [Ivonne 2023] -> [Anders 2023b] -- first author had surname/firstname swapped
+- [Ivonne 2023] -> [Ivonne 2023a] -- to separte from above 
+- Page breaking: Ferreira da Silva 2023 listed before Ferreira da Silva 2021
+- [Leo 2023a] -- Typo in title fixed to "runcrate 0.5.0"
+- [Leo 2023b] --> [Leo 2024] -- Now published, added PLOS One DOI
+- [Leo 2023c] --> [Leo 2023b] -- avoid gap from above
+- [Soiland-Reyes 2024b] -- Now published, remove "(accepted)" 
+
