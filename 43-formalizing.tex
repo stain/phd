@@ -218,8 +218,8 @@ String(s)               & \Rightarrow & \texttt{"} s \texttt{"} \\
 && \ \ \ \texttt{]} \\
 && \texttt{\}} \\
 R   & \equiv & \texttt{<./>}  \\
-R   & \Rightarrow &  MetadataFile(\texttt{<ro-crate-metadata.json>}) \\
+R   & \Rightarrow &  MetadataFile(\texttt{<ro-crate-metadata.json>})
 \end{eqnarray*}
-\normalsize
 
+\normalsize
 This exposes the first order logic domain of discourse of IRIs, with rational numbers and strings as their corresponding JSON-LD representation. These production rules first grow the graph of $R$ by adding a transitive rule---anything described in $R$ which is related to $o$, means that $o$ is also mentioned by the $ROCrate(R)$. For simplicity this rule is one-way; in theory the graph can also contain free-standing contextual entities that have outgoing relations to data- and contextual entities, but these are proposed to be bound to the root data entity with Schema.org relation \footurl{http://schema.org/mentions}{mentions}.
