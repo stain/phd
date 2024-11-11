@@ -105,7 +105,7 @@
 \pagestyle{fancy}
 \fancyhead{}
 \fancyfoot{}
-\fancyfoot[LO,RE]{\thepage}
+\fancyfoot[LE,RO]{\thepage}
 %% NOTE: Rest of fancyhead enabled AFTER \frontmatter
 
 \renewcommand{\chaptermark}[1]{%
@@ -122,7 +122,8 @@
 
 \usepackage{varioref}
 % Rotating pages
-\usepackage{pdflscape}
+%\usepackage{pdflscape}
+\usepackage{lscape}
 
 % for code
 \usepackage{listing}
@@ -177,7 +178,7 @@
 %\includepdf{figures/cover.pdf}
 
 
-\maketitle
+%\maketitle
 \include{01-frontpage}
 \include{02-tocs}
 
@@ -188,8 +189,8 @@
 
 
 \mainmatter
-\fancyhead[LO]{\leftmark}
-\fancyhead[RE]{Chapter \thechapter}
+\fancyhead[RO]{\leftmark}
+\fancyhead[LE]{Chapter \thechapter}
 
 \chapter{Introduction}
 \label{chapter:introduction}
