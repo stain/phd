@@ -17,7 +17,7 @@
 #latexmk=latexmk -use-make-
 latexmk=docker run -v `pwd`:/work -w /work -e TEXMFCACHE=/work/build/cache -u `id -u` -it registry.gitlab.com/islandoftex/images/texlive:TL2022-2023-01-22-full latexmk -use-make-
 
-all: build/print.pdf
+all: build/print.pdf build/print-offset.pdf
 
 clean:
 	rm -rf build
@@ -29,4 +29,6 @@ build/main.pdf: *.tex build/cache
 	$(latexmk) -nobibtex main
 
 build/print.pdf: build/main.pdf
-	pdfjam --keepinfo --trim "20mm 34mm 20mm 13mm" --scale 0.92 --fitpaper true build/main.pdf --outfile build/print.pdf
+	pdfjam --keepinfo --trim "20mm 34mm 20mm 13mm" --scale 0.92 --twoside --offset '1.0cm 0cm' --fitpaper true build/main.pdf --outfile build/print.pdf
+
+
